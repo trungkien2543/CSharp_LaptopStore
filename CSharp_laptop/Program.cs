@@ -1,4 +1,4 @@
-namespace LaptopStore
+namespace CSharp_laptop
 {
     internal static class Program
     {

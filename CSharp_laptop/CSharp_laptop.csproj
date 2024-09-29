@@ -8,4 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\" />
+    <Folder Include="BUS\" />
+    <Folder Include="DAO\" />
+  </ItemGroup>
+
 </Project>
