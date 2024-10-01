@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2024 at 02:26 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Oct 01, 2024 at 03:52 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,35 +37,11 @@ CREATE TABLE `chitiethoadon` (
 --
 
 INSERT INTO `chitiethoadon` (`ID_SP`, `ID_HoaDon`) VALUES
-('LP001', 1),
-('LP002', 2),
-('LP003', 3),
-('LP004', 4),
-('LP005', 5);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chitietlaptop`
---
-
-CREATE TABLE `chitietlaptop` (
-  `MaSP` varchar(255) NOT NULL,
-  `GiaNhap` bigint(20) DEFAULT NULL,
-  `NgayBan` datetime DEFAULT NULL,
-  `LoaiLaptop` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `chitietlaptop`
---
-
-INSERT INTO `chitietlaptop` (`MaSP`, `GiaNhap`, `NgayBan`, `LoaiLaptop`) VALUES
-('LP001', 20000000, '2024-01-15 00:00:00', '1'),
-('LP002', 25000000, '2024-01-16 00:00:00', '2'),
-('LP003', 18000000, '2024-01-17 00:00:00', '3'),
-('LP004', 30000000, '2024-01-18 00:00:00', '4'),
-('LP005', 22000000, '2024-01-19 00:00:00', '5');
+('1', 1),
+('2', 2),
+('3', 3),
+('4', 4),
+('5', 5);
 
 -- --------------------------------------------------------
 
@@ -83,11 +59,11 @@ CREATE TABLE `chitietphieunhap` (
 --
 
 INSERT INTO `chitietphieunhap` (`ID_SP`, `ID_PhieuNhap`) VALUES
-('LP001', 1),
-('LP002', 2),
-('LP003', 3),
-('LP004', 4),
-('LP005', 5);
+('1', 1),
+('2', 2),
+('3', 3),
+('4', 4),
+('5', 5);
 
 -- --------------------------------------------------------
 
@@ -200,7 +176,7 @@ INSERT INTO `khuyenmai` (`ID_KhuyenMai`, `TenKhuyenMai`, `MucGiamGia`, `MoTaKM`,
 --
 
 CREATE TABLE `loai_laptop` (
-  `ID_Loai` varchar(255) NOT NULL,
+  `IDLaptop` varchar(255) NOT NULL,
   `TenSP` varchar(255) DEFAULT NULL,
   `GiaBan` bigint(20) DEFAULT NULL,
   `Hang` varchar(255) DEFAULT NULL,
@@ -216,7 +192,7 @@ CREATE TABLE `loai_laptop` (
 -- Dumping data for table `loai_laptop`
 --
 
-INSERT INTO `loai_laptop` (`ID_Loai`, `TenSP`, `GiaBan`, `Hang`, `CPU`, `RAM`, `GPU`, `HinhAnh`, `KichThuoc`, `KhuyenMai`) VALUES
+INSERT INTO `loai_laptop` (`IDLaptop`, `TenSP`, `GiaBan`, `Hang`, `CPU`, `RAM`, `GPU`, `HinhAnh`, `KichThuoc`, `KhuyenMai`) VALUES
 ('1', 'Dell XPS 13', 25000000, '1', 'Intel Core i7', 16, 'NVIDIA GeForce MX150', 'dell_xps_13.jpg', '13.3 inches', 'KM001'),
 ('2', 'MacBook Air', 30000000, '2', 'Apple M1', 8, 'Apple Integrated', 'macbook_air.jpg', '13.3 inches', 'KM002'),
 ('3', 'Asus ROG Zephyrus', 45000000, '3', 'AMD Ryzen 7', 16, 'NVIDIA GeForce GTX 1660 Ti', 'rog_zephyrus.jpg', '15.6 inches', 'KM003'),
@@ -329,14 +305,6 @@ ALTER TABLE `chitiethoadon`
   ADD UNIQUE KEY `ID_HoaDon` (`ID_HoaDon`);
 
 --
--- Indexes for table `chitietlaptop`
---
-ALTER TABLE `chitietlaptop`
-  ADD PRIMARY KEY (`MaSP`),
-  ADD UNIQUE KEY `MaSP` (`MaSP`),
-  ADD KEY `LoaiLaptop` (`LoaiLaptop`);
-
---
 -- Indexes for table `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
@@ -377,8 +345,8 @@ ALTER TABLE `khuyenmai`
 -- Indexes for table `loai_laptop`
 --
 ALTER TABLE `loai_laptop`
-  ADD PRIMARY KEY (`ID_Loai`),
-  ADD UNIQUE KEY `ID_Loai` (`ID_Loai`),
+  ADD PRIMARY KEY (`IDLaptop`),
+  ADD UNIQUE KEY `ID_Loai` (`IDLaptop`),
   ADD KEY `Hang` (`Hang`),
   ADD KEY `KhuyenMai` (`KhuyenMai`);
 
@@ -444,20 +412,14 @@ ALTER TABLE `phieunhap`
 --
 ALTER TABLE `chitiethoadon`
   ADD CONSTRAINT `chitiethoadon_ibfk_1` FOREIGN KEY (`ID_HoaDon`) REFERENCES `hoadon` (`ID_HoaDon`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `chitiethoadon_ibfk_2` FOREIGN KEY (`ID_SP`) REFERENCES `chitietlaptop` (`MaSP`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `chitietlaptop`
---
-ALTER TABLE `chitietlaptop`
-  ADD CONSTRAINT `chitietlaptop_ibfk_1` FOREIGN KEY (`LoaiLaptop`) REFERENCES `loai_laptop` (`ID_Loai`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `chitiethoadon_ibfk_2` FOREIGN KEY (`ID_SP`) REFERENCES `loai_laptop` (`IDLaptop`);
 
 --
 -- Constraints for table `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
-  ADD CONSTRAINT `chitietphieunhap_ibfk_1` FOREIGN KEY (`ID_SP`) REFERENCES `chitietlaptop` (`MaSP`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `chitietphieunhap_ibfk_2` FOREIGN KEY (`ID_PhieuNhap`) REFERENCES `phieunhap` (`ID_PhieuNhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `chitietphieunhap_ibfk_2` FOREIGN KEY (`ID_PhieuNhap`) REFERENCES `phieunhap` (`ID_PhieuNhap`),
+  ADD CONSTRAINT `chitietphieunhap_ibfk_3` FOREIGN KEY (`ID_SP`) REFERENCES `loai_laptop` (`IDLaptop`);
 
 --
 -- Constraints for table `hoadon`
