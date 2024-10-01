@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
-            iconButton6 = new FontAwesome.Sharp.IconButton();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            btnDashboard = new FontAwesome.Sharp.IconButton();
+            btnThongKe = new FontAwesome.Sharp.IconButton();
+            btnNH_PN = new FontAwesome.Sharp.IconButton();
+            btnKhuyenMai = new FontAwesome.Sharp.IconButton();
+            btnKhachHang = new FontAwesome.Sharp.IconButton();
+            btnNhanVien = new FontAwesome.Sharp.IconButton();
+            btnHD_BH = new FontAwesome.Sharp.IconButton();
+            btnNhaSanXuat = new FontAwesome.Sharp.IconButton();
+            btnSanPham = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             btnHome = new PictureBox();
             panelTitleBar = new Panel();
@@ -55,150 +57,196 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(31, 30, 68);
-            panelMenu.Controls.Add(iconButton6);
-            panelMenu.Controls.Add(iconButton5);
-            panelMenu.Controls.Add(iconButton4);
-            panelMenu.Controls.Add(iconButton3);
-            panelMenu.Controls.Add(iconButton2);
-            panelMenu.Controls.Add(btnDashboard);
+            panelMenu.Controls.Add(btnThongKe);
+            panelMenu.Controls.Add(btnNH_PN);
+            panelMenu.Controls.Add(btnKhuyenMai);
+            panelMenu.Controls.Add(btnKhachHang);
+            panelMenu.Controls.Add(btnNhanVien);
+            panelMenu.Controls.Add(btnHD_BH);
+            panelMenu.Controls.Add(btnNhaSanXuat);
+            panelMenu.Controls.Add(btnSanPham);
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 631);
+            panelMenu.Size = new Size(220, 735);
             panelMenu.TabIndex = 0;
             // 
-            // iconButton6
+            // btnThongKe
             // 
-            iconButton6.Dock = DockStyle.Top;
-            iconButton6.FlatAppearance.BorderSize = 0;
-            iconButton6.FlatStyle = FlatStyle.Flat;
-            iconButton6.ForeColor = Color.Gainsboro;
-            iconButton6.IconChar = FontAwesome.Sharp.IconChar.Tools;
-            iconButton6.IconColor = Color.Gainsboro;
-            iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton6.IconSize = 32;
-            iconButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton6.Location = new Point(0, 440);
-            iconButton6.Name = "iconButton6";
-            iconButton6.Padding = new Padding(10, 0, 20, 0);
-            iconButton6.Size = new Size(220, 60);
-            iconButton6.TabIndex = 6;
-            iconButton6.Text = "Setting";
-            iconButton6.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton6.UseVisualStyleBackColor = true;
-            iconButton6.Click += iconButton6_Click;
+            btnThongKe.Dock = DockStyle.Top;
+            btnThongKe.FlatAppearance.BorderSize = 0;
+            btnThongKe.FlatStyle = FlatStyle.Flat;
+            btnThongKe.ForeColor = Color.Gainsboro;
+            btnThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            btnThongKe.IconColor = Color.Gainsboro;
+            btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnThongKe.IconSize = 32;
+            btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThongKe.Location = new Point(0, 560);
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.Padding = new Padding(10, 0, 20, 0);
+            btnThongKe.Size = new Size(220, 60);
+            btnThongKe.TabIndex = 9;
+            btnThongKe.Text = "Thống kê";
+            btnThongKe.TextAlign = ContentAlignment.MiddleLeft;
+            btnThongKe.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnThongKe.UseVisualStyleBackColor = true;
+            btnThongKe.Click += btnThongKe_Click;
             // 
-            // iconButton5
+            // btnNH_PN
             // 
-            iconButton5.Dock = DockStyle.Top;
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.ForeColor = Color.Gainsboro;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.EnvelopesBulk;
-            iconButton5.IconColor = Color.Gainsboro;
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 32;
-            iconButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton5.Location = new Point(0, 380);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Padding = new Padding(10, 0, 20, 0);
-            iconButton5.Size = new Size(220, 60);
-            iconButton5.TabIndex = 5;
-            iconButton5.Text = "Marketing";
-            iconButton5.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton5.UseVisualStyleBackColor = true;
-            iconButton5.Click += iconButton5_Click;
+            btnNH_PN.Dock = DockStyle.Top;
+            btnNH_PN.FlatAppearance.BorderSize = 0;
+            btnNH_PN.FlatStyle = FlatStyle.Flat;
+            btnNH_PN.ForeColor = Color.Gainsboro;
+            btnNH_PN.IconChar = FontAwesome.Sharp.IconChar.DollyBox;
+            btnNH_PN.IconColor = Color.Gainsboro;
+            btnNH_PN.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNH_PN.IconSize = 32;
+            btnNH_PN.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNH_PN.Location = new Point(0, 500);
+            btnNH_PN.Name = "btnNH_PN";
+            btnNH_PN.Padding = new Padding(10, 0, 20, 0);
+            btnNH_PN.Size = new Size(220, 60);
+            btnNH_PN.TabIndex = 8;
+            btnNH_PN.Text = "Nhập hàng / Phiếu nhập";
+            btnNH_PN.TextAlign = ContentAlignment.MiddleLeft;
+            btnNH_PN.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNH_PN.UseVisualStyleBackColor = true;
+            btnNH_PN.Click += btnNH_PN_Click;
             // 
-            // iconButton4
+            // btnKhuyenMai
             // 
-            iconButton4.Dock = DockStyle.Top;
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.ForeColor = Color.Gainsboro;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
-            iconButton4.IconColor = Color.Gainsboro;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 32;
-            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(0, 320);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Padding = new Padding(10, 0, 20, 0);
-            iconButton4.Size = new Size(220, 60);
-            iconButton4.TabIndex = 4;
-            iconButton4.Text = "Customers";
-            iconButton4.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton4.UseVisualStyleBackColor = true;
-            iconButton4.Click += iconButton4_Click;
+            btnKhuyenMai.Dock = DockStyle.Top;
+            btnKhuyenMai.FlatAppearance.BorderSize = 0;
+            btnKhuyenMai.FlatStyle = FlatStyle.Flat;
+            btnKhuyenMai.ForeColor = Color.Gainsboro;
+            btnKhuyenMai.IconChar = FontAwesome.Sharp.IconChar.Percentage;
+            btnKhuyenMai.IconColor = Color.Gainsboro;
+            btnKhuyenMai.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnKhuyenMai.IconSize = 32;
+            btnKhuyenMai.ImageAlign = ContentAlignment.MiddleLeft;
+            btnKhuyenMai.Location = new Point(0, 440);
+            btnKhuyenMai.Name = "btnKhuyenMai";
+            btnKhuyenMai.Padding = new Padding(10, 0, 20, 0);
+            btnKhuyenMai.Size = new Size(220, 60);
+            btnKhuyenMai.TabIndex = 6;
+            btnKhuyenMai.Text = "Khuyến mãi";
+            btnKhuyenMai.TextAlign = ContentAlignment.MiddleLeft;
+            btnKhuyenMai.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnKhuyenMai.UseVisualStyleBackColor = true;
+            btnKhuyenMai.Click += iconButton6_Click;
             // 
-            // iconButton3
+            // btnKhachHang
             // 
-            iconButton3.Dock = DockStyle.Top;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.ForeColor = Color.Gainsboro;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            iconButton3.IconColor = Color.Gainsboro;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 32;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(0, 260);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Padding = new Padding(10, 0, 20, 0);
-            iconButton3.Size = new Size(220, 60);
-            iconButton3.TabIndex = 3;
-            iconButton3.Text = "Products";
-            iconButton3.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = true;
-            iconButton3.Click += iconButton3_Click;
+            btnKhachHang.Dock = DockStyle.Top;
+            btnKhachHang.FlatAppearance.BorderSize = 0;
+            btnKhachHang.FlatStyle = FlatStyle.Flat;
+            btnKhachHang.ForeColor = Color.Gainsboro;
+            btnKhachHang.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
+            btnKhachHang.IconColor = Color.Gainsboro;
+            btnKhachHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnKhachHang.IconSize = 32;
+            btnKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
+            btnKhachHang.Location = new Point(0, 380);
+            btnKhachHang.Name = "btnKhachHang";
+            btnKhachHang.Padding = new Padding(10, 0, 20, 0);
+            btnKhachHang.Size = new Size(220, 60);
+            btnKhachHang.TabIndex = 5;
+            btnKhachHang.Text = "Khách hàng";
+            btnKhachHang.TextAlign = ContentAlignment.MiddleLeft;
+            btnKhachHang.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnKhachHang.UseVisualStyleBackColor = true;
+            btnKhachHang.Click += iconButton5_Click;
             // 
-            // iconButton2
+            // btnNhanVien
             // 
-            iconButton2.Dock = DockStyle.Top;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.ForeColor = Color.Gainsboro;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
-            iconButton2.IconColor = Color.Gainsboro;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 32;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(0, 200);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(10, 0, 20, 0);
-            iconButton2.Size = new Size(220, 60);
-            iconButton2.TabIndex = 2;
-            iconButton2.Text = "Order";
-            iconButton2.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton2.UseVisualStyleBackColor = true;
-            iconButton2.Click += iconButton2_Click;
+            btnNhanVien.Dock = DockStyle.Top;
+            btnNhanVien.FlatAppearance.BorderSize = 0;
+            btnNhanVien.FlatStyle = FlatStyle.Flat;
+            btnNhanVien.ForeColor = Color.Gainsboro;
+            btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.Vcard;
+            btnNhanVien.IconColor = Color.Gainsboro;
+            btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNhanVien.IconSize = 32;
+            btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNhanVien.Location = new Point(0, 320);
+            btnNhanVien.Name = "btnNhanVien";
+            btnNhanVien.Padding = new Padding(10, 0, 20, 0);
+            btnNhanVien.Size = new Size(220, 60);
+            btnNhanVien.TabIndex = 4;
+            btnNhanVien.Text = "Nhân viên";
+            btnNhanVien.TextAlign = ContentAlignment.MiddleLeft;
+            btnNhanVien.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNhanVien.UseVisualStyleBackColor = true;
+            btnNhanVien.Click += iconButton4_Click;
             // 
-            // btnDashboard
+            // btnHD_BH
             // 
-            btnDashboard.Dock = DockStyle.Top;
-            btnDashboard.FlatAppearance.BorderSize = 0;
-            btnDashboard.FlatStyle = FlatStyle.Flat;
-            btnDashboard.ForeColor = Color.Gainsboro;
-            btnDashboard.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
-            btnDashboard.IconColor = Color.Gainsboro;
-            btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDashboard.IconSize = 32;
-            btnDashboard.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDashboard.Location = new Point(0, 140);
-            btnDashboard.Name = "btnDashboard";
-            btnDashboard.Padding = new Padding(10, 0, 20, 0);
-            btnDashboard.Size = new Size(220, 60);
-            btnDashboard.TabIndex = 1;
-            btnDashboard.Text = "Dashboard";
-            btnDashboard.TextAlign = ContentAlignment.MiddleLeft;
-            btnDashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDashboard.UseVisualStyleBackColor = true;
-            btnDashboard.Click += btnDashboard_Click;
+            btnHD_BH.Dock = DockStyle.Top;
+            btnHD_BH.FlatAppearance.BorderSize = 0;
+            btnHD_BH.FlatStyle = FlatStyle.Flat;
+            btnHD_BH.ForeColor = Color.Gainsboro;
+            btnHD_BH.IconChar = FontAwesome.Sharp.IconChar.HandHoldingUsd;
+            btnHD_BH.IconColor = Color.Gainsboro;
+            btnHD_BH.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHD_BH.IconSize = 32;
+            btnHD_BH.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHD_BH.Location = new Point(0, 260);
+            btnHD_BH.Name = "btnHD_BH";
+            btnHD_BH.Padding = new Padding(10, 0, 20, 0);
+            btnHD_BH.Size = new Size(220, 60);
+            btnHD_BH.TabIndex = 3;
+            btnHD_BH.Text = "Bán hàng / Hóa đơn ";
+            btnHD_BH.TextAlign = ContentAlignment.MiddleLeft;
+            btnHD_BH.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHD_BH.UseVisualStyleBackColor = true;
+            btnHD_BH.Click += iconButton3_Click;
+            // 
+            // btnNhaSanXuat
+            // 
+            btnNhaSanXuat.Dock = DockStyle.Top;
+            btnNhaSanXuat.FlatAppearance.BorderSize = 0;
+            btnNhaSanXuat.FlatStyle = FlatStyle.Flat;
+            btnNhaSanXuat.ForeColor = Color.Gainsboro;
+            btnNhaSanXuat.IconChar = FontAwesome.Sharp.IconChar.Handshake;
+            btnNhaSanXuat.IconColor = Color.Gainsboro;
+            btnNhaSanXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNhaSanXuat.IconSize = 32;
+            btnNhaSanXuat.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNhaSanXuat.Location = new Point(0, 200);
+            btnNhaSanXuat.Name = "btnNhaSanXuat";
+            btnNhaSanXuat.Padding = new Padding(10, 0, 20, 0);
+            btnNhaSanXuat.Size = new Size(220, 60);
+            btnNhaSanXuat.TabIndex = 2;
+            btnNhaSanXuat.Text = "Nhà sản xuất";
+            btnNhaSanXuat.TextAlign = ContentAlignment.MiddleLeft;
+            btnNhaSanXuat.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNhaSanXuat.UseVisualStyleBackColor = true;
+            btnNhaSanXuat.Click += iconButton2_Click;
+            // 
+            // btnSanPham
+            // 
+            btnSanPham.Dock = DockStyle.Top;
+            btnSanPham.FlatAppearance.BorderSize = 0;
+            btnSanPham.FlatStyle = FlatStyle.Flat;
+            btnSanPham.ForeColor = Color.Gainsboro;
+            btnSanPham.IconChar = FontAwesome.Sharp.IconChar.Laptop;
+            btnSanPham.IconColor = Color.Gainsboro;
+            btnSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSanPham.IconSize = 32;
+            btnSanPham.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSanPham.Location = new Point(0, 140);
+            btnSanPham.Name = "btnSanPham";
+            btnSanPham.Padding = new Padding(10, 0, 20, 0);
+            btnSanPham.Size = new Size(220, 60);
+            btnSanPham.TabIndex = 1;
+            btnSanPham.Text = "Sản phẩm";
+            btnSanPham.TextAlign = ContentAlignment.MiddleLeft;
+            btnSanPham.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSanPham.UseVisualStyleBackColor = true;
+            btnSanPham.Click += btnDashboard_Click;
             // 
             // panelLogo
             // 
@@ -229,7 +277,7 @@
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(220, 0);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(964, 75);
+            panelTitleBar.Size = new Size(964, 52);
             panelTitleBar.TabIndex = 1;
             // 
             // lblTitleChildForm
@@ -237,7 +285,7 @@
             lblTitleChildForm.AutoSize = true;
             lblTitleChildForm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitleChildForm.ForeColor = Color.Gainsboro;
-            lblTitleChildForm.Location = new Point(51, 30);
+            lblTitleChildForm.Location = new Point(51, 18);
             lblTitleChildForm.Name = "lblTitleChildForm";
             lblTitleChildForm.Size = new Size(52, 21);
             lblTitleChildForm.TabIndex = 1;
@@ -251,7 +299,7 @@
             iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCurrentChildForm.Location = new Point(15, 25);
+            iconCurrentChildForm.Location = new Point(13, 12);
             iconCurrentChildForm.Name = "iconCurrentChildForm";
             iconCurrentChildForm.Size = new Size(32, 32);
             iconCurrentChildForm.TabIndex = 0;
@@ -261,7 +309,7 @@
             // 
             panelShadow.BackColor = Color.FromArgb(26, 24, 58);
             panelShadow.Dock = DockStyle.Top;
-            panelShadow.Location = new Point(220, 75);
+            panelShadow.Location = new Point(220, 52);
             panelShadow.Name = "panelShadow";
             panelShadow.Size = new Size(964, 9);
             panelShadow.TabIndex = 2;
@@ -271,16 +319,16 @@
             panelDesktop.BackColor = Color.FromArgb(34, 33, 74);
             panelDesktop.Controls.Add(pictureBox1);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(220, 84);
+            panelDesktop.Location = new Point(220, 61);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(964, 547);
+            panelDesktop.Size = new Size(964, 674);
             panelDesktop.TabIndex = 3;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.Jasper987_rrx6kw;
-            pictureBox1.Location = new Point(274, 122);
+            pictureBox1.Location = new Point(274, 186);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(478, 294);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -292,7 +340,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1184, 631);
+            ClientSize = new Size(1184, 735);
             Controls.Add(panelDesktop);
             Controls.Add(panelShadow);
             Controls.Add(panelTitleBar);
@@ -315,13 +363,13 @@
         #endregion
 
         private Panel panelMenu;
-        private FontAwesome.Sharp.IconButton btnDashboard;
+        private FontAwesome.Sharp.IconButton btnSanPham;
         private Panel panelLogo;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnKhuyenMai;
+        private FontAwesome.Sharp.IconButton btnKhachHang;
+        private FontAwesome.Sharp.IconButton btnNhanVien;
+        private FontAwesome.Sharp.IconButton btnHD_BH;
+        private FontAwesome.Sharp.IconButton btnNhaSanXuat;
         private PictureBox btnHome;
         private Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
@@ -329,5 +377,7 @@
         private Panel panelShadow;
         private Panel panelDesktop;
         private PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton btnNH_PN;
+        private FontAwesome.Sharp.IconButton btnThongKe;
     }
 }
