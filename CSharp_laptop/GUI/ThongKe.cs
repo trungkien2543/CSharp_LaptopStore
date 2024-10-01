@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SkiaSharp;
 using LiveChartsCore.SkiaSharpView.Painting;
+using MySql.Data.MySqlClient;
 
 namespace CSharp_laptop.GUI
 {
@@ -23,42 +24,62 @@ namespace CSharp_laptop.GUI
 
         private void cartesianChart1_Load(object sender, EventArgs e)
         {
-            // Giả sử bạn có dữ liệu doanh thu cho từng tháng
-            var months = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-            var revenue = new double[] { 2000000, 2500000, 3000000, 4000000, 3500000, 4500000, 3000000, 5000000, 5500000, 6000000, 7000000, 8000000 };
 
-            // Tạo một series mới cho doanh thu
+            // Kết nối đến cơ sở dữ liệu và lấy dữ liệu
+            var months = new List<string>();
+            var revenue = new List<double>();
+
+            // Thay thế chuỗi kết nối dưới đây bằng thông tin kết nối của bạn
+            string connectionString = "server=localhost;database=laptop_csharp;user=root;password=;";
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                var command = new MySqlCommand("SELECT MONTH(NgayLap) AS Thang, SUM(TongTien) AS DoanhThu FROM hoadon GROUP BY MONTH(NgayLap) ORDER BY Thang;", connection);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // Lấy giá trị tháng dưới dạng số nguyên
+                        int month = reader.GetInt32("Thang");
+
+                        // Chuyển đổi sang chuỗi
+                        months.Add("Tháng " + month.ToString());
+
+                        // Lấy giá trị doanh thu
+                        revenue.Add(reader.GetDouble("DoanhThu"));
+                    }
+                }
+            }
+
+            // Cập nhật biểu đồ với dữ liệu lấy được
             var series = new LineSeries<double>
             {
                 Values = revenue,
-                Name = "Doanh Thu",
-                Stroke = new SolidColorPaint(new SKColor(0, 176, 240)), // Màu đường
+                Name = "Doanh Thu:",
+                Stroke = new SolidColorPaint(new SkiaSharp.SKColor(0, 176, 240)),
                 Fill = null
             };
 
-            // Thêm series vào biểu đồ
             cartesianChart1.Series = new ISeries[] { series };
 
-            // Thiết lập các nhãn cho trục X
             cartesianChart1.XAxes = new Axis[]
             {
-        new Axis
-        {
-            Labels = months // Nhãn cho trục X
-        }
+                new Axis { Labels = months.ToArray() }
             };
 
-            // Thiết lập trục Y
             cartesianChart1.YAxes = new Axis[]
             {
-        new Axis
-        {
-            Name  = "Doanh Thu (VNĐ)", // Tiêu đề cho trục Y
-        }
+                new Axis
+                {
+                    Name = "Doanh Thu (VNĐ)"
+                   
+                
+                }
             };
 
-            // Cập nhật biểu đồ
             cartesianChart1.Update();
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
