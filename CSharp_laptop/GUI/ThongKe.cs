@@ -23,16 +23,17 @@ namespace CSharp_laptop.GUI
 
         private void cartesianChart1_Load(object sender, EventArgs e)
         {
-            // Tạo dữ liệu mẫu
-            var values = new double[] { 3, 5, 7, 4, 6 };
+            // Giả sử bạn có dữ liệu doanh thu cho từng tháng
+            var months = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+            var revenue = new double[] { 2000000, 2500000, 3000000, 4000000, 3500000, 4500000, 3000000, 5000000, 5500000, 6000000, 7000000, 8000000 };
 
-            // Tạo một series mới cho biểu đồ
+            // Tạo một series mới cho doanh thu
             var series = new LineSeries<double>
             {
-                Values = values,
-                Name = "Doanh Thu", // Tên series
-                Stroke = new SolidColorPaint(new SKColor(255, 0, 0)),
-                Fill = null // Không tô màu cho vùng dưới đường
+                Values = revenue,
+                Name = "Doanh Thu",
+                Stroke = new SolidColorPaint(new SKColor(0, 176, 240)), // Màu đường
+                Fill = null
             };
 
             // Thêm series vào biểu đồ
@@ -41,19 +42,19 @@ namespace CSharp_laptop.GUI
             // Thiết lập các nhãn cho trục X
             cartesianChart1.XAxes = new Axis[]
             {
-                new Axis
-                {
-                    Labels = new[] { "Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5" } // Nhãn cho trục X
-                }
+        new Axis
+        {
+            Labels = months // Nhãn cho trục X
+        }
             };
 
-            // Thiết lập các nhãn cho trục Y
+            // Thiết lập trục Y
             cartesianChart1.YAxes = new Axis[]
             {
-                new Axis
-                {
-                   Name = "Giá Trị", // Tiêu đề cho trục Y
-                }
+        new Axis
+        {
+            Name  = "Doanh Thu (VNĐ)", // Tiêu đề cho trục Y
+        }
             };
 
             // Cập nhật biểu đồ

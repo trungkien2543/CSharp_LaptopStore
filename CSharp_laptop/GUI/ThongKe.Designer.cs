@@ -39,7 +39,7 @@
             panel1.Controls.Add(cartesianChart1);
             panel1.Location = new Point(2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(926, 612);
+            panel1.Size = new Size(1357, 735);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -47,7 +47,7 @@
             // 
             cartesianChart1.Location = new Point(71, 54);
             cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(712, 480);
+            cartesianChart1.Size = new Size(1207, 622);
             cartesianChart1.TabIndex = 0;
             cartesianChart1.Load += cartesianChart1_Load;
             // 
@@ -55,7 +55,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(928, 614);
+            ClientSize = new Size(1357, 737);
             Controls.Add(panel1);
             Name = "ThongKe";
             Text = "ThongKe";
