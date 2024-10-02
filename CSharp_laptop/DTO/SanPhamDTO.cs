@@ -4,7 +4,7 @@ namespace LaptopStore.DTO
 {
 	public class SanPhamDTO
 	{
-		public string ID_Loai { get; set; }
+		public string IDLaptop { get; set; }
 		public string TenSP { get; set; }
 		public long GiaBan { get; set; }
 		public string Hang { get; set; }
@@ -18,9 +18,9 @@ namespace LaptopStore.DTO
 		// Constructor
 		public SanPhamDTO() { }
 
-		public SanPhamDTO(string idLoai, string tenSP, long giaBan, string hang, string cpu, int ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai)
+		public SanPhamDTO(string idLaptop, string tenSP, long giaBan, string hang, string cpu, int ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai)
 		{
-			ID_Loai = idLoai;
+            IDLaptop = idLaptop;
 			TenSP = tenSP;
 			GiaBan = giaBan;
 			Hang = hang;

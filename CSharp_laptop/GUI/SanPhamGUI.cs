@@ -16,6 +16,7 @@ namespace CSharp_laptop.GUI
     {
 
         private SanPhamBUS laptopBUS = new SanPhamBUS();
+        string selectedLaptopID;
         public SanPhamGUI()
         {
             InitializeComponent();
@@ -29,7 +30,8 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            EditSanPham editSanPham = new EditSanPham();
+            editSanPham.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -55,7 +57,7 @@ namespace CSharp_laptop.GUI
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
                 // Lấy dữ liệu từ các cột
-                string idLaptop = row.Cells["ID_Loai"].Value.ToString();
+                string idLaptop = row.Cells["IDLaptop"].Value.ToString();
                 string tenSP = row.Cells["TenSP"].Value.ToString();
                 string giaBan = row.Cells["GiaBan"].Value.ToString();
                 string hang = row.Cells["Hang"].Value.ToString();
@@ -66,19 +68,16 @@ namespace CSharp_laptop.GUI
                 string kichThuoc = row.Cells["KichThuoc"].Value.ToString();
                 string khuyenMai = row.Cells["KhuyenMai"].Value.ToString();
 
+                selectedLaptopID = idLaptop;
                 // Hiển thị thông tin lên MessageBox
-                string message = $"ID Laptop: {idLaptop}\n" +
-                                 $"Tên SP: {tenSP}\n" +
-                                 $"Giá bán: {giaBan}\n" +
-                                 $"Hãng: {hang}\n" +
-                                 $"CPU: {cpu}\n" +
-                                 $"RAM: {ram}\n" +
-                                 $"GPU: {gpu}\n" +
-                                 $"Hình ảnh: {hinhAnh}\n" +
-                                 $"Kích thước: {kichThuoc}\n" +
-                                 $"Khuyến mãi: {khuyenMai}";
+                string message = $"Đã chọn laptopID = {selectedLaptopID}";
 
                 MessageBox.Show(message, "Thông tin Laptop", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                EditSanPham editSanPham = new EditSanPham(idLaptop, "Sửa sản phẩm");
+                editSanPham.Show();
+
+
             }
         }
 
@@ -90,7 +89,29 @@ namespace CSharp_laptop.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(selectedLaptopID))
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo);
 
+                if (dialogResult == DialogResult.Yes)
+                {
+                    bool result = laptopBUS.DeleteLaptop(selectedLaptopID);
+
+                    if (result)
+                    {
+                        MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadLaptops();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

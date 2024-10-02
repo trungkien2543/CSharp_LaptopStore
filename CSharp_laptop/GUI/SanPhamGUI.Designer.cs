@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPhamGUI));
             panel1 = new Panel();
-            button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             dataGridView1 = new DataGridView();
@@ -47,7 +46,6 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(dataGridView1);
@@ -59,23 +57,6 @@
             panel1.Size = new Size(1043, 614);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
-            // 
-            // button4
-            // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.BackColor = Color.MediumPurple;
-            button4.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(620, 81);
-            button4.Name = "button4";
-            button4.Padding = new Padding(10, 0, 0, 0);
-            button4.Size = new Size(178, 58);
-            button4.TabIndex = 7;
-            button4.Text = "Xem thông tin";
-            button4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -183,6 +164,5 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private Button button2;
         private Button button3;
-        private Button button4;
     }
 }
