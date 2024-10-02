@@ -121,7 +121,7 @@ namespace CSharp_laptop.GUI
         {
             ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new HangGUI());
-            
+
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -188,6 +188,11 @@ namespace CSharp_laptop.GUI
         {
             ActivateButton(sender, RGBColors.color8);
             OpenChildForm(new ThongKe());
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

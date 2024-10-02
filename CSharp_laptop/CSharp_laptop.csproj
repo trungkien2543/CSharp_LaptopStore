@@ -9,11 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BUS\" />
-    <Folder Include="DAO\" />
-  </ItemGroup>
-
-  <ItemGroup>
 
     <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
     <PackageReference Include="LiveChartsCore.SkiaSharpView.WinForms" Version="2.0.0-rc3.3" />

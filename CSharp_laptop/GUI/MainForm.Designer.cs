@@ -209,7 +209,7 @@
             btnNhaSanXuat.Dock = DockStyle.Top;
             btnNhaSanXuat.FlatAppearance.BorderSize = 0;
             btnNhaSanXuat.FlatStyle = FlatStyle.Flat;
-            btnNhaSanXuat.ForeColor = Color.Gainsboro;
+            btnNhaSanXuat.ForeColor = Color.FromArgb(192, 255, 192);
             btnNhaSanXuat.IconChar = FontAwesome.Sharp.IconChar.Handshake;
             btnNhaSanXuat.IconColor = Color.Gainsboro;
             btnNhaSanXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -323,6 +323,7 @@
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(964, 674);
             panelDesktop.TabIndex = 3;
+            panelDesktop.Paint += panelDesktop_Paint;
             // 
             // pictureBox1
             // 

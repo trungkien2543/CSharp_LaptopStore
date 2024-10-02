@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSharp_laptop.BUS;
+using LaptopStore.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,12 @@ namespace CSharp_laptop.GUI
 {
     public partial class SanPhamGUI : Form
     {
+
+        private SanPhamBUS laptopBUS = new SanPhamBUS();
         public SanPhamGUI()
         {
             InitializeComponent();
+            LoadLaptops();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -44,26 +49,43 @@ namespace CSharp_laptop.GUI
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Kiểm tra để đảm bảo không phải hàng tiêu đề
+            if (e.RowIndex >= 0)
             {
+                // Lấy hàng được chọn
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                // Lấy dữ liệu từ các cột
+                string idLaptop = row.Cells["ID_Loai"].Value.ToString();
+                string tenSP = row.Cells["TenSP"].Value.ToString();
+                string giaBan = row.Cells["GiaBan"].Value.ToString();
+                string hang = row.Cells["Hang"].Value.ToString();
+                string cpu = row.Cells["CPU"].Value.ToString();
+                string ram = row.Cells["RAM"].Value.ToString();
+                string gpu = row.Cells["GPU"].Value.ToString();
+                string hinhAnh = row.Cells["HinhAnh"].Value.ToString();
+                string kichThuoc = row.Cells["KichThuoc"].Value.ToString();
+                string khuyenMai = row.Cells["KhuyenMai"].Value.ToString();
 
-                string id = selectedRow.Cells["Column1"].Value.ToString();
-                string tenSP = selectedRow.Cells["Column2"].Value.ToString();
-                long gia = Convert.ToInt64(selectedRow.Cells["Column3"].Value);
-                string hang = selectedRow.Cells["Column4"].Value.ToString();
-                string cpu = selectedRow.Cells["Column5"].Value.ToString();
-                int ram = Convert.ToInt32(selectedRow.Cells["Column6"].Value);
-                string gpu = selectedRow.Cells["Column7"].Value.ToString();
-                string hinhAnh = selectedRow.Cells["Column8"].Value.ToString();
-                string kichThuoc = selectedRow.Cells["Column9"].Value.ToString();
-                string khuyenMai = selectedRow.Cells["Column10"].Value.ToString();
+                // Hiển thị thông tin lên MessageBox
+                string message = $"ID Laptop: {idLaptop}\n" +
+                                 $"Tên SP: {tenSP}\n" +
+                                 $"Giá bán: {giaBan}\n" +
+                                 $"Hãng: {hang}\n" +
+                                 $"CPU: {cpu}\n" +
+                                 $"RAM: {ram}\n" +
+                                 $"GPU: {gpu}\n" +
+                                 $"Hình ảnh: {hinhAnh}\n" +
+                                 $"Kích thước: {kichThuoc}\n" +
+                                 $"Khuyến mãi: {khuyenMai}";
 
-
-                MessageBox.Show($"ID: {id}\nTên sản phẩm: {tenSP}\nGiá: {gia}");
-
+                MessageBox.Show(message, "Thông tin Laptop", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void LoadLaptops()
+        {
+            List<SanPhamDTO> laptops = laptopBUS.GetLaptops();
+            dataGridView1.DataSource = laptops;
         }
 
         private void button2_Click(object sender, EventArgs e)
