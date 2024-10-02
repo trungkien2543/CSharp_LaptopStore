@@ -45,6 +45,7 @@ namespace CSharp_laptop.GUI
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(123, 237, 159); // Màu xanh nhạt
             public static Color color8 = Color.FromArgb(255, 195, 113); // Màu cam nhạt
+            public static Color color9 = Color.FromArgb(204, 229, 255);
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -197,7 +198,7 @@ namespace CSharp_laptop.GUI
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color8);
+            ActivateButton(sender, RGBColors.color9);
             OpenChildForm(new QuanLyTaiKhoanGUI());
         }
     }

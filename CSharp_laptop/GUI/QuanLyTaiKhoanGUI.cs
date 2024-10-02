@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSharp_laptop.BUS;
+using CSharp_laptop.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,28 @@ namespace CSharp_laptop.GUI
 {
     public partial class QuanLyTaiKhoanGUI : Form
     {
+        private TaiKhoanBUS TaiKhoanBUS = new TaiKhoanBUS();
         public QuanLyTaiKhoanGUI()
         {
             InitializeComponent();
+            LoadTaiKhoan();
+            dataGridView1.Columns[1].Width = 280;
+            dataGridView1.Columns[2].Width = 280;
+        }
+
+        private void LoadTaiKhoan()
+        {
+
+            List<TaiKhoanDTO> accs = TaiKhoanBUS.GetAllTaiKhoan();
+            dataGridView1.DataSource = accs;
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
