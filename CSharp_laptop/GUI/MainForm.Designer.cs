@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
+            btnTaiKhoan = new FontAwesome.Sharp.IconButton();
             btnThongKe = new FontAwesome.Sharp.IconButton();
             btnNH_PN = new FontAwesome.Sharp.IconButton();
             btnKhuyenMai = new FontAwesome.Sharp.IconButton();
@@ -37,7 +38,6 @@
             btnHD_BH = new FontAwesome.Sharp.IconButton();
             btnNhaSanXuat = new FontAwesome.Sharp.IconButton();
             btnSanPham = new FontAwesome.Sharp.IconButton();
-            btnTaiKhoan = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             btnHome = new PictureBox();
             panelTitleBar = new Panel();
@@ -73,6 +73,27 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(220, 735);
             panelMenu.TabIndex = 0;
+            // 
+            // btnTaiKhoan
+            // 
+            btnTaiKhoan.Dock = DockStyle.Top;
+            btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            btnTaiKhoan.FlatStyle = FlatStyle.Flat;
+            btnTaiKhoan.ForeColor = Color.Gainsboro;
+            btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.AccessibleIcon;
+            btnTaiKhoan.IconColor = Color.Gainsboro;
+            btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTaiKhoan.IconSize = 32;
+            btnTaiKhoan.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTaiKhoan.Location = new Point(0, 620);
+            btnTaiKhoan.Name = "btnTaiKhoan";
+            btnTaiKhoan.Padding = new Padding(10, 0, 20, 0);
+            btnTaiKhoan.Size = new Size(220, 60);
+            btnTaiKhoan.TabIndex = 10;
+            btnTaiKhoan.Text = "Tài Khoản";
+            btnTaiKhoan.TextAlign = ContentAlignment.MiddleLeft;
+            btnTaiKhoan.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTaiKhoan.UseVisualStyleBackColor = true;
             // 
             // btnThongKe
             // 
@@ -337,27 +358,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // btnTaiKhoan
-            // 
-            btnTaiKhoan.Dock = DockStyle.Top;
-            btnTaiKhoan.FlatAppearance.BorderSize = 0;
-            btnTaiKhoan.FlatStyle = FlatStyle.Flat;
-            btnTaiKhoan.ForeColor = Color.Gainsboro;
-            btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
-            btnTaiKhoan.IconColor = Color.Gainsboro;
-            btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTaiKhoan.IconSize = 32;
-            btnTaiKhoan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTaiKhoan.Location = new Point(0, 620);
-            btnTaiKhoan.Name = "btnTaiKhoan";
-            btnTaiKhoan.Padding = new Padding(10, 0, 20, 0);
-            btnTaiKhoan.Size = new Size(220, 60);
-            btnTaiKhoan.TabIndex = 10;
-            btnTaiKhoan.Text = "Tài Khoản";
-            btnTaiKhoan.TextAlign = ContentAlignment.MiddleLeft;
-            btnTaiKhoan.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTaiKhoan.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
