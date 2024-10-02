@@ -38,25 +38,28 @@
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(cartesianChart1);
             panel1.Location = new Point(2, 2);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1357, 735);
+            panel1.Size = new Size(1006, 666);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // cartesianChart1
             // 
-            cartesianChart1.Location = new Point(71, 54);
+            cartesianChart1.Location = new Point(10, 22);
+            cartesianChart1.Margin = new Padding(3, 2, 3, 2);
             cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(1207, 622);
+            cartesianChart1.Size = new Size(767, 453);
             cartesianChart1.TabIndex = 0;
             cartesianChart1.Load += cartesianChart1_Load;
             // 
             // ThongKe
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1357, 737);
+            ClientSize = new Size(1008, 668);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ThongKe";
             Text = "ThongKe";
             panel1.ResumeLayout(false);
