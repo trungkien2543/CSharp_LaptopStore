@@ -194,5 +194,11 @@ namespace CSharp_laptop.GUI
         {
 
         }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color8);
+            OpenChildForm(new QuanLyTaiKhoanGUI());
+        }
     }
 }

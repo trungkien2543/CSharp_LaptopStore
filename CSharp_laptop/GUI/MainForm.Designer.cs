@@ -94,6 +94,7 @@
             btnTaiKhoan.TextAlign = ContentAlignment.MiddleLeft;
             btnTaiKhoan.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTaiKhoan.UseVisualStyleBackColor = true;
+            btnTaiKhoan.Click += btnTaiKhoan_Click;
             // 
             // btnThongKe
             // 
