@@ -38,14 +38,17 @@
             // 
             // cartesianChart1
             // 
-            cartesianChart1.Location = new Point(39, 232);
+            cartesianChart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cartesianChart1.AutoScroll = true;
+            cartesianChart1.Location = new Point(21, 203);
             cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(1083, 650);
+            cartesianChart1.Size = new Size(1099, 659);
             cartesianChart1.TabIndex = 0;
             cartesianChart1.Load += cartesianChart1_Load;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(348, 45);
@@ -77,6 +80,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(ccbYear);
             panel1.Controls.Add(label2);
@@ -92,6 +96,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1152, 897);
             Controls.Add(panel1);
             Name = "ThongKe";
