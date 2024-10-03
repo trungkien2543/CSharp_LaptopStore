@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using SkiaSharp;
 using LiveChartsCore.SkiaSharpView.Painting;
 using MySql.Data.MySqlClient;
+using CSharp_laptop.DAO;
 
 namespace CSharp_laptop.GUI
 {
@@ -20,33 +21,69 @@ namespace CSharp_laptop.GUI
         public ThongKe()
         {
             InitializeComponent();
+            LoadYears();
         }
 
-        private void cartesianChart1_Load(object sender, EventArgs e)
+        // Hàm để điền các năm vào ComboBox
+        private void LoadYears()
         {
+            // Xóa các mục cũ nếu có
+            ccbYear.Items.Clear();
 
-            // Kết nối đến cơ sở dữ liệu và lấy dữ liệu
-            var months = new List<string>();
-            var revenue = new List<double>();
+            // Sử dụng MySqlConnectionHelper để kết nối CSDL
+            MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
 
-            // Thay thế chuỗi kết nối dưới đây bằng thông tin kết nối của bạn
-            string connectionString = "server=localhost;database=laptop_csharp;user=root;password=;";
-
-            using (var connection = new MySqlConnection(connectionString))
+            using (var connection = connectionHelper.GetConnection())
             {
                 connection.Open();
-                var command = new MySqlCommand("SELECT MONTH(NgayLap) AS Thang, SUM(TongTien) AS DoanhThu FROM hoadon GROUP BY MONTH(NgayLap) ORDER BY Thang;", connection);
+
+                // Truy vấn để lấy danh sách các năm có trong bảng hoadon
+                var command = new MySqlCommand("SELECT DISTINCT YEAR(NgayLap) AS Nam FROM hoadon ORDER BY Nam;", connection);
+
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        // Lấy giá trị tháng dưới dạng số nguyên
+                        // Lấy giá trị năm từ kết quả truy vấn và thêm vào ComboBox
+                        int year = reader.GetInt32("Nam");
+                        ccbYear.Items.Add(year.ToString());
+                    }
+                }
+            }
+
+            // Kiểm tra xem ComboBox có mục nào không
+            if (ccbYear.Items.Count > 0)
+            {
+                ccbYear.SelectedIndex = 0; // Chọn mặc định là năm đầu tiên trong danh sách
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu năm nào trong cơ sở dữ liệu!");
+            }
+        }
+
+        // Hàm cập nhật biểu đồ với năm được chọn
+        private void LoadChartData(string year)
+        {
+            var months = new List<string>();
+            var revenue = new List<double>();
+
+            MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
+
+            using (var connection = connectionHelper.GetConnection())
+            {
+                connection.Open();
+
+                // Cập nhật câu truy vấn để chỉ thống kê theo năm đã chọn
+                var command = new MySqlCommand($"SELECT MONTH(NgayLap) AS Thang, SUM(TongTien) AS DoanhThu FROM hoadon WHERE YEAR(NgayLap) = @year GROUP BY MONTH(NgayLap) ORDER BY Thang;", connection);
+                command.Parameters.AddWithValue("@year", year); // Sử dụng parameter để tránh SQL Injection
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
                         int month = reader.GetInt32("Thang");
-
-                        // Chuyển đổi sang chuỗi
                         months.Add("Tháng " + month.ToString());
-
-                        // Lấy giá trị doanh thu
                         revenue.Add(reader.GetDouble("DoanhThu"));
                     }
                 }
@@ -73,18 +110,44 @@ namespace CSharp_laptop.GUI
                 new Axis
                 {
                     Name = "Doanh Thu (VNĐ)"
-                   
-                
                 }
             };
 
             cartesianChart1.Update();
+        }
 
+
+        private void cartesianChart1_Load(object sender, EventArgs e)
+        {           
+            // Lấy năm được chọn
+            string selectedYear = ccbYear.SelectedItem.ToString();
+
+            // Gọi hàm cập nhật biểu đồ với năm được chọn
+            LoadChartData(selectedYear);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lấy năm được chọn
+            string selectedYear = ccbYear.SelectedItem.ToString();
+
+            // Gọi hàm cập nhật biểu đồ với năm được chọn
+            LoadChartData(selectedYear);
         }
     }
 }
