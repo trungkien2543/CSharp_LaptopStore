@@ -70,8 +70,9 @@
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
+            panelMenu.Margin = new Padding(3, 4, 3, 4);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 735);
+            panelMenu.Size = new Size(251, 980);
             panelMenu.TabIndex = 0;
             // 
             // btnTaiKhoan
@@ -85,10 +86,11 @@
             btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTaiKhoan.IconSize = 32;
             btnTaiKhoan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTaiKhoan.Location = new Point(0, 620);
+            btnTaiKhoan.Location = new Point(0, 827);
+            btnTaiKhoan.Margin = new Padding(3, 4, 3, 4);
             btnTaiKhoan.Name = "btnTaiKhoan";
-            btnTaiKhoan.Padding = new Padding(10, 0, 20, 0);
-            btnTaiKhoan.Size = new Size(220, 60);
+            btnTaiKhoan.Padding = new Padding(11, 0, 23, 0);
+            btnTaiKhoan.Size = new Size(251, 80);
             btnTaiKhoan.TabIndex = 10;
             btnTaiKhoan.Text = "Tài Khoản";
             btnTaiKhoan.TextAlign = ContentAlignment.MiddleLeft;
@@ -107,10 +109,11 @@
             btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnThongKe.IconSize = 32;
             btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThongKe.Location = new Point(0, 560);
+            btnThongKe.Location = new Point(0, 747);
+            btnThongKe.Margin = new Padding(3, 4, 3, 4);
             btnThongKe.Name = "btnThongKe";
-            btnThongKe.Padding = new Padding(10, 0, 20, 0);
-            btnThongKe.Size = new Size(220, 60);
+            btnThongKe.Padding = new Padding(11, 0, 23, 0);
+            btnThongKe.Size = new Size(251, 80);
             btnThongKe.TabIndex = 9;
             btnThongKe.Text = "Thống kê";
             btnThongKe.TextAlign = ContentAlignment.MiddleLeft;
@@ -129,10 +132,11 @@
             btnNH_PN.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNH_PN.IconSize = 32;
             btnNH_PN.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNH_PN.Location = new Point(0, 500);
+            btnNH_PN.Location = new Point(0, 667);
+            btnNH_PN.Margin = new Padding(3, 4, 3, 4);
             btnNH_PN.Name = "btnNH_PN";
-            btnNH_PN.Padding = new Padding(10, 0, 20, 0);
-            btnNH_PN.Size = new Size(220, 60);
+            btnNH_PN.Padding = new Padding(11, 0, 23, 0);
+            btnNH_PN.Size = new Size(251, 80);
             btnNH_PN.TabIndex = 8;
             btnNH_PN.Text = "Nhập hàng / Phiếu nhập";
             btnNH_PN.TextAlign = ContentAlignment.MiddleLeft;
@@ -151,10 +155,11 @@
             btnKhuyenMai.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnKhuyenMai.IconSize = 32;
             btnKhuyenMai.ImageAlign = ContentAlignment.MiddleLeft;
-            btnKhuyenMai.Location = new Point(0, 440);
+            btnKhuyenMai.Location = new Point(0, 587);
+            btnKhuyenMai.Margin = new Padding(3, 4, 3, 4);
             btnKhuyenMai.Name = "btnKhuyenMai";
-            btnKhuyenMai.Padding = new Padding(10, 0, 20, 0);
-            btnKhuyenMai.Size = new Size(220, 60);
+            btnKhuyenMai.Padding = new Padding(11, 0, 23, 0);
+            btnKhuyenMai.Size = new Size(251, 80);
             btnKhuyenMai.TabIndex = 6;
             btnKhuyenMai.Text = "Khuyến mãi";
             btnKhuyenMai.TextAlign = ContentAlignment.MiddleLeft;
@@ -173,10 +178,11 @@
             btnKhachHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnKhachHang.IconSize = 32;
             btnKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
-            btnKhachHang.Location = new Point(0, 380);
+            btnKhachHang.Location = new Point(0, 507);
+            btnKhachHang.Margin = new Padding(3, 4, 3, 4);
             btnKhachHang.Name = "btnKhachHang";
-            btnKhachHang.Padding = new Padding(10, 0, 20, 0);
-            btnKhachHang.Size = new Size(220, 60);
+            btnKhachHang.Padding = new Padding(11, 0, 23, 0);
+            btnKhachHang.Size = new Size(251, 80);
             btnKhachHang.TabIndex = 5;
             btnKhachHang.Text = "Khách hàng";
             btnKhachHang.TextAlign = ContentAlignment.MiddleLeft;
@@ -195,10 +201,11 @@
             btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNhanVien.IconSize = 32;
             btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNhanVien.Location = new Point(0, 320);
+            btnNhanVien.Location = new Point(0, 427);
+            btnNhanVien.Margin = new Padding(3, 4, 3, 4);
             btnNhanVien.Name = "btnNhanVien";
-            btnNhanVien.Padding = new Padding(10, 0, 20, 0);
-            btnNhanVien.Size = new Size(220, 60);
+            btnNhanVien.Padding = new Padding(11, 0, 23, 0);
+            btnNhanVien.Size = new Size(251, 80);
             btnNhanVien.TabIndex = 4;
             btnNhanVien.Text = "Nhân viên";
             btnNhanVien.TextAlign = ContentAlignment.MiddleLeft;
@@ -217,10 +224,11 @@
             btnHD_BH.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnHD_BH.IconSize = 32;
             btnHD_BH.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHD_BH.Location = new Point(0, 260);
+            btnHD_BH.Location = new Point(0, 347);
+            btnHD_BH.Margin = new Padding(3, 4, 3, 4);
             btnHD_BH.Name = "btnHD_BH";
-            btnHD_BH.Padding = new Padding(10, 0, 20, 0);
-            btnHD_BH.Size = new Size(220, 60);
+            btnHD_BH.Padding = new Padding(11, 0, 23, 0);
+            btnHD_BH.Size = new Size(251, 80);
             btnHD_BH.TabIndex = 3;
             btnHD_BH.Text = "Bán hàng / Hóa đơn ";
             btnHD_BH.TextAlign = ContentAlignment.MiddleLeft;
@@ -233,16 +241,17 @@
             btnNhaSanXuat.Dock = DockStyle.Top;
             btnNhaSanXuat.FlatAppearance.BorderSize = 0;
             btnNhaSanXuat.FlatStyle = FlatStyle.Flat;
-            btnNhaSanXuat.ForeColor = Color.FromArgb(192, 255, 192);
+            btnNhaSanXuat.ForeColor = Color.Gainsboro;
             btnNhaSanXuat.IconChar = FontAwesome.Sharp.IconChar.Handshake;
             btnNhaSanXuat.IconColor = Color.Gainsboro;
             btnNhaSanXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNhaSanXuat.IconSize = 32;
             btnNhaSanXuat.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNhaSanXuat.Location = new Point(0, 200);
+            btnNhaSanXuat.Location = new Point(0, 267);
+            btnNhaSanXuat.Margin = new Padding(3, 4, 3, 4);
             btnNhaSanXuat.Name = "btnNhaSanXuat";
-            btnNhaSanXuat.Padding = new Padding(10, 0, 20, 0);
-            btnNhaSanXuat.Size = new Size(220, 60);
+            btnNhaSanXuat.Padding = new Padding(11, 0, 23, 0);
+            btnNhaSanXuat.Size = new Size(251, 80);
             btnNhaSanXuat.TabIndex = 2;
             btnNhaSanXuat.Text = "Nhà sản xuất";
             btnNhaSanXuat.TextAlign = ContentAlignment.MiddleLeft;
@@ -261,10 +270,11 @@
             btnSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSanPham.IconSize = 32;
             btnSanPham.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSanPham.Location = new Point(0, 140);
+            btnSanPham.Location = new Point(0, 187);
+            btnSanPham.Margin = new Padding(3, 4, 3, 4);
             btnSanPham.Name = "btnSanPham";
-            btnSanPham.Padding = new Padding(10, 0, 20, 0);
-            btnSanPham.Size = new Size(220, 60);
+            btnSanPham.Padding = new Padding(11, 0, 23, 0);
+            btnSanPham.Size = new Size(251, 80);
             btnSanPham.TabIndex = 1;
             btnSanPham.Text = "Sản phẩm";
             btnSanPham.TextAlign = ContentAlignment.MiddleLeft;
@@ -277,17 +287,19 @@
             panelLogo.Controls.Add(btnHome);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(3, 4, 3, 4);
             panelLogo.Name = "panelLogo";
-            panelLogo.Padding = new Padding(10, 0, 20, 0);
-            panelLogo.Size = new Size(220, 140);
+            panelLogo.Padding = new Padding(11, 0, 23, 0);
+            panelLogo.Size = new Size(251, 187);
             panelLogo.TabIndex = 0;
             // 
             // btnHome
             // 
             btnHome.Image = Properties.Resources.Jasper987_rrx6kw;
-            btnHome.Location = new Point(13, 25);
+            btnHome.Location = new Point(15, 33);
+            btnHome.Margin = new Padding(3, 4, 3, 4);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(184, 84);
+            btnHome.Size = new Size(210, 112);
             btnHome.SizeMode = PictureBoxSizeMode.Zoom;
             btnHome.TabIndex = 0;
             btnHome.TabStop = false;
@@ -299,9 +311,10 @@
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(220, 0);
+            panelTitleBar.Location = new Point(251, 0);
+            panelTitleBar.Margin = new Padding(3, 4, 3, 4);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(964, 52);
+            panelTitleBar.Size = new Size(1102, 69);
             panelTitleBar.TabIndex = 1;
             // 
             // lblTitleChildForm
@@ -309,9 +322,9 @@
             lblTitleChildForm.AutoSize = true;
             lblTitleChildForm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitleChildForm.ForeColor = Color.Gainsboro;
-            lblTitleChildForm.Location = new Point(51, 18);
+            lblTitleChildForm.Location = new Point(58, 24);
             lblTitleChildForm.Name = "lblTitleChildForm";
-            lblTitleChildForm.Size = new Size(52, 21);
+            lblTitleChildForm.Size = new Size(65, 28);
             lblTitleChildForm.TabIndex = 1;
             lblTitleChildForm.Text = "Home";
             lblTitleChildForm.Click += label1_Click;
@@ -323,9 +336,11 @@
             iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCurrentChildForm.Location = new Point(13, 12);
+            iconCurrentChildForm.IconSize = 37;
+            iconCurrentChildForm.Location = new Point(15, 16);
+            iconCurrentChildForm.Margin = new Padding(3, 4, 3, 4);
             iconCurrentChildForm.Name = "iconCurrentChildForm";
-            iconCurrentChildForm.Size = new Size(32, 32);
+            iconCurrentChildForm.Size = new Size(37, 43);
             iconCurrentChildForm.TabIndex = 0;
             iconCurrentChildForm.TabStop = false;
             // 
@@ -333,9 +348,10 @@
             // 
             panelShadow.BackColor = Color.FromArgb(26, 24, 58);
             panelShadow.Dock = DockStyle.Top;
-            panelShadow.Location = new Point(220, 52);
+            panelShadow.Location = new Point(251, 69);
+            panelShadow.Margin = new Padding(3, 4, 3, 4);
             panelShadow.Name = "panelShadow";
-            panelShadow.Size = new Size(964, 9);
+            panelShadow.Size = new Size(1102, 12);
             panelShadow.TabIndex = 2;
             // 
             // panelDesktop
@@ -343,9 +359,10 @@
             panelDesktop.BackColor = Color.FromArgb(34, 33, 74);
             panelDesktop.Controls.Add(pictureBox1);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(220, 61);
+            panelDesktop.Location = new Point(251, 81);
+            panelDesktop.Margin = new Padding(3, 4, 3, 4);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(964, 674);
+            panelDesktop.Size = new Size(1102, 899);
             panelDesktop.TabIndex = 3;
             panelDesktop.Paint += panelDesktop_Paint;
             // 
@@ -353,23 +370,25 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.Jasper987_rrx6kw;
-            pictureBox1.Location = new Point(274, 186);
+            pictureBox1.Location = new Point(313, 248);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(478, 294);
+            pictureBox1.Size = new Size(546, 392);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1184, 735);
+            ClientSize = new Size(1353, 980);
             Controls.Add(panelDesktop);
             Controls.Add(panelShadow);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";

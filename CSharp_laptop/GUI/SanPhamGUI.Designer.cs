@@ -53,8 +53,9 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(1, 1);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1043, 614);
+            panel1.Size = new Size(1192, 819);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -62,9 +63,10 @@
             // 
             button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.MediumPurple;
-            button3.Location = new Point(277, 92);
+            button3.Location = new Point(317, 123);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(110, 33);
+            button3.Size = new Size(126, 44);
             button3.TabIndex = 6;
             button3.Text = "Tìm kiếm";
             button3.UseVisualStyleBackColor = true;
@@ -77,10 +79,11 @@
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(804, 81);
+            button2.Location = new Point(919, 108);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Padding = new Padding(10, 0, 0, 0);
-            button2.Size = new Size(112, 58);
+            button2.Padding = new Padding(11, 0, 0, 0);
+            button2.Size = new Size(128, 77);
             button2.TabIndex = 5;
             button2.Text = "Xóa";
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -89,22 +92,24 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(11, 171);
+            dataGridView1.Location = new Point(0, 193);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1023, 436);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1192, 626);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(11, 92);
+            textBox1.Location = new Point(13, 123);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(250, 33);
+            textBox1.Size = new Size(285, 39);
             textBox1.TabIndex = 2;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -116,10 +121,11 @@
             button1.ForeColor = Color.White;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(922, 81);
+            button1.Location = new Point(1054, 108);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Padding = new Padding(10, 0, 0, 0);
-            button1.Size = new Size(112, 58);
+            button1.Padding = new Padding(11, 0, 0, 0);
+            button1.Size = new Size(128, 77);
             button1.TabIndex = 1;
             button1.Text = "Thêm";
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -132,19 +138,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.MediumPurple;
-            label1.Location = new Point(11, 25);
+            label1.Location = new Point(13, 33);
             label1.Name = "label1";
-            label1.Size = new Size(277, 37);
+            label1.Size = new Size(344, 46);
             label1.TabIndex = 0;
             label1.Text = "Danh sách sản phẩm";
             label1.Click += label1_Click;
             // 
             // SanPhamGUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1056, 615);
+            ClientSize = new Size(1207, 820);
             Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SanPhamGUI";
             Text = "SanPhamGUI";
             panel1.ResumeLayout(false);
