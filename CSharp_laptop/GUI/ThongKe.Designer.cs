@@ -80,15 +80,19 @@
             // 
             // panel1
             // 
+<<<<<<< HEAD
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+=======
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+>>>>>>> 7d8fe3bd6dc4aebdf5cf4a97ab84c1225287fac6
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(ccbYear);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(cartesianChart1);
-            panel1.Location = new Point(2, 3);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1150, 895);
+            panel1.Size = new Size(1152, 897);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
