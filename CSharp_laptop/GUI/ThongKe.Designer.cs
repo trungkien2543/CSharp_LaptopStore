@@ -40,9 +40,9 @@
             // 
             cartesianChart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cartesianChart1.AutoScroll = true;
-            cartesianChart1.Location = new Point(21, 203);
+            cartesianChart1.Location = new Point(22, 209);
             cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(1099, 659);
+            cartesianChart1.Size = new Size(1032, 584);
             cartesianChart1.TabIndex = 0;
             cartesianChart1.Load += cartesianChart1_Load;
             // 
@@ -80,19 +80,15 @@
             // 
             // panel1
             // 
-
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(ccbYear);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(cartesianChart1);
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(1, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1152, 897);
+            panel1.Size = new Size(1080, 846);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -100,8 +96,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
-            ClientSize = new Size(1152, 897);
+            ClientSize = new Size(1084, 852);
             Controls.Add(panel1);
             Name = "ThongKe";
             Text = "ThongKe";
