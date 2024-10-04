@@ -188,7 +188,7 @@ namespace CSharp_laptop.GUI
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color8);
-            OpenChildForm(new ThongKe());
+            OpenChildForm(new MenuThongKe());
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
