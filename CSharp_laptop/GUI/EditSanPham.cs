@@ -20,45 +20,56 @@ namespace CSharp_laptop.GUI
         public EditSanPham()
         {
             InitializeComponent();
+            loadcombobox();
         }
 
-        public EditSanPham(string idLaptop, string tenSP, string giaBan, string hang, string cpu, string ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai, string chucnang)
+        public EditSanPham(int idLaptop, string chucnang)
         {
             InitializeComponent();
+            
+            if (chucnang == "add")
+            {
+                YourForm_Load();
+            }
+            else
+            {
+                SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop.ToString());
 
-            textBox1.Text = idLaptop;
-            textBox2.Text = tenSP;
-            textBox3.Text = giaBan;
-            comboBox1.Text = hang;
-            textBox4.Text = gpu;
-            textBox5.Text = cpu;
-            textBox6.Text = ram;
-            textBox7.Text = kichThuoc;
-            textBox8.Text = hinhAnh;
-            comboBox2.Text = khuyenMai;
-            label1.Text = chucnang;
+                textBox1.Text = sanPhamDTO.IDLaptop;
+                textBox2.Text = sanPhamDTO.TenSP;
+                textBox3.Text = sanPhamDTO.GiaBan.ToString();
+                comboBox1.Text = sanPhamDTO.Hang;
+                textBox4.Text = sanPhamDTO.GPU;
+                textBox5.Text = sanPhamDTO.CPU;
+                textBox6.Text = sanPhamDTO.RAM.ToString();
+                textBox7.Text = sanPhamDTO.KichThuoc;
+                textBox8.Text = sanPhamDTO.HinhAnh;
+                comboBox2.Text = sanPhamDTO.KhuyenMai;
+                label1.Text = chucnang;
+            }
             function = chucnang;
-
+            loadcombobox();
         }
 
-        public EditSanPham(string idLaptop, string chucnang)
+        private void loadcombobox()
         {
-            InitializeComponent();
-            SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop);
+            comboBox1.Items.Add("1");
+            comboBox1.Items.Add("2");
+            comboBox1.Items.Add("3");
+            comboBox1.Items.Add("4");
+            comboBox1.Items.Add("5");
 
-            textBox1.Text = sanPhamDTO.IDLaptop;
-            textBox2.Text = sanPhamDTO.TenSP;
-            textBox3.Text = sanPhamDTO.GiaBan.ToString();
-            comboBox1.Text = sanPhamDTO.Hang;
-            textBox4.Text = sanPhamDTO.GPU;
-            textBox5.Text = sanPhamDTO.CPU;
-            textBox6.Text = sanPhamDTO.RAM.ToString();
-            textBox7.Text = sanPhamDTO.KichThuoc;
-            textBox8.Text = sanPhamDTO.HinhAnh;
-            comboBox2.Text = sanPhamDTO.KhuyenMai;
-            label1.Text = chucnang;
-            function = chucnang;
+            comboBox2.Items.Add("KM001");
+            comboBox2.Items.Add("KM002");
+            comboBox2.Items.Add("KM003");
+            comboBox2.Items.Add("KM004");
+            comboBox2.Items.Add("KM005");
+        }
 
+        private void YourForm_Load()
+        {
+            long nextId = sanPhamBUS.GetNextID(); 
+            textBox1.Text = nextId.ToString(); 
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -105,9 +116,8 @@ namespace CSharp_laptop.GUI
             bool result = true;
 
 
-            if (function == null)
+            if (function == "add")
             {
-
                 result = sanPhamBUS.AddLaptop(laptop);
                 MessageBox.Show("Thêm laptop");
                 if (result)
@@ -123,10 +133,6 @@ namespace CSharp_laptop.GUI
             {
                 MessageBox.Show("Sửa laptop");
             }
-
-
-
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

@@ -169,6 +169,7 @@
             textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(232, 162);
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(308, 33);
             textBox1.TabIndex = 10;
             textBox1.TextChanged += textBox1_TextChanged;

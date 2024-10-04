@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPhamGUI));
             panel1 = new Panel();
             button3 = new Button();
-            button2 = new Button();
             dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
             button1 = new Button();
@@ -47,7 +46,6 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(button1);
@@ -69,24 +67,6 @@
             button3.Text = "Tìm kiếm";
             button3.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.MediumPurple;
-            button2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(804, 81);
-            button2.Name = "button2";
-            button2.Padding = new Padding(10, 0, 0, 0);
-            button2.Size = new Size(112, 58);
-            button2.TabIndex = 5;
-            button2.Text = "Xóa";
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -95,7 +75,7 @@
             dataGridView1.GridColor = Color.Black;
             dataGridView1.Location = new Point(11, 171);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1023, 436);
+            dataGridView1.Size = new Size(1000, 436);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
@@ -116,7 +96,7 @@
             button1.ForeColor = Color.White;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(922, 81);
+            button1.Location = new Point(899, 80);
             button1.Name = "button1";
             button1.Padding = new Padding(10, 0, 0, 0);
             button1.Size = new Size(112, 58);

@@ -16,11 +16,14 @@ namespace CSharp_laptop.GUI
     {
 
         private SanPhamBUS laptopBUS = new SanPhamBUS();
-        string selectedLaptopID;
+        int selectedLaptopID;
+        int soluong_lap;
         public SanPhamGUI()
         {
             InitializeComponent();
             LoadLaptops();
+            edittable();
+            AddButtonsToDataGridView();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -30,7 +33,7 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EditSanPham editSanPham = new EditSanPham();
+            EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
             editSanPham.Show();
         }
 
@@ -53,65 +56,107 @@ namespace CSharp_laptop.GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Lấy hàng được chọn
+
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
-                // Lấy dữ liệu từ các cột
                 string idLaptop = row.Cells["IDLaptop"].Value.ToString();
-                string tenSP = row.Cells["TenSP"].Value.ToString();
-                string giaBan = row.Cells["GiaBan"].Value.ToString();
-                string hang = row.Cells["Hang"].Value.ToString();
-                string cpu = row.Cells["CPU"].Value.ToString();
-                string ram = row.Cells["RAM"].Value.ToString();
-                string gpu = row.Cells["GPU"].Value.ToString();
-                string hinhAnh = row.Cells["HinhAnh"].Value.ToString();
-                string kichThuoc = row.Cells["KichThuoc"].Value.ToString();
-                string khuyenMai = row.Cells["KhuyenMai"].Value.ToString();
+                selectedLaptopID = int.Parse(idLaptop);
 
-                selectedLaptopID = idLaptop;
-                // Hiển thị thông tin lên MessageBox
-                string message = $"Đã chọn laptopID = {selectedLaptopID}";
+                //string message = $"Đã chọn laptopID = {selectedLaptopID}";
 
-                MessageBox.Show(message, "Thông tin Laptop", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(message, "Thông tin Laptop", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                EditSanPham editSanPham = new EditSanPham(idLaptop, "Sửa sản phẩm");
-                editSanPham.Show();
+                //EditSanPham editSanPham = new EditSanPham(idLaptop, "Sửa sản phẩm");
+                //editSanPham.Show();
 
 
             }
-        }
 
-        private void LoadLaptops()
-        {
-            List<SanPhamDTO> laptops = laptopBUS.GetLaptops();
-            dataGridView1.DataSource = laptops;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(selectedLaptopID))
+            if (e.ColumnIndex == dataGridView1.Columns["btnEdit"].Index && e.RowIndex >= 0)
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo);
 
-                if (dialogResult == DialogResult.Yes)
+                EditSanPham editSanPham = new EditSanPham(selectedLaptopID, "Sửa sản phẩm");
+                editSanPham.Show();
+            }
+            else if (e.ColumnIndex == dataGridView1.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            {
+
+                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm với ID: {selectedLaptopID}?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
                 {
-                    bool result = laptopBUS.DeleteLaptop(selectedLaptopID);
+                    bool isDeleted = laptopBUS.DeleteLaptop(selectedLaptopID.ToString());
 
-                    if (result)
+                    if (isDeleted)
                     {
                         MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadLaptops();
                     }
                     else
                     {
-                        MessageBox.Show("Xóa thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Không thể xóa sản phẩm vì ảnh hưởng tới dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một sản phẩm để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+        }
+
+        private void LoadLaptops()
+        {
+            List<SanPhamDTO> laptops = laptopBUS.GetLaptops();
+            soluong_lap = laptops.Count;
+
+            dataGridView1.DataSource = laptops;
+        }
+
+        private void edittable()
+        {
+            dataGridView1.Columns["IDLaptop"].HeaderText = "Mã Laptop";
+            dataGridView1.Columns["TenSP"].HeaderText = "Tên Sản Phẩm";
+            dataGridView1.Columns["GiaBan"].HeaderText = "Giá Niêm Yết";
+            dataGridView1.Columns["Hang"].HeaderText = "Hãng Laptop";
+            dataGridView1.Columns["KhuyenMai"].HeaderText = "Khuyến Mãi";
+
+            dataGridView1.Columns["CPU"].Visible = false;
+            dataGridView1.Columns["RAM"].Visible = false;
+            dataGridView1.Columns["GPU"].Visible = false;
+            dataGridView1.Columns["HinhAnh"].Visible = false;
+            dataGridView1.Columns["KichThuoc"].Visible = false;
+
+            dataGridView1.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
+
+
+            dataGridView1.Columns["IDLaptop"].Width = 100;  // Điều chỉnh chiều rộng
+            dataGridView1.Columns["TenSP"].Width = 150;
+            dataGridView1.Columns["GiaBan"].Width = 100;
+            dataGridView1.Columns["Hang"].Width = 100;
+            dataGridView1.Columns["KhuyenMai"].Width = 200;
+
+            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
+
+        }
+
+        private void AddButtonsToDataGridView()
+        {
+            // Thêm cột nút "Sửa"
+            DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
+            btnEdit.Name = "btnEdit";
+            btnEdit.HeaderText = "Sửa";
+            btnEdit.Text = "✏️";
+            btnEdit.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
+            dataGridView1.Columns.Add(btnEdit);
+
+            // Thêm cột nút "Xóa"
+            DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
+            btnDelete.Name = "btnDelete";
+            btnDelete.HeaderText = "Xóa";
+            btnDelete.Text = "❌";
+            //btnDelete.Image = Image.FromFile("path-to-your-delete-icon.png"); // Đường dẫn tới icon xóa
+            btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
+            dataGridView1.Columns.Add(btnDelete);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
