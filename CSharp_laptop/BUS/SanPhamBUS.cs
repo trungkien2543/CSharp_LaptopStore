@@ -41,5 +41,10 @@ namespace CSharp_laptop.BUS
         {
             return laptopDAO.DeleteLaptop(idLaptop);
         }
+
+        public long GetNextID()
+        {
+            return laptopDAO.GetNextID();
+        }
     }
 }
