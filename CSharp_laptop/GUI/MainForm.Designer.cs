@@ -41,6 +41,9 @@
             panelLogo = new Panel();
             btnHome = new PictureBox();
             panelTitleBar = new Panel();
+            btnExit = new FontAwesome.Sharp.IconButton();
+            btnMini = new FontAwesome.Sharp.IconButton();
+            btnZoom = new FontAwesome.Sharp.IconButton();
             lblTitleChildForm = new Label();
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panelShadow = new Panel();
@@ -233,7 +236,7 @@
             btnNhaSanXuat.Dock = DockStyle.Top;
             btnNhaSanXuat.FlatAppearance.BorderSize = 0;
             btnNhaSanXuat.FlatStyle = FlatStyle.Flat;
-            btnNhaSanXuat.ForeColor = Color.FromArgb(192, 255, 192);
+            btnNhaSanXuat.ForeColor = Color.Gainsboro;
             btnNhaSanXuat.IconChar = FontAwesome.Sharp.IconChar.Handshake;
             btnNhaSanXuat.IconColor = Color.Gainsboro;
             btnNhaSanXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -284,7 +287,7 @@
             // 
             // btnHome
             // 
-            btnHome.Image = Properties.Resources.Jasper987_rrx6kw;
+            btnHome.Image = Properties.Resources.logo_home_removebg;
             btnHome.Location = new Point(13, 25);
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(184, 84);
@@ -296,6 +299,9 @@
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.FromArgb(26, 25, 62);
+            panelTitleBar.Controls.Add(btnExit);
+            panelTitleBar.Controls.Add(btnMini);
+            panelTitleBar.Controls.Add(btnZoom);
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
             panelTitleBar.Dock = DockStyle.Top;
@@ -303,6 +309,72 @@
             panelTitleBar.Name = "panelTitleBar";
             panelTitleBar.Size = new Size(964, 52);
             panelTitleBar.TabIndex = 1;
+            panelTitleBar.Paint += panelTitleBar_Paint;
+            panelTitleBar.MouseDown += panelTitleBar_MouseDown;
+            // 
+            // btnExit
+            // 
+            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.ForeColor = Color.Gainsboro;
+            btnExit.IconChar = FontAwesome.Sharp.IconChar.Close;
+            btnExit.IconColor = Color.Gainsboro;
+            btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnExit.IconSize = 20;
+            btnExit.ImageAlign = ContentAlignment.MiddleLeft;
+            btnExit.Location = new Point(930, 0);
+            btnExit.Margin = new Padding(0);
+            btnExit.Name = "btnExit";
+            btnExit.Padding = new Padding(1, 10, 0, 10);
+            btnExit.Size = new Size(34, 22);
+            btnExit.TabIndex = 6;
+            btnExit.TabStop = false;
+            btnExit.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
+            // btnMini
+            // 
+            btnMini.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMini.FlatAppearance.BorderSize = 0;
+            btnMini.FlatStyle = FlatStyle.Flat;
+            btnMini.ForeColor = Color.Gainsboro;
+            btnMini.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            btnMini.IconColor = Color.Gainsboro;
+            btnMini.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMini.IconSize = 20;
+            btnMini.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMini.Location = new Point(861, 0);
+            btnMini.Margin = new Padding(0);
+            btnMini.Name = "btnMini";
+            btnMini.Padding = new Padding(3, 10, 0, 10);
+            btnMini.Size = new Size(34, 22);
+            btnMini.TabIndex = 5;
+            btnMini.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnMini.UseVisualStyleBackColor = true;
+            btnMini.Click += btnMini_Click;
+            // 
+            // btnZoom
+            // 
+            btnZoom.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnZoom.FlatAppearance.BorderSize = 0;
+            btnZoom.FlatStyle = FlatStyle.Flat;
+            btnZoom.ForeColor = Color.Gainsboro;
+            btnZoom.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            btnZoom.IconColor = Color.Gainsboro;
+            btnZoom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnZoom.IconSize = 20;
+            btnZoom.ImageAlign = ContentAlignment.MiddleLeft;
+            btnZoom.Location = new Point(895, 0);
+            btnZoom.Margin = new Padding(0);
+            btnZoom.Name = "btnZoom";
+            btnZoom.Padding = new Padding(3, 10, 0, 10);
+            btnZoom.Size = new Size(34, 22);
+            btnZoom.TabIndex = 4;
+            btnZoom.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnZoom.UseVisualStyleBackColor = true;
+            btnZoom.Click += btnZoom_Click;
             // 
             // lblTitleChildForm
             // 
@@ -352,11 +424,11 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.Jasper987_rrx6kw;
+            pictureBox1.Image = Properties.Resources.logo_home_removebg;
             pictureBox1.Location = new Point(274, 186);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(478, 294);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -405,5 +477,9 @@
         private FontAwesome.Sharp.IconButton btnNH_PN;
         private FontAwesome.Sharp.IconButton btnThongKe;
         private FontAwesome.Sharp.IconButton btnTaiKhoan;
+        private FontAwesome.Sharp.IconButton Exit;
+        private FontAwesome.Sharp.IconButton btnExit;
+        private FontAwesome.Sharp.IconButton btnZoom;
+        private FontAwesome.Sharp.IconButton btnMini;
     }
 }
