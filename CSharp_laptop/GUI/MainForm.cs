@@ -109,7 +109,7 @@ namespace CSharp_laptop.GUI
 
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             //open only form
             if (currentChildForm != null)
@@ -227,7 +227,7 @@ namespace CSharp_laptop.GUI
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color9);
-            OpenChildForm(new QuanLyTaiKhoanGUI());
+            OpenChildForm(new QuanLyTaiKhoanGUI(this));
         }
 
         private void panelTitleBar_Paint(object sender, PaintEventArgs e)

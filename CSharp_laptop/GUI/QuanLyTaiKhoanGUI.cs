@@ -15,8 +15,10 @@ namespace CSharp_laptop.GUI
     public partial class QuanLyTaiKhoanGUI : Form
     {
         private TaiKhoanBUS TaiKhoanBUS = new TaiKhoanBUS();
-        public QuanLyTaiKhoanGUI()
+        private MainForm mainForm;
+        public QuanLyTaiKhoanGUI(MainForm mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
             LoadTaiKhoan();
             dataGridView1.Columns[1].Width = 280;
@@ -38,6 +40,11 @@ namespace CSharp_laptop.GUI
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //mainForm.OpenChildForm
         }
     }
 }
