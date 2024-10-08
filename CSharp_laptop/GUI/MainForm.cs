@@ -37,6 +37,10 @@ namespace CSharp_laptop.GUI
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
+            FormBorderStyle = FormBorderStyle.None;
+
+
+
 
         }
 
@@ -82,6 +86,9 @@ namespace CSharp_laptop.GUI
                 iconCurrentChildForm.IconColor = color;
                 lblTitleChildForm.Text = currentBtn.Text;
                 lblTitleChildForm.ForeColor = color;
+
+                this.FormBorderStyle = FormBorderStyle.None;
+
 
             }
         }
@@ -247,13 +254,11 @@ namespace CSharp_laptop.GUI
             if (WindowState == FormWindowState.Maximized)
             {
                 WindowState = FormWindowState.Normal;  // Thu nhỏ form lại nếu đang phóng to
-                FormBorderStyle = FormBorderStyle.Sizable;
                 btnZoom.IconChar = IconChar.WindowMaximize;
             }
             else
             {
                 WindowState = FormWindowState.Maximized;  // Phóng to form
-                FormBorderStyle = FormBorderStyle.None;
                 btnZoom.IconChar = IconChar.WindowRestore;
             }
         }
