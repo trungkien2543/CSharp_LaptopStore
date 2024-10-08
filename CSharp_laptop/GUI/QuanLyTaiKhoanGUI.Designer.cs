@@ -78,6 +78,7 @@
             button1.Text = "Thêm";
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // button3
             // 
