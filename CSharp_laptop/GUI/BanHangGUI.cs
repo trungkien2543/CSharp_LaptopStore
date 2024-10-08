@@ -148,5 +148,15 @@ namespace CSharp_laptop.GUI
                 tabThemHoaDon.SelectedIndex = 1;
             }
         }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
