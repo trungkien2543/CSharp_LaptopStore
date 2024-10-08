@@ -161,6 +161,7 @@ namespace CSharp_laptop.GUI
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new BanHangGUI());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)

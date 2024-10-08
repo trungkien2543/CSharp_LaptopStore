@@ -74,7 +74,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 735);
+            panelMenu.Size = new Size(220, 837);
             panelMenu.TabIndex = 0;
             // 
             // btnTaiKhoan
@@ -307,7 +307,7 @@
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(220, 0);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(964, 52);
+            panelTitleBar.Size = new Size(1133, 34);
             panelTitleBar.TabIndex = 1;
             panelTitleBar.Paint += panelTitleBar_Paint;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
@@ -323,7 +323,7 @@
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnExit.IconSize = 20;
             btnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExit.Location = new Point(930, 0);
+            btnExit.Location = new Point(1099, 0);
             btnExit.Margin = new Padding(0);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(1, 10, 0, 10);
@@ -345,7 +345,7 @@
             btnMini.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMini.IconSize = 20;
             btnMini.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMini.Location = new Point(861, 0);
+            btnMini.Location = new Point(1030, 0);
             btnMini.Margin = new Padding(0);
             btnMini.Name = "btnMini";
             btnMini.Padding = new Padding(3, 10, 0, 10);
@@ -366,7 +366,7 @@
             btnZoom.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnZoom.IconSize = 20;
             btnZoom.ImageAlign = ContentAlignment.MiddleLeft;
-            btnZoom.Location = new Point(895, 0);
+            btnZoom.Location = new Point(1064, 0);
             btnZoom.Margin = new Padding(0);
             btnZoom.Name = "btnZoom";
             btnZoom.Padding = new Padding(3, 10, 0, 10);
@@ -381,7 +381,7 @@
             lblTitleChildForm.AutoSize = true;
             lblTitleChildForm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitleChildForm.ForeColor = Color.Gainsboro;
-            lblTitleChildForm.Location = new Point(51, 18);
+            lblTitleChildForm.Location = new Point(51, 9);
             lblTitleChildForm.Name = "lblTitleChildForm";
             lblTitleChildForm.Size = new Size(52, 21);
             lblTitleChildForm.TabIndex = 1;
@@ -395,7 +395,7 @@
             iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCurrentChildForm.Location = new Point(13, 12);
+            iconCurrentChildForm.Location = new Point(13, 4);
             iconCurrentChildForm.Name = "iconCurrentChildForm";
             iconCurrentChildForm.Size = new Size(32, 32);
             iconCurrentChildForm.TabIndex = 0;
@@ -405,9 +405,9 @@
             // 
             panelShadow.BackColor = Color.FromArgb(26, 24, 58);
             panelShadow.Dock = DockStyle.Top;
-            panelShadow.Location = new Point(220, 52);
+            panelShadow.Location = new Point(220, 34);
             panelShadow.Name = "panelShadow";
-            panelShadow.Size = new Size(964, 9);
+            panelShadow.Size = new Size(1133, 9);
             panelShadow.TabIndex = 2;
             // 
             // panelDesktop
@@ -415,9 +415,9 @@
             panelDesktop.BackColor = Color.FromArgb(34, 33, 74);
             panelDesktop.Controls.Add(pictureBox1);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(220, 61);
+            panelDesktop.Location = new Point(220, 43);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(964, 674);
+            panelDesktop.Size = new Size(1133, 794);
             panelDesktop.TabIndex = 3;
             panelDesktop.Paint += panelDesktop_Paint;
             // 
@@ -425,7 +425,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.logo_home_removebg;
-            pictureBox1.Location = new Point(274, 186);
+            pictureBox1.Location = new Point(358, 246);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(478, 294);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -437,7 +437,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1184, 735);
+            ClientSize = new Size(1353, 837);
             Controls.Add(panelDesktop);
             Controls.Add(panelShadow);
             Controls.Add(panelTitleBar);
