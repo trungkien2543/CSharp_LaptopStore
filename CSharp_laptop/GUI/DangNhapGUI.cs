@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,14 +40,39 @@ namespace CSharp_laptop.GUI
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Đã nhấn nút đăng nhập", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            GUI.MainForm mf = new GUI.MainForm();
+            mf.Show();
+            this.Hide();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Đã nhấn nút Quên mk", "Quên MK", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnZoom_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;  // Thu nhỏ form lại nếu đang phóng to
+                btnZoom.IconChar = IconChar.WindowMaximize;
+            }
+            else
+            {
+                WindowState = FormWindowState.Maximized;  // Phóng to form
+                btnZoom.IconChar = IconChar.WindowRestore;
+            }
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
