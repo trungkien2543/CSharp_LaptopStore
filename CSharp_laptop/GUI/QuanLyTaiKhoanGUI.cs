@@ -44,7 +44,7 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //mainForm.OpenChildForm
+            mainForm.OpenChildForm(new CreateTaiKhoanGUI());
         }
     }
 }
