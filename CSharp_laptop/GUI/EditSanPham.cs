@@ -17,16 +17,18 @@ namespace CSharp_laptop.GUI
     {
         private SanPhamBUS sanPhamBUS = new SanPhamBUS();
         string function;
+        private MainForm mainForm;
         public EditSanPham()
         {
             InitializeComponent();
             loadcombobox();
         }
 
-        public EditSanPham(int idLaptop, string chucnang)
+        public EditSanPham(int idLaptop, string chucnang, MainForm mainform)
         {
             InitializeComponent();
-            
+            this.mainForm = mainForm;
+
             if (chucnang == "add")
             {
                 YourForm_Load();
@@ -68,8 +70,8 @@ namespace CSharp_laptop.GUI
 
         private void YourForm_Load()
         {
-            long nextId = sanPhamBUS.GetNextID(); 
-            textBox1.Text = nextId.ToString(); 
+            long nextId = sanPhamBUS.GetNextID();
+            textBox1.Text = nextId.ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -163,6 +165,12 @@ namespace CSharp_laptop.GUI
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+            mainForm.OpenChildForm(new SanPhamGUI(mainForm));
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

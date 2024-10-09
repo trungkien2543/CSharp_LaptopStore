@@ -18,12 +18,15 @@ namespace CSharp_laptop.GUI
         private SanPhamBUS laptopBUS = new SanPhamBUS();
         int selectedLaptopID;
         int soluong_lap;
-        public SanPhamGUI()
+        private MainForm mainForm;
+        public SanPhamGUI(MainForm mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
             LoadLaptops();
             edittable();
             AddButtonsToDataGridView();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -33,8 +36,9 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
-            editSanPham.Show();
+            //EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
+            //editSanPham.Show();
+            mainForm.OpenChildForm(new EditSanPham(soluong_lap, "add", mainForm));
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -74,7 +78,7 @@ namespace CSharp_laptop.GUI
             if (e.ColumnIndex == dataGridView1.Columns["btnEdit"].Index && e.RowIndex >= 0)
             {
 
-                EditSanPham editSanPham = new EditSanPham(selectedLaptopID, "Sửa sản phẩm");
+                EditSanPham editSanPham = new EditSanPham(selectedLaptopID, "Sửa sản phẩm", mainForm);
                 editSanPham.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["btnDelete"].Index && e.RowIndex >= 0)

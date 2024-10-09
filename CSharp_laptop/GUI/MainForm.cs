@@ -155,7 +155,7 @@ namespace CSharp_laptop.GUI
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new SanPhamGUI());
+            OpenChildForm(new SanPhamGUI(this));
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
