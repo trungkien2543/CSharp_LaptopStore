@@ -167,7 +167,7 @@ namespace CSharp_laptop.GUI
         private void iconButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-
+            OpenChildForm(new NhanVienGUI());
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
