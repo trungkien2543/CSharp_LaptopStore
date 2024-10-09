@@ -78,8 +78,10 @@ namespace CSharp_laptop.GUI
             if (e.ColumnIndex == dataGridView1.Columns["btnEdit"].Index && e.RowIndex >= 0)
             {
 
-                EditSanPham editSanPham = new EditSanPham(selectedLaptopID, "Sửa sản phẩm", mainForm);
-                editSanPham.Show();
+                //EditSanPham editSanPham = new EditSanPham(selectedLaptopID, "Sửa sản phẩm", mainForm);
+                //editSanPham.Show();
+
+                mainForm.OpenChildForm(new EditSanPham(selectedLaptopID, "Sửa sản phẩm", mainForm));
             }
             else if (e.ColumnIndex == dataGridView1.Columns["btnDelete"].Index && e.RowIndex >= 0)
             {
@@ -127,12 +129,7 @@ namespace CSharp_laptop.GUI
 
             dataGridView1.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
 
-
-            dataGridView1.Columns["IDLaptop"].Width = 100;  // Điều chỉnh chiều rộng
-            dataGridView1.Columns["TenSP"].Width = 150;
-            dataGridView1.Columns["GiaBan"].Width = 100;
-            dataGridView1.Columns["Hang"].Width = 100;
-            dataGridView1.Columns["KhuyenMai"].Width = 200;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dataGridView1.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
 

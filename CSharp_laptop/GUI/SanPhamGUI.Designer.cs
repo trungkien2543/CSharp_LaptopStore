@@ -50,9 +50,10 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(1, 1);
+            panel1.Location = new Point(1, 2);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1043, 614);
+            panel1.Size = new Size(1737, 1169);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -60,9 +61,10 @@
             // 
             button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.MediumPurple;
-            button3.Location = new Point(277, 92);
+            button3.Location = new Point(396, 153);
+            button3.Margin = new Padding(4, 5, 4, 5);
             button3.Name = "button3";
-            button3.Size = new Size(110, 33);
+            button3.Size = new Size(157, 55);
             button3.TabIndex = 6;
             button3.Text = "Tìm kiếm";
             button3.UseVisualStyleBackColor = true;
@@ -73,18 +75,21 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(11, 171);
+            dataGridView1.Location = new Point(16, 240);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1000, 436);
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(1701, 918);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(11, 92);
+            textBox1.Location = new Point(16, 153);
+            textBox1.Margin = new Padding(4, 5, 4, 5);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(250, 33);
+            textBox1.Size = new Size(355, 45);
             textBox1.TabIndex = 2;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -96,10 +101,11 @@
             button1.ForeColor = Color.White;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(899, 80);
+            button1.Location = new Point(1531, 133);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Padding = new Padding(10, 0, 0, 0);
-            button1.Size = new Size(112, 58);
+            button1.Padding = new Padding(14, 0, 0, 0);
+            button1.Size = new Size(160, 97);
             button1.TabIndex = 1;
             button1.Text = "Thêm";
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -112,19 +118,21 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.MediumPurple;
-            label1.Location = new Point(11, 25);
+            label1.Location = new Point(16, 42);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(277, 37);
+            label1.Size = new Size(419, 55);
             label1.TabIndex = 0;
             label1.Text = "Danh sách sản phẩm";
             label1.Click += label1_Click;
             // 
             // SanPhamGUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1056, 615);
+            ClientSize = new Size(1756, 1171);
             Controls.Add(panel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "SanPhamGUI";
             Text = "SanPhamGUI";
             panel1.ResumeLayout(false);

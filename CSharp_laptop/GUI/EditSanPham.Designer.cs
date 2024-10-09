@@ -76,7 +76,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(99, 267);
+            label2.Location = new Point(264, 268);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(45, 40);
@@ -88,7 +88,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(99, 360);
+            label3.Location = new Point(264, 361);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(192, 40);
@@ -99,7 +99,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(99, 445);
+            label4.Location = new Point(264, 446);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(59, 40);
@@ -111,7 +111,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 528);
+            label5.Location = new Point(264, 529);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(86, 40);
@@ -122,7 +122,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(99, 618);
+            label6.Location = new Point(264, 619);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(71, 40);
@@ -133,7 +133,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(99, 708);
+            label7.Location = new Point(264, 709);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(79, 40);
@@ -144,7 +144,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(99, 795);
+            label8.Location = new Point(264, 796);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(151, 40);
@@ -156,7 +156,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(99, 965);
+            label9.Location = new Point(264, 966);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(166, 40);
@@ -167,17 +167,18 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(960, 283);
+            label10.Location = new Point(1240, 284);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(132, 40);
             label10.TabIndex = 9;
             label10.Text = "Hình ảnh";
+            label10.Click += label10_Click;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(331, 270);
+            textBox1.Location = new Point(496, 271);
             textBox1.Margin = new Padding(4, 5, 4, 5);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
@@ -188,7 +189,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(331, 352);
+            textBox2.Location = new Point(496, 353);
             textBox2.Margin = new Padding(4, 5, 4, 5);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(438, 45);
@@ -198,7 +199,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(331, 432);
+            textBox3.Location = new Point(496, 433);
             textBox3.Margin = new Padding(4, 5, 4, 5);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(438, 45);
@@ -208,7 +209,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(331, 865);
+            textBox4.Location = new Point(496, 866);
             textBox4.Margin = new Padding(4, 5, 4, 5);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(438, 45);
@@ -217,7 +218,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(331, 605);
+            textBox5.Location = new Point(496, 606);
             textBox5.Margin = new Padding(4, 5, 4, 5);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(438, 45);
@@ -226,7 +227,7 @@
             // textBox6
             // 
             textBox6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(331, 695);
+            textBox6.Location = new Point(496, 696);
             textBox6.Margin = new Padding(4, 5, 4, 5);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(438, 45);
@@ -235,7 +236,7 @@
             // textBox7
             // 
             textBox7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(331, 782);
+            textBox7.Location = new Point(496, 783);
             textBox7.Margin = new Padding(4, 5, 4, 5);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(438, 45);
@@ -246,7 +247,7 @@
             button2.BackColor = Color.MediumPurple;
             button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(937, 727);
+            button2.Location = new Point(1217, 728);
             button2.Margin = new Padding(4, 5, 4, 5);
             button2.Name = "button2";
             button2.Size = new Size(167, 68);
@@ -258,7 +259,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.win12;
-            pictureBox1.Location = new Point(879, 352);
+            pictureBox1.Location = new Point(1159, 353);
             pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(276, 257);
@@ -286,7 +287,7 @@
             // 
             comboBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(331, 515);
+            comboBox1.Location = new Point(496, 516);
             comboBox1.Margin = new Padding(4, 5, 4, 5);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(438, 48);
@@ -297,7 +298,7 @@
             // 
             comboBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(331, 952);
+            comboBox2.Location = new Point(496, 953);
             comboBox2.Margin = new Padding(4, 5, 4, 5);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(438, 48);
@@ -311,7 +312,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1350, 207);
+            panel1.Size = new Size(2017, 207);
             panel1.TabIndex = 24;
             panel1.Paint += panel1_Paint;
             // 
@@ -324,7 +325,7 @@
             panel2.Location = new Point(0, 1053);
             panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1350, 180);
+            panel2.Size = new Size(2017, 180);
             panel2.TabIndex = 25;
             // 
             // button1
@@ -346,7 +347,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(99, 878);
+            label11.Location = new Point(264, 879);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(73, 40);
@@ -356,7 +357,7 @@
             // textBox8
             // 
             textBox8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox8.Location = new Point(879, 638);
+            textBox8.Location = new Point(1159, 639);
             textBox8.Margin = new Padding(4, 5, 4, 5);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(274, 45);
@@ -367,7 +368,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1351, 1232);
+            ClientSize = new Size(2018, 1232);
             Controls.Add(textBox8);
             Controls.Add(button2);
             Controls.Add(label11);

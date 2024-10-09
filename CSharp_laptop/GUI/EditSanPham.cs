@@ -26,8 +26,9 @@ namespace CSharp_laptop.GUI
 
         public EditSanPham(int idLaptop, string chucnang, MainForm mainform)
         {
+            this.mainForm = mainform;
             InitializeComponent();
-            this.mainForm = mainForm;
+
 
             if (chucnang == "add")
             {
@@ -164,11 +165,16 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            //Close();
             mainForm.OpenChildForm(new SanPhamGUI(mainForm));
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }
