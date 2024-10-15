@@ -74,5 +74,7 @@ namespace CSharp_laptop.GUI
         {
             WindowState = FormWindowState.Minimized;
         }
+
+       
     }
 }

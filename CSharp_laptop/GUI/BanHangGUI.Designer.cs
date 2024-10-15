@@ -42,6 +42,8 @@
             ChonSanPham_page = new TabPage();
             label2 = new Label();
             panel1 = new Panel();
+            lblTongTien = new Label();
+            lblSoSanPhamDaChon = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             txtToGia = new TextBox();
             txtFromGia = new TextBox();
@@ -53,6 +55,28 @@
             cbxCPU = new ComboBox();
             listView1 = new ListView();
             ThanhToan_page = new TabPage();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            btnThanhToan = new FontAwesome.Sharp.IconButton();
+            txtTienThoi = new TextBox();
+            label12 = new Label();
+            txtTienKhach = new TextBox();
+            label11 = new Label();
+            textBox1 = new TextBox();
+            label10 = new Label();
+            txtGiamGia = new TextBox();
+            label9 = new Label();
+            txtThanhTien = new TextBox();
+            label8 = new Label();
+            txtMaKH = new TextBox();
+            label7 = new Label();
+            txtMaNV = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
+            txtMaHD = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            listView2 = new ListView();
             btnBack = new FontAwesome.Sharp.IconButton();
             tabHoaDon.SuspendLayout();
             QLHoaDon_page.SuspendLayout();
@@ -60,6 +84,9 @@
             tabThemHoaDon.SuspendLayout();
             ChonSanPham_page.SuspendLayout();
             panel1.SuspendLayout();
+            ThanhToan_page.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tabHoaDon
@@ -70,7 +97,7 @@
             tabHoaDon.Location = new Point(0, -25);
             tabHoaDon.Name = "tabHoaDon";
             tabHoaDon.SelectedIndex = 0;
-            tabHoaDon.Size = new Size(1288, 722);
+            tabHoaDon.Size = new Size(1152, 722);
             tabHoaDon.TabIndex = 0;
             // 
             // QLHoaDon_page
@@ -84,7 +111,7 @@
             QLHoaDon_page.Location = new Point(4, 24);
             QLHoaDon_page.Name = "QLHoaDon_page";
             QLHoaDon_page.Padding = new Padding(3);
-            QLHoaDon_page.Size = new Size(1280, 694);
+            QLHoaDon_page.Size = new Size(1144, 694);
             QLHoaDon_page.TabIndex = 0;
             QLHoaDon_page.Text = "Danh sách hóa đơn";
             QLHoaDon_page.UseVisualStyleBackColor = true;
@@ -129,7 +156,7 @@
             btnXemChiTiet.IconColor = Color.White;
             btnXemChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnXemChiTiet.IconSize = 30;
-            btnXemChiTiet.Location = new Point(1071, 3);
+            btnXemChiTiet.Location = new Point(935, 3);
             btnXemChiTiet.Name = "btnXemChiTiet";
             btnXemChiTiet.Size = new Size(108, 44);
             btnXemChiTiet.TabIndex = 2;
@@ -147,7 +174,7 @@
             btnThemHD.IconColor = Color.White;
             btnThemHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnThemHD.IconSize = 30;
-            btnThemHD.Location = new Point(1185, 3);
+            btnThemHD.Location = new Point(1049, 3);
             btnThemHD.Name = "btnThemHD";
             btnThemHD.Size = new Size(92, 44);
             btnThemHD.TabIndex = 1;
@@ -161,9 +188,10 @@
             tblHoaDon.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tblHoaDon.Location = new Point(0, 81);
             tblHoaDon.Name = "tblHoaDon";
-            tblHoaDon.Size = new Size(1280, 613);
+            tblHoaDon.Size = new Size(1319, 613);
             tblHoaDon.TabIndex = 0;
             tblHoaDon.UseCompatibleStateImageBehavior = false;
+            tblHoaDon.SelectedIndexChanged += tblHoaDon_SelectedIndexChanged;
             // 
             // ThemHD_page
             // 
@@ -174,7 +202,7 @@
             ThemHD_page.Location = new Point(4, 24);
             ThemHD_page.Name = "ThemHD_page";
             ThemHD_page.Padding = new Padding(3);
-            ThemHD_page.Size = new Size(1280, 694);
+            ThemHD_page.Size = new Size(1144, 694);
             ThemHD_page.TabIndex = 1;
             ThemHD_page.Text = "Thêm hóa đơn";
             // 
@@ -187,7 +215,7 @@
             btnChuyenTrang.IconColor = Color.White;
             btnChuyenTrang.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnChuyenTrang.IconSize = 30;
-            btnChuyenTrang.Location = new Point(1011, 640);
+            btnChuyenTrang.Location = new Point(872, 639);
             btnChuyenTrang.Name = "btnChuyenTrang";
             btnChuyenTrang.Padding = new Padding(3);
             btnChuyenTrang.Size = new Size(171, 52);
@@ -205,7 +233,7 @@
             tabThemHoaDon.Location = new Point(-4, -24);
             tabThemHoaDon.Name = "tabThemHoaDon";
             tabThemHoaDon.SelectedIndex = 0;
-            tabThemHoaDon.Size = new Size(1288, 663);
+            tabThemHoaDon.Size = new Size(1148, 663);
             tabThemHoaDon.TabIndex = 1;
             // 
             // ChonSanPham_page
@@ -217,7 +245,7 @@
             ChonSanPham_page.Location = new Point(4, 24);
             ChonSanPham_page.Name = "ChonSanPham_page";
             ChonSanPham_page.Padding = new Padding(3);
-            ChonSanPham_page.Size = new Size(1280, 635);
+            ChonSanPham_page.Size = new Size(1140, 635);
             ChonSanPham_page.TabIndex = 0;
             ChonSanPham_page.Text = "tabPage3";
             // 
@@ -235,6 +263,8 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(lblTongTien);
+            panel1.Controls.Add(lblSoSanPhamDaChon);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(txtToGia);
             panel1.Controls.Add(txtFromGia);
@@ -246,8 +276,29 @@
             panel1.Controls.Add(cbxCPU);
             panel1.Location = new Point(0, 27);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1277, 82);
+            panel1.Size = new Size(1137, 82);
             panel1.TabIndex = 10;
+            // 
+            // lblTongTien
+            // 
+            lblTongTien.AutoSize = true;
+            lblTongTien.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTongTien.Location = new Point(730, 44);
+            lblTongTien.Name = "lblTongTien";
+            lblTongTien.Size = new Size(130, 25);
+            lblTongTien.TabIndex = 20;
+            lblTongTien.Text = "Tổng số tiền:  ";
+            lblTongTien.Click += label3_Click;
+            // 
+            // lblSoSanPhamDaChon
+            // 
+            lblSoSanPhamDaChon.AutoSize = true;
+            lblSoSanPhamDaChon.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSoSanPhamDaChon.Location = new Point(730, 5);
+            lblSoSanPhamDaChon.Name = "lblSoSanPhamDaChon";
+            lblSoSanPhamDaChon.Size = new Size(248, 25);
+            lblSoSanPhamDaChon.TabIndex = 19;
+            lblSoSanPhamDaChon.Text = "Tổng số sản phẩm đã chọn: ";
             // 
             // iconButton1
             // 
@@ -257,7 +308,7 @@
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 40;
-            iconButton1.Location = new Point(1212, 2);
+            iconButton1.Location = new Point(1072, 2);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(62, 77);
             iconButton1.TabIndex = 18;
@@ -339,19 +390,250 @@
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.Location = new Point(0, 114);
             listView1.Name = "listView1";
-            listView1.Size = new Size(1280, 521);
+            listView1.Size = new Size(1140, 520);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
             // ThanhToan_page
             // 
-            ThanhToan_page.BackColor = Color.Orange;
+            ThanhToan_page.BackColor = Color.White;
+            ThanhToan_page.Controls.Add(panel2);
+            ThanhToan_page.Controls.Add(label3);
+            ThanhToan_page.Controls.Add(listView2);
             ThanhToan_page.Location = new Point(4, 24);
             ThanhToan_page.Name = "ThanhToan_page";
             ThanhToan_page.Padding = new Padding(3);
-            ThanhToan_page.Size = new Size(1280, 635);
+            ThanhToan_page.Size = new Size(1140, 635);
             ThanhToan_page.TabIndex = 1;
             ThanhToan_page.Text = "tabPage4";
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(btnThanhToan);
+            panel2.Controls.Add(txtTienThoi);
+            panel2.Controls.Add(label12);
+            panel2.Controls.Add(txtTienKhach);
+            panel2.Controls.Add(label11);
+            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(label10);
+            panel2.Controls.Add(txtGiamGia);
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(txtThanhTien);
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(txtMaKH);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(txtMaNV);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(txtMaHD);
+            panel2.Controls.Add(label4);
+            panel2.Location = new Point(487, 40);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(650, 595);
+            panel2.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.thank_you;
+            pictureBox1.Location = new Point(414, 232);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(205, 202);
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            // 
+            // btnThanhToan
+            // 
+            btnThanhToan.BackColor = Color.LawnGreen;
+            btnThanhToan.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnThanhToan.IconChar = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
+            btnThanhToan.IconColor = Color.Black;
+            btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnThanhToan.Location = new Point(9, 526);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.Padding = new Padding(50, 0, 0, 0);
+            btnThanhToan.Size = new Size(347, 45);
+            btnThanhToan.TabIndex = 18;
+            btnThanhToan.Text = "Thanh toán hóa đơn";
+            btnThanhToan.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnThanhToan.UseVisualStyleBackColor = false;
+            // 
+            // txtTienThoi
+            // 
+            txtTienThoi.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTienThoi.Location = new Point(164, 470);
+            txtTienThoi.Name = "txtTienThoi";
+            txtTienThoi.Size = new Size(193, 29);
+            txtTienThoi.TabIndex = 17;
+            txtTienThoi.TextChanged += textBox2_TextChanged;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(9, 473);
+            label12.Name = "label12";
+            label12.Size = new Size(77, 21);
+            label12.TabIndex = 16;
+            label12.Text = "Tiền thối: ";
+            // 
+            // txtTienKhach
+            // 
+            txtTienKhach.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTienKhach.Location = new Point(164, 395);
+            txtTienKhach.Name = "txtTienKhach";
+            txtTienKhach.Size = new Size(193, 29);
+            txtTienKhach.TabIndex = 15;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(9, 398);
+            label11.Name = "label11";
+            label11.Size = new Size(121, 21);
+            label11.TabIndex = 14;
+            label11.Text = "Tiền khách đưa: ";
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(164, 328);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(193, 29);
+            textBox1.TabIndex = 13;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(9, 331);
+            label10.Name = "label10";
+            label10.Size = new Size(149, 21);
+            label10.TabIndex = 12;
+            label10.Text = "Tổng tiền sau giảm: ";
+            // 
+            // txtGiamGia
+            // 
+            txtGiamGia.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtGiamGia.Location = new Point(164, 254);
+            txtGiamGia.Name = "txtGiamGia";
+            txtGiamGia.Size = new Size(193, 29);
+            txtGiamGia.TabIndex = 11;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(9, 257);
+            label9.Name = "label9";
+            label9.Size = new Size(79, 21);
+            label9.TabIndex = 10;
+            label9.Text = "Giảm giá: ";
+            // 
+            // txtThanhTien
+            // 
+            txtThanhTien.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtThanhTien.Location = new Point(164, 194);
+            txtThanhTien.Name = "txtThanhTien";
+            txtThanhTien.Size = new Size(193, 29);
+            txtThanhTien.TabIndex = 9;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(9, 197);
+            label8.Name = "label8";
+            label8.Size = new Size(121, 21);
+            label8.TabIndex = 8;
+            label8.Text = "Tổng tiền hàng: ";
+            // 
+            // txtMaKH
+            // 
+            txtMaKH.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMaKH.Location = new Point(164, 132);
+            txtMaKH.Name = "txtMaKH";
+            txtMaKH.Size = new Size(193, 29);
+            txtMaKH.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(9, 135);
+            label7.Name = "label7";
+            label7.Size = new Size(123, 21);
+            label7.TabIndex = 6;
+            label7.Text = "Mã khách hàng: ";
+            // 
+            // txtMaNV
+            // 
+            txtMaNV.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMaNV.Location = new Point(164, 76);
+            txtMaNV.Name = "txtMaNV";
+            txtMaNV.Size = new Size(193, 29);
+            txtMaNV.TabIndex = 5;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(9, 79);
+            label6.Name = "label6";
+            label6.Size = new Size(111, 21);
+            label6.TabIndex = 4;
+            label6.Text = "Mã nhân viên: ";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(384, 15);
+            label5.Name = "label5";
+            label5.Size = new Size(79, 21);
+            label5.TabIndex = 2;
+            label5.Text = "Ngày lập: ";
+            // 
+            // txtMaHD
+            // 
+            txtMaHD.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMaHD.Location = new Point(164, 12);
+            txtMaHD.Name = "txtMaHD";
+            txtMaHD.Size = new Size(192, 29);
+            txtMaHD.TabIndex = 1;
+            txtMaHD.TextChanged += txtMaHD_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(9, 10);
+            label4.Name = "label4";
+            label4.Size = new Size(101, 21);
+            label4.TabIndex = 0;
+            label4.Text = "Mã hóa đơn: ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(8, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(147, 25);
+            label3.TabIndex = 1;
+            label3.Text = "Chi tiết hóa đơn";
+            // 
+            // listView2
+            // 
+            listView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listView2.Location = new Point(0, 41);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(481, 593);
+            listView2.TabIndex = 0;
+            listView2.UseCompatibleStateImageBehavior = false;
             // 
             // btnBack
             // 
@@ -362,7 +644,7 @@
             btnBack.IconColor = Color.White;
             btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBack.IconSize = 30;
-            btnBack.Location = new Point(1188, 638);
+            btnBack.Location = new Point(1049, 636);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(92, 56);
             btnBack.TabIndex = 0;
@@ -375,7 +657,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1289, 697);
+            ClientSize = new Size(1153, 697);
             Controls.Add(tabHoaDon);
             Name = "BanHangGUI";
             Text = "BanHangGUI";
@@ -389,6 +671,11 @@
             ChonSanPham_page.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ThanhToan_page.ResumeLayout(false);
+            ThanhToan_page.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -420,5 +707,29 @@
         private ComboBox cbxCPU;
         private Label label2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Label lblSoSanPhamDaChon;
+        private Label lblTongTien;
+        private ListView listView2;
+        private Label label3;
+        private Panel panel2;
+        private TextBox txtMaHD;
+        private Label label4;
+        private Label label5;
+        private TextBox txtMaNV;
+        private Label label6;
+        private TextBox textBox1;
+        private Label label10;
+        private TextBox txtGiamGia;
+        private Label label9;
+        private TextBox txtThanhTien;
+        private Label label8;
+        private TextBox txtMaKH;
+        private Label label7;
+        private TextBox txtTienThoi;
+        private Label label12;
+        private TextBox txtTienKhach;
+        private Label label11;
+        private FontAwesome.Sharp.IconButton btnThanhToan;
+        private PictureBox pictureBox1;
     }
 }

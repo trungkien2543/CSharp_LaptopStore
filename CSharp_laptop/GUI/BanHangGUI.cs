@@ -158,5 +158,25 @@ namespace CSharp_laptop.GUI
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tblHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaHD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
