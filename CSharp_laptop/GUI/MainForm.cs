@@ -155,7 +155,7 @@ namespace CSharp_laptop.GUI
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new SanPhamGUI());
+            OpenChildForm(new SanPhamGUI(this));
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -167,14 +167,14 @@ namespace CSharp_laptop.GUI
         private void iconButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-
+            OpenChildForm(new NhanVienGUI());
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new KhachHangGUI());
         }
-
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);

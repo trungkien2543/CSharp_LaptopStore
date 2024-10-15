@@ -2,6 +2,8 @@
 {
     partial class DangNhapGUI
     {
+        private const char V = '\u25CF';
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -182,6 +184,8 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(352, 35);
             textBox2.TabIndex = 11;
+
+            textBox2.PasswordChar = V;
             // 
             // btnExit
             // 

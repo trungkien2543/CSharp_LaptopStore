@@ -18,12 +18,15 @@ namespace CSharp_laptop.GUI
         private SanPhamBUS laptopBUS = new SanPhamBUS();
         int selectedLaptopID;
         int soluong_lap;
-        public SanPhamGUI()
+        private MainForm mainForm;
+        public SanPhamGUI(MainForm mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
             LoadLaptops();
             edittable();
             AddButtonsToDataGridView();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -33,8 +36,9 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
-            editSanPham.Show();
+            //EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
+            //editSanPham.Show();
+            mainForm.OpenChildForm(new EditSanPham(soluong_lap, "add", mainForm));
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -74,8 +78,10 @@ namespace CSharp_laptop.GUI
             if (e.ColumnIndex == dataGridView1.Columns["btnEdit"].Index && e.RowIndex >= 0)
             {
 
-                EditSanPham editSanPham = new EditSanPham(selectedLaptopID, "Sửa sản phẩm");
-                editSanPham.Show();
+                //EditSanPham editSanPham = new EditSanPham(selectedLaptopID, "Sửa sản phẩm", mainForm);
+                //editSanPham.Show();
+
+                mainForm.OpenChildForm(new EditSanPham(selectedLaptopID, "Sửa sản phẩm", mainForm));
             }
             else if (e.ColumnIndex == dataGridView1.Columns["btnDelete"].Index && e.RowIndex >= 0)
             {
@@ -123,12 +129,7 @@ namespace CSharp_laptop.GUI
 
             dataGridView1.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
 
-
-            dataGridView1.Columns["IDLaptop"].Width = 100;  // Điều chỉnh chiều rộng
-            dataGridView1.Columns["TenSP"].Width = 150;
-            dataGridView1.Columns["GiaBan"].Width = 100;
-            dataGridView1.Columns["Hang"].Width = 100;
-            dataGridView1.Columns["KhuyenMai"].Width = 200;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dataGridView1.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
 
