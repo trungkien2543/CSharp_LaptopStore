@@ -178,6 +178,7 @@ namespace CSharp_laptop.GUI
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new KhuyenMaiGUI());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
