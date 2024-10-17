@@ -31,6 +31,17 @@ namespace CSharp_laptop.GUI
             panelMenu.Controls.Add(leftBorderBtn);
 
 
+            //Form
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            FormBorderStyle = FormBorderStyle.None;
+
+
+
+
         }
 
 
@@ -76,6 +87,9 @@ namespace CSharp_laptop.GUI
                 lblTitleChildForm.Text = currentBtn.Text;
                 lblTitleChildForm.ForeColor = color;
 
+                this.FormBorderStyle = FormBorderStyle.None;
+
+
             }
         }
 
@@ -95,7 +109,7 @@ namespace CSharp_laptop.GUI
 
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             //open only form
             if (currentChildForm != null)
@@ -113,6 +127,19 @@ namespace CSharp_laptop.GUI
             childForm.Show();
         }
 
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -128,25 +155,26 @@ namespace CSharp_laptop.GUI
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new SanPhamGUI());
+            OpenChildForm(new SanPhamGUI(this));
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new BanHangGUI());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-
+            OpenChildForm(new NhanVienGUI());
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new KhachHangGUI());
         }
-
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
@@ -200,7 +228,41 @@ namespace CSharp_laptop.GUI
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color9);
-            OpenChildForm(new QuanLyTaiKhoanGUI());
+            OpenChildForm(new QuanLyTaiKhoanGUI(this));
+        }
+
+        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnZoom_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;  // Thu nhỏ form lại nếu đang phóng to
+                btnZoom.IconChar = IconChar.WindowMaximize;
+            }
+            else
+            {
+                WindowState = FormWindowState.Maximized;  // Phóng to form
+                btnZoom.IconChar = IconChar.WindowRestore;
+            }
         }
 
         private void panelTitleBar_Paint(object sender, PaintEventArgs e)

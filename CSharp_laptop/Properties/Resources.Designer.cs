@@ -93,6 +93,26 @@ namespace CSharp_laptop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_home_removebg {
+            get {
+                object obj = ResourceManager.GetObject("logo_home-removebg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thank_you {
+            get {
+                object obj = ResourceManager.GetObject("thank_you", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap win12 {
             get {
                 object obj = ResourceManager.GetObject("win12", resourceCulture);
