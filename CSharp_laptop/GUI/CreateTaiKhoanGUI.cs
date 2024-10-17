@@ -31,11 +31,10 @@ namespace CSharp_laptop.GUI
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             comboBox1 = new ComboBox();
-            panel1 = new Panel();
-            label5 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
-            panel1.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            ((ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -83,8 +82,8 @@ namespace CSharp_laptop.GUI
             textBox1.Font = new Font("Segoe UI", 12F);
             textBox1.Location = new Point(207, 70);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(423, 29);
-            textBox1.TabIndex = 4;
+            textBox1.Size = new Size(747, 29);
+            textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
@@ -92,59 +91,42 @@ namespace CSharp_laptop.GUI
             textBox2.Font = new Font("Segoe UI", 12F);
             textBox2.Location = new Point(207, 108);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(423, 29);
-            textBox2.TabIndex = 5;
-            textBox2.TextChanged += textBox2_TextChanged;
             textBox2.PasswordChar = '*';
+            textBox2.Size = new Size(747, 29);
+            textBox2.TabIndex = 2;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // comboBox1
             // 
             comboBox1.Font = new Font("Segoe UI", 12F);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Nhân viên quèn \U0001f92e", "Admin 😎" });
+            comboBox1.Items.AddRange(new object[] { "Admin 😎", "Nhân viên quèn \U0001f92e" });
             comboBox1.Location = new Point(207, 147);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(423, 29);
+            comboBox1.Size = new Size(747, 29);
+            comboBox1.Sorted = true;
             comboBox1.TabIndex = 6;
             comboBox1.Text = "Nhân viên quèn \U0001f92e";
-            // 
-            // panel1
-            // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label5);
-            panel1.Location = new Point(24, 199);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(606, 271);
-            panel1.TabIndex = 7;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(276, 123);
-            label5.Name = "label5";
-            label5.Size = new Size(59, 15);
-            label5.TabIndex = 0;
-            label5.Text = "Drop here";
-            label5.Click += label5_Click;
             // 
             // iconButton1
             // 
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(50, 526);
+            iconButton1.Location = new Point(738, 526);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(105, 34);
             iconButton1.TabIndex = 8;
-            iconButton1.Text = "Enter ";
+            iconButton1.Text = "&Enter ";
             iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // iconButton2
             // 
             iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
             iconButton2.IconColor = Color.Black;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(485, 526);
+            iconButton2.Location = new Point(849, 526);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(105, 34);
             iconButton2.TabIndex = 9;
@@ -152,12 +134,20 @@ namespace CSharp_laptop.GUI
             iconButton2.UseVisualStyleBackColor = true;
             iconButton2.Click += iconButton2_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(24, 202);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(930, 301);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // CreateTaiKhoanGUI
             // 
             ClientSize = new Size(1043, 589);
+            Controls.Add(pictureBox1);
             Controls.Add(iconButton2);
             Controls.Add(iconButton1);
-            Controls.Add(panel1);
             Controls.Add(comboBox1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -166,8 +156,7 @@ namespace CSharp_laptop.GUI
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "CreateTaiKhoanGUI";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,8 +167,6 @@ namespace CSharp_laptop.GUI
         private TextBox textBox1;
         private TextBox textBox2;
         private ComboBox comboBox1;
-        private Panel panel1;
-        private Label label5;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
 
@@ -203,5 +190,12 @@ namespace CSharp_laptop.GUI
         {
 
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private PictureBox pictureBox1;
     }
 }
