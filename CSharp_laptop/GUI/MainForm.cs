@@ -178,7 +178,6 @@ namespace CSharp_laptop.GUI
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
-            OpenChildForm(new KhuyenMaiGUI());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -263,11 +262,6 @@ namespace CSharp_laptop.GUI
                 WindowState = FormWindowState.Maximized;  // Phóng to form
                 btnZoom.IconChar = IconChar.WindowRestore;
             }
-        }
-
-        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
