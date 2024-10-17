@@ -155,7 +155,8 @@
             textBox1.Location = new Point(864, 122);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(352, 35);
-            textBox1.TabIndex = 9;
+            textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
@@ -183,9 +184,7 @@
             textBox2.Location = new Point(864, 226);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(352, 35);
-            textBox2.TabIndex = 11;
-
-            textBox2.PasswordChar = V;
+            textBox2.TabIndex = 2;
             // 
             // btnExit
             // 

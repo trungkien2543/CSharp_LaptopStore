@@ -75,6 +75,9 @@ namespace CSharp_laptop.GUI
             WindowState = FormWindowState.Minimized;
         }
 
-       
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
