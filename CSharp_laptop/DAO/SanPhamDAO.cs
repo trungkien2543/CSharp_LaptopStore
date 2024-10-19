@@ -21,8 +21,8 @@ namespace CSharp_laptop.DAO
                 conn.Open();
                 string query = @"
                                 SELECT ll.*, h.TenHang, km.TenKhuyenMai 
-                                FROM loai_laptop ll 
-                                LEFT JOIN hang h ON ll.Hang = h.ID_Hang 
+                                FROM loailaptop ll 
+                                LEFT JOIN hangsanxuat h ON ll.Hang = h.ID_Hang 
                                 LEFT JOIN khuyenmai km ON ll.KhuyenMai = km.ID_KhuyenMai";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -59,8 +59,8 @@ namespace CSharp_laptop.DAO
                 conn.Open();
                 string query = @"
                         SELECT ll.*, h.TenHang, km.TenKhuyenMai 
-                        FROM loai_laptop ll 
-                        LEFT JOIN hang h ON ll.Hang = h.ID_Hang 
+                        FROM loailaptop ll 
+                        LEFT JOIN hangsanxuat h ON ll.Hang = h.ID_Hang 
                         LEFT JOIN khuyenmai km ON ll.KhuyenMai = km.ID_KhuyenMai 
                         WHERE ll.IDLaptop = @IDLaptop";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -98,7 +98,7 @@ namespace CSharp_laptop.DAO
                 {
                     conn.Open();
                     // Câu truy vấn SQL được điều chỉnh để kiểm tra giá trị của KhuyenMai
-                    string query = "INSERT INTO loai_laptop (IDLaptop, TenSP, GiaBan, Hang, CPU, RAM, GPU, HinhAnh, KichThuoc, KhuyenMai) " +
+                    string query = "INSERT INTO loailaptop (IDLaptop, TenSP, GiaBan, Hang, CPU, RAM, GPU, HinhAnh, KichThuoc, KhuyenMai) " +
                                    "VALUES (@IDLaptop, @TenSP, @GiaBan, @Hang, @CPU, @RAM, @GPU, @HinhAnh, @KichThuoc, @KhuyenMai)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -142,7 +142,7 @@ namespace CSharp_laptop.DAO
                 try
                 {
                     conn.Open();
-                    string query = "DELETE FROM loai_laptop WHERE IDLaptop = @idLaptop";
+                    string query = "DELETE FROM loaiaptop WHERE IDLaptop = @idLaptop";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@IDLaptop", idLaptop);
 
@@ -163,7 +163,7 @@ namespace CSharp_laptop.DAO
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT MAX(IDLaptop) FROM loai_laptop";
+                string query = "SELECT MAX(IDLaptop) FROM loailaptop";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 object result = cmd.ExecuteScalar();

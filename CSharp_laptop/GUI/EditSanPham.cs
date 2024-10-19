@@ -24,7 +24,7 @@ namespace CSharp_laptop.GUI
             loadcombobox();
         }
 
-        public EditSanPham(int idLaptop, string chucnang, MainForm mainform)
+        public EditSanPham(string idLaptop, string chucnang, MainForm mainform)
         {
             this.mainForm = mainform;
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace CSharp_laptop.GUI
             }
             else
             {
-                SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop.ToString());
+                SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop);
 
                 textBox1.Text = sanPhamDTO.IDLaptop;
                 textBox2.Text = sanPhamDTO.TenSP;
@@ -71,8 +71,8 @@ namespace CSharp_laptop.GUI
 
         private void YourForm_Load()
         {
-            long nextId = sanPhamBUS.GetNextID();
-            textBox1.Text = nextId.ToString();
+            //long nextId = sanPhamBUS.GetNextID();
+            //textBox1.Text = nextId.ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)

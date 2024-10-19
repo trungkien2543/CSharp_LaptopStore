@@ -16,8 +16,8 @@ namespace CSharp_laptop.GUI
     {
 
         private SanPhamBUS laptopBUS = new SanPhamBUS();
-        int selectedLaptopID;
-        int soluong_lap;
+        string selectedLaptopID;
+        string soluong_lap;
         private MainForm mainForm;
         public SanPhamGUI(MainForm mainForm)
         {
@@ -38,7 +38,7 @@ namespace CSharp_laptop.GUI
         {
             //EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
             //editSanPham.Show();
-            mainForm.OpenChildForm(new EditSanPham(soluong_lap, "add", mainForm));
+            mainForm.OpenChildForm(new EditSanPham("L001", "add", mainForm));
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -63,7 +63,7 @@ namespace CSharp_laptop.GUI
 
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 string idLaptop = row.Cells["IDLaptop"].Value.ToString();
-                selectedLaptopID = int.Parse(idLaptop);
+                selectedLaptopID = "L001";
 
                 //string message = $"Đã chọn laptopID = {selectedLaptopID}";
 
@@ -108,7 +108,7 @@ namespace CSharp_laptop.GUI
         private void LoadLaptops()
         {
             List<SanPhamDTO> laptops = laptopBUS.GetLaptops();
-            soluong_lap = laptops.Count;
+            //soluong_lap = laptops.Count;
 
             dataGridView1.DataSource = laptops;
         }
