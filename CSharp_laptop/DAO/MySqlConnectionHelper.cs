@@ -10,8 +10,6 @@ namespace CSharp_laptop.DAO
     internal class MySqlConnectionHelper
     {
         private string connectionString = "server=localhost;database=laptop_csharp;user=root;password=;";
-
-        // Phương thức để lấy kết nối MySQL
         public MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);

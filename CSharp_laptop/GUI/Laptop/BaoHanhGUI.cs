@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSharp_laptop.GUI
+namespace CSharp_laptop.GUI.Laptop
 {
-    public partial class ThemHangGUI : Form
+    public partial class BaoHanhGUI : Form
     {
-        public ThemHangGUI()
+        public BaoHanhGUI()
         {
             InitializeComponent();
         }

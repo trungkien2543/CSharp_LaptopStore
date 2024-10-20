@@ -1,4 +1,5 @@
 ﻿using CSharp_laptop.BUS;
+using CSharp_laptop.DAO;
 using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace CSharp_laptop.GUI
 
             if (chucnang == "add")
             {
-                YourForm_Load();
+                textBox1.Text = idLaptop;
             }
             else
             {
@@ -67,12 +68,6 @@ namespace CSharp_laptop.GUI
             comboBox2.Items.Add("KM003");
             comboBox2.Items.Add("KM004");
             comboBox2.Items.Add("KM005");
-        }
-
-        private void YourForm_Load()
-        {
-            //long nextId = sanPhamBUS.GetNextID();
-            //textBox1.Text = nextId.ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)
