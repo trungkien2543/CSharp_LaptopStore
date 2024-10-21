@@ -12,9 +12,21 @@ namespace CSharp_laptop.GUI.Laptop
 {
     public partial class BaoHanhGUI : Form
     {
-        public BaoHanhGUI()
+        private MainForm mainForm;
+        public BaoHanhGUI(MainForm mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new SanPhamGUI(mainForm));
         }
     }
 }

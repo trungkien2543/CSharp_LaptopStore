@@ -30,9 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoHanhGUI));
             panel1 = new Panel();
+            dataGridView1 = new DataGridView();
+            button2 = new Button();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
             label2 = new Label();
             button3 = new Button();
-            dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
             button1 = new Button();
             label1 = new Label();
@@ -44,9 +56,21 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(label11);
+            panel1.Controls.Add(label12);
+            panel1.Controls.Add(label13);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
@@ -55,46 +79,191 @@
             panel1.Size = new Size(1228, 704);
             panel1.TabIndex = 2;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.MediumPurple;
-            label2.Location = new Point(319, 25);
-            label2.Name = "label2";
-            label2.Size = new Size(76, 37);
-            label2.TabIndex = 7;
-            label2.Text = "Asus";
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.MediumPurple;
-            button3.Location = new Point(330, 92);
-            button3.Name = "button3";
-            button3.Size = new Size(110, 33);
-            button3.TabIndex = 6;
-            button3.Text = "Tìm kiếm";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(11, 144);
+            dataGridView1.Location = new Point(11, 430);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1206, 553);
-            dataGridView1.TabIndex = 3;
+            dataGridView1.Size = new Size(1205, 271);
+            dataGridView1.TabIndex = 20;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.MediumPurple;
+            button2.Location = new Point(11, 261);
+            button2.Name = "button2";
+            button2.Size = new Size(110, 33);
+            button2.TabIndex = 19;
+            button2.Text = "Quay lại";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.MediumPurple;
+            label9.Location = new Point(917, 368);
+            label9.Name = "label9";
+            label9.Size = new Size(209, 37);
+            label9.TabIndex = 18;
+            label9.Text = "Chưa bảo hành";
+            label9.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.MediumPurple;
+            label10.Location = new Point(917, 298);
+            label10.Name = "label10";
+            label10.Size = new Size(70, 37);
+            label10.TabIndex = 17;
+            label10.Text = "Null";
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.MediumPurple;
+            label11.Location = new Point(917, 229);
+            label11.Name = "label11";
+            label11.Size = new Size(70, 37);
+            label11.TabIndex = 16;
+            label11.Text = "Null";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.MediumPurple;
+            label12.Location = new Point(917, 162);
+            label12.Name = "label12";
+            label12.Size = new Size(131, 37);
+            label12.TabIndex = 15;
+            label12.Text = "36 tháng";
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.MediumPurple;
+            label13.Location = new Point(917, 92);
+            label13.Name = "label13";
+            label13.Size = new Size(133, 37);
+            label13.TabIndex = 14;
+            label13.Text = "Samsung";
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.MediumPurple;
+            label8.Location = new Point(629, 368);
+            label8.Name = "label8";
+            label8.Size = new Size(147, 37);
+            label8.TabIndex = 13;
+            label8.Text = "Trạng thái";
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.MediumPurple;
+            label7.Location = new Point(629, 298);
+            label7.Name = "label7";
+            label7.Size = new Size(196, 37);
+            label7.TabIndex = 12;
+            label7.Text = "Ngày kết thúc";
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.MediumPurple;
+            label6.Location = new Point(629, 229);
+            label6.Name = "label6";
+            label6.Size = new Size(190, 37);
+            label6.TabIndex = 11;
+            label6.Text = "Ngày bắt đầu";
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.MediumPurple;
+            label5.Location = new Point(629, 162);
+            label5.Name = "label5";
+            label5.Size = new Size(254, 37);
+            label5.TabIndex = 10;
+            label5.Text = "Thời hạn bảo hành";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.MediumPurple;
+            label4.Location = new Point(629, 92);
+            label4.Name = "label4";
+            label4.Size = new Size(160, 37);
+            label4.TabIndex = 9;
+            label4.Text = "Tên Laptop";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.MediumPurple;
+            label3.Location = new Point(629, 25);
+            label3.Name = "label3";
+            label3.Size = new Size(233, 37);
+            label3.TabIndex = 8;
+            label3.Text = "Thông tin laptop";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.MediumPurple;
+            label2.Location = new Point(11, 92);
+            label2.Name = "label2";
+            label2.Size = new Size(394, 30);
+            label2.TabIndex = 7;
+            label2.Text = "Nhập IMEI để xem thông tin bảo hành";
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.MediumPurple;
+            button3.Location = new Point(333, 161);
+            button3.Name = "button3";
+            button3.Size = new Size(110, 33);
+            button3.TabIndex = 6;
+            button3.Text = "Tìm kiếm";
+            button3.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(11, 92);
+            textBox1.Location = new Point(11, 162);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(290, 33);
+            textBox1.Size = new Size(301, 33);
             textBox1.TabIndex = 2;
             // 
             // button1
@@ -121,9 +290,10 @@
             label1.ForeColor = Color.MediumPurple;
             label1.Location = new Point(11, 25);
             label1.Name = "label1";
-            label1.Size = new Size(290, 37);
+            label1.Size = new Size(136, 37);
             label1.TabIndex = 0;
-            label1.Text = "Danh sách của laptop";
+            label1.Text = "Bảo hành";
+            label1.Click += label1_Click;
             // 
             // BaoHanhGUI
             // 
@@ -148,5 +318,17 @@
         private TextBox textBox1;
         private Button button1;
         private Label label1;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Label label8;
+        private Button button2;
     }
 }
