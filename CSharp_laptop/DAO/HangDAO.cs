@@ -19,7 +19,7 @@ namespace CSharp_laptop.DAO
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM hang";
+                string query = "SELECT * FROM hangsanxuat";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())

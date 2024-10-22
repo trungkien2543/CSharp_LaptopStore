@@ -1,4 +1,5 @@
 ﻿using CSharp_laptop.BUS;
+using CSharp_laptop.DAO;
 using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace CSharp_laptop.GUI
             loadcombobox();
         }
 
-        public EditSanPham(int idLaptop, string chucnang, MainForm mainform)
+        public EditSanPham(string idLaptop, string chucnang, MainForm mainform)
         {
             this.mainForm = mainform;
             InitializeComponent();
@@ -32,11 +33,11 @@ namespace CSharp_laptop.GUI
 
             if (chucnang == "add")
             {
-                YourForm_Load();
+                textBox1.Text = idLaptop;
             }
             else
             {
-                SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop.ToString());
+                SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop);
 
                 textBox1.Text = sanPhamDTO.IDLaptop;
                 textBox2.Text = sanPhamDTO.TenSP;
@@ -69,36 +70,6 @@ namespace CSharp_laptop.GUI
             comboBox2.Items.Add("KM005");
         }
 
-        private void YourForm_Load()
-        {
-            long nextId = sanPhamBUS.GetNextID();
-            textBox1.Text = nextId.ToString();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -138,15 +109,6 @@ namespace CSharp_laptop.GUI
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -158,25 +120,54 @@ namespace CSharp_laptop.GUI
 
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             //Close();
             mainForm.OpenChildForm(new SanPhamGUI(mainForm));
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void vbButton1_Click(object sender, EventArgs e)
         {
+            SanPhamDTO laptop = new SanPhamDTO
+            {
+                IDLaptop = textBox1.Text,
+                TenSP = textBox2.Text,
+                GiaBan = long.Parse(textBox3.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+                Hang = comboBox1.Text,
+                CPU = textBox5.Text,
+                RAM = int.Parse(textBox6.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+                GPU = textBox4.Text,
+                HinhAnh = textBox8.Text,
+                KichThuoc = textBox7.Text,
+                KhuyenMai = comboBox2.Text
+            };
 
+            bool result = true;
+
+
+            if (function == "add")
+            {
+                result = sanPhamBUS.AddLaptop(laptop);
+                MessageBox.Show("Thêm laptop");
+                if (result)
+                {
+                    MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Lưu thất bại! Kiểm tra lại dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Sửa laptop");
+            }
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void vbButton2_Click(object sender, EventArgs e)
         {
-
+            //Close();
+            mainForm.OpenChildForm(new SanPhamGUI(mainForm));
         }
     }
 }

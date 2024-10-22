@@ -97,7 +97,7 @@
             tabHoaDon.Location = new Point(0, -25);
             tabHoaDon.Name = "tabHoaDon";
             tabHoaDon.SelectedIndex = 0;
-            tabHoaDon.Size = new Size(1152, 722);
+            tabHoaDon.Size = new Size(1175, 722);
             tabHoaDon.TabIndex = 0;
             // 
             // QLHoaDon_page
@@ -111,7 +111,7 @@
             QLHoaDon_page.Location = new Point(4, 24);
             QLHoaDon_page.Name = "QLHoaDon_page";
             QLHoaDon_page.Padding = new Padding(3);
-            QLHoaDon_page.Size = new Size(1144, 694);
+            QLHoaDon_page.Size = new Size(1167, 694);
             QLHoaDon_page.TabIndex = 0;
             QLHoaDon_page.Text = "Danh sách hóa đơn";
             QLHoaDon_page.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             btnXemChiTiet.IconColor = Color.White;
             btnXemChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnXemChiTiet.IconSize = 30;
-            btnXemChiTiet.Location = new Point(935, 3);
+            btnXemChiTiet.Location = new Point(958, 3);
             btnXemChiTiet.Name = "btnXemChiTiet";
             btnXemChiTiet.Size = new Size(108, 44);
             btnXemChiTiet.TabIndex = 2;
@@ -174,7 +174,7 @@
             btnThemHD.IconColor = Color.White;
             btnThemHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnThemHD.IconSize = 30;
-            btnThemHD.Location = new Point(1049, 3);
+            btnThemHD.Location = new Point(1072, 3);
             btnThemHD.Name = "btnThemHD";
             btnThemHD.Size = new Size(92, 44);
             btnThemHD.TabIndex = 1;
@@ -188,7 +188,7 @@
             tblHoaDon.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tblHoaDon.Location = new Point(0, 81);
             tblHoaDon.Name = "tblHoaDon";
-            tblHoaDon.Size = new Size(1319, 613);
+            tblHoaDon.Size = new Size(1167, 613);
             tblHoaDon.TabIndex = 0;
             tblHoaDon.UseCompatibleStateImageBehavior = false;
             tblHoaDon.SelectedIndexChanged += tblHoaDon_SelectedIndexChanged;
@@ -202,7 +202,7 @@
             ThemHD_page.Location = new Point(4, 24);
             ThemHD_page.Name = "ThemHD_page";
             ThemHD_page.Padding = new Padding(3);
-            ThemHD_page.Size = new Size(1144, 694);
+            ThemHD_page.Size = new Size(1167, 694);
             ThemHD_page.TabIndex = 1;
             ThemHD_page.Text = "Thêm hóa đơn";
             // 
@@ -215,7 +215,7 @@
             btnChuyenTrang.IconColor = Color.White;
             btnChuyenTrang.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnChuyenTrang.IconSize = 30;
-            btnChuyenTrang.Location = new Point(872, 639);
+            btnChuyenTrang.Location = new Point(891, 639);
             btnChuyenTrang.Name = "btnChuyenTrang";
             btnChuyenTrang.Padding = new Padding(3);
             btnChuyenTrang.Size = new Size(171, 52);
@@ -233,7 +233,7 @@
             tabThemHoaDon.Location = new Point(-4, -24);
             tabThemHoaDon.Name = "tabThemHoaDon";
             tabThemHoaDon.SelectedIndex = 0;
-            tabThemHoaDon.Size = new Size(1148, 663);
+            tabThemHoaDon.Size = new Size(1171, 663);
             tabThemHoaDon.TabIndex = 1;
             // 
             // ChonSanPham_page
@@ -245,7 +245,7 @@
             ChonSanPham_page.Location = new Point(4, 24);
             ChonSanPham_page.Name = "ChonSanPham_page";
             ChonSanPham_page.Padding = new Padding(3);
-            ChonSanPham_page.Size = new Size(1140, 635);
+            ChonSanPham_page.Size = new Size(1163, 635);
             ChonSanPham_page.TabIndex = 0;
             ChonSanPham_page.Text = "tabPage3";
             // 
@@ -276,7 +276,7 @@
             panel1.Controls.Add(cbxCPU);
             panel1.Location = new Point(0, 27);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1137, 82);
+            panel1.Size = new Size(1160, 82);
             panel1.TabIndex = 10;
             // 
             // lblTongTien
@@ -308,7 +308,7 @@
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 40;
-            iconButton1.Location = new Point(1072, 2);
+            iconButton1.Location = new Point(1095, 2);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(62, 77);
             iconButton1.TabIndex = 18;
@@ -390,7 +390,7 @@
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.Location = new Point(0, 114);
             listView1.Name = "listView1";
-            listView1.Size = new Size(1140, 520);
+            listView1.Size = new Size(1160, 520);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -403,7 +403,7 @@
             ThanhToan_page.Location = new Point(4, 24);
             ThanhToan_page.Name = "ThanhToan_page";
             ThanhToan_page.Padding = new Padding(3);
-            ThanhToan_page.Size = new Size(1140, 635);
+            ThanhToan_page.Size = new Size(1163, 635);
             ThanhToan_page.TabIndex = 1;
             ThanhToan_page.Text = "tabPage4";
             // 
@@ -430,7 +430,7 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(txtMaHD);
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(487, 40);
+            panel2.Location = new Point(510, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(650, 595);
             panel2.TabIndex = 2;
@@ -631,7 +631,7 @@
             listView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView2.Location = new Point(0, 41);
             listView2.Name = "listView2";
-            listView2.Size = new Size(481, 593);
+            listView2.Size = new Size(504, 593);
             listView2.TabIndex = 0;
             listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -644,7 +644,7 @@
             btnBack.IconColor = Color.White;
             btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBack.IconSize = 30;
-            btnBack.Location = new Point(1049, 636);
+            btnBack.Location = new Point(1068, 637);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(92, 56);
             btnBack.TabIndex = 0;
@@ -657,7 +657,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1153, 697);
+            ClientSize = new Size(1176, 697);
             Controls.Add(tabHoaDon);
             Name = "BanHangGUI";
             Text = "BanHangGUI";

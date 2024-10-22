@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using CSharp_laptop.GUI.Laptop;
 using FontAwesome.Sharp;
 using Color = System.Drawing.Color;
 
@@ -148,7 +149,7 @@ namespace CSharp_laptop.GUI
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new HangGUI());
+            OpenChildForm(new HangGUI(this));
 
         }
 
@@ -263,6 +264,16 @@ namespace CSharp_laptop.GUI
                 WindowState = FormWindowState.Maximized;  // Phóng to form
                 btnZoom.IconChar = IconChar.WindowRestore;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new BaoHanhGUI(this));
         }
     }
 }
