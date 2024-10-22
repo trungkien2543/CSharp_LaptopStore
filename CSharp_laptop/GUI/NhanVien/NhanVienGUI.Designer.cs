@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienGUI));
             textBox1 = new TextBox();
             label1 = new Label();
-            button3 = new Button();
             dataGridView1 = new DataGridView();
+            vbButton1 = new VBButton();
+            vbButton2 = new VBButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -54,17 +56,6 @@
             label1.TabIndex = 10;
             label1.Text = "Danh sách nhân viên";
             // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.FromArgb(249, 118, 176);
-            button3.Location = new Point(467, 63);
-            button3.Name = "button3";
-            button3.Size = new Size(110, 44);
-            button3.TabIndex = 12;
-            button3.Text = "Tìm kiếm";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -72,16 +63,60 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(17, 118);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(984, 489);
+            dataGridView1.Size = new Size(959, 489);
             dataGridView1.TabIndex = 13;
+            // 
+            // vbButton1
+            // 
+            vbButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            vbButton1.BackColor = Color.MediumPurple;
+            vbButton1.BackgroundColor = Color.MediumPurple;
+            vbButton1.BorderColor = Color.PaleVioletRed;
+            vbButton1.BorderRadius = 25;
+            vbButton1.BorderSize = 0;
+            vbButton1.FlatAppearance.BorderSize = 0;
+            vbButton1.FlatStyle = FlatStyle.Flat;
+            vbButton1.ForeColor = Color.White;
+            vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
+            vbButton1.Location = new Point(921, 57);
+            vbButton1.Name = "vbButton1";
+            vbButton1.Size = new Size(55, 55);
+            vbButton1.TabIndex = 14;
+            vbButton1.TextColor = Color.White;
+            vbButton1.UseVisualStyleBackColor = false;
+            vbButton1.Click += vbButton1_Click;
+            // 
+            // vbButton2
+            // 
+            vbButton2.BackColor = Color.MediumPurple;
+            vbButton2.BackgroundColor = Color.MediumPurple;
+            vbButton2.BorderColor = Color.PaleVioletRed;
+            vbButton2.BorderRadius = 20;
+            vbButton2.BorderSize = 0;
+            vbButton2.FlatAppearance.BorderSize = 0;
+            vbButton2.FlatStyle = FlatStyle.Flat;
+            vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton2.ForeColor = Color.White;
+            vbButton2.Image = Properties.Resources.icons8_find_29;
+            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton2.Location = new Point(459, 64);
+            vbButton2.Name = "vbButton2";
+            vbButton2.Padding = new Padding(7, 0, 0, 0);
+            vbButton2.Size = new Size(137, 44);
+            vbButton2.TabIndex = 15;
+            vbButton2.Text = "Tìm kiếm";
+            vbButton2.TextColor = Color.White;
+            vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton2.UseVisualStyleBackColor = false;
             // 
             // NhanVienGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1013, 619);
+            ClientSize = new Size(988, 619);
+            Controls.Add(vbButton2);
+            Controls.Add(vbButton1);
             Controls.Add(dataGridView1);
-            Controls.Add(button3);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
@@ -95,7 +130,8 @@
         #endregion
         private TextBox textBox1;
         private Label label1;
-        private Button button3;
         private DataGridView dataGridView1;
+        private VBButton vbButton1;
+        private VBButton vbButton2;
     }
 }

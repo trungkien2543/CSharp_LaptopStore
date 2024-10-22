@@ -12,9 +12,16 @@ namespace CSharp_laptop.GUI
 {
     public partial class NhanVienGUI : Form
     {
-        public NhanVienGUI()
+        MainForm mainForm;
+        public NhanVienGUI(MainForm mainForm)
         {
+            this.mainForm = mainForm;  
             InitializeComponent();
+        }
+
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
