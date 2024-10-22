@@ -15,7 +15,7 @@ namespace CSharp_laptop.GUI
         public KhachHangGUI()
         {
             InitializeComponent();
-           
+
 
         }
 
@@ -29,10 +29,15 @@ namespace CSharp_laptop.GUI
         {
 
         }
-       
-      
+
+
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

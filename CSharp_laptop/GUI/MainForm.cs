@@ -195,7 +195,6 @@ namespace CSharp_laptop.GUI
             DisableButton();
             leftBorderBtn.Visible = false;
 
-
             iconCurrentChildForm.IconChar = IconChar.Home;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
 
@@ -212,6 +211,7 @@ namespace CSharp_laptop.GUI
         private void btnNH_PN_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new PhieuNhapGUI());
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
