@@ -45,16 +45,16 @@
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             textBox7 = new TextBox();
-            button2 = new Button();
             pictureBox1 = new PictureBox();
-            button3 = new Button();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            button1 = new Button();
+            vbButton2 = new VBButton();
+            vbButton1 = new VBButton();
             label11 = new Label();
             textBox8 = new TextBox();
+            vbButton3 = new VBButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -80,7 +80,6 @@
             label2.Size = new Size(30, 25);
             label2.TabIndex = 1;
             label2.Text = "ID";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -101,7 +100,6 @@
             label4.Size = new Size(40, 25);
             label4.TabIndex = 3;
             label4.Text = "Giá";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -142,7 +140,6 @@
             label8.Size = new Size(101, 25);
             label8.TabIndex = 7;
             label8.Text = "Kích thước";
-            label8.Click += label8_Click;
             // 
             // label9
             // 
@@ -163,7 +160,6 @@
             label10.Size = new Size(89, 25);
             label10.TabIndex = 9;
             label10.Text = "Hình ảnh";
-            label10.Click += label10_Click;
             // 
             // textBox1
             // 
@@ -173,7 +169,6 @@
             textBox1.ReadOnly = true;
             textBox1.Size = new Size(308, 33);
             textBox1.TabIndex = 10;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -182,7 +177,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(308, 33);
             textBox2.TabIndex = 11;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
             // 
@@ -191,7 +185,6 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(308, 33);
             textBox3.TabIndex = 12;
-            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
@@ -225,19 +218,6 @@
             textBox7.Size = new Size(308, 33);
             textBox7.TabIndex = 16;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.MediumPurple;
-            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(852, 437);
-            button2.Name = "button2";
-            button2.Size = new Size(117, 41);
-            button2.TabIndex = 19;
-            button2.Text = "Chọn ảnh";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.win12;
@@ -247,21 +227,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.MediumPurple;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(42, 30);
-            button3.Name = "button3";
-            button3.Size = new Size(117, 41);
-            button3.TabIndex = 21;
-            button3.Text = "Lưu";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
             // 
             // comboBox1
             // 
@@ -291,32 +256,63 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1228, 124);
             panel1.TabIndex = 24;
-            panel1.Paint += panel1_Paint;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.Ivory;
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(button3);
+            panel2.Controls.Add(vbButton2);
+            panel2.Controls.Add(vbButton1);
             panel2.Location = new Point(0, 596);
             panel2.Name = "panel2";
             panel2.Size = new Size(1228, 108);
             panel2.TabIndex = 25;
             // 
-            // button1
+            // vbButton2
             // 
-            button1.BackColor = Color.Crimson;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(177, 30);
-            button1.Name = "button1";
-            button1.Size = new Size(117, 41);
-            button1.TabIndex = 22;
-            button1.Text = "Đóng";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            vbButton2.BackColor = Color.Crimson;
+            vbButton2.BackgroundColor = Color.Crimson;
+            vbButton2.BorderColor = Color.PaleVioletRed;
+            vbButton2.BorderRadius = 20;
+            vbButton2.BorderSize = 0;
+            vbButton2.FlatAppearance.BorderSize = 0;
+            vbButton2.FlatStyle = FlatStyle.Flat;
+            vbButton2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton2.ForeColor = Color.White;
+            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton2.Location = new Point(173, 33);
+            vbButton2.Name = "vbButton2";
+            vbButton2.Padding = new Padding(7, 0, 0, 0);
+            vbButton2.Size = new Size(123, 41);
+            vbButton2.TabIndex = 24;
+            vbButton2.Text = "Đóng";
+            vbButton2.TextColor = Color.White;
+            vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton2.UseVisualStyleBackColor = false;
+            vbButton2.Click += vbButton2_Click;
+            // 
+            // vbButton1
+            // 
+            vbButton1.BackColor = Color.MediumPurple;
+            vbButton1.BackgroundColor = Color.MediumPurple;
+            vbButton1.BorderColor = Color.PaleVioletRed;
+            vbButton1.BorderRadius = 20;
+            vbButton1.BorderSize = 0;
+            vbButton1.FlatAppearance.BorderSize = 0;
+            vbButton1.FlatStyle = FlatStyle.Flat;
+            vbButton1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton1.ForeColor = Color.White;
+            vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton1.Location = new Point(28, 34);
+            vbButton1.Name = "vbButton1";
+            vbButton1.Padding = new Padding(7, 0, 0, 0);
+            vbButton1.Size = new Size(123, 41);
+            vbButton1.TabIndex = 23;
+            vbButton1.Text = "Lưu";
+            vbButton1.TextColor = Color.White;
+            vbButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton1.UseVisualStyleBackColor = false;
+            vbButton1.Click += vbButton1_Click;
             // 
             // label11
             // 
@@ -335,15 +331,36 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(193, 33);
             textBox8.TabIndex = 27;
-            textBox8.TextChanged += textBox8_TextChanged;
+            // 
+            // vbButton3
+            // 
+            vbButton3.BackColor = Color.MediumPurple;
+            vbButton3.BackgroundColor = Color.MediumPurple;
+            vbButton3.BorderColor = Color.PaleVioletRed;
+            vbButton3.BorderRadius = 20;
+            vbButton3.BorderSize = 0;
+            vbButton3.FlatAppearance.BorderSize = 0;
+            vbButton3.FlatStyle = FlatStyle.Flat;
+            vbButton3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton3.ForeColor = Color.White;
+            vbButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton3.Location = new Point(847, 425);
+            vbButton3.Name = "vbButton3";
+            vbButton3.Padding = new Padding(7, 0, 0, 0);
+            vbButton3.Size = new Size(123, 41);
+            vbButton3.TabIndex = 28;
+            vbButton3.Text = "Chọn ảnh";
+            vbButton3.TextColor = Color.White;
+            vbButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton3.UseVisualStyleBackColor = false;
             // 
             // EditSanPham
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1229, 703);
+            Controls.Add(vbButton3);
             Controls.Add(textBox8);
-            Controls.Add(button2);
             Controls.Add(label11);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -394,7 +411,6 @@
         private TextBox textBox5;
         private TextBox textBox6;
         private TextBox textBox7;
-        private Button button2;
         private PictureBox pictureBox1;
         private Button button3;
         private ComboBox comboBox1;
@@ -405,5 +421,8 @@
         private TextBox textBox4;
         private Label label11;
         private TextBox textBox8;
+        private VBButton vbButton1;
+        private VBButton vbButton2;
+        private VBButton vbButton3;
     }
 }

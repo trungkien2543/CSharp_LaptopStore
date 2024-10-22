@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSharp_laptop.BUS;
+using LaptopStore.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,14 +16,28 @@ namespace CSharp_laptop.GUI.Laptop
     {
         private MainForm mainForm;
         private string laptopID;
+        private SanPhamBUS sanPhamBUS = new SanPhamBUS();
 
         public LaptopGUI(string laptopID, MainForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
             this.laptopID = laptopID;
+            
+
+
+            SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(laptopID);
 
             label13.Text = laptopID;
+            label2.Text = sanPhamDTO.TenSP;
+            label15.Text = sanPhamDTO.GiaBan.ToString();
+            label14.Text = sanPhamDTO.Hang;
+            label19.Text = sanPhamDTO.GPU;
+            label16.Text = sanPhamDTO.CPU;
+            label17.Text = sanPhamDTO.RAM.ToString();
+            label18.Text = sanPhamDTO.KichThuoc;
+            label12.Text = sanPhamDTO.HinhAnh;
+            label20.Text = sanPhamDTO.KhuyenMai;
         }
 
         private void label2_Click(object sender, EventArgs e)

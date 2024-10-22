@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LaptopGUI));
             panel1 = new Panel();
-            button4 = new Button();
+            vbButton2 = new VBButton();
             label12 = new Label();
             label20 = new Label();
             label19 = new Label();
@@ -51,11 +52,11 @@
             label4 = new Label();
             button2 = new Button();
             label2 = new Label();
-            button3 = new Button();
             dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
             button1 = new Button();
             label1 = new Label();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -65,7 +66,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(vbButton2);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label20);
             panel1.Controls.Add(label19);
@@ -86,7 +87,6 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(button3);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(button1);
@@ -97,18 +97,29 @@
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
-            // button4
+            // vbButton2
             // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.MediumPurple;
-            button4.Location = new Point(1086, 94);
-            button4.Name = "button4";
-            button4.Size = new Size(110, 33);
-            button4.TabIndex = 32;
-            button4.Text = "Bảo hành";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            vbButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            vbButton2.BackColor = Color.MediumSlateBlue;
+            vbButton2.BackgroundColor = Color.MediumSlateBlue;
+            vbButton2.BorderColor = Color.PaleVioletRed;
+            vbButton2.BorderRadius = 20;
+            vbButton2.BorderSize = 0;
+            vbButton2.FlatAppearance.BorderSize = 0;
+            vbButton2.FlatStyle = FlatStyle.Flat;
+            vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton2.ForeColor = Color.White;
+            vbButton2.Image = Properties.Resources.icons8_find_29;
+            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton2.Location = new Point(1068, 311);
+            vbButton2.Name = "vbButton2";
+            vbButton2.Padding = new Padding(7, 0, 0, 0);
+            vbButton2.Size = new Size(137, 44);
+            vbButton2.TabIndex = 32;
+            vbButton2.Text = "Tìm kiếm";
+            vbButton2.TextColor = Color.White;
+            vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton2.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
@@ -325,25 +336,13 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.MediumPurple;
+            label2.ForeColor = Color.DeepPink;
             label2.Location = new Point(125, 25);
             label2.Name = "label2";
             label2.Size = new Size(255, 37);
             label2.TabIndex = 7;
             label2.Text = "Asus Macbook Pro";
             label2.Click += label2_Click;
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.MediumPurple;
-            button3.Location = new Point(1095, 322);
-            button3.Name = "button3";
-            button3.Size = new Size(110, 33);
-            button3.TabIndex = 6;
-            button3.Text = "Tìm kiếm";
-            button3.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -363,7 +362,7 @@
             textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(789, 322);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(290, 33);
+            textBox1.Size = new Size(266, 33);
             textBox1.TabIndex = 2;
             // 
             // button1
@@ -395,6 +394,11 @@
             label1.Text = "Laptop";
             label1.Click += label1_Click;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(181, 26);
+            // 
             // LaptopGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -413,7 +417,6 @@
         #endregion
 
         private Panel panel1;
-        private Button button3;
         private DataGridView dataGridView1;
         private TextBox textBox1;
         private Button button1;
@@ -440,5 +443,7 @@
         private Label label14;
         private Label label13;
         private Button button4;
+        private VBButton vbButton2;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }

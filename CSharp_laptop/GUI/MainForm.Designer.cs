@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             btnTaiKhoan = new FontAwesome.Sharp.IconButton();
             btnThongKe = new FontAwesome.Sharp.IconButton();
             btnNH_PN = new FontAwesome.Sharp.IconButton();
@@ -61,6 +62,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(31, 30, 68);
+            panelMenu.Controls.Add(iconButton1);
             panelMenu.Controls.Add(btnTaiKhoan);
             panelMenu.Controls.Add(btnThongKe);
             panelMenu.Controls.Add(btnNH_PN);
@@ -76,6 +78,28 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(220, 837);
             panelMenu.TabIndex = 0;
+            // 
+            // iconButton1
+            // 
+            iconButton1.Dock = DockStyle.Top;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.ForeColor = Color.Gainsboro;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ShieldBlank;
+            iconButton1.IconColor = Color.Gainsboro;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 32;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(0, 680);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(10, 0, 20, 0);
+            iconButton1.Size = new Size(220, 60);
+            iconButton1.TabIndex = 11;
+            iconButton1.Text = "Bảo hành";
+            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click_1;
             // 
             // btnTaiKhoan
             // 
@@ -482,5 +506,6 @@
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnZoom;
         private FontAwesome.Sharp.IconButton btnMini;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

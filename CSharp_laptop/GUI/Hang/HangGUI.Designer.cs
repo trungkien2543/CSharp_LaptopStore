@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HangGUI));
             panel1 = new Panel();
-            button3 = new Button();
+            vbButton1 = new VBButton();
+            vbButton2 = new VBButton();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
-            button1 = new Button();
             label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -43,34 +42,69 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(vbButton1);
+            panel1.Controls.Add(vbButton2);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(dataGridView1);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(1215, 704);
             panel1.TabIndex = 4;
             // 
-            // button3
+            // vbButton1
             // 
-            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.FromArgb(249, 118, 176);
-            button3.Location = new Point(278, 118);
-            button3.Name = "button3";
-            button3.Size = new Size(110, 33);
-            button3.TabIndex = 8;
-            button3.Text = "Tìm kiếm";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            vbButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            vbButton1.BackColor = Color.FromArgb(249, 118, 176);
+            vbButton1.BackgroundColor = Color.FromArgb(249, 118, 176);
+            vbButton1.BorderColor = Color.PaleVioletRed;
+            vbButton1.BorderRadius = 20;
+            vbButton1.BorderSize = 0;
+            vbButton1.FlatAppearance.BorderSize = 0;
+            vbButton1.FlatStyle = FlatStyle.Flat;
+            vbButton1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton1.ForeColor = Color.White;
+            vbButton1.Image = Properties.Resources.icons8_add_29;
+            vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton1.Location = new Point(1083, 93);
+            vbButton1.Name = "vbButton1";
+            vbButton1.Padding = new Padding(7, 0, 0, 0);
+            vbButton1.Size = new Size(123, 58);
+            vbButton1.TabIndex = 10;
+            vbButton1.Text = "Thêm";
+            vbButton1.TextColor = Color.White;
+            vbButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton1.UseVisualStyleBackColor = false;
+            // 
+            // vbButton2
+            // 
+            vbButton2.BackColor = Color.FromArgb(249, 118, 176);
+            vbButton2.BackgroundColor = Color.FromArgb(249, 118, 176);
+            vbButton2.BorderColor = Color.PaleVioletRed;
+            vbButton2.BorderRadius = 20;
+            vbButton2.BorderSize = 0;
+            vbButton2.FlatAppearance.BorderSize = 0;
+            vbButton2.FlatStyle = FlatStyle.Flat;
+            vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton2.ForeColor = Color.White;
+            vbButton2.Image = Properties.Resources.icons8_find_29;
+            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton2.Location = new Point(306, 107);
+            vbButton2.Name = "vbButton2";
+            vbButton2.Padding = new Padding(7, 0, 0, 0);
+            vbButton2.Size = new Size(137, 44);
+            vbButton2.TabIndex = 9;
+            vbButton2.Text = "Tìm kiếm";
+            vbButton2.TextColor = Color.White;
+            vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton2.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(12, 118);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(250, 33);
+            textBox1.Size = new Size(274, 33);
             textBox1.TabIndex = 7;
             // 
             // dataGridView1
@@ -83,24 +117,6 @@
             dataGridView1.Size = new Size(1194, 530);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(249, 118, 176);
-            button1.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(1094, 105);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10, 0, 0, 0);
-            button1.Size = new Size(112, 58);
-            button1.TabIndex = 3;
-            button1.Text = "Thêm";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
             // 
             // label1
             // 
@@ -131,10 +147,10 @@
         #endregion
         private Button button2;
         private Panel panel1;
-        private Button button1;
         private DataGridView dataGridView1;
         private Label label1;
-        private Button button3;
         private TextBox textBox1;
+        private VBButton vbButton2;
+        private VBButton vbButton1;
     }
 }

@@ -27,11 +27,6 @@ namespace CSharp_laptop.GUI
             LoadLaptops();
             edittable();
             AddButtonsToDataGridView();
-            
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
@@ -40,21 +35,6 @@ namespace CSharp_laptop.GUI
             //EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
             //editSanPham.Show();
             mainForm.OpenChildForm(new EditSanPham("L" + soluong_lap, "add", mainForm));
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
@@ -94,7 +74,7 @@ namespace CSharp_laptop.GUI
             }
             else if (e.ColumnIndex == dataGridView1.Columns["btnView"].Index && e.RowIndex >= 0)
             {
-                mainForm.OpenChildForm(new LaptopGUI(selectedLaptopID,mainForm));
+                mainForm.OpenChildForm(new LaptopGUI(selectedLaptopID, mainForm));
             }
         }
 
@@ -162,15 +142,14 @@ namespace CSharp_laptop.GUI
             dataGridView1.Columns.Add(btnView);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void vbButton1_Click(object sender, EventArgs e)
         {
-
+            mainForm.OpenChildForm(new EditSanPham("L" + soluong_lap, "add", mainForm));
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
-        }
 
+        }
     }
 }
