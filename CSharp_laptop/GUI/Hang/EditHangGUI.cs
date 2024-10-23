@@ -30,5 +30,15 @@ namespace CSharp_laptop.GUI
         {
             mainForm.OpenChildForm(new HangGUI(mainForm));
         }
+
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new HangGUI(mainForm));
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new HangGUI(mainForm));
+        }
     }
 }

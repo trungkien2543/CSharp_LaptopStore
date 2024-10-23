@@ -151,5 +151,10 @@ namespace CSharp_laptop.GUI
         {
 
         }
+
+        private void rjTextBox1__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

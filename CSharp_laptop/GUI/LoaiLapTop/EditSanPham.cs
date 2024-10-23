@@ -33,21 +33,23 @@ namespace CSharp_laptop.GUI
 
             if (chucnang == "add")
             {
-                textBox1.Text = idLaptop;
+                rjTextBox1.Texts = idLaptop;
             }
             else
             {
                 SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop);
 
-                textBox1.Text = sanPhamDTO.IDLaptop;
-                textBox2.Text = sanPhamDTO.TenSP;
-                textBox3.Text = sanPhamDTO.GiaBan.ToString();
+                rjTextBox1.Texts = sanPhamDTO.IDLaptop;
+                rjTextBox2.Texts = sanPhamDTO.TenSP;
+                rjTextBox3.Texts = sanPhamDTO.GiaBan.ToString();
+                rjTextBox4.Texts = sanPhamDTO.GPU;
+                rjTextBox5.Texts = sanPhamDTO.CPU;
+                rjTextBox6.Texts = sanPhamDTO.RAM.ToString();
+                rjTextBox7.Texts = sanPhamDTO.KichThuoc;
+                rjTextBox8.Texts = sanPhamDTO.HinhAnh;
+
+
                 comboBox1.Text = sanPhamDTO.Hang;
-                textBox4.Text = sanPhamDTO.GPU;
-                textBox5.Text = sanPhamDTO.CPU;
-                textBox6.Text = sanPhamDTO.RAM.ToString();
-                textBox7.Text = sanPhamDTO.KichThuoc;
-                textBox8.Text = sanPhamDTO.HinhAnh;
                 comboBox2.Text = sanPhamDTO.KhuyenMai;
                 label1.Text = chucnang;
             }
@@ -75,17 +77,28 @@ namespace CSharp_laptop.GUI
         {
             SanPhamDTO laptop = new SanPhamDTO
             {
-                IDLaptop = textBox1.Text,
-                TenSP = textBox2.Text,
-                GiaBan = long.Parse(textBox3.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+                IDLaptop = rjTextBox1.Text,
+                TenSP = rjTextBox2.Text,
+                GiaBan = long.Parse(rjTextBox3.Text),  // Chuyển đổi từ chuỗi sang số nguyên
                 Hang = comboBox1.Text,
-                CPU = textBox5.Text,
-                RAM = int.Parse(textBox6.Text),  // Chuyển đổi từ chuỗi sang số nguyên
-                GPU = textBox4.Text,
-                HinhAnh = textBox8.Text,
-                KichThuoc = textBox7.Text,
+                CPU = rjTextBox5.Text,
+                RAM = int.Parse(rjTextBox6.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+                GPU = rjTextBox4.Text,
+                HinhAnh = rjTextBox8.Text,
+                KichThuoc = rjTextBox7.Text,
                 KhuyenMai = comboBox2.Text
             };
+
+//            IDLaptop = textBox1.Text,
+//TenSP = textBox2.Text,
+//GiaBan = long.Parse(textBox3.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+//Hang = comboBox1.Text,
+//CPU = textBox5.Text,
+//RAM = int.Parse(textBox6.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+//GPU = textBox4.Text,
+//HinhAnh = textBox8.Text,
+//KichThuoc = textBox7.Text,
+//KhuyenMai = comboBox2.Text
 
             bool result = true;
 
@@ -130,17 +143,30 @@ namespace CSharp_laptop.GUI
         {
             SanPhamDTO laptop = new SanPhamDTO
             {
-                IDLaptop = textBox1.Text,
-                TenSP = textBox2.Text,
-                GiaBan = long.Parse(textBox3.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+                IDLaptop = rjTextBox1.Texts,
+                TenSP = rjTextBox2.Texts,
+                GiaBan = long.Parse(rjTextBox3.Texts),  // Chuyển đổi từ chuỗi sang số nguyên
                 Hang = comboBox1.Text,
-                CPU = textBox5.Text,
-                RAM = int.Parse(textBox6.Text),  // Chuyển đổi từ chuỗi sang số nguyên
-                GPU = textBox4.Text,
-                HinhAnh = textBox8.Text,
-                KichThuoc = textBox7.Text,
+                CPU = rjTextBox5.Texts,
+                RAM = int.Parse(rjTextBox6.Texts),  // Chuyển đổi từ chuỗi sang số nguyên
+                GPU = rjTextBox4.Text,
+                HinhAnh = rjTextBox8.Texts,
+                KichThuoc = rjTextBox7.Texts,
                 KhuyenMai = comboBox2.Text
+
             };
+
+
+            //IDLaptop = textBox1.Text,
+            //    TenSP = textBox2.Text,
+            //    GiaBan = long.Parse(textBox3.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+            //    Hang = comboBox1.Text,
+            //    CPU = textBox5.Text,
+            //    RAM = int.Parse(textBox6.Text),  // Chuyển đổi từ chuỗi sang số nguyên
+            //    GPU = textBox4.Text,
+            //    HinhAnh = textBox8.Text,
+            //    KichThuoc = textBox7.Text,
+            //    KhuyenMai = comboBox2.Text
 
             bool result = true;
 

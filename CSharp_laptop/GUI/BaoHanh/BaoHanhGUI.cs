@@ -17,6 +17,13 @@ namespace CSharp_laptop.GUI.Laptop
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            edit_panel();
+        }
+
+        void edit_panel()
+        {
+            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,6 +34,26 @@ namespace CSharp_laptop.GUI.Laptop
         private void button2_Click(object sender, EventArgs e)
         {
             mainForm.OpenChildForm(new SanPhamGUI(mainForm));
+        }
+
+        private void vbButton3_Click_1(object sender, EventArgs e)
+        {
+            vbButton1.Enabled = true;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("đã nhấn");
+        }
+
+        private void vbButton1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
