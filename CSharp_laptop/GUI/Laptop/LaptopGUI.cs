@@ -23,7 +23,7 @@ namespace CSharp_laptop.GUI.Laptop
             InitializeComponent();
             this.mainForm = mainForm;
             this.laptopID = laptopID;
-            
+
 
 
             SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(laptopID);
@@ -68,6 +68,11 @@ namespace CSharp_laptop.GUI.Laptop
         private void label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new SanPhamGUI(mainForm));
         }
     }
 }
