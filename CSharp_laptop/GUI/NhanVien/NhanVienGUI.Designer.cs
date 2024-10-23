@@ -117,6 +117,7 @@
             dataGridView1.TabIndex = 0;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
+            dataGridView1.SizeChanged += dataGridView1_SizeChanged;
             // 
             // Column1
             // 
