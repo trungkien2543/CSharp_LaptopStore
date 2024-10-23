@@ -76,7 +76,7 @@ namespace CSharp_laptop.GUI.NhanVien
             rjTextBox1.PasswordChar = false;
             rjTextBox1.PlaceholderColor = Color.DarkGray;
             rjTextBox1.PlaceholderText = "ID Nhân Viên";
-            rjTextBox1.Size = new Size(425, 40);
+            rjTextBox1.Size = new Size(518, 40);
             rjTextBox1.TabIndex = 2;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
@@ -98,7 +98,7 @@ namespace CSharp_laptop.GUI.NhanVien
             rjTextBox2.PasswordChar = false;
             rjTextBox2.PlaceholderColor = Color.DarkGray;
             rjTextBox2.PlaceholderText = "Tên Nhân Viên";
-            rjTextBox2.Size = new Size(425, 40);
+            rjTextBox2.Size = new Size(518, 40);
             rjTextBox2.TabIndex = 3;
             rjTextBox2.Texts = "";
             rjTextBox2.UnderlinedStyle = false;
@@ -120,7 +120,7 @@ namespace CSharp_laptop.GUI.NhanVien
             rjTextBox3.PasswordChar = false;
             rjTextBox3.PlaceholderColor = Color.DarkGray;
             rjTextBox3.PlaceholderText = "Số Điện Thoại";
-            rjTextBox3.Size = new Size(425, 40);
+            rjTextBox3.Size = new Size(518, 40);
             rjTextBox3.TabIndex = 4;
             rjTextBox3.Texts = "";
             rjTextBox3.UnderlinedStyle = false;
@@ -142,7 +142,7 @@ namespace CSharp_laptop.GUI.NhanVien
             rjTextBox4.PasswordChar = false;
             rjTextBox4.PlaceholderColor = Color.DarkGray;
             rjTextBox4.PlaceholderText = "Địa Chỉ";
-            rjTextBox4.Size = new Size(425, 40);
+            rjTextBox4.Size = new Size(518, 40);
             rjTextBox4.TabIndex = 5;
             rjTextBox4.Texts = "";
             rjTextBox4.UnderlinedStyle = false;
@@ -164,7 +164,7 @@ namespace CSharp_laptop.GUI.NhanVien
             rjTextBox5.PasswordChar = false;
             rjTextBox5.PlaceholderColor = Color.DarkGray;
             rjTextBox5.PlaceholderText = "Căn Cước Công Dân";
-            rjTextBox5.Size = new Size(425, 40);
+            rjTextBox5.Size = new Size(518, 40);
             rjTextBox5.TabIndex = 6;
             rjTextBox5.Texts = "";
             rjTextBox5.UnderlinedStyle = false;
@@ -186,7 +186,7 @@ namespace CSharp_laptop.GUI.NhanVien
             rjTextBox6.PasswordChar = false;
             rjTextBox6.PlaceholderColor = Color.DarkGray;
             rjTextBox6.PlaceholderText = "Email";
-            rjTextBox6.Size = new Size(425, 40);
+            rjTextBox6.Size = new Size(518, 40);
             rjTextBox6.TabIndex = 7;
             rjTextBox6.Texts = "";
             rjTextBox6.UnderlinedStyle = false;
@@ -203,7 +203,7 @@ namespace CSharp_laptop.GUI.NhanVien
             vbButton1.FlatStyle = FlatStyle.Flat;
             vbButton1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
-            vbButton1.Location = new Point(594, 576);
+            vbButton1.Location = new Point(755, 576);
             vbButton1.Name = "vbButton1";
             vbButton1.Size = new Size(138, 55);
             vbButton1.TabIndex = 8;
@@ -223,7 +223,7 @@ namespace CSharp_laptop.GUI.NhanVien
             vbButton2.FlatStyle = FlatStyle.Flat;
             vbButton2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vbButton2.ForeColor = Color.White;
-            vbButton2.Location = new Point(755, 576);
+            vbButton2.Location = new Point(916, 576);
             vbButton2.Name = "vbButton2";
             vbButton2.Size = new Size(138, 55);
             vbButton2.TabIndex = 9;
@@ -239,7 +239,7 @@ namespace CSharp_laptop.GUI.NhanVien
             rjDatePicker1.CustomFormat = "dd/MM/yyyy";
             rjDatePicker1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjDatePicker1.Format = DateTimePickerFormat.Custom;
-            rjDatePicker1.Location = new Point(698, 97);
+            rjDatePicker1.Location = new Point(772, 97);
             rjDatePicker1.MinimumSize = new Size(0, 40);
             rjDatePicker1.Name = "rjDatePicker1";
             rjDatePicker1.Size = new Size(228, 40);
@@ -252,7 +252,7 @@ namespace CSharp_laptop.GUI.NhanVien
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.MediumPurple;
-            label2.Location = new Point(555, 99);
+            label2.Location = new Point(629, 99);
             label2.Name = "label2";
             label2.Size = new Size(137, 32);
             label2.TabIndex = 11;
@@ -281,7 +281,7 @@ namespace CSharp_laptop.GUI.NhanVien
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.MediumPurple;
-            label3.Location = new Point(555, 177);
+            label3.Location = new Point(629, 177);
             label3.Name = "label3";
             label3.Size = new Size(124, 32);
             label3.TabIndex = 13;
@@ -309,7 +309,7 @@ namespace CSharp_laptop.GUI.NhanVien
             groupBox1.Controls.Add(rjRadioButton2);
             groupBox1.Controls.Add(rjRadioButton1);
             groupBox1.FlatStyle = FlatStyle.System;
-            groupBox1.Location = new Point(698, 165);
+            groupBox1.Location = new Point(772, 165);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(228, 52);
             groupBox1.TabIndex = 15;
@@ -320,7 +320,7 @@ namespace CSharp_laptop.GUI.NhanVien
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(970, 667);
+            ClientSize = new Size(1131, 667);
             Controls.Add(groupBox1);
             Controls.Add(label3);
             Controls.Add(label2);
