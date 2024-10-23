@@ -1,5 +1,6 @@
 ﻿using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
+using CSharp_laptop.GUI.NhanVien;
 using CSharp_laptop.Properties;
 using LaptopStore.DTO;
 using System;
@@ -74,7 +75,7 @@ namespace CSharp_laptop.GUI
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
-                MessageBox.Show(clickedButton.Name + " edit was clicked!");
+                dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
             }
         }
         private void BtnDel_Click(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace CSharp_laptop.GUI
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
-                MessageBox.Show(clickedButton.Name + " delete was clicked!");
+                dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
             }
         }
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -129,6 +130,16 @@ namespace CSharp_laptop.GUI
                 // Đánh dấu đã vẽ ô để tránh vẽ đè
                 e.Handled = true;
             }
+        }
+
+        private void vbButton1_Click_1(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new CreateNhanVienGUI(mainForm));
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
