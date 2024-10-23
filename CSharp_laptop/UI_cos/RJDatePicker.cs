@@ -61,7 +61,7 @@ namespace RJDateTimePicker
         public RJDatePicker()
         {
             this.SetStyle(ControlStyles.UserPaint, true);
-            this.MinimumSize = new Size(0, 35);
+            this.MinimumSize = new Size(0, 40);
             this.Font = new Font(this.Font.Name, 9.5F);
         }
 

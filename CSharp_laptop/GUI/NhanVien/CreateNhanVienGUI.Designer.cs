@@ -37,6 +37,8 @@
             rjTextBox6 = new RJTextBox();
             vbButton1 = new VBButton();
             vbButton2 = new VBButton();
+            rjDatePicker1 = new RJDateTimePicker.RJDatePicker();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -223,12 +225,38 @@
             vbButton2.UseVisualStyleBackColor = false;
             vbButton2.Click += vbButton2_Click;
             // 
+            // rjDatePicker1
+            // 
+            rjDatePicker1.BorderColor = Color.PaleVioletRed;
+            rjDatePicker1.BorderSize = 0;
+            rjDatePicker1.Font = new Font("Segoe UI", 9.5F);
+            rjDatePicker1.Location = new Point(698, 97);
+            rjDatePicker1.MinimumSize = new Size(0, 40);
+            rjDatePicker1.Name = "rjDatePicker1";
+            rjDatePicker1.Size = new Size(228, 40);
+            rjDatePicker1.SkinColor = Color.MediumSlateBlue;
+            rjDatePicker1.TabIndex = 10;
+            rjDatePicker1.TextColor = Color.White;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.MediumPurple;
+            label2.Location = new Point(555, 99);
+            label2.Name = "label2";
+            label2.Size = new Size(137, 32);
+            label2.TabIndex = 11;
+            label2.Text = "Ngày Sinh:";
+            // 
             // CreateNhanVienGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(970, 667);
+            Controls.Add(label2);
+            Controls.Add(rjDatePicker1);
             Controls.Add(rjTextBox1);
             Controls.Add(rjTextBox2);
             Controls.Add(vbButton2);
@@ -255,5 +283,7 @@
         private RJTextBox rjTextBox6;
         private VBButton vbButton1;
         private VBButton vbButton2;
+        private RJDateTimePicker.RJDatePicker rjDatePicker1;
+        private Label label2;
     }
 }

@@ -141,5 +141,10 @@ namespace CSharp_laptop.GUI
         {
 
         }
+
+        private void vbButton1_Click_2(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new CreateNhanVienGUI(mainForm));
+        }
     }
 }
