@@ -48,6 +48,11 @@ namespace CSharp_laptop.GUI.NhanVien
         {
             mainf.OpenChildForm(new NhanVienGUI(mainf));
         }
+
+        private void rjRadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

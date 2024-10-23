@@ -1,4 +1,6 @@
-﻿namespace CSharp_laptop.GUI.NhanVien
+﻿using System.Globalization;
+
+namespace CSharp_laptop.GUI.NhanVien
 {
     partial class CreateNhanVienGUI
     {
@@ -39,6 +41,11 @@
             vbButton2 = new VBButton();
             rjDatePicker1 = new RJDateTimePicker.RJDatePicker();
             label2 = new Label();
+            rjRadioButton1 = new UI_cos.RJRadioButton();
+            label3 = new Label();
+            rjRadioButton2 = new UI_cos.RJRadioButton();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -196,7 +203,7 @@
             vbButton1.FlatStyle = FlatStyle.Flat;
             vbButton1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
-            vbButton1.Location = new Point(611, 576);
+            vbButton1.Location = new Point(594, 576);
             vbButton1.Name = "vbButton1";
             vbButton1.Size = new Size(138, 55);
             vbButton1.TabIndex = 8;
@@ -229,7 +236,9 @@
             // 
             rjDatePicker1.BorderColor = Color.PaleVioletRed;
             rjDatePicker1.BorderSize = 0;
-            rjDatePicker1.Font = new Font("Segoe UI", 9.5F);
+            rjDatePicker1.CustomFormat = "dd/MM/yyyy";
+            rjDatePicker1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rjDatePicker1.Format = DateTimePickerFormat.Custom;
             rjDatePicker1.Location = new Point(698, 97);
             rjDatePicker1.MinimumSize = new Size(0, 40);
             rjDatePicker1.Name = "rjDatePicker1";
@@ -249,12 +258,71 @@
             label2.TabIndex = 11;
             label2.Text = "Ngày Sinh:";
             // 
+            // rjRadioButton1
+            // 
+            rjRadioButton1.AutoSize = true;
+            rjRadioButton1.CheckedColor = Color.MediumSlateBlue;
+            rjRadioButton1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjRadioButton1.ForeColor = SystemColors.ButtonShadow;
+            rjRadioButton1.Location = new Point(6, 13);
+            rjRadioButton1.MinimumSize = new Size(0, 21);
+            rjRadioButton1.Name = "rjRadioButton1";
+            rjRadioButton1.Padding = new Padding(10, 0, 0, 0);
+            rjRadioButton1.Size = new Size(88, 34);
+            rjRadioButton1.TabIndex = 12;
+            rjRadioButton1.TabStop = true;
+            rjRadioButton1.Text = "Nam";
+            rjRadioButton1.UnCheckedColor = Color.Gray;
+            rjRadioButton1.UseVisualStyleBackColor = true;
+            rjRadioButton1.CheckedChanged += rjRadioButton1_CheckedChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.MediumPurple;
+            label3.Location = new Point(555, 177);
+            label3.Name = "label3";
+            label3.Size = new Size(124, 32);
+            label3.TabIndex = 13;
+            label3.Text = "Giới Tính:";
+            // 
+            // rjRadioButton2
+            // 
+            rjRadioButton2.AutoSize = true;
+            rjRadioButton2.CheckedColor = Color.MediumSlateBlue;
+            rjRadioButton2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjRadioButton2.ForeColor = SystemColors.ButtonShadow;
+            rjRadioButton2.Location = new Point(113, 13);
+            rjRadioButton2.MinimumSize = new Size(0, 21);
+            rjRadioButton2.Name = "rjRadioButton2";
+            rjRadioButton2.Padding = new Padding(10, 0, 0, 0);
+            rjRadioButton2.Size = new Size(72, 34);
+            rjRadioButton2.TabIndex = 14;
+            rjRadioButton2.TabStop = true;
+            rjRadioButton2.Text = "Nữ";
+            rjRadioButton2.UnCheckedColor = Color.Gray;
+            rjRadioButton2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rjRadioButton2);
+            groupBox1.Controls.Add(rjRadioButton1);
+            groupBox1.FlatStyle = FlatStyle.System;
+            groupBox1.Location = new Point(698, 165);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(228, 52);
+            groupBox1.TabIndex = 15;
+            groupBox1.TabStop = false;
+            // 
             // CreateNhanVienGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(970, 667);
+            Controls.Add(groupBox1);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(rjDatePicker1);
             Controls.Add(rjTextBox1);
@@ -268,6 +336,8 @@
             Controls.Add(rjTextBox5);
             Name = "CreateNhanVienGUI";
             Text = "CreateNhanVienGUI";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -285,5 +355,9 @@
         private VBButton vbButton2;
         private RJDateTimePicker.RJDatePicker rjDatePicker1;
         private Label label2;
+        private UI_cos.RJRadioButton rjRadioButton1;
+        private Label label3;
+        private UI_cos.RJRadioButton rjRadioButton2;
+        private GroupBox groupBox1;
     }
 }

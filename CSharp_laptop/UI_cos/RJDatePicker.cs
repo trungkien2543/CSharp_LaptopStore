@@ -29,10 +29,10 @@ namespace RJDateTimePicker
             set
             {
                 skinColor = value;
-                if (skinColor.GetBrightness() != 0.8F) {
-                    calendarIcon = CSharp_laptop.Properties.Resources.calendarDark;
-                } else 
-                    calendarIcon = CSharp_laptop.Properties.Resources.calendarWhite;
+                //if (skinColor.GetBrightness() != 0.8F) {
+                //    calendarIcon = CSharp_laptop.Properties.Resources.calendarDark;
+                //} else 
+                //    calendarIcon = CSharp_laptop.Properties.Resources.calendarWhite;
                 this.Invalidate();
             } 
         }
@@ -62,7 +62,7 @@ namespace RJDateTimePicker
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.MinimumSize = new Size(0, 40);
-            this.Font = new Font(this.Font.Name, 9.5F);
+            this.Font = new Font(this.Font.Name, 14F);
         }
 
         //Overridden methods
