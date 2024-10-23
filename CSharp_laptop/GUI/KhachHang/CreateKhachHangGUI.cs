@@ -11,19 +11,20 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSharp_laptop.GUI.NhanVien
+namespace CSharp_laptop.GUI.KhachHang
 {
-    public partial class CreateNhanVienGUI : Form
+    public partial class CreateKhachHangGUI : Form
     {
-        NhanVienBUS bus;
-        MainForm mainf;
-        public CreateNhanVienGUI(MainForm mainf)
+        MainForm mainForm;
+        KhachHangBUS bus;
+        public CreateKhachHangGUI(MainForm mainForm)
         {
-            this.mainf = mainf;
-            this.bus = new NhanVienBUS();
+            this.mainForm = mainForm;
+            bus = new KhachHangBUS();
             InitializeComponent();
-            List<NhanVienDTO> lt = bus.getAllNhanVien();
-            rjTextBox1.setText(GetNextString(lt[lt.Count - 1].ID_NhanVien));
+
+            List<KhachHangDTO> khs = bus.getAllKhachHang();
+            rjTextBox1.setText(GetNextString(khs[khs.Count - 1].ID_KhachHang));
         }
 
         public string GetNextString(string input)
@@ -49,13 +50,7 @@ namespace CSharp_laptop.GUI.NhanVien
 
         private void vbButton2_Click(object sender, EventArgs e)
         {
-            mainf.OpenChildForm(new NhanVienGUI(mainf));
-        }
-
-        private void rjRadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            mainForm.OpenChildForm(new KhachHangGUI(mainForm));
         }
     }
-
 }
