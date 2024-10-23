@@ -33,7 +33,7 @@ namespace CSharp_laptop.DAO
                             NgaySinh = reader["NgaySinh"].ToString(),
                             SDT = reader["SDT"].ToString(),
                             DiaChi = reader["DiaChi"].ToString(),
-                            GioiTinh = true,
+                            GioiTinh = reader["GioiTinh"].ToString() == "True",
                             CCCD = reader["CCCD"].ToString(),
                             Email = reader["Email"].ToString()
                         };
