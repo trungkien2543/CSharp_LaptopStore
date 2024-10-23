@@ -131,9 +131,9 @@
             btnRefresh.IconColor = Color.White;
             btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRefresh.IconSize = 40;
-            btnRefresh.Location = new Point(348, 3);
+            btnRefresh.Location = new Point(349, 6);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(62, 57);
+            btnRefresh.Size = new Size(62, 59);
             btnRefresh.TabIndex = 4;
             btnRefresh.UseVisualStyleBackColor = false;
             // 

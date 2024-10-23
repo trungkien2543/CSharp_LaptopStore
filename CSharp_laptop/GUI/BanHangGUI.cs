@@ -12,6 +12,8 @@ namespace CSharp_laptop.GUI
 {
     public partial class BanHangGUI : Form
     {
+
+        private int row;
         public BanHangGUI()
         {
             InitializeComponent();
@@ -166,7 +168,7 @@ namespace CSharp_laptop.GUI
 
         private void tblHoaDon_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+          
         }
 
         private void txtMaHD_TextChanged(object sender, EventArgs e)
