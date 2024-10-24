@@ -366,6 +366,13 @@ namespace CSharp_laptop.GUI
             this.Invalidate();
             SetPlaceholder();
         }
+        public void setText(String textt)
+        {
+            isFocused = true;
+            this.Invalidate();
+            RemovePlaceholder();
+            textBox1.Text = textt;
+        }
         ///::::+
         #endregion
     }

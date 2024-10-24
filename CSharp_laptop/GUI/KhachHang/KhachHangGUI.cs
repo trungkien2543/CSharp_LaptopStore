@@ -1,62 +1,66 @@
 ﻿using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
-using CSharp_laptop.GUI.NhanVien;
-using CSharp_laptop.Properties;
-using LaptopStore.DTO;
+using CSharp_laptop.GUI.KhachHang;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CSharp_laptop.GUI
 {
-    public partial class NhanVienGUI : Form
+    public partial class KhachHangGUI : Form
     {
         MainForm mainForm;
-        NhanVienBUS bus;
-        List<NhanVienDTO> nvs;
+        KhachHangBUS bus;
+        List<KhachHangDTO> dtos;
+
         List<VBButton> btnEditList;
         List<VBButton> btnDelList;
-        public NhanVienGUI(MainForm mainForm)
+        public KhachHangGUI(MainForm mainForm)
         {
-            bus = new NhanVienBUS();
-
-            nvs = bus.getAllNhanVien();
+            this.mainForm = mainForm;
+            bus = new KhachHangBUS();
+            dtos = bus.getAllKhachHang();
 
             btnEditList = new List<VBButton>();
             btnDelList = new List<VBButton>();
-
-            this.mainForm = mainForm;
             InitializeComponent();
-        }
 
-        private void vbButton1_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void rjTextBox1__TextChanged(object sender, EventArgs e)
+        private void KhachHangGUI_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void NhanVienGUI_Load(object sender, EventArgs e)
-        {
-
-            for (int i = 0; i < nvs.Count; i++)
+            for (int i = 0; i < dtos.Count; i++)
             {
-                NhanVienDTO nv = nvs[i];
-                dataGridView1.Rows.Add(new object[] { nv.ID_NhanVien, nv.TenNV, nv.NgaySinh, nv.SDT, nv.DiaChi, nv.GioiTinh ? "Nam" : "Nữ", nv.CCCD, nv.Email });
+                KhachHangDTO kh = dtos[i];
+                dataGridView1.Rows.Add(new object[] { kh.ID_KhachHang, kh.TenKH, kh.DiaChiKH, kh.SDT, kh.TichDiem });
             }
         }
 
-        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
@@ -86,6 +90,7 @@ namespace CSharp_laptop.GUI
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
             }
         }
+
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns["Column7"].Index && e.RowIndex >= 0)
@@ -110,12 +115,13 @@ namespace CSharp_laptop.GUI
 
                     // Đánh dấu đã vẽ ô để tránh vẽ đè
                     e.Handled = true;
-                } else
+                }
+                else
                 {
                     btnEditList[e.RowIndex].Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btnEditList[e.RowIndex].Location = new Point(e.CellBounds.X, e.CellBounds.Y);
                 }
-                
+
             }
             if (e.ColumnIndex == dataGridView1.Columns["Column8"].Index && e.RowIndex >= 0)
             {
@@ -149,21 +155,12 @@ namespace CSharp_laptop.GUI
             }
         }
 
-        private void vbButton1_Click_1(object sender, EventArgs e)
+        private void vbButton1_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new CreateNhanVienGUI(mainForm));
+            mainForm.OpenChildForm(new CreateKhachHangGUI(mainForm));
         }
 
         private void vbButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vbButton1_Click_2(object sender, EventArgs e)
-        {
-            mainForm.OpenChildForm(new CreateNhanVienGUI(mainForm));
-        }
-        private void dataGridView1_SizeChanged(object sender, EventArgs e)
         {
 
         }

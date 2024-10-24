@@ -78,9 +78,9 @@
             rjTextBox1.BorderFocusColor = Color.HotPink;
             rjTextBox1.BorderRadius = 5;
             rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(30, 101);
+            rjTextBox1.Location = new Point(30, 93);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -88,7 +88,7 @@
             rjTextBox1.PasswordChar = false;
             rjTextBox1.PlaceholderColor = Color.DarkGray;
             rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(287, 31);
+            rjTextBox1.Size = new Size(287, 39);
             rjTextBox1.TabIndex = 12;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
@@ -131,11 +131,9 @@
             vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton2.ForeColor = Color.White;
             vbButton2.Image = Properties.Resources.icons8_find_29;
-            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton2.Location = new Point(324, 88);
+            vbButton2.Location = new Point(339, 93);
             vbButton2.Name = "vbButton2";
-            vbButton2.Padding = new Padding(7, 0, 0, 0);
-            vbButton2.Size = new Size(52, 44);
+            vbButton2.Size = new Size(70, 39);
             vbButton2.TabIndex = 11;
             vbButton2.TextColor = Color.White;
             vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;

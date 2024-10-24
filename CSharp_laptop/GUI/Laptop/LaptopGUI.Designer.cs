@@ -52,7 +52,6 @@
             label10 = new Label();
             label13 = new Label();
             label11 = new Label();
-            artanPanel1 = new ArtanPanel();
             vbButton1 = new VBButton();
             rjTextBox1 = new RJTextBox();
             vbButton2 = new VBButton();
@@ -62,7 +61,6 @@
             panel1.SuspendLayout();
             artanPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -71,7 +69,6 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(artanPanel2);
-            panel1.Controls.Add(artanPanel1);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(1, 3);
@@ -85,6 +82,9 @@
             artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel2.BackColor = Color.White;
             artanPanel2.BorderRadius = 30;
+            artanPanel2.Controls.Add(rjTextBox1);
+            artanPanel2.Controls.Add(vbButton2);
+            artanPanel2.Controls.Add(vbButton1);
             artanPanel2.Controls.Add(pictureBox1);
             artanPanel2.Controls.Add(label1);
             artanPanel2.Controls.Add(label12);
@@ -111,7 +111,7 @@
             artanPanel2.GradientTopColor = Color.Red;
             artanPanel2.Location = new Point(15, 9);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Size = new Size(804, 376);
+            artanPanel2.Size = new Size(1197, 376);
             artanPanel2.TabIndex = 36;
             // 
             // pictureBox1
@@ -356,23 +356,6 @@
             label11.TabIndex = 17;
             label11.Text = "Khuyến mãi";
             // 
-            // artanPanel1
-            // 
-            artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            artanPanel1.BackColor = Color.White;
-            artanPanel1.BorderRadius = 30;
-            artanPanel1.Controls.Add(vbButton1);
-            artanPanel1.Controls.Add(rjTextBox1);
-            artanPanel1.Controls.Add(vbButton2);
-            artanPanel1.ForeColor = Color.Black;
-            artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.CadetBlue;
-            artanPanel1.GradientTopColor = Color.DodgerBlue;
-            artanPanel1.Location = new Point(825, 9);
-            artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(387, 376);
-            artanPanel1.TabIndex = 35;
-            // 
             // vbButton1
             // 
             vbButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -386,7 +369,7 @@
             vbButton1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
             vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(236, 28);
+            vbButton1.Location = new Point(1028, 21);
             vbButton1.Name = "vbButton1";
             vbButton1.Padding = new Padding(7, 0, 0, 0);
             vbButton1.Size = new Size(137, 44);
@@ -407,7 +390,7 @@
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(30, 311);
+            rjTextBox1.Location = new Point(821, 316);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -433,10 +416,8 @@
             vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton2.ForeColor = Color.White;
             vbButton2.Image = Properties.Resources.icons8_find_29;
-            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton2.Location = new Point(324, 313);
+            vbButton2.Location = new Point(1115, 318);
             vbButton2.Name = "vbButton2";
-            vbButton2.Padding = new Padding(7, 0, 0, 0);
             vbButton2.Size = new Size(50, 38);
             vbButton2.TabIndex = 32;
             vbButton2.TextColor = Color.White;
@@ -489,7 +470,6 @@
             artanPanel2.ResumeLayout(false);
             artanPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            artanPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
