@@ -23,7 +23,7 @@ namespace CSharp_laptop.GUI
         public QuanLyTaiKhoanGUI(MainForm mainForm)
         {
             this.mainForm = mainForm;
-            InitializeComponent();     
+            InitializeComponent();
             LoadTaiKhoan();
             AddButtonsToDataGridView();
             edittable();
@@ -55,7 +55,7 @@ namespace CSharp_laptop.GUI
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -78,7 +78,7 @@ namespace CSharp_laptop.GUI
 
                 DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm với ID: {selectedTK}?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-              
+
             }
             else if (e.ColumnIndex == dataGridView1.Columns["btnThem"].Index && e.RowIndex >= 0)
             {
@@ -87,14 +87,7 @@ namespace CSharp_laptop.GUI
         }
         private void AddButtonsToDataGridView()
         {
-            DataGridViewButtonColumn btnThem = new DataGridViewButtonColumn();
-            btnThem.Name = "btnThem";
-            btnThem.HeaderText = "Thêm";
-            btnThem.Text = "+";
-            btnThem.Width = 60;
-            btnThem.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
-            btnThem.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView1.Columns.Add(btnThem);
+
             // Thêm cột nút "Sửa"
             DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
             btnEdit.Name = "btnEdit";
@@ -117,7 +110,7 @@ namespace CSharp_laptop.GUI
             dataGridView1.Columns.Add(btnDelete);
 
 
-            
+
         }
         private void edittable()
         {
@@ -130,6 +123,16 @@ namespace CSharp_laptop.GUI
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dataGridView1.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
+
+        }
+
+        private void artanPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
 
         }
     }
