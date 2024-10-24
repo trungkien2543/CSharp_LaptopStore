@@ -169,13 +169,13 @@ namespace CSharp_laptop.GUI
 
                 // Câu truy vấn lấy số lượng sản phẩm bán chạy theo hãng trong khoảng thời gian từ 'fromDate' đến 'toDate'
                 var command = new MySqlCommand(
-                    @"SELECT hang.TenHang, COUNT(*) AS SoLuongBan
-                    FROM chitiethoadon
-                    INNER JOIN loai_laptop ON chitiethoadon.ID_SP = loai_laptop.IDLaptop
-                    INNER JOIN hoadon ON chitiethoadon.ID_HoaDon = hoadon.ID_HoaDon
-                    INNER JOIN hang ON loai_laptop.Hang = hang.ID_Hang  
-                    WHERE hoadon.NgayLap BETWEEN @fromDate AND @toDate
-                    GROUP BY hang.TenHang;", connection);
+                    @"SELECT hangsanxuat.TenHang, COUNT(*) AS SoLuongBan FROM chitiethoadon 
+                    INNER JOIN laptop ON chitiethoadon.IMEI = laptop.IMEI
+                    INNER JOIN loailaptop ON loailaptop.IDLaptop = laptop.LoaiLaptop
+                    INNER JOIN hoadon ON chitiethoadon.ID_HoaDon = hoadon.ID_HoaDon 
+                    INNER JOIN hangsanxuat ON loailaptop.Hang = hangsanxuat.ID_Hang 
+                    WHERE hoadon.NgayLap BETWEEN @fromDate AND @toDate 
+                    GROUP BY hangsanxuat.TenHang;", connection);
 
                 // Thêm tham số ngày bắt đầu và ngày kết thúc vào truy vấn
                 command.Parameters.AddWithValue("@fromDate", fromDate);
@@ -256,13 +256,14 @@ namespace CSharp_laptop.GUI
                 connection.Open();
 
                 var command = new MySqlCommand(
-                    @"SELECT hang.TenHang, COUNT(*) AS SoLuongBan, SUM(hoadon.TongTien) AS DoanhThu
-                      FROM chitiethoadon
-                      INNER JOIN loai_laptop ON chitiethoadon.ID_SP = loai_laptop.IDLaptop
-                      INNER JOIN hoadon ON chitiethoadon.ID_HoaDon = hoadon.ID_HoaDon
-                      INNER JOIN hang ON loai_laptop.Hang = hang.ID_Hang
-                      WHERE hoadon.NgayLap BETWEEN @fromDate AND @toDate
-                      GROUP BY hang.TenHang;", connection);
+                    @"SELECT hangsanxuat.TenHang, COUNT(*) AS SoLuongBan, SUM(hoadon.TongTien) AS DoanhThu FROM chitiethoadon 
+                    INNER JOIN laptop ON chitiethoadon.IMEI = laptop.IMEI
+                    INNER JOIN loailaptop ON loailaptop.IDLaptop = laptop.LoaiLaptop
+                    INNER JOIN hoadon ON chitiethoadon.ID_HoaDon = hoadon.ID_HoaDon 
+                    INNER JOIN hangsanxuat ON loailaptop.Hang = hangsanxuat.ID_Hang 
+                    WHERE hoadon.NgayLap BETWEEN @fromDate AND @toDate 
+                    GROUP BY hangsanxuat.TenHang;", connection);
+                
 
                 command.Parameters.AddWithValue("@fromDate", fromDate);
                 command.Parameters.AddWithValue("@toDate", toDate);
@@ -279,7 +280,7 @@ namespace CSharp_laptop.GUI
             dataGridView1.Columns["TenHang"].HeaderText = "Tên Hãng ";
             dataGridView1.Columns["SoLuongBan"].HeaderText = "Số Lượng Bán";
             dataGridView1.Columns["DoanhThu"].HeaderText = "Doanh thu";
-       
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
