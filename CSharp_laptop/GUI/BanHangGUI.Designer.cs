@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tabHoaDon = new TabControl();
             QLHoaDon_page = new TabPage();
-            dateTimePicker1 = new DateTimePicker();
-            btnRefresh = new FontAwesome.Sharp.IconButton();
-            txtFindHD = new TextBox();
-            btnXemChiTiet = new FontAwesome.Sharp.IconButton();
-            btnThemHD = new FontAwesome.Sharp.IconButton();
-            tblHoaDon = new ListView();
             ThemHD_page = new TabPage();
             btnChuyenTrang = new FontAwesome.Sharp.IconButton();
             tabThemHoaDon = new TabControl();
@@ -78,6 +75,16 @@
             label3 = new Label();
             listView2 = new ListView();
             btnBack = new FontAwesome.Sharp.IconButton();
+            artanPanel1 = new ArtanPanel();
+            artanPanel2 = new ArtanPanel();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
             tabHoaDon.SuspendLayout();
             QLHoaDon_page.SuspendLayout();
             ThemHD_page.SuspendLayout();
@@ -87,6 +94,8 @@
             ThanhToan_page.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            artanPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tabHoaDon
@@ -102,96 +111,15 @@
             // 
             // QLHoaDon_page
             // 
-            QLHoaDon_page.Controls.Add(dateTimePicker1);
-            QLHoaDon_page.Controls.Add(btnRefresh);
-            QLHoaDon_page.Controls.Add(txtFindHD);
-            QLHoaDon_page.Controls.Add(btnXemChiTiet);
-            QLHoaDon_page.Controls.Add(btnThemHD);
-            QLHoaDon_page.Controls.Add(tblHoaDon);
+            QLHoaDon_page.Controls.Add(artanPanel2);
+            QLHoaDon_page.Controls.Add(artanPanel1);
             QLHoaDon_page.Location = new Point(4, 24);
             QLHoaDon_page.Name = "QLHoaDon_page";
-            QLHoaDon_page.Padding = new Padding(3);
+            QLHoaDon_page.Padding = new Padding(3, 3, 3, 3);
             QLHoaDon_page.Size = new Size(1167, 694);
             QLHoaDon_page.TabIndex = 0;
             QLHoaDon_page.Text = "Danh sách hóa đơn";
             QLHoaDon_page.UseVisualStyleBackColor = true;
-            QLHoaDon_page.Click += tabPage1_Click;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(6, 42);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(337, 23);
-            dateTimePicker1.TabIndex = 5;
-            // 
-            // btnRefresh
-            // 
-            btnRefresh.BackColor = Color.FromArgb(0, 123, 255);
-            btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Refresh;
-            btnRefresh.IconColor = Color.White;
-            btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRefresh.IconSize = 40;
-            btnRefresh.Location = new Point(348, 3);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(62, 57);
-            btnRefresh.TabIndex = 4;
-            btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // txtFindHD
-            // 
-            txtFindHD.BorderStyle = BorderStyle.FixedSingle;
-            txtFindHD.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtFindHD.Location = new Point(6, 6);
-            txtFindHD.Name = "txtFindHD";
-            txtFindHD.Size = new Size(336, 29);
-            txtFindHD.TabIndex = 3;
-            // 
-            // btnXemChiTiet
-            // 
-            btnXemChiTiet.AllowDrop = true;
-            btnXemChiTiet.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnXemChiTiet.BackColor = Color.FromArgb(23, 162, 184);
-            btnXemChiTiet.ForeColor = Color.White;
-            btnXemChiTiet.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            btnXemChiTiet.IconColor = Color.White;
-            btnXemChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnXemChiTiet.IconSize = 30;
-            btnXemChiTiet.Location = new Point(958, 3);
-            btnXemChiTiet.Name = "btnXemChiTiet";
-            btnXemChiTiet.Size = new Size(108, 44);
-            btnXemChiTiet.TabIndex = 2;
-            btnXemChiTiet.Text = "Xem chi tiết";
-            btnXemChiTiet.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnXemChiTiet.UseVisualStyleBackColor = false;
-            // 
-            // btnThemHD
-            // 
-            btnThemHD.AllowDrop = true;
-            btnThemHD.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnThemHD.BackColor = Color.FromArgb(76, 175, 80);
-            btnThemHD.ForeColor = Color.White;
-            btnThemHD.IconChar = FontAwesome.Sharp.IconChar.Add;
-            btnThemHD.IconColor = Color.White;
-            btnThemHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnThemHD.IconSize = 30;
-            btnThemHD.Location = new Point(1072, 3);
-            btnThemHD.Name = "btnThemHD";
-            btnThemHD.Size = new Size(92, 44);
-            btnThemHD.TabIndex = 1;
-            btnThemHD.Text = "Thêm";
-            btnThemHD.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnThemHD.UseVisualStyleBackColor = false;
-            btnThemHD.Click += btnThemHD_Click;
-            // 
-            // tblHoaDon
-            // 
-            tblHoaDon.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tblHoaDon.Location = new Point(0, 81);
-            tblHoaDon.Name = "tblHoaDon";
-            tblHoaDon.Size = new Size(1167, 613);
-            tblHoaDon.TabIndex = 0;
-            tblHoaDon.UseCompatibleStateImageBehavior = false;
-            tblHoaDon.SelectedIndexChanged += tblHoaDon_SelectedIndexChanged;
             // 
             // ThemHD_page
             // 
@@ -201,7 +129,7 @@
             ThemHD_page.Controls.Add(btnBack);
             ThemHD_page.Location = new Point(4, 24);
             ThemHD_page.Name = "ThemHD_page";
-            ThemHD_page.Padding = new Padding(3);
+            ThemHD_page.Padding = new Padding(3, 3, 3, 3);
             ThemHD_page.Size = new Size(1167, 694);
             ThemHD_page.TabIndex = 1;
             ThemHD_page.Text = "Thêm hóa đơn";
@@ -217,13 +145,12 @@
             btnChuyenTrang.IconSize = 30;
             btnChuyenTrang.Location = new Point(891, 639);
             btnChuyenTrang.Name = "btnChuyenTrang";
-            btnChuyenTrang.Padding = new Padding(3);
+            btnChuyenTrang.Padding = new Padding(3, 3, 3, 3);
             btnChuyenTrang.Size = new Size(171, 52);
             btnChuyenTrang.TabIndex = 2;
             btnChuyenTrang.Text = "Nhập thông tin chi tiết";
             btnChuyenTrang.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnChuyenTrang.UseVisualStyleBackColor = false;
-            btnChuyenTrang.Click += btnChuyenTrang_Click;
             // 
             // tabThemHoaDon
             // 
@@ -244,7 +171,7 @@
             ChonSanPham_page.Controls.Add(listView1);
             ChonSanPham_page.Location = new Point(4, 24);
             ChonSanPham_page.Name = "ChonSanPham_page";
-            ChonSanPham_page.Padding = new Padding(3);
+            ChonSanPham_page.Padding = new Padding(3, 3, 3, 3);
             ChonSanPham_page.Size = new Size(1163, 635);
             ChonSanPham_page.TabIndex = 0;
             ChonSanPham_page.Text = "tabPage3";
@@ -288,7 +215,6 @@
             lblTongTien.Size = new Size(130, 25);
             lblTongTien.TabIndex = 20;
             lblTongTien.Text = "Tổng số tiền:  ";
-            lblTongTien.Click += label3_Click;
             // 
             // lblSoSanPhamDaChon
             // 
@@ -390,7 +316,7 @@
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.Location = new Point(0, 114);
             listView1.Name = "listView1";
-            listView1.Size = new Size(1160, 520);
+            listView1.Size = new Size(1160, 518);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -402,7 +328,7 @@
             ThanhToan_page.Controls.Add(listView2);
             ThanhToan_page.Location = new Point(4, 24);
             ThanhToan_page.Name = "ThanhToan_page";
-            ThanhToan_page.Padding = new Padding(3);
+            ThanhToan_page.Padding = new Padding(3, 3, 3, 3);
             ThanhToan_page.Size = new Size(1163, 635);
             ThanhToan_page.TabIndex = 1;
             ThanhToan_page.Text = "tabPage4";
@@ -432,7 +358,7 @@
             panel2.Controls.Add(label4);
             panel2.Location = new Point(510, 40);
             panel2.Name = "panel2";
-            panel2.Size = new Size(650, 595);
+            panel2.Size = new Size(650, 594);
             panel2.TabIndex = 2;
             // 
             // pictureBox1
@@ -467,7 +393,6 @@
             txtTienThoi.Name = "txtTienThoi";
             txtTienThoi.Size = new Size(193, 29);
             txtTienThoi.TabIndex = 17;
-            txtTienThoi.TextChanged += textBox2_TextChanged;
             // 
             // label12
             // 
@@ -604,7 +529,6 @@
             txtMaHD.Name = "txtMaHD";
             txtMaHD.Size = new Size(192, 29);
             txtMaHD.TabIndex = 1;
-            txtMaHD.TextChanged += txtMaHD_TextChanged;
             // 
             // label4
             // 
@@ -631,7 +555,7 @@
             listView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView2.Location = new Point(0, 41);
             listView2.Name = "listView2";
-            listView2.Size = new Size(504, 593);
+            listView2.Size = new Size(504, 592);
             listView2.TabIndex = 0;
             listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -651,7 +575,140 @@
             btnBack.Text = "Hủy bỏ";
             btnBack.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBack.UseVisualStyleBackColor = false;
-            btnBack.Click += btnBack_Click;
+            // 
+            // artanPanel1
+            // 
+            artanPanel1.BackColor = Color.White;
+            artanPanel1.BorderRadius = 30;
+            artanPanel1.ForeColor = Color.Black;
+            artanPanel1.GradientAngle = 30F;
+            artanPanel1.GradientBottomColor = Color.CadetBlue;
+            artanPanel1.GradientTopColor = Color.DodgerBlue;
+            artanPanel1.Location = new Point(67, 25);
+            artanPanel1.Name = "artanPanel1";
+            artanPanel1.Size = new Size(637, 121);
+            artanPanel1.TabIndex = 0;
+            // 
+            // artanPanel2
+            // 
+            artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel2.BackColor = Color.White;
+            artanPanel2.BorderRadius = 10;
+            artanPanel2.Controls.Add(dataGridView1);
+            artanPanel2.ForeColor = Color.FromArgb(100, 150, 200);
+            artanPanel2.GradientAngle = 30F;
+            artanPanel2.GradientBottomColor = Color.FromArgb(113, 92, 232);
+            artanPanel2.GradientTopColor = Color.FromArgb(113, 92, 232);
+            artanPanel2.Location = new Point(48, 156);
+            artanPanel2.Name = "artanPanel2";
+            artanPanel2.Padding = new Padding(4, 0, 4, 15);
+            artanPanel2.Size = new Size(1028, 532);
+            artanPanel2.TabIndex = 10;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(113, 96, 232);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(113, 96, 232);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column7, Column8 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.Location = new Point(4, 0);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1020, 517);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 50F;
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 80F;
+            Column2.HeaderText = "Tên KH";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 70F;
+            Column3.HeaderText = "Địa Chỉ";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 80F;
+            Column4.HeaderText = "SĐT";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 60F;
+            Column5.HeaderText = "Tích Điểm";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column7.FillWeight = 40F;
+            Column7.HeaderText = "Edit";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column8.FillWeight = 40F;
+            Column8.HeaderText = "Delete";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
             // 
             // BanHangGUI
             // 
@@ -661,10 +718,8 @@
             Controls.Add(tabHoaDon);
             Name = "BanHangGUI";
             Text = "BanHangGUI";
-            Load += BanHangGUI_Load;
             tabHoaDon.ResumeLayout(false);
             QLHoaDon_page.ResumeLayout(false);
-            QLHoaDon_page.PerformLayout();
             ThemHD_page.ResumeLayout(false);
             tabThemHoaDon.ResumeLayout(false);
             ChonSanPham_page.ResumeLayout(false);
@@ -676,6 +731,8 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            artanPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -684,13 +741,7 @@
         private TabControl tabHoaDon;
         private TabPage QLHoaDon_page;
         private TabPage ThemHD_page;
-        private ListView tblHoaDon;
-        private FontAwesome.Sharp.IconButton btnThemHD;
         private FontAwesome.Sharp.IconButton btnBack;
-        private FontAwesome.Sharp.IconButton btnXemChiTiet;
-        private TextBox txtFindHD;
-        private FontAwesome.Sharp.IconButton btnRefresh;
-        private DateTimePicker dateTimePicker1;
         private TabControl tabThemHoaDon;
         private TabPage ChonSanPham_page;
         private TabPage ThanhToan_page;
@@ -731,5 +782,15 @@
         private Label label11;
         private FontAwesome.Sharp.IconButton btnThanhToan;
         private PictureBox pictureBox1;
+        private ArtanPanel artanPanel1;
+        private ArtanPanel artanPanel2;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
     }
 }

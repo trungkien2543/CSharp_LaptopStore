@@ -38,7 +38,7 @@ namespace CSharp_laptop.GUI
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.Sizable;
 
 
 
@@ -58,6 +58,7 @@ namespace CSharp_laptop.GUI
             public static Color color7 = Color.FromArgb(123, 237, 159); // Màu xanh nhạt
             public static Color color8 = Color.FromArgb(255, 195, 113); // Màu cam nhạt
             public static Color color9 = Color.FromArgb(204, 229, 255);
+            public static Color color10 = Color.FromArgb(150, 200, 250);
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -273,6 +274,7 @@ namespace CSharp_laptop.GUI
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color10);
             OpenChildForm(new BaoHanhGUI(this));
         }
     }
