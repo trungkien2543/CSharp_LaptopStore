@@ -28,7 +28,7 @@ namespace CSharp_laptop.GUI
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
+            leftBorderBtn.Size = new Size(7, 80);
             panelMenu.Controls.Add(leftBorderBtn);
 
 
@@ -163,7 +163,7 @@ namespace CSharp_laptop.GUI
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new BanHangGUI());
+            OpenChildForm(new TestBanHang());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)

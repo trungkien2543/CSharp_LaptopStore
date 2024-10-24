@@ -56,7 +56,7 @@
             cartesianChart1.Cursor = Cursors.Hand;
             cartesianChart1.Location = new Point(0, 161);
             cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(1093, 697);
+            cartesianChart1.Size = new Size(1093, 722);
             cartesianChart1.TabIndex = 0;
             cartesianChart1.Load += cartesianChart1_Load;
             // 
@@ -94,7 +94,7 @@
             // 
             // tabControl1
             // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Location = new Point(-1, -1);
