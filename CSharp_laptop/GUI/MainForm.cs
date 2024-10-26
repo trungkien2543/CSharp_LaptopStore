@@ -28,7 +28,7 @@ namespace CSharp_laptop.GUI
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 80);
+            leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
 
 
@@ -38,7 +38,7 @@ namespace CSharp_laptop.GUI
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
-            FormBorderStyle = FormBorderStyle.Sizable;
+            FormBorderStyle = FormBorderStyle.None;
 
 
 
@@ -58,7 +58,6 @@ namespace CSharp_laptop.GUI
             public static Color color7 = Color.FromArgb(123, 237, 159); // Màu xanh nhạt
             public static Color color8 = Color.FromArgb(255, 195, 113); // Màu cam nhạt
             public static Color color9 = Color.FromArgb(204, 229, 255);
-            public static Color color10 = Color.FromArgb(150, 200, 250);
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -157,13 +156,13 @@ namespace CSharp_laptop.GUI
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new SanPhamGUI(this));
+            OpenChildForm(new LoaiLaptopGUI(this));
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new TestBanHang());
+            //OpenChildForm(new BanHangGUI());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
@@ -175,7 +174,7 @@ namespace CSharp_laptop.GUI
         private void iconButton5_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            OpenChildForm(new KhachHangGUI(this));
+            //OpenChildForm(new KhachHangGUI());
         }
         private void iconButton6_Click(object sender, EventArgs e)
         {
@@ -274,7 +273,6 @@ namespace CSharp_laptop.GUI
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color10);
             OpenChildForm(new BaoHanhGUI(this));
         }
     }

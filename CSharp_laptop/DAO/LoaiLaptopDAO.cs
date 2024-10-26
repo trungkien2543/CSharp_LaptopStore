@@ -2,19 +2,20 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CSharp_laptop.DAO
 {
-    internal class SanPhamDAO
+    internal class LoaiLaptopDAO
     {
         private MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
 
-        public List<SanPhamDTO> GetAllLaptops()
+        public List<LoaiLaptopDTO> GetAllLaptops()
         {
-            List<SanPhamDTO> laptops = new List<SanPhamDTO>();
+            List<LoaiLaptopDTO> laptops = new List<LoaiLaptopDTO>();
 
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
@@ -30,7 +31,7 @@ namespace CSharp_laptop.DAO
                 {
                     while (reader.Read())
                     {
-                        SanPhamDTO laptop = new SanPhamDTO
+                        LoaiLaptopDTO laptop = new LoaiLaptopDTO
                         {
                             IDLaptop = reader["IDLaptop"].ToString(),
                             TenSP = reader["TenSP"].ToString(),
@@ -50,9 +51,9 @@ namespace CSharp_laptop.DAO
             return laptops;
         }
 
-        public SanPhamDTO GetLaptopByID(string idLaptop)
+        public LoaiLaptopDTO GetLaptopByID(string idLaptop)
         {
-            SanPhamDTO laptop = null;  // Khởi tạo null để kiểm tra nếu không tìm thấy laptop
+            LoaiLaptopDTO laptop = null;  // Khởi tạo null để kiểm tra nếu không tìm thấy laptop
 
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
@@ -70,7 +71,7 @@ namespace CSharp_laptop.DAO
                 {
                     if (reader.Read())  // Chỉ lấy 1 bản ghi
                     {
-                        laptop = new SanPhamDTO
+                        laptop = new LoaiLaptopDTO
                         {
                             IDLaptop = reader["IDLaptop"].ToString(),
                             TenSP = reader["TenSP"].ToString(),
@@ -90,7 +91,7 @@ namespace CSharp_laptop.DAO
         }
 
 
-        public bool InsertLoaiLaptop(SanPhamDTO laptop)
+        public bool InsertLoaiLaptop(LoaiLaptopDTO laptop)
         {
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
@@ -142,7 +143,7 @@ namespace CSharp_laptop.DAO
                 try
                 {
                     conn.Open();
-                    string query = "DELETE FROM loaiaptop WHERE IDLaptop = @idLaptop";
+                    string query = "DELETE FROM loailaptop WHERE IDLaptop = @idLaptop";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@IDLaptop", idLaptop);
 
@@ -151,7 +152,7 @@ namespace CSharp_laptop.DAO
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -175,5 +176,67 @@ namespace CSharp_laptop.DAO
             return nextId;
         }
 
+        public bool UpdateLoaiLaptop(LoaiLaptopDTO laptop)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    // Câu truy vấn SQL cho việc cập nhật thông tin laptop
+                    string query = "UPDATE loailaptop SET TenSP = @TenSP, GiaBan = @GiaBan, Hang = @Hang, " +
+                                   "CPU = @CPU, RAM = @RAM, GPU = @GPU, HinhAnh = @HinhAnh, KichThuoc = @KichThuoc, " +
+                                   "KhuyenMai = @KhuyenMai WHERE IDLaptop = @IDLaptop";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    // Gán giá trị cho các tham số
+                    cmd.Parameters.AddWithValue("@IDLaptop", laptop.IDLaptop);
+                    cmd.Parameters.AddWithValue("@TenSP", laptop.TenSP);
+                    cmd.Parameters.AddWithValue("@GiaBan", laptop.GiaBan);
+                    cmd.Parameters.AddWithValue("@Hang", laptop.Hang);
+                    cmd.Parameters.AddWithValue("@CPU", laptop.CPU);
+                    cmd.Parameters.AddWithValue("@RAM", laptop.RAM);
+                    cmd.Parameters.AddWithValue("@GPU", laptop.GPU);
+                    cmd.Parameters.AddWithValue("@HinhAnh", laptop.HinhAnh);
+                    cmd.Parameters.AddWithValue("@KichThuoc", laptop.KichThuoc);
+
+                    // Kiểm tra giá trị của KhuyenMai và gán tham số phù hợp
+                    if (string.IsNullOrEmpty(laptop.KhuyenMai))
+                    {
+                        cmd.Parameters.AddWithValue("@KhuyenMai", DBNull.Value); // Nếu KhuyenMai null, gán DBNull.Value
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@KhuyenMai", laptop.KhuyenMai); // Gán giá trị KhuyenMai nếu không null
+                    }
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+
+        public DataTable SearchLaptop(string searchTerm)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM loailaptop WHERE TenSP LIKE @TenSP";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenSP", "%" + searchTerm + "%");
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+            return dt;
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace CSharp_laptop.GUI.Laptop
     {
         private MainForm mainForm;
         private string laptopID;
-        private SanPhamBUS sanPhamBUS = new SanPhamBUS();
+        private LoaiLaptopBUS sanPhamBUS = new LoaiLaptopBUS();
 
         public LaptopGUI(string laptopID, MainForm mainForm)
         {
@@ -26,7 +26,7 @@ namespace CSharp_laptop.GUI.Laptop
 
 
 
-            SanPhamDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(laptopID);
+            LoaiLaptopDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(laptopID);
 
             label13.Text = laptopID;
             label2.Text = sanPhamDTO.TenSP;
@@ -47,7 +47,7 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new SanPhamGUI(mainForm));
+            mainForm.OpenChildForm(new LoaiLaptopGUI(mainForm));
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new SanPhamGUI(mainForm));
+            mainForm.OpenChildForm(new LoaiLaptopGUI(mainForm));
         }
     }
 }

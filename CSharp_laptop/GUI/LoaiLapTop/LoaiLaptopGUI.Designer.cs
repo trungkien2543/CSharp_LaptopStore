@@ -1,6 +1,6 @@
 ﻿namespace CSharp_laptop.GUI
 {
-    partial class SanPhamGUI
+    partial class LoaiLaptopGUI
     {
         /// <summary>
         /// Required designer variable.
@@ -138,6 +138,7 @@
             vbButton2.TextColor = Color.White;
             vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             vbButton2.UseVisualStyleBackColor = false;
+            vbButton2.Click += vbButton2_Click;
             // 
             // label1
             // 
@@ -164,13 +165,13 @@
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
-            // SanPhamGUI
+            // LoaiLaptopGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1229, 703);
             Controls.Add(panel1);
-            Name = "SanPhamGUI";
+            Name = "LoaiLaptopGUI";
             Text = "SanPhamGUI";
             panel1.ResumeLayout(false);
             artanPanel1.ResumeLayout(false);

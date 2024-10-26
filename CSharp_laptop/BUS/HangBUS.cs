@@ -16,5 +16,10 @@ namespace CSharp_laptop.BUS
         {
             return hangDAO.GetAllHangs();
         }
+
+        public Dictionary<string, string> GetHangSanXuat()
+        {
+            return hangDAO.GetAllHangSanXuat();
+        }
     }
 }

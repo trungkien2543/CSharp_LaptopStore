@@ -33,7 +33,7 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new SanPhamGUI(mainForm));
+            mainForm.OpenChildForm(new LoaiLaptopGUI(mainForm));
         }
 
         private void vbButton3_Click_1(object sender, EventArgs e)
