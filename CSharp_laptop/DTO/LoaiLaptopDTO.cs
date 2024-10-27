@@ -2,7 +2,7 @@ using System;
 
 namespace LaptopStore.DTO
 {
-	public class SanPhamDTO
+	public class LoaiLaptopDTO
 	{
 		public string IDLaptop { get; set; }
 		public string TenSP { get; set; }
@@ -16,9 +16,9 @@ namespace LaptopStore.DTO
 		public string KhuyenMai { get; set; }
 
 		// Constructor
-		public SanPhamDTO() { }
+		public LoaiLaptopDTO() { }
 
-		public SanPhamDTO(string idLaptop, string tenSP, long giaBan, string hang, string cpu, int ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai)
+		public LoaiLaptopDTO(string idLaptop, string tenSP, long giaBan, string hang, string cpu, int ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai)
 		{
             IDLaptop = idLaptop;
 			TenSP = tenSP;

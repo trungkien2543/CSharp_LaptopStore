@@ -1,6 +1,6 @@
 ﻿namespace CSharp_laptop.GUI
 {
-    partial class EditSanPham
+    partial class EditLoaiLaptop
     {
         /// <summary>
         /// Required designer variable.
@@ -39,8 +39,6 @@
             label9 = new Label();
             label10 = new Label();
             pictureBox1 = new PictureBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
             vbButton2 = new VBButton();
             vbButton1 = new VBButton();
             label11 = new Label();
@@ -55,6 +53,8 @@
             rjTextBox8 = new RJTextBox();
             artanPanel1 = new ArtanPanel();
             artanPanel2 = new ArtanPanel();
+            rjComboBox2 = new RJComboBox.RJComboBox();
+            rjComboBox1 = new RJComboBox.RJComboBox();
             artanPanel3 = new ArtanPanel();
             artanPanel4 = new ArtanPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -82,7 +82,7 @@
             label2.BackColor = Color.FromArgb(0, 0, 0, 0);
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(87, 29);
+            label2.Location = new Point(48, 12);
             label2.Name = "label2";
             label2.Size = new Size(30, 25);
             label2.TabIndex = 1;
@@ -94,7 +94,7 @@
             label3.BackColor = Color.FromArgb(0, 0, 0, 0);
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(87, 85);
+            label3.Location = new Point(48, 100);
             label3.Name = "label3";
             label3.Size = new Size(128, 25);
             label3.TabIndex = 2;
@@ -106,7 +106,7 @@
             label4.BackColor = Color.FromArgb(0, 0, 0, 0);
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(87, 136);
+            label4.Location = new Point(48, 189);
             label4.Name = "label4";
             label4.Size = new Size(40, 25);
             label4.TabIndex = 3;
@@ -118,7 +118,7 @@
             label5.BackColor = Color.FromArgb(0, 0, 0, 0);
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(87, 185);
+            label5.Location = new Point(50, 275);
             label5.Name = "label5";
             label5.Size = new Size(57, 25);
             label5.TabIndex = 4;
@@ -130,7 +130,7 @@
             label6.BackColor = Color.FromArgb(0, 0, 0, 0);
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(87, 239);
+            label6.Location = new Point(48, 364);
             label6.Name = "label6";
             label6.Size = new Size(48, 25);
             label6.TabIndex = 5;
@@ -142,7 +142,7 @@
             label7.BackColor = Color.FromArgb(0, 0, 0, 0);
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(87, 293);
+            label7.Location = new Point(424, 12);
             label7.Name = "label7";
             label7.Size = new Size(52, 25);
             label7.TabIndex = 6;
@@ -154,7 +154,7 @@
             label8.BackColor = Color.FromArgb(0, 0, 0, 0);
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(87, 346);
+            label8.Location = new Point(424, 100);
             label8.Name = "label8";
             label8.Size = new Size(101, 25);
             label8.TabIndex = 7;
@@ -166,7 +166,7 @@
             label9.BackColor = Color.FromArgb(0, 0, 0, 0);
             label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(87, 448);
+            label9.Location = new Point(424, 275);
             label9.Name = "label9";
             label9.Size = new Size(111, 25);
             label9.TabIndex = 8;
@@ -193,25 +193,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(249, 178);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(403, 33);
-            comboBox1.TabIndex = 13;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(249, 440);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(403, 33);
-            comboBox2.TabIndex = 18;
             // 
             // vbButton2
             // 
@@ -265,7 +246,7 @@
             label11.BackColor = Color.FromArgb(0, 0, 0, 0);
             label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(87, 395);
+            label11.Location = new Point(424, 189);
             label11.Name = "label11";
             label11.Size = new Size(49, 25);
             label11.TabIndex = 26;
@@ -292,17 +273,18 @@
             vbButton3.TextColor = Color.White;
             vbButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             vbButton3.UseVisualStyleBackColor = false;
+            vbButton3.Click += vbButton3_Click;
             // 
             // rjTextBox1
             // 
             rjTextBox1.BackColor = SystemColors.Window;
             rjTextBox1.BorderColor = Color.MediumSlateBlue;
             rjTextBox1.BorderFocusColor = Color.HotPink;
-            rjTextBox1.BorderRadius = 5;
+            rjTextBox1.BorderRadius = 15;
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(249, 29);
+            rjTextBox1.Location = new Point(48, 39);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -310,21 +292,22 @@
             rjTextBox1.PasswordChar = false;
             rjTextBox1.PlaceholderColor = Color.DarkGray;
             rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(403, 31);
+            rjTextBox1.Size = new Size(285, 31);
             rjTextBox1.TabIndex = 29;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
+            rjTextBox1._TextChanged += rjTextBox1__TextChanged;
             // 
             // rjTextBox2
             // 
             rjTextBox2.BackColor = SystemColors.Window;
             rjTextBox2.BorderColor = Color.MediumSlateBlue;
             rjTextBox2.BorderFocusColor = Color.HotPink;
-            rjTextBox2.BorderRadius = 5;
+            rjTextBox2.BorderRadius = 15;
             rjTextBox2.BorderSize = 2;
             rjTextBox2.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new Point(249, 79);
+            rjTextBox2.Location = new Point(48, 128);
             rjTextBox2.Margin = new Padding(4);
             rjTextBox2.Multiline = false;
             rjTextBox2.Name = "rjTextBox2";
@@ -332,7 +315,7 @@
             rjTextBox2.PasswordChar = false;
             rjTextBox2.PlaceholderColor = Color.DarkGray;
             rjTextBox2.PlaceholderText = "";
-            rjTextBox2.Size = new Size(403, 31);
+            rjTextBox2.Size = new Size(285, 31);
             rjTextBox2.TabIndex = 30;
             rjTextBox2.Texts = "";
             rjTextBox2.UnderlinedStyle = false;
@@ -342,11 +325,11 @@
             rjTextBox3.BackColor = SystemColors.Window;
             rjTextBox3.BorderColor = Color.MediumSlateBlue;
             rjTextBox3.BorderFocusColor = Color.HotPink;
-            rjTextBox3.BorderRadius = 5;
+            rjTextBox3.BorderRadius = 10;
             rjTextBox3.BorderSize = 2;
             rjTextBox3.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox3.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox3.Location = new Point(249, 130);
+            rjTextBox3.Location = new Point(46, 214);
             rjTextBox3.Margin = new Padding(4);
             rjTextBox3.Multiline = false;
             rjTextBox3.Name = "rjTextBox3";
@@ -354,7 +337,7 @@
             rjTextBox3.PasswordChar = false;
             rjTextBox3.PlaceholderColor = Color.DarkGray;
             rjTextBox3.PlaceholderText = "";
-            rjTextBox3.Size = new Size(403, 31);
+            rjTextBox3.Size = new Size(285, 31);
             rjTextBox3.TabIndex = 31;
             rjTextBox3.Texts = "";
             rjTextBox3.UnderlinedStyle = false;
@@ -364,11 +347,11 @@
             rjTextBox4.BackColor = SystemColors.Window;
             rjTextBox4.BorderColor = Color.MediumSlateBlue;
             rjTextBox4.BorderFocusColor = Color.HotPink;
-            rjTextBox4.BorderRadius = 5;
+            rjTextBox4.BorderRadius = 15;
             rjTextBox4.BorderSize = 2;
             rjTextBox4.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox4.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox4.Location = new Point(249, 232);
+            rjTextBox4.Location = new Point(424, 214);
             rjTextBox4.Margin = new Padding(4);
             rjTextBox4.Multiline = false;
             rjTextBox4.Name = "rjTextBox4";
@@ -376,7 +359,7 @@
             rjTextBox4.PasswordChar = false;
             rjTextBox4.PlaceholderColor = Color.DarkGray;
             rjTextBox4.PlaceholderText = "";
-            rjTextBox4.Size = new Size(403, 31);
+            rjTextBox4.Size = new Size(285, 31);
             rjTextBox4.TabIndex = 32;
             rjTextBox4.Texts = "";
             rjTextBox4.UnderlinedStyle = false;
@@ -386,11 +369,11 @@
             rjTextBox5.BackColor = SystemColors.Window;
             rjTextBox5.BorderColor = Color.MediumSlateBlue;
             rjTextBox5.BorderFocusColor = Color.HotPink;
-            rjTextBox5.BorderRadius = 5;
+            rjTextBox5.BorderRadius = 15;
             rjTextBox5.BorderSize = 2;
             rjTextBox5.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox5.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox5.Location = new Point(249, 288);
+            rjTextBox5.Location = new Point(50, 392);
             rjTextBox5.Margin = new Padding(4);
             rjTextBox5.Multiline = false;
             rjTextBox5.Name = "rjTextBox5";
@@ -398,7 +381,7 @@
             rjTextBox5.PasswordChar = false;
             rjTextBox5.PlaceholderColor = Color.DarkGray;
             rjTextBox5.PlaceholderText = "";
-            rjTextBox5.Size = new Size(403, 31);
+            rjTextBox5.Size = new Size(285, 31);
             rjTextBox5.TabIndex = 33;
             rjTextBox5.Texts = "";
             rjTextBox5.UnderlinedStyle = false;
@@ -408,11 +391,11 @@
             rjTextBox6.BackColor = SystemColors.Window;
             rjTextBox6.BorderColor = Color.MediumSlateBlue;
             rjTextBox6.BorderFocusColor = Color.HotPink;
-            rjTextBox6.BorderRadius = 5;
+            rjTextBox6.BorderRadius = 15;
             rjTextBox6.BorderSize = 2;
             rjTextBox6.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox6.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox6.Location = new Point(249, 340);
+            rjTextBox6.Location = new Point(425, 39);
             rjTextBox6.Margin = new Padding(4);
             rjTextBox6.Multiline = false;
             rjTextBox6.Name = "rjTextBox6";
@@ -420,7 +403,7 @@
             rjTextBox6.PasswordChar = false;
             rjTextBox6.PlaceholderColor = Color.DarkGray;
             rjTextBox6.PlaceholderText = "";
-            rjTextBox6.Size = new Size(403, 31);
+            rjTextBox6.Size = new Size(285, 31);
             rjTextBox6.TabIndex = 34;
             rjTextBox6.Texts = "";
             rjTextBox6.UnderlinedStyle = false;
@@ -430,11 +413,11 @@
             rjTextBox7.BackColor = SystemColors.Window;
             rjTextBox7.BorderColor = Color.MediumSlateBlue;
             rjTextBox7.BorderFocusColor = Color.HotPink;
-            rjTextBox7.BorderRadius = 5;
+            rjTextBox7.BorderRadius = 15;
             rjTextBox7.BorderSize = 2;
             rjTextBox7.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox7.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox7.Location = new Point(249, 388);
+            rjTextBox7.Location = new Point(425, 128);
             rjTextBox7.Margin = new Padding(4);
             rjTextBox7.Multiline = false;
             rjTextBox7.Name = "rjTextBox7";
@@ -442,7 +425,7 @@
             rjTextBox7.PasswordChar = false;
             rjTextBox7.PlaceholderColor = Color.DarkGray;
             rjTextBox7.PlaceholderText = "";
-            rjTextBox7.Size = new Size(403, 31);
+            rjTextBox7.Size = new Size(285, 31);
             rjTextBox7.TabIndex = 35;
             rjTextBox7.Texts = "";
             rjTextBox7.UnderlinedStyle = false;
@@ -477,11 +460,11 @@
             artanPanel1.Controls.Add(label1);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.CadetBlue;
-            artanPanel1.GradientTopColor = Color.DodgerBlue;
-            artanPanel1.Location = new Point(12, 12);
+            artanPanel1.GradientBottomColor = Color.FromArgb(128, 128, 255);
+            artanPanel1.GradientTopColor = Color.DarkSlateBlue;
+            artanPanel1.Location = new Point(4, 4);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1229, 113);
+            artanPanel1.Size = new Size(1245, 121);
             artanPanel1.TabIndex = 37;
             // 
             // artanPanel2
@@ -489,6 +472,8 @@
             artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel2.BackColor = Color.White;
             artanPanel2.BorderRadius = 30;
+            artanPanel2.Controls.Add(rjComboBox2);
+            artanPanel2.Controls.Add(rjComboBox1);
             artanPanel2.Controls.Add(rjTextBox4);
             artanPanel2.Controls.Add(label2);
             artanPanel2.Controls.Add(label3);
@@ -504,17 +489,53 @@
             artanPanel2.Controls.Add(rjTextBox3);
             artanPanel2.Controls.Add(rjTextBox2);
             artanPanel2.Controls.Add(rjTextBox1);
-            artanPanel2.Controls.Add(comboBox1);
-            artanPanel2.Controls.Add(comboBox2);
             artanPanel2.Controls.Add(label11);
             artanPanel2.ForeColor = Color.Black;
             artanPanel2.GradientAngle = 30F;
-            artanPanel2.GradientBottomColor = Color.CadetBlue;
-            artanPanel2.GradientTopColor = Color.DodgerBlue;
-            artanPanel2.Location = new Point(12, 131);
+            artanPanel2.GradientBottomColor = Color.FromArgb(128, 128, 255);
+            artanPanel2.GradientTopColor = Color.DarkSlateBlue;
+            artanPanel2.Location = new Point(4, 131);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Size = new Size(884, 497);
+            artanPanel2.Size = new Size(892, 454);
             artanPanel2.TabIndex = 38;
+            // 
+            // rjComboBox2
+            // 
+            rjComboBox2.BackColor = Color.WhiteSmoke;
+            rjComboBox2.BorderColor = Color.MediumSlateBlue;
+            rjComboBox2.BorderSize = 1;
+            rjComboBox2.DropDownStyle = ComboBoxStyle.DropDown;
+            rjComboBox2.Font = new Font("Segoe UI", 10F);
+            rjComboBox2.ForeColor = Color.DimGray;
+            rjComboBox2.IconColor = Color.MediumSlateBlue;
+            rjComboBox2.ListBackColor = Color.FromArgb(230, 228, 245);
+            rjComboBox2.ListTextColor = Color.DimGray;
+            rjComboBox2.Location = new Point(425, 304);
+            rjComboBox2.MinimumSize = new Size(200, 30);
+            rjComboBox2.Name = "rjComboBox2";
+            rjComboBox2.Padding = new Padding(1);
+            rjComboBox2.Size = new Size(286, 30);
+            rjComboBox2.TabIndex = 37;
+            rjComboBox2.Texts = "";
+            // 
+            // rjComboBox1
+            // 
+            rjComboBox1.BackColor = Color.WhiteSmoke;
+            rjComboBox1.BorderColor = Color.MediumSlateBlue;
+            rjComboBox1.BorderSize = 1;
+            rjComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
+            rjComboBox1.Font = new Font("Segoe UI", 10F);
+            rjComboBox1.ForeColor = Color.DimGray;
+            rjComboBox1.IconColor = Color.MediumSlateBlue;
+            rjComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
+            rjComboBox1.ListTextColor = Color.DimGray;
+            rjComboBox1.Location = new Point(48, 304);
+            rjComboBox1.MinimumSize = new Size(200, 30);
+            rjComboBox1.Name = "rjComboBox1";
+            rjComboBox1.Padding = new Padding(1);
+            rjComboBox1.Size = new Size(286, 30);
+            rjComboBox1.TabIndex = 36;
+            rjComboBox1.Texts = "";
             // 
             // artanPanel3
             // 
@@ -525,11 +546,11 @@
             artanPanel3.Controls.Add(vbButton2);
             artanPanel3.ForeColor = Color.Black;
             artanPanel3.GradientAngle = 30F;
-            artanPanel3.GradientBottomColor = Color.CadetBlue;
-            artanPanel3.GradientTopColor = Color.DodgerBlue;
-            artanPanel3.Location = new Point(12, 634);
+            artanPanel3.GradientBottomColor = Color.FromArgb(128, 128, 255);
+            artanPanel3.GradientTopColor = Color.DarkSlateBlue;
+            artanPanel3.Location = new Point(4, 591);
             artanPanel3.Name = "artanPanel3";
-            artanPanel3.Size = new Size(1229, 109);
+            artanPanel3.Size = new Size(1245, 115);
             artanPanel3.TabIndex = 39;
             // 
             // artanPanel4
@@ -542,24 +563,24 @@
             artanPanel4.Controls.Add(label10);
             artanPanel4.Controls.Add(rjTextBox8);
             artanPanel4.ForeColor = Color.Black;
-            artanPanel4.GradientAngle = 30F;
-            artanPanel4.GradientBottomColor = Color.CadetBlue;
-            artanPanel4.GradientTopColor = Color.DodgerBlue;
+            artanPanel4.GradientAngle = 0F;
+            artanPanel4.GradientBottomColor = Color.FromArgb(128, 128, 255);
+            artanPanel4.GradientTopColor = Color.FromArgb(128, 128, 255);
             artanPanel4.Location = new Point(902, 131);
             artanPanel4.Name = "artanPanel4";
-            artanPanel4.Size = new Size(339, 497);
+            artanPanel4.Size = new Size(347, 454);
             artanPanel4.TabIndex = 40;
             // 
-            // EditSanPham
+            // EditLoaiLaptop
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1253, 755);
+            ClientSize = new Size(1253, 711);
             Controls.Add(artanPanel4);
             Controls.Add(artanPanel3);
             Controls.Add(artanPanel2);
             Controls.Add(artanPanel1);
-            Name = "EditSanPham";
+            Name = "EditLoaiLaptop";
             Text = "ChiTietSanPham";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             artanPanel1.ResumeLayout(false);
@@ -586,8 +607,6 @@
         private Label label10;
         private PictureBox pictureBox1;
         private Button button3;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
         private Button button1;
         private Label label11;
         private VBButton vbButton1;
@@ -605,5 +624,7 @@
         private ArtanPanel artanPanel2;
         private ArtanPanel artanPanel3;
         private ArtanPanel artanPanel4;
+        private RJComboBox.RJComboBox rjComboBox2;
+        private RJComboBox.RJComboBox rjComboBox1;
     }
 }

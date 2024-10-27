@@ -39,5 +39,29 @@ namespace CSharp_laptop.DAO
             }
             return hangs;
         }
+
+
+        public Dictionary<string, string> GetAllHangSanXuat()
+        {
+            Dictionary<string, string> hangSanXuat = new Dictionary<string, string>();
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT ID_Hang, TenHang FROM hangsanxuat";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // Thêm vào Dictionary với ID_Hang là Key và TenHang là Value
+                        hangSanXuat.Add(reader["ID_Hang"].ToString(), reader["TenHang"].ToString());
+                    }
+                }
+            }
+
+            return hangSanXuat;
+        }
     }
 }

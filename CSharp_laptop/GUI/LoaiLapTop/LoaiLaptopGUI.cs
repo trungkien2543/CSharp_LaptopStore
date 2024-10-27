@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace CSharp_laptop.GUI
 {
-    public partial class SanPhamGUI : Form
+    public partial class LoaiLaptopGUI : Form
     {
 
-        private SanPhamBUS laptopBUS = new SanPhamBUS();
+        private LoaiLaptopBUS laptopBUS = new LoaiLaptopBUS();
         string selectedLaptopID;
         string soluong_lap;
         private MainForm mainForm;
-        public SanPhamGUI(MainForm mainForm)
+        public LoaiLaptopGUI(MainForm mainForm)
         {
             this.mainForm = mainForm;
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace CSharp_laptop.GUI
         {
             //EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
             //editSanPham.Show();
-            mainForm.OpenChildForm(new EditSanPham("L" + soluong_lap, "add", mainForm));
+            mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
         }
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
@@ -50,7 +50,7 @@ namespace CSharp_laptop.GUI
 
             if (e.ColumnIndex == dataGridView1.Columns["btnEdit"].Index && e.RowIndex >= 0)
             {
-                mainForm.OpenChildForm(new EditSanPham(selectedLaptopID, "Sửa sản phẩm", mainForm));
+                mainForm.OpenChildForm(new EditLoaiLaptop(selectedLaptopID, "Sửa sản phẩm", mainForm));
             }
             else if (e.ColumnIndex == dataGridView1.Columns["btnDelete"].Index && e.RowIndex >= 0)
             {
@@ -80,7 +80,7 @@ namespace CSharp_laptop.GUI
 
         private void LoadLaptops()
         {
-            List<SanPhamDTO> laptops = laptopBUS.GetLaptops();
+            List<LoaiLaptopDTO> laptops = laptopBUS.GetLaptops();
             soluong_lap = (1 + laptops.Count).ToString();
 
             dataGridView1.DataSource = laptops;
@@ -144,7 +144,7 @@ namespace CSharp_laptop.GUI
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new EditSanPham("L" + soluong_lap, "add", mainForm));
+            mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -155,6 +155,12 @@ namespace CSharp_laptop.GUI
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+            string searchTerm = rjTextBox1.Texts;
+            dataGridView1.DataSource = laptopBUS.SearchLaptop(searchTerm);
         }
     }
 }
