@@ -138,14 +138,15 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(661, 234);
+            dataGridView1.Location = new Point(600, 234);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(430, 259);
+            dataGridView1.Size = new Size(491, 652);
             dataGridView1.TabIndex = 9;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -197,12 +198,12 @@
             // 
             pieChart1.InitialRotation = 0D;
             pieChart1.IsClockwise = true;
-            pieChart1.Location = new Point(30, 341);
+            pieChart1.Location = new Point(29, 234);
             pieChart1.MaxAngle = 360D;
             pieChart1.MaxValue = null;
             pieChart1.MinValue = 0D;
             pieChart1.Name = "pieChart1";
-            pieChart1.Size = new Size(615, 418);
+            pieChart1.Size = new Size(565, 610);
             pieChart1.TabIndex = 3;
             pieChart1.Total = null;
             pieChart1.Load += pieChart1_Load;
