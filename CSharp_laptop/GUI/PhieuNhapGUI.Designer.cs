@@ -203,13 +203,15 @@
             // tim_but
             // 
             tim_but.Anchor = AnchorStyles.Top;
+            tim_but.BackColor = Color.Transparent;
             tim_but.Font = new Font("Segoe UI", 15F);
+            tim_but.ForeColor = SystemColors.ControlText;
+            tim_but.Image = (Image)resources.GetObject("tim_but.Image");
             tim_but.Location = new Point(861, 40);
             tim_but.Name = "tim_but";
-            tim_but.Size = new Size(100, 34);
+            tim_but.Size = new Size(34, 34);
             tim_but.TabIndex = 1;
-            tim_but.Text = "Tìm";
-            tim_but.UseVisualStyleBackColor = true;
+            tim_but.UseVisualStyleBackColor = false;
             tim_but.Click += tim_but_Click;
             // 
             // timKiem_tb

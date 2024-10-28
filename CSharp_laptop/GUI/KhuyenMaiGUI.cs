@@ -20,7 +20,7 @@ namespace CSharp_laptop.GUI
         private void KhuyenMaiGUI_Load(object sender, EventArgs e)
         {
             // Căn label nằm giữa form khi phóng to
-            label1.Left = (this.ClientSize.Width - label1.Width) / 2;
+            tk_panel.Left = (this.tabPage1.Width - tk_panel.Width) / 2;
 
             // Ẩn header của tabcontrol
             tabControl1.Appearance = TabAppearance.FlatButtons;// Đặt chế độ hiển thị các tab thành dạng phẳng
@@ -34,12 +34,12 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click(object sender, EventArgs e)// Thêm
         {
-            // Chuyển sang tabcontrol 1 
-            panel3.Visible = false;
-            tabControl1.SelectedIndex = 1;
+            //// Chuyển sang tabcontrol 1 
+            //panel3.Visible = false;
+            //tabControl1.SelectedIndex = 1;
 
-            Point currentLocation = panel2.Location;// Lấy vị trí hiện tại
-            panel2.Location = new Point(currentLocation.X, currentLocation.Y - 40);
+            //Point currentLocation = panel2.Location;// Lấy vị trí hiện tại
+            //panel2.Location = new Point(currentLocation.X, currentLocation.Y - 40);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -49,15 +49,45 @@ namespace CSharp_laptop.GUI
 
         private void button3_Click(object sender, EventArgs e)// Sửa
         {
-            panel3.Visible = true;
-            tabControl1.SelectedIndex = 1;
-            Point currentLocation = panel2.Location;// Lấy vị trí hiện tại
-            panel2.Location = new Point(currentLocation.X, currentLocation.Y + 40);
+            //panel3.Visible = true;
+            //tabControl1.SelectedIndex = 1;
+            //Point currentLocation = panel2.Location;// Lấy vị trí hiện tại
+            //panel2.Location = new Point(currentLocation.X, currentLocation.Y + 40);
         }
 
         private void xoa_but_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vbButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void huy_but_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
         }
     }
 }

@@ -29,503 +29,727 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
-            dataGridView1 = new DataGridView();
-            idKM_col = new DataGridViewTextBoxColumn();
-            tenKM_col = new DataGridViewTextBoxColumn();
-            mucGiamGiaKM_col = new DataGridViewTextBoxColumn();
-            moTaKM_col = new DataGridViewTextBoxColumn();
-            thoiGianBatDauKM_col = new DataGridViewTextBoxColumn();
-            thoiGianKetThucKM_col = new DataGridViewTextBoxColumn();
-            thoiGianTaoKM_col = new DataGridViewTextBoxColumn();
-            them_but = new Button();
-            xoa_but = new Button();
-            sua_but = new Button();
-            panel1 = new Panel();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            button4 = new Button();
-            textBox1 = new TextBox();
+            vbButton2 = new VBButton();
+            tk_panel = new Panel();
+            rjTextBox1 = new RJTextBox();
+            vbButton1 = new VBButton();
+            artanPanel3 = new ArtanPanel();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
             tabPage2 = new TabPage();
-            panel3 = new Panel();
-            textBox8 = new TextBox();
-            label8 = new Label();
+            km_pan = new ArtanPanel();
+            label15 = new Label();
             panel2 = new Panel();
-            button6 = new Button();
-            button5 = new Button();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            label7 = new Label();
-            label3 = new Label();
-            label6 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel1.SuspendLayout();
+            rjDatePicker6 = new RJDateTimePicker.RJDatePicker();
+            artanPanel7 = new ArtanPanel();
+            rjDatePicker4 = new RJDateTimePicker.RJDatePicker();
+            artanPanel8 = new ArtanPanel();
+            rjDatePicker5 = new RJDateTimePicker.RJDatePicker();
+            artanPanel9 = new ArtanPanel();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            vbButton3 = new VBButton();
+            huy_but = new VBButton();
+            label14 = new Label();
+            rjTextBox5 = new RJTextBox();
+            rjTextBox6 = new RJTextBox();
+            rjTextBox7 = new RJTextBox();
+            artanPanel1 = new ArtanPanel();
+            label1 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            tk_panel.SuspendLayout();
+            artanPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage2.SuspendLayout();
-            panel3.SuspendLayout();
+            km_pan.SuspendLayout();
             panel2.SuspendLayout();
+            artanPanel7.SuspendLayout();
+            artanPanel8.SuspendLayout();
+            artanPanel9.SuspendLayout();
+            artanPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idKM_col, tenKM_col, mucGiamGiaKM_col, moTaKM_col, thoiGianBatDauKM_col, thoiGianKetThucKM_col, thoiGianTaoKM_col });
-            dataGridView1.Location = new Point(30, 125);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(850, 455);
-            dataGridView1.TabIndex = 3;
-            // 
-            // idKM_col
-            // 
-            idKM_col.HeaderText = "ID";
-            idKM_col.Name = "idKM_col";
-            // 
-            // tenKM_col
-            // 
-            tenKM_col.HeaderText = "Tên khuyến mãi";
-            tenKM_col.Name = "tenKM_col";
-            // 
-            // mucGiamGiaKM_col
-            // 
-            mucGiamGiaKM_col.HeaderText = "Mức giảm giá";
-            mucGiamGiaKM_col.Name = "mucGiamGiaKM_col";
-            // 
-            // moTaKM_col
-            // 
-            moTaKM_col.HeaderText = "Mô tả";
-            moTaKM_col.Name = "moTaKM_col";
-            // 
-            // thoiGianBatDauKM_col
-            // 
-            thoiGianBatDauKM_col.HeaderText = "Thời gian bắt đầu";
-            thoiGianBatDauKM_col.Name = "thoiGianBatDauKM_col";
-            // 
-            // thoiGianKetThucKM_col
-            // 
-            thoiGianKetThucKM_col.HeaderText = "Thời gian kết thúc";
-            thoiGianKetThucKM_col.Name = "thoiGianKetThucKM_col";
-            // 
-            // thoiGianTaoKM_col
-            // 
-            thoiGianTaoKM_col.HeaderText = "Thời gian tạo";
-            thoiGianTaoKM_col.Name = "thoiGianTaoKM_col";
-            // 
-            // them_but
-            // 
-            them_but.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            them_but.BackColor = Color.FromArgb(60, 72, 144);
-            them_but.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
-            them_but.ForeColor = Color.White;
-            them_but.Image = (Image)resources.GetObject("them_but.Image");
-            them_but.ImageAlign = ContentAlignment.MiddleLeft;
-            them_but.Location = new Point(910, 180);
-            them_but.Name = "them_but";
-            them_but.Padding = new Padding(10, 0, 0, 0);
-            them_but.Size = new Size(170, 60);
-            them_but.TabIndex = 5;
-            them_but.Text = "Thêm";
-            them_but.TextImageRelation = TextImageRelation.ImageBeforeText;
-            them_but.UseVisualStyleBackColor = false;
-            them_but.Click += button1_Click;
-            // 
-            // xoa_but
-            // 
-            xoa_but.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            xoa_but.BackColor = Color.FromArgb(60, 72, 144);
-            xoa_but.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
-            xoa_but.ForeColor = Color.White;
-            xoa_but.Image = (Image)resources.GetObject("xoa_but.Image");
-            xoa_but.ImageAlign = ContentAlignment.MiddleLeft;
-            xoa_but.Location = new Point(910, 312);
-            xoa_but.Name = "xoa_but";
-            xoa_but.Padding = new Padding(10, 0, 0, 0);
-            xoa_but.Size = new Size(170, 60);
-            xoa_but.TabIndex = 7;
-            xoa_but.Text = "Xóa";
-            xoa_but.TextImageRelation = TextImageRelation.ImageBeforeText;
-            xoa_but.UseVisualStyleBackColor = false;
-            xoa_but.Click += xoa_but_Click;
-            // 
-            // sua_but
-            // 
-            sua_but.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            sua_but.BackColor = Color.FromArgb(60, 72, 144);
-            sua_but.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
-            sua_but.ForeColor = Color.White;
-            sua_but.Image = (Image)resources.GetObject("sua_but.Image");
-            sua_but.ImageAlign = ContentAlignment.MiddleLeft;
-            sua_but.Location = new Point(910, 246);
-            sua_but.Name = "sua_but";
-            sua_but.Padding = new Padding(10, 0, 0, 0);
-            sua_but.Size = new Size(170, 60);
-            sua_but.TabIndex = 9;
-            sua_but.Text = "Sửa";
-            sua_but.TextImageRelation = TextImageRelation.ImageBeforeText;
-            sua_but.UseVisualStyleBackColor = false;
-            sua_but.Click += button3_Click;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(34, 33, 74);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1118, 100);
-            panel1.TabIndex = 12;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 30F);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(372, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(374, 54);
-            label1.TabIndex = 13;
-            label1.Text = "Quản lý khuyến mãi";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Segoe UI", 12F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "A - Z", "Z - A", "Mới nhất", "Cũ nhất" });
-            comboBox1.Location = new Point(30, 90);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 29);
-            comboBox1.TabIndex = 13;
-            comboBox1.Text = "Mới nhất";
             // 
             // tabControl1
             // 
             tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(0, 100);
+            tabControl1.Location = new Point(0, 120);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1118, 656);
+            tabControl1.Size = new Size(1118, 635);
             tabControl1.TabIndex = 14;
             // 
             // tabPage1
             // 
             tabPage1.AutoScroll = true;
-            tabPage1.Controls.Add(button4);
-            tabPage1.Controls.Add(textBox1);
-            tabPage1.Controls.Add(comboBox1);
-            tabPage1.Controls.Add(dataGridView1);
-            tabPage1.Controls.Add(sua_but);
-            tabPage1.Controls.Add(xoa_but);
-            tabPage1.Controls.Add(them_but);
+            tabPage1.Controls.Add(vbButton2);
+            tabPage1.Controls.Add(tk_panel);
+            tabPage1.Controls.Add(artanPanel3);
             tabPage1.Location = new Point(4, 24);
+            tabPage1.Margin = new Padding(3, 3, 10, 3);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1110, 628);
+            tabPage1.Size = new Size(1110, 607);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
-            // button4
+            // vbButton2
             // 
-            button4.Anchor = AnchorStyles.Top;
-            button4.BackColor = Color.FromArgb(67, 66, 111);
-            button4.Font = new Font("Segoe UI", 15F);
-            button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(861, 40);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(100, 34);
-            button4.TabIndex = 11;
-            button4.Text = "Tìm kiếm";
-            button4.UseVisualStyleBackColor = false;
+            vbButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            vbButton2.BackColor = Color.FromArgb(113, 168, 223);
+            vbButton2.BackgroundColor = Color.FromArgb(113, 168, 223);
+            vbButton2.BorderColor = Color.PaleVioletRed;
+            vbButton2.BorderRadius = 15;
+            vbButton2.BorderSize = 0;
+            vbButton2.FlatAppearance.BorderSize = 0;
+            vbButton2.FlatStyle = FlatStyle.Flat;
+            vbButton2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            vbButton2.ForeColor = Color.White;
+            vbButton2.Image = (Image)resources.GetObject("vbButton2.Image");
+            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton2.Location = new Point(962, 89);
+            vbButton2.Name = "vbButton2";
+            vbButton2.Padding = new Padding(0, 0, 15, 0);
+            vbButton2.Size = new Size(100, 40);
+            vbButton2.TabIndex = 38;
+            vbButton2.Text = "Thêm";
+            vbButton2.TextAlign = ContentAlignment.MiddleRight;
+            vbButton2.TextColor = Color.White;
+            vbButton2.UseVisualStyleBackColor = false;
+            vbButton2.Click += vbButton2_Click;
             // 
-            // textBox1
+            // tk_panel
             // 
-            textBox1.Anchor = AnchorStyles.Top;
-            textBox1.Font = new Font("Segoe UI", 15F);
-            textBox1.Location = new Point(255, 40);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(600, 34);
-            textBox1.TabIndex = 10;
+            tk_panel.Anchor = AnchorStyles.Top;
+            tk_panel.Controls.Add(rjTextBox1);
+            tk_panel.Controls.Add(vbButton1);
+            tk_panel.Location = new Point(205, 55);
+            tk_panel.Name = "tk_panel";
+            tk_panel.Size = new Size(700, 40);
+            tk_panel.TabIndex = 37;
+            // 
+            // rjTextBox1
+            // 
+            rjTextBox1.Anchor = AnchorStyles.Top;
+            rjTextBox1.BackColor = SystemColors.Window;
+            rjTextBox1.BorderColor = Color.FromArgb(113, 168, 223);
+            rjTextBox1.BorderFocusColor = SystemColors.HotTrack;
+            rjTextBox1.BorderRadius = 15;
+            rjTextBox1.BorderSize = 2;
+            rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox1.Location = new Point(0, 0);
+            rjTextBox1.Margin = new Padding(4);
+            rjTextBox1.Multiline = false;
+            rjTextBox1.Name = "rjTextBox1";
+            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox1.PasswordChar = false;
+            rjTextBox1.PlaceholderColor = Color.DarkGray;
+            rjTextBox1.PlaceholderText = "";
+            rjTextBox1.Size = new Size(640, 40);
+            rjTextBox1.TabIndex = 35;
+            rjTextBox1.Texts = "";
+            rjTextBox1.UnderlinedStyle = false;
+            // 
+            // vbButton1
+            // 
+            vbButton1.BackColor = Color.FromArgb(113, 168, 223);
+            vbButton1.BackgroundColor = Color.FromArgb(113, 168, 223);
+            vbButton1.BorderColor = Color.PaleVioletRed;
+            vbButton1.BorderRadius = 15;
+            vbButton1.BorderSize = 0;
+            vbButton1.FlatAppearance.BorderSize = 0;
+            vbButton1.FlatStyle = FlatStyle.Flat;
+            vbButton1.ForeColor = Color.White;
+            vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
+            vbButton1.ImageAlign = ContentAlignment.MiddleRight;
+            vbButton1.Location = new Point(600, 0);
+            vbButton1.Name = "vbButton1";
+            vbButton1.Padding = new Padding(0, 0, 15, 0);
+            vbButton1.Size = new Size(100, 40);
+            vbButton1.TabIndex = 36;
+            vbButton1.TextAlign = ContentAlignment.TopLeft;
+            vbButton1.TextColor = Color.White;
+            vbButton1.UseVisualStyleBackColor = false;
+            vbButton1.Click += vbButton1_Click;
+            // 
+            // artanPanel3
+            // 
+            artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel3.BackColor = Color.White;
+            artanPanel3.BorderRadius = 20;
+            artanPanel3.Controls.Add(dataGridView1);
+            artanPanel3.ForeColor = Color.FromArgb(100, 150, 200);
+            artanPanel3.GradientAngle = 65F;
+            artanPanel3.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            artanPanel3.GradientTopColor = Color.FromArgb(113, 168, 223);
+            artanPanel3.Location = new Point(40, 135);
+            artanPanel3.Name = "artanPanel3";
+            artanPanel3.Padding = new Padding(4, 0, 4, 15);
+            artanPanel3.Size = new Size(1022, 431);
+            artanPanel3.TabIndex = 15;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(113, 168, 223);
+            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column7, Column8, Column6, Column9 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.Location = new Point(4, 0);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1014, 416);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 50F;
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 80F;
+            Column2.HeaderText = "Tên khuyến mãi";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 80F;
+            Column3.HeaderText = "Mức giảm giá";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 80F;
+            Column4.HeaderText = "Mô tả";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 80F;
+            Column5.HeaderText = "Thời gian bắt đàu";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column7.FillWeight = 80F;
+            Column7.HeaderText = "Thời gian kêt thúc";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column8.FillWeight = 80F;
+            Column8.HeaderText = "Thời gian tạo";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.FillWeight = 40F;
+            Column6.HeaderText = "Sửa";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            Column9.FillWeight = 40F;
+            Column9.HeaderText = "Xóa";
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
             // 
             // tabPage2
             // 
-            tabPage2.AutoScroll = true;
-            tabPage2.Controls.Add(panel3);
-            tabPage2.Controls.Add(panel2);
+            tabPage2.Controls.Add(km_pan);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1110, 628);
+            tabPage2.Size = new Size(1110, 607);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Click += tabPage2_Click;
             // 
-            // panel3
+            // km_pan
             // 
-            panel3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            panel3.Controls.Add(textBox8);
-            panel3.Controls.Add(label8);
-            panel3.Location = new Point(305, 20);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(500, 34);
-            panel3.TabIndex = 7;
+            km_pan.Anchor = AnchorStyles.None;
+            km_pan.BackColor = Color.White;
+            km_pan.BorderRadius = 30;
+            km_pan.Controls.Add(label15);
+            km_pan.Controls.Add(panel2);
+            km_pan.ForeColor = Color.Black;
+            km_pan.GradientAngle = 30F;
+            km_pan.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            km_pan.GradientTopColor = Color.FromArgb(113, 168, 223);
+            km_pan.Location = new Point(255, 40);
+            km_pan.Name = "km_pan";
+            km_pan.Padding = new Padding(4, 40, 4, 15);
+            km_pan.Size = new Size(600, 550);
+            km_pan.TabIndex = 1;
             // 
-            // textBox8
+            // label15
             // 
-            textBox8.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox8.Font = new Font("Segoe UI", 15F);
-            textBox8.Location = new Point(50, 0);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(450, 34);
-            textBox8.TabIndex = 8;
-            textBox8.Text = "123456789";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 15F);
-            label8.Location = new Point(0, 3);
-            label8.Name = "label8";
-            label8.Size = new Size(35, 28);
-            label8.TabIndex = 8;
-            label8.Text = "ID:";
+            label15.AutoSize = true;
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Bahnschrift Condensed", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(50, 12);
+            label15.Name = "label15";
+            label15.Size = new Size(134, 25);
+            label15.TabIndex = 2;
+            label15.Text = "Thêm khuyến mãi";
             // 
             // panel2
             // 
-            panel2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            panel2.Controls.Add(button6);
-            panel2.Controls.Add(button5);
-            panel2.Controls.Add(textBox7);
-            panel2.Controls.Add(textBox6);
-            panel2.Controls.Add(textBox5);
-            panel2.Controls.Add(textBox4);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label5);
-            panel2.Location = new Point(305, 60);
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(artanPanel7);
+            panel2.Controls.Add(artanPanel8);
+            panel2.Controls.Add(artanPanel9);
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(label10);
+            panel2.Controls.Add(label11);
+            panel2.Controls.Add(label12);
+            panel2.Controls.Add(label13);
+            panel2.Controls.Add(vbButton3);
+            panel2.Controls.Add(huy_but);
+            panel2.Controls.Add(label14);
+            panel2.Controls.Add(rjTextBox5);
+            panel2.Controls.Add(rjTextBox6);
+            panel2.Controls.Add(rjTextBox7);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(4, 40);
             panel2.Name = "panel2";
-            panel2.Size = new Size(500, 559);
-            panel2.TabIndex = 6;
+            panel2.Size = new Size(592, 495);
+            panel2.TabIndex = 1;
             // 
-            // button6
+            // rjDatePicker6
             // 
-            button6.Anchor = AnchorStyles.None;
-            button6.Font = new Font("Segoe UI", 15F);
-            button6.Location = new Point(267, 500);
-            button6.Name = "button6";
-            button6.Size = new Size(120, 40);
-            button6.TabIndex = 13;
-            button6.Text = "Hủy";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            rjDatePicker6.BorderColor = Color.FromArgb(113, 168, 223);
+            rjDatePicker6.BorderSize = 0;
+            rjDatePicker6.CalendarMonthBackground = SystemColors.HotTrack;
+            rjDatePicker6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjDatePicker6.Location = new Point(25, 3);
+            rjDatePicker6.MinimumSize = new Size(0, 40);
+            rjDatePicker6.Name = "rjDatePicker6";
+            rjDatePicker6.Size = new Size(200, 40);
+            rjDatePicker6.SkinColor = Color.FromArgb(113, 168, 223);
+            rjDatePicker6.TabIndex = 15;
+            rjDatePicker6.TextColor = Color.White;
             // 
-            // button5
+            // artanPanel7
             // 
-            button5.Font = new Font("Segoe UI", 15F);
-            button5.Location = new Point(122, 500);
-            button5.Name = "button5";
-            button5.Size = new Size(120, 40);
-            button5.TabIndex = 12;
-            button5.Text = "Đồng ý";
-            button5.UseVisualStyleBackColor = true;
+            artanPanel7.BackColor = Color.White;
+            artanPanel7.BorderRadius = 7;
+            artanPanel7.Controls.Add(rjDatePicker4);
+            artanPanel7.ForeColor = Color.Black;
+            artanPanel7.GradientAngle = 30F;
+            artanPanel7.GradientBottomColor = Color.FromArgb(113, 168, 223);
+            artanPanel7.GradientTopColor = Color.FromArgb(113, 168, 223);
+            artanPanel7.Location = new Point(46, 371);
+            artanPanel7.Name = "artanPanel7";
+            artanPanel7.Size = new Size(228, 44);
+            artanPanel7.TabIndex = 20;
             // 
-            // textBox7
+            // rjDatePicker4
             // 
-            textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox7.Font = new Font("Segoe UI", 15F);
-            textBox7.Location = new Point(0, 450);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(500, 34);
-            textBox7.TabIndex = 11;
+            rjDatePicker4.BorderColor = Color.FromArgb(113, 168, 223);
+            rjDatePicker4.BorderSize = 0;
+            rjDatePicker4.CalendarMonthBackground = SystemColors.HotTrack;
+            rjDatePicker4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjDatePicker4.Location = new Point(25, 4);
+            rjDatePicker4.MinimumSize = new Size(0, 40);
+            rjDatePicker4.Name = "rjDatePicker4";
+            rjDatePicker4.Size = new Size(200, 40);
+            rjDatePicker4.SkinColor = Color.FromArgb(113, 168, 223);
+            rjDatePicker4.TabIndex = 15;
+            rjDatePicker4.TextColor = Color.White;
             // 
-            // textBox6
+            // artanPanel8
             // 
-            textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox6.Font = new Font("Segoe UI", 15F);
-            textBox6.Location = new Point(0, 370);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(500, 34);
-            textBox6.TabIndex = 10;
+            artanPanel8.BackColor = Color.White;
+            artanPanel8.BorderRadius = 7;
+            artanPanel8.Controls.Add(rjDatePicker5);
+            artanPanel8.ForeColor = Color.Black;
+            artanPanel8.GradientAngle = 30F;
+            artanPanel8.GradientBottomColor = Color.FromArgb(113, 168, 223);
+            artanPanel8.GradientTopColor = Color.FromArgb(113, 168, 223);
+            artanPanel8.Location = new Point(323, 297);
+            artanPanel8.Name = "artanPanel8";
+            artanPanel8.Size = new Size(228, 44);
+            artanPanel8.TabIndex = 19;
             // 
-            // textBox5
+            // rjDatePicker5
             // 
-            textBox5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox5.Font = new Font("Segoe UI", 15F);
-            textBox5.Location = new Point(0, 290);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(500, 34);
-            textBox5.TabIndex = 9;
+            rjDatePicker5.BorderColor = Color.FromArgb(113, 168, 223);
+            rjDatePicker5.BorderSize = 0;
+            rjDatePicker5.CalendarMonthBackground = SystemColors.HotTrack;
+            rjDatePicker5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjDatePicker5.Location = new Point(23, 4);
+            rjDatePicker5.MinimumSize = new Size(0, 40);
+            rjDatePicker5.Name = "rjDatePicker5";
+            rjDatePicker5.Size = new Size(200, 40);
+            rjDatePicker5.SkinColor = Color.FromArgb(113, 168, 223);
+            rjDatePicker5.TabIndex = 15;
+            rjDatePicker5.TextColor = Color.White;
             // 
-            // textBox4
+            // artanPanel9
             // 
-            textBox4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox4.Font = new Font("Segoe UI", 15F);
-            textBox4.Location = new Point(0, 210);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(500, 34);
-            textBox4.TabIndex = 8;
+            artanPanel9.BackColor = Color.White;
+            artanPanel9.BorderRadius = 7;
+            artanPanel9.Controls.Add(rjDatePicker6);
+            artanPanel9.ForeColor = Color.Black;
+            artanPanel9.GradientAngle = 30F;
+            artanPanel9.GradientBottomColor = Color.FromArgb(113, 168, 223);
+            artanPanel9.GradientTopColor = Color.FromArgb(113, 168, 223);
+            artanPanel9.Location = new Point(46, 297);
+            artanPanel9.Name = "artanPanel9";
+            artanPanel9.Size = new Size(228, 44);
+            artanPanel9.TabIndex = 18;
             // 
-            // textBox3
+            // label9
             // 
-            textBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Font = new Font("Segoe UI", 15F);
-            textBox3.Location = new Point(0, 130);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(500, 34);
-            textBox3.TabIndex = 7;
+            label9.AutoSize = true;
+            label9.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.DimGray;
+            label9.Location = new Point(54, 275);
+            label9.Name = "label9";
+            label9.Size = new Size(104, 19);
+            label9.TabIndex = 6;
+            label9.Text = "Thời gian bắt đầu:";
             // 
-            // textBox2
+            // label10
             // 
-            textBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Font = new Font("Segoe UI", 15F);
-            textBox2.Location = new Point(0, 50);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(500, 34);
-            textBox2.TabIndex = 6;
+            label10.AutoSize = true;
+            label10.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.DimGray;
+            label10.Location = new Point(54, 349);
+            label10.Name = "label10";
+            label10.Size = new Size(81, 19);
+            label10.TabIndex = 10;
+            label10.Text = "Thời gian tạo:";
             // 
-            // label2
+            // label11
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15F);
-            label2.Location = new Point(0, 10);
-            label2.Name = "label2";
-            label2.Size = new Size(150, 28);
-            label2.TabIndex = 0;
-            label2.Text = "Tên khuyến mãi:";
+            label11.AutoSize = true;
+            label11.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.DimGray;
+            label11.Location = new Point(54, 169);
+            label11.Name = "label11";
+            label11.Size = new Size(106, 19);
+            label11.TabIndex = 4;
+            label11.Text = "Mô tả khuyến mãi:";
             // 
-            // label7
+            // label12
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 15F);
-            label7.Location = new Point(0, 410);
-            label7.Name = "label7";
-            label7.Size = new Size(97, 28);
-            label7.TabIndex = 5;
-            label7.Text = "Ngày tạo:";
+            label12.AutoSize = true;
+            label12.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.DimGray;
+            label12.Location = new Point(54, 26);
+            label12.Name = "label12";
+            label12.Size = new Size(95, 19);
+            label12.TabIndex = 0;
+            label12.Text = "Tên khuyến mãi:";
             // 
-            // label3
+            // label13
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(0, 90);
-            label3.Name = "label3";
-            label3.Size = new Size(136, 28);
-            label3.TabIndex = 1;
-            label3.Text = "Mức giảm giá:";
+            label13.AutoSize = true;
+            label13.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.DimGray;
+            label13.Location = new Point(54, 96);
+            label13.Name = "label13";
+            label13.Size = new Size(82, 19);
+            label13.TabIndex = 2;
+            label13.Text = "Mức giảm giá:";
             // 
-            // label6
+            // vbButton3
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 15F);
-            label6.Location = new Point(0, 330);
-            label6.Name = "label6";
-            label6.Size = new Size(172, 28);
-            label6.TabIndex = 4;
-            label6.Text = "Thời gian kết thúc:";
+            vbButton3.Anchor = AnchorStyles.Top;
+            vbButton3.BackColor = Color.FromArgb(113, 168, 223);
+            vbButton3.BackgroundColor = Color.FromArgb(113, 168, 223);
+            vbButton3.BorderColor = Color.PaleVioletRed;
+            vbButton3.BorderRadius = 15;
+            vbButton3.BorderSize = 0;
+            vbButton3.FlatAppearance.BorderSize = 0;
+            vbButton3.FlatStyle = FlatStyle.Flat;
+            vbButton3.ForeColor = Color.White;
+            vbButton3.Location = new Point(146, 440);
+            vbButton3.Name = "vbButton3";
+            vbButton3.Size = new Size(150, 40);
+            vbButton3.TabIndex = 14;
+            vbButton3.Text = "vbButton3";
+            vbButton3.TextColor = Color.White;
+            vbButton3.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // huy_but
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 15F);
-            label4.Location = new Point(0, 170);
-            label4.Name = "label4";
-            label4.Size = new Size(68, 28);
-            label4.TabIndex = 2;
-            label4.Text = "Mô tả:";
+            huy_but.Anchor = AnchorStyles.Top;
+            huy_but.BackColor = Color.FromArgb(210, 220, 230);
+            huy_but.BackgroundColor = Color.FromArgb(210, 220, 230);
+            huy_but.BorderColor = Color.FromArgb(210, 220, 230);
+            huy_but.BorderRadius = 15;
+            huy_but.BorderSize = 0;
+            huy_but.FlatAppearance.BorderSize = 0;
+            huy_but.FlatStyle = FlatStyle.Flat;
+            huy_but.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            huy_but.ForeColor = Color.DimGray;
+            huy_but.Location = new Point(315, 440);
+            huy_but.Name = "huy_but";
+            huy_but.Size = new Size(150, 40);
+            huy_but.TabIndex = 13;
+            huy_but.Text = "Hủy";
+            huy_but.TextColor = Color.DimGray;
+            huy_but.UseVisualStyleBackColor = false;
+            huy_but.Click += huy_but_Click;
             // 
-            // label5
+            // label14
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 15F);
-            label5.Location = new Point(0, 250);
-            label5.Name = "label5";
-            label5.Size = new Size(169, 28);
-            label5.TabIndex = 3;
-            label5.Text = "Thời gian bắt đầu:";
+            label14.AutoSize = true;
+            label14.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.DimGray;
+            label14.Location = new Point(335, 275);
+            label14.Name = "label14";
+            label14.Size = new Size(107, 19);
+            label14.TabIndex = 8;
+            label14.Text = "Thời gian kết thúc:";
+            // 
+            // rjTextBox5
+            // 
+            rjTextBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rjTextBox5.BackColor = SystemColors.Window;
+            rjTextBox5.BorderColor = Color.FromArgb(113, 168, 223);
+            rjTextBox5.BorderFocusColor = Color.HotPink;
+            rjTextBox5.BorderRadius = 8;
+            rjTextBox5.BorderSize = 1;
+            rjTextBox5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjTextBox5.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox5.Location = new Point(46, 179);
+            rjTextBox5.Margin = new Padding(4);
+            rjTextBox5.Multiline = true;
+            rjTextBox5.Name = "rjTextBox5";
+            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox5.PasswordChar = false;
+            rjTextBox5.PlaceholderColor = Color.DarkGray;
+            rjTextBox5.PlaceholderText = "";
+            rjTextBox5.Size = new Size(500, 70);
+            rjTextBox5.TabIndex = 5;
+            rjTextBox5.Texts = "";
+            rjTextBox5.UnderlinedStyle = false;
+            // 
+            // rjTextBox6
+            // 
+            rjTextBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rjTextBox6.BackColor = SystemColors.Window;
+            rjTextBox6.BorderColor = Color.FromArgb(113, 168, 223);
+            rjTextBox6.BorderFocusColor = Color.HotPink;
+            rjTextBox6.BorderRadius = 5;
+            rjTextBox6.BorderSize = 1;
+            rjTextBox6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjTextBox6.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox6.Location = new Point(46, 108);
+            rjTextBox6.Margin = new Padding(4);
+            rjTextBox6.Multiline = false;
+            rjTextBox6.Name = "rjTextBox6";
+            rjTextBox6.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox6.PasswordChar = false;
+            rjTextBox6.PlaceholderColor = Color.DarkGray;
+            rjTextBox6.PlaceholderText = "";
+            rjTextBox6.Size = new Size(500, 34);
+            rjTextBox6.TabIndex = 3;
+            rjTextBox6.Texts = "";
+            rjTextBox6.UnderlinedStyle = false;
+            // 
+            // rjTextBox7
+            // 
+            rjTextBox7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rjTextBox7.BackColor = SystemColors.Window;
+            rjTextBox7.BorderColor = Color.FromArgb(113, 168, 223);
+            rjTextBox7.BorderFocusColor = Color.HotPink;
+            rjTextBox7.BorderRadius = 7;
+            rjTextBox7.BorderSize = 1;
+            rjTextBox7.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjTextBox7.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox7.Location = new Point(46, 40);
+            rjTextBox7.Margin = new Padding(4);
+            rjTextBox7.Multiline = false;
+            rjTextBox7.Name = "rjTextBox7";
+            rjTextBox7.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox7.PasswordChar = false;
+            rjTextBox7.PlaceholderColor = Color.DarkGray;
+            rjTextBox7.PlaceholderText = "";
+            rjTextBox7.Size = new Size(500, 34);
+            rjTextBox7.TabIndex = 1;
+            rjTextBox7.Texts = "";
+            rjTextBox7.UnderlinedStyle = false;
+            // 
+            // artanPanel1
+            // 
+            artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel1.BackColor = Color.White;
+            artanPanel1.BorderRadius = 0;
+            artanPanel1.Controls.Add(label1);
+            artanPanel1.ForeColor = Color.Black;
+            artanPanel1.GradientAngle = 30F;
+            artanPanel1.GradientBottomColor = Color.Silver;
+            artanPanel1.GradientTopColor = Color.DodgerBlue;
+            artanPanel1.Location = new Point(0, 0);
+            artanPanel1.Name = "artanPanel1";
+            artanPanel1.Size = new Size(1118, 120);
+            artanPanel1.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Bahnschrift Light SemiCondensed", 35F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(326, 35);
+            label1.Name = "label1";
+            label1.Size = new Size(402, 57);
+            label1.TabIndex = 13;
+            label1.Text = "Quản lý khuyến mãi";
             // 
             // KhuyenMaiGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1117, 755);
-            Controls.Add(panel1);
+            Controls.Add(artanPanel1);
             Controls.Add(tabControl1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "KhuyenMaiGUI";
             Text = "KhuyenMaiGUI";
             Load += KhuyenMaiGUI_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            tk_panel.ResumeLayout(false);
+            artanPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabPage2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            km_pan.ResumeLayout(false);
+            km_pan.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            artanPanel7.ResumeLayout(false);
+            artanPanel8.ResumeLayout(false);
+            artanPanel9.ResumeLayout(false);
+            artanPanel1.ResumeLayout(false);
+            artanPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
-        private Button them_but;
-        private Button xoa_but;
-        private Button sua_but;
-        private Panel panel1;
-        private Label label1;
-        private ComboBox comboBox1;
-        private DataGridViewTextBoxColumn idKM_col;
-        private DataGridViewTextBoxColumn tenKM_col;
-        private DataGridViewTextBoxColumn mucGiamGiaKM_col;
-        private DataGridViewTextBoxColumn moTaKM_col;
-        private DataGridViewTextBoxColumn thoiGianBatDauKM_col;
-        private DataGridViewTextBoxColumn thoiGianKetThucKM_col;
-        private DataGridViewTextBoxColumn thoiGianTaoKM_col;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private Button button4;
-        private TextBox textBox1;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
+        private ArtanPanel artanPanel1;
+        private Label label1;
+        private ArtanPanel artanPanel3;
+        private DataGridView dataGridView1;
+        private RJTextBox rjTextBox1;
+        private VBButton vbButton1;
+        private Panel tk_panel;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column9;
+        private VBButton vbButton2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ArtanPanel km_pan;
+        private Label label15;
         private Panel panel2;
-        private Panel panel3;
-        private Label label8;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private Button button6;
-        private Button button5;
-        private TextBox textBox8;
+        private ArtanPanel artanPanel7;
+        private RJDateTimePicker.RJDatePicker rjDatePicker4;
+        private ArtanPanel artanPanel8;
+        private RJDateTimePicker.RJDatePicker rjDatePicker5;
+        private ArtanPanel artanPanel9;
+        private RJDateTimePicker.RJDatePicker rjDatePicker6;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private VBButton vbButton3;
+        private VBButton huy_but;
+        private Label label14;
+        private RJTextBox rjTextBox5;
+        private RJTextBox rjTextBox6;
+        private RJTextBox rjTextBox7;
     }
 }

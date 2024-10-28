@@ -171,4 +171,17 @@
   <metadata name="thoiGianTaoKM_col.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="tim_but.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAbhJREFUSEvV18srBWEcxvEjl9hYEUVZsLDA3v0WsSCFv0BsWCFlYSPs2MjGws4t
+        W1YWrJTYWVhJUbIhueSWy/d5p6lJnTPvzBknnvrU+07n9Jt35p05vxP7D0lDISpRhEz8WlSsB1t4wJfH
+        G3YxiCxElioc4g6LaIdWqiJaeTVmcIEzdCLpdEMrXEaeDiRINibxigkdCJs6vGDYzOzTikcMmVnA5OIa
+        02YWPL3QSWsDBsosTpBuZuGyih1naBc9HrfoM7PwKcUnyszMIu49yjGz5HKEMWfon3HsO8OkswBdcqsE
+        +rBPtNo9Z+ifeaw5w6Sjq2ddOOpLveEM/dOCqDbXMUadoX8ycIN+MwsfPUYfKDczy+iNdQqdRNisY9sZ
+        2kevzCvoVydM9PJ5RuBXplIDfXnEzOzTBu0RPR2h04V7rCBfBxJEm3EK71CDoOKNCJ0KHEAnsIQOFMNt
+        BGoxh0ucQ7/FKhpJcbU+ago2oRPwtj66HXruB+A+girmLd6ASFIAtUQliNdneYuri4msuE10G9wr9IRm
+        pCx/qngTUpZ6uD25dv+v/hH4Ga1cvbc2ZsqT0pXGSSz2DSiUYitAqSz3AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>
