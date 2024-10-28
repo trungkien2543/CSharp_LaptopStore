@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             vbButton2 = new VBButton();
@@ -221,38 +221,38 @@
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = Color.FromArgb(113, 168, 223);
-            dataGridViewCellStyle19.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle19.ForeColor = Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(113, 168, 223);
+            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 35;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column7, Column8, Column6, Column9 });
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = Color.White;
-            dataGridViewCellStyle20.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle20.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle20.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle20.SelectionForeColor = Color.FromArgb(100, 100, 180);
-            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
             dataGridView1.Location = new Point(4, 0);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = SystemColors.Control;
-            dataGridViewCellStyle21.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle21.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -553,7 +553,7 @@
             vbButton3.Name = "vbButton3";
             vbButton3.Size = new Size(150, 40);
             vbButton3.TabIndex = 14;
-            vbButton3.Text = "vbButton3";
+            vbButton3.Text = "Đồng ý";
             vbButton3.TextColor = Color.White;
             vbButton3.UseVisualStyleBackColor = false;
             // 
@@ -594,7 +594,7 @@
             rjTextBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rjTextBox5.BackColor = SystemColors.Window;
             rjTextBox5.BorderColor = Color.FromArgb(113, 168, 223);
-            rjTextBox5.BorderFocusColor = Color.HotPink;
+            rjTextBox5.BorderFocusColor = SystemColors.HotTrack;
             rjTextBox5.BorderRadius = 8;
             rjTextBox5.BorderSize = 1;
             rjTextBox5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -617,7 +617,7 @@
             rjTextBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rjTextBox6.BackColor = SystemColors.Window;
             rjTextBox6.BorderColor = Color.FromArgb(113, 168, 223);
-            rjTextBox6.BorderFocusColor = Color.HotPink;
+            rjTextBox6.BorderFocusColor = SystemColors.HotTrack;
             rjTextBox6.BorderRadius = 5;
             rjTextBox6.BorderSize = 1;
             rjTextBox6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -640,7 +640,7 @@
             rjTextBox7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rjTextBox7.BackColor = SystemColors.Window;
             rjTextBox7.BorderColor = Color.FromArgb(113, 168, 223);
-            rjTextBox7.BorderFocusColor = Color.HotPink;
+            rjTextBox7.BorderFocusColor = SystemColors.HotTrack;
             rjTextBox7.BorderRadius = 7;
             rjTextBox7.BorderSize = 1;
             rjTextBox7.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -675,7 +675,7 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top;
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Bahnschrift Light SemiCondensed", 35F, FontStyle.Bold);
@@ -685,6 +685,7 @@
             label1.Size = new Size(402, 57);
             label1.TabIndex = 13;
             label1.Text = "Quản lý khuyến mãi";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // KhuyenMaiGUI
             // 

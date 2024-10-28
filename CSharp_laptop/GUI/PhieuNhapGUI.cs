@@ -42,5 +42,15 @@ namespace CSharp_laptop.GUI
         {
 
         }
+
+        private void them_but_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+
+        private void huy_but_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
     }
 }
