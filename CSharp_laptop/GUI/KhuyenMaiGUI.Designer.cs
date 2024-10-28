@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             vbButton2 = new VBButton();
@@ -53,12 +53,12 @@
             km_pan = new ArtanPanel();
             label15 = new Label();
             panel2 = new Panel();
-            rjDatePicker6 = new RJDateTimePicker.RJDatePicker();
             artanPanel7 = new ArtanPanel();
             rjDatePicker4 = new RJDateTimePicker.RJDatePicker();
             artanPanel8 = new ArtanPanel();
             rjDatePicker5 = new RJDateTimePicker.RJDatePicker();
             artanPanel9 = new ArtanPanel();
+            rjDatePicker6 = new RJDateTimePicker.RJDatePicker();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
@@ -221,38 +221,38 @@
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(113, 168, 223);
-            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = Color.FromArgb(113, 168, 223);
+            dataGridViewCellStyle19.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle19.ForeColor = Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             dataGridView1.ColumnHeadersHeight = 35;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column7, Column8, Column6, Column9 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = Color.White;
+            dataGridViewCellStyle20.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle20.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle20.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle20.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle20;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
             dataGridView1.Location = new Point(4, 0);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = SystemColors.Control;
+            dataGridViewCellStyle21.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle21.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -393,20 +393,6 @@
             panel2.Size = new Size(592, 495);
             panel2.TabIndex = 1;
             // 
-            // rjDatePicker6
-            // 
-            rjDatePicker6.BorderColor = Color.FromArgb(113, 168, 223);
-            rjDatePicker6.BorderSize = 0;
-            rjDatePicker6.CalendarMonthBackground = SystemColors.HotTrack;
-            rjDatePicker6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjDatePicker6.Location = new Point(25, 3);
-            rjDatePicker6.MinimumSize = new Size(0, 40);
-            rjDatePicker6.Name = "rjDatePicker6";
-            rjDatePicker6.Size = new Size(200, 40);
-            rjDatePicker6.SkinColor = Color.FromArgb(113, 168, 223);
-            rjDatePicker6.TabIndex = 15;
-            rjDatePicker6.TextColor = Color.White;
-            // 
             // artanPanel7
             // 
             artanPanel7.BackColor = Color.White;
@@ -418,6 +404,7 @@
             artanPanel7.GradientTopColor = Color.FromArgb(113, 168, 223);
             artanPanel7.Location = new Point(46, 371);
             artanPanel7.Name = "artanPanel7";
+            artanPanel7.Padding = new Padding(10, 0, 0, 0);
             artanPanel7.Size = new Size(228, 44);
             artanPanel7.TabIndex = 20;
             // 
@@ -426,11 +413,12 @@
             rjDatePicker4.BorderColor = Color.FromArgb(113, 168, 223);
             rjDatePicker4.BorderSize = 0;
             rjDatePicker4.CalendarMonthBackground = SystemColors.HotTrack;
+            rjDatePicker4.Dock = DockStyle.Top;
             rjDatePicker4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjDatePicker4.Location = new Point(25, 4);
+            rjDatePicker4.Location = new Point(10, 0);
             rjDatePicker4.MinimumSize = new Size(0, 40);
             rjDatePicker4.Name = "rjDatePicker4";
-            rjDatePicker4.Size = new Size(200, 40);
+            rjDatePicker4.Size = new Size(218, 40);
             rjDatePicker4.SkinColor = Color.FromArgb(113, 168, 223);
             rjDatePicker4.TabIndex = 15;
             rjDatePicker4.TextColor = Color.White;
@@ -446,6 +434,7 @@
             artanPanel8.GradientTopColor = Color.FromArgb(113, 168, 223);
             artanPanel8.Location = new Point(323, 297);
             artanPanel8.Name = "artanPanel8";
+            artanPanel8.Padding = new Padding(10, 0, 0, 0);
             artanPanel8.Size = new Size(228, 44);
             artanPanel8.TabIndex = 19;
             // 
@@ -454,11 +443,12 @@
             rjDatePicker5.BorderColor = Color.FromArgb(113, 168, 223);
             rjDatePicker5.BorderSize = 0;
             rjDatePicker5.CalendarMonthBackground = SystemColors.HotTrack;
+            rjDatePicker5.Dock = DockStyle.Fill;
             rjDatePicker5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjDatePicker5.Location = new Point(23, 4);
+            rjDatePicker5.Location = new Point(10, 0);
             rjDatePicker5.MinimumSize = new Size(0, 40);
             rjDatePicker5.Name = "rjDatePicker5";
-            rjDatePicker5.Size = new Size(200, 40);
+            rjDatePicker5.Size = new Size(218, 40);
             rjDatePicker5.SkinColor = Color.FromArgb(113, 168, 223);
             rjDatePicker5.TabIndex = 15;
             rjDatePicker5.TextColor = Color.White;
@@ -474,8 +464,24 @@
             artanPanel9.GradientTopColor = Color.FromArgb(113, 168, 223);
             artanPanel9.Location = new Point(46, 297);
             artanPanel9.Name = "artanPanel9";
+            artanPanel9.Padding = new Padding(10, 0, 0, 0);
             artanPanel9.Size = new Size(228, 44);
             artanPanel9.TabIndex = 18;
+            // 
+            // rjDatePicker6
+            // 
+            rjDatePicker6.BorderColor = Color.FromArgb(113, 168, 223);
+            rjDatePicker6.BorderSize = 0;
+            rjDatePicker6.CalendarMonthBackground = SystemColors.HotTrack;
+            rjDatePicker6.Dock = DockStyle.Fill;
+            rjDatePicker6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjDatePicker6.Location = new Point(10, 0);
+            rjDatePicker6.MinimumSize = new Size(0, 40);
+            rjDatePicker6.Name = "rjDatePicker6";
+            rjDatePicker6.Size = new Size(218, 40);
+            rjDatePicker6.SkinColor = Color.FromArgb(113, 168, 223);
+            rjDatePicker6.TabIndex = 15;
+            rjDatePicker6.TextColor = Color.White;
             // 
             // label9
             // 
