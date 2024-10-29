@@ -64,7 +64,7 @@
             artanPanel1.Controls.Add(label1);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.CadetBlue;
+            artanPanel1.GradientBottomColor = SystemColors.Control;
             artanPanel1.GradientTopColor = Color.DodgerBlue;
             artanPanel1.Location = new Point(11, 11);
             artanPanel1.Name = "artanPanel1";
@@ -74,8 +74,8 @@
             // rjTextBox1
             // 
             rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.MediumSlateBlue;
-            rjTextBox1.BorderFocusColor = Color.HotPink;
+            rjTextBox1.BorderColor = Color.FromArgb(57, 54, 161);
+            rjTextBox1.BorderFocusColor = Color.FromArgb(57, 54, 161);
             rjTextBox1.BorderRadius = 5;
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -97,23 +97,20 @@
             // vbButton1
             // 
             vbButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton1.BackColor = Color.MediumSlateBlue;
-            vbButton1.BackgroundColor = Color.MediumSlateBlue;
+            vbButton1.BackColor = Color.FromArgb(57, 54, 161);
+            vbButton1.BackgroundColor = Color.FromArgb(57, 54, 161);
             vbButton1.BorderColor = Color.PaleVioletRed;
-            vbButton1.BorderRadius = 20;
+            vbButton1.BorderRadius = 26;
             vbButton1.BorderSize = 0;
             vbButton1.FlatAppearance.BorderSize = 0;
             vbButton1.FlatStyle = FlatStyle.Flat;
             vbButton1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
-            vbButton1.Image = Properties.Resources.icons8_add_29;
-            vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(1062, 74);
+            vbButton1.Image = Properties.Resources.icons8_add_50;
+            vbButton1.Location = new Point(1110, 83);
             vbButton1.Name = "vbButton1";
-            vbButton1.Padding = new Padding(7, 0, 0, 0);
-            vbButton1.Size = new Size(123, 58);
+            vbButton1.Size = new Size(55, 55);
             vbButton1.TabIndex = 7;
-            vbButton1.Text = "Thêm";
             vbButton1.TextColor = Color.White;
             vbButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             vbButton1.UseVisualStyleBackColor = false;
@@ -121,8 +118,8 @@
             // 
             // vbButton2
             // 
-            vbButton2.BackColor = Color.MediumSlateBlue;
-            vbButton2.BackgroundColor = Color.MediumSlateBlue;
+            vbButton2.BackColor = Color.FromArgb(57, 54, 161);
+            vbButton2.BackgroundColor = Color.FromArgb(57, 54, 161);
             vbButton2.BorderColor = Color.PaleVioletRed;
             vbButton2.BorderRadius = 20;
             vbButton2.BorderSize = 0;
