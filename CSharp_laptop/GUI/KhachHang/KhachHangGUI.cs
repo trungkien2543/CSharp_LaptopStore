@@ -101,6 +101,7 @@ namespace CSharp_laptop.GUI
                     VBButton btn = new VBButton();
                     btn.Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btn.Location = new Point(e.CellBounds.X, e.CellBounds.Y);
+                    btn.BackColor = Color.FromArgb(255, 152, 204);
                     btn.BorderRadius = 10;
 
                     btn.Name = e.RowIndex.ToString();
@@ -131,6 +132,7 @@ namespace CSharp_laptop.GUI
                     VBButton btn = new VBButton();
                     btn.Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btn.Location = new Point(e.CellBounds.X, e.CellBounds.Y);
+                    btn.BackColor = Color.FromArgb(255, 152, 204);
                     btn.BorderRadius = 10;
 
                     btn.Name = e.RowIndex.ToString();
@@ -161,6 +163,21 @@ namespace CSharp_laptop.GUI
         }
 
         private void vbButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vbButton1_Click_1(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new CreateKhachHangGUI(mainForm));
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

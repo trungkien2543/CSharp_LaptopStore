@@ -96,6 +96,7 @@ namespace CSharp_laptop.GUI
                     VBButton btn = new VBButton();
                     btn.Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btn.Location = new Point(e.CellBounds.X, e.CellBounds.Y);
+                    btn.BackgroundColor = Color.FromArgb(233, 203, 157);
                     btn.BorderRadius = 10;
 
                     btn.Name = e.RowIndex.ToString();
@@ -110,12 +111,13 @@ namespace CSharp_laptop.GUI
 
                     // Đánh dấu đã vẽ ô để tránh vẽ đè
                     e.Handled = true;
-                } else
+                }
+                else
                 {
                     btnEditList[e.RowIndex].Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btnEditList[e.RowIndex].Location = new Point(e.CellBounds.X, e.CellBounds.Y);
                 }
-                
+
             }
             if (e.ColumnIndex == dataGridView1.Columns["Column8"].Index && e.RowIndex >= 0)
             {
@@ -125,6 +127,7 @@ namespace CSharp_laptop.GUI
                     VBButton btn = new VBButton();
                     btn.Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btn.Location = new Point(e.CellBounds.X, e.CellBounds.Y);
+                    btn.BackgroundColor = Color.FromArgb(233, 203, 157);
                     btn.BorderRadius = 10;
 
                     btn.Name = e.RowIndex.ToString();
@@ -164,6 +167,11 @@ namespace CSharp_laptop.GUI
             mainForm.OpenChildForm(new CreateNhanVienGUI(mainForm));
         }
         private void dataGridView1_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
