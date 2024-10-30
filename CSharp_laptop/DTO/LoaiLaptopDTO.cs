@@ -4,7 +4,7 @@ namespace LaptopStore.DTO
 {
 	public class LoaiLaptopDTO
 	{
-		public string IDLaptop { get; set; }
+		public string IDLoaiLaptop { get; set; }
 		public string TenSP { get; set; }
 		public long GiaBan { get; set; }
 		public string Hang { get; set; }
@@ -18,9 +18,9 @@ namespace LaptopStore.DTO
 		// Constructor
 		public LoaiLaptopDTO() { }
 
-		public LoaiLaptopDTO(string idLaptop, string tenSP, long giaBan, string hang, string cpu, int ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai)
+		public LoaiLaptopDTO(string IDLoaiLaptop, string tenSP, long giaBan, string hang, string cpu, int ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai)
 		{
-            IDLaptop = idLaptop;
+            IDLoaiLaptop = IDLoaiLaptop;
 			TenSP = tenSP;
 			GiaBan = giaBan;
 			Hang = hang;

@@ -42,17 +42,17 @@ namespace CSharp_laptop.GUI
             if (e.RowIndex >= 0)
             {
 
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                string idLaptop = row.Cells["IDLaptop"].Value.ToString();
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+                string idLaptop = row.Cells["IDLoaiLaptop"].Value.ToString();
                 selectedLaptopID = idLaptop;
 
             }
 
-            if (e.ColumnIndex == dataGridView1.Columns["btnEdit"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridView2.Columns["btnEdit"].Index && e.RowIndex >= 0)
             {
                 mainForm.OpenChildForm(new EditLoaiLaptop(selectedLaptopID, "Sửa sản phẩm", mainForm));
             }
-            else if (e.ColumnIndex == dataGridView1.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            else if (e.ColumnIndex == dataGridView2.Columns["btnDelete"].Index && e.RowIndex >= 0)
             {
 
                 DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm với ID: {selectedLaptopID}?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -72,7 +72,7 @@ namespace CSharp_laptop.GUI
                     }
                 }
             }
-            else if (e.ColumnIndex == dataGridView1.Columns["btnView"].Index && e.RowIndex >= 0)
+            else if (e.ColumnIndex == dataGridView2.Columns["btnView"].Index && e.RowIndex >= 0)
             {
                 mainForm.OpenChildForm(new LaptopGUI(selectedLaptopID, mainForm));
             }
@@ -83,28 +83,28 @@ namespace CSharp_laptop.GUI
             List<LoaiLaptopDTO> laptops = laptopBUS.GetLaptops();
             soluong_lap = (1 + laptops.Count).ToString();
 
-            dataGridView1.DataSource = laptops;
+            dataGridView2.DataSource = laptops;
         }
 
         private void edittable()
         {
-            dataGridView1.Columns["IDLaptop"].HeaderText = "Mã Loại Laptop";
-            dataGridView1.Columns["TenSP"].HeaderText = "Tên Sản Phẩm";
-            dataGridView1.Columns["GiaBan"].HeaderText = "Giá Niêm Yết";
-            dataGridView1.Columns["Hang"].HeaderText = "Hãng Laptop";
-            dataGridView1.Columns["KhuyenMai"].HeaderText = "Khuyến Mãi";
+            dataGridView2.Columns["IDLoaiLaptop"].HeaderText = "Mã Loại Laptop";
+            dataGridView2.Columns["TenSP"].HeaderText = "Tên Sản Phẩm";
+            dataGridView2.Columns["GiaBan"].HeaderText = "Giá Niêm Yết";
+            dataGridView2.Columns["Hang"].HeaderText = "Hãng Laptop";
+            dataGridView2.Columns["KhuyenMai"].HeaderText = "Khuyến Mãi";
 
-            dataGridView1.Columns["CPU"].Visible = false;
-            dataGridView1.Columns["RAM"].Visible = false;
-            dataGridView1.Columns["GPU"].Visible = false;
-            dataGridView1.Columns["HinhAnh"].Visible = false;
-            dataGridView1.Columns["KichThuoc"].Visible = false;
+            dataGridView2.Columns["CPU"].Visible = false;
+            dataGridView2.Columns["RAM"].Visible = false;
+            dataGridView2.Columns["GPU"].Visible = false;
+            dataGridView2.Columns["HinhAnh"].Visible = false;
+            dataGridView2.Columns["KichThuoc"].Visible = false;
 
-            dataGridView1.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
+            dataGridView2.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
+            dataGridView2.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
 
         }
 
@@ -118,7 +118,7 @@ namespace CSharp_laptop.GUI
             btnEdit.Width = 60;
             btnEdit.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView1.Columns.Add(btnEdit);
+            dataGridView2.Columns.Add(btnEdit);
 
             // Thêm cột nút "Xóa"
             DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
@@ -129,7 +129,7 @@ namespace CSharp_laptop.GUI
             //btnDelete.Image = Image.FromFile("path-to-your-delete-icon.png"); // Đường dẫn tới icon xóa
             btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView1.Columns.Add(btnDelete);
+            dataGridView2.Columns.Add(btnDelete);
 
 
             DataGridViewButtonColumn btnView = new DataGridViewButtonColumn();
@@ -139,7 +139,7 @@ namespace CSharp_laptop.GUI
             btnView.Width = 60;
             btnView.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnView.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView1.Columns.Add(btnView);
+            dataGridView2.Columns.Add(btnView);
         }
 
         private void vbButton1_Click(object sender, EventArgs e)
@@ -160,7 +160,12 @@ namespace CSharp_laptop.GUI
         private void vbButton2_Click(object sender, EventArgs e)
         {
             string searchTerm = rjTextBox1.Texts;
-            dataGridView1.DataSource = laptopBUS.SearchLaptop(searchTerm);
+            dataGridView2.DataSource = laptopBUS.SearchLaptop(searchTerm);
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

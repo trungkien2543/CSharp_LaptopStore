@@ -55,10 +55,10 @@
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.MediumPurple;
             artanPanel1.GradientTopColor = Color.DodgerBlue;
-            artanPanel1.Location = new Point(12, 13);
-            artanPanel1.Margin = new Padding(3, 4, 3, 4);
+            artanPanel1.Location = new Point(18, 20);
+            artanPanel1.Margin = new Padding(4, 6, 4, 6);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1374, 156);
+            artanPanel1.Size = new Size(2061, 234);
             artanPanel1.TabIndex = 15;
             artanPanel1.Paint += artanPanel1_Paint_1;
             // 
@@ -76,11 +76,11 @@
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = Properties.Resources.icons8_add_29;
             vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(1195, 46);
-            vbButton1.Margin = new Padding(3, 4, 3, 4);
+            vbButton1.Location = new Point(1792, 69);
+            vbButton1.Margin = new Padding(4, 6, 4, 6);
             vbButton1.Name = "vbButton1";
-            vbButton1.Padding = new Padding(8, 0, 0, 0);
-            vbButton1.Size = new Size(147, 70);
+            vbButton1.Padding = new Padding(12, 0, 0, 0);
+            vbButton1.Size = new Size(220, 105);
             vbButton1.TabIndex = 11;
             vbButton1.Text = "Thêm";
             vbButton1.TextColor = Color.White;
@@ -94,9 +94,10 @@
             label1.BackColor = Color.FromArgb(0, 0, 0, 0);
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(37, 55);
+            label1.Location = new Point(56, 82);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(340, 46);
+            label1.Size = new Size(484, 65);
             label1.TabIndex = 10;
             label1.Text = "Danh sách tài khoản";
             // 
@@ -130,8 +131,8 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(12, 177);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(18, 266);
+            dataGridView1.Margin = new Padding(4, 6, 4, 6);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -146,7 +147,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1258, 683);
+            dataGridView1.Size = new Size(1887, 1024);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
@@ -200,12 +201,12 @@
             // 
             // QuanLyTaiKhoanGUI
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1405, 937);
+            ClientSize = new Size(2108, 1406);
             Controls.Add(dataGridView1);
             Controls.Add(artanPanel1);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 6, 4, 6);
             Name = "QuanLyTaiKhoanGUI";
             Text = "QuanLyTaiKhoanGUI";
             Load += TaiKhoanGUI_Load;

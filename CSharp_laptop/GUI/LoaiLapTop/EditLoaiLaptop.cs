@@ -42,7 +42,7 @@ namespace CSharp_laptop.GUI
             {
                 LoaiLaptopDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop);
 
-                rjTextBox1.Texts = sanPhamDTO.IDLaptop;
+                rjTextBox1.Texts = sanPhamDTO.IDLoaiLaptop;
                 rjTextBox2.Texts = sanPhamDTO.TenSP;
                 rjTextBox3.Texts = sanPhamDTO.GiaBan.ToString();
                 rjTextBox4.Texts = sanPhamDTO.GPU;
@@ -109,7 +109,7 @@ namespace CSharp_laptop.GUI
         {
             LoaiLaptopDTO laptop = new LoaiLaptopDTO
             {
-                IDLaptop = rjTextBox1.Texts,
+                IDLoaiLaptop = rjTextBox1.Texts,
                 TenSP = rjTextBox2.Texts,
                 GiaBan = long.Parse(rjTextBox3.Texts),  // Chuyển đổi từ chuỗi sang số nguyên
                 Hang = ((KeyValuePair<string, string>)rjComboBox1.SelectedItem).Key,

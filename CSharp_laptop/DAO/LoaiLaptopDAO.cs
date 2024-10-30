@@ -33,7 +33,7 @@ namespace CSharp_laptop.DAO
                     {
                         LoaiLaptopDTO laptop = new LoaiLaptopDTO
                         {
-                            IDLaptop = reader["IDLaptop"].ToString(),
+                            IDLoaiLaptop = reader["IDLoaiLaptop"].ToString(),
                             TenSP = reader["TenSP"].ToString(),
                             GiaBan = long.Parse(reader["GiaBan"].ToString()),
                             Hang = reader["TenHang"].ToString(),
@@ -51,7 +51,7 @@ namespace CSharp_laptop.DAO
             return laptops;
         }
 
-        public LoaiLaptopDTO GetLaptopByID(string idLaptop)
+        public LoaiLaptopDTO GetLaptopByID(string IDLoaiLaptop)
         {
             LoaiLaptopDTO laptop = null;  // Khởi tạo null để kiểm tra nếu không tìm thấy laptop
 
@@ -63,9 +63,9 @@ namespace CSharp_laptop.DAO
                         FROM loailaptop ll 
                         LEFT JOIN hangsanxuat h ON ll.Hang = h.ID_Hang 
                         LEFT JOIN khuyenmai km ON ll.KhuyenMai = km.ID_KhuyenMai 
-                        WHERE ll.IDLaptop = @IDLaptop";
+                        WHERE ll.IDLoaiLaptop = @IDLoaiLaptop";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@IDLaptop", idLaptop);  // Thêm tham số vào câu lệnh SQL
+                cmd.Parameters.AddWithValue("@IDLoaiLaptop", IDLoaiLaptop);  // Thêm tham số vào câu lệnh SQL
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -73,7 +73,7 @@ namespace CSharp_laptop.DAO
                     {
                         laptop = new LoaiLaptopDTO
                         {
-                            IDLaptop = reader["IDLaptop"].ToString(),
+                            IDLoaiLaptop = reader["IDLoaiLaptop"].ToString(),
                             TenSP = reader["TenSP"].ToString(),
                             GiaBan = long.Parse(reader["GiaBan"].ToString()),
                             Hang = reader["TenHang"].ToString(),
@@ -99,12 +99,12 @@ namespace CSharp_laptop.DAO
                 {
                     conn.Open();
                     // Câu truy vấn SQL được điều chỉnh để kiểm tra giá trị của KhuyenMai
-                    string query = "INSERT INTO loailaptop (IDLaptop, TenSP, GiaBan, Hang, CPU, RAM, GPU, HinhAnh, KichThuoc, KhuyenMai) " +
-                                   "VALUES (@IDLaptop, @TenSP, @GiaBan, @Hang, @CPU, @RAM, @GPU, @HinhAnh, @KichThuoc, @KhuyenMai)";
+                    string query = "INSERT INTO loailaptop (IDLoaiLaptop, TenSP, GiaBan, Hang, CPU, RAM, GPU, HinhAnh, KichThuoc, KhuyenMai) " +
+                                   "VALUES (@IDLoaiLaptop, @TenSP, @GiaBan, @Hang, @CPU, @RAM, @GPU, @HinhAnh, @KichThuoc, @KhuyenMai)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                    cmd.Parameters.AddWithValue("@IDLaptop", laptop.IDLaptop);
+                    cmd.Parameters.AddWithValue("@IDLoaiLaptop", laptop.IDLoaiLaptop);
                     cmd.Parameters.AddWithValue("@TenSP", laptop.TenSP);
                     cmd.Parameters.AddWithValue("@GiaBan", laptop.GiaBan);
                     cmd.Parameters.AddWithValue("@Hang", laptop.Hang);
@@ -136,16 +136,16 @@ namespace CSharp_laptop.DAO
         }
 
 
-        public bool DeleteLaptop(string idLaptop)
+        public bool DeleteLaptop(string IDLoaiLaptop)
         {
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 try
                 {
                     conn.Open();
-                    string query = "DELETE FROM loailaptop WHERE IDLaptop = @idLaptop";
+                    string query = "DELETE FROM loailaptop WHERE IDLoaiLaptop = @IDLoaiLaptop";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@IDLaptop", idLaptop);
+                    cmd.Parameters.AddWithValue("@IDLoaiLaptop", IDLoaiLaptop);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
                     return rowsAffected > 0; 
@@ -164,7 +164,7 @@ namespace CSharp_laptop.DAO
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT MAX(IDLaptop) FROM loailaptop";
+                string query = "SELECT MAX(IDLoaiLaptop) FROM loailaptop";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 object result = cmd.ExecuteScalar();
@@ -186,12 +186,12 @@ namespace CSharp_laptop.DAO
                     // Câu truy vấn SQL cho việc cập nhật thông tin laptop
                     string query = "UPDATE loailaptop SET TenSP = @TenSP, GiaBan = @GiaBan, Hang = @Hang, " +
                                    "CPU = @CPU, RAM = @RAM, GPU = @GPU, HinhAnh = @HinhAnh, KichThuoc = @KichThuoc, " +
-                                   "KhuyenMai = @KhuyenMai WHERE IDLaptop = @IDLaptop";
+                                   "KhuyenMai = @KhuyenMai WHERE IDLoaiLaptop = @IDLoaiLaptop";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
                     // Gán giá trị cho các tham số
-                    cmd.Parameters.AddWithValue("@IDLaptop", laptop.IDLaptop);
+                    cmd.Parameters.AddWithValue("@IDLoaiLaptop", laptop.IDLoaiLaptop);
                     cmd.Parameters.AddWithValue("@TenSP", laptop.TenSP);
                     cmd.Parameters.AddWithValue("@GiaBan", laptop.GiaBan);
                     cmd.Parameters.AddWithValue("@Hang", laptop.Hang);
