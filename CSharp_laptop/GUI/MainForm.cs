@@ -175,7 +175,7 @@ namespace CSharp_laptop.GUI
         private void iconButton5_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            //OpenChildForm(new KhachHangGUI());
+            OpenChildForm(new KhachHangGUI(this));
         }
         private void iconButton6_Click(object sender, EventArgs e)
         {
