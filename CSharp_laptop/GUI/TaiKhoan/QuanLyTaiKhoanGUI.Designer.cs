@@ -34,13 +34,15 @@
             artanPanel1 = new ArtanPanel();
             vbButton1 = new VBButton();
             label1 = new Label();
+            artanPanel2 = new ArtanPanel();
             dataGridView1 = new DataGridView();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             artanPanel1.SuspendLayout();
+            artanPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -55,10 +57,10 @@
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.MediumPurple;
             artanPanel1.GradientTopColor = Color.DodgerBlue;
-            artanPanel1.Location = new Point(18, 20);
-            artanPanel1.Margin = new Padding(4, 6, 4, 6);
+            artanPanel1.Location = new Point(12, 13);
+            artanPanel1.Margin = new Padding(3, 4, 3, 4);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(2061, 234);
+            artanPanel1.Size = new Size(1252, 156);
             artanPanel1.TabIndex = 15;
             artanPanel1.Paint += artanPanel1_Paint_1;
             // 
@@ -76,11 +78,11 @@
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = Properties.Resources.icons8_add_29;
             vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(1792, 69);
-            vbButton1.Margin = new Padding(4, 6, 4, 6);
+            vbButton1.Location = new Point(1073, 46);
+            vbButton1.Margin = new Padding(3, 4, 3, 4);
             vbButton1.Name = "vbButton1";
-            vbButton1.Padding = new Padding(12, 0, 0, 0);
-            vbButton1.Size = new Size(220, 105);
+            vbButton1.Padding = new Padding(8, 0, 0, 0);
+            vbButton1.Size = new Size(147, 70);
             vbButton1.TabIndex = 11;
             vbButton1.Text = "Thêm";
             vbButton1.TextColor = Color.White;
@@ -94,12 +96,28 @@
             label1.BackColor = Color.FromArgb(0, 0, 0, 0);
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(56, 82);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(37, 55);
             label1.Name = "label1";
-            label1.Size = new Size(484, 65);
+            label1.Size = new Size(340, 46);
             label1.TabIndex = 10;
             label1.Text = "Danh sách tài khoản";
+            // 
+            // artanPanel2
+            // 
+            artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel2.BackColor = Color.White;
+            artanPanel2.BorderRadius = 10;
+            artanPanel2.Controls.Add(dataGridView1);
+            artanPanel2.ForeColor = Color.FromArgb(100, 150, 200);
+            artanPanel2.GradientAngle = 30F;
+            artanPanel2.GradientBottomColor = Color.FromArgb(113, 92, 232);
+            artanPanel2.GradientTopColor = Color.FromArgb(113, 92, 232);
+            artanPanel2.Location = new Point(12, 177);
+            artanPanel2.Margin = new Padding(3, 4, 3, 4);
+            artanPanel2.Name = "artanPanel2";
+            artanPanel2.Padding = new Padding(5, 0, 5, 20);
+            artanPanel2.Size = new Size(1252, 513);
+            artanPanel2.TabIndex = 16;
             // 
             // dataGridView1
             // 
@@ -120,7 +138,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 35;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column2, Column3, Column1, Column7, Column8 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column7, Column8 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -129,10 +147,11 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(18, 266);
-            dataGridView1.Margin = new Padding(4, 6, 4, 6);
+            dataGridView1.Location = new Point(5, 0);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -147,46 +166,46 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1887, 1024);
+            dataGridView1.Size = new Size(1242, 493);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
             dataGridView1.SizeChanged += dataGridView1_SizeChanged;
             // 
-            // Column2
+            // dataGridViewTextBoxColumn1
             // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.FillWeight = 80F;
-            Column2.HeaderText = "Tên tài khoản";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn1.FillWeight = 50F;
+            dataGridViewTextBoxColumn1.HeaderText = "Tên tài khoản";
+            dataGridViewTextBoxColumn1.MinimumWidth = 9;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // Column3
+            // dataGridViewTextBoxColumn2
             // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 70F;
-            Column3.HeaderText = "Mật khẩu";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn2.FillWeight = 80F;
+            dataGridViewTextBoxColumn2.HeaderText = "Mật khẩu";
+            dataGridViewTextBoxColumn2.MinimumWidth = 9;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // Column1
+            // dataGridViewTextBoxColumn3
             // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 50F;
-            Column1.HeaderText = "Quyền";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
+            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn3.FillWeight = 70F;
+            dataGridViewTextBoxColumn3.HeaderText = "Quyền";
+            dataGridViewTextBoxColumn3.MinimumWidth = 9;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column7.FillWeight = 40F;
             Column7.HeaderText = "Sửa";
-            Column7.MinimumWidth = 6;
+            Column7.MinimumWidth = 9;
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
@@ -195,23 +214,24 @@
             Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column8.FillWeight = 40F;
             Column8.HeaderText = "Xóa";
-            Column8.MinimumWidth = 6;
+            Column8.MinimumWidth = 9;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
             // 
             // QuanLyTaiKhoanGUI
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2108, 1406);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1283, 703);
+            Controls.Add(artanPanel2);
             Controls.Add(artanPanel1);
-            Margin = new Padding(4, 6, 4, 6);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "QuanLyTaiKhoanGUI";
             Text = "QuanLyTaiKhoanGUI";
             Load += TaiKhoanGUI_Load;
             artanPanel1.ResumeLayout(false);
             artanPanel1.PerformLayout();
+            artanPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -219,11 +239,12 @@
         #endregion
         private ArtanPanel artanPanel1;
         private Label label1;
-        private DataGridView dataGridView1;
         private VBButton vbButton1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column1;
+        private ArtanPanel artanPanel2;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
     }

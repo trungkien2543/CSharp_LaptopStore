@@ -13,6 +13,8 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CSharp_laptop.GUI.TaiKhoan;
+using CSharp_laptop.GUI.NhanVien;
 
 namespace CSharp_laptop.GUI
 {
@@ -245,6 +247,11 @@ namespace CSharp_laptop.GUI
         }
 
         private void vbButton1_Click(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new CreateTaiKhoanGUI(mainForm));
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, EventArgs e)
         {
 
         }
