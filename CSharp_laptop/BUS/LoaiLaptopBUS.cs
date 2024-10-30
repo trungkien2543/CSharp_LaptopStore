@@ -13,16 +13,16 @@ namespace CSharp_laptop.BUS
 {
     internal class LoaiLaptopBUS
     {
-        private LoaiLaptopDAO laptopDAO = new LoaiLaptopDAO();
+        private LoaiLaptopDAO loailaptopDAO = new LoaiLaptopDAO();
 
         public List<LoaiLaptopDTO> GetLaptops()
         {
-            return laptopDAO.GetAllLaptops();
+            return loailaptopDAO.GetAllLaptops();
         }
 
         public LoaiLaptopDTO GetLaptopByID(string idLaptop)
         {
-            return laptopDAO.GetLaptopByID(idLaptop);  // Gọi phương thức từ DAO
+            return loailaptopDAO.GetLaptopByID(idLaptop);  // Gọi phương thức từ DAO
         }
 
 
@@ -32,17 +32,17 @@ namespace CSharp_laptop.BUS
             {
                 return false; 
             }
-            return laptopDAO.InsertLoaiLaptop(laptop); 
+            return loailaptopDAO.InsertLoaiLaptop(laptop); 
         }
 
         public bool DeleteLaptop(string idLaptop)
         {
-            return laptopDAO.DeleteLaptop(idLaptop);
+            return loailaptopDAO.DeleteLaptop(idLaptop);
         }
 
         public long GetNextID()
         {
-            return laptopDAO.GetNextID();
+            return loailaptopDAO.GetNextID();
         }
 
         public bool UpdateLaptop(LoaiLaptopDTO laptop)
@@ -51,12 +51,18 @@ namespace CSharp_laptop.BUS
             {
                 return false;
             }
-            return laptopDAO.UpdateLoaiLaptop(laptop);
+            return loailaptopDAO.UpdateLoaiLaptop(laptop);
         }
+
+        public bool CheckIfIDExists(string idLoaiLaptop)
+        {
+            return loailaptopDAO.CheckIfIDExists(idLoaiLaptop);
+        }
+
 
         public DataTable SearchLaptop(string searchTerm)
         {
-            return laptopDAO.SearchLaptop(searchTerm);
+            return loailaptopDAO.SearchLaptop(searchTerm);
         }
     }
 }

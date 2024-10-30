@@ -296,7 +296,6 @@
             rjTextBox1.TabIndex = 29;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
-            rjTextBox1._TextChanged += rjTextBox1__TextChanged;
             // 
             // rjTextBox2
             // 

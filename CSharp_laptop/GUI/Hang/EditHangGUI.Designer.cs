@@ -298,7 +298,6 @@
             Controls.Add(artanPanel1);
             Name = "EditHangGUI";
             Text = "ThemHangGUI";
-            Load += EditHangGUI_Load;
             artanPanel1.ResumeLayout(false);
             artanPanel1.PerformLayout();
             artanPanel2.ResumeLayout(false);

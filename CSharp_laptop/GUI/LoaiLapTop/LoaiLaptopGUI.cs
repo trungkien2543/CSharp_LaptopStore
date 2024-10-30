@@ -32,50 +32,12 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //EditSanPham editSanPham = new EditSanPham(soluong_lap, "add");
-            //editSanPham.Show();
             mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
         }
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-
-                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
-                string idLaptop = row.Cells["IDLoaiLaptop"].Value.ToString();
-                selectedLaptopID = idLaptop;
-
-            }
-
-            if (e.ColumnIndex == dataGridView2.Columns["btnEdit"].Index && e.RowIndex >= 0)
-            {
-                mainForm.OpenChildForm(new EditLoaiLaptop(selectedLaptopID, "Sửa sản phẩm", mainForm));
-            }
-            else if (e.ColumnIndex == dataGridView2.Columns["btnDelete"].Index && e.RowIndex >= 0)
-            {
-
-                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm với ID: {selectedLaptopID}?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
-                {
-                    bool isDeleted = laptopBUS.DeleteLaptop(selectedLaptopID.ToString());
-
-                    if (isDeleted)
-                    {
-                        MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadLaptops();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể xóa sản phẩm vì ảnh hưởng tới dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else if (e.ColumnIndex == dataGridView2.Columns["btnView"].Index && e.RowIndex >= 0)
-            {
-                mainForm.OpenChildForm(new LaptopGUI(selectedLaptopID, mainForm));
-            }
+            
         }
 
         private void LoadLaptops()
@@ -147,16 +109,6 @@ namespace CSharp_laptop.GUI
             mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rjTextBox1__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void vbButton2_Click(object sender, EventArgs e)
         {
             string searchTerm = rjTextBox1.Texts;
@@ -165,7 +117,43 @@ namespace CSharp_laptop.GUI
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
 
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+                string idLaptop = row.Cells["IDLoaiLaptop"].Value.ToString();
+                selectedLaptopID = idLaptop;
+
+            }
+
+            if (e.ColumnIndex == dataGridView2.Columns["btnEdit"].Index && e.RowIndex >= 0)
+            {
+                mainForm.OpenChildForm(new EditLoaiLaptop(selectedLaptopID, "Sửa sản phẩm", mainForm));
+            }
+            else if (e.ColumnIndex == dataGridView2.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            {
+
+                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm với ID: {selectedLaptopID}?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    bool isDeleted = laptopBUS.DeleteLaptop(selectedLaptopID.ToString());
+
+                    if (isDeleted)
+                    {
+                        MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadLaptops();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xóa sản phẩm vì ảnh hưởng tới dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else if (e.ColumnIndex == dataGridView2.Columns["btnView"].Index && e.RowIndex >= 0)
+            {
+                mainForm.OpenChildForm(new LaptopGUI(selectedLaptopID, mainForm));
+            }
         }
     }
 }

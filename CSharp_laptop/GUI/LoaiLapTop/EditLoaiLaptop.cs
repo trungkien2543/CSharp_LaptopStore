@@ -1,6 +1,7 @@
 ﻿using CSharp_laptop.BUS;
 using CSharp_laptop.DAO;
 using LaptopStore.DTO;
+using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace CSharp_laptop.GUI
 {
     public partial class EditLoaiLaptop : Form
     {
-        private LoaiLaptopBUS sanPhamBUS = new LoaiLaptopBUS();
+        private LoaiLaptopBUS loaiLaptopBUS = new LoaiLaptopBUS();
         string function;
         private MainForm mainForm;
 
@@ -31,6 +32,7 @@ namespace CSharp_laptop.GUI
         public EditLoaiLaptop(string idLaptop, string chucnang, MainForm mainform)
         {
             this.mainForm = mainform;
+            function = chucnang;
             InitializeComponent();
 
 
@@ -40,7 +42,7 @@ namespace CSharp_laptop.GUI
             }
             else
             {
-                LoaiLaptopDTO sanPhamDTO = sanPhamBUS.GetLaptopByID(idLaptop);
+                LoaiLaptopDTO sanPhamDTO = loaiLaptopBUS.GetLaptopByID(idLaptop);
 
                 rjTextBox1.Texts = sanPhamDTO.IDLoaiLaptop;
                 rjTextBox2.Texts = sanPhamDTO.TenSP;
@@ -61,7 +63,7 @@ namespace CSharp_laptop.GUI
                 //    pictureBox1.Image = Image.FromFile(rjTextBox8.Texts);
                 //}
             }
-            function = chucnang;
+            
             TaiDuLieuComboBoxKhuyenMai();
             TaiDuLieuComboBoxHang();
         }
@@ -80,23 +82,6 @@ namespace CSharp_laptop.GUI
             rjComboBox1.DataSource = new BindingSource(hangSanXuat, null);
             rjComboBox1.DisplayMember = "Value";  // Hiển thị tên hãng
             rjComboBox1.ValueMember = "Key";      // Giá trị là mã hãng
-        }
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -122,45 +107,36 @@ namespace CSharp_laptop.GUI
 
             };
 
-            bool result = true;
+            bool result = (function == "add") ? SaveLoaiLaptop(laptop,true) : SaveLoaiLaptop(laptop, false);
+        }
 
+        bool SaveLoaiLaptop(LoaiLaptopDTO loaiLaptopDTO, bool isAdd)
+        {
+            loaiLaptopBUS = new LoaiLaptopBUS();
 
-            if (function == "add")
+            if (isAdd && loaiLaptopBUS.CheckIfIDExists(loaiLaptopDTO.IDLoaiLaptop))
             {
-                result = sanPhamBUS.AddLaptop(laptop);
-                MessageBox.Show("Thêm laptop");
-                if (result)
-                {
-                    MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Lưu thất bại! Kiểm tra lại dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("ID loại laptop đã tồn tại trong cơ sở dữ liệu. Vui lòng nhập ID khác.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
             }
-            else
-            {
-                result = sanPhamBUS.UpdateLaptop(laptop);
-                if (result)
-                {
-                    MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại! Kiểm tra lại dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+
+            bool result = isAdd ? loaiLaptopBUS.AddLaptop(loaiLaptopDTO) : loaiLaptopBUS.UpdateLaptop(loaiLaptopDTO);
+
+            string action = isAdd ? "Thêm" : "Update";
+
+            MessageBox.Show(result ? $"{action} thành công!" : $"{action} thất bại!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    result ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+
+            return result;
         }
 
         private void vbButton2_Click(object sender, EventArgs e)
         {
-            //Close();
             mainForm.OpenChildForm(new LoaiLaptopGUI(mainForm));
-        }
-
-        private void rjTextBox1__TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void vbButton3_Click(object sender, EventArgs e)

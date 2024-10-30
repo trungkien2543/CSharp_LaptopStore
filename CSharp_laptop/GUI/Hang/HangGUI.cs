@@ -1,4 +1,5 @@
 ﻿using CSharp_laptop.BUS;
+using CSharp_laptop.GUI.Laptop;
 using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace CSharp_laptop.GUI
         private HangBUS hangBUS = new HangBUS();
         private MainForm mainForm;
 
+        String selectedHangID;
         public HangGUI(MainForm mainForm)
         {
             InitializeComponent();
@@ -27,44 +29,19 @@ namespace CSharp_laptop.GUI
             this.mainForm = mainForm;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridView1.Columns["btnEdit"].Index && e.RowIndex >= 0)
-            {
-                mainForm.OpenChildForm(new EditHangGUI(mainForm));
-
-            }
-
-        }
-
         private void loadHangs()
         {
             List<HangDTO> hangs = hangBUS.GetHangs();
-            dataGridView1.DataSource = hangs;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            dataGridView2.DataSource = hangs;
         }
 
         void Customtable()
         {
-            dataGridView1.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
+            dataGridView2.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
+            dataGridView2.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
 
             DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
             btnEdit.Name = "btnEdit";
@@ -73,7 +50,7 @@ namespace CSharp_laptop.GUI
             btnEdit.Width = 60;
             btnEdit.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView1.Columns.Add(btnEdit);
+            dataGridView2.Columns.Add(btnEdit);
 
             // Thêm cột nút "Xóa"
             DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
@@ -84,22 +61,47 @@ namespace CSharp_laptop.GUI
             //btnDelete.Image = Image.FromFile("path-to-your-delete-icon.png"); // Đường dẫn tới icon xóa
             btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView1.Columns.Add(btnDelete);
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
+            dataGridView2.Columns.Add(btnDelete);
         }
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new EditHangGUI(mainForm));
+            mainForm.OpenChildForm(new EditHangGUI(mainForm, "add", "H"));
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+                string idHang = row.Cells["ID_Hang"].Value.ToString();
+                selectedHangID = idHang;
+
+            }
+
+            if (e.ColumnIndex == dataGridView2.Columns["btnEdit"].Index && e.RowIndex >= 0)
+            {
+                mainForm.OpenChildForm(new EditHangGUI(mainForm,"update",selectedHangID));
+
+            }
+            else if (e.ColumnIndex == dataGridView2.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            {
+
+                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm với ID: {selectedHangID}?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (hangBUS.DeleteHangSanXuat(selectedHangID))
+                {
+                    MessageBox.Show("Xóa hãng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xóa hãng vì ảnh hưởng tới dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                loadHangs();
+            }
+
+            
         }
     }
 }

@@ -21,5 +21,30 @@ namespace CSharp_laptop.BUS
         {
             return hangDAO.GetAllHangSanXuat();
         }
+
+        public bool AddHangSanXuat(HangDTO hang)
+        {
+            return hangDAO.InsertHangSanXuat(hang);
+        }
+
+        public bool UpdateHangSanXuat(HangDTO hang)
+        {
+            return hangDAO.UpdateHangSanXuat(hang);
+        }
+
+        public bool CheckIfIDExists(string idHang)
+        {
+            return hangDAO.CheckIfIDExists(idHang);
+        }
+
+        public HangDTO GetHangSanXuatById(string idHang)
+        {
+            return hangDAO.GetHangSanXuatById(idHang);
+        }
+
+        public bool DeleteHangSanXuat(string idHang)
+        {
+            return hangDAO.DeleteHangSanXuat(idHang);
+        }
     }
 }

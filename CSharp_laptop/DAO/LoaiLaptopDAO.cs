@@ -222,6 +222,20 @@ namespace CSharp_laptop.DAO
             }
         }
 
+        public bool CheckIfIDExists(string idLoaiLaptop)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM loailaptop WHERE IDLoaiLaptop = @IDLoaiLaptop";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDLoaiLaptop", idLoaiLaptop);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
+        }
+
         public DataTable SearchLaptop(string searchTerm)
         {
             DataTable dt = new DataTable();
