@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using CSharp_laptop.DAO;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,6 +44,27 @@ namespace CSharp_laptop.GUI
             GUI.MainForm mf = new GUI.MainForm();
             mf.Show();
             this.Hide();
+
+            //string tenDangNhap = textBox1.Text;
+            //string matKhau = textBox2.Text;
+
+            //TaiKhoanDAO taiKhoanDAO = new TaiKhoanDAO();
+
+            //bool isLoginSuccessful = taiKhoanDAO.CheckLogin(tenDangNhap, matKhau);
+
+            //if (isLoginSuccessful)
+            //{
+            //    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    GUI.MainForm mf = new GUI.MainForm();
+            //    mf.Show();
+            //    this.Hide(); // Ẩn form đăng nhập
+            //}
+            //else
+            //{
+            //    // Đăng nhập thất bại
+            //    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
