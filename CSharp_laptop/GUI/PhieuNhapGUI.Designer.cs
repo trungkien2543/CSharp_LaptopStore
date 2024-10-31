@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
@@ -60,12 +62,38 @@
             label9 = new Label();
             label12 = new Label();
             label13 = new Label();
-            vbButton3 = new VBButton();
+            them_sp_pn_but = new VBButton();
             huy_but = new VBButton();
             rjTextBox6 = new RJTextBox();
             rjTextBox7 = new RJTextBox();
             tabPage3 = new TabPage();
+            artanPanel5 = new ArtanPanel();
+            dataGridView3 = new DataGridView();
+            artanPanel3 = new ArtanPanel();
+            dataGridView2 = new DataGridView();
+            Column10 = new DataGridViewTextBoxColumn();
+            Column11 = new DataGridViewTextBoxColumn();
+            Column12 = new DataGridViewTextBoxColumn();
+            artanPanel4 = new ArtanPanel();
+            panel1 = new Panel();
+            vbButton2 = new VBButton();
+            panel4 = new Panel();
+            comboBox3 = new ComboBox();
+            comboBox4 = new ComboBox();
+            panel3 = new Panel();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
+            label5 = new Label();
+            rjTextBox8 = new RJTextBox();
+            label4 = new Label();
+            rjTextBox5 = new RJTextBox();
+            rjTextBox4 = new RJTextBox();
             artanPanel1 = new ArtanPanel();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel2.SuspendLayout();
@@ -75,6 +103,15 @@
             km_pan.SuspendLayout();
             panel2.SuspendLayout();
             artanPanel9.SuspendLayout();
+            tabPage3.SuspendLayout();
+            artanPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            artanPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            artanPanel4.SuspendLayout();
+            panel1.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
             artanPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -346,7 +383,7 @@
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label12);
             panel2.Controls.Add(label13);
-            panel2.Controls.Add(vbButton3);
+            panel2.Controls.Add(them_sp_pn_but);
             panel2.Controls.Add(huy_but);
             panel2.Controls.Add(rjTextBox6);
             panel2.Controls.Add(rjTextBox7);
@@ -487,24 +524,25 @@
             label13.TabIndex = 2;
             label13.Text = "ID nhà cung cấp";
             // 
-            // vbButton3
+            // them_sp_pn_but
             // 
-            vbButton3.Anchor = AnchorStyles.Top;
-            vbButton3.BackColor = Color.FromArgb(119, 195, 144);
-            vbButton3.BackgroundColor = Color.FromArgb(119, 195, 144);
-            vbButton3.BorderColor = Color.PaleVioletRed;
-            vbButton3.BorderRadius = 15;
-            vbButton3.BorderSize = 0;
-            vbButton3.FlatAppearance.BorderSize = 0;
-            vbButton3.FlatStyle = FlatStyle.Flat;
-            vbButton3.ForeColor = Color.White;
-            vbButton3.Location = new Point(149, 440);
-            vbButton3.Name = "vbButton3";
-            vbButton3.Size = new Size(150, 40);
-            vbButton3.TabIndex = 14;
-            vbButton3.Text = "Đồng ý";
-            vbButton3.TextColor = Color.White;
-            vbButton3.UseVisualStyleBackColor = false;
+            them_sp_pn_but.Anchor = AnchorStyles.Top;
+            them_sp_pn_but.BackColor = Color.FromArgb(119, 195, 144);
+            them_sp_pn_but.BackgroundColor = Color.FromArgb(119, 195, 144);
+            them_sp_pn_but.BorderColor = Color.PaleVioletRed;
+            them_sp_pn_but.BorderRadius = 15;
+            them_sp_pn_but.BorderSize = 0;
+            them_sp_pn_but.FlatAppearance.BorderSize = 0;
+            them_sp_pn_but.FlatStyle = FlatStyle.Flat;
+            them_sp_pn_but.ForeColor = Color.White;
+            them_sp_pn_but.Location = new Point(149, 440);
+            them_sp_pn_but.Name = "them_sp_pn_but";
+            them_sp_pn_but.Size = new Size(150, 40);
+            them_sp_pn_but.TabIndex = 14;
+            them_sp_pn_but.Text = "Thêm sản phẩm";
+            them_sp_pn_but.TextColor = Color.White;
+            them_sp_pn_but.UseVisualStyleBackColor = false;
+            them_sp_pn_but.Click += them_sp_pn_but_Click;
             // 
             // huy_but
             // 
@@ -575,6 +613,9 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(artanPanel5);
+            tabPage3.Controls.Add(artanPanel3);
+            tabPage3.Controls.Add(artanPanel4);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
@@ -582,6 +623,330 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // artanPanel5
+            // 
+            artanPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel5.BackColor = Color.White;
+            artanPanel5.BorderRadius = 20;
+            artanPanel5.Controls.Add(dataGridView3);
+            artanPanel5.ForeColor = Color.Black;
+            artanPanel5.GradientAngle = 65F;
+            artanPanel5.GradientBottomColor = Color.FromArgb(178, 211, 154);
+            artanPanel5.GradientTopColor = Color.MediumSeaGreen;
+            artanPanel5.Location = new Point(598, 303);
+            artanPanel5.Name = "artanPanel5";
+            artanPanel5.Padding = new Padding(4, 0, 4, 15);
+            artanPanel5.Size = new Size(450, 217);
+            artanPanel5.TabIndex = 16;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.BackgroundColor = Color.White;
+            dataGridView3.BorderStyle = BorderStyle.None;
+            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(119, 195, 144);
+            dataGridViewCellStyle2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView3.ColumnHeadersHeight = 35;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn8 });
+            dataGridView3.Dock = DockStyle.Fill;
+            dataGridView3.EnableHeadersVisualStyles = false;
+            dataGridView3.Location = new Point(4, 0);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.ReadOnly = true;
+            dataGridView3.Size = new Size(442, 202);
+            dataGridView3.TabIndex = 0;
+            // 
+            // artanPanel3
+            // 
+            artanPanel3.BackColor = Color.White;
+            artanPanel3.BorderRadius = 30;
+            artanPanel3.Controls.Add(dataGridView2);
+            artanPanel3.ForeColor = Color.Black;
+            artanPanel3.GradientAngle = 60F;
+            artanPanel3.GradientBottomColor = Color.FromArgb(178, 211, 154);
+            artanPanel3.GradientTopColor = Color.MediumSeaGreen;
+            artanPanel3.Location = new Point(598, 76);
+            artanPanel3.Name = "artanPanel3";
+            artanPanel3.Padding = new Padding(4, 0, 4, 15);
+            artanPanel3.Size = new Size(450, 200);
+            artanPanel3.TabIndex = 2;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.BackgroundColor = Color.White;
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(119, 195, 144);
+            dataGridViewCellStyle3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView2.ColumnHeadersHeight = 35;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column10, Column11, Column12 });
+            dataGridView2.Dock = DockStyle.Fill;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.Location = new Point(4, 0);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.Size = new Size(442, 185);
+            dataGridView2.TabIndex = 0;
+            // 
+            // Column10
+            // 
+            Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column10.HeaderText = "ID loại laptop";
+            Column10.Name = "Column10";
+            Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            Column11.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column11.HeaderText = "Tên sản phẩm:";
+            Column11.Name = "Column11";
+            Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            Column12.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column12.HeaderText = "Số lượng";
+            Column12.Name = "Column12";
+            Column12.ReadOnly = true;
+            // 
+            // artanPanel4
+            // 
+            artanPanel4.BackColor = Color.White;
+            artanPanel4.BorderRadius = 30;
+            artanPanel4.Controls.Add(panel1);
+            artanPanel4.ForeColor = Color.Black;
+            artanPanel4.GradientAngle = 30F;
+            artanPanel4.GradientBottomColor = Color.FromArgb(178, 211, 154);
+            artanPanel4.GradientTopColor = Color.MediumSeaGreen;
+            artanPanel4.Location = new Point(59, 76);
+            artanPanel4.Name = "artanPanel4";
+            artanPanel4.Padding = new Padding(4, 40, 4, 15);
+            artanPanel4.Size = new Size(379, 343);
+            artanPanel4.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(vbButton2);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(rjTextBox8);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(rjTextBox5);
+            panel1.Controls.Add(rjTextBox4);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(4, 40);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(371, 288);
+            panel1.TabIndex = 0;
+            // 
+            // vbButton2
+            // 
+            vbButton2.Anchor = AnchorStyles.Top;
+            vbButton2.BackColor = Color.FromArgb(119, 195, 144);
+            vbButton2.BackgroundColor = Color.FromArgb(119, 195, 144);
+            vbButton2.BorderColor = Color.PaleVioletRed;
+            vbButton2.BorderRadius = 15;
+            vbButton2.BorderSize = 0;
+            vbButton2.FlatAppearance.BorderSize = 0;
+            vbButton2.FlatStyle = FlatStyle.Flat;
+            vbButton2.Font = new Font("Bahnschrift SemiBold Condensed", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            vbButton2.ForeColor = Color.White;
+            vbButton2.Location = new Point(112, 233);
+            vbButton2.Name = "vbButton2";
+            vbButton2.Size = new Size(150, 40);
+            vbButton2.TabIndex = 15;
+            vbButton2.Text = "Đồng ý";
+            vbButton2.TextColor = Color.White;
+            vbButton2.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(comboBox3);
+            panel4.Controls.Add(comboBox4);
+            panel4.Location = new Point(80, 111);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(230, 30);
+            panel4.TabIndex = 11;
+            // 
+            // comboBox3
+            // 
+            comboBox3.Dock = DockStyle.Fill;
+            comboBox3.FlatStyle = FlatStyle.Popup;
+            comboBox3.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(0, 0);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(230, 27);
+            comboBox3.TabIndex = 1;
+            comboBox3.Text = "Chọn";
+            // 
+            // comboBox4
+            // 
+            comboBox4.Dock = DockStyle.Fill;
+            comboBox4.FlatStyle = FlatStyle.Popup;
+            comboBox4.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(0, 0);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(230, 27);
+            comboBox4.TabIndex = 0;
+            comboBox4.Text = "Chọn";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(comboBox2);
+            panel3.Controls.Add(comboBox1);
+            panel3.Location = new Point(80, 34);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(230, 30);
+            panel3.TabIndex = 8;
+            // 
+            // comboBox2
+            // 
+            comboBox2.Dock = DockStyle.Fill;
+            comboBox2.FlatStyle = FlatStyle.Popup;
+            comboBox2.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(0, 0);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(230, 27);
+            comboBox2.TabIndex = 1;
+            comboBox2.Text = "Chọn";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Dock = DockStyle.Fill;
+            comboBox1.FlatStyle = FlatStyle.Popup;
+            comboBox1.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(0, 0);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(230, 27);
+            comboBox1.TabIndex = 0;
+            comboBox1.Text = "Chọn";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.DimGray;
+            label6.Location = new Point(56, 91);
+            label6.Name = "label6";
+            label6.Size = new Size(70, 19);
+            label6.TabIndex = 9;
+            label6.Text = "Loại laptop:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.DimGray;
+            label5.Location = new Point(56, 14);
+            label5.Name = "label5";
+            label5.Size = new Size(75, 19);
+            label5.TabIndex = 4;
+            label5.Text = "Hãng laptop:";
+            // 
+            // rjTextBox8
+            // 
+            rjTextBox8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rjTextBox8.BackColor = SystemColors.Window;
+            rjTextBox8.BorderColor = Color.FromArgb(119, 195, 144);
+            rjTextBox8.BorderFocusColor = Color.YellowGreen;
+            rjTextBox8.BorderRadius = 7;
+            rjTextBox8.BorderSize = 1;
+            rjTextBox8.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjTextBox8.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox8.Location = new Point(48, 105);
+            rjTextBox8.Margin = new Padding(4);
+            rjTextBox8.Multiline = true;
+            rjTextBox8.Name = "rjTextBox8";
+            rjTextBox8.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox8.PasswordChar = false;
+            rjTextBox8.PlaceholderColor = Color.DarkGray;
+            rjTextBox8.PlaceholderText = "";
+            rjTextBox8.Size = new Size(203, 40);
+            rjTextBox8.TabIndex = 10;
+            rjTextBox8.Texts = "";
+            rjTextBox8.UnderlinedStyle = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.DimGray;
+            label4.Location = new Point(56, 159);
+            label4.Name = "label4";
+            label4.Size = new Size(33, 19);
+            label4.TabIndex = 2;
+            label4.Text = "IMEI:";
+            // 
+            // rjTextBox5
+            // 
+            rjTextBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rjTextBox5.BackColor = SystemColors.Window;
+            rjTextBox5.BorderColor = Color.FromArgb(119, 195, 144);
+            rjTextBox5.BorderFocusColor = Color.YellowGreen;
+            rjTextBox5.BorderRadius = 7;
+            rjTextBox5.BorderSize = 1;
+            rjTextBox5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjTextBox5.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox5.Location = new Point(48, 28);
+            rjTextBox5.Margin = new Padding(4);
+            rjTextBox5.Multiline = true;
+            rjTextBox5.Name = "rjTextBox5";
+            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox5.PasswordChar = false;
+            rjTextBox5.PlaceholderColor = Color.DarkGray;
+            rjTextBox5.PlaceholderText = "";
+            rjTextBox5.Size = new Size(203, 40);
+            rjTextBox5.TabIndex = 5;
+            rjTextBox5.Texts = "";
+            rjTextBox5.UnderlinedStyle = false;
+            // 
+            // rjTextBox4
+            // 
+            rjTextBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rjTextBox4.BackColor = SystemColors.Window;
+            rjTextBox4.BorderColor = Color.FromArgb(119, 195, 144);
+            rjTextBox4.BorderFocusColor = Color.YellowGreen;
+            rjTextBox4.BorderRadius = 7;
+            rjTextBox4.BorderSize = 1;
+            rjTextBox4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjTextBox4.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox4.Location = new Point(48, 173);
+            rjTextBox4.Margin = new Padding(4);
+            rjTextBox4.Multiline = false;
+            rjTextBox4.Name = "rjTextBox4";
+            rjTextBox4.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox4.PasswordChar = false;
+            rjTextBox4.PlaceholderColor = Color.DarkGray;
+            rjTextBox4.PlaceholderText = "";
+            rjTextBox4.Size = new Size(262, 34);
+            rjTextBox4.TabIndex = 3;
+            rjTextBox4.Texts = "";
+            rjTextBox4.UnderlinedStyle = false;
             // 
             // artanPanel1
             // 
@@ -597,6 +962,34 @@
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1118, 120);
             artanPanel1.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn1.HeaderText = "IMEI";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn2.HeaderText = "ID loại laptop";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn3.HeaderText = "ID phiếu nhập";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn8.HeaderText = "123";
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // PhieuNhapGUI
             // 
@@ -619,6 +1012,16 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             artanPanel9.ResumeLayout(false);
+            tabPage3.ResumeLayout(false);
+            artanPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            artanPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            artanPanel4.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             artanPanel1.ResumeLayout(false);
             artanPanel1.PerformLayout();
             ResumeLayout(false);
@@ -645,7 +1048,7 @@
         private Label label9;
         private Label label12;
         private Label label13;
-        private VBButton vbButton3;
+        private VBButton them_sp_pn_but;
         private VBButton huy_but;
         private RJTextBox rjTextBox6;
         private RJTextBox rjTextBox7;
@@ -661,5 +1064,31 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
+        private ArtanPanel artanPanel4;
+        private ArtanPanel artanPanel3;
+        private ArtanPanel artanPanel5;
+        private DataGridView dataGridView3;
+        private DataGridView dataGridView2;
+        private Panel panel1;
+        private Label label4;
+        private RJTextBox rjTextBox4;
+        private Panel panel3;
+        private ComboBox comboBox1;
+        private Label label5;
+        private RJTextBox rjTextBox5;
+        private Panel panel4;
+        private ComboBox comboBox3;
+        private ComboBox comboBox4;
+        private ComboBox comboBox2;
+        private Label label6;
+        private RJTextBox rjTextBox8;
+        private VBButton vbButton2;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column12;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

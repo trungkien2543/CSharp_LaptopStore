@@ -36,8 +36,8 @@
             tabPage1 = new TabPage();
             vbButton2 = new VBButton();
             tk_panel = new Panel();
-            rjTextBox1 = new RJTextBox();
             vbButton1 = new VBButton();
+            rjTextBox1 = new RJTextBox();
             artanPanel3 = new ArtanPanel();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -142,12 +142,34 @@
             // tk_panel
             // 
             tk_panel.Anchor = AnchorStyles.Top;
-            tk_panel.Controls.Add(rjTextBox1);
             tk_panel.Controls.Add(vbButton1);
+            tk_panel.Controls.Add(rjTextBox1);
             tk_panel.Location = new Point(205, 55);
             tk_panel.Name = "tk_panel";
             tk_panel.Size = new Size(700, 40);
             tk_panel.TabIndex = 37;
+            // 
+            // vbButton1
+            // 
+            vbButton1.BackColor = Color.FromArgb(113, 168, 223);
+            vbButton1.BackgroundColor = Color.FromArgb(113, 168, 223);
+            vbButton1.BorderColor = Color.PaleVioletRed;
+            vbButton1.BorderRadius = 15;
+            vbButton1.BorderSize = 0;
+            vbButton1.FlatAppearance.BorderSize = 0;
+            vbButton1.FlatStyle = FlatStyle.Flat;
+            vbButton1.ForeColor = Color.White;
+            vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
+            vbButton1.ImageAlign = ContentAlignment.MiddleRight;
+            vbButton1.Location = new Point(600, 0);
+            vbButton1.Name = "vbButton1";
+            vbButton1.Padding = new Padding(0, 0, 15, 0);
+            vbButton1.Size = new Size(100, 40);
+            vbButton1.TabIndex = 36;
+            vbButton1.TextAlign = ContentAlignment.TopLeft;
+            vbButton1.TextColor = Color.White;
+            vbButton1.UseVisualStyleBackColor = false;
+            vbButton1.Click += vbButton1_Click;
             // 
             // rjTextBox1
             // 
@@ -171,28 +193,6 @@
             rjTextBox1.TabIndex = 35;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
-            // 
-            // vbButton1
-            // 
-            vbButton1.BackColor = Color.FromArgb(113, 168, 223);
-            vbButton1.BackgroundColor = Color.FromArgb(113, 168, 223);
-            vbButton1.BorderColor = Color.PaleVioletRed;
-            vbButton1.BorderRadius = 15;
-            vbButton1.BorderSize = 0;
-            vbButton1.FlatAppearance.BorderSize = 0;
-            vbButton1.FlatStyle = FlatStyle.Flat;
-            vbButton1.ForeColor = Color.White;
-            vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
-            vbButton1.ImageAlign = ContentAlignment.MiddleRight;
-            vbButton1.Location = new Point(600, 0);
-            vbButton1.Name = "vbButton1";
-            vbButton1.Padding = new Padding(0, 0, 15, 0);
-            vbButton1.Size = new Size(100, 40);
-            vbButton1.TabIndex = 36;
-            vbButton1.TextAlign = ContentAlignment.TopLeft;
-            vbButton1.TextColor = Color.White;
-            vbButton1.UseVisualStyleBackColor = false;
-            vbButton1.Click += vbButton1_Click;
             // 
             // artanPanel3
             // 
@@ -343,7 +343,7 @@
             // 
             // km_pan
             // 
-            km_pan.Anchor = AnchorStyles.None;
+            km_pan.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             km_pan.BackColor = Color.White;
             km_pan.BorderRadius = 30;
             km_pan.Controls.Add(label15);
