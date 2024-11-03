@@ -1,6 +1,6 @@
-﻿namespace CSharp_laptop.GUI
+﻿namespace CSharp_laptop.GUI.BanHang
 {
-    partial class HoaDon
+    partial class ThanhToan
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDon));
+            artanPanel1 = new ArtanPanel();
+            panel1 = new Panel();
+            artanPanel3 = new ArtanPanel();
             artanPanel2 = new ArtanPanel();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -42,49 +44,83 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
-            rjDatePicker2 = new RJDateTimePicker.RJDatePicker();
-            rjDatePicker1 = new RJDateTimePicker.RJDatePicker();
-            rjTextBox1 = new RJTextBox();
-            label1 = new Label();
-            artanPanel1 = new ArtanPanel();
-            vbButton3 = new VBButton();
-            vbButton1 = new VBButton();
+            artanPanel1.SuspendLayout();
             artanPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            artanPanel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // artanPanel1
+            // 
+            artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel1.BackColor = Color.White;
+            artanPanel1.BorderRadius = 30;
+            artanPanel1.Controls.Add(panel1);
+            artanPanel1.Controls.Add(artanPanel3);
+            artanPanel1.Controls.Add(artanPanel2);
+            artanPanel1.ForeColor = Color.Black;
+            artanPanel1.GradientAngle = 30F;
+            artanPanel1.GradientBottomColor = Color.FromArgb(249, 118, 176);
+            artanPanel1.GradientTopColor = Color.PaleTurquoise;
+            artanPanel1.Location = new Point(2, 3);
+            artanPanel1.Name = "artanPanel1";
+            artanPanel1.Size = new Size(1214, 629);
+            artanPanel1.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Location = new Point(3, 428);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(796, 200);
+            panel1.TabIndex = 14;
+            // 
+            // artanPanel3
+            // 
+            artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            artanPanel3.BackColor = Color.White;
+            artanPanel3.BorderRadius = 30;
+            artanPanel3.ForeColor = Color.Black;
+            artanPanel3.GradientAngle = 30F;
+            artanPanel3.GradientBottomColor = Color.FromArgb(249, 118, 176);
+            artanPanel3.GradientTopColor = Color.PaleTurquoise;
+            artanPanel3.Location = new Point(804, 0);
+            artanPanel3.Name = "artanPanel3";
+            artanPanel3.Size = new Size(410, 627);
+            artanPanel3.TabIndex = 12;
             // 
             // artanPanel2
             // 
-            artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel2.BackColor = Color.White;
             artanPanel2.BorderRadius = 10;
             artanPanel2.Controls.Add(dataGridView1);
             artanPanel2.ForeColor = Color.FromArgb(100, 150, 200);
             artanPanel2.GradientAngle = 30F;
-            artanPanel2.GradientBottomColor = Color.FromArgb(238, 168, 73);
-            artanPanel2.GradientTopColor = Color.FromArgb(238, 168, 73);
-            artanPanel2.Location = new Point(0, 148);
+            artanPanel2.GradientBottomColor = Color.FromArgb(192, 255, 255);
+            artanPanel2.GradientTopColor = Color.FromArgb(255, 192, 255);
+            artanPanel2.Location = new Point(3, 0);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Padding = new Padding(4, 0, 4, 15);
-            artanPanel2.Size = new Size(1117, 567);
-            artanPanel2.TabIndex = 12;
+            artanPanel2.Size = new Size(796, 422);
+            artanPanel2.TabIndex = 13;
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(238, 168, 73);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 192, 192);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(238, 168, 73);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 192, 255);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -98,7 +134,6 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
             dataGridView1.Location = new Point(4, 0);
@@ -116,7 +151,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1109, 552);
+            dataGridView1.Size = new Size(788, 407);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -191,156 +226,26 @@
             Column6.ReadOnly = true;
             Column6.Width = 125;
             // 
-            // rjDatePicker2
-            // 
-            rjDatePicker2.BorderColor = Color.PaleVioletRed;
-            rjDatePicker2.BorderSize = 0;
-            rjDatePicker2.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjDatePicker2.CustomFormat = "dd/MM/yyyy";
-            rjDatePicker2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjDatePicker2.Format = DateTimePickerFormat.Custom;
-            rjDatePicker2.Location = new Point(737, 91);
-            rjDatePicker2.MinimumSize = new Size(4, 40);
-            rjDatePicker2.Name = "rjDatePicker2";
-            rjDatePicker2.Size = new Size(228, 40);
-            rjDatePicker2.SkinColor = Color.FromArgb(238, 168, 73);
-            rjDatePicker2.TabIndex = 27;
-            rjDatePicker2.TextColor = Color.White;
-            // 
-            // rjDatePicker1
-            // 
-            rjDatePicker1.BorderColor = Color.PaleVioletRed;
-            rjDatePicker1.BorderSize = 0;
-            rjDatePicker1.CustomFormat = "dd/MM/yyyy";
-            rjDatePicker1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjDatePicker1.Format = DateTimePickerFormat.Custom;
-            rjDatePicker1.Location = new Point(489, 89);
-            rjDatePicker1.MinimumSize = new Size(4, 40);
-            rjDatePicker1.Name = "rjDatePicker1";
-            rjDatePicker1.Size = new Size(233, 40);
-            rjDatePicker1.SkinColor = Color.FromArgb(238, 168, 73);
-            rjDatePicker1.TabIndex = 26;
-            rjDatePicker1.TextColor = Color.White;
-            // 
-            // rjTextBox1
-            // 
-            rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.FromArgb(238, 168, 73);
-            rjTextBox1.BorderFocusColor = Color.HotPink;
-            rjTextBox1.BorderRadius = 5;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(4, 91);
-            rjTextBox1.Margin = new Padding(4, 3, 4, 3);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(9, 5, 9, 5);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = Color.DarkGray;
-            rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(478, 35);
-            rjTextBox1.TabIndex = 25;
-            rjTextBox1.Texts = "";
-            rjTextBox1.UnderlinedStyle = false;
-            // 
-            // label1
-            // 
-            label1.BackColor = Color.Transparent;
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(1109, 77);
-            label1.TabIndex = 24;
-            label1.Text = "Quản lý hóa đơn";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
-            // 
-            // artanPanel1
-            // 
-            artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel1.BackColor = Color.White;
-            artanPanel1.BorderRadius = 0;
-            artanPanel1.Controls.Add(label1);
-            artanPanel1.ForeColor = Color.Black;
-            artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.FromArgb(249, 118, 176);
-            artanPanel1.GradientTopColor = Color.PaleTurquoise;
-            artanPanel1.Location = new Point(4, 3);
-            artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1109, 77);
-            artanPanel1.TabIndex = 30;
-            // 
-            // vbButton3
-            // 
-            vbButton3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton3.BackColor = Color.FromArgb(238, 168, 73);
-            vbButton3.BackgroundColor = Color.FromArgb(238, 168, 73);
-            vbButton3.BorderColor = Color.PaleVioletRed;
-            vbButton3.BorderRadius = 26;
-            vbButton3.BorderSize = 0;
-            vbButton3.FlatAppearance.BorderSize = 0;
-            vbButton3.FlatStyle = FlatStyle.Flat;
-            vbButton3.ForeColor = Color.White;
-            vbButton3.Image = Properties.Resources.icons8_add_50;
-            vbButton3.Location = new Point(1058, 87);
-            vbButton3.Name = "vbButton3";
-            vbButton3.Size = new Size(55, 55);
-            vbButton3.TabIndex = 31;
-            vbButton3.TextColor = Color.White;
-            vbButton3.UseVisualStyleBackColor = false;
-            vbButton3.Click += vbButton3_Click;
-            // 
-            // vbButton1
-            // 
-            vbButton1.BackColor = Color.FromArgb(238, 168, 73);
-            vbButton1.BackgroundColor = Color.FromArgb(238, 168, 73);
-            vbButton1.BorderColor = Color.PaleVioletRed;
-            vbButton1.BorderRadius = 26;
-            vbButton1.BorderSize = 0;
-            vbButton1.FlatAppearance.BorderSize = 0;
-            vbButton1.FlatStyle = FlatStyle.Flat;
-            vbButton1.ForeColor = Color.White;
-            vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
-            vbButton1.Location = new Point(986, 87);
-            vbButton1.Name = "vbButton1";
-            vbButton1.Size = new Size(55, 55);
-            vbButton1.TabIndex = 32;
-            vbButton1.TextColor = Color.White;
-            vbButton1.UseVisualStyleBackColor = false;
-            // 
-            // HoaDon
+            // ThanhToan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1117, 713);
-            Controls.Add(vbButton1);
-            Controls.Add(vbButton3);
+            ClientSize = new Size(1218, 633);
             Controls.Add(artanPanel1);
-            Controls.Add(artanPanel2);
-            Controls.Add(rjTextBox1);
-            Controls.Add(rjDatePicker2);
-            Controls.Add(rjDatePicker1);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "HoaDon";
-            Text = "TestBanHang";
-            Load += BanHang_Load;
+            Name = "ThanhToan";
+            Text = "ThanhToan";
+            artanPanel1.ResumeLayout(false);
             artanPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            artanPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
+        private ArtanPanel artanPanel1;
         private ArtanPanel artanPanel2;
         private DataGridView dataGridView1;
-        private RJDateTimePicker.RJDatePicker rjDatePicker2;
-        private RJDateTimePicker.RJDatePicker rjDatePicker1;
-        private RJTextBox rjTextBox1;
-        private Label label1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -349,8 +254,7 @@
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column6;
-        private ArtanPanel artanPanel1;
-        private VBButton vbButton3;
-        private VBButton vbButton1;
+        private ArtanPanel artanPanel3;
+        private Panel panel1;
     }
 }
