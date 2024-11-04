@@ -171,7 +171,7 @@ namespace CSharp_laptop.GUI
                 var command = new MySqlCommand(
                     @"SELECT hangsanxuat.TenHang, COUNT(*) AS SoLuongBan FROM chitiethoadon 
                     INNER JOIN laptop ON chitiethoadon.IMEI = laptop.IMEI
-                    INNER JOIN loailaptop ON loailaptop.IDLaptop = laptop.LoaiLaptop
+                    INNER JOIN loailaptop ON loailaptop.IDLoaiLaptop = laptop.LoaiLaptop
                     INNER JOIN hoadon ON chitiethoadon.ID_HoaDon = hoadon.ID_HoaDon 
                     INNER JOIN hangsanxuat ON loailaptop.Hang = hangsanxuat.ID_Hang 
                     WHERE hoadon.NgayLap BETWEEN @fromDate AND @toDate 
@@ -258,12 +258,12 @@ namespace CSharp_laptop.GUI
                 var command = new MySqlCommand(
                     @"SELECT hangsanxuat.TenHang, COUNT(*) AS SoLuongBan, SUM(hoadon.TongTien) AS DoanhThu FROM chitiethoadon 
                     INNER JOIN laptop ON chitiethoadon.IMEI = laptop.IMEI
-                    INNER JOIN loailaptop ON loailaptop.IDLaptop = laptop.LoaiLaptop
+                    INNER JOIN loailaptop ON loailaptop.IDLoaiLaptop = laptop.LoaiLaptop
                     INNER JOIN hoadon ON chitiethoadon.ID_HoaDon = hoadon.ID_HoaDon 
                     INNER JOIN hangsanxuat ON loailaptop.Hang = hangsanxuat.ID_Hang 
                     WHERE hoadon.NgayLap BETWEEN @fromDate AND @toDate 
                     GROUP BY hangsanxuat.TenHang;", connection);
-                
+
 
                 command.Parameters.AddWithValue("@fromDate", fromDate);
                 command.Parameters.AddWithValue("@toDate", toDate);
@@ -289,6 +289,11 @@ namespace CSharp_laptop.GUI
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
