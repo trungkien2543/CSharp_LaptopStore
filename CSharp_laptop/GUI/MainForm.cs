@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 using CSharp_laptop.GUI.Laptop;
+using CustomTabControl;
 using FontAwesome.Sharp;
 using Color = System.Drawing.Color;
 
@@ -219,7 +220,7 @@ namespace CSharp_laptop.GUI
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color8);
-            OpenChildForm(new ThongKe());
+            OpenChildForm(new ThongKeGUI());
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
