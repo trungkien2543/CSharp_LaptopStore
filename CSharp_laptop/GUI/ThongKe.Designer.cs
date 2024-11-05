@@ -16,6 +16,7 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+
             }
             base.Dispose(disposing);
         }
@@ -29,11 +30,16 @@
         private void InitializeComponent()
         {
             cartesianChart1 = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
-            label1 = new Label();
             label2 = new Label();
             ccbYear = new ComboBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            panel1 = new Panel();
+            lbThongKe = new Label();
+            ccbMonth = new ComboBox();
+            lblMonth = new Label();
+            ccbType = new ComboBox();
+            label6 = new Label();
             tabPage2 = new TabPage();
             dataGridView1 = new DataGridView();
             btnLoc = new Button();
@@ -45,6 +51,7 @@
             label3 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            panel1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -54,29 +61,17 @@
             cartesianChart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cartesianChart1.AutoScroll = true;
             cartesianChart1.Cursor = Cursors.Hand;
-            cartesianChart1.Location = new Point(0, 161);
+            cartesianChart1.Location = new Point(9, 166);
             cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(1093, 722);
+            cartesianChart1.Size = new Size(1074, 682);
             cartesianChart1.TabIndex = 0;
             cartesianChart1.Load += cartesianChart1_Load;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(310, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(461, 41);
-            label1.TabIndex = 1;
-            label1.Text = "Thống kê doanh thu theo tháng";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(40, 112);
+            label2.Location = new Point(389, 113);
             label2.Name = "label2";
             label2.Size = new Size(99, 23);
             label2.TabIndex = 2;
@@ -86,7 +81,7 @@
             // ccbYear
             // 
             ccbYear.FormattingEnabled = true;
-            ccbYear.Location = new Point(172, 107);
+            ccbYear.Location = new Point(494, 113);
             ccbYear.Name = "ccbYear";
             ccbYear.Size = new Size(151, 28);
             ccbYear.TabIndex = 3;
@@ -106,16 +101,81 @@
             // tabPage1
             // 
             tabPage1.BackColor = SystemColors.ActiveCaption;
+            tabPage1.Controls.Add(panel1);
+            tabPage1.Controls.Add(ccbMonth);
+            tabPage1.Controls.Add(lblMonth);
+            tabPage1.Controls.Add(ccbType);
+            tabPage1.Controls.Add(label6);
             tabPage1.Controls.Add(cartesianChart1);
             tabPage1.Controls.Add(ccbYear);
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1099, 889);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Doanh thu";
+            tabPage1.Click += tabPage1_Click_1;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(lbThongKe);
+            panel1.Location = new Point(0, 20);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1099, 72);
+            panel1.TabIndex = 8;
+            // 
+            // lbThongKe
+            // 
+            lbThongKe.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lbThongKe.AutoSize = true;
+            lbThongKe.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbThongKe.ForeColor = Color.FromArgb(0, 0, 192);
+            lbThongKe.Location = new Point(433, 16);
+            lbThongKe.Name = "lbThongKe";
+            lbThongKe.Size = new Size(363, 37);
+            lbThongKe.TabIndex = 1;
+            lbThongKe.Text = "THỐNG KÊ DOANH THU\r\n";
+            lbThongKe.TextAlign = ContentAlignment.MiddleCenter;
+            lbThongKe.Click += label1_Click;
+            // 
+            // ccbMonth
+            // 
+            ccbMonth.FormattingEnabled = true;
+            ccbMonth.Location = new Point(802, 112);
+            ccbMonth.Name = "ccbMonth";
+            ccbMonth.Size = new Size(151, 28);
+            ccbMonth.TabIndex = 7;
+            ccbMonth.SelectedIndexChanged += ccbMonth_SelectedIndexChanged;
+            // 
+            // lblMonth
+            // 
+            lblMonth.AutoSize = true;
+            lblMonth.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMonth.Location = new Point(686, 114);
+            lblMonth.Name = "lblMonth";
+            lblMonth.Size = new Size(110, 23);
+            lblMonth.TabIndex = 6;
+            lblMonth.Text = "Chọn tháng :";
+            // 
+            // ccbType
+            // 
+            ccbType.FormattingEnabled = true;
+            ccbType.Location = new Point(210, 113);
+            ccbType.Name = "ccbType";
+            ccbType.Size = new Size(151, 28);
+            ccbType.TabIndex = 5;
+            ccbType.SelectedIndexChanged += ccbType_SelectedIndexChanged_1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(43, 114);
+            label6.Name = "label6";
+            label6.Size = new Size(161, 23);
+            label6.TabIndex = 4;
+            label6.Text = "Chọn loại thống kê:";
             // 
             // tabPage2
             // 
@@ -230,6 +290,8 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -239,7 +301,6 @@
         #endregion
 
         private LiveChartsCore.SkiaSharpView.WinForms.CartesianChart cartesianChart1;
-        private Label label1;
         private Label label2;
         private ComboBox ccbYear;
         private TabControl tabControl1;
@@ -253,5 +314,11 @@
         private DateTimePicker dateTimePicker2;
         private Button btnLoc;
         private DataGridView dataGridView1;
+        private ComboBox ccbMonth;
+        private Label lblMonth;
+        private ComboBox ccbType;
+        private Label label6;
+        private Panel panel1;
+        private Label lbThongKe;
     }
 }

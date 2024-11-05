@@ -21,10 +21,44 @@ namespace CSharp_laptop.GUI
     {
         public ThongKe()
         {
-            InitializeComponent();
+            InitializeComponent();        
+            LoadStatisticTypes(); // Tải các loại thống kê vào ComboBox ccbType
+
+            // Đăng ký sự kiện cho ccbType
+            ccbType.SelectedIndexChanged += ccbType_SelectedIndexChanged;
+
+        }
+
+        // Hàm để tải các loại thống kê vào ComboBox ccbType
+        private void LoadStatisticTypes()
+        {
+            ccbType.Items.Clear();
+            ccbType.Items.Add("Theo năm");
+            ccbType.Items.Add("Theo tháng");
+            ccbType.SelectedIndex = 0; // Mặc định là "Theo năm"
+            ccbMonth.Visible = false;
+            lblMonth.Visible = false;
             LoadYears();
+        }
 
+        // Xử lý khi thay đổi loại thống kê
+        private void ccbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Nếu chọn "Theo năm", ẩn ComboBox tháng
+            if (ccbType.SelectedItem.ToString() == "Theo năm")
+            {
+                ccbMonth.Visible = false;
+                LoadChartDataByYear(ccbYear.SelectedItem.ToString());
+            }
+            else
+            {
+                // Nếu chọn "Theo tháng", hiện ComboBox tháng
+                ccbMonth.Visible = true;
+                lblMonth.Visible = true;
+                LoadMonthsForYear(ccbYear.SelectedItem.ToString());
 
+                LoadChartDataByMonth(ccbYear.SelectedItem?.ToString(), ccbMonth.SelectedItem?.ToString());
+            }
         }
 
         // Hàm để điền các năm vào ComboBox
@@ -65,9 +99,50 @@ namespace CSharp_laptop.GUI
             }
         }
 
-        // Hàm cập nhật biểu đồ với năm được chọn
-        private void LoadChartData(string year)
+        // Hàm để điền các tháng theo năm vào ComboBox
+        private void LoadMonthsForYear(string year)
         {
+            // Xóa các mục cũ nếu có
+            ccbMonth.Items.Clear();
+
+            MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
+
+            using (var connection = connectionHelper.GetConnection())
+            {
+                connection.Open();
+
+                // Truy vấn để lấy danh sách các tháng có trong bảng hoadon cho năm đã chọn
+                var command = new MySqlCommand("SELECT DISTINCT MONTH(NgayLap) AS Thang FROM hoadon WHERE YEAR(NgayLap) = @year ORDER BY Thang;", connection);
+                command.Parameters.AddWithValue("@year", year); // Sử dụng parameter để tránh SQL Injection
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // Lấy giá trị tháng từ kết quả truy vấn và thêm vào ComboBox
+                        int month = reader.GetInt32("Thang");
+                        ccbMonth.Items.Add(month);
+                    }
+                }
+            }
+
+            // Kiểm tra xem ComboBox có mục nào không
+            if (ccbMonth.Items.Count > 0)
+            {
+                ccbMonth.SelectedIndex = 0; // Chọn mặc định là tháng đầu tiên trong danh sách
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu tháng nào trong cơ sở dữ liệu cho năm đã chọn!");
+            }
+        }
+
+
+        // Hàm để tải dữ liệu vào biểu đồ theo năm
+        private void LoadChartDataByYear(string year)
+        {
+            if (string.IsNullOrEmpty(year)) return;
+
             var months = new List<string>();
             var revenue = new List<double>();
 
@@ -76,10 +151,8 @@ namespace CSharp_laptop.GUI
             using (var connection = connectionHelper.GetConnection())
             {
                 connection.Open();
-
-                // Cập nhật câu truy vấn để chỉ thống kê theo năm đã chọn
                 var command = new MySqlCommand($"SELECT MONTH(NgayLap) AS Thang, SUM(TongTien) AS DoanhThu FROM hoadon WHERE YEAR(NgayLap) = @year GROUP BY MONTH(NgayLap) ORDER BY Thang;", connection);
-                command.Parameters.AddWithValue("@year", year); // Sử dụng parameter để tránh SQL Injection
+                command.Parameters.AddWithValue("@year", year);
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -92,10 +165,46 @@ namespace CSharp_laptop.GUI
                 }
             }
 
-            // Cập nhật biểu đồ với dữ liệu lấy được
+            UpdateChart(months, revenue);
+        }
+
+        // Hàm để tải dữ liệu vào biểu đồ theo tháng
+        private void LoadChartDataByMonth(string year, string month)
+        {
+            if (string.IsNullOrEmpty(year) || string.IsNullOrEmpty(month)) return;
+
+            var days = new List<string>();
+            var revenue = new List<double>();
+
+            MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
+
+            using (var connection = connectionHelper.GetConnection())
+            {
+                connection.Open();
+                var command = new MySqlCommand($"SELECT DAY(NgayLap) AS Ngay, SUM(TongTien) AS DoanhThu FROM hoadon WHERE YEAR(NgayLap) = @year AND MONTH(NgayLap) = @month GROUP BY DAY(NgayLap) ORDER BY Ngay;", connection);
+                command.Parameters.AddWithValue("@year", year);
+                command.Parameters.AddWithValue("@month", month);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int day = reader.GetInt32("Ngay");
+                        days.Add("Ngày " + day.ToString());
+                        revenue.Add(reader.GetDouble("DoanhThu"));
+                    }
+                }
+            }
+
+            UpdateChart(days, revenue);
+        }
+
+        // Hàm để cập nhật biểu đồ
+        private void UpdateChart(List<string> labels, List<double> values)
+        {
             var series = new LineSeries<double>
             {
-                Values = revenue,
+                Values = values,
                 Name = "Doanh Thu:",
                 Stroke = new SolidColorPaint(new SkiaSharp.SKColor(0, 176, 240)),
                 Fill = null
@@ -105,15 +214,15 @@ namespace CSharp_laptop.GUI
 
             cartesianChart1.XAxes = new Axis[]
             {
-                new Axis { Labels = months.ToArray() }
+        new Axis { Labels = labels.ToArray() }
             };
 
             cartesianChart1.YAxes = new Axis[]
             {
-                new Axis
-                {
-                    Name = "Doanh Thu (VNĐ)"
-                }
+        new Axis
+        {
+            Name = "Doanh Thu (VNĐ)"
+        }
             };
 
             cartesianChart1.Update();
@@ -143,10 +252,18 @@ namespace CSharp_laptop.GUI
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Lấy năm được chọn
-            string selectedYear = ccbYear.SelectedItem.ToString();
+            string selectedYear = ccbYear.SelectedItem?.ToString();
 
-            // Gọi hàm cập nhật biểu đồ với năm được chọn
-            LoadChartData(selectedYear);
+            if (ccbType.SelectedItem.ToString() == "Theo năm")
+            {
+                LoadChartDataByYear(selectedYear);
+            }
+            else if(ccbType.SelectedItem.ToString() == "Theo tháng")
+            {
+                LoadMonthsForYear(selectedYear);
+                LoadChartDataByMonth(selectedYear, ccbMonth.SelectedItem?.ToString());
+            }
+
         }
 
 
@@ -294,6 +411,21 @@ namespace CSharp_laptop.GUI
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ccbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadChartDataByMonth(ccbYear.SelectedItem?.ToString(), ccbMonth.SelectedItem?.ToString());
+        }
+
+        private void ccbType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }
