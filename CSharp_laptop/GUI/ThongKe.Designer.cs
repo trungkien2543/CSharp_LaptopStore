@@ -41,6 +41,8 @@
             ccbType = new ComboBox();
             label6 = new Label();
             tabPage2 = new TabPage();
+            label7 = new Label();
+            label1 = new Label();
             dataGridView1 = new DataGridView();
             btnLoc = new Button();
             dateTimePicker2 = new DateTimePicker();
@@ -61,9 +63,10 @@
             cartesianChart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cartesianChart1.AutoScroll = true;
             cartesianChart1.Cursor = Cursors.Hand;
-            cartesianChart1.Location = new Point(9, 166);
+            cartesianChart1.Location = new Point(16, 170);
+            cartesianChart1.Margin = new Padding(5, 5, 5, 5);
             cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(1074, 682);
+            cartesianChart1.Size = new Size(1057, 657);
             cartesianChart1.TabIndex = 0;
             cartesianChart1.Load += cartesianChart1_Load;
             // 
@@ -109,6 +112,7 @@
             tabPage1.Controls.Add(cartesianChart1);
             tabPage1.Controls.Add(ccbYear);
             tabPage1.Controls.Add(label2);
+            tabPage1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -120,10 +124,11 @@
             // panel1
             // 
             panel1.Controls.Add(lbThongKe);
-            panel1.Location = new Point(0, 20);
+            panel1.Location = new Point(6, 20);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1099, 72);
+            panel1.Size = new Size(1085, 72);
             panel1.TabIndex = 8;
+            panel1.Paint += panel1_Paint_1;
             // 
             // lbThongKe
             // 
@@ -131,7 +136,7 @@
             lbThongKe.AutoSize = true;
             lbThongKe.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbThongKe.ForeColor = Color.FromArgb(0, 0, 192);
-            lbThongKe.Location = new Point(433, 16);
+            lbThongKe.Location = new Point(426, 16);
             lbThongKe.Name = "lbThongKe";
             lbThongKe.Size = new Size(363, 37);
             lbThongKe.TabIndex = 1;
@@ -180,6 +185,8 @@
             // tabPage2
             // 
             tabPage2.BackColor = SystemColors.ActiveCaption;
+            tabPage2.Controls.Add(label7);
+            tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(dataGridView1);
             tabPage2.Controls.Add(btnLoc);
             tabPage2.Controls.Add(dateTimePicker2);
@@ -196,6 +203,26 @@
             tabPage2.Text = "Bán chạy";
             tabPage2.Click += tabPage2_Click;
             // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.Location = new Point(676, 791);
+            label7.Name = "label7";
+            label7.Size = new Size(377, 61);
+            label7.TabIndex = 11;
+            label7.Text = "Bảng thống kê doanh thu các loại laptop đã bán theo khoảng thời gian đã chọn";
+            label7.Click += label7_Click;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(131, 791);
+            label1.Name = "label1";
+            label1.Size = new Size(360, 61);
+            label1.TabIndex = 10;
+            label1.Text = "Biểu đồ tròn thống kê các loại laptop đã bán theo khoảng thời gian đã chọn";
+            // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -203,10 +230,10 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(600, 234);
+            dataGridView1.Location = new Point(600, 343);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(491, 652);
+            dataGridView1.Size = new Size(491, 364);
             dataGridView1.TabIndex = 9;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -253,6 +280,8 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 4;
+            dateTimePicker1.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // pieChart1
             // 
@@ -263,7 +292,7 @@
             pieChart1.MaxValue = null;
             pieChart1.MinValue = 0D;
             pieChart1.Name = "pieChart1";
-            pieChart1.Size = new Size(565, 610);
+            pieChart1.Size = new Size(565, 554);
             pieChart1.TabIndex = 3;
             pieChart1.Total = null;
             pieChart1.Load += pieChart1_Load;
@@ -272,12 +301,14 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(292, 48);
+            label3.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(0, 0, 192);
+            label3.Location = new Point(376, 62);
             label3.Name = "label3";
-            label3.Size = new Size(527, 41);
+            label3.Size = new Size(479, 37);
             label3.TabIndex = 2;
-            label3.Text = "Thống kê số lượng laptop theo hãng";
+            label3.Text = "Thống kê laptop theo hãng";
+            label3.Click += label3_Click;
             // 
             // ThongKe
             // 
@@ -320,5 +351,7 @@
         private Label label6;
         private Panel panel1;
         private Label lbThongKe;
+        private Label label1;
+        private Label label7;
     }
 }

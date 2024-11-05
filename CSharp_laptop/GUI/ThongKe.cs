@@ -19,13 +19,21 @@ namespace CSharp_laptop.GUI
 {
     public partial class ThongKe : Form
     {
+
         public ThongKe()
         {
-            InitializeComponent();        
+            InitializeComponent();
             LoadStatisticTypes(); // Tải các loại thống kê vào ComboBox ccbType
+
 
             // Đăng ký sự kiện cho ccbType
             ccbType.SelectedIndexChanged += ccbType_SelectedIndexChanged;
+
+            //Load dữ liệu sẵn cho TK2
+            dateTimePicker1.Value = DateTime.Now.AddMonths(-1); // Ví dụ: Ngày cách đây 1 tháng
+            dateTimePicker2.Value = DateTime.Now;
+            LoadPieChartData(dateTimePicker1.Value, dateTimePicker2.Value);
+            LoadGridViewData(dateTimePicker1.Value, dateTimePicker2.Value);
 
         }
 
@@ -258,7 +266,7 @@ namespace CSharp_laptop.GUI
             {
                 LoadChartDataByYear(selectedYear);
             }
-            else if(ccbType.SelectedItem.ToString() == "Theo tháng")
+            else if (ccbType.SelectedItem.ToString() == "Theo tháng")
             {
                 LoadMonthsForYear(selectedYear);
                 LoadChartDataByMonth(selectedYear, ccbMonth.SelectedItem?.ToString());
@@ -428,6 +436,26 @@ namespace CSharp_laptop.GUI
         private void ccbType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
