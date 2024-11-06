@@ -52,8 +52,9 @@
             panelTong.Controls.Add(panelTitle);
             panelTong.Dock = DockStyle.Fill;
             panelTong.Location = new Point(0, 0);
+            panelTong.Margin = new Padding(3, 4, 3, 4);
             panelTong.Name = "panelTong";
-            panelTong.Size = new Size(984, 665);
+            panelTong.Size = new Size(1125, 887);
             panelTong.TabIndex = 0;
             panelTong.Paint += panelTong_Paint;
             // 
@@ -62,10 +63,10 @@
             cartesianChart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cartesianChart1.AutoScroll = true;
             cartesianChart1.Cursor = Cursors.Hand;
-            cartesianChart1.Location = new Point(32, 147);
-            cartesianChart1.Margin = new Padding(4);
+            cartesianChart1.Location = new Point(37, 196);
+            cartesianChart1.Margin = new Padding(5, 5, 5, 5);
             cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(925, 477);
+            cartesianChart1.Size = new Size(1057, 636);
             cartesianChart1.TabIndex = 12;
             // 
             // panel1
@@ -77,18 +78,18 @@
             panel1.Controls.Add(ccbType);
             panel1.Controls.Add(label6);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 67);
+            panel1.Location = new Point(0, 89);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(984, 59);
+            panel1.Size = new Size(1125, 79);
             panel1.TabIndex = 11;
             // 
             // ccbMonth
             // 
             ccbMonth.FormattingEnabled = true;
-            ccbMonth.Location = new Point(730, 14);
-            ccbMonth.Margin = new Padding(3, 2, 3, 2);
+            ccbMonth.Location = new Point(834, 19);
             ccbMonth.Name = "ccbMonth";
-            ccbMonth.Size = new Size(133, 23);
+            ccbMonth.Size = new Size(151, 28);
             ccbMonth.TabIndex = 15;
             ccbMonth.SelectedIndexChanged += ccbMonth_SelectedIndexChanged;
             // 
@@ -96,19 +97,18 @@
             // 
             lblMonth.AutoSize = true;
             lblMonth.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMonth.Location = new Point(635, 18);
+            lblMonth.Location = new Point(726, 24);
             lblMonth.Name = "lblMonth";
-            lblMonth.Size = new Size(89, 19);
+            lblMonth.Size = new Size(110, 23);
             lblMonth.TabIndex = 14;
             lblMonth.Text = "Chọn tháng :";
             // 
             // ccbYear
             // 
             ccbYear.FormattingEnabled = true;
-            ccbYear.Location = new Point(430, 14);
-            ccbYear.Margin = new Padding(3, 2, 3, 2);
+            ccbYear.Location = new Point(491, 19);
             ccbYear.Name = "ccbYear";
-            ccbYear.Size = new Size(133, 23);
+            ccbYear.Size = new Size(151, 28);
             ccbYear.TabIndex = 13;
             ccbYear.SelectedIndexChanged += ccbYear_SelectedIndexChanged;
             // 
@@ -116,28 +116,27 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(344, 18);
+            label2.Location = new Point(386, 20);
             label2.Name = "label2";
-            label2.Size = new Size(80, 19);
+            label2.Size = new Size(99, 23);
             label2.TabIndex = 12;
             label2.Text = "Chọn năm :";
             // 
             // ccbType
             // 
             ccbType.FormattingEnabled = true;
-            ccbType.Location = new Point(152, 14);
-            ccbType.Margin = new Padding(3, 2, 3, 2);
+            ccbType.Location = new Point(174, 19);
             ccbType.Name = "ccbType";
-            ccbType.Size = new Size(133, 23);
+            ccbType.Size = new Size(151, 28);
             ccbType.TabIndex = 11;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(15, 18);
+            label6.Location = new Point(17, 24);
             label6.Name = "label6";
-            label6.Size = new Size(131, 19);
+            label6.Size = new Size(161, 23);
             label6.TabIndex = 10;
             label6.Text = "Chọn loại thống kê:";
             // 
@@ -146,9 +145,8 @@
             panelTitle.Controls.Add(lbThongKe);
             panelTitle.Dock = DockStyle.Top;
             panelTitle.Location = new Point(0, 0);
-            panelTitle.Margin = new Padding(3, 2, 3, 2);
             panelTitle.Name = "panelTitle";
-            panelTitle.Size = new Size(984, 67);
+            panelTitle.Size = new Size(1125, 89);
             panelTitle.TabIndex = 9;
             panelTitle.Paint += panelTitle_Paint;
             // 
@@ -158,21 +156,20 @@
             lbThongKe.AutoSize = true;
             lbThongKe.Font = new Font("Showcard Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbThongKe.ForeColor = Color.FromArgb(0, 0, 192);
-            lbThongKe.Location = new Point(299, 13);
+            lbThongKe.Location = new Point(342, 17);
             lbThongKe.Name = "lbThongKe";
-            lbThongKe.Size = new Size(386, 40);
+            lbThongKe.Size = new Size(477, 50);
             lbThongKe.TabIndex = 1;
             lbThongKe.Text = "THỐNG KÊ DOANH THU\r\n";
             lbThongKe.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // DoanhThu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelTong);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "DoanhThu";
-            Size = new Size(984, 665);
+            Size = new Size(1125, 887);
             panelTong.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

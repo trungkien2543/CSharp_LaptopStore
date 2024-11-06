@@ -34,7 +34,7 @@ namespace CustomTabControl
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            NhanVien nhanVien = new NhanVien();
+            NhapHang nhanVien = new NhapHang();
             addUserControl(nhanVien);
         }
 
