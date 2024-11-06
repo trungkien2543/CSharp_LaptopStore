@@ -34,7 +34,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            btnNhanVien = new Guna.UI2.WinForms.Guna2Button();
+            btnNhapHang = new Guna.UI2.WinForms.Guna2Button();
             btnHangLaptop = new Guna.UI2.WinForms.Guna2Button();
             btnDoanhThu = new Guna.UI2.WinForms.Guna2Button();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -42,30 +42,30 @@
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnNhanVien
+            // btnNhapHang
             // 
-            btnNhanVien.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnNhanVien.CheckedState.CustomBorderColor = Color.Red;
-            btnNhanVien.CheckedState.FillColor = Color.White;
-            btnNhanVien.CustomBorderColor = Color.White;
-            btnNhanVien.CustomBorderThickness = new Padding(0, 0, 0, 4);
-            btnNhanVien.CustomizableEdges = customizableEdges1;
-            btnNhanVien.DisabledState.BorderColor = Color.DarkGray;
-            btnNhanVien.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnNhanVien.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnNhanVien.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnNhanVien.Dock = DockStyle.Fill;
-            btnNhanVien.FillColor = Color.White;
-            btnNhanVien.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNhanVien.ForeColor = Color.Black;
-            btnNhanVien.HoverState.CustomBorderColor = Color.Red;
-            btnNhanVien.Location = new Point(659, 3);
-            btnNhanVien.Name = "btnNhanVien";
-            btnNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnNhanVien.Size = new Size(322, 57);
-            btnNhanVien.TabIndex = 0;
-            btnNhanVien.Text = "Nhan vien";
-            btnNhanVien.Click += btnNhanVien_Click;
+            btnNhapHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btnNhapHang.CheckedState.CustomBorderColor = Color.ForestGreen;
+            btnNhapHang.CheckedState.FillColor = Color.White;
+            btnNhapHang.CustomBorderColor = Color.White;
+            btnNhapHang.CustomBorderThickness = new Padding(0, 0, 0, 4);
+            btnNhapHang.CustomizableEdges = customizableEdges1;
+            btnNhapHang.DisabledState.BorderColor = Color.DarkGray;
+            btnNhapHang.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnNhapHang.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnNhapHang.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnNhapHang.Dock = DockStyle.Fill;
+            btnNhapHang.FillColor = Color.White;
+            btnNhapHang.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNhapHang.ForeColor = Color.Black;
+            btnNhapHang.HoverState.CustomBorderColor = Color.ForestGreen;
+            btnNhapHang.Location = new Point(659, 3);
+            btnNhapHang.Name = "btnNhapHang";
+            btnNhapHang.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnNhapHang.Size = new Size(322, 57);
+            btnNhapHang.TabIndex = 0;
+            btnNhapHang.Text = "Nhập hàng";
+            btnNhapHang.Click += btnNhanVien_Click;
             // 
             // btnHangLaptop
             // 
@@ -126,7 +126,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Controls.Add(btnNhanVien, 2, 0);
+            tableLayoutPanel1.Controls.Add(btnNhapHang, 2, 0);
             tableLayoutPanel1.Controls.Add(btnDoanhThu, 0, 0);
             tableLayoutPanel1.Controls.Add(btnHangLaptop, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
@@ -161,7 +161,7 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button btnDoanhThu;
-        private Guna.UI2.WinForms.Guna2Button btnNhanVien;
+        private Guna.UI2.WinForms.Guna2Button btnNhapHang;
         private Guna.UI2.WinForms.Guna2Button btnHangLaptop;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panelContainer;
