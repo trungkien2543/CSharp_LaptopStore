@@ -18,6 +18,8 @@ namespace CSharp_laptop.GUI
 {
     public partial class NhanVienGUI : Form
     {
+        int PH;
+        bool hided;
         MainForm mainForm;
         NhanVienBUS bus;
         List<NhanVienDTO> nvs;
@@ -33,7 +35,13 @@ namespace CSharp_laptop.GUI
             btnDelList = new List<VBButton>();
 
             this.mainForm = mainForm;
+
             InitializeComponent();
+
+            PH = artanPanel3.Location.Y;
+
+            artanPanel3.Location = new Point(artanPanel3.Location.X, this.Height - 10);
+            hided = true;
         }
 
         private void vbButton1_Click(object sender, EventArgs e)
@@ -76,6 +84,10 @@ namespace CSharp_laptop.GUI
             if (clickedButton != null)
             {
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
+
+                if (hided) button1.Text = "HIDE";
+                else button1.Text = "SHOW";
+                timer1.Start();
             }
         }
         private void BtnDel_Click(object sender, EventArgs e)
@@ -174,6 +186,66 @@ namespace CSharp_laptop.GUI
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (hided)
+            {
+                artanPanel3.Location = new Point(artanPanel3.Location.X, artanPanel3.Location.Y - 5);
+                if (artanPanel3.Location.Y <= PH + 60)
+                {
+                    timer1.Stop();
+                    hided = false;
+                    this.Refresh();
+                }
+            }
+            else
+            {
+                artanPanel3.Location = new Point(artanPanel3.Location.X, artanPanel3.Location.Y + 5);
+                if (artanPanel3.Location.Y >= this.Height)
+                {
+                    timer1.Stop();
+                    hided = true;
+                    this.Refresh();
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageRadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2ImageRadioButton1.Checked)
+            {
+                NuLabel.ForeColor = Color.FromArgb(46, 88, 255);
+            }
+            else
+            {
+
+                NuLabel.ForeColor = Color.Black;
+            }
+        }
+
+        private void guna2ImageRadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2ImageRadioButton2.Checked)
+            {
+                NamLabel.ForeColor = Color.FromArgb(46, 88, 255);
+            }
+            else
+            {
+
+                NamLabel.ForeColor = Color.Black;
+            }
         }
     }
 }
