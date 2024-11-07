@@ -59,7 +59,7 @@
             panel1.Location = new Point(1, 2);
             panel1.Margin = new Padding(5, 6, 5, 6);
             panel1.Name = "panel1";
-            panel1.Size = new Size(2104, 1402);
+            panel1.Size = new Size(2279, 1495);
             panel1.TabIndex = 0;
             // 
             // vbButton1
@@ -75,10 +75,10 @@
             vbButton1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = Properties.Resources.icons8_add_50;
-            vbButton1.Location = new Point(1978, 336);
+            vbButton1.Location = new Point(2143, 358);
             vbButton1.Margin = new Padding(5, 6, 5, 6);
             vbButton1.Name = "vbButton1";
-            vbButton1.Size = new Size(95, 110);
+            vbButton1.Size = new Size(103, 117);
             vbButton1.TabIndex = 7;
             vbButton1.TextColor = Color.White;
             vbButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -94,15 +94,15 @@
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(26, 358);
-            rjTextBox1.Margin = new Padding(7, 8, 7, 8);
+            rjTextBox1.Location = new Point(28, 382);
+            rjTextBox1.Margin = new Padding(8, 9, 8, 9);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(17, 14, 17, 14);
+            rjTextBox1.Padding = new Padding(18, 15, 18, 15);
             rjTextBox1.PasswordChar = false;
             rjTextBox1.PlaceholderColor = Color.DarkGray;
             rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(612, 68);
+            rjTextBox1.Size = new Size(663, 75);
             rjTextBox1.TabIndex = 12;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
@@ -119,10 +119,10 @@
             vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton2.ForeColor = Color.White;
             vbButton2.Image = Properties.Resources.icons8_find_29;
-            vbButton2.Location = new Point(694, 349);
+            vbButton2.Location = new Point(752, 372);
             vbButton2.Margin = new Padding(5, 6, 5, 6);
             vbButton2.Name = "vbButton2";
-            vbButton2.Size = new Size(120, 78);
+            vbButton2.Size = new Size(130, 83);
             vbButton2.TabIndex = 11;
             vbButton2.TextColor = Color.White;
             vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -139,11 +139,11 @@
             artanPanel2.GradientAngle = 30F;
             artanPanel2.GradientBottomColor = Color.DodgerBlue;
             artanPanel2.GradientTopColor = Color.DodgerBlue;
-            artanPanel2.Location = new Point(19, 482);
+            artanPanel2.Location = new Point(21, 514);
             artanPanel2.Margin = new Padding(5, 6, 5, 6);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Padding = new Padding(7, 0, 7, 30);
-            artanPanel2.Size = new Size(2060, 907);
+            artanPanel2.Padding = new Padding(8, 0, 8, 32);
+            artanPanel2.Size = new Size(2232, 967);
             artanPanel2.TabIndex = 11;
             // 
             // dataGridView2
@@ -176,7 +176,7 @@
             dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.GridColor = Color.LightGray;
-            dataGridView2.Location = new Point(7, 0);
+            dataGridView2.Location = new Point(8, 0);
             dataGridView2.Margin = new Padding(5, 6, 5, 6);
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
@@ -192,7 +192,7 @@
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(2046, 877);
+            dataGridView2.Size = new Size(2216, 935);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -206,10 +206,10 @@
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = SystemColors.Control;
             artanPanel1.GradientTopColor = Color.DodgerBlue;
-            artanPanel1.Location = new Point(19, 22);
+            artanPanel1.Location = new Point(21, 23);
             artanPanel1.Margin = new Padding(5, 6, 5, 6);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(2060, 302);
+            artanPanel1.Size = new Size(2232, 322);
             artanPanel1.TabIndex = 10;
             // 
             // label2
@@ -219,19 +219,19 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Bahnschrift Light SemiCondensed", 35F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(679, 101);
+            label2.Location = new Point(736, 108);
             label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(655, 99);
+            label2.Size = new Size(742, 112);
             label2.TabIndex = 14;
             label2.Text = "Quản lý loại laptop";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // LoaiLaptopGUI
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2107, 1406);
+            ClientSize = new Size(2283, 1500);
             Controls.Add(panel1);
             Margin = new Padding(5, 6, 5, 6);
             Name = "LoaiLaptopGUI";
