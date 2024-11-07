@@ -15,10 +15,12 @@ namespace LaptopStore.DTO
 		public string KichThuoc { get; set; }
 		public string KhuyenMai { get; set; }
 
+		public string SLTonKho {  get; set; }
+
 		// Constructor
 		public LoaiLaptopDTO() { }
 
-		public LoaiLaptopDTO(string IDLoaiLaptop, string tenSP, long giaBan, string hang, string cpu, int ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai)
+		public LoaiLaptopDTO(string IDLoaiLaptop, string tenSP, long giaBan, string hang, string cpu, int ram, string gpu, string hinhAnh, string kichThuoc, string khuyenMai, string slTonKho)
 		{
             IDLoaiLaptop = IDLoaiLaptop;
 			TenSP = tenSP;
@@ -30,6 +32,7 @@ namespace LaptopStore.DTO
 			HinhAnh = hinhAnh;
 			KichThuoc = kichThuoc;
 			KhuyenMai = khuyenMai;
+			SLTonKho = slTonKho;
 		}
 	}
 

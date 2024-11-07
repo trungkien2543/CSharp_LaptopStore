@@ -42,7 +42,8 @@ namespace CSharp_laptop.DAO
                             GPU = reader["GPU"].ToString(),
                             HinhAnh = reader["HinhAnh"].ToString(),
                             KichThuoc = reader["KichThuoc"].ToString(),
-                            KhuyenMai = reader["TenKhuyenMai"].ToString()
+                            KhuyenMai = reader["TenKhuyenMai"].ToString(),
+                            SLTonKho = reader["SLTonKho"].ToString()
                         };
                         laptops.Add(laptop);
                     }
@@ -82,7 +83,8 @@ namespace CSharp_laptop.DAO
                             GPU = reader["GPU"].ToString(),
                             HinhAnh = reader["HinhAnh"].ToString(),
                             KichThuoc = reader["KichThuoc"].ToString(),
-                            KhuyenMai = reader["TenKhuyenMai"].ToString()
+                            KhuyenMai = reader["TenKhuyenMai"].ToString(),
+                            SLTonKho = reader["SLTonKho"].ToString()
                         };
                     }
                 }
