@@ -64,5 +64,9 @@ namespace CSharp_laptop.BUS
         {
             return loailaptopDAO.SearchLaptop(searchTerm);
         }
+
+        public List<String> getValueForComboBox(string searchItem){ 
+            return loailaptopDAO.searchForComboBox(searchItem);
+        }
     }
 }
