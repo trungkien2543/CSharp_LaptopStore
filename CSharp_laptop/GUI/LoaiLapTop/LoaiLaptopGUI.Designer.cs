@@ -58,11 +58,11 @@
             panel1.Controls.Add(artanPanel1);
             panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
-<<<<<<< HEAD
+
             panel1.Size = new Size(1186, 666);
-=======
+
             panel1.Size = new Size(2279, 1495);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             panel1.TabIndex = 0;
             // 
             // vbButton1
@@ -78,16 +78,16 @@
             vbButton1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = Properties.Resources.icons8_add_50;
-<<<<<<< HEAD
+
             vbButton1.Location = new Point(1113, 168);
             vbButton1.Name = "vbButton1";
             vbButton1.Size = new Size(55, 55);
-=======
+
             vbButton1.Location = new Point(2143, 358);
             vbButton1.Margin = new Padding(5, 6, 5, 6);
             vbButton1.Name = "vbButton1";
             vbButton1.Size = new Size(103, 117);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             vbButton1.TabIndex = 7;
             vbButton1.TextColor = Color.White;
             vbButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -103,7 +103,7 @@
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-<<<<<<< HEAD
+
             rjTextBox1.Location = new Point(15, 179);
             rjTextBox1.Margin = new Padding(4, 4, 4, 4);
             rjTextBox1.Multiline = false;
@@ -113,7 +113,7 @@
             rjTextBox1.PlaceholderColor = Color.DarkGray;
             rjTextBox1.PlaceholderText = "";
             rjTextBox1.Size = new Size(357, 39);
-=======
+
             rjTextBox1.Location = new Point(28, 382);
             rjTextBox1.Margin = new Padding(8, 9, 8, 9);
             rjTextBox1.Multiline = false;
@@ -123,7 +123,7 @@
             rjTextBox1.PlaceholderColor = Color.DarkGray;
             rjTextBox1.PlaceholderText = "";
             rjTextBox1.Size = new Size(663, 75);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             rjTextBox1.TabIndex = 12;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
@@ -140,16 +140,16 @@
             vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton2.ForeColor = Color.White;
             vbButton2.Image = Properties.Resources.icons8_find_29;
-<<<<<<< HEAD
+
             vbButton2.Location = new Point(405, 174);
             vbButton2.Name = "vbButton2";
             vbButton2.Size = new Size(70, 39);
-=======
+
             vbButton2.Location = new Point(752, 372);
             vbButton2.Margin = new Padding(5, 6, 5, 6);
             vbButton2.Name = "vbButton2";
             vbButton2.Size = new Size(130, 83);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             vbButton2.TabIndex = 11;
             vbButton2.TextColor = Color.White;
             vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -166,18 +166,18 @@
             artanPanel2.GradientAngle = 30F;
             artanPanel2.GradientBottomColor = Color.DodgerBlue;
             artanPanel2.GradientTopColor = Color.DodgerBlue;
-<<<<<<< HEAD
+
             artanPanel2.Location = new Point(11, 241);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Padding = new Padding(4, 0, 4, 15);
             artanPanel2.Size = new Size(1172, 422);
-=======
+
             artanPanel2.Location = new Point(21, 514);
             artanPanel2.Margin = new Padding(5, 6, 5, 6);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Padding = new Padding(8, 0, 8, 32);
             artanPanel2.Size = new Size(2232, 967);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             artanPanel2.TabIndex = 11;
             // 
             // dataGridView2
@@ -210,12 +210,12 @@
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.GridColor = Color.LightGray;
-<<<<<<< HEAD
+
             dataGridView2.Location = new Point(4, 0);
-=======
+
             dataGridView2.Location = new Point(8, 0);
             dataGridView2.Margin = new Padding(5, 6, 5, 6);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
@@ -230,11 +230,11 @@
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-<<<<<<< HEAD
+
             dataGridView2.Size = new Size(1164, 407);
-=======
+
             dataGridView2.Size = new Size(2216, 935);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             dataGridView2.TabIndex = 0;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -248,16 +248,16 @@
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = SystemColors.Control;
             artanPanel1.GradientTopColor = Color.DodgerBlue;
-<<<<<<< HEAD
+
             artanPanel1.Location = new Point(11, 11);
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1161, 151);
-=======
+
             artanPanel1.Location = new Point(21, 23);
             artanPanel1.Margin = new Padding(5, 6, 5, 6);
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(2232, 322);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             artanPanel1.TabIndex = 10;
             // 
             // label2
@@ -267,31 +267,31 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Bahnschrift Light SemiCondensed", 35F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-<<<<<<< HEAD
+
             label2.Location = new Point(375, 50);
             label2.Name = "label2";
             label2.Size = new Size(384, 57);
-=======
+
             label2.Location = new Point(736, 108);
             label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new Size(742, 112);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             label2.TabIndex = 14;
             label2.Text = "Quản lý loại laptop";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // LoaiLaptopGUI
             // 
-<<<<<<< HEAD
+
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1199, 679);
-=======
+
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2283, 1500);
->>>>>>> bed41ceec6d685cab07dd2f301aa586e86277a65
+
             Controls.Add(panel1);
             Name = "LoaiLaptopGUI";
             Text = "SanPhamGUI";
