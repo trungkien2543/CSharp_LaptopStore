@@ -17,7 +17,6 @@ namespace CSharp_laptop.GUI.BanHang
     {
         private LoaiLaptopBUS laptopBUS = new LoaiLaptopBUS();
         string selectedLaptopID;
-        string soluong_lap;
         MainForm mainForm;
         public BanHangForm(MainForm mainForm)
         {
@@ -26,6 +25,16 @@ namespace CSharp_laptop.GUI.BanHang
             LoadLaptops();
             edittable();
             AddButtonsToDataGridView();
+
+
+  
+
+            // Load dữ liệu cho comboBox
+            LoadDataForComboBox(cbxCPU, "CPU");
+            LoadDataForComboBox(cbxHang, "TenHang");
+            LoadDataForComboBox(cbxRAM, "RAM");
+            LoadDataForComboBox(cbxGPU, "GPU");
+            LoadDataForComboBox(cbxKichThuoc, "KichThuoc");
         }
 
 
@@ -33,7 +42,7 @@ namespace CSharp_laptop.GUI.BanHang
         {
             dataGridView2.Columns["IDLoaiLaptop"].Visible = false;
             dataGridView2.Columns["TenSP"].HeaderText = "Tên Sản Phẩm";
-            dataGridView2.Columns["GiaBan"].HeaderText = "Giá Niêm Yết";
+            dataGridView2.Columns["GiaBan"].HeaderText = "Giá Bán";
             dataGridView2.Columns["Hang"].HeaderText = "Hãng Laptop";
             dataGridView2.Columns["KhuyenMai"].HeaderText = "Khuyến Mãi";
 
@@ -53,9 +62,19 @@ namespace CSharp_laptop.GUI.BanHang
         private void LoadLaptops()
         {
             List<LoaiLaptopDTO> laptops = laptopBUS.GetLaptops();
-            soluong_lap = (1 + laptops.Count).ToString();
+    
 
             dataGridView2.DataSource = laptops;
+
+
+            // Tạo cột mới cho DataGridView
+            DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn();
+            newColumn.Name = "NewColumn"; // Đặt tên cột
+            newColumn.HeaderText = "New Column"; // Tên hiển thị của cột
+            newColumn.ReadOnly = false; // Có thể cho phép chỉnh sửa hoặc không tùy theo nhu cầu
+
+            // Thêm cột mới vào DataGridView
+            dataGridView2.Columns.Add(newColumn);
         }
 
         private void AddButtonsToDataGridView()
@@ -71,18 +90,18 @@ namespace CSharp_laptop.GUI.BanHang
             btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dataGridView2.Columns.Add(btnDelete);
-
-
-            DataGridViewButtonColumn btnView = new DataGridViewButtonColumn();
-            btnView.Name = "btnView";
-            btnView.HeaderText = "Chi tiết";
-            btnView.Text = "📄";
-            btnView.Width = 60;
-            btnView.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
-            btnView.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView2.Columns.Add(btnView);
         }
 
+
+
+        private void LoadDataForComboBox(ComboBox comboBox, String Item)
+        {
+            List<String> strings = new List<String>();
+            strings.Add("");
+            strings.AddRange(new LoaiLaptopBUS().getValueForComboBox(Item));
+
+            comboBox.DataSource = strings;
+        }
         private void rjTextBox2__TextChanged(object sender, EventArgs e)
         {
 
@@ -122,5 +141,36 @@ namespace CSharp_laptop.GUI.BanHang
         {
 
         }
+
+        private void rjTextBox1__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+            
+            if (txtTenSP.Texts == "Nhập tên sản phẩm")
+            {
+                txtTenSP.Texts = "";
+                txtTenSP.ForeColor = Color.Black; // Đổi màu chữ về màu bình thường
+            }
+        }
+
+        private void TextBox_Leave(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrWhiteSpace(txtTenSP.Texts))
+            {
+                txtTenSP.Texts = "Nhập tên sản phẩm"; // Văn bản hint
+                txtTenSP.ForeColor = Color.Gray; // Đổi màu chữ sang màu xám
+            }
+        }
+
     }
 }
