@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2024 lúc 02:55 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 07, 2024 at 07:31 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `laptop_csharp`
+-- Database: `laptop_csharp`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `baohanh`
+-- Table structure for table `baohanh`
 --
 
 CREATE TABLE `baohanh` (
@@ -36,7 +36,7 @@ CREATE TABLE `baohanh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `baohanh`
+-- Dumping data for table `baohanh`
 --
 
 INSERT INTO `baohanh` (`MaBaoHanh`, `IMEI`, `NgayBaoHanh`, `NgayTra`, `GhiChu`) VALUES
@@ -54,7 +54,7 @@ INSERT INTO `baohanh` (`MaBaoHanh`, `IMEI`, `NgayBaoHanh`, `NgayTra`, `GhiChu`) 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chitiethoadon`
+-- Table structure for table `chitiethoadon`
 --
 
 CREATE TABLE `chitiethoadon` (
@@ -63,7 +63,7 @@ CREATE TABLE `chitiethoadon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `chitiethoadon`
+-- Dumping data for table `chitiethoadon`
 --
 
 INSERT INTO `chitiethoadon` (`IMEI`, `ID_HoaDon`) VALUES
@@ -81,7 +81,7 @@ INSERT INTO `chitiethoadon` (`IMEI`, `ID_HoaDon`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chitietphieunhap`
+-- Table structure for table `chitietphieunhap`
 --
 
 CREATE TABLE `chitietphieunhap` (
@@ -90,7 +90,7 @@ CREATE TABLE `chitietphieunhap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `chitietphieunhap`
+-- Dumping data for table `chitietphieunhap`
 --
 
 INSERT INTO `chitietphieunhap` (`IMEI`, `ID_PhieuNhap`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `chitietphieunhap` (`IMEI`, `ID_PhieuNhap`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hangsanxuat`
+-- Table structure for table `hangsanxuat`
 --
 
 CREATE TABLE `hangsanxuat` (
@@ -119,15 +119,15 @@ CREATE TABLE `hangsanxuat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `hangsanxuat`
+-- Dumping data for table `hangsanxuat`
 --
 
 INSERT INTO `hangsanxuat` (`ID_Hang`, `TenHang`, `DiaChi`, `SDT`) VALUES
-('H001', 'Dell', 'USA', '123456789'),
-('H002', 'HP', 'USA', '987654321'),
+('H001', 'Dell', 'USA1234', '123456789'),
+('H002', '2', '2', '2'),
 ('H003', 'Asus', 'Taiwan', '543216789'),
 ('H004', 'Acer', 'Taiwan', '987654123'),
-('H005', 'Apple', 'USA', '123987654'),
+('H005', 'Apple', 'USA123', '123987654'),
 ('H006', 'Lenovo', 'China', '654789321'),
 ('H007', 'MSI', 'Taiwan', '321654987'),
 ('H008', 'Samsung', 'Korea', '987321654'),
@@ -137,7 +137,7 @@ INSERT INTO `hangsanxuat` (`ID_Hang`, `TenHang`, `DiaChi`, `SDT`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadon`
+-- Table structure for table `hoadon`
 --
 
 CREATE TABLE `hoadon` (
@@ -152,7 +152,7 @@ CREATE TABLE `hoadon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `hoadon`
+-- Dumping data for table `hoadon`
 --
 
 INSERT INTO `hoadon` (`ID_HoaDon`, `MaNV`, `MaKH`, `NgayLap`, `TongTien`, `TienGiam`, `TienNhan`, `TienThoi`) VALUES
@@ -170,7 +170,7 @@ INSERT INTO `hoadon` (`ID_HoaDon`, `MaNV`, `MaKH`, `NgayLap`, `TongTien`, `TienG
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khachhang`
+-- Table structure for table `khachhang`
 --
 
 CREATE TABLE `khachhang` (
@@ -182,7 +182,7 @@ CREATE TABLE `khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `khachhang`
+-- Dumping data for table `khachhang`
 --
 
 INSERT INTO `khachhang` (`ID_KhachHang`, `TenKH`, `DiaChiKH`, `SDT`, `TichDiem`) VALUES
@@ -200,7 +200,7 @@ INSERT INTO `khachhang` (`ID_KhachHang`, `TenKH`, `DiaChiKH`, `SDT`, `TichDiem`)
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khuyenmai`
+-- Table structure for table `khuyenmai`
 --
 
 CREATE TABLE `khuyenmai` (
@@ -214,7 +214,7 @@ CREATE TABLE `khuyenmai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `khuyenmai`
+-- Dumping data for table `khuyenmai`
 --
 
 INSERT INTO `khuyenmai` (`ID_KhuyenMai`, `TenKhuyenMai`, `MucGiamGia`, `MoTaKM`, `ThoiGianBatDau`, `ThoiGianKetThuc`, `ThoiGianTaoKM`) VALUES
@@ -232,7 +232,7 @@ INSERT INTO `khuyenmai` (`ID_KhuyenMai`, `TenKhuyenMai`, `MucGiamGia`, `MoTaKM`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `laptop`
+-- Table structure for table `laptop`
 --
 
 CREATE TABLE `laptop` (
@@ -243,7 +243,7 @@ CREATE TABLE `laptop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `laptop`
+-- Dumping data for table `laptop`
 --
 
 INSERT INTO `laptop` (`IMEI`, `ThoiGianBaoHanh`, `TrangThai`, `LoaiLaptop`) VALUES
@@ -261,7 +261,7 @@ INSERT INTO `laptop` (`IMEI`, `ThoiGianBaoHanh`, `TrangThai`, `LoaiLaptop`) VALU
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `loailaptop`
+-- Table structure for table `loailaptop`
 --
 
 CREATE TABLE `loailaptop` (
@@ -274,30 +274,32 @@ CREATE TABLE `loailaptop` (
   `GPU` varchar(255) NOT NULL,
   `HinhAnh` varchar(255) NOT NULL,
   `KichThuoc` varchar(255) NOT NULL,
-  `KhuyenMai` varchar(255) NOT NULL
+  `KhuyenMai` varchar(255) NOT NULL,
+  `SLTonKho` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `loailaptop`
+-- Dumping data for table `loailaptop`
 --
 
-INSERT INTO `loailaptop` (`IDLoaiLaptop`, `TenSP`, `GiaBan`, `Hang`, `CPU`, `RAM`, `GPU`, `HinhAnh`, `KichThuoc`, `KhuyenMai`) VALUES
-('L001', 'Dell XPS 13', 30000000, 'H002', 'Intel i7', 16, '', 'xps13.jpg', '13 inch', 'KM001'),
-('L002', 'HP Spectre x360', 28000000, 'H002', 'Intel i5', 8, 'Intel Iris', 'spectrex360.jpg', '13.3 inch', 'KM002'),
-('L003', 'Asus ZenBook', 26000000, 'H003', 'Intel i7', 16, 'NVIDIA MX250', 'zenbook.jpg', '14 inch', 'KM003'),
-('L004', 'Acer Swift 3', 22000000, 'H004', 'Intel i5', 8, 'Intel UHD', 'swift3.jpg', '14 inch', 'KM004'),
-('L005', 'Apple MacBook Air', 33000000, 'H001', 'Apple M1', 16, '', 'macbookair.jpg', '13.3 inch', 'KM001'),
-('L006', 'Lenovo ThinkPad X1', 31000000, 'H006', 'Intel i7', 16, 'Intel Iris', 'thinkpadx1.jpg', '14 inch', 'KM006'),
-('L007', 'MSI Prestige 14', 35000000, 'H007', 'Intel i7', 32, 'NVIDIA GTX 1650', 'prestige14.jpg', '14 inch', 'KM007'),
-('L008', 'Samsung Galaxy Book', 29000000, 'H008', 'Intel i5', 16, 'Intel Iris', 'galaxybook.jpg', '15.6 inch', 'KM008'),
-('L009', 'Toshiba Portege', 24000000, 'H009', 'Intel i5', 8, 'Intel UHD', 'portege.jpg', '13.3 inch', 'KM009'),
-('L010', 'Sony Vaio SX14', 38000000, 'H010', 'Intel i7', 16, 'Intel Iris', 'vaio.jpg', '14 inch', 'KM010'),
-('L12', 'test ảnh 123', 123, 'H001', '123', 123, '123', 'C:\\Users\\PC\\OneDrive\\Hình ảnh\\WallPaper\\2.jpg', '123', 'KM001');
+INSERT INTO `loailaptop` (`IDLoaiLaptop`, `TenSP`, `GiaBan`, `Hang`, `CPU`, `RAM`, `GPU`, `HinhAnh`, `KichThuoc`, `KhuyenMai`, `SLTonKho`) VALUES
+('L001', 'Dell XPS 1312', 30000000, 'H005', 'Intel i7', 16, '', 'xps13.jpg', '13 inch', 'KM001', 0),
+('L002', 'HP Spectre x36012', 28000000, 'H004', 'Intel i5', 8, 'Intel Iris', 'spectrex360.jpg', '13.3 inch', 'KM001', 0),
+('L003', 'Asus ZenBook', 26000000, 'H003', 'Intel i7', 16, 'NVIDIA MX250', 'zenbook.jpg', '14 inch', 'KM003', 0),
+('L004', 'Acer Swift 3', 22000000, 'H004', 'Intel i5', 8, 'Intel UHD', 'swift3.jpg', '14 inch', 'KM004', 0),
+('L005', 'Apple MacBook Air', 33000000, 'H001', 'Apple M1', 16, '', 'macbookair.jpg', '13.3 inch', 'KM001', 0),
+('L006', 'Lenovo ThinkPad X1', 31000000, 'H006', 'Intel i7', 16, 'Intel Iris', 'thinkpadx1.jpg', '14 inch', 'KM006', 0),
+('L007', 'MSI Prestige 14', 35000000, 'H007', 'Intel i7', 32, 'NVIDIA GTX 1650', 'prestige14.jpg', '14 inch', 'KM007', 0),
+('L008', 'Samsung Galaxy Book', 29000000, 'H008', 'Intel i5', 16, 'Intel Iris', 'galaxybook.jpg', '15.6 inch', 'KM008', 0),
+('L009', 'Toshiba Portege', 24000000, 'H001', 'Intel i5', 8, 'Intel UHD123', 'portege.jpg', '13.3 inch', 'KM001', 0),
+('L010', 'Sony Vaio SX14', 38000000, 'H010', 'Intel i7', 16, 'Intel Iris', 'vaio.jpg', '14 inch', 'KM010', 0),
+('L012', '123', 12, 'H004', '12', 123, '12', '', '13', 'KM008', 0),
+('L12', 'test ảnh 123', 123, 'H001', '123', 123, '123123', 'C:\\Users\\PC\\OneDrive\\Hình ảnh\\WallPaper\\1.jpg', '123', 'KM001', 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nhanvien`
+-- Table structure for table `nhanvien`
 --
 
 CREATE TABLE `nhanvien` (
@@ -312,7 +314,7 @@ CREATE TABLE `nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `nhanvien`
+-- Dumping data for table `nhanvien`
 --
 
 INSERT INTO `nhanvien` (`ID_NhanVien`, `TenNV`, `NgaySinh`, `SDT`, `DiaChi`, `GioiTinh`, `CCCD`, `Email`) VALUES
@@ -330,7 +332,7 @@ INSERT INTO `nhanvien` (`ID_NhanVien`, `TenNV`, `NgaySinh`, `SDT`, `DiaChi`, `Gi
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phieunhap`
+-- Table structure for table `phieunhap`
 --
 
 CREATE TABLE `phieunhap` (
@@ -344,7 +346,7 @@ CREATE TABLE `phieunhap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `phieunhap`
+-- Dumping data for table `phieunhap`
 --
 
 INSERT INTO `phieunhap` (`ID_PhieuNhap`, `MaNV`, `MaNcc`, `NgayNhap`, `TongTien`, `TienTra`, `TienThoi`) VALUES
@@ -362,7 +364,7 @@ INSERT INTO `phieunhap` (`ID_PhieuNhap`, `MaNV`, `MaNcc`, `NgayNhap`, `TongTien`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `quyen`
+-- Table structure for table `quyen`
 --
 
 CREATE TABLE `quyen` (
@@ -371,7 +373,7 @@ CREATE TABLE `quyen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `quyen`
+-- Dumping data for table `quyen`
 --
 
 INSERT INTO `quyen` (`ID_Quyen`, `ChiTietQuyen`) VALUES
@@ -381,7 +383,7 @@ INSERT INTO `quyen` (`ID_Quyen`, `ChiTietQuyen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `taikhoan`
+-- Table structure for table `taikhoan`
 --
 
 CREATE TABLE `taikhoan` (
@@ -391,7 +393,7 @@ CREATE TABLE `taikhoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `taikhoan`
+-- Dumping data for table `taikhoan`
 --
 
 INSERT INTO `taikhoan` (`TenDN`, `MatKhau`, `Quyen`) VALUES
@@ -407,38 +409,38 @@ INSERT INTO `taikhoan` (`TenDN`, `MatKhau`, `Quyen`) VALUES
 ('NV010', 'password007', 'Q2');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `baohanh`
+-- Indexes for table `baohanh`
 --
 ALTER TABLE `baohanh`
   ADD PRIMARY KEY (`MaBaoHanh`),
   ADD KEY `IMEI` (`IMEI`);
 
 --
--- Chỉ mục cho bảng `chitiethoadon`
+-- Indexes for table `chitiethoadon`
 --
 ALTER TABLE `chitiethoadon`
   ADD PRIMARY KEY (`IMEI`,`ID_HoaDon`),
   ADD KEY `ID_HoaDon` (`ID_HoaDon`);
 
 --
--- Chỉ mục cho bảng `chitietphieunhap`
+-- Indexes for table `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
   ADD PRIMARY KEY (`IMEI`,`ID_PhieuNhap`),
   ADD KEY `ID_PhieuNhap` (`ID_PhieuNhap`);
 
 --
--- Chỉ mục cho bảng `hangsanxuat`
+-- Indexes for table `hangsanxuat`
 --
 ALTER TABLE `hangsanxuat`
   ADD PRIMARY KEY (`ID_Hang`);
 
 --
--- Chỉ mục cho bảng `hoadon`
+-- Indexes for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`ID_HoaDon`),
@@ -446,26 +448,26 @@ ALTER TABLE `hoadon`
   ADD KEY `MaNV` (`MaNV`);
 
 --
--- Chỉ mục cho bảng `khachhang`
+-- Indexes for table `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`ID_KhachHang`);
 
 --
--- Chỉ mục cho bảng `khuyenmai`
+-- Indexes for table `khuyenmai`
 --
 ALTER TABLE `khuyenmai`
   ADD PRIMARY KEY (`ID_KhuyenMai`);
 
 --
--- Chỉ mục cho bảng `laptop`
+-- Indexes for table `laptop`
 --
 ALTER TABLE `laptop`
   ADD PRIMARY KEY (`IMEI`),
   ADD KEY `LoaiLaptop` (`LoaiLaptop`);
 
 --
--- Chỉ mục cho bảng `loailaptop`
+-- Indexes for table `loailaptop`
 --
 ALTER TABLE `loailaptop`
   ADD PRIMARY KEY (`IDLoaiLaptop`),
@@ -473,13 +475,13 @@ ALTER TABLE `loailaptop`
   ADD KEY `KhuyenMai` (`KhuyenMai`);
 
 --
--- Chỉ mục cho bảng `nhanvien`
+-- Indexes for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`ID_NhanVien`);
 
 --
--- Chỉ mục cho bảng `phieunhap`
+-- Indexes for table `phieunhap`
 --
 ALTER TABLE `phieunhap`
   ADD PRIMARY KEY (`ID_PhieuNhap`),
@@ -487,93 +489,93 @@ ALTER TABLE `phieunhap`
   ADD KEY `ID_NCC` (`MaNcc`);
 
 --
--- Chỉ mục cho bảng `quyen`
+-- Indexes for table `quyen`
 --
 ALTER TABLE `quyen`
   ADD PRIMARY KEY (`ID_Quyen`);
 
 --
--- Chỉ mục cho bảng `taikhoan`
+-- Indexes for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`TenDN`),
   ADD KEY `Quyen` (`Quyen`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `baohanh`
+-- AUTO_INCREMENT for table `baohanh`
 --
 ALTER TABLE `baohanh`
   MODIFY `MaBaoHanh` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `hoadon`
+-- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
   MODIFY `ID_HoaDon` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1011;
 
 --
--- AUTO_INCREMENT cho bảng `phieunhap`
+-- AUTO_INCREMENT for table `phieunhap`
 --
 ALTER TABLE `phieunhap`
   MODIFY `ID_PhieuNhap` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `baohanh`
+-- Constraints for table `baohanh`
 --
 ALTER TABLE `baohanh`
   ADD CONSTRAINT `baohanh_ibfk_1` FOREIGN KEY (`IMEI`) REFERENCES `chitiethoadon` (`IMEI`);
 
 --
--- Các ràng buộc cho bảng `chitiethoadon`
+-- Constraints for table `chitiethoadon`
 --
 ALTER TABLE `chitiethoadon`
   ADD CONSTRAINT `chitiethoadon_ibfk_1` FOREIGN KEY (`IMEI`) REFERENCES `laptop` (`IMEI`),
   ADD CONSTRAINT `chitiethoadon_ibfk_2` FOREIGN KEY (`ID_HoaDon`) REFERENCES `hoadon` (`ID_HoaDon`);
 
 --
--- Các ràng buộc cho bảng `chitietphieunhap`
+-- Constraints for table `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
   ADD CONSTRAINT `chitietphieunhap_ibfk_1` FOREIGN KEY (`IMEI`) REFERENCES `laptop` (`IMEI`),
   ADD CONSTRAINT `chitietphieunhap_ibfk_2` FOREIGN KEY (`ID_PhieuNhap`) REFERENCES `phieunhap` (`ID_PhieuNhap`);
 
 --
--- Các ràng buộc cho bảng `hoadon`
+-- Constraints for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`ID_KhachHang`),
   ADD CONSTRAINT `hoadon_ibfk_2` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`ID_NhanVien`);
 
 --
--- Các ràng buộc cho bảng `laptop`
+-- Constraints for table `laptop`
 --
 ALTER TABLE `laptop`
   ADD CONSTRAINT `laptop_ibfk_1` FOREIGN KEY (`LoaiLaptop`) REFERENCES `loailaptop` (`IDLoaiLaptop`);
 
 --
--- Các ràng buộc cho bảng `loailaptop`
+-- Constraints for table `loailaptop`
 --
 ALTER TABLE `loailaptop`
   ADD CONSTRAINT `loailaptop_hang_foreign` FOREIGN KEY (`Hang`) REFERENCES `hangsanxuat` (`ID_Hang`),
   ADD CONSTRAINT `loailaptop_ibfk_1` FOREIGN KEY (`KhuyenMai`) REFERENCES `khuyenmai` (`ID_KhuyenMai`);
 
 --
--- Các ràng buộc cho bảng `phieunhap`
+-- Constraints for table `phieunhap`
 --
 ALTER TABLE `phieunhap`
   ADD CONSTRAINT `phieunhap_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`ID_NhanVien`),
   ADD CONSTRAINT `phieunhap_ibfk_2` FOREIGN KEY (`MaNcc`) REFERENCES `hangsanxuat` (`ID_Hang`);
 
 --
--- Các ràng buộc cho bảng `taikhoan`
+-- Constraints for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`TenDN`) REFERENCES `nhanvien` (`ID_NhanVien`),

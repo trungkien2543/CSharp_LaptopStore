@@ -15,6 +15,8 @@ namespace CSharp_laptop.GUI
 {
     public partial class KhachHangGUI : Form
     {
+        int PH;
+        bool hided;
         MainForm mainForm;
         KhachHangBUS bus;
         List<KhachHangDTO> dtos;
@@ -31,7 +33,10 @@ namespace CSharp_laptop.GUI
             btnDelList = new List<VBButton>();
             InitializeComponent();
 
+            PH = artanPanel3.Location.Y;
 
+            artanPanel3.Location = new Point(artanPanel3.Location.X, this.Height - 10);
+            hided = true;
         }
 
         private void KhachHangGUI_Load(object sender, EventArgs e)
@@ -80,6 +85,19 @@ namespace CSharp_laptop.GUI
             if (clickedButton != null)
             {
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
+                int rowIndex = int.Parse(clickedButton.Name);
+
+                guna2TextBoxID.Text = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                guna2TextBoxTen.Text = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                guna2TextBoxDC.Text = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+                guna2TextBoxSDT.Text = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                guna2TextBoxDiem.Text = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+
+                if (hided)
+                {
+                    button1.Text = "HIDE";
+                    timer1.Start();
+                }
             }
         }
         private void BtnDel_Click(object sender, EventArgs e)
@@ -180,6 +198,50 @@ namespace CSharp_laptop.GUI
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            guna2TextBoxID.Text = "";
+            guna2TextBoxTen.Text = "";
+            guna2TextBoxDC.Text = "";
+            guna2TextBoxSDT.Text = "";
+            guna2TextBoxDiem.Text = "";
+            if (hided)
+            {
+                button1.Text = "HIDE";
+                timer1.Start();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (hided)
+            {
+                artanPanel3.Location = new Point(artanPanel3.Location.X, artanPanel3.Location.Y - 5);
+                if (artanPanel3.Location.Y <= PH + 60)
+                {
+                    timer1.Stop();
+                    hided = false;
+                    this.Refresh();
+                }
+            }
+            else
+            {
+                artanPanel3.Location = new Point(artanPanel3.Location.X, artanPanel3.Location.Y + 5);
+                if (artanPanel3.Location.Y >= this.Height)
+                {
+                    timer1.Stop();
+                    hided = true;
+                    this.Refresh();
+                }
+            }
+        }
+
+        private void guna2CircleButton3_Click_1(object sender, EventArgs e)
+        {
+            button1.Text = "SHOW";
+            timer1.Start();
         }
     }
 }
