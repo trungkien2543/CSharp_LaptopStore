@@ -85,9 +85,33 @@ namespace CSharp_laptop.GUI
             {
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
 
-                if (hided) button1.Text = "HIDE";
-                else button1.Text = "SHOW";
-                timer1.Start();
+                if (hided)
+                {
+                    button1.Text = "HIDE";
+                    timer1.Start();
+                }
+                int rowIndex = int.Parse(clickedButton.Name);
+                guna2TextBoxID.Text = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                guna2TextBoxTen.Text = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                guna2TextBoxEmail.Text = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
+                guna2TextBoxSDT.Text = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                guna2TextBoxDiaChi.Text = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+                guna2TextBoxCCCD.Text = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
+
+                DateTime dateValue;
+                if (DateTime.TryParse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString(), out dateValue))
+                {
+                    guna2DateTimePicker1.Value = dateValue;
+                }
+                if (dataGridView1.Rows[rowIndex].Cells[5].Value.ToString() != "Nam")
+                {
+                    guna2ImageRadioButton1.Checked = true;
+                    guna2ImageRadioButton2.Checked = false;
+                } else
+                {
+                    guna2ImageRadioButton1.Checked = false;
+                    guna2ImageRadioButton2.Checked = true;
+                }
             }
         }
         private void BtnDel_Click(object sender, EventArgs e)
@@ -245,6 +269,40 @@ namespace CSharp_laptop.GUI
             {
 
                 NamLabel.ForeColor = Color.Black;
+            }
+        }
+
+        private void NamLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            guna2TextBoxID.Text = "";
+            guna2TextBoxTen.Text = "";
+            guna2TextBoxEmail.Text = "";
+            guna2TextBoxSDT.Text = "";
+            guna2TextBoxDiaChi.Text = "";
+            guna2TextBoxCCCD.Text = "";
+            if (hided)
+            {
+                button1.Text = "HIDE";
+                timer1.Start();
+            }
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+            if (!hided)
+            {
+                button1.Text = "SHOW";
+                timer1.Start();
             }
         }
     }
