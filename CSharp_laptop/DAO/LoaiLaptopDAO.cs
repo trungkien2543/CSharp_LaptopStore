@@ -252,5 +252,78 @@ namespace CSharp_laptop.DAO
             }
             return dt;
         }
+
+
+        public  List<String> searchForComboBox (string searchTerm)
+        {
+            List<String> list = new List<String>();
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                
+                conn.Open();
+                string query = @"
+                                    SELECT " + searchTerm + @"
+                                    FROM loailaptop 
+                                    INNER JOIN hangsanxuat
+                                    GROUP BY " + searchTerm;
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+
+                        list.Add(reader[searchTerm].ToString());
+           
+                        
+                    }
+                    conn.Close();
+                } 
+            }
+
+            return list;
+        }
+
+        public List<LoaiLaptopDTO> findWithCondition()
+        {
+            List<LoaiLaptopDTO> laptops = new List<LoaiLaptopDTO>();
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+                                SELECT ll.*, h.TenHang, km.TenKhuyenMai 
+                                FROM loailaptop ll 
+                                LEFT JOIN hangsanxuat h ON ll.Hang = h.ID_Hang 
+                                LEFT JOIN khuyenmai km ON ll.KhuyenMai = km.ID_KhuyenMai";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        LoaiLaptopDTO laptop = new LoaiLaptopDTO
+                        {
+                            IDLoaiLaptop = reader["IDLoaiLaptop"].ToString(),
+                            TenSP = reader["TenSP"].ToString(),
+                            GiaBan = long.Parse(reader["GiaBan"].ToString()),
+                            Hang = reader["TenHang"].ToString(),
+                            CPU = reader["CPU"].ToString(),
+                            RAM = int.Parse(reader["RAM"].ToString()),
+                            GPU = reader["GPU"].ToString(),
+                            HinhAnh = reader["HinhAnh"].ToString(),
+                            KichThuoc = reader["KichThuoc"].ToString(),
+                            KhuyenMai = reader["TenKhuyenMai"].ToString()
+                        };
+                        laptops.Add(laptop);
+                    }
+                }
+            }
+            return laptops;
+        }
+
+
+
     }
 }
