@@ -462,7 +462,7 @@ namespace CSharp_laptop.GUI
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.FromArgb(149, 147, 186);
-            artanPanel1.GradientTopColor = Color.FromArgb(255, 192, 192);
+            artanPanel1.GradientTopColor = Color.FromArgb(202, 209, 234);
             artanPanel1.Location = new Point(0, 0);
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1133, 35);
