@@ -20,5 +20,9 @@ namespace CSharp_laptop.BUS
         {
             return dao.GetAllKhachHang();
         }
+        public bool AddKhachHang(KhachHangDTO kh)
+        {
+            return dao.AddKhachHang(kh);
+        }
     }
 }

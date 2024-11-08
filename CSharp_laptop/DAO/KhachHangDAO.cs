@@ -39,5 +39,36 @@ namespace CSharp_laptop.DAO
             }
             return khachhangs;
         }
+        public bool AddKhachHang(KhachHangDTO khachHang)
+        {
+            bool isSuccess = false;
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"INSERT INTO `khachhang` (`ID_KhachHang`, `TenKH`, `DiaChiKH`, `SDT`, `TichDiem`)
+                         VALUES (@ID_KhachHang, @TenKH, @DiaChiKH, @SDT, @TichDiem)";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                // Thêm các tham số để tránh SQL Injection
+                cmd.Parameters.AddWithValue("@ID_KhachHang", khachHang.ID_KhachHang);
+                cmd.Parameters.AddWithValue("@TenKH", khachHang.TenKH);
+                cmd.Parameters.AddWithValue("@DiaChiKH", khachHang.DiaChiKH);
+                cmd.Parameters.AddWithValue("@SDT", khachHang.SDT);
+                cmd.Parameters.AddWithValue("@TichDiem", khachHang.TichDiem);
+
+                try
+                {
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    isSuccess = rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            return isSuccess;
+        }
+
     }
 }
