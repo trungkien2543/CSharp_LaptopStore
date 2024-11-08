@@ -52,6 +52,7 @@ namespace CSharp_laptop.GUI
             btnMini = new IconButton();
             btnZoom = new IconButton();
             artanPanel1 = new ArtanPanel();
+            panel1 = new Panel();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
@@ -60,6 +61,7 @@ namespace CSharp_laptop.GUI
             panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
             artanPanel1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
@@ -328,7 +330,7 @@ namespace CSharp_laptop.GUI
             panelDesktop.BackColor = Color.FromArgb(74, 80, 114);
             panelDesktop.Controls.Add(pictureBox1);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(220, 35);
+            panelDesktop.Location = new Point(0, 35);
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(1133, 756);
             panelDesktop.TabIndex = 3;
@@ -461,19 +463,29 @@ namespace CSharp_laptop.GUI
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.FromArgb(149, 147, 186);
             artanPanel1.GradientTopColor = Color.FromArgb(255, 192, 192);
-            artanPanel1.Location = new Point(220, 0);
+            artanPanel1.Location = new Point(0, 0);
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1133, 35);
             artanPanel1.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(panelDesktop);
+            panel1.Controls.Add(artanPanel1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(220, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1133, 791);
+            panel1.TabIndex = 1;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(64, 70, 104);
+            BackColor = Color.White;
             ClientSize = new Size(1353, 791);
-            Controls.Add(panelDesktop);
-            Controls.Add(artanPanel1);
+            Controls.Add(panel1);
             Controls.Add(panelMenu);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -488,6 +500,7 @@ namespace CSharp_laptop.GUI
             panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
             artanPanel1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -516,5 +529,6 @@ namespace CSharp_laptop.GUI
         private ArtanPanel artanPanel1;
         private Label lblTitleChildForm;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
+        private Panel panel1;
     }
 }
