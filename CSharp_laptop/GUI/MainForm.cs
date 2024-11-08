@@ -85,10 +85,12 @@ namespace CSharp_laptop.GUI
                 leftBorderBtn.BringToFront();
 
                 //Current Child Form Icon
-                //iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                //iconCurrentChildForm.IconColor = color;
-                //lblTitleChildForm.Text = currentBtn.Text;
-                //lblTitleChildForm.ForeColor = color;
+                iconCurrentChildForm.IconChar = currentBtn.IconChar;
+                
+
+
+                lblTitleChildForm.Text = currentBtn.Text;
+                
 
                 this.FormBorderStyle = FormBorderStyle.None;
 
@@ -101,7 +103,7 @@ namespace CSharp_laptop.GUI
             if (currentBtn != null)
             {
 
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.BackColor = Color.FromArgb(64, 70, 104);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -181,7 +183,6 @@ namespace CSharp_laptop.GUI
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
-            label1.Text = "Quản lý khuyến mãi";
             OpenChildForm(new KhuyenMaiGUI());
         }
 
@@ -199,11 +200,11 @@ namespace CSharp_laptop.GUI
             DisableButton();
             leftBorderBtn.Visible = false;
 
-            //iconCurrentChildForm.IconChar = IconChar.Home;
-            //iconCurrentChildForm.IconColor = Color.MediumPurple;
+            iconCurrentChildForm.IconChar = IconChar.Home;
 
-            //lblTitleChildForm.Text = "Home";
-            //lblTitleChildForm.ForeColor = Color.Gainsboro;
+
+            lblTitleChildForm.Text = "Home";
+      
 
         }
 
@@ -215,7 +216,6 @@ namespace CSharp_laptop.GUI
         private void btnNH_PN_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
-            label1.Text = "Quản lý phiếu nhập";
             OpenChildForm(new PhieuNhapGUI());
         }
 

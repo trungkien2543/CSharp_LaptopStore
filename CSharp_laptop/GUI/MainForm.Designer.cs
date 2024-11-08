@@ -1,4 +1,6 @@
-﻿namespace CSharp_laptop.GUI
+﻿using FontAwesome.Sharp;
+
+namespace CSharp_laptop.GUI
 {
     partial class MainForm
     {
@@ -29,32 +31,34 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnTaiKhoan = new FontAwesome.Sharp.IconButton();
-            btnThongKe = new FontAwesome.Sharp.IconButton();
-            btnNH_PN = new FontAwesome.Sharp.IconButton();
-            btnKhuyenMai = new FontAwesome.Sharp.IconButton();
-            btnKhachHang = new FontAwesome.Sharp.IconButton();
-            btnNhanVien = new FontAwesome.Sharp.IconButton();
-            btnHD_BH = new FontAwesome.Sharp.IconButton();
-            btnNhaSanXuat = new FontAwesome.Sharp.IconButton();
-            btnSanPham = new FontAwesome.Sharp.IconButton();
+            iconButton1 = new IconButton();
+            btnTaiKhoan = new IconButton();
+            btnThongKe = new IconButton();
+            btnNH_PN = new IconButton();
+            btnKhuyenMai = new IconButton();
+            btnKhachHang = new IconButton();
+            btnNhanVien = new IconButton();
+            btnHD_BH = new IconButton();
+            btnNhaSanXuat = new IconButton();
+            btnSanPham = new IconButton();
             panelLogo = new Panel();
             btnHome = new PictureBox();
-            panelTitleBar = new Panel();
-            btnExit = new FontAwesome.Sharp.IconButton();
-            btnMini = new FontAwesome.Sharp.IconButton();
-            btnZoom = new FontAwesome.Sharp.IconButton();
             panelDesktop = new Panel();
             pictureBox1 = new PictureBox();
+            panelTitleBar = new Panel();
+            iconCurrentChildForm = new IconPictureBox();
+            lblTitleChildForm = new Label();
+            btnExit = new IconButton();
+            btnMini = new IconButton();
+            btnZoom = new IconButton();
             artanPanel1 = new ArtanPanel();
-            label1 = new Label();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
-            panelTitleBar.SuspendLayout();
             panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
             artanPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,9 +88,9 @@
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.ForeColor = Color.Gainsboro;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ShieldBlank;
+            iconButton1.IconChar = IconChar.ShieldBlank;
             iconButton1.IconColor = Color.Gainsboro;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconFont = IconFont.Auto;
             iconButton1.IconSize = 32;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
             iconButton1.Location = new Point(0, 680);
@@ -106,9 +110,9 @@
             btnTaiKhoan.FlatAppearance.BorderSize = 0;
             btnTaiKhoan.FlatStyle = FlatStyle.Flat;
             btnTaiKhoan.ForeColor = Color.Gainsboro;
-            btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.AccessibleIcon;
+            btnTaiKhoan.IconChar = IconChar.AccessibleIcon;
             btnTaiKhoan.IconColor = Color.Gainsboro;
-            btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTaiKhoan.IconFont = IconFont.Auto;
             btnTaiKhoan.IconSize = 32;
             btnTaiKhoan.ImageAlign = ContentAlignment.MiddleLeft;
             btnTaiKhoan.Location = new Point(0, 620);
@@ -128,9 +132,9 @@
             btnThongKe.FlatAppearance.BorderSize = 0;
             btnThongKe.FlatStyle = FlatStyle.Flat;
             btnThongKe.ForeColor = Color.Gainsboro;
-            btnThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            btnThongKe.IconChar = IconChar.ChartLine;
             btnThongKe.IconColor = Color.Gainsboro;
-            btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnThongKe.IconFont = IconFont.Auto;
             btnThongKe.IconSize = 32;
             btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
             btnThongKe.Location = new Point(0, 560);
@@ -150,9 +154,9 @@
             btnNH_PN.FlatAppearance.BorderSize = 0;
             btnNH_PN.FlatStyle = FlatStyle.Flat;
             btnNH_PN.ForeColor = Color.Gainsboro;
-            btnNH_PN.IconChar = FontAwesome.Sharp.IconChar.DollyBox;
+            btnNH_PN.IconChar = IconChar.DollyBox;
             btnNH_PN.IconColor = Color.Gainsboro;
-            btnNH_PN.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNH_PN.IconFont = IconFont.Auto;
             btnNH_PN.IconSize = 32;
             btnNH_PN.ImageAlign = ContentAlignment.MiddleLeft;
             btnNH_PN.Location = new Point(0, 500);
@@ -172,9 +176,9 @@
             btnKhuyenMai.FlatAppearance.BorderSize = 0;
             btnKhuyenMai.FlatStyle = FlatStyle.Flat;
             btnKhuyenMai.ForeColor = Color.Gainsboro;
-            btnKhuyenMai.IconChar = FontAwesome.Sharp.IconChar.Percentage;
+            btnKhuyenMai.IconChar = IconChar.Percentage;
             btnKhuyenMai.IconColor = Color.Gainsboro;
-            btnKhuyenMai.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnKhuyenMai.IconFont = IconFont.Auto;
             btnKhuyenMai.IconSize = 32;
             btnKhuyenMai.ImageAlign = ContentAlignment.MiddleLeft;
             btnKhuyenMai.Location = new Point(0, 440);
@@ -194,9 +198,9 @@
             btnKhachHang.FlatAppearance.BorderSize = 0;
             btnKhachHang.FlatStyle = FlatStyle.Flat;
             btnKhachHang.ForeColor = Color.Gainsboro;
-            btnKhachHang.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
+            btnKhachHang.IconChar = IconChar.ContactBook;
             btnKhachHang.IconColor = Color.Gainsboro;
-            btnKhachHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnKhachHang.IconFont = IconFont.Auto;
             btnKhachHang.IconSize = 32;
             btnKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
             btnKhachHang.Location = new Point(0, 380);
@@ -216,9 +220,9 @@
             btnNhanVien.FlatAppearance.BorderSize = 0;
             btnNhanVien.FlatStyle = FlatStyle.Flat;
             btnNhanVien.ForeColor = Color.Gainsboro;
-            btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.Vcard;
+            btnNhanVien.IconChar = IconChar.Vcard;
             btnNhanVien.IconColor = Color.Gainsboro;
-            btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNhanVien.IconFont = IconFont.Auto;
             btnNhanVien.IconSize = 32;
             btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
             btnNhanVien.Location = new Point(0, 320);
@@ -238,9 +242,9 @@
             btnHD_BH.FlatAppearance.BorderSize = 0;
             btnHD_BH.FlatStyle = FlatStyle.Flat;
             btnHD_BH.ForeColor = Color.Gainsboro;
-            btnHD_BH.IconChar = FontAwesome.Sharp.IconChar.HandHoldingUsd;
+            btnHD_BH.IconChar = IconChar.HandHoldingUsd;
             btnHD_BH.IconColor = Color.Gainsboro;
-            btnHD_BH.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHD_BH.IconFont = IconFont.Auto;
             btnHD_BH.IconSize = 32;
             btnHD_BH.ImageAlign = ContentAlignment.MiddleLeft;
             btnHD_BH.Location = new Point(0, 260);
@@ -260,9 +264,9 @@
             btnNhaSanXuat.FlatAppearance.BorderSize = 0;
             btnNhaSanXuat.FlatStyle = FlatStyle.Flat;
             btnNhaSanXuat.ForeColor = Color.Gainsboro;
-            btnNhaSanXuat.IconChar = FontAwesome.Sharp.IconChar.Handshake;
+            btnNhaSanXuat.IconChar = IconChar.Handshake;
             btnNhaSanXuat.IconColor = Color.Gainsboro;
-            btnNhaSanXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNhaSanXuat.IconFont = IconFont.Auto;
             btnNhaSanXuat.IconSize = 32;
             btnNhaSanXuat.ImageAlign = ContentAlignment.MiddleLeft;
             btnNhaSanXuat.Location = new Point(0, 200);
@@ -282,9 +286,9 @@
             btnSanPham.FlatAppearance.BorderSize = 0;
             btnSanPham.FlatStyle = FlatStyle.Flat;
             btnSanPham.ForeColor = Color.Gainsboro;
-            btnSanPham.IconChar = FontAwesome.Sharp.IconChar.Laptop;
+            btnSanPham.IconChar = IconChar.Laptop;
             btnSanPham.IconColor = Color.Gainsboro;
-            btnSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSanPham.IconFont = IconFont.Auto;
             btnSanPham.IconSize = 32;
             btnSanPham.ImageAlign = ContentAlignment.MiddleLeft;
             btnSanPham.Location = new Point(0, 140);
@@ -319,9 +323,34 @@
             btnHome.TabStop = false;
             btnHome.Click += btnHome_Click;
             // 
+            // panelDesktop
+            // 
+            panelDesktop.BackColor = Color.FromArgb(74, 80, 114);
+            panelDesktop.Controls.Add(pictureBox1);
+            panelDesktop.Dock = DockStyle.Fill;
+            panelDesktop.Location = new Point(220, 35);
+            panelDesktop.Name = "panelDesktop";
+            panelDesktop.Size = new Size(1133, 756);
+            panelDesktop.TabIndex = 3;
+            panelDesktop.Paint += panelDesktop_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.logo_home_removebg;
+            pictureBox1.Location = new Point(248, 228);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(478, 294);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.Transparent;
+            panelTitleBar.Controls.Add(iconCurrentChildForm);
+            panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(btnExit);
             panelTitleBar.Controls.Add(btnMini);
             panelTitleBar.Controls.Add(btnZoom);
@@ -333,22 +362,47 @@
             panelTitleBar.Paint += panelTitleBar_Paint;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
+            // iconCurrentChildForm
+            // 
+            iconCurrentChildForm.BackColor = Color.Transparent;
+            iconCurrentChildForm.ForeColor = Color.FromArgb(64, 70, 104);
+            iconCurrentChildForm.IconChar = IconChar.House;
+            iconCurrentChildForm.IconColor = Color.FromArgb(64, 70, 104);
+            iconCurrentChildForm.IconFont = IconFont.Auto;
+            iconCurrentChildForm.IconSize = 26;
+            iconCurrentChildForm.Location = new Point(16, 4);
+            iconCurrentChildForm.Name = "iconCurrentChildForm";
+            iconCurrentChildForm.Size = new Size(26, 27);
+            iconCurrentChildForm.TabIndex = 8;
+            iconCurrentChildForm.TabStop = false;
+            // 
+            // lblTitleChildForm
+            // 
+            lblTitleChildForm.AutoSize = true;
+            lblTitleChildForm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitleChildForm.ForeColor = Color.FromArgb(64, 70, 104);
+            lblTitleChildForm.Location = new Point(48, 7);
+            lblTitleChildForm.Name = "lblTitleChildForm";
+            lblTitleChildForm.Size = new Size(56, 21);
+            lblTitleChildForm.TabIndex = 7;
+            lblTitleChildForm.Text = "Home";
+            // 
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.ForeColor = Color.Gainsboro;
-            btnExit.IconChar = FontAwesome.Sharp.IconChar.Close;
+            btnExit.IconChar = IconChar.Close;
             btnExit.IconColor = Color.Gainsboro;
-            btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnExit.IconFont = IconFont.Auto;
             btnExit.IconSize = 20;
             btnExit.ImageAlign = ContentAlignment.MiddleLeft;
             btnExit.Location = new Point(1099, 0);
             btnExit.Margin = new Padding(0);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(1, 10, 0, 10);
-            btnExit.Size = new Size(34, 22);
+            btnExit.Size = new Size(34, 34);
             btnExit.TabIndex = 6;
             btnExit.TabStop = false;
             btnExit.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -361,16 +415,16 @@
             btnMini.FlatAppearance.BorderSize = 0;
             btnMini.FlatStyle = FlatStyle.Flat;
             btnMini.ForeColor = Color.Gainsboro;
-            btnMini.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            btnMini.IconChar = IconChar.Subtract;
             btnMini.IconColor = Color.Gainsboro;
-            btnMini.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMini.IconFont = IconFont.Auto;
             btnMini.IconSize = 20;
             btnMini.ImageAlign = ContentAlignment.MiddleLeft;
             btnMini.Location = new Point(1030, 0);
             btnMini.Margin = new Padding(0);
             btnMini.Name = "btnMini";
             btnMini.Padding = new Padding(3, 10, 0, 10);
-            btnMini.Size = new Size(34, 22);
+            btnMini.Size = new Size(34, 34);
             btnMini.TabIndex = 5;
             btnMini.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnMini.UseVisualStyleBackColor = true;
@@ -382,50 +436,26 @@
             btnZoom.FlatAppearance.BorderSize = 0;
             btnZoom.FlatStyle = FlatStyle.Flat;
             btnZoom.ForeColor = Color.Gainsboro;
-            btnZoom.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            btnZoom.IconChar = IconChar.WindowMaximize;
             btnZoom.IconColor = Color.Gainsboro;
-            btnZoom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnZoom.IconFont = IconFont.Auto;
             btnZoom.IconSize = 20;
             btnZoom.ImageAlign = ContentAlignment.MiddleLeft;
             btnZoom.Location = new Point(1064, 0);
             btnZoom.Margin = new Padding(0);
             btnZoom.Name = "btnZoom";
             btnZoom.Padding = new Padding(3, 10, 0, 10);
-            btnZoom.Size = new Size(34, 22);
+            btnZoom.Size = new Size(34, 34);
             btnZoom.TabIndex = 4;
             btnZoom.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnZoom.UseVisualStyleBackColor = true;
             btnZoom.Click += btnZoom_Click;
-            // 
-            // panelDesktop
-            // 
-            panelDesktop.BackColor = Color.FromArgb(74, 80, 114);
-            panelDesktop.Controls.Add(pictureBox1);
-            panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(220, 140);
-            panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1133, 651);
-            panelDesktop.TabIndex = 3;
-            panelDesktop.Paint += panelDesktop_Paint;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.logo_home_removebg;
-            pictureBox1.Location = new Point(358, 175);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(478, 294);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // artanPanel1
             // 
             artanPanel1.BackColor = Color.White;
             artanPanel1.BorderRadius = 0;
             artanPanel1.Controls.Add(panelTitleBar);
-            artanPanel1.Controls.Add(label1);
             artanPanel1.Dock = DockStyle.Top;
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
@@ -433,20 +463,8 @@
             artanPanel1.GradientTopColor = Color.FromArgb(255, 192, 192);
             artanPanel1.Location = new Point(220, 0);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1133, 140);
+            artanPanel1.Size = new Size(1133, 35);
             artanPanel1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            label1.BackColor = Color.Transparent;
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Bahnschrift Light SemiCondensed", 35F, FontStyle.Bold);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(1133, 140);
-            label1.TabIndex = 1;
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -464,9 +482,11 @@
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnHome).EndInit();
-            panelTitleBar.ResumeLayout(false);
             panelDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelTitleBar.ResumeLayout(false);
+            panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
             artanPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -482,18 +502,19 @@
         private FontAwesome.Sharp.IconButton btnHD_BH;
         private FontAwesome.Sharp.IconButton btnNhaSanXuat;
         private PictureBox btnHome;
-        private Panel panelTitleBar;
         private Panel panelDesktop;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnNH_PN;
         private FontAwesome.Sharp.IconButton btnThongKe;
         private FontAwesome.Sharp.IconButton btnTaiKhoan;
         private FontAwesome.Sharp.IconButton Exit;
-        private FontAwesome.Sharp.IconButton btnExit;
-        private FontAwesome.Sharp.IconButton btnZoom;
-        private FontAwesome.Sharp.IconButton btnMini;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Panel panelTitleBar;
+        private FontAwesome.Sharp.IconButton btnExit;
+        private FontAwesome.Sharp.IconButton btnMini;
+        private FontAwesome.Sharp.IconButton btnZoom;
         private ArtanPanel artanPanel1;
-        private Label label1;
+        private Label lblTitleChildForm;
+        private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
     }
 }
