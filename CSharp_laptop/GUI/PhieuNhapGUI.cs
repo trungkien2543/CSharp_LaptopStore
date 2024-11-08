@@ -15,8 +15,7 @@ namespace CSharp_laptop.GUI
         public PhieuNhapGUI()
         {
             InitializeComponent();
-            label1.Left = (this.ClientSize.Width - label1.Width) / 2;
-
+       
             // Ẩn header của tabcontrol
             tabControl1.Appearance = TabAppearance.FlatButtons;// Đặt chế độ hiển thị các tab thành dạng phẳng
             tabControl1.ItemSize = new Size(0, 1);// Đặt chiều cao của các tab headers thành 1 pixel để ẩn chúng

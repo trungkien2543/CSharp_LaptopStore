@@ -37,17 +37,6 @@
             rjTextBox1 = new RJTextBox();
             vbButton1 = new VBButton();
             vbButton2 = new VBButton();
-            artanPanel3 = new ArtanPanel();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
             tabPage2 = new TabPage();
             km_pan = new ArtanPanel();
             label15 = new Label();
@@ -70,16 +59,27 @@
             rjTextBox6 = new RJTextBox();
             rjTextBox7 = new RJTextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            dataGridView1 = new DataGridView();
+            Column9 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            artanPanel3 = new ArtanPanel();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            artanPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage2.SuspendLayout();
             km_pan.SuspendLayout();
             panel2.SuspendLayout();
             artanPanel7.SuspendLayout();
             artanPanel8.SuspendLayout();
             artanPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            artanPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -120,7 +120,7 @@
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(30, 60);
+            rjTextBox1.Location = new Point(30, 55);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -145,7 +145,7 @@
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
             vbButton1.ImageAlign = ContentAlignment.MiddleRight;
-            vbButton1.Location = new Point(365, 60);
+            vbButton1.Location = new Point(366, 55);
             vbButton1.Name = "vbButton1";
             vbButton1.Padding = new Padding(0, 0, 15, 0);
             vbButton1.Size = new Size(100, 40);
@@ -179,141 +179,6 @@
             vbButton2.TextColor = Color.White;
             vbButton2.UseVisualStyleBackColor = false;
             vbButton2.Click += vbButton2_Click;
-            // 
-            // artanPanel3
-            // 
-            artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel3.BackColor = Color.White;
-            artanPanel3.BorderRadius = 20;
-            artanPanel3.Controls.Add(dataGridView1);
-            artanPanel3.ForeColor = Color.FromArgb(100, 150, 200);
-            artanPanel3.GradientAngle = 70F;
-            artanPanel3.GradientBottomColor = Color.FromArgb(210, 220, 230);
-            artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel3.Location = new Point(30, 150);
-            artanPanel3.Name = "artanPanel3";
-            artanPanel3.Padding = new Padding(4, 0, 4, 10);
-            artanPanel3.Size = new Size(1057, 508);
-            artanPanel3.TabIndex = 15;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeight = 35;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column7, Column8, Column6, Column9 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(4, 0);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 25;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1049, 498);
-            dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 50F;
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.FillWeight = 80F;
-            Column2.HeaderText = "Tên khuyến mãi";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 80F;
-            Column3.HeaderText = "Mức giảm giá";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 80F;
-            Column4.HeaderText = "Mô tả";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 80F;
-            Column5.HeaderText = "Thời gian bắt đàu";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column7.FillWeight = 80F;
-            Column7.HeaderText = "Thời gian kêt thúc";
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column8.FillWeight = 80F;
-            Column8.HeaderText = "Thời gian tạo";
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.FillWeight = 40F;
-            Column6.HeaderText = "Sửa";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            Column9.FillWeight = 40F;
-            Column9.HeaderText = "Xóa";
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -644,6 +509,141 @@
             rjTextBox7.Texts = "";
             rjTextBox7.UnderlinedStyle = false;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column7, Column8, Column6, Column9 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.Location = new Point(4, 0);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1049, 498);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Column9
+            // 
+            Column9.FillWeight = 40F;
+            Column9.HeaderText = "Xóa";
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.FillWeight = 40F;
+            Column6.HeaderText = "Sửa";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column8.FillWeight = 80F;
+            Column8.HeaderText = "Thời gian tạo";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column7.FillWeight = 80F;
+            Column7.HeaderText = "Thời gian kêt thúc";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 80F;
+            Column5.HeaderText = "Thời gian bắt đàu";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 80F;
+            Column4.HeaderText = "Mô tả";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 80F;
+            Column3.HeaderText = "Mức giảm giá";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 80F;
+            Column2.HeaderText = "Tên khuyến mãi";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 50F;
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // artanPanel3
+            // 
+            artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel3.BackColor = Color.White;
+            artanPanel3.BorderRadius = 20;
+            artanPanel3.Controls.Add(dataGridView1);
+            artanPanel3.ForeColor = Color.FromArgb(100, 150, 200);
+            artanPanel3.GradientAngle = 70F;
+            artanPanel3.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel3.Location = new Point(30, 150);
+            artanPanel3.Name = "artanPanel3";
+            artanPanel3.Padding = new Padding(4, 0, 4, 10);
+            artanPanel3.Size = new Size(1057, 508);
+            artanPanel3.TabIndex = 15;
+            // 
             // KhuyenMaiGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -656,8 +656,6 @@
             Load += KhuyenMaiGUI_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            artanPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabPage2.ResumeLayout(false);
             km_pan.ResumeLayout(false);
             km_pan.PerformLayout();
@@ -666,6 +664,8 @@
             artanPanel7.ResumeLayout(false);
             artanPanel8.ResumeLayout(false);
             artanPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            artanPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -673,19 +673,8 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private ArtanPanel artanPanel3;
-        private DataGridView dataGridView1;
         private RJTextBox rjTextBox1;
         private VBButton vbButton1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column9;
         private VBButton vbButton2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ArtanPanel km_pan;
@@ -708,5 +697,16 @@
         private RJTextBox rjTextBox5;
         private RJTextBox rjTextBox6;
         private RJTextBox rjTextBox7;
+        private ArtanPanel artanPanel3;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column9;
     }
 }

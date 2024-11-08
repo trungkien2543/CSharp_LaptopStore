@@ -60,6 +60,8 @@ namespace CSharp_laptop.GUI
             public static Color color8 = Color.FromArgb(255, 195, 113); // Màu cam nhạt
             public static Color color9 = Color.FromArgb(204, 229, 255);
             public static Color color10 = Color.FromArgb(205, 133, 63);
+            public static Color color0 = Color.FromArgb(247, 176, 118);
+            
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -152,37 +154,37 @@ namespace CSharp_laptop.GUI
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new HangGUI(this));
 
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new LoaiLaptopGUI(this));
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new HoaDon(this));
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color4);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new NhanVienGUI(this));
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color5);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new KhachHangGUI(this));
         }
         private void iconButton6_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color6);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new KhuyenMaiGUI());
         }
 
@@ -215,13 +217,13 @@ namespace CSharp_laptop.GUI
 
         private void btnNH_PN_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color7);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new PhieuNhapGUI());
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color8);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new ThongKeGUI());
         }
 
@@ -232,7 +234,7 @@ namespace CSharp_laptop.GUI
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color9);
+            ActivateButton(sender, RGBColors.color0);
             OpenChildForm(new QuanLyTaiKhoanGUI(this));
         }
 

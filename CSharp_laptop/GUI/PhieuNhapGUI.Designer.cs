@@ -32,9 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            rjTextBox1 = new RJTextBox();
+            vbButton1 = new VBButton();
             them_but = new VBButton();
             artanPanel2 = new ArtanPanel();
             dataGridView1 = new DataGridView();
@@ -46,9 +47,6 @@
             Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
-            tk_panel = new Panel();
-            rjTextBox1 = new RJTextBox();
-            vbButton1 = new VBButton();
             tabPage2 = new TabPage();
             km_pan = new ArtanPanel();
             label15 = new Label();
@@ -93,12 +91,10 @@
             label4 = new Label();
             rjTextBox5 = new RJTextBox();
             rjTextBox4 = new RJTextBox();
-            artanPanel1 = new ArtanPanel();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tk_panel.SuspendLayout();
             tabPage2.SuspendLayout();
             km_pan.SuspendLayout();
             panel2.SuspendLayout();
@@ -112,21 +108,7 @@
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
-            artanPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Bahnschrift Light SemiCondensed", 35F, FontStyle.Bold);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(383, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(392, 57);
-            label1.TabIndex = 1;
-            label1.Text = "Quản lý phiếu nhập";
             // 
             // tabControl1
             // 
@@ -136,30 +118,75 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.ItemSize = new Size(61, 20);
-            tabControl1.Location = new Point(0, 120);
+            tabControl1.Location = new Point(-4, -5);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1118, 637);
+            tabControl1.Size = new Size(1133, 756);
             tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.FromArgb(149, 147, 186);
+            tabPage1.Controls.Add(rjTextBox1);
+            tabPage1.Controls.Add(vbButton1);
             tabPage1.Controls.Add(them_but);
             tabPage1.Controls.Add(artanPanel2);
-            tabPage1.Controls.Add(tk_panel);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1110, 609);
+            tabPage1.Size = new Size(1125, 728);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // rjTextBox1
+            // 
+            rjTextBox1.Anchor = AnchorStyles.Top;
+            rjTextBox1.BackColor = SystemColors.Window;
+            rjTextBox1.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox1.BorderFocusColor = Color.YellowGreen;
+            rjTextBox1.BorderRadius = 15;
+            rjTextBox1.BorderSize = 2;
+            rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox1.Location = new Point(34, 55);
+            rjTextBox1.Margin = new Padding(4);
+            rjTextBox1.Multiline = false;
+            rjTextBox1.Name = "rjTextBox1";
+            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox1.PasswordChar = false;
+            rjTextBox1.PlaceholderColor = Color.DarkGray;
+            rjTextBox1.PlaceholderText = "";
+            rjTextBox1.Size = new Size(370, 40);
+            rjTextBox1.TabIndex = 35;
+            rjTextBox1.Texts = "";
+            rjTextBox1.UnderlinedStyle = false;
+            // 
+            // vbButton1
+            // 
+            vbButton1.BackColor = Color.FromArgb(247, 176, 118);
+            vbButton1.BackgroundColor = Color.FromArgb(247, 176, 118);
+            vbButton1.BorderColor = Color.PaleVioletRed;
+            vbButton1.BorderRadius = 15;
+            vbButton1.BorderSize = 0;
+            vbButton1.FlatAppearance.BorderSize = 0;
+            vbButton1.FlatStyle = FlatStyle.Flat;
+            vbButton1.ForeColor = Color.White;
+            vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
+            vbButton1.ImageAlign = ContentAlignment.MiddleRight;
+            vbButton1.Location = new Point(366, 55);
+            vbButton1.Name = "vbButton1";
+            vbButton1.Padding = new Padding(0, 0, 15, 0);
+            vbButton1.Size = new Size(100, 40);
+            vbButton1.TabIndex = 36;
+            vbButton1.TextAlign = ContentAlignment.TopLeft;
+            vbButton1.TextColor = Color.White;
+            vbButton1.UseVisualStyleBackColor = false;
             // 
             // them_but
             // 
             them_but.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            them_but.BackColor = Color.FromArgb(119, 195, 144);
-            them_but.BackgroundColor = Color.FromArgb(119, 195, 144);
+            them_but.BackColor = Color.FromArgb(247, 176, 118);
+            them_but.BackgroundColor = Color.FromArgb(247, 176, 118);
             them_but.BorderColor = Color.PaleVioletRed;
             them_but.BorderRadius = 15;
             them_but.BorderSize = 0;
@@ -169,7 +196,7 @@
             them_but.ForeColor = Color.White;
             them_but.Image = (Image)resources.GetObject("them_but.Image");
             them_but.ImageAlign = ContentAlignment.MiddleLeft;
-            them_but.Location = new Point(962, 89);
+            them_but.Location = new Point(995, 104);
             them_but.Name = "them_but";
             them_but.Padding = new Padding(0, 0, 15, 0);
             them_but.Size = new Size(100, 40);
@@ -187,13 +214,13 @@
             artanPanel2.BorderRadius = 20;
             artanPanel2.Controls.Add(dataGridView1);
             artanPanel2.ForeColor = Color.Black;
-            artanPanel2.GradientAngle = 65F;
-            artanPanel2.GradientBottomColor = Color.FromArgb(178, 211, 154);
-            artanPanel2.GradientTopColor = Color.MediumSeaGreen;
-            artanPanel2.Location = new Point(40, 135);
+            artanPanel2.GradientAngle = 70F;
+            artanPanel2.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel2.Location = new Point(30, 150);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Padding = new Padding(4, 0, 4, 15);
-            artanPanel2.Size = new Size(1022, 431);
+            artanPanel2.Padding = new Padding(4, 0, 4, 10);
+            artanPanel2.Size = new Size(1057, 508);
             artanPanel2.TabIndex = 15;
             // 
             // dataGridView1
@@ -206,7 +233,7 @@
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(119, 195, 144);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
             dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
@@ -219,7 +246,7 @@
             dataGridView1.Location = new Point(4, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(1014, 416);
+            dataGridView1.Size = new Size(1049, 498);
             dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -278,67 +305,13 @@
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
             // 
-            // tk_panel
-            // 
-            tk_panel.Anchor = AnchorStyles.Top;
-            tk_panel.Controls.Add(rjTextBox1);
-            tk_panel.Controls.Add(vbButton1);
-            tk_panel.Location = new Point(205, 55);
-            tk_panel.Name = "tk_panel";
-            tk_panel.Size = new Size(700, 40);
-            tk_panel.TabIndex = 38;
-            // 
-            // rjTextBox1
-            // 
-            rjTextBox1.Anchor = AnchorStyles.Top;
-            rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.FromArgb(119, 195, 144);
-            rjTextBox1.BorderFocusColor = Color.YellowGreen;
-            rjTextBox1.BorderRadius = 15;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(0, 0);
-            rjTextBox1.Margin = new Padding(4);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = Color.DarkGray;
-            rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(640, 40);
-            rjTextBox1.TabIndex = 35;
-            rjTextBox1.Texts = "";
-            rjTextBox1.UnderlinedStyle = false;
-            // 
-            // vbButton1
-            // 
-            vbButton1.BackColor = Color.FromArgb(119, 195, 144);
-            vbButton1.BackgroundColor = Color.FromArgb(119, 195, 144);
-            vbButton1.BorderColor = Color.PaleVioletRed;
-            vbButton1.BorderRadius = 15;
-            vbButton1.BorderSize = 0;
-            vbButton1.FlatAppearance.BorderSize = 0;
-            vbButton1.FlatStyle = FlatStyle.Flat;
-            vbButton1.ForeColor = Color.White;
-            vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
-            vbButton1.ImageAlign = ContentAlignment.MiddleRight;
-            vbButton1.Location = new Point(600, 0);
-            vbButton1.Name = "vbButton1";
-            vbButton1.Padding = new Padding(0, 0, 15, 0);
-            vbButton1.Size = new Size(100, 40);
-            vbButton1.TabIndex = 36;
-            vbButton1.TextAlign = ContentAlignment.TopLeft;
-            vbButton1.TextColor = Color.White;
-            vbButton1.UseVisualStyleBackColor = false;
-            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(km_pan);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1110, 609);
+            tabPage2.Size = new Size(1117, 698);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -619,7 +592,7 @@
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1110, 609);
+            tabPage3.Size = new Size(1117, 698);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -976,27 +949,11 @@
             rjTextBox4.Texts = "";
             rjTextBox4.UnderlinedStyle = false;
             // 
-            // artanPanel1
-            // 
-            artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel1.BackColor = Color.White;
-            artanPanel1.BorderRadius = 0;
-            artanPanel1.Controls.Add(label1);
-            artanPanel1.ForeColor = Color.Black;
-            artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.FromArgb(195, 216, 160);
-            artanPanel1.GradientTopColor = Color.MediumSeaGreen;
-            artanPanel1.Location = new Point(0, 0);
-            artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1118, 120);
-            artanPanel1.TabIndex = 2;
-            // 
             // PhieuNhapGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1117, 755);
-            Controls.Add(artanPanel1);
+            ClientSize = new Size(1117, 717);
             Controls.Add(tabControl1);
             Name = "PhieuNhapGUI";
             Text = "PhieuNhapGUI";
@@ -1005,7 +962,6 @@
             tabPage1.ResumeLayout(false);
             artanPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tk_panel.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             km_pan.ResumeLayout(false);
             km_pan.PerformLayout();
@@ -1022,19 +978,14 @@
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            artanPanel1.ResumeLayout(false);
-            artanPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private Label label1;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private ArtanPanel artanPanel1;
-        private Panel tk_panel;
         private RJTextBox rjTextBox1;
         private VBButton vbButton1;
         private ArtanPanel artanPanel2;
