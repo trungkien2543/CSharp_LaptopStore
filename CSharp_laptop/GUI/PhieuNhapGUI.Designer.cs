@@ -140,7 +140,6 @@
             // 
             // rjTextBox1
             // 
-            rjTextBox1.Anchor = AnchorStyles.Top;
             rjTextBox1.BackColor = SystemColors.Window;
             rjTextBox1.BorderColor = Color.FromArgb(247, 176, 118);
             rjTextBox1.BorderFocusColor = Color.YellowGreen;
@@ -148,7 +147,7 @@
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(34, 55);
+            rjTextBox1.Location = new Point(30, 80);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -173,7 +172,7 @@
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
             vbButton1.ImageAlign = ContentAlignment.MiddleRight;
-            vbButton1.Location = new Point(366, 55);
+            vbButton1.Location = new Point(366, 80);
             vbButton1.Name = "vbButton1";
             vbButton1.Padding = new Padding(0, 0, 15, 0);
             vbButton1.Size = new Size(100, 40);
@@ -196,7 +195,7 @@
             them_but.ForeColor = Color.White;
             them_but.Image = (Image)resources.GetObject("them_but.Image");
             them_but.ImageAlign = ContentAlignment.MiddleLeft;
-            them_but.Location = new Point(995, 104);
+            them_but.Location = new Point(987, 80);
             them_but.Name = "them_but";
             them_but.Padding = new Padding(0, 0, 15, 0);
             them_but.Size = new Size(100, 40);
@@ -217,10 +216,10 @@
             artanPanel2.GradientAngle = 70F;
             artanPanel2.GradientBottomColor = Color.FromArgb(210, 220, 230);
             artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel2.Location = new Point(30, 150);
+            artanPanel2.Location = new Point(30, 140);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Padding = new Padding(4, 0, 4, 10);
-            artanPanel2.Size = new Size(1057, 508);
+            artanPanel2.Size = new Size(1057, 518);
             artanPanel2.TabIndex = 15;
             // 
             // dataGridView1
@@ -246,7 +245,7 @@
             dataGridView1.Location = new Point(4, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(1049, 498);
+            dataGridView1.Size = new Size(1049, 508);
             dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -311,7 +310,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1117, 698);
+            tabPage2.Size = new Size(1125, 728);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -592,7 +591,7 @@
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1117, 698);
+            tabPage3.Size = new Size(1125, 728);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
