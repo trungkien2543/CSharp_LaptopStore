@@ -85,10 +85,10 @@ namespace CSharp_laptop.GUI
                 leftBorderBtn.BringToFront();
 
                 //Current Child Form Icon
-                iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                iconCurrentChildForm.IconColor = color;
-                lblTitleChildForm.Text = currentBtn.Text;
-                lblTitleChildForm.ForeColor = color;
+                //iconCurrentChildForm.IconChar = currentBtn.IconChar;
+                //iconCurrentChildForm.IconColor = color;
+                //lblTitleChildForm.Text = currentBtn.Text;
+                //lblTitleChildForm.ForeColor = color;
 
                 this.FormBorderStyle = FormBorderStyle.None;
 
@@ -181,6 +181,7 @@ namespace CSharp_laptop.GUI
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            label1.Text = "Quản lý khuyến mãi";
             OpenChildForm(new KhuyenMaiGUI());
         }
 
@@ -198,11 +199,11 @@ namespace CSharp_laptop.GUI
             DisableButton();
             leftBorderBtn.Visible = false;
 
-            iconCurrentChildForm.IconChar = IconChar.Home;
-            iconCurrentChildForm.IconColor = Color.MediumPurple;
+            //iconCurrentChildForm.IconChar = IconChar.Home;
+            //iconCurrentChildForm.IconColor = Color.MediumPurple;
 
-            lblTitleChildForm.Text = "Home";
-            lblTitleChildForm.ForeColor = Color.Gainsboro;
+            //lblTitleChildForm.Text = "Home";
+            //lblTitleChildForm.ForeColor = Color.Gainsboro;
 
         }
 
@@ -214,6 +215,7 @@ namespace CSharp_laptop.GUI
         private void btnNH_PN_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
+            label1.Text = "Quản lý phiếu nhập";
             OpenChildForm(new PhieuNhapGUI());
         }
 

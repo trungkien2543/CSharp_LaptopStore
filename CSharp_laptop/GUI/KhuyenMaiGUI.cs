@@ -20,8 +20,6 @@ namespace CSharp_laptop.GUI
 
         private void KhuyenMaiGUI_Load(object sender, EventArgs e)
         {
-            // Căn label nằm giữa form khi phóng to
-            tk_panel.Left = (this.tabPage1.Width - tk_panel.Width) / 2;
 
             // Ẩn header của tabcontrol
             tabControl1.Appearance = TabAppearance.FlatButtons;// Đặt chế độ hiển thị các tab thành dạng phẳng
