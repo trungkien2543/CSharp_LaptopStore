@@ -66,7 +66,7 @@ namespace CSharp_laptop.GUI
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(64, 70, 104);
+            panelMenu.BackColor = Color.FromArgb(85, 81, 132);
             panelMenu.Controls.Add(iconButton1);
             panelMenu.Controls.Add(btnTaiKhoan);
             panelMenu.Controls.Add(btnThongKe);
@@ -327,7 +327,7 @@ namespace CSharp_laptop.GUI
             // 
             // panelDesktop
             // 
-            panelDesktop.BackColor = Color.FromArgb(74, 80, 114);
+            panelDesktop.BackColor = Color.FromArgb(95, 91, 142);
             panelDesktop.Controls.Add(pictureBox1);
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(0, 35);
