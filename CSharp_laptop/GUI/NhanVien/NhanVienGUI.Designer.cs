@@ -67,8 +67,6 @@
             Column8 = new DataGridViewTextBoxColumn();
             rjTextBox1 = new RJTextBox();
             vbButton2 = new VBButton();
-            artanPanel2 = new ArtanPanel();
-            label2 = new Label();
             button1 = new Button();
             artanPanel3 = new ArtanPanel();
             guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -89,7 +87,6 @@
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            artanPanel2.SuspendLayout();
             artanPanel3.SuspendLayout();
             guna2GroupBox1.SuspendLayout();
             SuspendLayout();
@@ -104,10 +101,10 @@
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.FromArgb(233, 203, 157);
             artanPanel1.GradientTopColor = Color.FromArgb(233, 203, 157);
-            artanPanel1.Location = new Point(8, 194);
+            artanPanel1.Location = new Point(8, 60);
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Padding = new Padding(4, 0, 4, 15);
-            artanPanel1.Size = new Size(1096, 488);
+            artanPanel1.Size = new Size(1096, 622);
             artanPanel1.TabIndex = 1;
             // 
             // dataGridView1
@@ -156,7 +153,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1088, 473);
+            dataGridView1.Size = new Size(1088, 607);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
@@ -262,7 +259,7 @@
             rjTextBox1.BorderStyle = BorderStyle.FixedSingle;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(8, 148);
+            rjTextBox1.Location = new Point(8, 13);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -288,7 +285,7 @@
             vbButton2.ForeColor = Color.White;
             vbButton2.Image = Properties.Resources.icons8_find_29;
             vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton2.Location = new Point(324, 148);
+            vbButton2.Location = new Point(324, 13);
             vbButton2.Name = "vbButton2";
             vbButton2.Padding = new Padding(7, 0, 0, 0);
             vbButton2.Size = new Size(137, 39);
@@ -297,34 +294,6 @@
             vbButton2.TextColor = Color.White;
             vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // artanPanel2
-            // 
-            artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel2.BackColor = Color.White;
-            artanPanel2.BorderRadius = 30;
-            artanPanel2.Controls.Add(label2);
-            artanPanel2.ForeColor = Color.Black;
-            artanPanel2.GradientAngle = 30F;
-            artanPanel2.GradientBottomColor = Color.BlanchedAlmond;
-            artanPanel2.GradientTopColor = Color.FromArgb(220, 182, 127);
-            artanPanel2.Location = new Point(8, 4);
-            artanPanel2.Name = "artanPanel2";
-            artanPanel2.Size = new Size(1096, 137);
-            artanPanel2.TabIndex = 22;
-            // 
-            // label2
-            // 
-            label2.BackColor = Color.Transparent;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Bahnschrift Light SemiCondensed", 35F, FontStyle.Bold);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(1096, 137);
-            label2.TabIndex = 15;
-            label2.Text = "Quản Lý Nhân Viên";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -678,7 +647,7 @@
             guna2CircleButton1.ForeColor = Color.White;
             guna2CircleButton1.Image = Properties.Resources.icons8_add_100;
             guna2CircleButton1.ImageSize = new Size(47, 47);
-            guna2CircleButton1.Location = new Point(1050, 146);
+            guna2CircleButton1.Location = new Point(1050, 11);
             guna2CircleButton1.Name = "guna2CircleButton1";
             guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges21;
             guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -696,7 +665,6 @@
             Controls.Add(guna2CircleButton1);
             Controls.Add(artanPanel3);
             Controls.Add(rjTextBox1);
-            Controls.Add(artanPanel2);
             Controls.Add(artanPanel1);
             Controls.Add(vbButton2);
             Margin = new Padding(3, 2, 3, 2);
@@ -705,7 +673,6 @@
             Load += NhanVienGUI_Load;
             artanPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            artanPanel2.ResumeLayout(false);
             artanPanel3.ResumeLayout(false);
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();
@@ -727,8 +694,6 @@
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
-        private ArtanPanel artanPanel2;
-        private Label label2;
         private ArtanPanel artanPanel3;
         private System.Windows.Forms.Timer timer1;
         private Button button1;
