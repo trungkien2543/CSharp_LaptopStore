@@ -32,6 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -43,8 +45,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             artanPanel1 = new ArtanPanel();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -59,6 +59,7 @@
             vbButton2 = new VBButton();
             rjTextBox1 = new RJTextBox();
             artanPanel3 = new ArtanPanel();
+            guna2TextBoxDiem = new Guna.UI2.WinForms.Guna2TextBox();
             guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2TextBoxDC = new Guna.UI2.WinForms.Guna2TextBox();
@@ -68,7 +69,6 @@
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             button1 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            guna2TextBoxDiem = new Guna.UI2.WinForms.Guna2TextBox();
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             artanPanel2.SuspendLayout();
@@ -293,6 +293,31 @@
             artanPanel3.Size = new Size(1099, 256);
             artanPanel3.TabIndex = 27;
             // 
+            // guna2TextBoxDiem
+            // 
+            guna2TextBoxDiem.BackColor = Color.Transparent;
+            guna2TextBoxDiem.BorderRadius = 10;
+            guna2TextBoxDiem.BorderThickness = 2;
+            guna2TextBoxDiem.CustomizableEdges = customizableEdges1;
+            guna2TextBoxDiem.DefaultText = "";
+            guna2TextBoxDiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBoxDiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBoxDiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBoxDiem.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBoxDiem.FocusedState.BorderColor = Color.FromArgb(227, 158, 62);
+            guna2TextBoxDiem.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2TextBoxDiem.ForeColor = Color.FromArgb(64, 64, 64);
+            guna2TextBoxDiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBoxDiem.Location = new Point(12, 118);
+            guna2TextBoxDiem.Margin = new Padding(5);
+            guna2TextBoxDiem.Name = "guna2TextBoxDiem";
+            guna2TextBoxDiem.PasswordChar = '\0';
+            guna2TextBoxDiem.PlaceholderText = "Tính Điểm";
+            guna2TextBoxDiem.SelectedText = "";
+            guna2TextBoxDiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2TextBoxDiem.Size = new Size(483, 38);
+            guna2TextBoxDiem.TabIndex = 12;
+            // 
             // guna2CircleButton3
             // 
             guna2CircleButton3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -477,35 +502,11 @@
             timer1.Interval = 10;
             timer1.Tick += timer1_Tick;
             // 
-            // guna2TextBoxDiem
-            // 
-            guna2TextBoxDiem.BackColor = Color.Transparent;
-            guna2TextBoxDiem.BorderRadius = 10;
-            guna2TextBoxDiem.BorderThickness = 2;
-            guna2TextBoxDiem.CustomizableEdges = customizableEdges1;
-            guna2TextBoxDiem.DefaultText = "";
-            guna2TextBoxDiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBoxDiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBoxDiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBoxDiem.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBoxDiem.FocusedState.BorderColor = Color.FromArgb(227, 158, 62);
-            guna2TextBoxDiem.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2TextBoxDiem.ForeColor = Color.FromArgb(64, 64, 64);
-            guna2TextBoxDiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxDiem.Location = new Point(12, 118);
-            guna2TextBoxDiem.Margin = new Padding(5);
-            guna2TextBoxDiem.Name = "guna2TextBoxDiem";
-            guna2TextBoxDiem.PasswordChar = '\0';
-            guna2TextBoxDiem.PlaceholderText = "Tính Điểm";
-            guna2TextBoxDiem.SelectedText = "";
-            guna2TextBoxDiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBoxDiem.Size = new Size(483, 38);
-            guna2TextBoxDiem.TabIndex = 12;
-            // 
             // KhachHangGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(149, 147, 186);
             ClientSize = new Size(1116, 694);
             Controls.Add(button1);
             Controls.Add(guna2CircleButton1);

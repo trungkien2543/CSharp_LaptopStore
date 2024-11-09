@@ -258,7 +258,8 @@
             rjTextBox1.BorderColor = Color.FromArgb(228, 193, 144);
             rjTextBox1.BorderFocusColor = Color.FromArgb(255, 193, 144);
             rjTextBox1.BorderRadius = 10;
-            rjTextBox1.BorderSize = 2;
+            rjTextBox1.BorderSize = 3;
+            rjTextBox1.BorderStyle = BorderStyle.FixedSingle;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
             rjTextBox1.Location = new Point(8, 148);
@@ -689,6 +690,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(149, 147, 186);
             ClientSize = new Size(1116, 694);
             Controls.Add(button1);
             Controls.Add(guna2CircleButton1);
