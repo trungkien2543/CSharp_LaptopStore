@@ -1,4 +1,5 @@
 ﻿using CSharp_laptop.DAO;
+using Guna.UI2.WinForms;
 using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
@@ -65,8 +66,48 @@ namespace CSharp_laptop.BUS
             return loailaptopDAO.SearchLaptop(searchTerm);
         }
 
-        public List<String> getValueForComboBox(string searchItem){ 
-            return loailaptopDAO.searchForComboBox(searchItem);
+        public List<String> getValueForComboBox(string searchItem, Guna2TextBox txtTenSP, Guna2ComboBox cbxCPU, Guna2ComboBox cbxRAM, Guna2ComboBox cbxGPU, Guna2ComboBox cbxTenHang, Guna2ComboBox cbxKichThuoc, Guna2TextBox txtGia)
+        {
+
+            // Đảm bảo `GiaBan` là số hợp lệ hoặc chuyển về số không nếu để trống
+            if (!long.TryParse(txtGia.Text, out long giaBanValue))
+            {
+                giaBanValue = 100000000;
+            }
+
+            // Kiểm tra từng ComboBox, nếu trống thì gán chuỗi rỗng ""
+            string cpu = string.IsNullOrEmpty(cbxCPU.Text) ? "" : cbxCPU.Text;
+            string ram = string.IsNullOrEmpty(cbxRAM.Text) ? "" : cbxRAM.Text;
+            string gpu = string.IsNullOrEmpty(cbxGPU.Text) ? "" : cbxGPU.Text;
+            string tenHang = string.IsNullOrEmpty(cbxTenHang.Text) ? "" : cbxTenHang.Text;
+            string kichThuoc = string.IsNullOrEmpty(cbxKichThuoc.Text) ? "" : cbxKichThuoc.Text;
+
+            // Gọi phương thức searchForComboBox với các giá trị đã kiểm tra
+            return loailaptopDAO.searchForComboBox(searchItem, txtTenSP.Text, cpu, ram, gpu, tenHang, kichThuoc, giaBanValue);
+
+
+
+        }
+
+        
+
+        internal List<LoaiLaptopDTO> findLaptop(Guna2TextBox txtTenSP, Guna2ComboBox cbxCPU, Guna2ComboBox cbxRAM, Guna2ComboBox cbxGPU, Guna2ComboBox cbxTenHang, Guna2ComboBox cbxKichThuoc, Guna2TextBox txtGia)
+        {
+            List<LoaiLaptopDTO> list = new List<LoaiLaptopDTO>();
+
+            // Đảm bảo `GiaBan` là số hợp lệ hoặc chuyển về số không nếu để trống
+            if (!long.TryParse(txtGia.Text, out long giaBanValue))
+            {
+                giaBanValue = 100000000;
+            }
+                
+    
+
+            list = loailaptopDAO.findWithCondition(txtTenSP.Text, cbxCPU.Text, cbxRAM.Text, cbxGPU.Text, cbxTenHang.Text, cbxKichThuoc.Text,giaBanValue);
+
+            return list;
+
+
         }
     }
 }

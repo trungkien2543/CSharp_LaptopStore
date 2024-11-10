@@ -4,8 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Shapes;
 
 namespace CSharp_laptop.DAO
 {
@@ -256,38 +259,50 @@ namespace CSharp_laptop.DAO
         }
 
 
-        public  List<String> searchForComboBox (string searchTerm)
+        public List<String> searchForComboBox(string searchTerm, string TenSP, string CPU, string RAM, string GPU, string TenHang, string KichThuoc, long GiaBan)
         {
             List<String> list = new List<String>();
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
-                
                 conn.Open();
                 string query = @"
-                                    SELECT " + searchTerm + @"
-                                    FROM loailaptop 
-                                    INNER JOIN hangsanxuat
-                                    GROUP BY " + searchTerm;
+                        SELECT DISTINCT " + searchTerm + @"
+                        FROM loailaptop ll
+                        INNER JOIN hangsanxuat h ON ll.Hang = h.ID_Hang
+                        WHERE ll.TenSP LIKE @TenSP 
+                        AND ll.CPU LIKE @CPU 
+                        AND ll.RAM LIKE @RAM
+                        AND ll.GPU LIKE @GPU 
+                        AND h.TenHang LIKE @TenHang
+                        AND ll.KichThuoc LIKE @KichThuoc 
+                        AND ll.GiaBan <= @GiaBan";
+
                 MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                // Gán giá trị cho các tham số, thêm dấu `%` cho các tham số `LIKE`
+                cmd.Parameters.AddWithValue("@TenSP", "%" + TenSP + "%");
+                cmd.Parameters.AddWithValue("@CPU", "%" + CPU + "%");
+                cmd.Parameters.AddWithValue("@RAM", "%" + RAM + "%");
+                cmd.Parameters.AddWithValue("@GPU", "%" + GPU + "%");
+                cmd.Parameters.AddWithValue("@TenHang", "%" + TenHang + "%");
+                cmd.Parameters.AddWithValue("@KichThuoc", "%" + KichThuoc + "%");
+                cmd.Parameters.AddWithValue("@GiaBan", GiaBan);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-
-
+                        // Thêm giá trị vào list từ cột tìm kiếm
                         list.Add(reader[searchTerm].ToString());
-           
-                        
                     }
-                    conn.Close();
-                } 
+                }
             }
 
             return list;
         }
 
-        public List<LoaiLaptopDTO> findWithCondition()
+
+        public List<LoaiLaptopDTO> findWithCondition(string TenSP, string CPU, string RAM, string GPU, string TenHang, string KichThuoc, long GiaBan)
         {
             List<LoaiLaptopDTO> laptops = new List<LoaiLaptopDTO>();
 
@@ -295,11 +310,24 @@ namespace CSharp_laptop.DAO
             {
                 conn.Open();
                 string query = @"
-                                SELECT ll.*, h.TenHang, km.TenKhuyenMai 
-                                FROM loailaptop ll 
-                                LEFT JOIN hangsanxuat h ON ll.Hang = h.ID_Hang 
-                                LEFT JOIN khuyenmai km ON ll.KhuyenMai = km.ID_KhuyenMai";
+                        SELECT ll.*, h.TenHang, km.TenKhuyenMai
+                        FROM loailaptop ll
+                        LEFT JOIN hangsanxuat h ON ll.Hang = h.ID_Hang
+                        LEFT JOIN khuyenmai km ON ll.KhuyenMai = km.ID_KhuyenMai
+                        WHERE ll.TenSP LIKE @TenSP AND ll.CPU LIKE @CPU AND ll.RAM LIKE @RAM 
+                              AND ll.GPU LIKE @GPU AND h.TenHang LIKE @TenHang 
+                              AND ll.KichThuoc LIKE @KichThuoc AND ll.GiaBan <= @GiaBan";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                // Gán giá trị cho các tham số, thêm dấu `%` cho các tham số `LIKE`
+                cmd.Parameters.AddWithValue("@TenSP", "%" + TenSP + "%");
+                cmd.Parameters.AddWithValue("@CPU", "%" + CPU + "%");
+                cmd.Parameters.AddWithValue("@RAM", "%" + RAM + "%");
+                cmd.Parameters.AddWithValue("@GPU", "%" + GPU + "%");
+                cmd.Parameters.AddWithValue("@TenHang", "%" + TenHang + "%");
+                cmd.Parameters.AddWithValue("@KichThuoc", "%" + KichThuoc + "%");
+                cmd.Parameters.AddWithValue("@GiaBan",GiaBan);
+               
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -316,7 +344,8 @@ namespace CSharp_laptop.DAO
                             GPU = reader["GPU"].ToString(),
                             HinhAnh = reader["HinhAnh"].ToString(),
                             KichThuoc = reader["KichThuoc"].ToString(),
-                            KhuyenMai = reader["TenKhuyenMai"].ToString()
+                            KhuyenMai = reader["TenKhuyenMai"].ToString(),
+                            SLTonKho = reader["SLTonKho"].ToString()
                         };
                         laptops.Add(laptop);
                     }
@@ -324,6 +353,8 @@ namespace CSharp_laptop.DAO
             }
             return laptops;
         }
+
+
 
 
 

@@ -17,24 +17,14 @@ namespace CSharp_laptop.GUI.BanHang
     {
         private LoaiLaptopBUS laptopBUS = new LoaiLaptopBUS();
         string selectedLaptopID;
+        List<LoaiLaptopDTO> laptops;
         MainForm mainForm;
         public BanHangForm(MainForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
-            LoadLaptops();
-            edittable();
-            AddButtonsToDataGridView();
 
-
-  
-
-            // Load dữ liệu cho comboBox
-            LoadDataForComboBox(cbxCPU, "CPU");
-            LoadDataForComboBox(cbxHang, "TenHang");
-            LoadDataForComboBox(cbxRAM, "RAM");
-            LoadDataForComboBox(cbxGPU, "GPU");
-            LoadDataForComboBox(cbxKichThuoc, "KichThuoc");
+            Reset();
         }
 
 
@@ -43,7 +33,7 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridView2.Columns["IDLoaiLaptop"].Visible = false;
             dataGridView2.Columns["TenSP"].HeaderText = "Tên Sản Phẩm";
             dataGridView2.Columns["GiaBan"].HeaderText = "Giá Bán";
-            dataGridView2.Columns["Hang"].HeaderText = "Hãng Laptop";
+            dataGridView2.Columns["Hang"].HeaderText = "Hãng";
             dataGridView2.Columns["KhuyenMai"].HeaderText = "Khuyến Mãi";
 
             dataGridView2.Columns["CPU"].HeaderText = "CPU";
@@ -61,20 +51,9 @@ namespace CSharp_laptop.GUI.BanHang
 
         private void LoadLaptops()
         {
-            List<LoaiLaptopDTO> laptops = laptopBUS.GetLaptops();
-    
+            laptops = laptopBUS.GetLaptops();
 
             dataGridView2.DataSource = laptops;
-
-
-            // Tạo cột mới cho DataGridView
-            DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn();
-            newColumn.Name = "NewColumn"; // Đặt tên cột
-            newColumn.HeaderText = "New Column"; // Tên hiển thị của cột
-            newColumn.ReadOnly = false; // Có thể cho phép chỉnh sửa hoặc không tùy theo nhu cầu
-
-            // Thêm cột mới vào DataGridView
-            dataGridView2.Columns.Add(newColumn);
         }
 
         private void AddButtonsToDataGridView()
@@ -98,10 +77,12 @@ namespace CSharp_laptop.GUI.BanHang
         {
             List<String> strings = new List<String>();
             strings.Add("");
-            strings.AddRange(new LoaiLaptopBUS().getValueForComboBox(Item));
+            strings.AddRange(new LoaiLaptopBUS().getValueForComboBox(Item, txtTen, cbxCPU, cbxRAM, cbxGPU, cbxHang, cbxKichThuoc, txtGia));
 
             comboBox.DataSource = strings;
         }
+
+
         private void rjTextBox2__TextChanged(object sender, EventArgs e)
         {
 
@@ -152,25 +133,58 @@ namespace CSharp_laptop.GUI.BanHang
 
         }
 
-        private void TextBox_Enter(object sender, EventArgs e)
+        private void find(object sender, EventArgs e)
         {
-            
-            if (txtTenSP.Texts == "Nhập tên sản phẩm")
+            laptops = laptopBUS.findLaptop(txtTen, cbxCPU, cbxRAM, cbxGPU, cbxHang, cbxKichThuoc, txtGia);
+
+
+            // Kiểm tra và tải dữ liệu cho từng ComboBox nếu chưa có giá trị
+            if (cbxCPU.Text.Equals(""))
             {
-                txtTenSP.Texts = "";
-                txtTenSP.ForeColor = Color.Black; // Đổi màu chữ về màu bình thường
+                LoadDataForComboBox(cbxCPU, "CPU");
             }
+
+            if (cbxHang.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxHang, "TenHang");
+            }
+
+            if (cbxRAM.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxRAM, "RAM");
+            }
+
+            if (cbxGPU.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxGPU, "GPU");
+            }
+
+            if (cbxKichThuoc.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxKichThuoc, "KichThuoc");
+            }
+
+
+            dataGridView2.DataSource = laptops;
         }
 
-        private void TextBox_Leave(object sender, EventArgs e)
-        {
-            
-            if (string.IsNullOrWhiteSpace(txtTenSP.Texts))
-            {
-                txtTenSP.Texts = "Nhập tên sản phẩm"; // Văn bản hint
-                txtTenSP.ForeColor = Color.Gray; // Đổi màu chữ sang màu xám
-            }
-        }
 
+        private void Reset()
+        {
+            LoadLaptops();
+            edittable();
+            AddButtonsToDataGridView();
+
+            // Load dữ liệu cho comboBox
+            LoadDataForComboBox(cbxCPU, "CPU");
+            LoadDataForComboBox(cbxHang, "TenHang");
+            LoadDataForComboBox(cbxRAM, "RAM");
+            LoadDataForComboBox(cbxGPU, "GPU");
+            LoadDataForComboBox(cbxKichThuoc, "KichThuoc");
+        }
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+           Reset();
+        }
     }
 }

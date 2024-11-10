@@ -30,334 +30,409 @@ namespace CSharp_laptop.GUI.BanHang
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHangForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            artanPanel1 = new ArtanPanel();
-            rjTextBox2 = new RJTextBox();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            artanPanel2 = new ArtanPanel();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            txtGia = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
+            cbxKichThuoc = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            cbxGPU = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            cbxRAM = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            cbxCPU = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            cbxHang = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            txtTen = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
-            vbButton1 = new VBButton();
-            lblSoTien = new Label();
-            lblSoSanPham = new Label();
-            btnQuayLai = new VBButton();
-            btnThemThongTin = new VBButton();
-            cbxKichThuoc = new ComboBox();
-            cbxRAM = new ComboBox();
-            cbxCPU = new ComboBox();
-            cbxGPU = new ComboBox();
-            cbxHang = new ComboBox();
-            txtTenSP = new RJTextBox();
+            artanPanel3 = new ArtanPanel();
             dataGridView2 = new DataGridView();
-            artanPanel1.SuspendLayout();
+            artanPanel1 = new ArtanPanel();
+            dataGridView1 = new DataGridView();
+            artanPanel2.SuspendLayout();
+            artanPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            artanPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // artanPanel1
+            // artanPanel2
             // 
-            artanPanel1.BackColor = Color.White;
-            artanPanel1.BorderRadius = 0;
-            artanPanel1.Controls.Add(rjTextBox2);
-            artanPanel1.Controls.Add(label6);
-            artanPanel1.Controls.Add(label5);
-            artanPanel1.Controls.Add(label4);
-            artanPanel1.Controls.Add(label3);
-            artanPanel1.Controls.Add(label2);
-            artanPanel1.Controls.Add(label1);
-            artanPanel1.Controls.Add(vbButton1);
-            artanPanel1.Controls.Add(lblSoTien);
-            artanPanel1.Controls.Add(lblSoSanPham);
-            artanPanel1.Controls.Add(btnQuayLai);
-            artanPanel1.Controls.Add(btnThemThongTin);
-            artanPanel1.Controls.Add(cbxKichThuoc);
-            artanPanel1.Controls.Add(cbxRAM);
-            artanPanel1.Controls.Add(cbxCPU);
-            artanPanel1.Controls.Add(cbxGPU);
-            artanPanel1.Controls.Add(cbxHang);
-            artanPanel1.Controls.Add(txtTenSP);
-            artanPanel1.Dock = DockStyle.Top;
-            artanPanel1.ForeColor = Color.Black;
-            artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.FromArgb(249, 118, 176);
-            artanPanel1.GradientTopColor = Color.PaleTurquoise;
-            artanPanel1.Location = new Point(0, 0);
-            artanPanel1.Margin = new Padding(3, 4, 3, 4);
-            artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1277, 298);
-            artanPanel1.TabIndex = 41;
+            artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            artanPanel2.BackColor = Color.White;
+            artanPanel2.BorderRadius = 20;
+            artanPanel2.Controls.Add(guna2Button2);
+            artanPanel2.Controls.Add(btnThanhToan);
+            artanPanel2.Controls.Add(guna2Button1);
+            artanPanel2.Controls.Add(txtGia);
+            artanPanel2.Controls.Add(label2);
+            artanPanel2.Controls.Add(cbxKichThuoc);
+            artanPanel2.Controls.Add(guna2HtmlLabel5);
+            artanPanel2.Controls.Add(cbxGPU);
+            artanPanel2.Controls.Add(guna2HtmlLabel4);
+            artanPanel2.Controls.Add(cbxRAM);
+            artanPanel2.Controls.Add(guna2HtmlLabel3);
+            artanPanel2.Controls.Add(cbxCPU);
+            artanPanel2.Controls.Add(guna2HtmlLabel2);
+            artanPanel2.Controls.Add(cbxHang);
+            artanPanel2.Controls.Add(guna2HtmlLabel1);
+            artanPanel2.Controls.Add(txtTen);
+            artanPanel2.Controls.Add(label1);
+            artanPanel2.ForeColor = Color.Black;
+            artanPanel2.GradientAngle = 70F;
+            artanPanel2.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel2.Location = new Point(1, 2);
+            artanPanel2.Name = "artanPanel2";
+            artanPanel2.Padding = new Padding(4, 0, 4, 10);
+            artanPanel2.Size = new Size(252, 711);
+            artanPanel2.TabIndex = 16;
             // 
-            // rjTextBox2
+            // guna2Button2
             // 
-            rjTextBox2.BackColor = SystemColors.Window;
-            rjTextBox2.BorderColor = Color.FromArgb(249, 118, 176);
-            rjTextBox2.BorderFocusColor = Color.HotPink;
-            rjTextBox2.BorderRadius = 0;
-            rjTextBox2.BorderSize = 2;
-            rjTextBox2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new Point(141, 211);
-            rjTextBox2.Margin = new Padding(5, 5, 5, 5);
-            rjTextBox2.Multiline = false;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(11, 9, 11, 9);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = Color.DarkGray;
-            rjTextBox2.PlaceholderText = "";
-            rjTextBox2.Size = new Size(250, 44);
-            rjTextBox2.TabIndex = 56;
-            rjTextBox2.Texts = "";
-            rjTextBox2.UnderlinedStyle = false;
+            guna2Button2.BackColor = Color.Transparent;
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.CustomizableEdges = customizableEdges1;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Silver;
+            guna2Button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(7, 662);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button2.Size = new Size(237, 39);
+            guna2Button2.TabIndex = 16;
+            guna2Button2.Text = "Hủy";
             // 
-            // label6
+            // btnThanhToan
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(15, 224);
-            label6.Name = "label6";
-            label6.Size = new Size(132, 28);
-            label6.TabIndex = 55;
-            label6.Text = "Giới hạn giá:";
-            label6.Click += label6_Click;
+            btnThanhToan.BackColor = Color.Transparent;
+            btnThanhToan.BorderRadius = 10;
+            btnThanhToan.CustomizableEdges = customizableEdges3;
+            btnThanhToan.DisabledState.BorderColor = Color.DarkGray;
+            btnThanhToan.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnThanhToan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnThanhToan.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnThanhToan.FillColor = Color.DarkTurquoise;
+            btnThanhToan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnThanhToan.ForeColor = Color.White;
+            btnThanhToan.Location = new Point(7, 611);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnThanhToan.Size = new Size(237, 39);
+            btnThanhToan.TabIndex = 15;
+            btnThanhToan.Text = "Thanh toán";
             // 
-            // label5
+            // guna2Button1
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(419, 224);
-            label5.Name = "label5";
-            label5.Size = new Size(120, 28);
-            label5.TabIndex = 54;
-            label5.Text = "Kích thước:";
-            label5.Click += label5_Click_1;
+            guna2Button1.BackColor = Color.Transparent;
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.CustomizableEdges = customizableEdges5;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(247, 176, 118);
+            guna2Button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(7, 557);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Button1.Size = new Size(237, 39);
+            guna2Button1.TabIndex = 14;
+            guna2Button1.Text = "Đặt lại";
+            guna2Button1.Click += guna2Button1_Click;
             // 
-            // label4
+            // txtGia
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(477, 135);
-            label4.Name = "label4";
-            label4.Size = new Size(63, 28);
-            label4.TabIndex = 53;
-            label4.Text = "RAM:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(477, 71);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 28);
-            label3.TabIndex = 52;
-            label3.Text = "CPU:";
+            txtGia.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtGia.BackColor = Color.Transparent;
+            txtGia.BorderColor = Color.FromArgb(247, 176, 118);
+            txtGia.BorderRadius = 5;
+            txtGia.CustomizableEdges = customizableEdges7;
+            txtGia.DefaultText = "";
+            txtGia.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtGia.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtGia.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtGia.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtGia.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtGia.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtGia.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtGia.Location = new Point(7, 510);
+            txtGia.Margin = new Padding(4);
+            txtGia.Name = "txtGia";
+            txtGia.PasswordChar = '\0';
+            txtGia.PlaceholderText = "";
+            txtGia.SelectedText = "";
+            txtGia.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtGia.Size = new Size(237, 31);
+            txtGia.TabIndex = 13;
+            txtGia.TextChanged += find;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(73, 141);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(7, 474);
             label2.Name = "label2";
-            label2.Size = new Size(57, 28);
-            label2.TabIndex = 51;
-            label2.Text = "GPU:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(73, 71);
-            label1.Name = "label1";
-            label1.Size = new Size(67, 28);
-            label1.TabIndex = 50;
-            label1.Text = "Hãng:";
-            // 
-            // vbButton1
-            // 
-            vbButton1.BackColor = Color.FromArgb(249, 118, 176);
-            vbButton1.BackgroundColor = Color.FromArgb(249, 118, 176);
-            vbButton1.BorderColor = Color.PaleVioletRed;
-            vbButton1.BorderRadius = 26;
-            vbButton1.BorderSize = 0;
-            vbButton1.FlatAppearance.BorderSize = 0;
-            vbButton1.FlatStyle = FlatStyle.Flat;
-            vbButton1.ForeColor = Color.White;
-            vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
-            vbButton1.Location = new Point(885, 117);
-            vbButton1.Margin = new Padding(3, 4, 3, 4);
-            vbButton1.Name = "vbButton1";
-            vbButton1.Size = new Size(67, 81);
-            vbButton1.TabIndex = 49;
-            vbButton1.TextColor = Color.White;
-            vbButton1.UseVisualStyleBackColor = false;
-            // 
-            // lblSoTien
-            // 
-            lblSoTien.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblSoTien.AutoSize = true;
-            lblSoTien.BackColor = Color.Transparent;
-            lblSoTien.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSoTien.ForeColor = Color.White;
-            lblSoTien.Location = new Point(1001, 101);
-            lblSoTien.Name = "lblSoTien";
-            lblSoTien.Size = new Size(178, 32);
-            lblSoTien.TabIndex = 48;
-            lblSoTien.Text = "Tổng số tiền:  ";
-            lblSoTien.Click += lblSoTien_Click;
-            // 
-            // lblSoSanPham
-            // 
-            lblSoSanPham.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblSoSanPham.AutoSize = true;
-            lblSoSanPham.BackColor = Color.Transparent;
-            lblSoSanPham.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSoSanPham.ForeColor = Color.White;
-            lblSoSanPham.Location = new Point(1001, 17);
-            lblSoSanPham.Name = "lblSoSanPham";
-            lblSoSanPham.Size = new Size(237, 32);
-            lblSoSanPham.TabIndex = 47;
-            lblSoSanPham.Text = "Tổng số sản phẩm: ";
-            lblSoSanPham.Click += lblSoSanPham_Click;
-            // 
-            // btnQuayLai
-            // 
-            btnQuayLai.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnQuayLai.BackColor = Color.Gray;
-            btnQuayLai.BackgroundColor = Color.Gray;
-            btnQuayLai.BorderColor = Color.PaleVioletRed;
-            btnQuayLai.BorderRadius = 15;
-            btnQuayLai.BorderSize = 0;
-            btnQuayLai.FlatAppearance.BorderSize = 0;
-            btnQuayLai.FlatStyle = FlatStyle.Flat;
-            btnQuayLai.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnQuayLai.ForeColor = Color.White;
-            btnQuayLai.ImageAlign = ContentAlignment.MiddleLeft;
-            btnQuayLai.Location = new Point(1980, 136);
-            btnQuayLai.Margin = new Padding(3, 4, 3, 4);
-            btnQuayLai.Name = "btnQuayLai";
-            btnQuayLai.Size = new Size(166, 75);
-            btnQuayLai.TabIndex = 46;
-            btnQuayLai.Text = "Hủy";
-            btnQuayLai.TextColor = Color.White;
-            btnQuayLai.UseVisualStyleBackColor = false;
-            btnQuayLai.Visible = false;
-            // 
-            // btnThemThongTin
-            // 
-            btnThemThongTin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnThemThongTin.BackColor = Color.CornflowerBlue;
-            btnThemThongTin.BackgroundColor = Color.CornflowerBlue;
-            btnThemThongTin.BorderColor = Color.PaleVioletRed;
-            btnThemThongTin.BorderRadius = 15;
-            btnThemThongTin.BorderSize = 0;
-            btnThemThongTin.FlatAppearance.BorderSize = 0;
-            btnThemThongTin.FlatStyle = FlatStyle.Flat;
-            btnThemThongTin.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnThemThongTin.ForeColor = Color.White;
-            btnThemThongTin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThemThongTin.Location = new Point(1980, 33);
-            btnThemThongTin.Margin = new Padding(3, 4, 3, 4);
-            btnThemThongTin.Name = "btnThemThongTin";
-            btnThemThongTin.Size = new Size(166, 75);
-            btnThemThongTin.TabIndex = 45;
-            btnThemThongTin.Text = "Thanh toán";
-            btnThemThongTin.TextColor = Color.White;
-            btnThemThongTin.UseVisualStyleBackColor = false;
+            label2.Size = new Size(147, 21);
+            label2.TabIndex = 12;
+            label2.Text = "Nhập giới hạn giá";
             // 
             // cbxKichThuoc
             // 
+            cbxKichThuoc.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cbxKichThuoc.BackColor = Color.Transparent;
+            cbxKichThuoc.BorderColor = Color.FromArgb(247, 176, 118);
+            cbxKichThuoc.BorderRadius = 5;
+            cbxKichThuoc.CustomizableEdges = customizableEdges9;
+            cbxKichThuoc.DrawMode = DrawMode.OwnerDrawFixed;
             cbxKichThuoc.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxKichThuoc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxKichThuoc.FormattingEnabled = true;
-            cbxKichThuoc.Location = new Point(546, 213);
-            cbxKichThuoc.Margin = new Padding(3, 4, 3, 4);
+            cbxKichThuoc.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxKichThuoc.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxKichThuoc.Font = new Font("Segoe UI", 10F);
+            cbxKichThuoc.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxKichThuoc.ItemHeight = 30;
+            cbxKichThuoc.Location = new Point(7, 420);
             cbxKichThuoc.Name = "cbxKichThuoc";
-            cbxKichThuoc.Size = new Size(318, 36);
-            cbxKichThuoc.TabIndex = 44;
-            cbxKichThuoc.SelectedIndexChanged += cbxKichThuoc_SelectedIndexChanged;
+            cbxKichThuoc.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            cbxKichThuoc.Size = new Size(237, 36);
+            cbxKichThuoc.TabIndex = 11;
+            cbxKichThuoc.SelectedIndexChanged += find;
             // 
-            // cbxRAM
+            // guna2HtmlLabel5
             // 
-            cbxRAM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxRAM.FormattingEnabled = true;
-            cbxRAM.Location = new Point(546, 131);
-            cbxRAM.Margin = new Padding(3, 4, 3, 4);
-            cbxRAM.Name = "cbxRAM";
-            cbxRAM.Size = new Size(318, 36);
-            cbxRAM.TabIndex = 42;
-            // 
-            // cbxCPU
-            // 
-            cbxCPU.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxCPU.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxCPU.FormattingEnabled = true;
-            cbxCPU.Location = new Point(546, 67);
-            cbxCPU.Margin = new Padding(3, 4, 3, 4);
-            cbxCPU.Name = "cbxCPU";
-            cbxCPU.Size = new Size(318, 36);
-            cbxCPU.TabIndex = 41;
+            guna2HtmlLabel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel5.ForeColor = Color.White;
+            guna2HtmlLabel5.Location = new Point(7, 391);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(85, 23);
+            guna2HtmlLabel5.TabIndex = 10;
+            guna2HtmlLabel5.Text = "Kích thước";
             // 
             // cbxGPU
             // 
+            cbxGPU.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cbxGPU.BackColor = Color.Transparent;
+            cbxGPU.BorderColor = Color.FromArgb(247, 176, 118);
+            cbxGPU.BorderRadius = 5;
+            cbxGPU.CustomizableEdges = customizableEdges11;
+            cbxGPU.DrawMode = DrawMode.OwnerDrawFixed;
             cbxGPU.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxGPU.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxGPU.FormattingEnabled = true;
-            cbxGPU.Location = new Point(143, 131);
-            cbxGPU.Margin = new Padding(3, 4, 3, 4);
+            cbxGPU.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxGPU.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxGPU.Font = new Font("Segoe UI", 10F);
+            cbxGPU.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxGPU.ItemHeight = 30;
+            cbxGPU.Location = new Point(7, 342);
             cbxGPU.Name = "cbxGPU";
-            cbxGPU.Size = new Size(247, 36);
-            cbxGPU.TabIndex = 40;
+            cbxGPU.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cbxGPU.Size = new Size(237, 36);
+            cbxGPU.TabIndex = 9;
+            cbxGPU.SelectedIndexChanged += find;
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel4.ForeColor = Color.White;
+            guna2HtmlLabel4.Location = new Point(7, 313);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(36, 23);
+            guna2HtmlLabel4.TabIndex = 8;
+            guna2HtmlLabel4.Text = "GPU";
+            // 
+            // cbxRAM
+            // 
+            cbxRAM.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cbxRAM.BackColor = Color.Transparent;
+            cbxRAM.BorderColor = Color.FromArgb(247, 176, 118);
+            cbxRAM.BorderRadius = 5;
+            cbxRAM.CustomizableEdges = customizableEdges13;
+            cbxRAM.DrawMode = DrawMode.OwnerDrawFixed;
+            cbxRAM.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxRAM.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxRAM.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxRAM.Font = new Font("Segoe UI", 10F);
+            cbxRAM.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxRAM.ItemHeight = 30;
+            cbxRAM.Location = new Point(7, 262);
+            cbxRAM.Name = "cbxRAM";
+            cbxRAM.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            cbxRAM.Size = new Size(237, 36);
+            cbxRAM.TabIndex = 7;
+            cbxRAM.SelectedIndexChanged += find;
+            // 
+            // guna2HtmlLabel3
+            // 
+            guna2HtmlLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            guna2HtmlLabel3.BackColor = Color.Transparent;
+            guna2HtmlLabel3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.ForeColor = Color.White;
+            guna2HtmlLabel3.Location = new Point(7, 233);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new Size(39, 23);
+            guna2HtmlLabel3.TabIndex = 6;
+            guna2HtmlLabel3.Text = "RAM";
+            // 
+            // cbxCPU
+            // 
+            cbxCPU.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cbxCPU.BackColor = Color.Transparent;
+            cbxCPU.BorderColor = Color.FromArgb(247, 176, 118);
+            cbxCPU.BorderRadius = 5;
+            cbxCPU.CustomizableEdges = customizableEdges15;
+            cbxCPU.DrawMode = DrawMode.OwnerDrawFixed;
+            cbxCPU.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxCPU.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxCPU.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxCPU.Font = new Font("Segoe UI", 10F);
+            cbxCPU.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxCPU.ItemHeight = 30;
+            cbxCPU.Location = new Point(7, 185);
+            cbxCPU.Name = "cbxCPU";
+            cbxCPU.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            cbxCPU.Size = new Size(237, 36);
+            cbxCPU.TabIndex = 5;
+            cbxCPU.SelectedIndexChanged += find;
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.ForeColor = Color.White;
+            guna2HtmlLabel2.Location = new Point(7, 156);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(35, 23);
+            guna2HtmlLabel2.TabIndex = 4;
+            guna2HtmlLabel2.Text = "CPU";
             // 
             // cbxHang
             // 
+            cbxHang.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cbxHang.BackColor = Color.Transparent;
+            cbxHang.BorderColor = Color.FromArgb(247, 176, 118);
+            cbxHang.BorderRadius = 5;
+            cbxHang.CustomizableEdges = customizableEdges17;
+            cbxHang.DrawMode = DrawMode.OwnerDrawFixed;
             cbxHang.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxHang.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxHang.FormattingEnabled = true;
-            cbxHang.Location = new Point(143, 67);
-            cbxHang.Margin = new Padding(3, 4, 3, 4);
+            cbxHang.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxHang.Font = new Font("Segoe UI", 10F);
+            cbxHang.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxHang.ItemHeight = 30;
+            cbxHang.Location = new Point(7, 110);
             cbxHang.Name = "cbxHang";
-            cbxHang.Size = new Size(247, 36);
-            cbxHang.TabIndex = 39;
+            cbxHang.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            cbxHang.Size = new Size(237, 36);
+            cbxHang.TabIndex = 3;
+            cbxHang.SelectedIndexChanged += find;
             // 
-            // txtTenSP
+            // guna2HtmlLabel1
             // 
-            txtTenSP.BackColor = SystemColors.Window;
-            txtTenSP.BorderColor = Color.FromArgb(249, 118, 176);
-            txtTenSP.BorderFocusColor = Color.HotPink;
-            txtTenSP.BorderRadius = 5;
-            txtTenSP.BorderSize = 2;
-            txtTenSP.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTenSP.ForeColor = Color.Gray;
-            txtTenSP.Location = new Point(9, 9);
-            txtTenSP.Margin = new Padding(5, 5, 5, 5);
-            txtTenSP.Multiline = false;
-            txtTenSP.Name = "txtTenSP";
-            txtTenSP.Padding = new Padding(11, 9, 11, 9);
-            txtTenSP.PasswordChar = false;
-            txtTenSP.PlaceholderColor = Color.DarkGray;
-            txtTenSP.PlaceholderText = "";
-            txtTenSP.Size = new Size(856, 39);
-            txtTenSP.TabIndex = 38;
-            txtTenSP.Texts = "Nhập tên sản phẩm";
-            txtTenSP.UnderlinedStyle = false;
-            txtTenSP._TextChanged += rjTextBox1__TextChanged;
-            txtTenSP.Enter += TextBox_Enter;
-            txtTenSP.Leave += TextBox_Leave;
+            guna2HtmlLabel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.White;
+            guna2HtmlLabel1.Location = new Point(7, 81);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(44, 23);
+            guna2HtmlLabel1.TabIndex = 2;
+            guna2HtmlLabel1.Text = "Hãng";
+            // 
+            // txtTen
+            // 
+            txtTen.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtTen.BackColor = Color.Transparent;
+            txtTen.BorderColor = Color.FromArgb(247, 176, 118);
+            txtTen.BorderRadius = 5;
+            txtTen.CustomizableEdges = customizableEdges19;
+            txtTen.DefaultText = "";
+            txtTen.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTen.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTen.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTen.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTen.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTen.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTen.Location = new Point(7, 43);
+            txtTen.Margin = new Padding(4);
+            txtTen.Name = "txtTen";
+            txtTen.PasswordChar = '\0';
+            txtTen.PlaceholderText = "";
+            txtTen.SelectedText = "";
+            txtTen.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtTen.Size = new Size(237, 31);
+            txtTen.TabIndex = 1;
+            txtTen.TextChanged += find;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(7, 7);
+            label1.Name = "label1";
+            label1.Size = new Size(159, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Nhập tên sẩn phẩm";
+            // 
+            // artanPanel3
+            // 
+            artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel3.BackColor = Color.White;
+            artanPanel3.BorderRadius = 20;
+            artanPanel3.Controls.Add(dataGridView2);
+            artanPanel3.ForeColor = Color.FromArgb(100, 150, 200);
+            artanPanel3.GradientAngle = 70F;
+            artanPanel3.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel3.Location = new Point(259, 2);
+            artanPanel3.Name = "artanPanel3";
+            artanPanel3.Padding = new Padding(4, 0, 4, 10);
+            artanPanel3.Size = new Size(858, 336);
+            artanPanel3.TabIndex = 42;
             // 
             // dataGridView2
             // 
@@ -370,10 +445,10 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridView2.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(249, 118, 176);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(249, 118, 176);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -381,7 +456,7 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
@@ -389,8 +464,7 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.GridColor = Color.LightGray;
-            dataGridView2.Location = new Point(0, 298);
-            dataGridView2.Margin = new Padding(3, 4, 3, 4);
+            dataGridView2.Location = new Point(4, 0);
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
@@ -405,47 +479,116 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(1277, 653);
-            dataGridView2.TabIndex = 50;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            dataGridView2.Size = new Size(850, 326);
+            dataGridView2.TabIndex = 0;
+            // 
+            // artanPanel1
+            // 
+            artanPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel1.BackColor = Color.White;
+            artanPanel1.BorderRadius = 20;
+            artanPanel1.Controls.Add(dataGridView1);
+            artanPanel1.ForeColor = Color.FromArgb(100, 150, 200);
+            artanPanel1.GradientAngle = 70F;
+            artanPanel1.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            artanPanel1.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel1.Location = new Point(259, 344);
+            artanPanel1.Name = "artanPanel1";
+            artanPanel1.Padding = new Padding(4, 0, 4, 10);
+            artanPanel1.Size = new Size(858, 369);
+            artanPanel1.TabIndex = 43;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.Location = new Point(4, 0);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(850, 359);
+            dataGridView1.TabIndex = 0;
             // 
             // BanHangForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1277, 951);
-            Controls.Add(dataGridView2);
+            BackColor = Color.FromArgb(149, 147, 186);
+            ClientSize = new Size(1117, 713);
             Controls.Add(artanPanel1);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(artanPanel3);
+            Controls.Add(artanPanel2);
             Name = "BanHangForm";
             Text = "BanHang";
-            artanPanel1.ResumeLayout(false);
-            artanPanel1.PerformLayout();
+            artanPanel2.ResumeLayout(false);
+            artanPanel2.PerformLayout();
+            artanPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            artanPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ArtanPanel artanPanel1;
-        private Label lblSoTien;
-        private Label lblSoSanPham;
-        private VBButton btnQuayLai;
-        private VBButton btnThemThongTin;
-        private ComboBox cbxKichThuoc;
-        private ComboBox cbxRAM;
-        private ComboBox cbxCPU;
-        private ComboBox cbxGPU;
-        private ComboBox cbxHang;
-        private RJTextBox txtTenSP;
-        private VBButton vbButton1;
+        private ArtanPanel artanPanel2;
+        private ArtanPanel artanPanel3;
         private DataGridView dataGridView2;
+        private ArtanPanel artanPanel1;
+        private DataGridView dataGridView1;
         private Label label1;
-        private Label label5;
-        private Label label4;
-        private Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txtTen;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxHang;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxCPU;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxRAM;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxGPU;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxKichThuoc;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2TextBox txtGia;
         private Label label2;
-        private Label label6;
-        private RJTextBox rjTextBox2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnThanhToan;
     }
 }

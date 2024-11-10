@@ -75,7 +75,7 @@ namespace CSharp_laptop.GUI
             btnExit.IconFont = IconFont.Auto;
             btnExit.IconSize = 20;
             btnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExit.Location = new Point(1099, 1);
+            btnExit.Location = new Point(1106, 1);
             btnExit.Margin = new Padding(0);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(1, 10, 0, 10);
@@ -101,7 +101,7 @@ namespace CSharp_laptop.GUI
             btnMini.IconFont = IconFont.Auto;
             btnMini.IconSize = 20;
             btnMini.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMini.Location = new Point(1030, 1);
+            btnMini.Location = new Point(1037, 1);
             btnMini.Margin = new Padding(0);
             btnMini.Name = "btnMini";
             btnMini.Padding = new Padding(3, 10, 0, 10);
@@ -125,7 +125,7 @@ namespace CSharp_laptop.GUI
             btnZoom.IconFont = IconFont.Auto;
             btnZoom.IconSize = 20;
             btnZoom.ImageAlign = ContentAlignment.MiddleLeft;
-            btnZoom.Location = new Point(1064, 1);
+            btnZoom.Location = new Point(1071, 1);
             btnZoom.Margin = new Padding(0);
             btnZoom.Name = "btnZoom";
             btnZoom.Padding = new Padding(3, 10, 0, 10);
@@ -512,7 +512,7 @@ namespace CSharp_laptop.GUI
             panelTitleBar.GradientTopColor = Color.FromArgb(202, 209, 234);
             panelTitleBar.Location = new Point(193, 10);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(1146, 35);
+            panelTitleBar.Size = new Size(1153, 35);
             panelTitleBar.TabIndex = 4;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
