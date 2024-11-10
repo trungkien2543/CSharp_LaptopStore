@@ -37,22 +37,18 @@
             artanPanel2 = new ArtanPanel();
             dataGridView2 = new DataGridView();
             vbButton2 = new VBButton();
-            artanPanel1 = new ArtanPanel();
-            label2 = new Label();
             panel1.SuspendLayout();
             artanPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            artanPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(149, 147, 186);
             panel1.Controls.Add(vbButton1);
             panel1.Controls.Add(rjTextBox1);
             panel1.Controls.Add(artanPanel2);
             panel1.Controls.Add(vbButton2);
-            panel1.Controls.Add(artanPanel1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -62,8 +58,8 @@
             // vbButton1
             // 
             vbButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton1.BackColor = Color.FromArgb(249, 118, 176);
-            vbButton1.BackgroundColor = Color.FromArgb(249, 118, 176);
+            vbButton1.BackColor = Color.FromArgb(247, 176, 118);
+            vbButton1.BackgroundColor = Color.FromArgb(247, 176, 118);
             vbButton1.BorderColor = Color.PaleVioletRed;
             vbButton1.BorderRadius = 20;
             vbButton1.BorderSize = 0;
@@ -73,7 +69,7 @@
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = Properties.Resources.icons8_add_29;
             vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(1004, 174);
+            vbButton1.Location = new Point(1002, 12);
             vbButton1.Name = "vbButton1";
             vbButton1.Padding = new Padding(7, 0, 0, 0);
             vbButton1.Size = new Size(123, 58);
@@ -87,13 +83,13 @@
             // rjTextBox1
             // 
             rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.PaleTurquoise;
-            rjTextBox1.BorderFocusColor = SystemColors.HotTrack;
-            rjTextBox1.BorderRadius = 5;
+            rjTextBox1.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox1.BorderFocusColor = Color.FromArgb(247, 176, 118);
+            rjTextBox1.BorderRadius = 10;
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(12, 179);
+            rjTextBox1.ForeColor = Color.DarkGray;
+            rjTextBox1.Location = new Point(10, 17);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -101,10 +97,12 @@
             rjTextBox1.PasswordChar = false;
             rjTextBox1.PlaceholderColor = Color.DarkGray;
             rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(287, 39);
+            rjTextBox1.Size = new Size(357, 39);
             rjTextBox1.TabIndex = 35;
-            rjTextBox1.Texts = "";
+            rjTextBox1.Texts = "Tìm kiếm";
             rjTextBox1.UnderlinedStyle = false;
+            rjTextBox1.Enter += TextBox_Enter;
+            rjTextBox1.Leave += TextBox_Leave;
             // 
             // artanPanel2
             // 
@@ -114,12 +112,12 @@
             artanPanel2.Controls.Add(dataGridView2);
             artanPanel2.ForeColor = Color.FromArgb(100, 150, 200);
             artanPanel2.GradientAngle = 30F;
-            artanPanel2.GradientBottomColor = Color.FromArgb(249, 118, 176);
-            artanPanel2.GradientTopColor = Color.PaleTurquoise;
-            artanPanel2.Location = new Point(12, 239);
+            artanPanel2.GradientBottomColor = Color.FromArgb(85, 81, 132);
+            artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel2.Location = new Point(0, 76);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Padding = new Padding(4, 0, 4, 15);
-            artanPanel2.Size = new Size(1129, 430);
+            artanPanel2.Size = new Size(1147, 588);
             artanPanel2.TabIndex = 12;
             // 
             // dataGridView2
@@ -127,16 +125,17 @@
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.AllowUserToResizeRows = false;
+            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView2.BackgroundColor = Color.White;
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView2.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.DodgerBlue;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.DodgerBlue;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -151,7 +150,7 @@
             dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.GridColor = Color.LightGray;
-            dataGridView2.Location = new Point(2, 8);
+            dataGridView2.Location = new Point(7, 8);
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
@@ -166,58 +165,31 @@
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(1121, 415);
+            dataGridView2.Size = new Size(1134, 573);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // vbButton2
             // 
-            vbButton2.BackColor = Color.PaleTurquoise;
-            vbButton2.BackgroundColor = Color.PaleTurquoise;
+            vbButton2.BackColor = Color.FromArgb(247, 176, 118);
+            vbButton2.BackgroundColor = Color.FromArgb(247, 176, 118);
             vbButton2.BorderColor = Color.PaleVioletRed;
-            vbButton2.BorderRadius = 20;
+            vbButton2.BorderRadius = 10;
             vbButton2.BorderSize = 0;
             vbButton2.FlatAppearance.BorderSize = 0;
             vbButton2.FlatStyle = FlatStyle.Flat;
             vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton2.ForeColor = Color.White;
             vbButton2.Image = Properties.Resources.icons8_find_29;
-            vbButton2.Location = new Point(327, 174);
+            vbButton2.ImageAlign = ContentAlignment.MiddleRight;
+            vbButton2.Location = new Point(330, 17);
             vbButton2.Name = "vbButton2";
-            vbButton2.Size = new Size(70, 39);
+            vbButton2.Padding = new Padding(0, 0, 15, 0);
+            vbButton2.Size = new Size(99, 39);
             vbButton2.TabIndex = 9;
             vbButton2.TextColor = Color.White;
             vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // artanPanel1
-            // 
-            artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel1.BackColor = Color.White;
-            artanPanel1.BorderRadius = 30;
-            artanPanel1.Controls.Add(label2);
-            artanPanel1.ForeColor = Color.Black;
-            artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.FromArgb(249, 118, 176);
-            artanPanel1.GradientTopColor = Color.PaleTurquoise;
-            artanPanel1.Location = new Point(12, 10);
-            artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1126, 141);
-            artanPanel1.TabIndex = 11;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Bahnschrift Light SemiCondensed", 35F, FontStyle.Bold);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(420, 44);
-            label2.Name = "label2";
-            label2.Size = new Size(275, 57);
-            label2.TabIndex = 15;
-            label2.Text = "Quản lý hãng";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // HangGUI
             // 
@@ -230,8 +202,6 @@
             panel1.ResumeLayout(false);
             artanPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            artanPanel1.ResumeLayout(false);
-            artanPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -240,10 +210,8 @@
         private Panel panel1;
         private VBButton vbButton2;
         private VBButton vbButton1;
-        private ArtanPanel artanPanel1;
         private RJTextBox rjTextBox1;
         private ArtanPanel artanPanel2;
         private DataGridView dataGridView2;
-        private Label label2;
     }
 }

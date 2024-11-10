@@ -574,6 +574,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(149, 147, 186);
             ClientSize = new Size(1253, 711);
             Controls.Add(artanPanel4);
             Controls.Add(artanPanel3);

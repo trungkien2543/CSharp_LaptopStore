@@ -103,5 +103,25 @@ namespace CSharp_laptop.GUI
 
             
         }
+
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+
+            if (rjTextBox1.Texts == "Tìm kiếm")
+            {
+                rjTextBox1.Texts = "";
+                rjTextBox1.ForeColor = Color.Black; // Đổi màu chữ về màu bình thường
+            }
+        }
+
+        private void TextBox_Leave(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(rjTextBox1.Texts))
+            {
+                rjTextBox1.Texts = "Tìm kiếm"; // Văn bản hint
+                rjTextBox1.ForeColor = Color.Gray; // Đổi màu chữ sang màu xám
+            }
+        }
     }
 }

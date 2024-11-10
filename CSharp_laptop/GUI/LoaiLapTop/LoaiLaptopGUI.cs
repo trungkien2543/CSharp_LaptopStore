@@ -98,7 +98,7 @@ namespace CSharp_laptop.GUI
             btnView.Name = "btnView";
             btnView.HeaderText = "Chi tiết";
             btnView.Text = "📄";
-            btnView.Width = 60;
+            btnView.Width = 90;
             btnView.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnView.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dataGridView2.Columns.Add(btnView);
@@ -153,6 +153,26 @@ namespace CSharp_laptop.GUI
             else if (e.ColumnIndex == dataGridView2.Columns["btnView"].Index && e.RowIndex >= 0)
             {
                 mainForm.OpenChildForm(new LaptopGUI(selectedLaptopID, mainForm));
+            }
+        }
+
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+
+            if (rjTextBox1.Texts == "Tìm kiếm")
+            {
+                rjTextBox1.Texts = "";
+                rjTextBox1.ForeColor = Color.Black; // Đổi màu chữ về màu bình thường
+            }
+        }
+
+        private void TextBox_Leave(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(rjTextBox1.Texts))
+            {
+                rjTextBox1.Texts = "Tìm kiếm"; // Văn bản hint
+                rjTextBox1.ForeColor = Color.Gray; // Đổi màu chữ sang màu xám
             }
         }
     }
