@@ -56,7 +56,12 @@ namespace CSharp_laptop.GUI.BanHang
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            artanPanel2 = new ArtanPanel();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -74,48 +79,18 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtTen = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
-            artanPanel3 = new ArtanPanel();
             dataGridView2 = new DataGridView();
-            artanPanel1 = new ArtanPanel();
             dataGridView1 = new DataGridView();
-            artanPanel2.SuspendLayout();
-            artanPanel3.SuspendLayout();
+            guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            guna2GradientPanel1.SuspendLayout();
+            guna2GradientPanel2.SuspendLayout();
+            guna2GradientPanel3.SuspendLayout();
             SuspendLayout();
-            // 
-            // artanPanel2
-            // 
-            artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            artanPanel2.BackColor = Color.White;
-            artanPanel2.BorderRadius = 20;
-            artanPanel2.Controls.Add(guna2Button2);
-            artanPanel2.Controls.Add(btnThanhToan);
-            artanPanel2.Controls.Add(guna2Button1);
-            artanPanel2.Controls.Add(txtGia);
-            artanPanel2.Controls.Add(label2);
-            artanPanel2.Controls.Add(cbxKichThuoc);
-            artanPanel2.Controls.Add(guna2HtmlLabel5);
-            artanPanel2.Controls.Add(cbxGPU);
-            artanPanel2.Controls.Add(guna2HtmlLabel4);
-            artanPanel2.Controls.Add(cbxRAM);
-            artanPanel2.Controls.Add(guna2HtmlLabel3);
-            artanPanel2.Controls.Add(cbxCPU);
-            artanPanel2.Controls.Add(guna2HtmlLabel2);
-            artanPanel2.Controls.Add(cbxHang);
-            artanPanel2.Controls.Add(guna2HtmlLabel1);
-            artanPanel2.Controls.Add(txtTen);
-            artanPanel2.Controls.Add(label1);
-            artanPanel2.ForeColor = Color.Black;
-            artanPanel2.GradientAngle = 70F;
-            artanPanel2.GradientBottomColor = Color.FromArgb(210, 220, 230);
-            artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel2.Location = new Point(1, 2);
-            artanPanel2.Name = "artanPanel2";
-            artanPanel2.Padding = new Padding(4, 0, 4, 10);
-            artanPanel2.Size = new Size(252, 711);
-            artanPanel2.TabIndex = 16;
             // 
             // guna2Button2
             // 
@@ -129,7 +104,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2Button2.FillColor = Color.Silver;
             guna2Button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(7, 662);
+            guna2Button2.Location = new Point(8, 661);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button2.Size = new Size(237, 39);
@@ -148,7 +123,7 @@ namespace CSharp_laptop.GUI.BanHang
             btnThanhToan.FillColor = Color.DarkTurquoise;
             btnThanhToan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnThanhToan.ForeColor = Color.White;
-            btnThanhToan.Location = new Point(7, 611);
+            btnThanhToan.Location = new Point(8, 610);
             btnThanhToan.Name = "btnThanhToan";
             btnThanhToan.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnThanhToan.Size = new Size(237, 39);
@@ -167,7 +142,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2Button1.FillColor = Color.FromArgb(247, 176, 118);
             guna2Button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(7, 557);
+            guna2Button1.Location = new Point(8, 556);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button1.Size = new Size(237, 39);
@@ -190,7 +165,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtGia.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGia.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtGia.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGia.Location = new Point(7, 510);
+            txtGia.Location = new Point(8, 508);
             txtGia.Margin = new Padding(4);
             txtGia.Name = "txtGia";
             txtGia.PasswordChar = '\0';
@@ -208,7 +183,7 @@ namespace CSharp_laptop.GUI.BanHang
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(7, 474);
+            label2.Location = new Point(8, 472);
             label2.Name = "label2";
             label2.Size = new Size(147, 21);
             label2.TabIndex = 12;
@@ -228,7 +203,7 @@ namespace CSharp_laptop.GUI.BanHang
             cbxKichThuoc.Font = new Font("Segoe UI", 10F);
             cbxKichThuoc.ForeColor = Color.FromArgb(68, 88, 112);
             cbxKichThuoc.ItemHeight = 30;
-            cbxKichThuoc.Location = new Point(7, 420);
+            cbxKichThuoc.Location = new Point(8, 418);
             cbxKichThuoc.Name = "cbxKichThuoc";
             cbxKichThuoc.ShadowDecoration.CustomizableEdges = customizableEdges10;
             cbxKichThuoc.Size = new Size(237, 36);
@@ -241,7 +216,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel5.ForeColor = Color.White;
-            guna2HtmlLabel5.Location = new Point(7, 391);
+            guna2HtmlLabel5.Location = new Point(8, 389);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(85, 23);
             guna2HtmlLabel5.TabIndex = 10;
@@ -261,7 +236,7 @@ namespace CSharp_laptop.GUI.BanHang
             cbxGPU.Font = new Font("Segoe UI", 10F);
             cbxGPU.ForeColor = Color.FromArgb(68, 88, 112);
             cbxGPU.ItemHeight = 30;
-            cbxGPU.Location = new Point(7, 342);
+            cbxGPU.Location = new Point(8, 343);
             cbxGPU.Name = "cbxGPU";
             cbxGPU.ShadowDecoration.CustomizableEdges = customizableEdges12;
             cbxGPU.Size = new Size(237, 36);
@@ -274,7 +249,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel4.ForeColor = Color.White;
-            guna2HtmlLabel4.Location = new Point(7, 313);
+            guna2HtmlLabel4.Location = new Point(8, 314);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(36, 23);
             guna2HtmlLabel4.TabIndex = 8;
@@ -294,7 +269,7 @@ namespace CSharp_laptop.GUI.BanHang
             cbxRAM.Font = new Font("Segoe UI", 10F);
             cbxRAM.ForeColor = Color.FromArgb(68, 88, 112);
             cbxRAM.ItemHeight = 30;
-            cbxRAM.Location = new Point(7, 262);
+            cbxRAM.Location = new Point(8, 263);
             cbxRAM.Name = "cbxRAM";
             cbxRAM.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cbxRAM.Size = new Size(237, 36);
@@ -307,7 +282,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel3.ForeColor = Color.White;
-            guna2HtmlLabel3.Location = new Point(7, 233);
+            guna2HtmlLabel3.Location = new Point(8, 234);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(39, 23);
             guna2HtmlLabel3.TabIndex = 6;
@@ -327,7 +302,7 @@ namespace CSharp_laptop.GUI.BanHang
             cbxCPU.Font = new Font("Segoe UI", 10F);
             cbxCPU.ForeColor = Color.FromArgb(68, 88, 112);
             cbxCPU.ItemHeight = 30;
-            cbxCPU.Location = new Point(7, 185);
+            cbxCPU.Location = new Point(8, 186);
             cbxCPU.Name = "cbxCPU";
             cbxCPU.ShadowDecoration.CustomizableEdges = customizableEdges16;
             cbxCPU.Size = new Size(237, 36);
@@ -340,7 +315,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = Color.White;
-            guna2HtmlLabel2.Location = new Point(7, 156);
+            guna2HtmlLabel2.Location = new Point(8, 157);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(35, 23);
             guna2HtmlLabel2.TabIndex = 4;
@@ -360,7 +335,7 @@ namespace CSharp_laptop.GUI.BanHang
             cbxHang.Font = new Font("Segoe UI", 10F);
             cbxHang.ForeColor = Color.FromArgb(68, 88, 112);
             cbxHang.ItemHeight = 30;
-            cbxHang.Location = new Point(7, 110);
+            cbxHang.Location = new Point(8, 117);
             cbxHang.Name = "cbxHang";
             cbxHang.ShadowDecoration.CustomizableEdges = customizableEdges18;
             cbxHang.Size = new Size(237, 36);
@@ -373,7 +348,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.White;
-            guna2HtmlLabel1.Location = new Point(7, 81);
+            guna2HtmlLabel1.Location = new Point(8, 88);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(44, 23);
             guna2HtmlLabel1.TabIndex = 2;
@@ -394,7 +369,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtTen.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTen.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTen.Location = new Point(7, 43);
+            txtTen.Location = new Point(8, 50);
             txtTen.Margin = new Padding(4);
             txtTen.Name = "txtTen";
             txtTen.PasswordChar = '\0';
@@ -412,33 +387,19 @@ namespace CSharp_laptop.GUI.BanHang
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(7, 7);
+            label1.Location = new Point(8, 14);
             label1.Name = "label1";
             label1.Size = new Size(159, 21);
             label1.TabIndex = 0;
             label1.Text = "Nhập tên sẩn phẩm";
-            // 
-            // artanPanel3
-            // 
-            artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel3.BackColor = Color.White;
-            artanPanel3.BorderRadius = 20;
-            artanPanel3.Controls.Add(dataGridView2);
-            artanPanel3.ForeColor = Color.FromArgb(100, 150, 200);
-            artanPanel3.GradientAngle = 70F;
-            artanPanel3.GradientBottomColor = Color.FromArgb(210, 220, 230);
-            artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel3.Location = new Point(259, 2);
-            artanPanel3.Name = "artanPanel3";
-            artanPanel3.Padding = new Padding(4, 0, 4, 10);
-            artanPanel3.Size = new Size(858, 336);
-            artanPanel3.TabIndex = 42;
+            label1.Click += label1_Click;
             // 
             // dataGridView2
             // 
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.AllowUserToResizeRows = false;
+            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView2.BackgroundColor = Color.White;
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
@@ -456,15 +417,14 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.GridColor = Color.LightGray;
-            dataGridView2.Location = new Point(4, 0);
+            dataGridView2.Location = new Point(0, 12);
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
@@ -479,30 +439,15 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(850, 326);
+            dataGridView2.Size = new Size(849, 231);
             dataGridView2.TabIndex = 0;
-            // 
-            // artanPanel1
-            // 
-            artanPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel1.BackColor = Color.White;
-            artanPanel1.BorderRadius = 20;
-            artanPanel1.Controls.Add(dataGridView1);
-            artanPanel1.ForeColor = Color.FromArgb(100, 150, 200);
-            artanPanel1.GradientAngle = 70F;
-            artanPanel1.GradientBottomColor = Color.FromArgb(210, 220, 230);
-            artanPanel1.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel1.Location = new Point(259, 344);
-            artanPanel1.Name = "artanPanel1";
-            artanPanel1.Padding = new Padding(4, 0, 4, 10);
-            artanPanel1.Size = new Size(858, 369);
-            artanPanel1.TabIndex = 43;
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
@@ -520,15 +465,14 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = Color.White;
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(235, 230, 255);
             dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(100, 100, 180);
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(4, 0);
+            dataGridView1.Location = new Point(0, 12);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -543,35 +487,99 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(850, 359);
+            dataGridView1.Size = new Size(849, 363);
             dataGridView1.TabIndex = 0;
+            // 
+            // guna2GradientPanel1
+            // 
+            guna2GradientPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            guna2GradientPanel1.BorderRadius = 15;
+            guna2GradientPanel1.Controls.Add(guna2Button2);
+            guna2GradientPanel1.Controls.Add(label1);
+            guna2GradientPanel1.Controls.Add(btnThanhToan);
+            guna2GradientPanel1.Controls.Add(txtTen);
+            guna2GradientPanel1.Controls.Add(guna2Button1);
+            guna2GradientPanel1.Controls.Add(guna2HtmlLabel1);
+            guna2GradientPanel1.Controls.Add(txtGia);
+            guna2GradientPanel1.Controls.Add(cbxHang);
+            guna2GradientPanel1.Controls.Add(label2);
+            guna2GradientPanel1.Controls.Add(cbxRAM);
+            guna2GradientPanel1.Controls.Add(cbxKichThuoc);
+            guna2GradientPanel1.Controls.Add(guna2HtmlLabel5);
+            guna2GradientPanel1.Controls.Add(guna2HtmlLabel2);
+            guna2GradientPanel1.Controls.Add(cbxCPU);
+            guna2GradientPanel1.Controls.Add(cbxGPU);
+            guna2GradientPanel1.Controls.Add(guna2HtmlLabel3);
+            guna2GradientPanel1.Controls.Add(guna2HtmlLabel4);
+            guna2GradientPanel1.CustomizableEdges = customizableEdges21;
+            guna2GradientPanel1.FillColor = Color.FromArgb(85, 81, 132);
+            guna2GradientPanel1.FillColor2 = Color.FromArgb(210, 220, 230);
+            guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            guna2GradientPanel1.Location = new Point(1, 2);
+            guna2GradientPanel1.Name = "guna2GradientPanel1";
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2GradientPanel1.Size = new Size(252, 662);
+            guna2GradientPanel1.TabIndex = 44;
+            // 
+            // guna2GradientPanel2
+            // 
+            guna2GradientPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2GradientPanel2.BackColor = Color.Transparent;
+            guna2GradientPanel2.BorderRadius = 12;
+            guna2GradientPanel2.Controls.Add(dataGridView2);
+            guna2GradientPanel2.CustomizableEdges = customizableEdges23;
+            guna2GradientPanel2.FillColor = Color.FromArgb(85, 81, 132);
+            guna2GradientPanel2.FillColor2 = Color.FromArgb(210, 220, 230);
+            guna2GradientPanel2.Location = new Point(263, 2);
+            guna2GradientPanel2.Name = "guna2GradientPanel2";
+            guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2GradientPanel2.Size = new Size(849, 256);
+            guna2GradientPanel2.TabIndex = 45;
+            // 
+            // mySqlCommand1
+            // 
+            mySqlCommand1.CacheAge = 0;
+            mySqlCommand1.Connection = null;
+            mySqlCommand1.EnableCaching = false;
+            mySqlCommand1.Transaction = null;
+            // 
+            // guna2GradientPanel3
+            // 
+            guna2GradientPanel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2GradientPanel3.BackColor = Color.Transparent;
+            guna2GradientPanel3.BorderRadius = 12;
+            guna2GradientPanel3.Controls.Add(dataGridView1);
+            guna2GradientPanel3.CustomizableEdges = customizableEdges25;
+            guna2GradientPanel3.FillColor = Color.FromArgb(85, 81, 132);
+            guna2GradientPanel3.FillColor2 = Color.FromArgb(210, 220, 230);
+            guna2GradientPanel3.Location = new Point(263, 276);
+            guna2GradientPanel3.Name = "guna2GradientPanel3";
+            guna2GradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2GradientPanel3.Size = new Size(849, 388);
+            guna2GradientPanel3.TabIndex = 46;
             // 
             // BanHangForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(149, 147, 186);
-            ClientSize = new Size(1117, 713);
-            Controls.Add(artanPanel1);
-            Controls.Add(artanPanel3);
-            Controls.Add(artanPanel2);
+            ClientSize = new Size(1116, 664);
+            Controls.Add(guna2GradientPanel3);
+            Controls.Add(guna2GradientPanel2);
+            Controls.Add(guna2GradientPanel1);
             Name = "BanHangForm";
             Text = "BanHang";
-            artanPanel2.ResumeLayout(false);
-            artanPanel2.PerformLayout();
-            artanPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            artanPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            guna2GradientPanel1.ResumeLayout(false);
+            guna2GradientPanel1.PerformLayout();
+            guna2GradientPanel2.ResumeLayout(false);
+            guna2GradientPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ArtanPanel artanPanel2;
-        private ArtanPanel artanPanel3;
         private DataGridView dataGridView2;
-        private ArtanPanel artanPanel1;
         private DataGridView dataGridView1;
         private Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtTen;
@@ -590,5 +598,9 @@ namespace CSharp_laptop.GUI.BanHang
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button btnThanhToan;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
     }
 }

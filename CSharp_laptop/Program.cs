@@ -1,3 +1,5 @@
+﻿using CSharp_laptop.GUI;
+
 namespace CSharp_laptop
 {
     internal static class Program
@@ -11,7 +13,8 @@ namespace CSharp_laptop
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new GUI.MainForm());
+
+            Application.Run(new DangNhapGUI());
         }
     }
 }

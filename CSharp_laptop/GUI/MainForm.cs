@@ -35,6 +35,8 @@ namespace CSharp_laptop.GUI
 
         public MainForm()
         {
+            
+
             InitializeComponent();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -537,8 +539,9 @@ namespace CSharp_laptop.GUI
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+
             ActivateButton(btnSanPham, RGBColors.color0);
-            OpenChildForm(new LoaiLaptopGUI(this));
+            OpenChildForm(new BanHangForm(this));
         }
     }
 }

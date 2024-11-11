@@ -31,13 +31,18 @@ namespace CSharp_laptop.GUI
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnExit = new IconButton();
             btnMini = new IconButton();
             btnZoom = new IconButton();
             iconCurrentChildForm = new IconPictureBox();
             lblTitleChildForm = new Label();
             panelContainer = new Panel();
-            MenuPanel = new ArtanPanel();
+            progressBar1 = new Panel();
+            MenuPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             MenuChoice = new Panel();
             iconButton1 = new IconButton();
             btnTaiKhoan = new IconButton();
@@ -50,17 +55,17 @@ namespace CSharp_laptop.GUI
             btnNhaSanXuat = new IconButton();
             btnSanPham = new IconButton();
             PictureBox1 = new PictureBox();
+            panelTitleBar = new Guna.UI2.WinForms.Guna2GradientPanel();
             panelDesktop = new Panel();
             label1 = new Label();
-            panelTitleBar = new ArtanPanel();
             timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
             panelContainer.SuspendLayout();
             MenuPanel.SuspendLayout();
             MenuChoice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBox1).BeginInit();
-            panelDesktop.SuspendLayout();
             panelTitleBar.SuspendLayout();
+            panelDesktop.SuspendLayout();
             SuspendLayout();
             // 
             // btnExit
@@ -75,7 +80,7 @@ namespace CSharp_laptop.GUI
             btnExit.IconFont = IconFont.Auto;
             btnExit.IconSize = 20;
             btnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExit.Location = new Point(1106, 1);
+            btnExit.Location = new Point(1094, 1);
             btnExit.Margin = new Padding(0);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(1, 10, 0, 10);
@@ -101,7 +106,7 @@ namespace CSharp_laptop.GUI
             btnMini.IconFont = IconFont.Auto;
             btnMini.IconSize = 20;
             btnMini.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMini.Location = new Point(1037, 1);
+            btnMini.Location = new Point(1026, 0);
             btnMini.Margin = new Padding(0);
             btnMini.Name = "btnMini";
             btnMini.Padding = new Padding(3, 10, 0, 10);
@@ -125,7 +130,7 @@ namespace CSharp_laptop.GUI
             btnZoom.IconFont = IconFont.Auto;
             btnZoom.IconSize = 20;
             btnZoom.ImageAlign = ContentAlignment.MiddleLeft;
-            btnZoom.Location = new Point(1071, 1);
+            btnZoom.Location = new Point(1060, 1);
             btnZoom.Margin = new Padding(0);
             btnZoom.Name = "btnZoom";
             btnZoom.Padding = new Padding(3, 10, 0, 10);
@@ -145,7 +150,7 @@ namespace CSharp_laptop.GUI
             iconCurrentChildForm.IconColor = Color.FromArgb(64, 70, 104);
             iconCurrentChildForm.IconFont = IconFont.Auto;
             iconCurrentChildForm.IconSize = 26;
-            iconCurrentChildForm.Location = new Point(13, 5);
+            iconCurrentChildForm.Location = new Point(15, 5);
             iconCurrentChildForm.Name = "iconCurrentChildForm";
             iconCurrentChildForm.Size = new Size(26, 27);
             iconCurrentChildForm.TabIndex = 10;
@@ -157,7 +162,7 @@ namespace CSharp_laptop.GUI
             lblTitleChildForm.BackColor = Color.Transparent;
             lblTitleChildForm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitleChildForm.ForeColor = Color.FromArgb(64, 70, 104);
-            lblTitleChildForm.Location = new Point(45, 5);
+            lblTitleChildForm.Location = new Point(47, 5);
             lblTitleChildForm.Name = "lblTitleChildForm";
             lblTitleChildForm.Size = new Size(56, 21);
             lblTitleChildForm.TabIndex = 9;
@@ -167,9 +172,10 @@ namespace CSharp_laptop.GUI
             // panelContainer
             // 
             panelContainer.BackColor = Color.FromArgb(149, 147, 186);
+            panelContainer.Controls.Add(progressBar1);
             panelContainer.Controls.Add(MenuPanel);
-            panelContainer.Controls.Add(panelDesktop);
             panelContainer.Controls.Add(panelTitleBar);
+            panelContainer.Controls.Add(panelDesktop);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 0);
             panelContainer.Name = "panelContainer";
@@ -177,21 +183,29 @@ namespace CSharp_laptop.GUI
             panelContainer.TabIndex = 2;
             panelContainer.Paint += panelContainer_Paint_1;
             // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(4, 6);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(1346, 807);
+            progressBar1.TabIndex = 9;
+            progressBar1.Visible = false;
+            // 
             // MenuPanel
             // 
             MenuPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            MenuPanel.BackColor = Color.White;
-            MenuPanel.BorderRadius = 30;
+            MenuPanel.BorderRadius = 12;
             MenuPanel.Controls.Add(MenuChoice);
             MenuPanel.Controls.Add(PictureBox1);
-            MenuPanel.ForeColor = Color.Black;
-            MenuPanel.GradientAngle = 30F;
-            MenuPanel.GradientBottomColor = Color.FromArgb(114, 114, 170);
-            MenuPanel.GradientTopColor = Color.FromArgb(144, 114, 170);
+            MenuPanel.CustomizableEdges = customizableEdges5;
+            MenuPanel.FillColor = Color.FromArgb(144, 114, 170);
+            MenuPanel.FillColor2 = Color.FromArgb(114, 114, 170);
+            MenuPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             MenuPanel.Location = new Point(12, 7);
             MenuPanel.Name = "MenuPanel";
+            MenuPanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
             MenuPanel.Size = new Size(175, 794);
-            MenuPanel.TabIndex = 6;
+            MenuPanel.TabIndex = 8;
             // 
             // MenuChoice
             // 
@@ -209,7 +223,7 @@ namespace CSharp_laptop.GUI
             MenuChoice.Controls.Add(btnSanPham);
             MenuChoice.Location = new Point(0, 120);
             MenuChoice.Name = "MenuChoice";
-            MenuChoice.Size = new Size(175, 674);
+            MenuChoice.Size = new Size(175, 615);
             MenuChoice.TabIndex = 1;
             // 
             // iconButton1
@@ -465,15 +479,35 @@ namespace CSharp_laptop.GUI
             // 
             // PictureBox1
             // 
+            PictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             PictureBox1.BackColor = Color.Transparent;
-            PictureBox1.Dock = DockStyle.Top;
             PictureBox1.Image = Properties.Resources.logo_home_but_zoom1;
-            PictureBox1.Location = new Point(0, 0);
+            PictureBox1.Location = new Point(0, 4);
             PictureBox1.Name = "PictureBox1";
-            PictureBox1.Size = new Size(175, 120);
+            PictureBox1.Size = new Size(175, 116);
             PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             PictureBox1.TabIndex = 0;
             PictureBox1.TabStop = false;
+            PictureBox1.Click += PictureBox1_Click;
+            // 
+            // panelTitleBar
+            // 
+            panelTitleBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelTitleBar.BorderRadius = 12;
+            panelTitleBar.Controls.Add(btnExit);
+            panelTitleBar.Controls.Add(lblTitleChildForm);
+            panelTitleBar.Controls.Add(btnZoom);
+            panelTitleBar.Controls.Add(btnMini);
+            panelTitleBar.Controls.Add(iconCurrentChildForm);
+            panelTitleBar.CustomizableEdges = customizableEdges7;
+            panelTitleBar.FillColor = Color.FromArgb(202, 209, 234);
+            panelTitleBar.FillColor2 = Color.FromArgb(94, 94, 170);
+            panelTitleBar.Location = new Point(193, 12);
+            panelTitleBar.Name = "panelTitleBar";
+            panelTitleBar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            panelTitleBar.Size = new Size(1148, 35);
+            panelTitleBar.TabIndex = 7;
+            panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
             // panelDesktop
             // 
@@ -481,9 +515,9 @@ namespace CSharp_laptop.GUI
             panelDesktop.AutoSize = true;
             panelDesktop.BackColor = Color.Silver;
             panelDesktop.Controls.Add(label1);
-            panelDesktop.Location = new Point(193, 48);
+            panelDesktop.Location = new Point(193, 50);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1153, 765);
+            panelDesktop.Size = new Size(1157, 760);
             panelDesktop.TabIndex = 5;
             // 
             // label1
@@ -495,26 +529,6 @@ namespace CSharp_laptop.GUI
             label1.Size = new Size(155, 65);
             label1.TabIndex = 0;
             label1.Text = "label1";
-            // 
-            // panelTitleBar
-            // 
-            panelTitleBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panelTitleBar.BackColor = Color.White;
-            panelTitleBar.BorderRadius = 20;
-            panelTitleBar.Controls.Add(btnExit);
-            panelTitleBar.Controls.Add(lblTitleChildForm);
-            panelTitleBar.Controls.Add(btnMini);
-            panelTitleBar.Controls.Add(btnZoom);
-            panelTitleBar.Controls.Add(iconCurrentChildForm);
-            panelTitleBar.ForeColor = Color.Black;
-            panelTitleBar.GradientAngle = 30F;
-            panelTitleBar.GradientBottomColor = Color.FromArgb(94, 94, 170);
-            panelTitleBar.GradientTopColor = Color.FromArgb(202, 209, 234);
-            panelTitleBar.Location = new Point(193, 10);
-            panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(1153, 35);
-            panelTitleBar.TabIndex = 4;
-            panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
             // timer1
             // 
@@ -540,10 +554,10 @@ namespace CSharp_laptop.GUI
             MenuPanel.ResumeLayout(false);
             MenuChoice.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)PictureBox1).EndInit();
-            panelDesktop.ResumeLayout(false);
-            panelDesktop.PerformLayout();
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();
+            panelDesktop.ResumeLayout(false);
+            panelDesktop.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -555,8 +569,6 @@ namespace CSharp_laptop.GUI
         private FontAwesome.Sharp.IconButton btnMini;
         private FontAwesome.Sharp.IconButton btnZoom;
         private System.Windows.Forms.Timer timer1;
-        private ArtanPanel MenuPanel;
-        private ArtanPanel panelTitleBar;
         private Panel panelDesktop;
         private ArtanPanel artanPanel1;
         private PictureBox PictureBox1;
@@ -572,5 +584,8 @@ namespace CSharp_laptop.GUI
         private IconButton btnNhaSanXuat;
         private IconButton btnSanPham;
         private Label label1;
+        private Guna.UI2.WinForms.Guna2GradientPanel panelTitleBar;
+        private Guna.UI2.WinForms.Guna2GradientPanel MenuPanel;
+        private Panel progressBar1;
     }
 }

@@ -184,7 +184,12 @@ namespace CSharp_laptop.GUI.BanHang
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-           Reset();
+            Reset();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
