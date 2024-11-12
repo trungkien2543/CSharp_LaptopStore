@@ -21,9 +21,11 @@ namespace CustomTabControl
         public NhapHang()
         {
             InitializeComponent();
-            LoadYearsIntoComboBox(); // Tải năm từ CSDL vào ComboBox
+            LoadYearsIntoComboBox(); // Tải năm từ CSDL vào ComboBoxYear
+            LoadBrandsIntoComboBox(); //Tải hãng từ CSDL vào ComboBoxHang
             InitializeChart();
             InitializeStockChart(); // Khởi tạo biểu đồ số lượng tồn kho theo hãng
+
         }
 
         private void LoadYearsIntoComboBox()
@@ -75,7 +77,8 @@ namespace CustomTabControl
             {
                 Title = "Số lượng nhập",
                 LabelPlacement = LabelPlacement.Inside,
-                LabelFormatString = "{0}" // Hiển thị giá trị trên các cột
+                LabelFormatString = "{0}", // Hiển thị giá trị trên các cột
+                FillColor = OxyColor.FromRgb(149, 147, 186) // Thay đổi màu trong biểu đồ
             };
 
             // Thêm các giá trị cột vào series
@@ -169,23 +172,28 @@ namespace CustomTabControl
         //Thong ke 2
         private void InitializeStockChart()
         {
-            // Lấy dữ liệu tồn kho từ cơ sở dữ liệu
-            var data = GetStockDataFromDatabase();
+            // Lấy hãng đã chọn từ ComboBox
+            string selectedBrand = cbxHang.SelectedItem.ToString();
+
+            // Lấy dữ liệu tồn kho từ cơ sở dữ liệu theo hãng đã chọn
+            var data = GetStockDataFromDatabase(selectedBrand);
 
             // Tìm giá trị lớn nhất trong dữ liệu để đặt trục X tự động
             int maxSoLuongTon = data.AsEnumerable()
                                     .Select(row => Convert.ToInt32(row["SoLuongTon"]))
+                                    .DefaultIfEmpty(0)
                                     .Max();
 
             // Tạo model cho biểu đồ
-            var plotModel = new PlotModel { Title = "Số Lượng Tồn Kho Theo Hãng" };
+            var plotModel = new PlotModel { Title = "Biểu Đồ Số Lượng Tồn Kho Theo Hãng" };
 
             // Tạo series Bar (biểu đồ cột)
             var barSeries = new BarSeries
             {
                 Title = "Số lượng tồn",
                 LabelPlacement = LabelPlacement.Inside,
-                LabelFormatString = "{0}" // Hiển thị giá trị trên các cột
+                LabelFormatString = "{0}",
+                FillColor = OxyColor.FromRgb(149, 147, 186) // Đổi màu nếu cần
             };
 
             // Thêm các giá trị cột vào series
@@ -205,8 +213,8 @@ namespace CustomTabControl
                 ItemsSource = data.AsEnumerable()
                                   .Select(row => row["TenHang"].ToString())
                                   .ToArray(),
-                Title = "Hãng", // Thêm nhãn "Hãng" cho trục Y
-                AxisTitleDistance = 10 
+                Title = "Hãng",
+                AxisTitleDistance = 10
             };
             plotModel.Axes.Add(categoryAxis);
 
@@ -215,7 +223,7 @@ namespace CustomTabControl
             {
                 Position = AxisPosition.Bottom,
                 Minimum = 0,
-                Maximum = maxSoLuongTon + 2, // Thêm một khoảng nhỏ để tránh các cột đụng sát trục
+                Maximum = maxSoLuongTon + 2,
                 Title = "Số lượng tồn kho"
             };
             plotModel.Axes.Add(valueAxis);
@@ -224,29 +232,91 @@ namespace CustomTabControl
             plotView2.Model = plotModel;
         }
 
-        private DataTable GetStockDataFromDatabase()
+        private DataTable GetStockDataFromDatabase(string brand)
         {
             MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
 
             using (var connection = connectionHelper.GetConnection())
             {
+                // Điều kiện lọc hãng nếu hãng không phải là "Tất cả"
                 string query = @"
-                SELECT 
-                    HangSanXuat.TenHang,
-                    COUNT(Laptop.IMEI) AS SoLuongTon
-                FROM Laptop
-                JOIN LoaiLaptop ON Laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop
-                JOIN HangSanXuat ON LoaiLaptop.Hang = HangSanXuat.ID_Hang
-                WHERE Laptop.TrangThai = 1 
-                GROUP BY HangSanXuat.TenHang";
+            SELECT 
+                HangSanXuat.TenHang,
+                COUNT(Laptop.IMEI) AS SoLuongTon
+            FROM Laptop
+            JOIN LoaiLaptop ON Laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop
+            JOIN HangSanXuat ON LoaiLaptop.Hang = HangSanXuat.ID_Hang
+            WHERE Laptop.TrangThai = 1";
+
+                if (brand != "Tất cả")
+                {
+                    query += " AND HangSanXuat.TenHang = @Brand";
+                }
+
+                query += " GROUP BY HangSanXuat.TenHang";
 
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, connection);
+                if (brand != "Tất cả")
+                {
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@Brand", brand);
+                }
+
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 return dataTable;
             }
         }
 
+        private void LoadBrandsIntoComboBox()
+        {
+            // Lấy danh sách các hãng từ cơ sở dữ liệu
+            var brands = GetBrandsFromDatabase();
+
+            // Xóa các mục hiện có trong ComboBox (nếu có)
+            cbxHang.Items.Clear();
+
+            // Thêm mục "Tất cả" vào ComboBox để hiển thị tất cả các hãng
+            cbxHang.Items.Add("Tất cả");
+
+            // Thêm từng hãng vào ComboBox
+            foreach (var brand in brands)
+            {
+                cbxHang.Items.Add(brand);
+            }
+
+            // Đặt giá trị mặc định là "Tất cả"
+            cbxHang.SelectedItem = "Tất cả";
+
+            // Gọi lại InitializeStockChart khi thay đổi hãng
+            cbxHang.SelectedIndexChanged += (s, e) => InitializeStockChart();
+        }
+
+        private List<string> GetBrandsFromDatabase()
+        {
+            MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
+            List<string> brands = new List<string>();
+
+            using (var connection = connectionHelper.GetConnection())
+            {
+                string query = @"
+            SELECT DISTINCT TenHang
+            FROM HangSanXuat
+            ORDER BY TenHang";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    brands.Add(reader.GetString("TenHang"));
+                }
+
+                connection.Close();
+            }
+
+            return brands;
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -254,6 +324,11 @@ namespace CustomTabControl
         }
 
         private void plotView1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxYear_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -45,7 +45,7 @@
             // btnNhapHang
             // 
             btnNhapHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnNhapHang.CheckedState.CustomBorderColor = Color.ForestGreen;
+            btnNhapHang.CheckedState.CustomBorderColor = Color.RebeccaPurple;
             btnNhapHang.CheckedState.FillColor = Color.White;
             btnNhapHang.CustomBorderColor = Color.White;
             btnNhapHang.CustomBorderThickness = new Padding(0, 0, 0, 4);
@@ -58,7 +58,7 @@
             btnNhapHang.FillColor = Color.White;
             btnNhapHang.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNhapHang.ForeColor = Color.Black;
-            btnNhapHang.HoverState.CustomBorderColor = Color.ForestGreen;
+            btnNhapHang.HoverState.CustomBorderColor = Color.RebeccaPurple;
             btnNhapHang.Location = new Point(659, 3);
             btnNhapHang.Name = "btnNhapHang";
             btnNhapHang.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -71,7 +71,7 @@
             // 
             btnHangLaptop.BorderColor = Color.FromArgb(255, 128, 0);
             btnHangLaptop.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnHangLaptop.CheckedState.CustomBorderColor = Color.FromArgb(255, 128, 0);
+            btnHangLaptop.CheckedState.CustomBorderColor = Color.RebeccaPurple;
             btnHangLaptop.CheckedState.FillColor = Color.White;
             btnHangLaptop.CustomBorderColor = Color.White;
             btnHangLaptop.CustomBorderThickness = new Padding(0, 0, 0, 4);
@@ -84,7 +84,7 @@
             btnHangLaptop.FillColor = Color.White;
             btnHangLaptop.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHangLaptop.ForeColor = Color.Black;
-            btnHangLaptop.HoverState.CustomBorderColor = Color.FromArgb(255, 128, 0);
+            btnHangLaptop.HoverState.CustomBorderColor = Color.RebeccaPurple;
             btnHangLaptop.Location = new Point(331, 3);
             btnHangLaptop.Name = "btnHangLaptop";
             btnHangLaptop.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -98,7 +98,7 @@
             btnDoanhThu.BorderColor = Color.FromArgb(0, 0, 192);
             btnDoanhThu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnDoanhThu.Checked = true;
-            btnDoanhThu.CheckedState.CustomBorderColor = Color.FromArgb(0, 0, 192);
+            btnDoanhThu.CheckedState.CustomBorderColor = Color.RebeccaPurple;
             btnDoanhThu.CheckedState.FillColor = Color.White;
             btnDoanhThu.CustomBorderColor = Color.White;
             btnDoanhThu.CustomBorderThickness = new Padding(0, 0, 0, 4);
@@ -111,7 +111,7 @@
             btnDoanhThu.FillColor = Color.White;
             btnDoanhThu.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDoanhThu.ForeColor = Color.Black;
-            btnDoanhThu.HoverState.CustomBorderColor = Color.FromArgb(0, 0, 192);
+            btnDoanhThu.HoverState.CustomBorderColor = Color.RebeccaPurple;
             btnDoanhThu.Location = new Point(3, 3);
             btnDoanhThu.Name = "btnDoanhThu";
             btnDoanhThu.ShadowDecoration.CustomizableEdges = customizableEdges6;
