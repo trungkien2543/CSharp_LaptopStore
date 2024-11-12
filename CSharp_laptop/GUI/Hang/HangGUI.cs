@@ -72,7 +72,7 @@ namespace CSharp_laptop.GUI
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
-            {
+            { 
 
                 DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
                 string idHang = row.Cells["ID_Hang"].Value.ToString();
