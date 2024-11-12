@@ -1,4 +1,5 @@
 ﻿using CSharp_laptop.BUS;
+using CSharp_laptop.DTO;
 using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace CSharp_laptop.GUI.Laptop
         private MainForm mainForm;
         private string laptopID;
         private LoaiLaptopBUS sanPhamBUS = new LoaiLaptopBUS();
+        private LaptopBUS laptopBUS = new LaptopBUS();
+
 
         public LaptopGUI(string laptopID, MainForm mainForm)
         {
@@ -38,11 +41,9 @@ namespace CSharp_laptop.GUI.Laptop
             label18.Text = sanPhamDTO.KichThuoc;
             label12.Text = sanPhamDTO.HinhAnh;
             label20.Text = sanPhamDTO.KhuyenMai;
-        }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            LoadLaptops(laptopID);
+            edittable();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,29 +51,31 @@ namespace CSharp_laptop.GUI.Laptop
             mainForm.OpenChildForm(new LoaiLaptopGUI(mainForm));
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             mainForm.OpenChildForm(new BaoHanhGUI(mainForm));
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void vbButton1_Click(object sender, EventArgs e)
         {
             mainForm.OpenChildForm(new LoaiLaptopGUI(mainForm));
+        }
+
+        private void edittable()
+        {
+
+            dataGridView2.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
+
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridView2.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
+
+        }
+
+        private void LoadLaptops(string loaiLaptop)
+        {
+            List<LaptopDTO> laptops = laptopBUS.GetLaptopsByLoai(loaiLaptop);
+            dataGridView2.DataSource = laptops;
         }
     }
 }

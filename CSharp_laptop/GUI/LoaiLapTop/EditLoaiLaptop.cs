@@ -54,8 +54,8 @@ namespace CSharp_laptop.GUI
                 rjTextBox8.Texts = sanPhamDTO.HinhAnh;
 
 
-                rjComboBox1.Text = sanPhamDTO.Hang;
-                rjComboBox2.Text = sanPhamDTO.KhuyenMai;
+                rjComboBox1.Texts = sanPhamDTO.Hang;
+                rjComboBox2.Texts = sanPhamDTO.KhuyenMai;
                 label1.Text = chucnang;
 
                 //if (!string.IsNullOrEmpty(rjTextBox8.Texts))

@@ -176,11 +176,11 @@
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.FromArgb(0, 0, 0, 0);
-            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(128, 53);
+            label10.Location = new Point(119, 53);
             label10.Name = "label10";
-            label10.Size = new Size(89, 25);
+            label10.Size = new Size(104, 30);
             label10.TabIndex = 9;
             label10.Text = "Hình ảnh";
             // 
@@ -196,8 +196,8 @@
             // 
             // vbButton2
             // 
-            vbButton2.BackColor = Color.Crimson;
-            vbButton2.BackgroundColor = Color.Crimson;
+            vbButton2.BackColor = Color.FromArgb(149, 147, 186);
+            vbButton2.BackgroundColor = Color.FromArgb(149, 147, 186);
             vbButton2.BorderColor = Color.PaleVioletRed;
             vbButton2.BorderRadius = 20;
             vbButton2.BorderSize = 0;
@@ -219,8 +219,8 @@
             // 
             // vbButton1
             // 
-            vbButton1.BackColor = Color.MediumPurple;
-            vbButton1.BackgroundColor = Color.MediumPurple;
+            vbButton1.BackColor = Color.FromArgb(247, 176, 118);
+            vbButton1.BackgroundColor = Color.FromArgb(247, 176, 118);
             vbButton1.BorderColor = Color.PaleVioletRed;
             vbButton1.BorderRadius = 20;
             vbButton1.BorderSize = 0;
@@ -254,8 +254,8 @@
             // 
             // vbButton3
             // 
-            vbButton3.BackColor = Color.MediumPurple;
-            vbButton3.BackgroundColor = Color.MediumPurple;
+            vbButton3.BackColor = Color.FromArgb(247, 176, 118);
+            vbButton3.BackgroundColor = Color.FromArgb(247, 176, 118);
             vbButton3.BorderColor = Color.PaleVioletRed;
             vbButton3.BorderRadius = 20;
             vbButton3.BorderSize = 0;
@@ -278,8 +278,8 @@
             // rjTextBox1
             // 
             rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.MediumSlateBlue;
-            rjTextBox1.BorderFocusColor = Color.HotPink;
+            rjTextBox1.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox1.BorderFocusColor = Color.FromArgb(85, 81, 132);
             rjTextBox1.BorderRadius = 15;
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -300,8 +300,8 @@
             // rjTextBox2
             // 
             rjTextBox2.BackColor = SystemColors.Window;
-            rjTextBox2.BorderColor = Color.MediumSlateBlue;
-            rjTextBox2.BorderFocusColor = Color.HotPink;
+            rjTextBox2.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox2.BorderFocusColor = Color.FromArgb(85, 81, 132);
             rjTextBox2.BorderRadius = 15;
             rjTextBox2.BorderSize = 2;
             rjTextBox2.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -322,8 +322,8 @@
             // rjTextBox3
             // 
             rjTextBox3.BackColor = SystemColors.Window;
-            rjTextBox3.BorderColor = Color.MediumSlateBlue;
-            rjTextBox3.BorderFocusColor = Color.HotPink;
+            rjTextBox3.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox3.BorderFocusColor = Color.FromArgb(85, 81, 132);
             rjTextBox3.BorderRadius = 10;
             rjTextBox3.BorderSize = 2;
             rjTextBox3.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -344,8 +344,8 @@
             // rjTextBox4
             // 
             rjTextBox4.BackColor = SystemColors.Window;
-            rjTextBox4.BorderColor = Color.MediumSlateBlue;
-            rjTextBox4.BorderFocusColor = Color.HotPink;
+            rjTextBox4.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox4.BorderFocusColor = Color.FromArgb(85, 81, 132);
             rjTextBox4.BorderRadius = 15;
             rjTextBox4.BorderSize = 2;
             rjTextBox4.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -366,8 +366,8 @@
             // rjTextBox5
             // 
             rjTextBox5.BackColor = SystemColors.Window;
-            rjTextBox5.BorderColor = Color.MediumSlateBlue;
-            rjTextBox5.BorderFocusColor = Color.HotPink;
+            rjTextBox5.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox5.BorderFocusColor = Color.FromArgb(85, 81, 132);
             rjTextBox5.BorderRadius = 15;
             rjTextBox5.BorderSize = 2;
             rjTextBox5.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -388,8 +388,8 @@
             // rjTextBox6
             // 
             rjTextBox6.BackColor = SystemColors.Window;
-            rjTextBox6.BorderColor = Color.MediumSlateBlue;
-            rjTextBox6.BorderFocusColor = Color.HotPink;
+            rjTextBox6.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox6.BorderFocusColor = Color.FromArgb(85, 81, 132);
             rjTextBox6.BorderRadius = 15;
             rjTextBox6.BorderSize = 2;
             rjTextBox6.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -410,8 +410,8 @@
             // rjTextBox7
             // 
             rjTextBox7.BackColor = SystemColors.Window;
-            rjTextBox7.BorderColor = Color.MediumSlateBlue;
-            rjTextBox7.BorderFocusColor = Color.HotPink;
+            rjTextBox7.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox7.BorderFocusColor = Color.FromArgb(85, 81, 132);
             rjTextBox7.BorderRadius = 15;
             rjTextBox7.BorderSize = 2;
             rjTextBox7.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -432,8 +432,8 @@
             // rjTextBox8
             // 
             rjTextBox8.BackColor = SystemColors.Window;
-            rjTextBox8.BorderColor = Color.MediumSlateBlue;
-            rjTextBox8.BorderFocusColor = Color.HotPink;
+            rjTextBox8.BorderColor = Color.FromArgb(247, 176, 118);
+            rjTextBox8.BorderFocusColor = Color.FromArgb(85, 81, 132);
             rjTextBox8.BorderRadius = 5;
             rjTextBox8.BorderSize = 2;
             rjTextBox8.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -459,8 +459,8 @@
             artanPanel1.Controls.Add(label1);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.FromArgb(128, 128, 255);
-            artanPanel1.GradientTopColor = Color.DarkSlateBlue;
+            artanPanel1.GradientBottomColor = Color.FromArgb(149, 147, 186);
+            artanPanel1.GradientTopColor = Color.FromArgb(85, 81, 132);
             artanPanel1.Location = new Point(4, 4);
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1245, 121);
@@ -491,8 +491,8 @@
             artanPanel2.Controls.Add(label11);
             artanPanel2.ForeColor = Color.Black;
             artanPanel2.GradientAngle = 30F;
-            artanPanel2.GradientBottomColor = Color.FromArgb(128, 128, 255);
-            artanPanel2.GradientTopColor = Color.DarkSlateBlue;
+            artanPanel2.GradientBottomColor = Color.FromArgb(149, 147, 186);
+            artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
             artanPanel2.Location = new Point(4, 131);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Size = new Size(892, 454);
@@ -545,8 +545,8 @@
             artanPanel3.Controls.Add(vbButton2);
             artanPanel3.ForeColor = Color.Black;
             artanPanel3.GradientAngle = 30F;
-            artanPanel3.GradientBottomColor = Color.FromArgb(128, 128, 255);
-            artanPanel3.GradientTopColor = Color.DarkSlateBlue;
+            artanPanel3.GradientBottomColor = Color.FromArgb(149, 147, 186);
+            artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
             artanPanel3.Location = new Point(4, 591);
             artanPanel3.Name = "artanPanel3";
             artanPanel3.Size = new Size(1245, 115);
@@ -563,8 +563,8 @@
             artanPanel4.Controls.Add(rjTextBox8);
             artanPanel4.ForeColor = Color.Black;
             artanPanel4.GradientAngle = 0F;
-            artanPanel4.GradientBottomColor = Color.FromArgb(128, 128, 255);
-            artanPanel4.GradientTopColor = Color.FromArgb(128, 128, 255);
+            artanPanel4.GradientBottomColor = Color.FromArgb(85, 81, 132);
+            artanPanel4.GradientTopColor = Color.FromArgb(149, 147, 186);
             artanPanel4.Location = new Point(902, 131);
             artanPanel4.Name = "artanPanel4";
             artanPanel4.Size = new Size(347, 454);

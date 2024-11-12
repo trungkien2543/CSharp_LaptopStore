@@ -210,8 +210,8 @@
             artanPanel1.Controls.Add(label5);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.CadetBlue;
-            artanPanel1.GradientTopColor = Color.DodgerBlue;
+            artanPanel1.GradientBottomColor = Color.FromArgb(149, 147, 186);
+            artanPanel1.GradientTopColor = Color.FromArgb(85, 81, 132);
             artanPanel1.Location = new Point(12, 111);
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1217, 492);
@@ -219,8 +219,8 @@
             // 
             // vbButton2
             // 
-            vbButton2.BackColor = Color.FromArgb(0, 192, 0);
-            vbButton2.BackgroundColor = Color.FromArgb(0, 192, 0);
+            vbButton2.BackColor = Color.FromArgb(149, 147, 186);
+            vbButton2.BackgroundColor = Color.FromArgb(149, 147, 186);
             vbButton2.BorderColor = Color.PaleVioletRed;
             vbButton2.BorderRadius = 20;
             vbButton2.BorderSize = 0;
@@ -239,8 +239,8 @@
             // 
             // vbButton1
             // 
-            vbButton1.BackColor = Color.Blue;
-            vbButton1.BackgroundColor = Color.Blue;
+            vbButton1.BackColor = Color.FromArgb(247, 176, 118);
+            vbButton1.BackgroundColor = Color.FromArgb(247, 176, 118);
             vbButton1.BorderColor = Color.PaleVioletRed;
             vbButton1.BorderRadius = 20;
             vbButton1.BorderSize = 0;
@@ -265,8 +265,8 @@
             artanPanel2.Controls.Add(label1);
             artanPanel2.ForeColor = Color.Black;
             artanPanel2.GradientAngle = 30F;
-            artanPanel2.GradientBottomColor = Color.CadetBlue;
-            artanPanel2.GradientTopColor = Color.DodgerBlue;
+            artanPanel2.GradientBottomColor = Color.FromArgb(149, 147, 186);
+            artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
             artanPanel2.Location = new Point(12, 12);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Size = new Size(1217, 93);
@@ -281,8 +281,8 @@
             artanPanel3.Controls.Add(vbButton1);
             artanPanel3.ForeColor = Color.Black;
             artanPanel3.GradientAngle = 30F;
-            artanPanel3.GradientBottomColor = Color.CadetBlue;
-            artanPanel3.GradientTopColor = Color.DodgerBlue;
+            artanPanel3.GradientBottomColor = Color.FromArgb(149, 147, 186);
+            artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
             artanPanel3.Location = new Point(12, 609);
             artanPanel3.Name = "artanPanel3";
             artanPanel3.Size = new Size(1217, 109);
