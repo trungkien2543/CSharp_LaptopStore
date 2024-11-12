@@ -233,7 +233,7 @@ INSERT INTO `khuyenmai` (`ID_KhuyenMai`, `TenKhuyenMai`, `MucGiamGia`, `MoTaKM`,
 --
 
 CREATE TABLE `laptop` (
-  `IMEI` bigint(20) NOT NULL,
+  `IMEI` varchar(255) NOT NULL,
   `ThoiGianBaoHanh` bigint(20) NOT NULL,
   `TrangThai` bigint(20) NOT NULL,
   `LoaiLaptop` varchar(255) NOT NULL
