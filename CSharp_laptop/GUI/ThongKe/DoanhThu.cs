@@ -22,6 +22,9 @@ namespace CustomTabControl
             InitializeComponent();
             LoadStatisticTypes(); // Tải các loại thống kê vào ComboBox ccbType
 
+            // Đăng ký sự kiện ValueChanged cho DateTimePicker
+            dtpStartDate.ValueChanged += DateRange_ValueChanged;
+            dtpEndDate.ValueChanged += DateRange_ValueChanged;
 
             // Đăng ký sự kiện cho ccbType
             ccbType.SelectedIndexChanged += ccbType_SelectedIndexChanged;
@@ -33,29 +36,56 @@ namespace CustomTabControl
             ccbType.Items.Clear();
             ccbType.Items.Add("Theo năm");
             ccbType.Items.Add("Theo tháng");
+            ccbType.Items.Add("Theo khoảng thời gian");
             ccbType.SelectedIndex = 0; // Mặc định là "Theo năm"
             ccbMonth.Visible = false;
             lblMonth.Visible = false;
+            dtpStartDate.Visible = false;
+            dtpEndDate.Visible = false;
+            lblStartDate.Visible = false;
+            lblEndDate.Visible = false;
             LoadYears();
         }
+
 
         // Xử lý khi thay đổi loại thống kê
         private void ccbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Nếu chọn "Theo năm", ẩn ComboBox tháng
             if (ccbType.SelectedItem.ToString() == "Theo năm")
             {
+                ccbYear.Visible = true;
+                lblYear.Visible = true;
                 ccbMonth.Visible = false;
+                lblMonth.Visible = false;
+                dtpStartDate.Visible = false;
+                dtpEndDate.Visible = false;
+                lblStartDate.Visible = false;
+                lblEndDate.Visible = false;
                 LoadChartDataByYear(ccbYear.SelectedItem.ToString());
             }
-            else
+            else if (ccbType.SelectedItem.ToString() == "Theo tháng")
             {
-                // Nếu chọn "Theo tháng", hiện ComboBox tháng
+                ccbYear.Visible = true;
+                lblYear.Visible = true;
                 ccbMonth.Visible = true;
                 lblMonth.Visible = true;
+                dtpStartDate.Visible = false;
+                dtpEndDate.Visible = false;
+                lblStartDate.Visible = false;
+                lblEndDate.Visible = false;
                 LoadMonthsForYear(ccbYear.SelectedItem.ToString());
-
                 LoadChartDataByMonth(ccbYear.SelectedItem?.ToString(), ccbMonth.SelectedItem?.ToString());
+            }
+            else if (ccbType.SelectedItem.ToString() == "Theo khoảng thời gian")
+            {
+                ccbMonth.Visible = false;
+                lblMonth.Visible = false;
+                lblStartDate.Visible = true;
+                lblEndDate.Visible = true;
+                dtpStartDate.Visible = true;
+                dtpEndDate.Visible = true;
+                lblYear.Visible = false;
+                ccbYear.Visible = false;
             }
         }
 
@@ -226,6 +256,56 @@ namespace CustomTabControl
             cartesianChart1.Update();
         }
 
+        //Sự kiện tự xử lý khi thay đổi ngày tháng năm 
+        private void DateRange_ValueChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu người dùng đang chọn loại thống kê "Theo khoảng thời gian"
+            if (ccbType.SelectedItem != null && ccbType.SelectedItem.ToString() == "Theo khoảng thời gian")
+            {
+                DateTime startDate = dtpStartDate.Value;
+                DateTime endDate = dtpEndDate.Value;
+
+                if (startDate > endDate)
+                {
+                    MessageBox.Show("Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc!");
+                    return;
+                }
+
+                // Tải dữ liệu theo khoảng thời gian và cập nhật biểu đồ
+                LoadChartDataByDateRange(startDate, endDate);
+            }
+        }
+
+        //Hàm tải dữ liệu theo khoảng thời gian
+        private void LoadChartDataByDateRange(DateTime startDate, DateTime endDate)
+        {
+            var days = new List<string>();
+            var revenue = new List<double>();
+
+            MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
+
+            using (var connection = connectionHelper.GetConnection())
+            {
+                connection.Open();
+                var command = new MySqlCommand("SELECT NgayLap AS Ngay, SUM(TongTien) AS DoanhThu FROM hoadon WHERE NgayLap BETWEEN @startDate AND @endDate GROUP BY NgayLap ORDER BY Ngay;", connection);
+                command.Parameters.AddWithValue("@startDate", startDate);
+                command.Parameters.AddWithValue("@endDate", endDate);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        DateTime date = reader.GetDateTime("Ngay");
+                        days.Add(date.ToString("dd/MM/yyyy"));
+                        revenue.Add(reader.GetDouble("DoanhThu"));
+                    }
+                }
+            }
+
+            UpdateChart(days, revenue);
+        }
+
+
         private void panelTitle_Paint(object sender, PaintEventArgs e)
         {
 
@@ -253,6 +333,42 @@ namespace CustomTabControl
         }
 
         private void panelTong_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ccbType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ccbYear_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // Lấy năm được chọn
+            string selectedYear = ccbYear.SelectedItem?.ToString();
+
+            if (ccbType.SelectedItem.ToString() == "Theo năm")
+            {
+                LoadChartDataByYear(selectedYear);
+            }
+            else if (ccbType.SelectedItem.ToString() == "Theo tháng")
+            {
+                LoadMonthsForYear(selectedYear);
+                LoadChartDataByMonth(selectedYear, ccbMonth.SelectedItem?.ToString());
+            }
+        }
+
+        private void ccbMonth_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            LoadChartDataByMonth(ccbYear.SelectedItem?.ToString(), ccbMonth.SelectedItem?.ToString());
+        }
+
+        private void ccbType_SelectedIndexChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ccbType_SelectedIndexChanged_4(object sender, EventArgs e)
         {
 
         }

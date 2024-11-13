@@ -31,17 +31,16 @@ namespace CSharp_laptop.GUI
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnExit = new IconButton();
             btnMini = new IconButton();
             btnZoom = new IconButton();
             iconCurrentChildForm = new IconPictureBox();
             lblTitleChildForm = new Label();
             panelContainer = new Panel();
-            progressBar1 = new Panel();
             MenuPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             MenuChoice = new Panel();
             iconButton1 = new IconButton();
@@ -80,7 +79,7 @@ namespace CSharp_laptop.GUI
             btnExit.IconFont = IconFont.Auto;
             btnExit.IconSize = 20;
             btnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExit.Location = new Point(1094, 1);
+            btnExit.Location = new Point(1096, 1);
             btnExit.Margin = new Padding(0);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(1, 10, 0, 10);
@@ -106,7 +105,7 @@ namespace CSharp_laptop.GUI
             btnMini.IconFont = IconFont.Auto;
             btnMini.IconSize = 20;
             btnMini.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMini.Location = new Point(1026, 0);
+            btnMini.Location = new Point(1028, 0);
             btnMini.Margin = new Padding(0);
             btnMini.Name = "btnMini";
             btnMini.Padding = new Padding(3, 10, 0, 10);
@@ -130,7 +129,7 @@ namespace CSharp_laptop.GUI
             btnZoom.IconFont = IconFont.Auto;
             btnZoom.IconSize = 20;
             btnZoom.ImageAlign = ContentAlignment.MiddleLeft;
-            btnZoom.Location = new Point(1060, 1);
+            btnZoom.Location = new Point(1062, 1);
             btnZoom.Margin = new Padding(0);
             btnZoom.Name = "btnZoom";
             btnZoom.Padding = new Padding(3, 10, 0, 10);
@@ -172,7 +171,6 @@ namespace CSharp_laptop.GUI
             // panelContainer
             // 
             panelContainer.BackColor = Color.FromArgb(149, 147, 186);
-            panelContainer.Controls.Add(progressBar1);
             panelContainer.Controls.Add(MenuPanel);
             panelContainer.Controls.Add(panelTitleBar);
             panelContainer.Controls.Add(panelDesktop);
@@ -183,27 +181,19 @@ namespace CSharp_laptop.GUI
             panelContainer.TabIndex = 2;
             panelContainer.Paint += panelContainer_Paint_1;
             // 
-            // progressBar1
-            // 
-            progressBar1.Location = new Point(4, 6);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(1346, 807);
-            progressBar1.TabIndex = 9;
-            progressBar1.Visible = false;
-            // 
             // MenuPanel
             // 
             MenuPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             MenuPanel.BorderRadius = 12;
             MenuPanel.Controls.Add(MenuChoice);
             MenuPanel.Controls.Add(PictureBox1);
-            MenuPanel.CustomizableEdges = customizableEdges5;
+            MenuPanel.CustomizableEdges = customizableEdges1;
             MenuPanel.FillColor = Color.FromArgb(144, 114, 170);
             MenuPanel.FillColor2 = Color.FromArgb(114, 114, 170);
             MenuPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             MenuPanel.Location = new Point(12, 7);
             MenuPanel.Name = "MenuPanel";
-            MenuPanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            MenuPanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
             MenuPanel.Size = new Size(175, 794);
             MenuPanel.TabIndex = 8;
             // 
@@ -223,7 +213,7 @@ namespace CSharp_laptop.GUI
             MenuChoice.Controls.Add(btnSanPham);
             MenuChoice.Location = new Point(0, 120);
             MenuChoice.Name = "MenuChoice";
-            MenuChoice.Size = new Size(175, 615);
+            MenuChoice.Size = new Size(175, 600);
             MenuChoice.TabIndex = 1;
             // 
             // iconButton1
@@ -499,13 +489,13 @@ namespace CSharp_laptop.GUI
             panelTitleBar.Controls.Add(btnZoom);
             panelTitleBar.Controls.Add(btnMini);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
-            panelTitleBar.CustomizableEdges = customizableEdges7;
+            panelTitleBar.CustomizableEdges = customizableEdges3;
             panelTitleBar.FillColor = Color.FromArgb(202, 209, 234);
             panelTitleBar.FillColor2 = Color.FromArgb(94, 94, 170);
-            panelTitleBar.Location = new Point(193, 12);
+            panelTitleBar.Location = new Point(193, 7);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            panelTitleBar.Size = new Size(1148, 35);
+            panelTitleBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            panelTitleBar.Size = new Size(1150, 35);
             panelTitleBar.TabIndex = 7;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
@@ -513,7 +503,7 @@ namespace CSharp_laptop.GUI
             // 
             panelDesktop.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelDesktop.AutoSize = true;
-            panelDesktop.BackColor = Color.Silver;
+            panelDesktop.BackColor = Color.FromArgb(149, 147, 186);
             panelDesktop.Controls.Add(label1);
             panelDesktop.Location = new Point(193, 50);
             panelDesktop.Name = "panelDesktop";
@@ -542,9 +532,11 @@ namespace CSharp_laptop.GUI
             ClientSize = new Size(1353, 813);
             Controls.Add(panelContainer);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm_N";
             Activated += MainForm_N_Activated;
             Load += MainForm_Load;
+            Shown += MainForm_Shown;
             ResizeEnd += MainForm_N_ResizeEnd;
             SizeChanged += MainForm_N_SizeChanged;
             Paint += MainForm_N_Paint;
@@ -586,6 +578,5 @@ namespace CSharp_laptop.GUI
         private Label label1;
         private Guna.UI2.WinForms.Guna2GradientPanel panelTitleBar;
         private Guna.UI2.WinForms.Guna2GradientPanel MenuPanel;
-        private Panel progressBar1;
     }
 }

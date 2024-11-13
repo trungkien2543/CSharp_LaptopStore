@@ -21,7 +21,7 @@ namespace CustomTabControl
         {
             InitializeComponent();
             //Load dữ liệu sẵn cho TK2
-            dateTimePicker1.Value = DateTime.Now.AddMonths(-1); // Ví dụ: Ngày cách đây 1 tháng
+            dateTimePicker1.Value = DateTime.Now.AddMonths(-12); // Ví dụ: Ngày cách đây 1 tháng
             dateTimePicker2.Value = DateTime.Now;
             LoadPieChartData(dateTimePicker1.Value, dateTimePicker2.Value);
             LoadGridViewData(dateTimePicker1.Value, dateTimePicker2.Value);
@@ -190,6 +190,28 @@ namespace CustomTabControl
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = dateTimePicker1.Value;
+            DateTime endDate = dateTimePicker2.Value;
+
+            if (startDate > endDate)
+            {
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Gọi hàm LoadPieChartData để cập nhật biểu đồ với khoảng thời gian đã chọn
+            LoadPieChartData(startDate, endDate);
+            // Gọi hàm LoadGridViewData để cập nhật DataGridView với dữ liệu mới
+            LoadGridViewData(startDate, endDate);
         }
     }
 }
