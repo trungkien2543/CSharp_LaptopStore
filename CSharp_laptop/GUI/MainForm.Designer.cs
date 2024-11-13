@@ -31,17 +31,16 @@ namespace CSharp_laptop.GUI
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnExit = new IconButton();
             btnMini = new IconButton();
             btnZoom = new IconButton();
             iconCurrentChildForm = new IconPictureBox();
             lblTitleChildForm = new Label();
             panelContainer = new Panel();
-            progressBar1 = new Panel();
             MenuPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             MenuChoice = new Panel();
             iconButton1 = new IconButton();
@@ -172,7 +171,6 @@ namespace CSharp_laptop.GUI
             // panelContainer
             // 
             panelContainer.BackColor = Color.FromArgb(149, 147, 186);
-            panelContainer.Controls.Add(progressBar1);
             panelContainer.Controls.Add(MenuPanel);
             panelContainer.Controls.Add(panelTitleBar);
             panelContainer.Controls.Add(panelDesktop);
@@ -183,27 +181,19 @@ namespace CSharp_laptop.GUI
             panelContainer.TabIndex = 2;
             panelContainer.Paint += panelContainer_Paint_1;
             // 
-            // progressBar1
-            // 
-            progressBar1.Location = new Point(4, 6);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(1346, 807);
-            progressBar1.TabIndex = 9;
-            progressBar1.Visible = false;
-            // 
             // MenuPanel
             // 
             MenuPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             MenuPanel.BorderRadius = 12;
             MenuPanel.Controls.Add(MenuChoice);
             MenuPanel.Controls.Add(PictureBox1);
-            MenuPanel.CustomizableEdges = customizableEdges5;
+            MenuPanel.CustomizableEdges = customizableEdges1;
             MenuPanel.FillColor = Color.FromArgb(144, 114, 170);
             MenuPanel.FillColor2 = Color.FromArgb(114, 114, 170);
             MenuPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             MenuPanel.Location = new Point(12, 7);
             MenuPanel.Name = "MenuPanel";
-            MenuPanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            MenuPanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
             MenuPanel.Size = new Size(175, 794);
             MenuPanel.TabIndex = 8;
             // 
@@ -499,12 +489,12 @@ namespace CSharp_laptop.GUI
             panelTitleBar.Controls.Add(btnZoom);
             panelTitleBar.Controls.Add(btnMini);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
-            panelTitleBar.CustomizableEdges = customizableEdges7;
+            panelTitleBar.CustomizableEdges = customizableEdges3;
             panelTitleBar.FillColor = Color.FromArgb(202, 209, 234);
             panelTitleBar.FillColor2 = Color.FromArgb(94, 94, 170);
             panelTitleBar.Location = new Point(193, 12);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            panelTitleBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             panelTitleBar.Size = new Size(1148, 35);
             panelTitleBar.TabIndex = 7;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
@@ -586,6 +576,5 @@ namespace CSharp_laptop.GUI
         private Label label1;
         private Guna.UI2.WinForms.Guna2GradientPanel panelTitleBar;
         private Guna.UI2.WinForms.Guna2GradientPanel MenuPanel;
-        private Panel progressBar1;
     }
 }
