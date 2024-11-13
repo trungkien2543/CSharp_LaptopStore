@@ -1,6 +1,8 @@
 ﻿using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
+using LiveChartsCore.Themes;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -89,14 +91,22 @@ namespace CSharp_laptop.DAO
             return khuyenMai;
         }
 
-        public bool AddKhuyenMai(KhuyenMaiDTO khuyenMai)
+        public bool AddorEditKhuyenMai(KhuyenMaiDTO khuyenMai, string funcion)
         {
             bool isSuccess = false;
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
-                conn.Open();
-                string query = @"INSERT INTO `Khuyenmai` (`ID_KhuyenMai`, `TenKhuyenMai`, `MucGiamGia`, `MoTaKM`, `ThoiGianBatDau`, `ThoiGianKetThuc`, `ThoiGianTaoKM`)
-                         VALUES (@idKM, @tenKM, @muGiamGia, @moTa, @ngayBatDau,  @ngayKetThuc, @ngayTao)";
+                //conn.Open();
+                string query = "";
+                if (funcion == "add")
+                {
+                    query = @"INSERT INTO `Khuyenmai` (`ID_KhuyenMai`, `TenKhuyenMai`, `MucGiamGia`, `MoTaKM`, `ThoiGianBatDau`, `ThoiGianKetThuc`, `ThoiGianTaoKM`)
+                         VALUES (@idKM, @tenKM, @muGiamGia, @moTa, @ThoiGianBatDau,  @ThoiGianKetThuc, @ngayTao)";
+                }
+                else
+                {
+                    query = "UPDATE Khuyenmai SET TenKhuyenMai = @tenKM, MucGiamGia = @muGiamGia, MoTaKM = @moTa, ThoiGianBatDau = @ThoiGianBatDau, ThoiGianKetThuc = @ThoiGianKetThuc, ThoiGianTaoKM = @ngayTao WHERE ID_KhuyenMai = @ID_KhuyenMai";
+                }
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 // Thêm các tham số để tránh SQL Injection
@@ -106,7 +116,7 @@ namespace CSharp_laptop.DAO
                 cmd.Parameters.AddWithValue("@MoTaKM", khuyenMai.MoTa);
                 cmd.Parameters.AddWithValue("@ThoiGianBatDau", khuyenMai.ThoiGianBatDau);
                 cmd.Parameters.AddWithValue("@ThoiGianKetThuc", khuyenMai.ThoiGianKetThuc);
-                cmd.Parameters.AddWithValue("@ThoiGianTaoKM", khuyenMai.NgayTao);
+                cmd.Parameters.AddWithValue("@ngayTao", khuyenMai.NgayTao);
 
                 try
                 {
@@ -120,5 +130,6 @@ namespace CSharp_laptop.DAO
             }
             return isSuccess;
         }
+
     }
 }

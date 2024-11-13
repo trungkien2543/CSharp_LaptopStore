@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             rjTextBox1 = new RJTextBox();
             vbButton1 = new VBButton();
-            vbButton2 = new VBButton();
+            then_but = new VBButton();
             artanPanel3 = new ArtanPanel();
             KM_dataGridView = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
+            ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
@@ -50,15 +50,14 @@
             km_pan = new ArtanPanel();
             label15 = new Label();
             panel2 = new Panel();
-            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker5 = new DateTimePicker();
+            dateTimePicker4 = new DateTimePicker();
+            dateTimePicker3 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            label9 = new Label();
             label1 = new Label();
             textBox1 = new RJTextBox();
-            artanPanel7 = new ArtanPanel();
-            rjDatePicker4 = new RJDateTimePicker.RJDatePicker();
-            artanPanel8 = new ArtanPanel();
-            rjDatePicker5 = new RJDateTimePicker.RJDatePicker();
-            label9 = new Label();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
@@ -70,9 +69,6 @@
             textBox3 = new RJTextBox();
             textBox2 = new RJTextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            rjTextBox2 = new RJTextBox();
-            rjDatePicker6 = new RJDateTimePicker.RJDatePicker();
-            artanPanel9 = new ArtanPanel();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel3.SuspendLayout();
@@ -80,9 +76,6 @@
             tabPage2.SuspendLayout();
             km_pan.SuspendLayout();
             panel2.SuspendLayout();
-            artanPanel7.SuspendLayout();
-            artanPanel8.SuspendLayout();
-            artanPanel9.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -103,7 +96,7 @@
             tabPage1.BackColor = Color.FromArgb(149, 147, 186);
             tabPage1.Controls.Add(rjTextBox1);
             tabPage1.Controls.Add(vbButton1);
-            tabPage1.Controls.Add(vbButton2);
+            tabPage1.Controls.Add(then_but);
             tabPage1.Controls.Add(artanPanel3);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Margin = new Padding(0);
@@ -158,30 +151,30 @@
             vbButton1.UseVisualStyleBackColor = false;
             vbButton1.Click += vbButton1_Click;
             // 
-            // vbButton2
+            // then_but
             // 
-            vbButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton2.BackColor = Color.FromArgb(247, 176, 118);
-            vbButton2.BackgroundColor = Color.FromArgb(247, 176, 118);
-            vbButton2.BorderColor = Color.PaleVioletRed;
-            vbButton2.BorderRadius = 15;
-            vbButton2.BorderSize = 0;
-            vbButton2.FlatAppearance.BorderSize = 0;
-            vbButton2.FlatStyle = FlatStyle.Flat;
-            vbButton2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            vbButton2.ForeColor = Color.White;
-            vbButton2.Image = (Image)resources.GetObject("vbButton2.Image");
-            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton2.Location = new Point(987, 80);
-            vbButton2.Name = "vbButton2";
-            vbButton2.Padding = new Padding(0, 0, 15, 0);
-            vbButton2.Size = new Size(100, 40);
-            vbButton2.TabIndex = 38;
-            vbButton2.Text = "Thêm";
-            vbButton2.TextAlign = ContentAlignment.MiddleRight;
-            vbButton2.TextColor = Color.White;
-            vbButton2.UseVisualStyleBackColor = false;
-            vbButton2.Click += vbButton2_Click;
+            then_but.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            then_but.BackColor = Color.FromArgb(247, 176, 118);
+            then_but.BackgroundColor = Color.FromArgb(247, 176, 118);
+            then_but.BorderColor = Color.PaleVioletRed;
+            then_but.BorderRadius = 15;
+            then_but.BorderSize = 0;
+            then_but.FlatAppearance.BorderSize = 0;
+            then_but.FlatStyle = FlatStyle.Flat;
+            then_but.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            then_but.ForeColor = Color.White;
+            then_but.Image = (Image)resources.GetObject("then_but.Image");
+            then_but.ImageAlign = ContentAlignment.MiddleLeft;
+            then_but.Location = new Point(987, 80);
+            then_but.Name = "then_but";
+            then_but.Padding = new Padding(0, 0, 15, 0);
+            then_but.Size = new Size(100, 40);
+            then_but.TabIndex = 38;
+            then_but.Text = "Thêm";
+            then_but.TextAlign = ContentAlignment.MiddleRight;
+            then_but.TextColor = Color.White;
+            then_but.UseVisualStyleBackColor = false;
+            then_but.Click += then_but_Click;
             // 
             // artanPanel3
             // 
@@ -210,24 +203,24 @@
             KM_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             KM_dataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             KM_dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            KM_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            KM_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             KM_dataGridView.ColumnHeadersHeight = 35;
-            KM_dataGridView.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column7, Column8 });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(100, 100, 180);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            KM_dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            KM_dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Column2, Column3, Column4, Column5, Column7, Column8 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            KM_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             KM_dataGridView.EnableHeadersVisualStyles = false;
             KM_dataGridView.GridColor = Color.LightGray;
             KM_dataGridView.Location = new Point(4, 0);
@@ -235,28 +228,29 @@
             KM_dataGridView.Name = "KM_dataGridView";
             KM_dataGridView.ReadOnly = true;
             KM_dataGridView.RightToLeft = RightToLeft.No;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            KM_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            KM_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             KM_dataGridView.RowHeadersVisible = false;
             KM_dataGridView.RowHeadersWidth = 25;
             KM_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             KM_dataGridView.Size = new Size(1049, 508);
             KM_dataGridView.TabIndex = 0;
+            KM_dataGridView.CellClick += KM_dataGridView_CellClick;
             // 
-            // Column1
+            // ID
             // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.DataPropertyName = "IDKM";
-            Column1.FillWeight = 50F;
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID.DataPropertyName = "IDKM";
+            ID.FillWeight = 50F;
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
             // 
             // Column2
             // 
@@ -355,15 +349,14 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(dateTimePicker5);
+            panel2.Controls.Add(dateTimePicker4);
+            panel2.Controls.Add(dateTimePicker3);
             panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(dateTimePicker2);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(rjTextBox2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(artanPanel7);
-            panel2.Controls.Add(artanPanel8);
-            panel2.Controls.Add(artanPanel9);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(label12);
@@ -380,14 +373,37 @@
             panel2.Size = new Size(572, 600);
             panel2.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // dateTimePicker5
             // 
-            dateTimePicker2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(80, 397);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 27);
-            dateTimePicker2.TabIndex = 24;
+            dateTimePicker5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker5.Format = DateTimePickerFormat.Custom;
+            dateTimePicker5.Location = new Point(71, 463);
+            dateTimePicker5.Name = "dateTimePicker5";
+            dateTimePicker5.Size = new Size(200, 27);
+            dateTimePicker5.TabIndex = 27;
+            // 
+            // dateTimePicker4
+            // 
+            dateTimePicker4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker4.Format = DateTimePickerFormat.Custom;
+            dateTimePicker4.Location = new Point(301, 397);
+            dateTimePicker4.Name = "dateTimePicker4";
+            dateTimePicker4.Size = new Size(200, 27);
+            dateTimePicker4.TabIndex = 26;
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.CalendarForeColor = Color.IndianRed;
+            dateTimePicker3.CustomFormat = "HH:mm";
+            dateTimePicker3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker3.Format = DateTimePickerFormat.Custom;
+            dateTimePicker3.Location = new Point(301, 364);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.RightToLeft = RightToLeft.No;
+            dateTimePicker3.ShowUpDown = true;
+            dateTimePicker3.Size = new Size(200, 27);
+            dateTimePicker3.TabIndex = 25;
+            dateTimePicker3.Value = new DateTime(2024, 11, 14, 0, 0, 0, 0);
             // 
             // dateTimePicker1
             // 
@@ -395,12 +411,33 @@
             dateTimePicker1.CustomFormat = "HH:mm";
             dateTimePicker1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(81, 364);
+            dateTimePicker1.Location = new Point(71, 364);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.RightToLeft = RightToLeft.No;
             dateTimePicker1.ShowUpDown = true;
             dateTimePicker1.Size = new Size(200, 27);
             dateTimePicker1.TabIndex = 23;
+            dateTimePicker1.Value = new DateTime(2024, 11, 14, 0, 0, 0, 0);
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Location = new Point(71, 397);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(200, 27);
+            dateTimePicker2.TabIndex = 24;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.DimGray;
+            label9.Location = new Point(82, 335);
+            label9.Name = "label9";
+            label9.Size = new Size(104, 19);
+            label9.TabIndex = 6;
+            label9.Text = "Thời gian bắt đầu:";
             // 
             // label1
             // 
@@ -421,6 +458,7 @@
             textBox1.BorderFocusColor = SystemColors.HotTrack;
             textBox1.BorderRadius = 7;
             textBox1.BorderSize = 1;
+            textBox1.Enabled = false;
             textBox1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.ForeColor = Color.FromArgb(64, 64, 64);
             textBox1.Location = new Point(71, 51);
@@ -436,79 +474,6 @@
             textBox1.Texts = "";
             textBox1.UnderlinedStyle = false;
             // 
-            // artanPanel7
-            // 
-            artanPanel7.BackColor = Color.White;
-            artanPanel7.BorderRadius = 7;
-            artanPanel7.Controls.Add(rjDatePicker4);
-            artanPanel7.ForeColor = Color.Black;
-            artanPanel7.GradientAngle = 30F;
-            artanPanel7.GradientBottomColor = Color.FromArgb(113, 168, 223);
-            artanPanel7.GradientTopColor = Color.FromArgb(113, 168, 223);
-            artanPanel7.Location = new Point(71, 463);
-            artanPanel7.Name = "artanPanel7";
-            artanPanel7.Padding = new Padding(10, 2, 0, 0);
-            artanPanel7.Size = new Size(200, 44);
-            artanPanel7.TabIndex = 20;
-            // 
-            // rjDatePicker4
-            // 
-            rjDatePicker4.BorderColor = Color.FromArgb(113, 168, 223);
-            rjDatePicker4.BorderSize = 0;
-            rjDatePicker4.CalendarMonthBackground = SystemColors.HotTrack;
-            rjDatePicker4.Dock = DockStyle.Top;
-            rjDatePicker4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjDatePicker4.Location = new Point(10, 2);
-            rjDatePicker4.MinimumSize = new Size(0, 40);
-            rjDatePicker4.Name = "rjDatePicker4";
-            rjDatePicker4.Size = new Size(190, 40);
-            rjDatePicker4.SkinColor = Color.FromArgb(113, 168, 223);
-            rjDatePicker4.TabIndex = 15;
-            rjDatePicker4.TextColor = Color.White;
-            // 
-            // artanPanel8
-            // 
-            artanPanel8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            artanPanel8.BackColor = Color.White;
-            artanPanel8.BorderRadius = 7;
-            artanPanel8.Controls.Add(rjDatePicker5);
-            artanPanel8.ForeColor = Color.Black;
-            artanPanel8.GradientAngle = 30F;
-            artanPanel8.GradientBottomColor = Color.FromArgb(113, 168, 223);
-            artanPanel8.GradientTopColor = Color.FromArgb(113, 168, 223);
-            artanPanel8.Location = new Point(344, 443);
-            artanPanel8.Name = "artanPanel8";
-            artanPanel8.Padding = new Padding(0, 2, 0, 0);
-            artanPanel8.Size = new Size(200, 44);
-            artanPanel8.TabIndex = 19;
-            // 
-            // rjDatePicker5
-            // 
-            rjDatePicker5.BorderColor = Color.FromArgb(113, 168, 223);
-            rjDatePicker5.BorderSize = 0;
-            rjDatePicker5.CalendarMonthBackground = SystemColors.HotTrack;
-            rjDatePicker5.Dock = DockStyle.Fill;
-            rjDatePicker5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjDatePicker5.Format = DateTimePickerFormat.Custom;
-            rjDatePicker5.Location = new Point(0, 2);
-            rjDatePicker5.MinimumSize = new Size(0, 40);
-            rjDatePicker5.Name = "rjDatePicker5";
-            rjDatePicker5.Size = new Size(200, 40);
-            rjDatePicker5.SkinColor = Color.FromArgb(113, 168, 223);
-            rjDatePicker5.TabIndex = 15;
-            rjDatePicker5.TextColor = Color.White;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.DimGray;
-            label9.Location = new Point(82, 335);
-            label9.Name = "label9";
-            label9.Size = new Size(104, 19);
-            label9.TabIndex = 6;
-            label9.Text = "Thời gian bắt đầu:";
-            // 
             // label10
             // 
             label10.AutoSize = true;
@@ -516,9 +481,9 @@
             label10.ForeColor = Color.DimGray;
             label10.Location = new Point(71, 441);
             label10.Name = "label10";
-            label10.Size = new Size(81, 19);
+            label10.Size = new Size(58, 19);
             label10.TabIndex = 10;
-            label10.Text = "Thời gian tạo:";
+            label10.Text = "Ngày tạo:";
             // 
             // label11
             // 
@@ -549,9 +514,9 @@
             label13.ForeColor = Color.DimGray;
             label13.Location = new Point(80, 158);
             label13.Name = "label13";
-            label13.Size = new Size(82, 19);
+            label13.Size = new Size(102, 19);
             label13.TabIndex = 2;
-            label13.Text = "Mức giảm giá:";
+            label13.Text = "Mức giảm giá (%):";
             // 
             // dong_y_but
             // 
@@ -600,7 +565,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.DimGray;
-            label14.Location = new Point(344, 421);
+            label14.Location = new Point(301, 335);
             label14.Name = "label14";
             label14.Size = new Size(107, 19);
             label14.TabIndex = 8;
@@ -675,60 +640,6 @@
             textBox2.Texts = "";
             textBox2.UnderlinedStyle = false;
             // 
-            // rjTextBox2
-            // 
-            rjTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rjTextBox2.BackColor = SystemColors.Window;
-            rjTextBox2.BorderColor = Color.FromArgb(85, 81, 132);
-            rjTextBox2.BorderFocusColor = SystemColors.HotTrack;
-            rjTextBox2.BorderRadius = 7;
-            rjTextBox2.BorderSize = 1;
-            rjTextBox2.Enabled = false;
-            rjTextBox2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new Point(71, 348);
-            rjTextBox2.Margin = new Padding(4);
-            rjTextBox2.Multiline = true;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = Color.DarkGray;
-            rjTextBox2.PlaceholderText = "";
-            rjTextBox2.Size = new Size(223, 92);
-            rjTextBox2.TabIndex = 25;
-            rjTextBox2.Texts = "";
-            rjTextBox2.UnderlinedStyle = false;
-            // 
-            // rjDatePicker6
-            // 
-            rjDatePicker6.BorderColor = Color.FromArgb(113, 168, 223);
-            rjDatePicker6.BorderSize = 0;
-            rjDatePicker6.CalendarMonthBackground = SystemColors.HotTrack;
-            rjDatePicker6.Dock = DockStyle.Fill;
-            rjDatePicker6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjDatePicker6.Location = new Point(10, 2);
-            rjDatePicker6.MinimumSize = new Size(0, 40);
-            rjDatePicker6.Name = "rjDatePicker6";
-            rjDatePicker6.Size = new Size(190, 40);
-            rjDatePicker6.SkinColor = Color.FromArgb(247, 176, 118);
-            rjDatePicker6.TabIndex = 15;
-            rjDatePicker6.TextColor = Color.White;
-            // 
-            // artanPanel9
-            // 
-            artanPanel9.BackColor = Color.White;
-            artanPanel9.BorderRadius = 7;
-            artanPanel9.Controls.Add(rjDatePicker6);
-            artanPanel9.ForeColor = Color.Black;
-            artanPanel9.GradientAngle = 30F;
-            artanPanel9.GradientBottomColor = Color.FromArgb(247, 176, 118);
-            artanPanel9.GradientTopColor = Color.FromArgb(247, 176, 118);
-            artanPanel9.Location = new Point(319, 488);
-            artanPanel9.Name = "artanPanel9";
-            artanPanel9.Padding = new Padding(10, 2, 0, 0);
-            artanPanel9.Size = new Size(200, 44);
-            artanPanel9.TabIndex = 18;
-            // 
             // KhuyenMaiGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -748,9 +659,6 @@
             km_pan.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            artanPanel7.ResumeLayout(false);
-            artanPanel8.ResumeLayout(false);
-            artanPanel9.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -760,15 +668,11 @@
         private TabPage tabPage2;
         private RJTextBox rjTextBox1;
         private VBButton vbButton1;
-        private VBButton vbButton2;
+        private VBButton then_but;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ArtanPanel km_pan;
         private Label label15;
         private Panel panel2;
-        private ArtanPanel artanPanel7;
-        private RJDateTimePicker.RJDatePicker rjDatePicker4;
-        private ArtanPanel artanPanel8;
-        private RJDateTimePicker.RJDatePicker rjDatePicker5;
         private Label label9;
         private Label label10;
         private Label label11;
@@ -784,17 +688,17 @@
         private DataGridView KM_dataGridView;
         private Label label1;
         private RJTextBox textBox1;
-        private DataGridViewTextBoxColumn Column1;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private RJTextBox rjTextBox2;
-        private ArtanPanel artanPanel9;
-        private RJDateTimePicker.RJDatePicker rjDatePicker6;
+        private DateTimePicker dateTimePicker5;
+        private DateTimePicker dateTimePicker4;
+        private DateTimePicker dateTimePicker3;
     }
 }
