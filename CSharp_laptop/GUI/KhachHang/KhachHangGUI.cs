@@ -33,9 +33,9 @@ namespace CSharp_laptop.GUI
             btnDelList = new List<VBButton>();
             InitializeComponent();
 
-            PH = artanPanel3.Location.Y;
+            PH = editpanel.Location.Y;
 
-            artanPanel3.Location = new Point(artanPanel3.Location.X, this.Height - 10);
+            editpanel.Location = new Point(editpanel.Location.X, this.Height - 10);
             hided = true;
         }
 
@@ -119,7 +119,7 @@ namespace CSharp_laptop.GUI
                     VBButton btn = new VBButton();
                     btn.Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btn.Location = new Point(e.CellBounds.X, e.CellBounds.Y);
-                    btn.BackColor = Color.FromArgb(255, 152, 204);
+                    btn.BackgroundColor = Color.FromArgb(233, 203, 157);
                     btn.BorderRadius = 10;
 
                     btn.Name = e.RowIndex.ToString();
@@ -150,7 +150,7 @@ namespace CSharp_laptop.GUI
                     VBButton btn = new VBButton();
                     btn.Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btn.Location = new Point(e.CellBounds.X, e.CellBounds.Y);
-                    btn.BackColor = Color.FromArgb(255, 152, 204);
+                    btn.BackgroundColor = Color.FromArgb(233, 203, 157);
                     btn.BorderRadius = 10;
 
                     btn.Name = e.RowIndex.ToString();
@@ -202,24 +202,15 @@ namespace CSharp_laptop.GUI
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-            guna2TextBoxID.Text = "";
-            guna2TextBoxTen.Text = "";
-            guna2TextBoxDC.Text = "";
-            guna2TextBoxSDT.Text = "";
-            guna2TextBoxDiem.Text = "";
-            if (hided)
-            {
-                button1.Text = "HIDE";
-                timer1.Start();
-            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (hided)
             {
-                artanPanel3.Location = new Point(artanPanel3.Location.X, artanPanel3.Location.Y - 5);
-                if (artanPanel3.Location.Y <= PH + 60)
+                editpanel.Location = new Point(editpanel.Location.X, editpanel.Location.Y - 5);
+                if (editpanel.Location.Y <= this.Height - editpanel.Height)
                 {
                     timer1.Stop();
                     hided = false;
@@ -228,8 +219,8 @@ namespace CSharp_laptop.GUI
             }
             else
             {
-                artanPanel3.Location = new Point(artanPanel3.Location.X, artanPanel3.Location.Y + 5);
-                if (artanPanel3.Location.Y >= this.Height)
+                editpanel.Location = new Point(editpanel.Location.X, editpanel.Location.Y + 5);
+                if (editpanel.Location.Y >= this.Height)
                 {
                     timer1.Stop();
                     hided = true;
@@ -242,6 +233,20 @@ namespace CSharp_laptop.GUI
         {
             button1.Text = "SHOW";
             timer1.Start();
+        }
+
+        private void vbButton2_Click_1(object sender, EventArgs e)
+        {
+            guna2TextBoxID.Text = "";
+            guna2TextBoxTen.Text = "";
+            guna2TextBoxDC.Text = "";
+            guna2TextBoxSDT.Text = "";
+            guna2TextBoxDiem.Text = "";
+            if (hided)
+            {
+                button1.Text = "HIDE";
+                timer1.Start();
+            }
         }
     }
 }

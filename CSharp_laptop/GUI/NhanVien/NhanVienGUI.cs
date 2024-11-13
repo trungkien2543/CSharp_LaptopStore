@@ -38,9 +38,9 @@ namespace CSharp_laptop.GUI
 
             InitializeComponent();
 
-            PH = artanPanel3.Location.Y;
+            PH = editpanel.Location.Y;
 
-            artanPanel3.Location = new Point(artanPanel3.Location.X, this.Height - 10);
+            editpanel.Location = new Point(editpanel.Location.X, this.Height + 30);
             hided = true;
         }
 
@@ -107,7 +107,8 @@ namespace CSharp_laptop.GUI
                 {
                     guna2ImageRadioButton1.Checked = true;
                     guna2ImageRadioButton2.Checked = false;
-                } else
+                }
+                else
                 {
                     guna2ImageRadioButton1.Checked = false;
                     guna2ImageRadioButton2.Checked = true;
@@ -216,8 +217,8 @@ namespace CSharp_laptop.GUI
         {
             if (hided)
             {
-                artanPanel3.Location = new Point(artanPanel3.Location.X, artanPanel3.Location.Y - 5);
-                if (artanPanel3.Location.Y <= PH + 60)
+                editpanel.Location = new Point(editpanel.Location.X, editpanel.Location.Y - 5);
+                if (editpanel.Location.Y <= this.Height - editpanel.Height)
                 {
                     timer1.Stop();
                     hided = false;
@@ -226,8 +227,8 @@ namespace CSharp_laptop.GUI
             }
             else
             {
-                artanPanel3.Location = new Point(artanPanel3.Location.X, artanPanel3.Location.Y + 5);
-                if (artanPanel3.Location.Y >= this.Height)
+                editpanel.Location = new Point(editpanel.Location.X, editpanel.Location.Y + 5);
+                if (editpanel.Location.Y >= this.Height)
                 {
                     timer1.Stop();
                     hided = true;
@@ -277,20 +278,6 @@ namespace CSharp_laptop.GUI
 
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-            guna2TextBoxID.Text = "";
-            guna2TextBoxTen.Text = "";
-            guna2TextBoxEmail.Text = "";
-            guna2TextBoxSDT.Text = "";
-            guna2TextBoxDiaChi.Text = "";
-            guna2TextBoxCCCD.Text = "";
-            if (hided)
-            {
-                button1.Text = "HIDE";
-                timer1.Start();
-            }
-        }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
@@ -302,6 +289,21 @@ namespace CSharp_laptop.GUI
             if (!hided)
             {
                 button1.Text = "SHOW";
+                timer1.Start();
+            }
+        }
+
+        private void vbButton2_Click_1(object sender, EventArgs e)
+        {
+            guna2TextBoxID.Text = "";
+            guna2TextBoxTen.Text = "";
+            guna2TextBoxEmail.Text = "";
+            guna2TextBoxSDT.Text = "";
+            guna2TextBoxDiaChi.Text = "";
+            guna2TextBoxCCCD.Text = "";
+            if (hided)
+            {
+                button1.Text = "HIDE";
                 timer1.Start();
             }
         }

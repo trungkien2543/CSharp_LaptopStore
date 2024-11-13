@@ -22,7 +22,6 @@ namespace CSharp_laptop
             {
                 // Giả lập công việc load của form chính (ví dụ, load dữ liệu, tài nguyên, etc.)
                 MainForm mainf = new MainForm();
-
                 // Khởi tạo và hiển thị MainForm sau khi đã load xong
                 splash.Invoke(new Action(() => splash.Close())); // Đóng SplashForm
                 Application.Run(mainf); // Hiển thị MainForm
