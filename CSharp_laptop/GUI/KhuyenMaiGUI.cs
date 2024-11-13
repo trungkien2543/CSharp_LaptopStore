@@ -72,14 +72,9 @@ namespace CSharp_laptop.GUI
 
         private void vbButton2_Click(object sender, EventArgs e)
         {
-            //tabControl1.SelectedIndex = 1;
-            DateTime ngaySinh = DateTime.MinValue;
-            MessageBox.Show("Đây là thông báo đơn giản."+ ngaySinh);
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
+            tabControl1.SelectedIndex = 1;
+            //DateTime ngaySinh = DateTime.MinValue;
+            //MessageBox.Show("Đây là thông báo đơn giản."+ ngaySinh);
 
         }
 
@@ -95,13 +90,17 @@ namespace CSharp_laptop.GUI
 
         private void dong_y_but_Click(object sender, EventArgs e)
         {
-            KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO();
+            KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
             {
-                //idKM = rjTextBox1.Texts, 
-                //TenHang = rjTextBox2.Texts, 
-                //DiaChi = rjTextBox3.Texts, 
-                //SDT = rjTextBox4.Texts
-            }
+                IDKM = textBox1.Texts, 
+                TenKM = textBox2.Texts,
+                MucGiamGia = int.Parse(textBox3.Texts), 
+                MoTa = textBox4.Texts
+
+
+
+            };
+
         }
 
         private void loadData()

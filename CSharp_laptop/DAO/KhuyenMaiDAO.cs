@@ -63,21 +63,30 @@ namespace CSharp_laptop.DAO
                         khuyenMaiArr.Add(khuyenMai);
                     }
                 }
-
-                //string query2 = "SELECT ThoiGianBatDau FROM khuyenmai WHERE ID = @ID";
-                //DateTime a = DateTime.MinValue;
-                //MySqlCommand cmd2 = new MySqlCommand(query, conn);
-                //using (MySqlDataReader reader = cmd2.ExecuteReader())
-                //{
-                //    cmd2.Parameters.AddWithValue("@ID", "KM001");
-                //    while (reader.Read())
-                //    {
-                //        a = reader.GetDateTime(4);
-                //    }
-                //}
-                //MessageBox.Show("Ngày: " + a + " đi chơi thôi nào!!!");
             }
             return khuyenMaiArr;
+        }
+
+        public KhuyenMaiDTO Get1KhuyenMai(string id)// Lấy 1 Khuyễn mãi bằng id
+        {
+            KhuyenMaiDTO khuyenMai = null;
+            MySqlConnection conn = connectionHelper.GetConnection();
+            string query = "SELECT ID_KhuyenMai, TenKhuyenMai, MucGiamGia, MoTaKM, ThoiGianBatDau, ThoiGianKetThuc,ThoiGianTaoKM FROM khuyenmai WHERE ID_KhuyenMai = @id";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                khuyenMai = new KhuyenMaiDTO
+                {
+                    IDKM = reader["ID_KhuyenMai"].ToString(),
+                    TenKM = reader["TenKhuyenMai"].ToString(),
+                    MucGiamGia = int.Parse(reader["MucGiamGia"].ToString()),
+                    MoTa = reader["MoTaKM"].ToString(),
+                    ThoiGianBatDau = reader.GetDateTime(4),
+                    ThoiGianKetThuc = reader.GetDateTime(5),
+                    NgayTao = reader.GetDateTime(6)
+                };
+            }
+            return khuyenMai;
         }
 
         public bool AddKhuyenMai(KhuyenMaiDTO khuyenMai)
