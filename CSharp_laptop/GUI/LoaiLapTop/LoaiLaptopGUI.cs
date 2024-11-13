@@ -17,6 +17,9 @@ namespace CSharp_laptop.GUI
     {
 
         private LoaiLaptopBUS laptopBUS = new LoaiLaptopBUS();
+
+        private List<LoaiLaptopDTO> laptops;
+
         string selectedLaptopID;
         string soluong_lap;
         private MainForm mainForm;
@@ -24,9 +27,14 @@ namespace CSharp_laptop.GUI
         {
             this.mainForm = mainForm;
             InitializeComponent();
-            LoadLaptops();
-            edittable();
+
+            Reset();
+
+
             AddButtonsToDataGridView();
+
+
+
 
         }
 
@@ -37,12 +45,12 @@ namespace CSharp_laptop.GUI
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void LoadLaptops()
         {
-            List<LoaiLaptopDTO> laptops = laptopBUS.GetLaptops();
+            laptops = laptopBUS.GetLaptops();
             soluong_lap = (1 + laptops.Count).ToString();
 
             dataGridView2.DataSource = laptops;
@@ -174,6 +182,70 @@ namespace CSharp_laptop.GUI
                 rjTextBox1.Texts = "Tìm kiếm"; // Văn bản hint
                 rjTextBox1.ForeColor = Color.Gray; // Đổi màu chữ sang màu xám
             }
+        }
+
+        private void find(object sender, EventArgs e)
+        {
+            laptops = laptopBUS.findLaptop(txtTen, cbxCPU, cbxRAM, cbxGPU, cbxHang, cbxKichThuoc, txtGia);
+
+
+            // Kiểm tra và tải dữ liệu cho từng ComboBox nếu chưa có giá trị
+            if (cbxCPU.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxCPU, "CPU");
+            }
+
+            if (cbxHang.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxHang, "TenHang");
+            }
+
+            if (cbxRAM.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxRAM, "RAM");
+            }
+
+            if (cbxGPU.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxGPU, "GPU");
+            }
+
+            if (cbxKichThuoc.Text.Equals(""))
+            {
+                LoadDataForComboBox(cbxKichThuoc, "KichThuoc");
+            }
+
+
+            dataGridView2.DataSource = laptops;
+        }
+
+
+        private void LoadDataForComboBox(ComboBox comboBox, String Item)
+        {
+            List<String> strings = new List<String>();
+            strings.Add("");
+            strings.AddRange(new LoaiLaptopBUS().getValueForComboBox(Item, txtTen, cbxCPU, cbxRAM, cbxGPU, cbxHang, cbxKichThuoc, txtGia));
+
+            comboBox.DataSource = strings;
+        }
+
+        private void Reset()
+        {
+            LoadLaptops();
+            edittable();
+
+
+            // Load dữ liệu cho comboBox
+            LoadDataForComboBox(cbxCPU, "CPU");
+            LoadDataForComboBox(cbxHang, "TenHang");
+            LoadDataForComboBox(cbxRAM, "RAM");
+            LoadDataForComboBox(cbxGPU, "GPU");
+            LoadDataForComboBox(cbxKichThuoc, "KichThuoc");
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }
