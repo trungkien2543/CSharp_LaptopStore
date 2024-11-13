@@ -16,5 +16,10 @@ namespace CSharp_laptop.BUS
         {
             return laptopDAO.GetAllLaptops(loaiLaptop);
         }
+
+        public LaptopDTO GetLaptopByIMEI(string imei)
+        {
+            return laptopDAO.GetLaptopByIMEI(imei);
+        }
     }
 }

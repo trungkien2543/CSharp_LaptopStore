@@ -32,9 +32,9 @@ namespace CSharp_laptop.DAO
                     {
                         LaptopDTO laptop = new LaptopDTO
                         {
-                            IMEI = long.Parse(reader["IMEI"].ToString()),
+                            IMEI = reader["IMEI"].ToString(),
                             ThoiGianBaoHanh = long.Parse(reader["ThoiGianBaoHanh"].ToString()),
-                            TrangThai = long.Parse(reader["TrangThai"].ToString()),
+                            TrangThai = reader["TrangThai"].ToString(),
                             LoaiLaptop = reader["LoaiLaptop"].ToString()
                         };
                         laptops.Add(laptop);
@@ -42,6 +42,35 @@ namespace CSharp_laptop.DAO
                 }
             }
             return laptops;
+        }
+
+        public LaptopDTO GetLaptopByIMEI(string imei)
+        {
+            LaptopDTO laptop = null;
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM laptop WHERE IMEI = @IMEI";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IMEI", imei);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        laptop = new LaptopDTO
+                        {
+                            IMEI = reader["IMEI"].ToString(),
+                            ThoiGianBaoHanh = long.Parse(reader["ThoiGianBaoHanh"].ToString()),
+                            TrangThai = reader["TrangThai"].ToString(),
+                            LoaiLaptop = reader["LoaiLaptop"].ToString()
+                        };
+                    }
+                }
+            }
+
+            return laptop;
         }
     }
 }
