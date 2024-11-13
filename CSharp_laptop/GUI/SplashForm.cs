@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CSharp_laptop.GUI
 {
-    public partial class LoadingForm : Form
+    public partial class SplashForm : Form
     {
-        public LoadingForm()
+        public SplashForm()
         {
             InitializeComponent();
         }

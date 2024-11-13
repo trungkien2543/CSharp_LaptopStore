@@ -1,6 +1,6 @@
 ﻿namespace CSharp_laptop.GUI
 {
-    partial class LoadingForm
+    partial class SplashForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // pictureBox1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(154, 120);
-            label1.Name = "label1";
-            label1.Size = new Size(113, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Loadingg";
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.Loading_Cat_GIF___Loading_Cat_Thinking;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(448, 273);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
-            // LoadingForm
+            // SplashForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Name = "LoadingForm";
-            Text = "LoadingForm";
+            ClientSize = new Size(448, 273);
+            Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "SplashForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "SplashForm";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private PictureBox pictureBox1;
     }
 }

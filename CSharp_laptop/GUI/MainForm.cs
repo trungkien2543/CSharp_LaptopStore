@@ -33,9 +33,29 @@ namespace CSharp_laptop.GUI
         private Color borderColor = Color.White;
         private Form currentChildForm;
 
+        private LoaiLaptopGUI loaiLaptopGUI;
+        
+        private HangGUI hangGUI;
+        
+        private BanHangForm banHangForm;
+        
+        private NhanVienGUI nhanVienGUI;
+        
+        private KhachHangGUI khachHangGUI;
+        
+        private KhuyenMaiGUI khuyenMaiGUI;
+        
+        private ThongKeGUI thongKeGUI;
+        
+        private QuanLyTaiKhoanGUI quanLyTaiKhoanGUI;
+        
+        private BaoHanhGUI baoHanhGUI;
+        
+        private PhieuNhapGUI phieuNhapGUI;
+
         public MainForm()
         {
-            
+
 
             InitializeComponent();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -50,16 +70,37 @@ namespace CSharp_laptop.GUI
             leftBorderBtn.Size = new Size(7, 60);
             MenuChoice.Controls.Add(leftBorderBtn);
 
+            this.loaiLaptopGUI = new LoaiLaptopGUI(this);
+
+            this.hangGUI = new HangGUI(this);
+
+            this.banHangForm = new BanHangForm(this);
+
+            this.nhanVienGUI = new NhanVienGUI(this);
+
+            this.khachHangGUI = new KhachHangGUI(this);
+
+            this.khuyenMaiGUI = new KhuyenMaiGUI();
+
+            this.thongKeGUI = new ThongKeGUI();
+
+            this.quanLyTaiKhoanGUI = new QuanLyTaiKhoanGUI(this);
+
+            this.baoHanhGUI = new BaoHanhGUI(this);
+
+            this.phieuNhapGUI = new PhieuNhapGUI();
+
         }
         public void OpenChildForm(Form childForm)
         {
             //open only form
             if (currentChildForm != null)
             {
-                currentChildForm.Close();
+                currentChildForm.Visible = false;
             }
             currentChildForm = childForm;
             //End
+            childForm.Visible = true;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -381,7 +422,6 @@ namespace CSharp_laptop.GUI
                 panelDesktop.Size = new Size(panelDesktop.Width - 5, panelDesktop.Height);
                 panelDesktop.Location = new Point(panelDesktop.Location.X + 5, panelDesktop.Location.Y);
                 PictureBox1.Size = new Size(PictureBox1.Width, PictureBox1.Height + 2);
-                MenuChoice.Size = new Size(MenuChoice.Width, MenuChoice.Height - 2);
                 MenuChoice.Location = new Point(MenuChoice.Location.X, MenuChoice.Location.Y + 2);
                 if (MenuPanel.Width >= PW)
                 {
@@ -406,7 +446,6 @@ namespace CSharp_laptop.GUI
                 panelDesktop.Size = new Size(panelDesktop.Width + 5, panelDesktop.Height);
                 panelDesktop.Location = new Point(panelDesktop.Location.X - 5, panelDesktop.Location.Y);
                 PictureBox1.Size = new Size(PictureBox1.Width, PictureBox1.Height - 2);
-                MenuChoice.Size = new Size(MenuChoice.Width, MenuChoice.Height + 2);
                 MenuChoice.Location = new Point(MenuChoice.Location.X, MenuChoice.Location.Y - 2);
                 if (MenuPanel.Width <= 60)
                 {
@@ -479,67 +518,72 @@ namespace CSharp_laptop.GUI
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new LoaiLaptopGUI(this));
+            OpenChildForm(loaiLaptopGUI);
         }
 
         private void btnNhaSanXuat_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new HangGUI(this));
+            OpenChildForm(hangGUI);
         }
 
         private void btnHD_BH_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new BanHangForm(this));
+            OpenChildForm(banHangForm);
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            OpenChildForm(new NhanVienGUI(this));
+            OpenChildForm(nhanVienGUI);
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            OpenChildForm(new KhachHangGUI(this));
+            OpenChildForm(khachHangGUI);
         }
 
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
-            OpenChildForm(new KhuyenMaiGUI());
+            OpenChildForm(khuyenMaiGUI);
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
-            OpenChildForm(new ThongKeGUI());
+            OpenChildForm(thongKeGUI);
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color9);
-            OpenChildForm(new QuanLyTaiKhoanGUI(this));
+            OpenChildForm(quanLyTaiKhoanGUI);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color8);
-            OpenChildForm(new BaoHanhGUI(this));
+            OpenChildForm(baoHanhGUI);
         }
 
         private void btnNH_PH_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color0);
-            OpenChildForm(new PhieuNhapGUI());
+            OpenChildForm(phieuNhapGUI);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             ActivateButton(btnSanPham, RGBColors.color1);
-            OpenChildForm(new LoaiLaptopGUI(this));
+            OpenChildForm(loaiLaptopGUI);
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

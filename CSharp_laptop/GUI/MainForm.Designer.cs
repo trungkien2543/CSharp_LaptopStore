@@ -79,7 +79,7 @@ namespace CSharp_laptop.GUI
             btnExit.IconFont = IconFont.Auto;
             btnExit.IconSize = 20;
             btnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExit.Location = new Point(1094, 1);
+            btnExit.Location = new Point(1096, 1);
             btnExit.Margin = new Padding(0);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(1, 10, 0, 10);
@@ -105,7 +105,7 @@ namespace CSharp_laptop.GUI
             btnMini.IconFont = IconFont.Auto;
             btnMini.IconSize = 20;
             btnMini.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMini.Location = new Point(1026, 0);
+            btnMini.Location = new Point(1028, 0);
             btnMini.Margin = new Padding(0);
             btnMini.Name = "btnMini";
             btnMini.Padding = new Padding(3, 10, 0, 10);
@@ -129,7 +129,7 @@ namespace CSharp_laptop.GUI
             btnZoom.IconFont = IconFont.Auto;
             btnZoom.IconSize = 20;
             btnZoom.ImageAlign = ContentAlignment.MiddleLeft;
-            btnZoom.Location = new Point(1060, 1);
+            btnZoom.Location = new Point(1062, 1);
             btnZoom.Margin = new Padding(0);
             btnZoom.Name = "btnZoom";
             btnZoom.Padding = new Padding(3, 10, 0, 10);
@@ -213,7 +213,7 @@ namespace CSharp_laptop.GUI
             MenuChoice.Controls.Add(btnSanPham);
             MenuChoice.Location = new Point(0, 120);
             MenuChoice.Name = "MenuChoice";
-            MenuChoice.Size = new Size(175, 615);
+            MenuChoice.Size = new Size(175, 600);
             MenuChoice.TabIndex = 1;
             // 
             // iconButton1
@@ -492,10 +492,10 @@ namespace CSharp_laptop.GUI
             panelTitleBar.CustomizableEdges = customizableEdges3;
             panelTitleBar.FillColor = Color.FromArgb(202, 209, 234);
             panelTitleBar.FillColor2 = Color.FromArgb(94, 94, 170);
-            panelTitleBar.Location = new Point(193, 12);
+            panelTitleBar.Location = new Point(193, 7);
             panelTitleBar.Name = "panelTitleBar";
             panelTitleBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            panelTitleBar.Size = new Size(1148, 35);
+            panelTitleBar.Size = new Size(1150, 35);
             panelTitleBar.TabIndex = 7;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
@@ -503,7 +503,7 @@ namespace CSharp_laptop.GUI
             // 
             panelDesktop.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelDesktop.AutoSize = true;
-            panelDesktop.BackColor = Color.Silver;
+            panelDesktop.BackColor = Color.FromArgb(149, 147, 186);
             panelDesktop.Controls.Add(label1);
             panelDesktop.Location = new Point(193, 50);
             panelDesktop.Name = "panelDesktop";
@@ -532,9 +532,11 @@ namespace CSharp_laptop.GUI
             ClientSize = new Size(1353, 813);
             Controls.Add(panelContainer);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm_N";
             Activated += MainForm_N_Activated;
             Load += MainForm_Load;
+            Shown += MainForm_Shown;
             ResizeEnd += MainForm_N_ResizeEnd;
             SizeChanged += MainForm_N_SizeChanged;
             Paint += MainForm_N_Paint;

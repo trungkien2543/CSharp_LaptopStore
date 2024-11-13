@@ -10,11 +10,25 @@ namespace CSharp_laptop
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new DangNhapGUI());
+            // Hiển thị SplashForm
+            SplashForm splash = new SplashForm();
+            splash.Show();
+
+            // Load Form chính ở chế độ nền
+            Task.Run(() =>
+            {
+                // Giả lập công việc load của form chính (ví dụ, load dữ liệu, tài nguyên, etc.)
+                MainForm mainf = new MainForm();
+
+                // Khởi tạo và hiển thị MainForm sau khi đã load xong
+                splash.Invoke(new Action(() => splash.Close())); // Đóng SplashForm
+                Application.Run(mainf); // Hiển thị MainForm
+            });
+
+            Application.Run();
         }
     }
 }
