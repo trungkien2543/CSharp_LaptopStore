@@ -22,7 +22,7 @@ namespace CSharp_laptop.DAO
 
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
-                conn.Open();
+                conn.Open(); 
                 string query = @"
                                 SELECT ll.*, h.TenHang, km.TenKhuyenMai 
                                 FROM loailaptop ll 
