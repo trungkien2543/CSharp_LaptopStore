@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             artanPanel1 = new ArtanPanel();
             vbButton1 = new VBButton();
             label1 = new Label();
@@ -50,25 +50,24 @@
             // 
             artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel1.BackColor = Color.White;
-            artanPanel1.BorderRadius = 30;
+            artanPanel1.BorderRadius = 20;
             artanPanel1.Controls.Add(vbButton1);
             artanPanel1.Controls.Add(label1);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
-            artanPanel1.GradientBottomColor = Color.MediumPurple;
-            artanPanel1.GradientTopColor = Color.DodgerBlue;
-            artanPanel1.Location = new Point(12, 13);
-            artanPanel1.Margin = new Padding(3, 4, 3, 4);
+            artanPanel1.GradientBottomColor = Color.FromArgb(85, 81, 132);
+            artanPanel1.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel1.Location = new Point(10, 10);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1252, 156);
+            artanPanel1.Size = new Size(1096, 117);
             artanPanel1.TabIndex = 15;
             artanPanel1.Paint += artanPanel1_Paint_1;
             // 
             // vbButton1
             // 
             vbButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton1.BackColor = Color.RoyalBlue;
-            vbButton1.BackgroundColor = Color.RoyalBlue;
+            vbButton1.BackColor = Color.FromArgb(247, 176, 118);
+            vbButton1.BackgroundColor = Color.FromArgb(247, 176, 118);
             vbButton1.BorderColor = Color.PaleVioletRed;
             vbButton1.BorderRadius = 20;
             vbButton1.BorderSize = 0;
@@ -78,11 +77,10 @@
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = Properties.Resources.icons8_add_29;
             vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(1073, 46);
-            vbButton1.Margin = new Padding(3, 4, 3, 4);
+            vbButton1.Location = new Point(939, 34);
             vbButton1.Name = "vbButton1";
-            vbButton1.Padding = new Padding(8, 0, 0, 0);
-            vbButton1.Size = new Size(147, 70);
+            vbButton1.Padding = new Padding(7, 0, 0, 0);
+            vbButton1.Size = new Size(129, 52);
             vbButton1.TabIndex = 11;
             vbButton1.Text = "Thêm";
             vbButton1.TextColor = Color.White;
@@ -95,29 +93,29 @@
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(0, 0, 0, 0);
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(37, 55);
+            label1.ForeColor = Color.FromArgb(247, 176, 118);
+            label1.Location = new Point(32, 41);
             label1.Name = "label1";
-            label1.Size = new Size(340, 46);
+            label1.Size = new Size(274, 37);
             label1.TabIndex = 10;
             label1.Text = "Danh sách tài khoản";
             // 
             // artanPanel2
             // 
             artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel2.BackColor = Color.White;
+            artanPanel2.BackColor = Color.FromArgb(85, 81, 132);
             artanPanel2.BorderRadius = 10;
             artanPanel2.Controls.Add(dataGridView1);
             artanPanel2.ForeColor = Color.FromArgb(100, 150, 200);
             artanPanel2.GradientAngle = 30F;
-            artanPanel2.GradientBottomColor = Color.FromArgb(113, 92, 232);
-            artanPanel2.GradientTopColor = Color.FromArgb(113, 92, 232);
-            artanPanel2.Location = new Point(12, 177);
-            artanPanel2.Margin = new Padding(3, 4, 3, 4);
+            artanPanel2.GradientBottomColor = Color.FromArgb(85, 81, 132);
+            artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel2.Location = new Point(10, 133);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Padding = new Padding(5, 0, 5, 20);
-            artanPanel2.Size = new Size(1252, 513);
+            artanPanel2.Padding = new Padding(4, 0, 4, 15);
+            artanPanel2.Size = new Size(1096, 385);
             artanPanel2.TabIndex = 16;
+            artanPanel2.Paint += artanPanel2_Paint;
             // 
             // dataGridView1
             // 
@@ -129,44 +127,43 @@
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(113, 96, 232);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(113, 96, 232);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle16.ForeColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             dataGridView1.ColumnHeadersHeight = 35;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column7, Column8 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = Color.White;
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle17.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle17;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(5, 0);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(4, 0);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = SystemColors.Control;
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle18.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1242, 493);
+            dataGridView1.Size = new Size(1088, 370);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
@@ -220,12 +217,12 @@
             // 
             // QuanLyTaiKhoanGUI
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1283, 703);
+            BackColor = Color.FromArgb(149, 147, 186);
+            ClientSize = new Size(1123, 527);
             Controls.Add(artanPanel2);
             Controls.Add(artanPanel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "QuanLyTaiKhoanGUI";
             Text = "QuanLyTaiKhoanGUI";
             Load += TaiKhoanGUI_Load;

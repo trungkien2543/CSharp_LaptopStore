@@ -122,6 +122,7 @@ namespace CSharp_laptop.GUI
                     VBButton btn = new VBButton();
                     btn.Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btn.Location = new Point(e.CellBounds.X, e.CellBounds.Y);
+                    btn.BackgroundColor = Color.FromArgb(233, 203, 157);
                     btn.BorderRadius = 10;
 
                     btn.Name = e.RowIndex.ToString();
@@ -152,6 +153,7 @@ namespace CSharp_laptop.GUI
                     VBButton btn = new VBButton();
                     btn.Size = new Size(e.CellBounds.Width, e.CellBounds.Height);
                     btn.Location = new Point(e.CellBounds.X, e.CellBounds.Y);
+                    btn.BackgroundColor = Color.FromArgb(233, 203, 157);
                     btn.BorderRadius = 10;
 
                     btn.Name = e.RowIndex.ToString();
@@ -175,47 +177,8 @@ namespace CSharp_laptop.GUI
 
             }
         }
-        private void AddButtonsToDataGridView()
-        {
-
-            // Thêm cột nút "Sửa"
-            DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
-            btnEdit.Name = "btnEdit";
-            btnEdit.HeaderText = "Sửa";
-            btnEdit.Text = "✏️";
-            btnEdit.Width = 60;
-            btnEdit.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
-            btnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView1.Columns.Add(btnEdit);
-
-            // Thêm cột nút "Xóa"
-            DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
-            btnDelete.Name = "btnDelete";
-            btnDelete.HeaderText = "Xóa";
-            btnDelete.Text = "❌";
-            btnDelete.Width = 60;
-            //btnDelete.Image = Image.FromFile("path-to-your-delete-icon.png"); // Đường dẫn tới icon xóa
-            btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
-            btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView1.Columns.Add(btnDelete);
-
-
-
-        }
-        private void edittable()
-        {
-            dataGridView1.Columns["TenDN"].HeaderText = "Tên đăng nhập";
-            dataGridView1.Columns["Matkhau"].HeaderText = "Mật khẩu";
-            dataGridView1.Columns["Quyen"].HeaderText = "Quyền";
-
-            dataGridView1.RowTemplate.Height = 40; // Điều chỉnh chiều cao của hàng
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
-
-        }
-
+        
+       
         private void artanPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -252,6 +215,11 @@ namespace CSharp_laptop.GUI
         }
 
         private void dataGridView1_CellContentClick_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void artanPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
