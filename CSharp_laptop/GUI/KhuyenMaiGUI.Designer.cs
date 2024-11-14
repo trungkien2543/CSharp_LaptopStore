@@ -149,7 +149,7 @@
             vbButton1.TextAlign = ContentAlignment.TopLeft;
             vbButton1.TextColor = Color.White;
             vbButton1.UseVisualStyleBackColor = false;
-            vbButton1.Click += vbButton1_Click;
+            vbButton1.Click += tk_but_Click;
             // 
             // then_but
             // 

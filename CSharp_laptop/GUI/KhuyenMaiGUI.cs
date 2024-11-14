@@ -37,40 +37,12 @@ namespace CSharp_laptop.GUI
 
         }
 
-        private void button1_Click(object sender, EventArgs e)// Thêm
-        {
-            //// Chuyển sang tabcontrol 1 
-            //panel3.Visible = false;
-            //tabControl1.SelectedIndex = 1;
-
-            //Point currentLocation = panel2.Location;// Lấy vị trí hiện tại
-            //panel2.Location = new Point(currentLocation.X, currentLocation.Y - 40);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedIndex = 0;
-        }
-
-        private void button3_Click(object sender, EventArgs e)// Sửa
-        {
-            //panel3.Visible = true;
-            //tabControl1.SelectedIndex = 1;
-            //Point currentLocation = panel2.Location;// Lấy vị trí hiện tại
-            //panel2.Location = new Point(currentLocation.X, currentLocation.Y + 40);
-        }
-
-        private void xoa_but_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void vbButton1_Click(object sender, EventArgs e)
+        private void tk_but_Click(object sender, EventArgs e)
         {
 
         }
@@ -79,6 +51,9 @@ namespace CSharp_laptop.GUI
         {
             tabControl1.SelectedIndex = 1;
             textBox1.Texts = createID();
+            textBox2.Texts = "";
+            textBox3.Texts = "";
+            textBox4.Texts = "";
             funcion = "add";
         }
 
@@ -94,7 +69,7 @@ namespace CSharp_laptop.GUI
 
         private void dong_y_but_Click(object sender, EventArgs e)
         {
-            bool hople = true;
+            bool check = true;
             string input = textBox3.Texts;
             int result;
             if (int.TryParse(input, out result))
@@ -102,25 +77,30 @@ namespace CSharp_laptop.GUI
                 if (result<0 || result>100)
                 {
                     MessageBox.Show("Mức giảm giá phải trong khoảng từ 0 đến 100.");
-                    hople = false;
+                    check = false;
                 }
             }
             else
             {
                 MessageBox.Show("Vui lòng nhập một số hợp lệ vào mức giảm giá.");
-                hople = false;
+                check = false;
             }
-            KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
+            if (check == true)
             {
-                IDKM = textBox1.Texts,
-                TenKM = textBox2.Texts,
-                MucGiamGia = result,
-                MoTa = textBox4.Texts,
-                ThoiGianBatDau = dateTimePicker2.Value,
-                ThoiGianKetThuc = dateTimePicker4.Value,
-                NgayTao = dateTimePicker5.Value
-            };
-            //khuyenMaiBUS.AddorEditKhuyenMai(khuyenMai, funcion);
+                KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
+                {
+                    IDKM = textBox1.Texts,
+                    TenKM = textBox2.Texts,
+                    MucGiamGia = result,
+                    MoTa = textBox4.Texts,
+                    ThoiGianBatDau = dateTimePicker2.Value,
+                    ThoiGianKetThuc = dateTimePicker4.Value,
+                    NgayTao = dateTimePicker5.Value
+                };
+                khuyenMaiBUS.AddorEditKhuyenMai(khuyenMai, funcion);
+                loadData();
+                tabControl1.SelectedIndex = 0;
+            }
             //MessageBox.Show("abc " + khuyenMai.ThoiGianBatDau + "   " + int.Parse(textBox3.Text));
         }
 
@@ -162,6 +142,7 @@ namespace CSharp_laptop.GUI
             {
                 conn.Open();
                 string query = "SELECT MAX(ID_KhuyenMai) FROM khuyenmai";
+                //string query = "SELECT ID_KhuyenMai FROM khuyenmai ORDER BY ID_KhuyenMai DESC LIMIT 1;";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 object result = cmd.ExecuteScalar();
                 if (result != DBNull.Value)
@@ -169,7 +150,7 @@ namespace CSharp_laptop.GUI
                     string maxID = result.ToString();
                     int numberPart = int.Parse(maxID.Substring(2));// Lấy phần số từ ID hiện tại (bỏ phần "KH")
                     numberPart++;
-                    id = "KH" + numberPart.ToString("D3");// Tạo ID mới với định dạng "KH" + số tự động tăng với 3 chữ số
+                    id = "KM" + numberPart.ToString("D3");// Tạo ID mới với định dạng "KM" + số tự động tăng với 3 chữ số
                 }
             }
             return id;
@@ -191,6 +172,8 @@ namespace CSharp_laptop.GUI
             {
                 DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
                 string id = row.Cells["ID"].Value.ToString();
+                
+                //KM_dataGridView.Rows.Remove(row);
                 MessageBox.Show("xóa " + id);
             }
         }

@@ -96,16 +96,15 @@ namespace CSharp_laptop.DAO
             bool isSuccess = false;
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
-                //conn.Open();
+                conn.Open();
                 string query = "";
                 if (funcion == "add")
                 {
-                    query = @"INSERT INTO `Khuyenmai` (`ID_KhuyenMai`, `TenKhuyenMai`, `MucGiamGia`, `MoTaKM`, `ThoiGianBatDau`, `ThoiGianKetThuc`, `ThoiGianTaoKM`)
-                         VALUES (@idKM, @tenKM, @muGiamGia, @moTa, @ThoiGianBatDau,  @ThoiGianKetThuc, @ngayTao)";
+                    query = "INSERT INTO Khuyenmai (ID_KhuyenMai, TenKhuyenMai, MucGiamGia, MoTaKM, ThoiGianBatDau, ThoiGianKetThuc, ThoiGianTaoKM) VALUES (@ID_KhuyenMai, @TenKhuyenMai, @MucGiamGia, @MoTaKM, @ThoiGianBatDau,  @ThoiGianKetThuc, @NgayTao)";
                 }
-                else
+                else if (funcion == "edit")
                 {
-                    query = "UPDATE Khuyenmai SET TenKhuyenMai = @tenKM, MucGiamGia = @muGiamGia, MoTaKM = @moTa, ThoiGianBatDau = @ThoiGianBatDau, ThoiGianKetThuc = @ThoiGianKetThuc, ThoiGianTaoKM = @ngayTao WHERE ID_KhuyenMai = @ID_KhuyenMai";
+                    query = "UPDATE Khuyenmai SET TenKhuyenMai = @TenKhuyenMai, MucGiamGia = @MucGiamGia, MoTaKM = @MoTaKM, ThoiGianBatDau = @ThoiGianBatDau, ThoiGianKetThuc = @ThoiGianKetThuc, ThoiGianTaoKM = @NgayTao WHERE ID_KhuyenMai = @ID_KhuyenMai";
                 }
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -116,7 +115,7 @@ namespace CSharp_laptop.DAO
                 cmd.Parameters.AddWithValue("@MoTaKM", khuyenMai.MoTa);
                 cmd.Parameters.AddWithValue("@ThoiGianBatDau", khuyenMai.ThoiGianBatDau);
                 cmd.Parameters.AddWithValue("@ThoiGianKetThuc", khuyenMai.ThoiGianKetThuc);
-                cmd.Parameters.AddWithValue("@ngayTao", khuyenMai.NgayTao);
+                cmd.Parameters.AddWithValue("@NgayTao", khuyenMai.NgayTao);
 
                 try
                 {
