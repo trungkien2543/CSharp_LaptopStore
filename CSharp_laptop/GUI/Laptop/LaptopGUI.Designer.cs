@@ -72,13 +72,13 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(149, 147, 186);
             panel1.Controls.Add(artanPanel4);
             panel1.Controls.Add(artanPanel2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(1, 3);
+            panel1.Location = new Point(-6, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1223, 675);
+            panel1.Size = new Size(1235, 688);
             panel1.TabIndex = 1;
             // 
             // artanPanel4
@@ -94,7 +94,7 @@
             artanPanel4.Location = new Point(3, 403);
             artanPanel4.Name = "artanPanel4";
             artanPanel4.Padding = new Padding(4, 0, 4, 15);
-            artanPanel4.Size = new Size(1217, 269);
+            artanPanel4.Size = new Size(1225, 282);
             artanPanel4.TabIndex = 49;
             // 
             // dataGridView2
@@ -142,7 +142,7 @@
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(1209, 254);
+            dataGridView2.Size = new Size(1217, 267);
             dataGridView2.TabIndex = 0;
             // 
             // artanPanel2
@@ -177,9 +177,9 @@
             artanPanel2.GradientAngle = 30F;
             artanPanel2.GradientBottomColor = Color.FromArgb(149, 147, 186);
             artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel2.Location = new Point(3, 0);
+            artanPanel2.Location = new Point(3, 6);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Size = new Size(1217, 385);
+            artanPanel2.Size = new Size(1225, 382);
             artanPanel2.TabIndex = 36;
             // 
             // rjTextBox1
@@ -192,7 +192,7 @@
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(841, 316);
+            rjTextBox1.Location = new Point(849, 316);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -218,7 +218,7 @@
             vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton2.ForeColor = Color.White;
             vbButton2.Image = Properties.Resources.icons8_find_29;
-            vbButton2.Location = new Point(1135, 318);
+            vbButton2.Location = new Point(1143, 318);
             vbButton2.Name = "vbButton2";
             vbButton2.Size = new Size(50, 38);
             vbButton2.TabIndex = 32;
@@ -239,7 +239,7 @@
             vbButton1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
             vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(1048, 21);
+            vbButton1.Location = new Point(1056, 21);
             vbButton1.Name = "vbButton1";
             vbButton1.Padding = new Padding(7, 0, 0, 0);
             vbButton1.Size = new Size(137, 44);
@@ -497,7 +497,7 @@
             button1.ForeColor = Color.White;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(2113, 79);
+            button1.Location = new Point(2125, 79);
             button1.Name = "button1";
             button1.Padding = new Padding(10, 0, 0, 0);
             button1.Size = new Size(112, 58);
