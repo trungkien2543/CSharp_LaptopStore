@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CSharp_laptop.GUI.TaiKhoan;
 using CSharp_laptop.GUI.NhanVien;
+using Guna.UI2.WinForms;
 
 namespace CSharp_laptop.GUI
 {
@@ -24,7 +25,8 @@ namespace CSharp_laptop.GUI
         //private MainForm mainForm;
         //string selectedTK;
         //string soluong_tk;
-
+        int PH;
+        bool hided;
         MainForm mainForm;
         TaiKhoanBUS bus;
         List<TaiKhoanDTO> nvs;
@@ -38,15 +40,21 @@ namespace CSharp_laptop.GUI
             //AddButtonsToDataGridView();
             //edittable();
 
+            this.mainForm = mainForm;
+
             bus = new TaiKhoanBUS();
             nvs = bus.GetAllTaiKhoan();
 
             btnEditList = new List<VBButton>();
             btnDelList = new List<VBButton>();
 
-            this.mainForm = mainForm;
+
             InitializeComponent();
 
+            PH = editpanel.Location.Y;
+
+            editpanel.Location = new Point(editpanel.Location.X, this.Height - 10);
+            hided = true;
         }
 
         private void LoadTaiKhoan()
@@ -65,6 +73,9 @@ namespace CSharp_laptop.GUI
                 TaiKhoanDTO nv = nvs[i];
                 dataGridView1.Rows.Add(new object[] { nv.TenDN, nv.MatKhau, nv.Quyen });
             }
+            tabControl1.Appearance = TabAppearance.FlatButtons;// Đặt chế độ hiển thị các tab thành dạng phẳng
+            tabControl1.ItemSize = new Size(0, 1);// Đặt chiều cao của các tab headers thành 1 pixel để ẩn chúng
+            tabControl1.SizeMode = TabSizeMode.Fixed;// Đảm bảo kích thước các tab được cố định, không tự thay đổi
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -102,7 +113,19 @@ namespace CSharp_laptop.GUI
             if (clickedButton != null)
             {
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
+                int rowIndex = int.Parse(clickedButton.Name);
+
+                guna2TextBoxID.Text = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                guna2TextBoxTen.Text = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                guna2TextBoxDiem.Text = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+                if (hided)
+                {
+                    button1.Text = "HIDE";
+                    timer1.Start();
+                }
+
             }
+
         }
         private void BtnDel_Click(object sender, EventArgs e)
         {
@@ -177,8 +200,51 @@ namespace CSharp_laptop.GUI
 
             }
         }
-        
-       
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // Xác định vị trí trung tâm theo cả hai chiều
+            int targetX = (this.Width - editpanel.Width) / 2;
+            int targetY = (this.Height - editpanel.Height) / 2+160;
+
+            if (hided)
+            {
+                // Di chuyển editpanel đến vị trí trung tâm theo chiều Y
+                editpanel.Location = new Point(editpanel.Location.X, editpanel.Location.Y - 15);
+
+                // Kiểm tra nếu editpanel đã đến vị trí trung tâm theo chiều Y
+                if (editpanel.Location.Y <= targetY)
+                {
+                    timer1.Stop();
+                    hided = false;
+                    this.Refresh();
+                }
+            }
+            else
+            {
+                editpanel.Location = new Point(editpanel.Location.X, editpanel.Location.Y + 5);
+                if (editpanel.Location.Y >= this.Height)
+                {
+                    timer1.Stop();
+                    hided = true;
+                    this.Refresh();
+                }
+            }
+        }
+
+
+        private void vbButton2_Click_1(object sender, EventArgs e)
+        {
+            guna2TextBoxID.Text = "";
+            guna2TextBoxTen.Text = "";
+            guna2TextBoxDiem.Text = "";
+            if (hided)
+            {
+                button1.Text = "HIDE";
+                timer1.Start();
+            }
+        }
+
         private void artanPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -211,7 +277,8 @@ namespace CSharp_laptop.GUI
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new CreateTaiKhoanGUI(mainForm));
+           mainForm.OpenChildForm(new CreateTaiKhoanGUI(mainForm));
+           
         }
 
         private void dataGridView1_CellContentClick_1(object sender, EventArgs e)
@@ -220,6 +287,17 @@ namespace CSharp_laptop.GUI
         }
 
         private void artanPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+            button1.Text = "SHOW";
+            timer1.Start();
+        }
+
+        private void editpanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
