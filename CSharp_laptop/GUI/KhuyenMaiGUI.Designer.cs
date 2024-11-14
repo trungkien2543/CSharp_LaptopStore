@@ -50,6 +50,8 @@
             km_pan = new ArtanPanel();
             label15 = new Label();
             panel2 = new Panel();
+            text_mess2 = new Label();
+            text_mess1 = new Label();
             dateTimePicker5 = new DateTimePicker();
             dateTimePicker4 = new DateTimePicker();
             dateTimePicker3 = new DateTimePicker();
@@ -105,7 +107,6 @@
             tabPage1.Size = new Size(1117, 698);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
-            tabPage1.Click += tabPage1_Click;
             // 
             // rjTextBox1
             // 
@@ -349,6 +350,8 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(text_mess2);
+            panel2.Controls.Add(text_mess1);
             panel2.Controls.Add(dateTimePicker5);
             panel2.Controls.Add(dateTimePicker4);
             panel2.Controls.Add(dateTimePicker3);
@@ -373,11 +376,33 @@
             panel2.Size = new Size(572, 600);
             panel2.TabIndex = 1;
             // 
+            // text_mess2
+            // 
+            text_mess2.AutoSize = true;
+            text_mess2.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_mess2.ForeColor = Color.Red;
+            text_mess2.Location = new Point(80, 437);
+            text_mess2.Name = "text_mess2";
+            text_mess2.Size = new Size(22, 16);
+            text_mess2.TabIndex = 29;
+            text_mess2.Text = "     ";
+            // 
+            // text_mess1
+            // 
+            text_mess1.AutoSize = true;
+            text_mess1.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_mess1.ForeColor = Color.Red;
+            text_mess1.Location = new Point(80, 228);
+            text_mess1.Name = "text_mess1";
+            text_mess1.Size = new Size(22, 16);
+            text_mess1.TabIndex = 28;
+            text_mess1.Text = "     ";
+            // 
             // dateTimePicker5
             // 
             dateTimePicker5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker5.Format = DateTimePickerFormat.Custom;
-            dateTimePicker5.Location = new Point(71, 463);
+            dateTimePicker5.Location = new Point(71, 476);
             dateTimePicker5.Name = "dateTimePicker5";
             dateTimePicker5.Size = new Size(200, 27);
             dateTimePicker5.TabIndex = 27;
@@ -386,7 +411,7 @@
             // 
             dateTimePicker4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker4.Format = DateTimePickerFormat.Custom;
-            dateTimePicker4.Location = new Point(301, 397);
+            dateTimePicker4.Location = new Point(301, 407);
             dateTimePicker4.Name = "dateTimePicker4";
             dateTimePicker4.Size = new Size(200, 27);
             dateTimePicker4.TabIndex = 26;
@@ -397,7 +422,7 @@
             dateTimePicker3.CustomFormat = "HH:mm";
             dateTimePicker3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker3.Format = DateTimePickerFormat.Custom;
-            dateTimePicker3.Location = new Point(301, 364);
+            dateTimePicker3.Location = new Point(301, 374);
             dateTimePicker3.Name = "dateTimePicker3";
             dateTimePicker3.RightToLeft = RightToLeft.No;
             dateTimePicker3.ShowUpDown = true;
@@ -411,7 +436,7 @@
             dateTimePicker1.CustomFormat = "HH:mm";
             dateTimePicker1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(71, 364);
+            dateTimePicker1.Location = new Point(71, 374);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.RightToLeft = RightToLeft.No;
             dateTimePicker1.ShowUpDown = true;
@@ -423,7 +448,7 @@
             // 
             dateTimePicker2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(71, 397);
+            dateTimePicker2.Location = new Point(71, 407);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(200, 27);
             dateTimePicker2.TabIndex = 24;
@@ -433,7 +458,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.DimGray;
-            label9.Location = new Point(82, 335);
+            label9.Location = new Point(80, 352);
             label9.Name = "label9";
             label9.Size = new Size(104, 19);
             label9.TabIndex = 6;
@@ -444,7 +469,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(81, 38);
+            label1.Location = new Point(80, 36);
             label1.Name = "label1";
             label1.Size = new Size(22, 19);
             label1.TabIndex = 21;
@@ -461,7 +486,7 @@
             textBox1.Enabled = false;
             textBox1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            textBox1.Location = new Point(71, 51);
+            textBox1.Location = new Point(71, 50);
             textBox1.Margin = new Padding(4);
             textBox1.Multiline = false;
             textBox1.Name = "textBox1";
@@ -479,7 +504,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.DimGray;
-            label10.Location = new Point(71, 441);
+            label10.Location = new Point(80, 454);
             label10.Name = "label10";
             label10.Size = new Size(58, 19);
             label10.TabIndex = 10;
@@ -490,7 +515,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.DimGray;
-            label11.Location = new Point(80, 237);
+            label11.Location = new Point(80, 246);
             label11.Name = "label11";
             label11.Size = new Size(106, 19);
             label11.TabIndex = 4;
@@ -501,7 +526,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.DimGray;
-            label12.Location = new Point(80, 97);
+            label12.Location = new Point(80, 106);
             label12.Name = "label12";
             label12.Size = new Size(95, 19);
             label12.TabIndex = 0;
@@ -512,7 +537,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.DimGray;
-            label13.Location = new Point(80, 158);
+            label13.Location = new Point(80, 176);
             label13.Name = "label13";
             label13.Size = new Size(102, 19);
             label13.TabIndex = 2;
@@ -529,7 +554,7 @@
             dong_y_but.FlatAppearance.BorderSize = 0;
             dong_y_but.FlatStyle = FlatStyle.Flat;
             dong_y_but.ForeColor = Color.White;
-            dong_y_but.Location = new Point(301, 538);
+            dong_y_but.Location = new Point(301, 542);
             dong_y_but.Name = "dong_y_but";
             dong_y_but.Size = new Size(150, 40);
             dong_y_but.TabIndex = 14;
@@ -550,7 +575,7 @@
             huy_but.FlatStyle = FlatStyle.Flat;
             huy_but.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             huy_but.ForeColor = Color.DimGray;
-            huy_but.Location = new Point(121, 538);
+            huy_but.Location = new Point(121, 540);
             huy_but.Name = "huy_but";
             huy_but.Size = new Size(150, 40);
             huy_but.TabIndex = 13;
@@ -565,7 +590,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.DimGray;
-            label14.Location = new Point(301, 335);
+            label14.Location = new Point(310, 352);
             label14.Name = "label14";
             label14.Size = new Size(107, 19);
             label14.TabIndex = 8;
@@ -581,7 +606,7 @@
             textBox4.BorderSize = 1;
             textBox4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox4.ForeColor = Color.FromArgb(64, 64, 64);
-            textBox4.Location = new Point(71, 251);
+            textBox4.Location = new Point(71, 260);
             textBox4.Margin = new Padding(4);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
@@ -604,7 +629,7 @@
             textBox3.BorderSize = 1;
             textBox3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox3.ForeColor = Color.FromArgb(64, 64, 64);
-            textBox3.Location = new Point(71, 170);
+            textBox3.Location = new Point(71, 190);
             textBox3.Margin = new Padding(4);
             textBox3.Multiline = false;
             textBox3.Name = "textBox3";
@@ -616,6 +641,7 @@
             textBox3.TabIndex = 3;
             textBox3.Texts = "";
             textBox3.UnderlinedStyle = false;
+            textBox3.Leave += check_tb3;
             // 
             // textBox2
             // 
@@ -627,7 +653,7 @@
             textBox2.BorderSize = 1;
             textBox2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            textBox2.Location = new Point(71, 111);
+            textBox2.Location = new Point(71, 120);
             textBox2.Margin = new Padding(4);
             textBox2.Multiline = false;
             textBox2.Name = "textBox2";
@@ -700,5 +726,7 @@
         private DateTimePicker dateTimePicker5;
         private DateTimePicker dateTimePicker4;
         private DateTimePicker dateTimePicker3;
+        private Label text_mess1;
+        private Label text_mess2;
     }
 }

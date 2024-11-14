@@ -21,10 +21,13 @@ namespace CSharp_laptop.GUI
     {
         private string funcion = "";
         private KhuyenMaiBUS khuyenMaiBUS = new KhuyenMaiBUS();
+        private BindingList<KhuyenMaiDTO> khuyenMaiList;
+
+
         public KhuyenMaiGUI()
         {
             InitializeComponent();
-            loadData();
+            LoadData();
             Customtable();
         }
 
@@ -34,11 +37,6 @@ namespace CSharp_laptop.GUI
             tabControl1.Appearance = TabAppearance.FlatButtons;// Đặt chế độ hiển thị các tab thành dạng phẳng
             tabControl1.ItemSize = new Size(0, 1);// Đặt chiều cao của các tab headers thành 1 pixel để ẩn chúng
             tabControl1.SizeMode = TabSizeMode.Fixed;// Đảm bảo kích thước các tab được cố định, không tự thay đổi
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -54,6 +52,11 @@ namespace CSharp_laptop.GUI
             textBox2.Texts = "";
             textBox3.Texts = "";
             textBox4.Texts = "";
+            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker2.Value = DateTime.Now;
+            dateTimePicker3.Value = DateTime.Today;
+            dateTimePicker4.Value = DateTime.Now;
+            dateTimePicker5.Value = DateTime.Now;
             funcion = "add";
         }
 
@@ -69,45 +72,55 @@ namespace CSharp_laptop.GUI
 
         private void dong_y_but_Click(object sender, EventArgs e)
         {
-            bool check = true;
-            string input = textBox3.Texts;
-            int result;
-            if (int.TryParse(input, out result))
-            {// Nếu chuyển đổi thành công
-                if (result<0 || result>100)
-                {
-                    MessageBox.Show("Mức giảm giá phải trong khoảng từ 0 đến 100.");
-                    check = false;
-                }
+            int check = 0;
+            if (textBox3.Texts == "")
+            {
+                text_mess1.Text = "Vui lòng nhập mức giảm giá.";
+                check--;
+            }
+            if (text_mess1.Text != "")
+            {
+                check--;
+            }
+            //Kiểm tra thời gian
+            DateTime date1 = dateTimePicker2.Value.Date;
+            DateTime date2 = dateTimePicker4.Value.Date;
+            TimeSpan time1 = dateTimePicker1.Value.TimeOfDay;
+            TimeSpan time2 = dateTimePicker3.Value.TimeOfDay;
+            DateTime datetime1 = date1.Add(time1);
+            DateTime datetime2 = date2.Add(time2);
+            if (datetime1 < datetime2)
+            {
+                text_mess2.Text = "";
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập một số hợp lệ vào mức giảm giá.");
-                check = false;
+                text_mess2.Text = "Thời gian Kết thúc phải lớn hơn thời gian bắt đầu.";
+                check--;
             }
-            if (check == true)
+
+            if (check == 0)
             {
                 KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
                 {
                     IDKM = textBox1.Texts,
                     TenKM = textBox2.Texts,
-                    MucGiamGia = result,
+                    MucGiamGia = int.Parse(textBox3.Texts),
                     MoTa = textBox4.Texts,
-                    ThoiGianBatDau = dateTimePicker2.Value,
-                    ThoiGianKetThuc = dateTimePicker4.Value,
-                    NgayTao = dateTimePicker5.Value
+                    ThoiGianBatDau = datetime1,
+                    ThoiGianKetThuc = datetime2,
+                    NgayTao = dateTimePicker5.Value.Date
                 };
                 khuyenMaiBUS.AddorEditKhuyenMai(khuyenMai, funcion);
-                loadData();
+                LoadData();
                 tabControl1.SelectedIndex = 0;
             }
-            //MessageBox.Show("abc " + khuyenMai.ThoiGianBatDau + "   " + int.Parse(textBox3.Text));
         }
 
-        private void loadData()
+        private void LoadData()
         {
-            List<KhuyenMaiDTO> khuyenMai = khuyenMaiBUS.getKhuyenMaiArr();
-            KM_dataGridView.DataSource = khuyenMai;
+            khuyenMaiList = khuyenMaiBUS.getKhuyenMaiArr();
+            KM_dataGridView.DataSource = khuyenMaiList;
         }
 
         void Customtable()
@@ -127,7 +140,6 @@ namespace CSharp_laptop.GUI
             btnDelete.HeaderText = "Xóa";
             btnDelete.Text = "❌";
             btnDelete.Width = 60;
-            //btnDelete.Image = Image.FromFile("path-to-your-delete-icon.png"); // Đường dẫn tới icon xóa
             btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             KM_dataGridView.Columns.Add(btnDelete);
@@ -162,19 +174,46 @@ namespace CSharp_laptop.GUI
             {
                 DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
                 tabControl1.SelectedIndex = 1;
-                textBox1.Texts = row.Cells["ID"].Value.ToString(); 
+                textBox1.Texts = row.Cells["ID"].Value.ToString();
                 textBox2.Texts = row.Cells[3].Value.ToString();
                 textBox3.Texts = row.Cells[4].Value.ToString();
                 textBox4.Texts = row.Cells[5].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(row.Cells[6].Value);
+                dateTimePicker2.Value = Convert.ToDateTime(row.Cells[6].Value);
+                dateTimePicker3.Value = Convert.ToDateTime(row.Cells[7].Value);
+                dateTimePicker4.Value = Convert.ToDateTime(row.Cells[7].Value);
+                dateTimePicker5.Value = Convert.ToDateTime(row.Cells[8].Value);
                 funcion = "edit";
             }
             if (e.ColumnIndex == KM_dataGridView.Columns["btnDelete"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
-                string id = row.Cells["ID"].Value.ToString();
-                
-                //KM_dataGridView.Rows.Remove(row);
-                MessageBox.Show("xóa " + id);
+
+                //string id = row.Cells["ID"].Value.ToString();
+                //khuyenMaiBUS.DeleteKhuyenMai(id);
+
+                khuyenMaiList.Remove((KhuyenMaiDTO)row.DataBoundItem);
+            }
+        }
+
+        private void check_tb3(object sender, EventArgs e)
+        {
+            string input = textBox3.Texts;
+            int result;
+            if (int.TryParse(input, out result))
+            {// Nếu chuyển đổi thành công
+                if (result < 0 || result > 100)
+                {
+                    text_mess1.Text = "Số phải nằm trong khoảng từ 0 đến 100.";
+                }
+                else
+                {
+                    text_mess1.Text = "";
+                }
+            }
+            else
+            {
+                text_mess1.Text = "Vui lòng nhập một số trong khoảng từ 0 đến 100.";
             }
         }
     }

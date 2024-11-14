@@ -6,6 +6,7 @@ using Mysqlx.Crud;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,9 +39,9 @@ namespace CSharp_laptop.DAO
 
             return khuyenMai;
         }
-        public List<KhuyenMaiDTO> GetKhuyenMaiArr()
+        public BindingList<KhuyenMaiDTO> GetKhuyenMaiArr()
         {
-            List<KhuyenMaiDTO> khuyenMaiArr = new List<KhuyenMaiDTO>();
+            BindingList<KhuyenMaiDTO> khuyenMaiArr = new BindingList<KhuyenMaiDTO>();
 
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
@@ -130,5 +131,31 @@ namespace CSharp_laptop.DAO
             return isSuccess;
         }
 
+        public bool DeleteKhuyenMai(string id)
+        {
+            bool isSuccess = false;
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "DELETE FROM khuyenmai WHERE ID_KhuyenMai = @ID_KhuyenMai";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_KhuyenMai", id);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        isSuccess = true;
+                        Console.WriteLine("Xóa nhân viên thành công!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Không tìm thấy nhân viên với ID đã cho.");
+                    }
+                }
+            }
+            return isSuccess;
+        }
     }
 }
