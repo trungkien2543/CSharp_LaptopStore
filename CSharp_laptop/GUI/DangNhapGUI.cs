@@ -104,28 +104,28 @@ namespace CSharp_laptop.GUI
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-            GUI.MainForm mf = new GUI.MainForm();
-            mf.Show();
-            this.Hide();
-            //string tenDangNhap = rjTextBox1.Texts;
-            //string matKhau = rjTextBox2.Texts;
+            //GUI.MainForm mf = new GUI.MainForm();
+            //mf.Show();
+            //this.Hide();
+            string tenDangNhap = rjTextBox1.Texts;
+            string matKhau = rjTextBox2.Texts;
 
-            //TaiKhoanDAO taiKhoanDAO = new TaiKhoanDAO();
+            TaiKhoanDAO taiKhoanDAO = new TaiKhoanDAO();
 
-            //bool isLoginSuccessful = taiKhoanDAO.CheckLogin(tenDangNhap, matKhau);
+            bool isLoginSuccessful = taiKhoanDAO.CheckLogin(tenDangNhap, matKhau);
 
-            //if (isLoginSuccessful)
-            //{
-            //    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    GUI.MainForm mf = new GUI.MainForm();
-            //    mf.Show();
-            //    this.Hide(); // Ẩn form đăng nhập
-            //}
-            //else
-            //{
-            //    // Đăng nhập thất bại
-            //    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            if (isLoginSuccessful)
+            {
+                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GUI.MainForm mf = new GUI.MainForm();
+                mf.Show();
+                this.Hide(); // Ẩn form đăng nhập
+            }
+            else
+            {
+                // Đăng nhập thất bại
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)

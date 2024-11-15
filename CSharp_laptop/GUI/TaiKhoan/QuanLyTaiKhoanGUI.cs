@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using CSharp_laptop.GUI.TaiKhoan;
 using CSharp_laptop.GUI.NhanVien;
 using Guna.UI2.WinForms;
+using CSharp_laptop.DAO;
 
 namespace CSharp_laptop.GUI
 {
@@ -32,6 +33,8 @@ namespace CSharp_laptop.GUI
         List<TaiKhoanDTO> nvs;
         List<VBButton> btnEditList;
         List<VBButton> btnDelList;
+
+        TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
         public QuanLyTaiKhoanGUI(MainForm mainForm)
         {
             //this.mainForm = mainForm;
@@ -50,13 +53,27 @@ namespace CSharp_laptop.GUI
 
 
             InitializeComponent();
+            TaiDuLieuComboBoxQuyen();
 
             PH = editpanel.Location.Y;
 
             editpanel.Location = new Point(editpanel.Location.X, this.Height - 10);
             hided = true;
+
+
+            
         }
 
+        private void LoadDataToDataGridView()
+        {
+            
+
+            for (int i = 0; i < nvs.Count; i++)
+            {
+                TaiKhoanDTO nv = nvs[i];
+                dataGridView1.Rows.Add(new object[] { nv.TenDN, nv.MatKhau, nv.Quyen });
+            }
+        }
         private void LoadTaiKhoan()
         {
 
@@ -68,11 +85,7 @@ namespace CSharp_laptop.GUI
         }
         private void TaiKhoanGUI_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < nvs.Count; i++)
-            {
-                TaiKhoanDTO nv = nvs[i];
-                dataGridView1.Rows.Add(new object[] { nv.TenDN, nv.MatKhau, nv.Quyen });
-            }
+            LoadDataToDataGridView();
             tabControl1.Appearance = TabAppearance.FlatButtons;// Đặt chế độ hiển thị các tab thành dạng phẳng
             tabControl1.ItemSize = new Size(0, 1);// Đặt chiều cao của các tab headers thành 1 pixel để ẩn chúng
             tabControl1.SizeMode = TabSizeMode.Fixed;// Đảm bảo kích thước các tab được cố định, không tự thay đổi
@@ -205,12 +218,12 @@ namespace CSharp_laptop.GUI
         {
             // Xác định vị trí trung tâm theo cả hai chiều
             int targetX = (this.Width - editpanel.Width) / 2;
-            int targetY = (this.Height - editpanel.Height) / 2+160;
+            int targetY = (this.Height - editpanel.Height) / 2 + 158;
 
             if (hided)
             {
                 // Di chuyển editpanel đến vị trí trung tâm theo chiều Y
-                editpanel.Location = new Point(editpanel.Location.X, editpanel.Location.Y - 15);
+                editpanel.Location = new Point(editpanel.Location.X, editpanel.Location.Y - 5);
 
                 // Kiểm tra nếu editpanel đã đến vị trí trung tâm theo chiều Y
                 if (editpanel.Location.Y <= targetY)
@@ -230,6 +243,7 @@ namespace CSharp_laptop.GUI
                     this.Refresh();
                 }
             }
+
         }
 
 
@@ -277,8 +291,9 @@ namespace CSharp_laptop.GUI
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-           mainForm.OpenChildForm(new CreateTaiKhoanGUI(mainForm));
-           
+            //mainForm.OpenChildForm(new CreateTaiKhoanGUI(mainForm));
+            tabControl1.SelectedIndex = 1;
+
         }
 
         private void dataGridView1_CellContentClick_1(object sender, EventArgs e)
@@ -301,5 +316,82 @@ namespace CSharp_laptop.GUI
         {
 
         }
+
+        private void vbButton4_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+        private void TaiDuLieuComboBoxQuyen()
+        {
+            Dictionary<string, string> quyen = taiKhoanBUS.GetAllQuyen();
+            rjComboBox2.DataSource = new BindingSource(quyen, null);
+            rjComboBox2.DisplayMember = "Value";  // Hiển thị tên khuyến mãi
+            rjComboBox2.ValueMember = "Key";      // Giá trị là mã khuyến mãi
+        }
+
+        private void vbButton3_Click(object sender, EventArgs e)
+        {
+            // Lấy thông tin từ các TextBox và ComboBox
+            string tenDN = rjTextBox2.Texts; // Lấy tên đăng nhập và loại bỏ khoảng trắng
+            string matKhau = rjTextBox1.Texts; // Lấy mật khẩu và loại bỏ khoảng trắng
+            string quyen = ((KeyValuePair<string, string>)rjComboBox2.SelectedItem).Key; // Lấy quyền từ ComboBox
+
+            // Tạo một đối tượng TaiKhoanDTO
+            TaiKhoanDTO taiKhoan = new TaiKhoanDTO
+            {
+                TenDN = tenDN,
+                MatKhau = matKhau,
+                Quyen = quyen
+            };
+
+            bool isAdded = taiKhoanBUS.AddTaiKhoan(taiKhoan);
+
+            if (isAdded)
+            {
+                MessageBox.Show("Tài khoản đã được thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                rjTextBox1.Text = "";
+                rjTextBox2.Text = ""; // Sử dụng Clear() để xóa nội dung
+                rjComboBox2.SelectedIndex = 0; // Hoặc chọn một giá trị mặc định
+            }
+            else
+            {
+                // Thêm tài khoản thất bại
+                MessageBox.Show("Có lỗi xảy ra khi thêm tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+
+            // Lấy thông tin từ các TextBox và ComboBox
+            string tenDN = guna2TextBoxID.Text; // Lấy tên đăng nhập và loại bỏ khoảng trắng
+            string matKhauMoi = guna2TextBoxTen.Text; // Lấy mật khẩu mới và loại bỏ khoảng trắng
+            string quyenMoi = guna2TextBoxDiem.Text; // Lấy quyền từ ComboBox
+
+            // Tạo một đối tượng TaiKhoanDTO với dữ liệu mới
+            TaiKhoanDTO taiKhoan = new TaiKhoanDTO
+            {
+                TenDN = tenDN,
+                MatKhau = matKhauMoi,
+                Quyen = quyenMoi
+            };
+
+            // Gọi hàm UpdateMatKhauQuyen để cập nhật tài khoản
+            bool isUpdated = taiKhoanBUS.SuaTK(taiKhoan);
+
+            if (isUpdated)
+            {
+                MessageBox.Show("Tài khoản đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra khi cập nhật tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+            this.Refresh();
+
+        }
+
+
     }
 }

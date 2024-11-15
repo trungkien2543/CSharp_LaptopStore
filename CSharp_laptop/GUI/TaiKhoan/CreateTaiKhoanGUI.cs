@@ -185,7 +185,7 @@ namespace CSharp_laptop.GUI.TaiKhoan
             vbButton3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton3.ForeColor = Color.White;
             vbButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton3.Location = new Point(86, 404);
+            vbButton3.Location = new Point(94, 404);
             vbButton3.Margin = new Padding(3, 4, 3, 4);
             vbButton3.Name = "vbButton3";
             vbButton3.Padding = new Padding(8, 0, 0, 0);

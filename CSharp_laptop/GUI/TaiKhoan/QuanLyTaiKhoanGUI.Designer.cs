@@ -63,12 +63,26 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            artanPanel3 = new ArtanPanel();
+            label6 = new Label();
+            artanPanel4 = new ArtanPanel();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            vbButton4 = new VBButton();
+            vbButton3 = new VBButton();
+            rjComboBox2 = new RJComboBox.RJComboBox();
+            rjTextBox1 = new RJTextBox();
+            rjTextBox2 = new RJTextBox();
             artanPanel1.SuspendLayout();
             editpanel.SuspendLayout();
             artanPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            artanPanel3.SuspendLayout();
+            artanPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // artanPanel1
@@ -149,7 +163,7 @@
             editpanel.FillColor = Color.FromArgb(85, 81, 132);
             editpanel.FillColor2 = Color.FromArgb(210, 220, 230);
             editpanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            editpanel.Location = new Point(4, 385);
+            editpanel.Location = new Point(4, 408);
             editpanel.Name = "editpanel";
             editpanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
             editpanel.Size = new Size(1184, 171);
@@ -218,6 +232,7 @@
             guna2TextBoxID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             guna2TextBoxID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBoxID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBoxID.Enabled = false;
             guna2TextBoxID.FocusedState.BorderColor = Color.FromArgb(227, 158, 62);
             guna2TextBoxID.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxID.ForeColor = Color.FromArgb(64, 64, 64);
@@ -248,12 +263,13 @@
             guna2CircleButton2.Image = Properties.Resources.diskette;
             guna2CircleButton2.ImageOffset = new Point(1, 0);
             guna2CircleButton2.ImageSize = new Size(30, 30);
-            guna2CircleButton2.Location = new Point(941, 64);
+            guna2CircleButton2.Location = new Point(904, 53);
             guna2CircleButton2.Name = "guna2CircleButton2";
             guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton2.Size = new Size(62, 62);
             guna2CircleButton2.TabIndex = 10;
+            guna2CircleButton2.Click += guna2CircleButton2_Click;
             // 
             // guna2TextBoxTen
             // 
@@ -294,7 +310,7 @@
             artanPanel2.Location = new Point(3, 126);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Padding = new Padding(4, 0, 4, 15);
-            artanPanel2.Size = new Size(1192, 753);
+            artanPanel2.Size = new Size(1192, 594);
             artanPanel2.TabIndex = 16;
             artanPanel2.Paint += artanPanel2_Paint;
             // 
@@ -344,7 +360,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1184, 738);
+            dataGridView1.Size = new Size(1184, 579);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
@@ -409,7 +425,7 @@
             tabControl1.Location = new Point(-4, -5);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1225, 910);
+            tabControl1.Size = new Size(1225, 754);
             tabControl1.TabIndex = 17;
             // 
             // tabPage1
@@ -421,26 +437,227 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1217, 882);
+            tabPage1.Size = new Size(1217, 726);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.FromArgb(149, 147, 186);
+            tabPage2.Controls.Add(artanPanel3);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1217, 882);
+            tabPage2.Size = new Size(1217, 726);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // artanPanel3
+            // 
+            artanPanel3.BackColor = Color.White;
+            artanPanel3.BorderRadius = 30;
+            artanPanel3.Controls.Add(label6);
+            artanPanel3.Controls.Add(artanPanel4);
+            artanPanel3.ForeColor = Color.Black;
+            artanPanel3.GradientAngle = 30F;
+            artanPanel3.GradientBottomColor = Color.FromArgb(85, 81, 132);
+            artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
+            artanPanel3.Location = new Point(307, 67);
+            artanPanel3.Margin = new Padding(3, 4, 3, 4);
+            artanPanel3.Name = "artanPanel3";
+            artanPanel3.Padding = new Padding(4, 60, 4, 4);
+            artanPanel3.Size = new Size(560, 562);
+            artanPanel3.TabIndex = 45;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.FromArgb(0, 0, 0, 0);
+            label6.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.FromArgb(247, 176, 118);
+            label6.Location = new Point(182, 12);
+            label6.Name = "label6";
+            label6.Size = new Size(185, 32);
+            label6.TabIndex = 41;
+            label6.Text = "Thêm tài khoản";
+            // 
+            // artanPanel4
+            // 
+            artanPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel4.BackColor = Color.White;
+            artanPanel4.BorderRadius = 30;
+            artanPanel4.Controls.Add(label4);
+            artanPanel4.Controls.Add(label3);
+            artanPanel4.Controls.Add(label2);
+            artanPanel4.Controls.Add(vbButton4);
+            artanPanel4.Controls.Add(vbButton3);
+            artanPanel4.Controls.Add(rjComboBox2);
+            artanPanel4.Controls.Add(rjTextBox1);
+            artanPanel4.Controls.Add(rjTextBox2);
+            artanPanel4.ForeColor = Color.Black;
+            artanPanel4.GradientAngle = 30F;
+            artanPanel4.GradientBottomColor = Color.White;
+            artanPanel4.GradientTopColor = Color.White;
+            artanPanel4.Location = new Point(4, 60);
+            artanPanel4.Margin = new Padding(3, 4, 3, 4);
+            artanPanel4.Name = "artanPanel4";
+            artanPanel4.Size = new Size(552, 498);
+            artanPanel4.TabIndex = 17;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(0, 0, 0, 0);
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(54, 143);
+            label4.Name = "label4";
+            label4.Size = new Size(91, 25);
+            label4.TabIndex = 43;
+            label4.Text = "Mật khẩu";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(0, 0, 0, 0);
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(54, 267);
+            label3.Name = "label3";
+            label3.Size = new Size(67, 25);
+            label3.TabIndex = 42;
+            label3.Text = "Quyền";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(0, 0, 0, 0);
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(54, 26);
+            label2.Name = "label2";
+            label2.Size = new Size(124, 25);
+            label2.TabIndex = 41;
+            label2.Text = "Tên tài khoản";
+            // 
+            // vbButton4
+            // 
+            vbButton4.BackColor = Color.FromArgb(85, 81, 132);
+            vbButton4.BackgroundColor = Color.FromArgb(85, 81, 132);
+            vbButton4.BorderColor = Color.PaleVioletRed;
+            vbButton4.BorderRadius = 20;
+            vbButton4.BorderSize = 0;
+            vbButton4.FlatAppearance.BorderSize = 0;
+            vbButton4.FlatStyle = FlatStyle.Flat;
+            vbButton4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton4.ForeColor = Color.White;
+            vbButton4.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton4.Location = new Point(306, 404);
+            vbButton4.Margin = new Padding(3, 4, 3, 4);
+            vbButton4.Name = "vbButton4";
+            vbButton4.Padding = new Padding(8, 0, 0, 0);
+            vbButton4.Size = new Size(141, 50);
+            vbButton4.TabIndex = 40;
+            vbButton4.Text = "Hủy";
+            vbButton4.TextColor = Color.White;
+            vbButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton4.UseVisualStyleBackColor = false;
+            vbButton4.Click += vbButton4_Click;
+            // 
+            // vbButton3
+            // 
+            vbButton3.BackColor = Color.FromArgb(247, 176, 118);
+            vbButton3.BackgroundColor = Color.FromArgb(247, 176, 118);
+            vbButton3.BorderColor = Color.PaleVioletRed;
+            vbButton3.BorderRadius = 20;
+            vbButton3.BorderSize = 0;
+            vbButton3.FlatAppearance.BorderSize = 0;
+            vbButton3.FlatStyle = FlatStyle.Flat;
+            vbButton3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton3.ForeColor = Color.White;
+            vbButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton3.Location = new Point(104, 404);
+            vbButton3.Margin = new Padding(3, 4, 3, 4);
+            vbButton3.Name = "vbButton3";
+            vbButton3.Padding = new Padding(8, 0, 0, 0);
+            vbButton3.Size = new Size(141, 50);
+            vbButton3.TabIndex = 39;
+            vbButton3.Text = "Thêm";
+            vbButton3.TextColor = Color.White;
+            vbButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton3.UseVisualStyleBackColor = false;
+            vbButton3.Click += vbButton3_Click;
+            // 
+            // rjComboBox2
+            // 
+            rjComboBox2.BackColor = Color.WhiteSmoke;
+            rjComboBox2.BorderColor = Color.Black;
+            rjComboBox2.BorderSize = 1;
+            rjComboBox2.DropDownStyle = ComboBoxStyle.DropDown;
+            rjComboBox2.Font = new Font("Segoe UI", 10F);
+            rjComboBox2.ForeColor = Color.DimGray;
+            rjComboBox2.IconColor = Color.FromArgb(247, 176, 118);
+            rjComboBox2.ListBackColor = Color.FromArgb(230, 228, 245);
+            rjComboBox2.ListTextColor = Color.DimGray;
+            rjComboBox2.Location = new Point(54, 312);
+            rjComboBox2.Margin = new Padding(3, 4, 3, 4);
+            rjComboBox2.MinimumSize = new Size(229, 40);
+            rjComboBox2.Name = "rjComboBox2";
+            rjComboBox2.Padding = new Padding(1);
+            rjComboBox2.Size = new Size(453, 40);
+            rjComboBox2.TabIndex = 38;
+            rjComboBox2.Texts = "";
+            // 
+            // rjTextBox1
+            // 
+            rjTextBox1.BackColor = SystemColors.Window;
+            rjTextBox1.BorderColor = Color.Black;
+            rjTextBox1.BorderFocusColor = Color.FromArgb(247, 176, 118);
+            rjTextBox1.BorderRadius = 10;
+            rjTextBox1.BorderSize = 1;
+            rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F);
+            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox1.Location = new Point(54, 180);
+            rjTextBox1.Margin = new Padding(5);
+            rjTextBox1.Multiline = false;
+            rjTextBox1.Name = "rjTextBox1";
+            rjTextBox1.Padding = new Padding(11, 9, 11, 9);
+            rjTextBox1.PasswordChar = false;
+            rjTextBox1.PlaceholderColor = Color.DarkGray;
+            rjTextBox1.PlaceholderText = "";
+            rjTextBox1.Size = new Size(453, 44);
+            rjTextBox1.TabIndex = 10;
+            rjTextBox1.Texts = "";
+            rjTextBox1.UnderlinedStyle = false;
+            // 
+            // rjTextBox2
+            // 
+            rjTextBox2.BackColor = SystemColors.Window;
+            rjTextBox2.BorderColor = Color.Black;
+            rjTextBox2.BorderFocusColor = Color.FromArgb(247, 176, 118);
+            rjTextBox2.BorderRadius = 10;
+            rjTextBox2.BorderSize = 1;
+            rjTextBox2.Font = new Font("Microsoft Sans Serif", 15.75F);
+            rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox2.Location = new Point(54, 56);
+            rjTextBox2.Margin = new Padding(5);
+            rjTextBox2.Multiline = false;
+            rjTextBox2.Name = "rjTextBox2";
+            rjTextBox2.Padding = new Padding(11, 9, 11, 9);
+            rjTextBox2.PasswordChar = false;
+            rjTextBox2.PlaceholderColor = Color.DarkGray;
+            rjTextBox2.PlaceholderText = "";
+            rjTextBox2.Size = new Size(453, 44);
+            rjTextBox2.TabIndex = 11;
+            rjTextBox2.Texts = "";
+            rjTextBox2.UnderlinedStyle = false;
             // 
             // QuanLyTaiKhoanGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(149, 147, 186);
-            ClientSize = new Size(1207, 900);
+            ClientSize = new Size(1207, 744);
             Controls.Add(tabControl1);
             Name = "QuanLyTaiKhoanGUI";
             Text = "QuanLyTaiKhoanGUI";
@@ -452,6 +669,11 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            artanPanel3.ResumeLayout(false);
+            artanPanel3.PerformLayout();
+            artanPanel4.ResumeLayout(false);
+            artanPanel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -477,5 +699,16 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private ArtanPanel artanPanel3;
+        private Label label6;
+        private ArtanPanel artanPanel4;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private VBButton vbButton4;
+        private VBButton vbButton3;
+        private RJComboBox.RJComboBox rjComboBox2;
+        private RJTextBox rjTextBox1;
+        private RJTextBox rjTextBox2;
     }
 }
