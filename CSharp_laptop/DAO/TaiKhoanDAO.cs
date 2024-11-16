@@ -84,6 +84,43 @@ namespace CSharp_laptop.DAO
                 }
             }
         }
+        public bool SuaTK(TaiKhoanDTO taiKhoan)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    // Câu lệnh SQL để cập nhật mật khẩu và quyền của tài khoản dựa trên TenDN
+                    string query = "UPDATE taikhoan SET MatKhau = @MatKhau, Quyen = @Quyen WHERE TenDN = @TenDN";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    // Thêm các tham số để ngăn chặn SQL Injection
+                    cmd.Parameters.AddWithValue("@TenDN", taiKhoan.TenDN);
+                    cmd.Parameters.AddWithValue("@MatKhau", taiKhoan.MatKhau);
+
+                    // Kiểm tra và gán giá trị `Quyen` (nếu `Quyen` là null, gán `DBNull.Value`)
+                    if (string.IsNullOrEmpty(taiKhoan.Quyen))
+                    {
+                        cmd.Parameters.AddWithValue("@Quyen", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Quyen", taiKhoan.Quyen);
+                    }
+
+                    // Thực thi câu lệnh SQL
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+
 
         public Dictionary<string, string> GetAllQuyen()
         {

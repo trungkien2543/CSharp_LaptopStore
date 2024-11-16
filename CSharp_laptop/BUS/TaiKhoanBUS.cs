@@ -25,6 +25,14 @@ namespace CSharp_laptop.BUS
             }
             return dao.AddTaiKhoan(tk);
         }
+        public bool SuaTK(TaiKhoanDTO tk)
+        {
+            if (string.IsNullOrEmpty(tk.TenDN))
+            {
+                return false;
+            }
+            return dao.SuaTK(tk);
+        }
         public List<TaiKhoanDTO> GetAllTaiKhoan()
         {
             return dao.GetAllTaiKhoan();
