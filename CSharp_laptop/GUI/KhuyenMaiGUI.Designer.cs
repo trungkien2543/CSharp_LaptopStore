@@ -50,7 +50,6 @@
             km_pan = new ArtanPanel();
             label15 = new Label();
             panel2 = new Panel();
-            text_mess2 = new Label();
             text_mess1 = new Label();
             dateTimePicker5 = new DateTimePicker();
             dateTimePicker4 = new DateTimePicker();
@@ -350,7 +349,6 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(text_mess2);
             panel2.Controls.Add(text_mess1);
             panel2.Controls.Add(dateTimePicker5);
             panel2.Controls.Add(dateTimePicker4);
@@ -375,17 +373,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(572, 600);
             panel2.TabIndex = 1;
-            // 
-            // text_mess2
-            // 
-            text_mess2.AutoSize = true;
-            text_mess2.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            text_mess2.ForeColor = Color.Red;
-            text_mess2.Location = new Point(80, 437);
-            text_mess2.Name = "text_mess2";
-            text_mess2.Size = new Size(22, 16);
-            text_mess2.TabIndex = 29;
-            text_mess2.Text = "     ";
             // 
             // text_mess1
             // 
@@ -727,6 +714,5 @@
         private DateTimePicker dateTimePicker4;
         private DateTimePicker dateTimePicker3;
         private Label text_mess1;
-        private Label text_mess2;
     }
 }

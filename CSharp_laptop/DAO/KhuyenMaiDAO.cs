@@ -73,21 +73,24 @@ namespace CSharp_laptop.DAO
         public KhuyenMaiDTO Get1KhuyenMai(string id)// Lấy 1 Khuyễn mãi bằng id
         {
             KhuyenMaiDTO khuyenMai = null;
-            MySqlConnection conn = connectionHelper.GetConnection();
-            string query = "SELECT ID_KhuyenMai, TenKhuyenMai, MucGiamGia, MoTaKM, ThoiGianBatDau, ThoiGianKetThuc,ThoiGianTaoKM FROM khuyenmai WHERE ID_KhuyenMai = @id";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            using (MySqlDataReader reader = cmd.ExecuteReader())
+            using (MySqlConnection conn = connectionHelper.GetConnection())
             {
-                khuyenMai = new KhuyenMaiDTO
+                conn.Open();
+                string query = "SELECT ID_KhuyenMai, TenKhuyenMai, MucGiamGia, MoTaKM, ThoiGianBatDau, ThoiGianKetThuc,ThoiGianTaoKM FROM khuyenmai WHERE ID_KhuyenMai = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    IDKM = reader["ID_KhuyenMai"].ToString(),
-                    TenKM = reader["TenKhuyenMai"].ToString(),
-                    MucGiamGia = int.Parse(reader["MucGiamGia"].ToString()),
-                    MoTa = reader["MoTaKM"].ToString(),
-                    ThoiGianBatDau = reader.GetDateTime(4),
-                    ThoiGianKetThuc = reader.GetDateTime(5),
-                    NgayTao = reader.GetDateTime(6)
-                };
+                    khuyenMai = new KhuyenMaiDTO
+                    {
+                        IDKM = reader["ID_KhuyenMai"].ToString(),
+                        TenKM = reader["TenKhuyenMai"].ToString(),
+                        MucGiamGia = int.Parse(reader["MucGiamGia"].ToString()),
+                        MoTa = reader["MoTaKM"].ToString(),
+                        ThoiGianBatDau = reader.GetDateTime(4),
+                        ThoiGianKetThuc = reader.GetDateTime(5),
+                        NgayTao = reader.GetDateTime(6)
+                    };
+                }
             }
             return khuyenMai;
         }

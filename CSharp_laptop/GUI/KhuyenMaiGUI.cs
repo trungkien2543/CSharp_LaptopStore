@@ -39,7 +39,8 @@ namespace CSharp_laptop.GUI
             tabControl1.SizeMode = TabSizeMode.Fixed;// Đảm bảo kích thước các tab được cố định, không tự thay đổi
 
         }
-
+        //--------------------------//
+        //tabControl0
         private void tk_but_Click(object sender, EventArgs e)
         {
 
@@ -52,69 +53,13 @@ namespace CSharp_laptop.GUI
             textBox2.Texts = "";
             textBox3.Texts = "";
             textBox4.Texts = "";
+            text_mess1.Text = "";
             dateTimePicker1.Value = DateTime.Today;
             dateTimePicker2.Value = DateTime.Now;
             dateTimePicker3.Value = DateTime.Today;
             dateTimePicker4.Value = DateTime.Now;
             dateTimePicker5.Value = DateTime.Now;
             funcion = "add";
-        }
-
-        private void vbButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void huy_but_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedIndex = 0;
-        }
-
-        private void dong_y_but_Click(object sender, EventArgs e)
-        {
-            int check = 0;
-            if (textBox3.Texts == "")
-            {
-                text_mess1.Text = "Vui lòng nhập mức giảm giá.";
-                check--;
-            }
-            if (text_mess1.Text != "")
-            {
-                check--;
-            }
-            //Kiểm tra thời gian
-            DateTime date1 = dateTimePicker2.Value.Date;
-            DateTime date2 = dateTimePicker4.Value.Date;
-            TimeSpan time1 = dateTimePicker1.Value.TimeOfDay;
-            TimeSpan time2 = dateTimePicker3.Value.TimeOfDay;
-            DateTime datetime1 = date1.Add(time1);
-            DateTime datetime2 = date2.Add(time2);
-            if (datetime1 < datetime2)
-            {
-                text_mess2.Text = "";
-            }
-            else
-            {
-                text_mess2.Text = "Thời gian Kết thúc phải lớn hơn thời gian bắt đầu.";
-                check--;
-            }
-
-            if (check == 0)
-            {
-                KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
-                {
-                    IDKM = textBox1.Texts,
-                    TenKM = textBox2.Texts,
-                    MucGiamGia = int.Parse(textBox3.Texts),
-                    MoTa = textBox4.Texts,
-                    ThoiGianBatDau = datetime1,
-                    ThoiGianKetThuc = datetime2,
-                    NgayTao = dateTimePicker5.Value.Date
-                };
-                khuyenMaiBUS.AddorEditKhuyenMai(khuyenMai, funcion);
-                LoadData();
-                tabControl1.SelectedIndex = 0;
-            }
         }
 
         private void LoadData()
@@ -145,6 +90,95 @@ namespace CSharp_laptop.GUI
             KM_dataGridView.Columns.Add(btnDelete);
         }
 
+        private void KM_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)//Sửa/xóa
+        {
+            if (e.ColumnIndex == KM_dataGridView.Columns["btnEdit"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
+                tabControl1.SelectedIndex = 1;
+                textBox1.Texts = row.Cells["ID"].Value.ToString();
+                textBox2.Texts = row.Cells[3].Value.ToString();
+                textBox3.Texts = row.Cells[4].Value.ToString();
+                textBox4.Texts = row.Cells[5].Value.ToString();
+                text_mess1.Text = "";
+                dateTimePicker1.Value = Convert.ToDateTime(row.Cells[6].Value);
+                dateTimePicker2.Value = Convert.ToDateTime(row.Cells[6].Value);
+                dateTimePicker3.Value = Convert.ToDateTime(row.Cells[7].Value);
+                dateTimePicker4.Value = Convert.ToDateTime(row.Cells[7].Value);
+                dateTimePicker5.Value = Convert.ToDateTime(row.Cells[8].Value);
+                funcion = "edit";
+            }
+            if (e.ColumnIndex == KM_dataGridView.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
+
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa không?", "Xác nhận",
+                                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    //string id = row.Cells["ID"].Value.ToString();
+                    //khuyenMaiBUS.DeleteKhuyenMai(id);
+
+                    khuyenMaiList.Remove((KhuyenMaiDTO)row.DataBoundItem);
+                }
+                else
+                {
+                    
+                }
+            }
+        }
+
+
+        //--------------------------//
+        //tabControl1
+        private void huy_but_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void dong_y_but_Click(object sender, EventArgs e)
+        {
+            int check = 0;
+            if (textBox3.Texts == "")
+            {
+                text_mess1.Text = "Vui lòng nhập mức giảm giá.";
+                check--;
+            }
+            if (text_mess1.Text != "")
+            {
+                check--;
+            }
+            //Kiểm tra thời gian
+            DateTime date1 = dateTimePicker2.Value.Date;
+            DateTime date2 = dateTimePicker4.Value.Date;
+            TimeSpan time1 = dateTimePicker1.Value.TimeOfDay;
+            TimeSpan time2 = dateTimePicker3.Value.TimeOfDay;
+            DateTime datetime1 = date1.Add(time1);
+            DateTime datetime2 = date2.Add(time2);
+            if (datetime1 >= datetime2)
+            {
+                MessageBox.Show("Thời gian Kết thúc phải lớn hơn thời gian bắt đầu.");
+            }
+
+            if (check == 0)
+            {
+                KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
+                {
+                    IDKM = textBox1.Texts,
+                    TenKM = textBox2.Texts,
+                    MucGiamGia = int.Parse(textBox3.Texts),
+                    MoTa = textBox4.Texts,
+                    ThoiGianBatDau = datetime1,
+                    ThoiGianKetThuc = datetime2,
+                    NgayTao = dateTimePicker5.Value.Date
+                };
+                khuyenMaiBUS.AddorEditKhuyenMai(khuyenMai, funcion);
+                LoadData();
+                tabControl1.SelectedIndex = 0;
+            }
+        }
+
         private MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
 
         private string createID()// Tạo ID mới
@@ -166,34 +200,6 @@ namespace CSharp_laptop.GUI
                 }
             }
             return id;
-        }
-
-        private void KM_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == KM_dataGridView.Columns["btnEdit"].Index && e.RowIndex >= 0)
-            {
-                DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
-                tabControl1.SelectedIndex = 1;
-                textBox1.Texts = row.Cells["ID"].Value.ToString();
-                textBox2.Texts = row.Cells[3].Value.ToString();
-                textBox3.Texts = row.Cells[4].Value.ToString();
-                textBox4.Texts = row.Cells[5].Value.ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(row.Cells[6].Value);
-                dateTimePicker2.Value = Convert.ToDateTime(row.Cells[6].Value);
-                dateTimePicker3.Value = Convert.ToDateTime(row.Cells[7].Value);
-                dateTimePicker4.Value = Convert.ToDateTime(row.Cells[7].Value);
-                dateTimePicker5.Value = Convert.ToDateTime(row.Cells[8].Value);
-                funcion = "edit";
-            }
-            if (e.ColumnIndex == KM_dataGridView.Columns["btnDelete"].Index && e.RowIndex >= 0)
-            {
-                DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
-
-                //string id = row.Cells["ID"].Value.ToString();
-                //khuyenMaiBUS.DeleteKhuyenMai(id);
-
-                khuyenMaiList.Remove((KhuyenMaiDTO)row.DataBoundItem);
-            }
         }
 
         private void check_tb3(object sender, EventArgs e)
