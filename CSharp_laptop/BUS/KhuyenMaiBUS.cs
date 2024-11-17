@@ -34,6 +34,11 @@ namespace CSharp_laptop.BUS
             return khuyenMaiDAO.Get1KhuyenMai(id);
         }
 
+        public string GetMaxID()
+        {
+            return khuyenMaiDAO.GetMaxID();
+        }
+
         public bool AddorEditKhuyenMai(KhuyenMaiDTO khuyenMai, string funcion)
         {
             return khuyenMaiDAO.AddorEditKhuyenMai(khuyenMai, funcion);

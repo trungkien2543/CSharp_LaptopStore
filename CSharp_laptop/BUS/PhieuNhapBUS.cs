@@ -17,6 +17,10 @@ namespace CSharp_laptop.BUS
             phieuNhapDAO = new PhieuNhapDAO();
         }
 
+        public string GetMaxID()
+        {
+            return phieuNhapDAO.GetMaxID();
+        }
         public BindingList<PhieuNhapDTO> GetAllPhieuNhap()
         {
             return phieuNhapDAO.GetAllPhieuNhap();

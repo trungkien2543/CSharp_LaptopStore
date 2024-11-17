@@ -95,6 +95,27 @@ namespace CSharp_laptop.DAO
             return khuyenMai;
         }
 
+        public string GetMaxID()
+        {
+            string id = "KM001";
+            using(MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT MAX(ID_KhuyenMai) FROM khuyenmai";
+                //string query = "SELECT ID_KhuyenMai FROM khuyenmai ORDER BY ID_KhuyenMai DESC LIMIT 1;";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                object result = cmd.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    string maxID = result.ToString();
+                    int numberPart = int.Parse(maxID.Substring(2));// Lấy phần số từ ID hiện tại (bỏ phần "KH")
+                    numberPart++;
+                    id = "KM" + numberPart.ToString("D3");// Tạo ID mới với định dạng "KM" + số tự động tăng với 3 chữ số
+                }
+            }
+            return id;
+        }
+
         public bool AddorEditKhuyenMai(KhuyenMaiDTO khuyenMai, string funcion)
         {
             bool isSuccess = false;

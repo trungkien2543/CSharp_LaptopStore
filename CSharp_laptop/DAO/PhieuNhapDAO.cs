@@ -21,8 +21,8 @@ namespace CSharp_laptop.DAO
             using(MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT ID_PhieuNhap, MaNV, MaNcc, TongTien, NgayNhap FROM phieunhap";
-                //string query = "SELECT * FROM phieunhap ORDER BY NgayNhap DESC";
+                //string query = "SELECT ID_PhieuNhap, MaNV, MaNcc, TongTien, NgayNhap FROM phieunhap ";
+                string query = "SELECT * FROM phieunhap ORDER BY NgayNhap DESC";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -43,6 +43,27 @@ namespace CSharp_laptop.DAO
                 }
             }
             return phieuNhapList;
+        }
+
+        public string GetMaxID()
+        {
+            string id = "PN001";
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT MAX(ID_PhieuNhap) From phieunhap";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                object result = cmd.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    string maxID = result.ToString();
+                    int numberPart = int.Parse(maxID.Substring(2));// Lấy phần số từ ID hiện tại (bỏ phần "KH")
+                    numberPart++;
+                    id = "PN" + numberPart.ToString("D3");// Tạo ID mới với định dạng "PN" + số tự động tăng với 3 chữ số
+                }
+            }
+            return id;
         }
     }
 }

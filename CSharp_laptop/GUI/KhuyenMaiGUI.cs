@@ -23,7 +23,6 @@ namespace CSharp_laptop.GUI
         private KhuyenMaiBUS khuyenMaiBUS = new KhuyenMaiBUS();
         private BindingList<KhuyenMaiDTO> khuyenMaiList;
 
-
         public KhuyenMaiGUI()
         {
             InitializeComponent();
@@ -49,7 +48,7 @@ namespace CSharp_laptop.GUI
         private void then_but_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
-            textBox1.Texts = createID();
+            textBox1.Texts = khuyenMaiBUS.GetMaxID();
             textBox2.Texts = "";
             textBox3.Texts = "";
             textBox4.Texts = "";
@@ -177,29 +176,6 @@ namespace CSharp_laptop.GUI
                 LoadData();
                 tabControl1.SelectedIndex = 0;
             }
-        }
-
-        private MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
-
-        private string createID()// Tạo ID mới
-        {
-            string id = "KH001";
-            using (MySqlConnection conn = connectionHelper.GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT MAX(ID_KhuyenMai) FROM khuyenmai";
-                //string query = "SELECT ID_KhuyenMai FROM khuyenmai ORDER BY ID_KhuyenMai DESC LIMIT 1;";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                object result = cmd.ExecuteScalar();
-                if (result != DBNull.Value)
-                {
-                    string maxID = result.ToString();
-                    int numberPart = int.Parse(maxID.Substring(2));// Lấy phần số từ ID hiện tại (bỏ phần "KH")
-                    numberPart++;
-                    id = "KM" + numberPart.ToString("D3");// Tạo ID mới với định dạng "KM" + số tự động tăng với 3 chữ số
-                }
-            }
-            return id;
         }
 
         private void check_tb3(object sender, EventArgs e)

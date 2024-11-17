@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace CSharp_laptop.GUI
@@ -16,6 +17,8 @@ namespace CSharp_laptop.GUI
     {
         private PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
         private BindingList<PhieuNhapDTO> phieuNhapList;
+
+        private NhanVienBUS nhanVienBUS = new NhanVienBUS();
         public PhieuNhapGUI()
         {
             InitializeComponent();
@@ -47,9 +50,24 @@ namespace CSharp_laptop.GUI
 
         }
 
-        private void them_but_Click_1(object sender, EventArgs e)
+        private void But_them_Click(object sender, EventArgs e)
         {
+            List<NhanVienDTO> nhanVienList = nhanVienBUS.getAllNhanVien();
+
+            //id.DataSource = nhanVienList;
+            comboBox1.Items.Add("id");
+            for (int i = 0; i < nhanVienList.Count; i++)
+            {
+                string name = nhanVienList[i].ID_NhanVien +" - "+ nhanVienList[i].TenNV;
+                string id = nhanVienList[i].ID_NhanVien;
+                comboBox1.Items.Add("123");
+            }
+
+            sp_box.Visible = false;
+            text_IDPN.Texts = phieuNhapBUS.GetMaxID();
             tabControl1.SelectedIndex = 1;
+            //comboBox1.DisplayMember = "ID_NhanVien";
+
         }
 
         private void huy_but_Click(object sender, EventArgs e)
