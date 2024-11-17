@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             rjTextBox1 = new RJTextBox();
@@ -49,11 +49,9 @@
             tabPage2 = new TabPage();
             panel7 = new Panel();
             artanPanel7 = new ArtanPanel();
-            dataGridView5 = new DataGridView();
-            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            dataGridView_ctpn1 = new DataGridView();
             artanPanel1 = new ArtanPanel();
-            dataGridView4 = new DataGridView();
+            dataGridView_ = new DataGridView();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
@@ -68,15 +66,15 @@
             label11 = new Label();
             panel9 = new Panel();
             label8 = new Label();
-            rjTextBox2 = new RJTextBox();
+            text_hang = new RJTextBox();
             label10 = new Label();
-            rjTextBox10 = new RJTextBox();
+            text_IMEI = new RJTextBox();
             label14 = new Label();
-            comboBox5 = new ComboBox();
+            combohox_ll = new ComboBox();
             but_trolai = new VBButton();
             label1 = new Label();
-            rjTextBox12 = new RJTextBox();
-            vbButton4 = new VBButton();
+            text_gia = new RJTextBox();
+            But_sp = new VBButton();
             label15 = new Label();
             panel2 = new Panel();
             comboBox_ncc = new ComboBox();
@@ -118,6 +116,9 @@
             label4 = new Label();
             rjTextBox5 = new RJTextBox();
             rjTextBox4 = new RJTextBox();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel2.SuspendLayout();
@@ -125,9 +126,9 @@
             tabPage2.SuspendLayout();
             panel7.SuspendLayout();
             artanPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_ctpn1).BeginInit();
             artanPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_).BeginInit();
             panel6.SuspendLayout();
             artanPanel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -268,14 +269,14 @@
             dataGridView_PN.BorderStyle = BorderStyle.None;
             dataGridView_PN.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView_PN.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView_PN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView_PN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView_PN.ColumnHeadersHeight = 35;
             dataGridView_PN.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column5, Column4 });
             dataGridView_PN.EnableHeadersVisualStyles = false;
@@ -355,7 +356,7 @@
             artanPanel7.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             artanPanel7.BackColor = Color.White;
             artanPanel7.BorderRadius = 20;
-            artanPanel7.Controls.Add(dataGridView5);
+            artanPanel7.Controls.Add(dataGridView_ctpn1);
             artanPanel7.ForeColor = Color.Black;
             artanPanel7.GradientAngle = 65F;
             artanPanel7.GradientBottomColor = Color.FromArgb(210, 220, 230);
@@ -366,52 +367,38 @@
             artanPanel7.Size = new Size(531, 302);
             artanPanel7.TabIndex = 25;
             // 
-            // dataGridView5
+            // dataGridView_ctpn1
             // 
-            dataGridView5.AllowUserToAddRows = false;
-            dataGridView5.AllowUserToDeleteRows = false;
-            dataGridView5.BackgroundColor = Color.White;
-            dataGridView5.BorderStyle = BorderStyle.None;
-            dataGridView5.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView5.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle7.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridView5.ColumnHeadersHeight = 35;
-            dataGridView5.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn9 });
-            dataGridView5.Dock = DockStyle.Fill;
-            dataGridView5.EnableHeadersVisualStyles = false;
-            dataGridView5.Location = new Point(4, 0);
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.ReadOnly = true;
-            dataGridView5.Size = new Size(523, 292);
-            dataGridView5.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn7.HeaderText = "IMEI";
-            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            dataGridViewTextBoxColumn9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn9.HeaderText = "ID loại laptop";
-            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            dataGridViewTextBoxColumn9.ReadOnly = true;
+            dataGridView_ctpn1.AllowUserToAddRows = false;
+            dataGridView_ctpn1.AllowUserToDeleteRows = false;
+            dataGridView_ctpn1.BackgroundColor = Color.White;
+            dataGridView_ctpn1.BorderStyle = BorderStyle.None;
+            dataGridView_ctpn1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView_ctpn1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView_ctpn1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView_ctpn1.ColumnHeadersHeight = 35;
+            dataGridView_ctpn1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn9, Column6 });
+            dataGridView_ctpn1.Dock = DockStyle.Fill;
+            dataGridView_ctpn1.EnableHeadersVisualStyles = false;
+            dataGridView_ctpn1.Location = new Point(4, 0);
+            dataGridView_ctpn1.Name = "dataGridView_ctpn1";
+            dataGridView_ctpn1.ReadOnly = true;
+            dataGridView_ctpn1.Size = new Size(523, 292);
+            dataGridView_ctpn1.TabIndex = 0;
             // 
             // artanPanel1
             // 
             artanPanel1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             artanPanel1.BackColor = Color.White;
             artanPanel1.BorderRadius = 20;
-            artanPanel1.Controls.Add(dataGridView4);
+            artanPanel1.Controls.Add(dataGridView_);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 70F;
             artanPanel1.GradientBottomColor = Color.FromArgb(210, 220, 230);
@@ -422,31 +409,31 @@
             artanPanel1.Size = new Size(535, 278);
             artanPanel1.TabIndex = 23;
             // 
-            // dataGridView4
+            // dataGridView_
             // 
-            dataGridView4.AllowUserToAddRows = false;
-            dataGridView4.AllowUserToDeleteRows = false;
-            dataGridView4.BackgroundColor = Color.White;
-            dataGridView4.BorderStyle = BorderStyle.None;
-            dataGridView4.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView4.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle8.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridView4.ColumnHeadersHeight = 35;
-            dataGridView4.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, Column9 });
-            dataGridView4.Dock = DockStyle.Fill;
-            dataGridView4.EnableHeadersVisualStyles = false;
-            dataGridView4.Location = new Point(4, 0);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.ReadOnly = true;
-            dataGridView4.Size = new Size(527, 268);
-            dataGridView4.TabIndex = 0;
+            dataGridView_.AllowUserToAddRows = false;
+            dataGridView_.AllowUserToDeleteRows = false;
+            dataGridView_.BackgroundColor = Color.White;
+            dataGridView_.BorderStyle = BorderStyle.None;
+            dataGridView_.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView_.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView_.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView_.ColumnHeadersHeight = 35;
+            dataGridView_.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, Column9 });
+            dataGridView_.Dock = DockStyle.Fill;
+            dataGridView_.EnableHeadersVisualStyles = false;
+            dataGridView_.Location = new Point(4, 0);
+            dataGridView_.Name = "dataGridView_";
+            dataGridView_.ReadOnly = true;
+            dataGridView_.Size = new Size(527, 268);
+            dataGridView_.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -579,7 +566,7 @@
             sp_box.GradientAngle = 30F;
             sp_box.GradientBottomColor = Color.FromArgb(210, 220, 230);
             sp_box.GradientTopColor = Color.FromArgb(85, 81, 132);
-            sp_box.Location = new Point(212, 3);
+            sp_box.Location = new Point(0, 0);
             sp_box.Name = "sp_box";
             sp_box.Padding = new Padding(4, 35, 4, 10);
             sp_box.Size = new Size(440, 480);
@@ -601,15 +588,15 @@
             // panel9
             // 
             panel9.Controls.Add(label8);
-            panel9.Controls.Add(rjTextBox2);
+            panel9.Controls.Add(text_hang);
             panel9.Controls.Add(label10);
-            panel9.Controls.Add(rjTextBox10);
+            panel9.Controls.Add(text_IMEI);
             panel9.Controls.Add(label14);
-            panel9.Controls.Add(comboBox5);
+            panel9.Controls.Add(combohox_ll);
             panel9.Controls.Add(but_trolai);
             panel9.Controls.Add(label1);
-            panel9.Controls.Add(rjTextBox12);
-            panel9.Controls.Add(vbButton4);
+            panel9.Controls.Add(text_gia);
+            panel9.Controls.Add(But_sp);
             panel9.Dock = DockStyle.Fill;
             panel9.Location = new Point(4, 35);
             panel9.Name = "panel9";
@@ -629,28 +616,28 @@
             label8.TabIndex = 4;
             label8.Text = "Hãng laptop:";
             // 
-            // rjTextBox2
+            // text_hang
             // 
-            rjTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rjTextBox2.BackColor = SystemColors.Window;
-            rjTextBox2.BorderColor = Color.FromArgb(85, 81, 132);
-            rjTextBox2.BorderFocusColor = Color.YellowGreen;
-            rjTextBox2.BorderRadius = 7;
-            rjTextBox2.BorderSize = 1;
-            rjTextBox2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new Point(66, 52);
-            rjTextBox2.Margin = new Padding(4);
-            rjTextBox2.Multiline = false;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = Color.DarkGray;
-            rjTextBox2.PlaceholderText = "";
-            rjTextBox2.Size = new Size(300, 34);
-            rjTextBox2.TabIndex = 28;
-            rjTextBox2.Texts = "";
-            rjTextBox2.UnderlinedStyle = false;
+            text_hang.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            text_hang.BackColor = SystemColors.Window;
+            text_hang.BorderColor = Color.FromArgb(85, 81, 132);
+            text_hang.BorderFocusColor = Color.YellowGreen;
+            text_hang.BorderRadius = 7;
+            text_hang.BorderSize = 1;
+            text_hang.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_hang.ForeColor = Color.FromArgb(64, 64, 64);
+            text_hang.Location = new Point(66, 52);
+            text_hang.Margin = new Padding(4);
+            text_hang.Multiline = false;
+            text_hang.Name = "text_hang";
+            text_hang.Padding = new Padding(10, 7, 10, 7);
+            text_hang.PasswordChar = false;
+            text_hang.PlaceholderColor = Color.DarkGray;
+            text_hang.PlaceholderText = "";
+            text_hang.Size = new Size(300, 34);
+            text_hang.TabIndex = 28;
+            text_hang.Texts = "";
+            text_hang.UnderlinedStyle = false;
             // 
             // label10
             // 
@@ -663,28 +650,28 @@
             label10.TabIndex = 2;
             label10.Text = "IMEI:";
             // 
-            // rjTextBox10
+            // text_IMEI
             // 
-            rjTextBox10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rjTextBox10.BackColor = SystemColors.Window;
-            rjTextBox10.BorderColor = Color.FromArgb(85, 81, 132);
-            rjTextBox10.BorderFocusColor = Color.YellowGreen;
-            rjTextBox10.BorderRadius = 7;
-            rjTextBox10.BorderSize = 1;
-            rjTextBox10.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjTextBox10.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox10.Location = new Point(66, 287);
-            rjTextBox10.Margin = new Padding(4);
-            rjTextBox10.Multiline = false;
-            rjTextBox10.Name = "rjTextBox10";
-            rjTextBox10.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox10.PasswordChar = false;
-            rjTextBox10.PlaceholderColor = Color.DarkGray;
-            rjTextBox10.PlaceholderText = "";
-            rjTextBox10.Size = new Size(253, 34);
-            rjTextBox10.TabIndex = 19;
-            rjTextBox10.Texts = "";
-            rjTextBox10.UnderlinedStyle = false;
+            text_IMEI.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            text_IMEI.BackColor = SystemColors.Window;
+            text_IMEI.BorderColor = Color.FromArgb(85, 81, 132);
+            text_IMEI.BorderFocusColor = Color.YellowGreen;
+            text_IMEI.BorderRadius = 7;
+            text_IMEI.BorderSize = 1;
+            text_IMEI.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_IMEI.ForeColor = Color.FromArgb(64, 64, 64);
+            text_IMEI.Location = new Point(66, 287);
+            text_IMEI.Margin = new Padding(4);
+            text_IMEI.Multiline = false;
+            text_IMEI.Name = "text_IMEI";
+            text_IMEI.Padding = new Padding(10, 7, 10, 7);
+            text_IMEI.PasswordChar = false;
+            text_IMEI.PlaceholderColor = Color.DarkGray;
+            text_IMEI.PlaceholderText = "";
+            text_IMEI.Size = new Size(253, 34);
+            text_IMEI.TabIndex = 19;
+            text_IMEI.Texts = "";
+            text_IMEI.UnderlinedStyle = false;
             // 
             // label14
             // 
@@ -697,15 +684,15 @@
             label14.TabIndex = 18;
             label14.Text = "Giá nhập:";
             // 
-            // comboBox5
+            // combohox_ll
             // 
-            comboBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(66, 140);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(300, 27);
-            comboBox5.TabIndex = 17;
+            combohox_ll.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            combohox_ll.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            combohox_ll.FormattingEnabled = true;
+            combohox_ll.Location = new Point(66, 140);
+            combohox_ll.Name = "combohox_ll";
+            combohox_ll.Size = new Size(300, 27);
+            combohox_ll.TabIndex = 17;
             // 
             // but_trolai
             // 
@@ -739,50 +726,51 @@
             label1.TabIndex = 9;
             label1.Text = "Loại laptop:";
             // 
-            // rjTextBox12
+            // text_gia
             // 
-            rjTextBox12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rjTextBox12.BackColor = SystemColors.Window;
-            rjTextBox12.BorderColor = Color.FromArgb(85, 81, 132);
-            rjTextBox12.BorderFocusColor = Color.YellowGreen;
-            rjTextBox12.BorderRadius = 7;
-            rjTextBox12.BorderSize = 1;
-            rjTextBox12.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjTextBox12.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox12.Location = new Point(66, 212);
-            rjTextBox12.Margin = new Padding(4);
-            rjTextBox12.Multiline = false;
-            rjTextBox12.Name = "rjTextBox12";
-            rjTextBox12.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox12.PasswordChar = false;
-            rjTextBox12.PlaceholderColor = Color.DarkGray;
-            rjTextBox12.PlaceholderText = "";
-            rjTextBox12.Size = new Size(300, 34);
-            rjTextBox12.TabIndex = 3;
-            rjTextBox12.Texts = "";
-            rjTextBox12.UnderlinedStyle = false;
+            text_gia.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            text_gia.BackColor = SystemColors.Window;
+            text_gia.BorderColor = Color.FromArgb(85, 81, 132);
+            text_gia.BorderFocusColor = Color.YellowGreen;
+            text_gia.BorderRadius = 7;
+            text_gia.BorderSize = 1;
+            text_gia.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_gia.ForeColor = Color.FromArgb(64, 64, 64);
+            text_gia.Location = new Point(66, 212);
+            text_gia.Margin = new Padding(4);
+            text_gia.Multiline = false;
+            text_gia.Name = "text_gia";
+            text_gia.Padding = new Padding(10, 7, 10, 7);
+            text_gia.PasswordChar = false;
+            text_gia.PlaceholderColor = Color.DarkGray;
+            text_gia.PlaceholderText = "";
+            text_gia.Size = new Size(300, 34);
+            text_gia.TabIndex = 3;
+            text_gia.Texts = "";
+            text_gia.UnderlinedStyle = false;
             // 
-            // vbButton4
+            // But_sp
             // 
-            vbButton4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton4.BackColor = Color.FromArgb(247, 176, 118);
-            vbButton4.BackgroundColor = Color.FromArgb(247, 176, 118);
-            vbButton4.BorderColor = Color.PaleVioletRed;
-            vbButton4.BorderRadius = 15;
-            vbButton4.BorderSize = 0;
-            vbButton4.FlatAppearance.BorderSize = 0;
-            vbButton4.FlatStyle = FlatStyle.Flat;
-            vbButton4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            vbButton4.ForeColor = Color.White;
-            vbButton4.Image = (Image)resources.GetObject("vbButton4.Image");
-            vbButton4.ImageAlign = ContentAlignment.MiddleRight;
-            vbButton4.Location = new Point(326, 284);
-            vbButton4.Name = "vbButton4";
-            vbButton4.Size = new Size(40, 40);
-            vbButton4.TabIndex = 27;
-            vbButton4.TextAlign = ContentAlignment.MiddleRight;
-            vbButton4.TextColor = Color.White;
-            vbButton4.UseVisualStyleBackColor = false;
+            But_sp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            But_sp.BackColor = Color.FromArgb(247, 176, 118);
+            But_sp.BackgroundColor = Color.FromArgb(247, 176, 118);
+            But_sp.BorderColor = Color.PaleVioletRed;
+            But_sp.BorderRadius = 15;
+            But_sp.BorderSize = 0;
+            But_sp.FlatAppearance.BorderSize = 0;
+            But_sp.FlatStyle = FlatStyle.Flat;
+            But_sp.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            But_sp.ForeColor = Color.White;
+            But_sp.Image = (Image)resources.GetObject("But_sp.Image");
+            But_sp.ImageAlign = ContentAlignment.MiddleRight;
+            But_sp.Location = new Point(326, 284);
+            But_sp.Name = "But_sp";
+            But_sp.Size = new Size(40, 40);
+            But_sp.TabIndex = 27;
+            But_sp.TextAlign = ContentAlignment.MiddleRight;
+            But_sp.TextColor = Color.White;
+            But_sp.UseVisualStyleBackColor = false;
+            But_sp.Click += But_sp_Click;
             // 
             // label15
             // 
@@ -819,17 +807,19 @@
             comboBox_ncc.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_ncc.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBox_ncc.FormattingEnabled = true;
-            comboBox_ncc.Location = new Point(66, 228);
+            comboBox_ncc.Location = new Point(66, 219);
             comboBox_ncc.Name = "comboBox_ncc";
+            comboBox_ncc.RightToLeft = RightToLeft.No;
             comboBox_ncc.Size = new Size(300, 27);
             comboBox_ncc.TabIndex = 27;
+            comboBox_ncc.Text = "Chọn";
             // 
             // comboBox_nv
             // 
             comboBox_nv.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_nv.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBox_nv.FormattingEnabled = true;
-            comboBox_nv.Location = new Point(66, 152);
+            comboBox_nv.Location = new Point(66, 140);
             comboBox_nv.Name = "comboBox_nv";
             comboBox_nv.RightToLeft = RightToLeft.No;
             comboBox_nv.Size = new Size(300, 27);
@@ -861,7 +851,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.DimGray;
-            label13.Location = new Point(74, 205);
+            label13.Location = new Point(74, 198);
             label13.Name = "label13";
             label13.Size = new Size(94, 19);
             label13.TabIndex = 2;
@@ -872,7 +862,7 @@
             dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dateTimePicker1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(66, 303);
+            dateTimePicker1.Location = new Point(66, 294);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 27);
             dateTimePicker1.TabIndex = 24;
@@ -882,7 +872,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(74, 280);
+            label3.Location = new Point(74, 273);
             label3.Name = "label3";
             label3.Size = new Size(58, 19);
             label3.TabIndex = 21;
@@ -893,7 +883,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.DimGray;
-            label9.Location = new Point(74, 54);
+            label9.Location = new Point(74, 38);
             label9.Name = "label9";
             label9.Size = new Size(22, 19);
             label9.TabIndex = 6;
@@ -904,7 +894,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.DimGray;
-            label12.Location = new Point(74, 130);
+            label12.Location = new Point(74, 118);
             label12.Name = "label12";
             label12.Size = new Size(78, 19);
             label12.TabIndex = 0;
@@ -921,7 +911,7 @@
             text_IDPN.Enabled = false;
             text_IDPN.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             text_IDPN.ForeColor = Color.FromArgb(64, 64, 64);
-            text_IDPN.Location = new Point(66, 65);
+            text_IDPN.Location = new Point(66, 54);
             text_IDPN.Margin = new Padding(4);
             text_IDPN.Multiline = false;
             text_IDPN.Name = "text_IDPN";
@@ -1023,14 +1013,14 @@
             dataGridView3.BorderStyle = BorderStyle.None;
             dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(119, 195, 144);
-            dataGridViewCellStyle9.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(119, 195, 144);
+            dataGridViewCellStyle4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView3.ColumnHeadersHeight = 35;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn8 });
             dataGridView3.Dock = DockStyle.Fill;
@@ -1092,14 +1082,14 @@
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(119, 195, 144);
-            dataGridViewCellStyle10.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(119, 195, 144);
+            dataGridViewCellStyle5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView2.ColumnHeadersHeight = 35;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column10, Column11, Column12 });
             dataGridView2.Dock = DockStyle.Fill;
@@ -1351,6 +1341,28 @@
             rjTextBox4.Texts = "";
             rjTextBox4.UnderlinedStyle = false;
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn7.DataPropertyName = "IMEI";
+            dataGridViewTextBoxColumn7.HeaderText = "IMEI";
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn9.HeaderText = "ID loại laptop";
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.DataPropertyName = "GiaNhap";
+            Column6.HeaderText = "Giá nhập";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
             // PhieuNhapGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1367,9 +1379,9 @@
             tabPage2.ResumeLayout(false);
             panel7.ResumeLayout(false);
             artanPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_ctpn1).EndInit();
             artanPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_).EndInit();
             panel6.ResumeLayout(false);
             artanPanel6.ResumeLayout(false);
             artanPanel6.PerformLayout();
@@ -1442,14 +1454,12 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DateTimePicker dateTimePicker1;
         private ArtanPanel artanPanel1;
-        private DataGridView dataGridView4;
+        private DataGridView dataGridView_;
         private ArtanPanel artanPanel7;
-        private DataGridView dataGridView5;
+        private DataGridView dataGridView_ctpn1;
         private Panel panel6;
         private Panel panel7;
         private Panel panel8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -1467,12 +1477,12 @@
         private Label label1;
         private Label label8;
         private Label label10;
-        private RJTextBox rjTextBox12;
+        private RJTextBox text_gia;
         private Label label11;
         private Label label14;
-        private ComboBox comboBox5;
-        private RJTextBox rjTextBox10;
-        private VBButton vbButton4;
+        private ComboBox combohox_ll;
+        private RJTextBox text_IMEI;
+        private VBButton But_sp;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -1480,6 +1490,9 @@
         private DataGridViewTextBoxColumn Column4;
         private ComboBox comboBox_ncc;
         private ComboBox comboBox_nv;
-        private RJTextBox rjTextBox2;
+        private RJTextBox text_hang;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn Column6;
     }
 }

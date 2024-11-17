@@ -354,9 +354,31 @@ namespace CSharp_laptop.DAO
             return laptops;
         }
 
+        public List<LoaiLaptopDTO> GetLoaiLaptopByHang(string hang)
+        {
+            List<LoaiLaptopDTO> loaiLaptopList = new List<LoaiLaptopDTO>();
 
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT IDLoaiLaptop, TenSP FROM loailaptop WHERE Hang = @hang";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@hang", hang);
 
-
-
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        LoaiLaptopDTO loaiLaptop = new LoaiLaptopDTO
+                        {
+                            IDLoaiLaptop = reader["IDLoaiLaptop"].ToString(),
+                            TenSP = reader["TenSP"].ToString(),
+                        };
+                        loaiLaptopList.Add(loaiLaptop);
+                    }
+                }
+            }
+            return loaiLaptopList;
+        }
     }
 }

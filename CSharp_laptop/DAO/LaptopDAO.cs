@@ -72,5 +72,6 @@ namespace CSharp_laptop.DAO
 
             return laptop;
         }
+
     }
 }

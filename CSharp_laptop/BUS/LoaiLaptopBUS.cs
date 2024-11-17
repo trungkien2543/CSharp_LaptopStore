@@ -109,5 +109,10 @@ namespace CSharp_laptop.BUS
 
 
         }
+
+        public List<LoaiLaptopDTO> GetLoaiLaptopByHang(string hang)// Lấy loại laptop cho phiếu nhập
+        {
+            return loailaptopDAO.GetLoaiLaptopByHang(hang);
+        }
     }
 }

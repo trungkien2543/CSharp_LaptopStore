@@ -1,5 +1,6 @@
 ﻿using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
+using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +19,15 @@ namespace CSharp_laptop.GUI
         private PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
         private BindingList<PhieuNhapDTO> phieuNhapList;
 
+        private List<ChiTietPhieuNhapDTO> ctPNList = new List<ChiTietPhieuNhapDTO>();
+
         private NhanVienBUS nhanVienBUS = new NhanVienBUS();
+        private HangBUS hangBUS = new HangBUS();
+        private LoaiLaptopBUS loaiLaptopBUS = new LoaiLaptopBUS();
         public PhieuNhapGUI()
         {
             InitializeComponent();
-   
+
         }
 
         private void PhieuNhapGUI_Load(object sender, EventArgs e)
@@ -52,22 +57,67 @@ namespace CSharp_laptop.GUI
 
         private void But_them_Click(object sender, EventArgs e)
         {
-            List<NhanVienDTO> nhanVienList = nhanVienBUS.getAllNhanVien();
 
-            //id.DataSource = nhanVienList;
-            comboBox1.Items.Add("id");
-            for (int i = 0; i < nhanVienList.Count; i++)
-            {
-                string name = nhanVienList[i].ID_NhanVien +" - "+ nhanVienList[i].TenNV;
-                string id = nhanVienList[i].ID_NhanVien;
-                comboBox1.Items.Add("123");
-            }
 
             sp_box.Visible = false;
-            text_IDPN.Texts = phieuNhapBUS.GetMaxID();
+            idPN = phieuNhapBUS.GetMaxID();
+            text_IDPN.Texts = idPN;
+            AddNhanVienCBB();
+            AddNccCBB();
             tabControl1.SelectedIndex = 1;
-            //comboBox1.DisplayMember = "ID_NhanVien";
+        }
 
+        private void AddNhanVienCBB()
+        {
+            List<NhanVienDTO> nhanVienList = nhanVienBUS.getAllNhanVien();
+            Dictionary<string, string> items = new Dictionary<string, string>();
+
+            for (int i = 0; i < nhanVienList.Count; i++)
+            {
+                string id = nhanVienList[i].ID_NhanVien;
+                string name = nhanVienList[i].ID_NhanVien + " - " + nhanVienList[i].TenNV;
+                items.Add(id, name);
+            }
+
+            comboBox_nv.DataSource = new BindingSource(items, null);
+            comboBox_nv.DisplayMember = "Value";
+            comboBox_nv.ValueMember = "Key";
+            comboBox_nv.Text = "Chọn";
+        }
+
+        private void AddNccCBB()
+        {
+            List<HangDTO> hangList = hangBUS.GetHangs();
+            Dictionary<string, string> items = new Dictionary<string, string>();
+
+            for (int i = 0; i < hangList.Count; i++)
+            {
+                string id = hangList[i].ID_Hang;
+                string name = hangList[i].ID_Hang + " - " + hangList[i].TenHang;
+                items.Add(id, name);
+            }
+
+            comboBox_ncc.Text = "Chọn";
+            comboBox_ncc.DataSource = new BindingSource(items, null);
+            comboBox_ncc.DisplayMember = "Value";
+            comboBox_ncc.ValueMember = "Key";
+        }
+
+        private void AddLoaiLaptopCBB(string hang)
+        {
+            List<LoaiLaptopDTO> loaiLaptopList = loaiLaptopBUS.GetLoaiLaptopByHang(hang);
+            Dictionary<string, string> items = new Dictionary<string, string>();
+
+            for (int i = 0; i < loaiLaptopList.Count; i++)
+            {
+                string id = loaiLaptopList[i].IDLoaiLaptop;
+                string name = loaiLaptopList[i].IDLoaiLaptop + " - " + loaiLaptopList[i].TenSP;
+                items.Add(id, name);
+            }
+            combohox_ll.Text = "Chọn";
+            combohox_ll.DataSource = new BindingSource(items, null);
+            combohox_ll.DisplayMember = "Value";
+            combohox_ll.ValueMember = "Key";
         }
 
         private void huy_but_Click(object sender, EventArgs e)
@@ -102,9 +152,10 @@ namespace CSharp_laptop.GUI
 
         private void them_sp_but_Click(object sender, EventArgs e)
         {
+            string selectedValue = comboBox_ncc.SelectedValue.ToString();
+            text_hang.Texts = selectedValue;
+            AddLoaiLaptopCBB(selectedValue);
             sp_box.Visible = true;
-            //km_box.Visible = false;
-
         }
 
         private void but_trolai_Click(object sender, EventArgs e)
@@ -122,6 +173,20 @@ namespace CSharp_laptop.GUI
             phieuNhapList = phieuNhapBUS.GetAllPhieuNhap();
             //MessageBox.Show("abc" + phieuNhapList[0].ID);
             dataGridView_PN.DataSource = phieuNhapList;
+        }
+
+        private string idPN;
+        private void But_sp_Click(object sender, EventArgs e)
+        {
+            ChiTietPhieuNhapDTO ctPN = new ChiTietPhieuNhapDTO()
+            {
+                IMEI = text_IMEI.Texts,
+                GiaNhap = int.Parse(text_gia.Texts),
+                IDPN = idPN
+            };
+            ctPNList.Add(ctPN);
+            dataGridView_ctpn1.DataSource = ctPNList;
+            //MessageBox.Show("abc: " + ctPN.IMEI + " " + ctPN.GiaNhap + " " + ctPN.IDPN);
         }
     }
 }
