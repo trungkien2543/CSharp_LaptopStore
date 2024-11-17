@@ -124,6 +124,17 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="vbButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAATVJREFUSEvllkFqAkEURGfhLTLeKmShBxFJ9iZLryGKmovkIsk6y8krqNjd2DMw
+        nUYNFhTOr/r8Yuh2+M19ouu6KXyFm4rUvKkjUsiAX3APl3BRgZpzhJ+wdVQA4hs8uKwKB69cBiBu4YvL
+        qtBczXcZgLiDzy6rQnM132XAzYWiT/w4iL4+zdV8lwESZbo8QYPgB3yylIV8950FoxW96SP8hnNLCSJ/
+        ZikBetmZ4mWDIz0bKOCVXyT8JDiqewMF/PJQgR6dnYLW/h08a4Gev4UK9ClQWFsaBH3/7E3xkzOM6uyt
+        /gV+WShe9tJEem8w3vhQ9MFbGvl9/+NxoWhX+yJd9ttbAzcXepXNQVvb0WVVMPcdZnckbYPa2rRE1dwG
+        Fai5D45KgdHCFcztr6XUvPP18w7QND/BzGJypB1SjAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="vbButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
