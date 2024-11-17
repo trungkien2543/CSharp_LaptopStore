@@ -15,23 +15,23 @@ namespace CSharp_laptop.GUI.BanHang
 {
     public partial class BanHangForm : Form
     {
-       
+
         MainForm mainForm;
         public BanHangForm(MainForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
 
-           
+
         }
 
 
-       
-
-        
 
 
-    
+
+
+
+
 
 
         private void rjTextBox2__TextChanged(object sender, EventArgs e)
@@ -84,6 +84,34 @@ namespace CSharp_laptop.GUI.BanHang
 
         }
 
-      
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
