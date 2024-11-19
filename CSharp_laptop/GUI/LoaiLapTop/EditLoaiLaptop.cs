@@ -63,7 +63,7 @@ namespace CSharp_laptop.GUI
                 //    pictureBox1.Image = Image.FromFile(rjTextBox8.Texts);
                 //}
             }
-            
+
             TaiDuLieuComboBoxKhuyenMai();
             TaiDuLieuComboBoxHang();
         }
@@ -107,7 +107,7 @@ namespace CSharp_laptop.GUI
 
             };
 
-            bool result = (function == "add") ? SaveLoaiLaptop(laptop,true) : SaveLoaiLaptop(laptop, false);
+            bool result = (function == "add") ? SaveLoaiLaptop(laptop, true) : SaveLoaiLaptop(laptop, false);
         }
 
         bool SaveLoaiLaptop(LoaiLaptopDTO loaiLaptopDTO, bool isAdd)
@@ -168,6 +168,14 @@ namespace CSharp_laptop.GUI
                 {
                     MessageBox.Show("File không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void rjTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
             }
         }
     }

@@ -13,5 +13,18 @@ namespace CSharp_laptop.DTO
         public DateTime NgayBaoHanh { get; set; }
         public DateTime NgayTra { get; set; }
         public string GhiChu { get; set; }
+
+        public BaoHanhDTO(string imei, DateTime ngayBaoHanh, DateTime ngayTra, string ghiChu)
+        {
+            IMEI = imei;
+            NgayBaoHanh = ngayBaoHanh;
+            NgayTra = ngayTra;
+            GhiChu = ghiChu;
+        }
+
+        // Constructor mặc định
+        public BaoHanhDTO()
+        {
+        }
     }
 }

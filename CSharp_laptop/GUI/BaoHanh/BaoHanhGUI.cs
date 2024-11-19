@@ -29,16 +29,6 @@ namespace CSharp_laptop.GUI.Laptop
 
         }
 
-        private void vbButton3_Click_1(object sender, EventArgs e)
-        {
-            vbButton1.Enabled = true;
-        }
-
-        private void vbButton1_Click(object sender, EventArgs e)        // Thêm bảo hành mới
-        {
-            MessageBox.Show("đã nhấn");
-        }
-
         private void check_bh()
         {
             List<BaoHanhDTO> baoHanhs = baoHanhBUS.GetAllBaoHanhsByIMEI(rjTextBox1.Texts);
@@ -90,6 +80,14 @@ namespace CSharp_laptop.GUI.Laptop
             //dataGridView2.Columns["IMEI"].Visible = false;
         }
 
+        private void reset()
+        {
+            rjTextBox4.Texts = "";
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
+            rjTextBox5.Texts = "";
+        }
+
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -97,32 +95,80 @@ namespace CSharp_laptop.GUI.Laptop
                 chucnang = "update";
 
                 DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
-                rjTextBox2.Texts = row.Cells["NgayBaoHanh"].Value.ToString();
-                rjTextBox3.Texts = row.Cells["NgayTra"].Value.ToString();
                 rjTextBox4.Texts = row.Cells["GhiChu"].Value.ToString();
-
-
+                rjTextBox5.Texts = row.Cells["MaBaoHanh"].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(row.Cells["NgayBaoHanh"].Value);
+                dateTimePicker2.Value = Convert.ToDateTime(row.Cells["NgayTra"].Value);
             }
         }
 
         private void vbButton3_Click(object sender, EventArgs e)
         {
             chucnang = "add";
-            rjTextBox2.Texts = "";
-            rjTextBox3.Texts = "";
-            rjTextBox4.Texts = "";
+            reset();
         }
 
         private void vbButton1_Click_1(object sender, EventArgs e)
         {
             if (chucnang == "add")
             {
-                MessageBox.Show("Thêm");
-            } 
+                try
+                {
+                    BaoHanhDTO baoHanh = new BaoHanhDTO
+                    {
+                        IMEI = rjTextBox1.Texts,
+                        NgayBaoHanh = dateTimePicker1.Value,
+                        NgayTra = dateTimePicker2.Value,
+                        GhiChu = rjTextBox4.Texts
+                    };
+
+                    if (baoHanhBUS.AddBaoHanh(baoHanh))
+                    {
+                        MessageBox.Show("Thêm bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        load_inforlap();
+                        reset();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm bảo hành thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             else 
             {
                 MessageBox.Show("Update");
+                try
+                {
+                    BaoHanhDTO baoHanh = new BaoHanhDTO
+                    {
+                        MaBaoHanh = long.Parse(rjTextBox5.Texts), // Ensure this is filled in correctly
+                        IMEI = rjTextBox5.Texts,
+                        NgayBaoHanh = dateTimePicker1.Value,
+                        NgayTra = dateTimePicker2.Value,
+                        GhiChu = rjTextBox4.Texts
+                    };
+
+                    if (baoHanhBUS.UpdateBaoHanh(baoHanh))
+                    {
+                        MessageBox.Show("Cập nhật bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        load_inforlap() ;
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật bảo hành thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+        
     }
 }

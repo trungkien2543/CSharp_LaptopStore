@@ -340,6 +340,7 @@
             rjTextBox3.TabIndex = 31;
             rjTextBox3.Texts = "";
             rjTextBox3.UnderlinedStyle = false;
+            rjTextBox3.KeyPress += rjTextBox3_KeyPress;
             // 
             // rjTextBox4
             // 

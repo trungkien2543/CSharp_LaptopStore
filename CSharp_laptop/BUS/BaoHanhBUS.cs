@@ -23,5 +23,15 @@ namespace CSharp_laptop.BUS
 
             return baoHanhDAO.GetAllBaoHanhsByIMEI(imei);
         }
+
+        public bool AddBaoHanh(BaoHanhDTO baoHanh)
+        {
+            return baoHanhDAO.InsertBaoHanh(baoHanh);
+        }
+
+        public bool UpdateBaoHanh(BaoHanhDTO baoHanh)
+        {
+            return baoHanhDAO.UpdateBaoHanh(baoHanh);
+        }
     }
 }
