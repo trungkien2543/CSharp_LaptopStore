@@ -70,5 +70,36 @@ namespace CSharp_laptop.DAO
             return isSuccess;
         }
 
+        public KhachHangDTO GetKhachHangBySDT(String SDT)
+        {
+            KhachHangDTO khach = null;
+
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM khachhang WHERE SDT = @SDT";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SDT", SDT);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        khach = new KhachHangDTO
+                        {
+                            ID_KhachHang = reader["ID_KhachHang"].ToString(),
+                            TenKH = reader["TenKH"].ToString(),
+                            DiaChiKH = reader["DiaChiKH"].ToString(),
+                            SDT = reader["SDT"].ToString(),
+                            TichDiem = int.Parse(reader["TichDiem"].ToString())
+                        };
+                        
+                    }
+                }
+            }
+            return khach;
+        }
+
     }
 }
