@@ -25,6 +25,14 @@ namespace CSharp_laptop.GUI
 
         private HangBUS hangBUS = new HangBUS();
 
+        private Dictionary<string, string> HangDictionary = new Dictionary<string, string>  // Dictionary cho hãng
+        {
+        };
+        
+        private Dictionary<string, string> KhuyenMaiDictionary = new Dictionary<string, string> // Dictionary cho khuyến mãi
+        {
+        };
+
         string selectedLaptopID;
         string soluong_lap;
         private MainForm mainForm;
@@ -49,8 +57,8 @@ namespace CSharp_laptop.GUI
             soluong_lap = (1 + laptops.Count).ToString();
 
             dataGridView2.DataSource = laptops;
-            TaiDuLieuComboBoxHang();
-            TaiDuLieuComboBoxKhuyenMai();
+            TaiDuLieuHang();
+            TaiDuLieuKhuyenMai();
         }
 
         private void edittable()
@@ -221,10 +229,9 @@ namespace CSharp_laptop.GUI
             Reset();
         }
 
-        private void ExportToExcel()
+        private void ExportToExcel()  // export excel
         {
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-
 
             using (var package = new ExcelPackage())
             {
@@ -241,6 +248,7 @@ namespace CSharp_laptop.GUI
                 worksheet.Cells[1, 7].Value = "GPU";
                 worksheet.Cells[1, 8].Value = "Kích Thước";
                 worksheet.Cells[1, 9].Value = "SL Tồn Kho";
+                worksheet.Cells[1, 10].Value = "Khuyến Mãi";
 
                 // Đổ dữ liệu từ danh sách vào Excel
                 for (int i = 0; i < laptops.Count; i++)
@@ -255,22 +263,31 @@ namespace CSharp_laptop.GUI
                     worksheet.Cells[i + 2, 7].Value = laptop.GPU;
                     worksheet.Cells[i + 2, 8].Value = laptop.KichThuoc;
                     worksheet.Cells[i + 2, 9].Value = laptop.SLTonKho;
+                    worksheet.Cells[i + 2, 10].Value = laptop.KhuyenMai;
                 }
 
-                // Lưu file Excel
-                var filePath = "DanhSachLaptop2.xlsx";
-                File.WriteAllBytes(filePath, package.GetAsByteArray());
+                // Hiển thị hộp thoại lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                saveFileDialog.FileName = "DanhSachLaptop.xlsx"; // Tên file mặc định
 
-                MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lưu file Excel tại vị trí người dùng chọn
+                    var filePath = saveFileDialog.FileName;
+                    File.WriteAllBytes(filePath, package.GetAsByteArray());
+
+                    MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
+                }
             }
         }
 
         private void vbButton2_Click(object sender, EventArgs e)
         {
             ExportToExcel();
-        }
+        }// nút export excel
 
-        private List<LoaiLaptopDTO> ImportFromExcel(string filePath)
+        private List<LoaiLaptopDTO> ImportFromExcel(string filePath)        // import excel
         {
             List<LoaiLaptopDTO> laptops2 = new List<LoaiLaptopDTO>();
 
@@ -317,27 +334,27 @@ namespace CSharp_laptop.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error while reading Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error while reading Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return laptops2;
         }
 
-        private void SaveLaptopsToDatabase(List<LoaiLaptopDTO> laptops)
+        private void SaveLaptopsToDatabase(List<LoaiLaptopDTO> laptops)     // lưu sản phẩm mới từ excel
         {
             foreach (var laptop in laptops)
             {
                 bool result = laptopBUS.AddLaptop(laptop); // Gọi hàm thêm dữ liệu vào DB
                 if (!result)
                 {
-                    //MessageBox.Show($"Lỗi khi lưu laptop: {laptop.TenSP}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi khi lưu laptop: {laptop.TenSP} vì trùng ID" , "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
             //MessageBox.Show("Hoàn thành việc nhập dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void vbButton3_Click(object sender, EventArgs e)
+        private void vbButton3_Click(object sender, EventArgs e)        // Nút import excel
         {
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -354,7 +371,7 @@ namespace CSharp_laptop.GUI
                     // Gọi hàm nhập dữ liệu và lưu vào database
                     SaveLaptopsToDatabase(ImportFromExcel(filePath));
 
-                    MessageBox.Show("Dữ liệu từ file Excel đã được thêm vào cơ sở dữ liệu.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Dữ liệu từ file Excel đã được thêm vào cơ sở dữ liệu.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -364,16 +381,7 @@ namespace CSharp_laptop.GUI
 
         }
 
-        private Dictionary<string, string> HangDictionary = new Dictionary<string, string>
-        {
-        };
-
-        // Dictionary cho khuyến mãi
-        private Dictionary<string, string> KhuyenMaiDictionary = new Dictionary<string, string>
-        {
-        };
-
-        private void TaiDuLieuComboBoxKhuyenMai()
+        private void TaiDuLieuKhuyenMai()
         {
             // Lấy dữ liệu khuyến mãi từ lớp BUS
             Dictionary<string, string> khuyenMai = khuyenMaiBUS.GetKhuyenMai();
@@ -383,7 +391,7 @@ namespace CSharp_laptop.GUI
             KhuyenMaiDictionary = khuyenMai;
         }
 
-        private void TaiDuLieuComboBoxHang()
+        private void TaiDuLieuHang()
         {
             // Lấy dữ liệu hãng sản xuất từ lớp BUS
             Dictionary<string, string> hangSanXuat = hangBUS.GetHangSanXuat();
