@@ -63,11 +63,9 @@ namespace CSharp_laptop.DAO
             {
                 conn.Open();
                 string query = @"
-                        SELECT ll.*, h.TenHang, km.TenKhuyenMai 
-                        FROM loailaptop ll 
-                        LEFT JOIN hangsanxuat h ON ll.Hang = h.ID_Hang 
-                        LEFT JOIN khuyenmai km ON ll.KhuyenMai = km.ID_KhuyenMai 
-                        WHERE ll.IDLoaiLaptop = @IDLoaiLaptop";
+                SELECT ll.*, ll.Hang AS ID_Hang, ll.KhuyenMai AS ID_KhuyenMai 
+                FROM loailaptop ll
+                WHERE ll.IDLoaiLaptop = @IDLoaiLaptop";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@IDLoaiLaptop", IDLoaiLaptop);  // Thêm tham số vào câu lệnh SQL
 
@@ -80,13 +78,13 @@ namespace CSharp_laptop.DAO
                             IDLoaiLaptop = reader["IDLoaiLaptop"].ToString(),
                             TenSP = reader["TenSP"].ToString(),
                             GiaBan = long.Parse(reader["GiaBan"].ToString()),
-                            Hang = reader["TenHang"].ToString(),
+                            Hang = reader["ID_Hang"].ToString(),  // Lấy ID_Hang
                             CPU = reader["CPU"].ToString(),
                             RAM = int.Parse(reader["RAM"].ToString()),
                             GPU = reader["GPU"].ToString(),
                             HinhAnh = reader["HinhAnh"].ToString(),
                             KichThuoc = reader["KichThuoc"].ToString(),
-                            KhuyenMai = reader["TenKhuyenMai"].ToString(),
+                            KhuyenMai = reader["ID_KhuyenMai"]?.ToString(),  // Lấy ID_KhuyenMai, kiểm tra null
                             SLTonKho = reader["SLTonKho"].ToString()
                         };
                     }
@@ -94,6 +92,7 @@ namespace CSharp_laptop.DAO
             }
             return laptop;  // Trả về đối tượng laptop hoặc null nếu không tìm thấy
         }
+
 
 
         public bool InsertLoaiLaptop(LoaiLaptopDTO laptop)

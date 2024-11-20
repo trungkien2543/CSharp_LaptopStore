@@ -35,6 +35,9 @@ namespace CSharp_laptop.GUI
             function = chucnang;
             InitializeComponent();
 
+            TaiDuLieuComboBoxKhuyenMai();
+            TaiDuLieuComboBoxHang();
+
 
             if (chucnang == "add")
             {
@@ -53,9 +56,12 @@ namespace CSharp_laptop.GUI
                 rjTextBox7.Texts = sanPhamDTO.KichThuoc;
                 rjTextBox8.Texts = sanPhamDTO.HinhAnh;
 
+                textBox1.Text = sanPhamDTO.Hang;
+                textBox2.Text = sanPhamDTO.KhuyenMai;
 
-                rjComboBox1.Texts = sanPhamDTO.Hang;
-                rjComboBox2.Texts = sanPhamDTO.KhuyenMai;
+                cbbhang.SelectedValue = sanPhamDTO.Hang;
+                cbbkm.SelectedValue = sanPhamDTO.KhuyenMai;
+
                 label1.Text = chucnang;
 
                 //if (!string.IsNullOrEmpty(rjTextBox8.Texts))
@@ -64,24 +70,26 @@ namespace CSharp_laptop.GUI
                 //}
             }
 
-            TaiDuLieuComboBoxKhuyenMai();
-            TaiDuLieuComboBoxHang();
+            
         }
 
         private void TaiDuLieuComboBoxKhuyenMai()
         {
             Dictionary<string, string> khuyenMai = khuyenMaiBUS.GetKhuyenMai();
-            rjComboBox2.DataSource = new BindingSource(khuyenMai, null);
-            rjComboBox2.DisplayMember = "Value";  // Hiển thị tên khuyến mãi
-            rjComboBox2.ValueMember = "Key";      // Giá trị là mã khuyến mãi
+
+            cbbkm.DataSource = new BindingSource(khuyenMai, null);
+            cbbkm.DisplayMember = "Value";  // Hiển thị tên khuyến mãi
+            cbbkm.ValueMember = "Key";      // Giá trị là mã khuyến mãi
+
         }
 
         private void TaiDuLieuComboBoxHang()
         {
             Dictionary<string, string> hangSanXuat = hangBUS.GetHangSanXuat();
-            rjComboBox1.DataSource = new BindingSource(hangSanXuat, null);
-            rjComboBox1.DisplayMember = "Value";  // Hiển thị tên hãng
-            rjComboBox1.ValueMember = "Key";      // Giá trị là mã hãng
+
+            cbbhang.DataSource = new BindingSource(hangSanXuat, null);
+            cbbhang.DisplayMember = "Value";  // Hiển thị tên hãng
+            cbbhang.ValueMember = "Key";      // Giá trị là mã hãng
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,13 +105,13 @@ namespace CSharp_laptop.GUI
                 IDLoaiLaptop = rjTextBox1.Texts,
                 TenSP = rjTextBox2.Texts,
                 GiaBan = long.Parse(rjTextBox3.Texts),  // Chuyển đổi từ chuỗi sang số nguyên
-                Hang = ((KeyValuePair<string, string>)rjComboBox1.SelectedItem).Key,
+                Hang = ((KeyValuePair<string, string>)cbbhang.SelectedItem).Key,
                 CPU = rjTextBox5.Texts,
                 RAM = int.Parse(rjTextBox6.Texts),  // Chuyển đổi từ chuỗi sang số nguyên
                 GPU = rjTextBox4.Texts,
                 HinhAnh = rjTextBox8.Texts,
                 KichThuoc = rjTextBox7.Texts,
-                KhuyenMai = ((KeyValuePair<string, string>)rjComboBox2.SelectedItem).Key
+                KhuyenMai = ((KeyValuePair<string, string>)cbbkm.SelectedItem).Key
 
             };
 
