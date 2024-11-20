@@ -10,7 +10,7 @@ namespace CSharp_laptop.DTO
     {
         public string IMEI { get; set; }
         public long ThoiGianBaoHanh { get; set; }
-        public string TrangThai { get; set; }
+        public int TrangThai { get; set; }
         public string LoaiLaptop { get; set; }
     }
 }

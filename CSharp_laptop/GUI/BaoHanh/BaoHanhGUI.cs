@@ -54,7 +54,7 @@ namespace CSharp_laptop.GUI.Laptop
             {
                 label10.Text = laptop.IMEI;
                 label12.Text = laptop.ThoiGianBaoHanh.ToString();
-                label9.Text = laptop.TrangThai;
+                label9.Text = laptop.TrangThai.ToString();
 
                 LoaiLaptopDTO loaiLaptopDTO = loaiLaptopBUS.GetLaptopByID(laptop.LoaiLaptop);
                 label13.Text = loaiLaptopDTO.TenSP;

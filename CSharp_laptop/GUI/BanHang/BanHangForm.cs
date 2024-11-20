@@ -41,7 +41,7 @@ namespace CSharp_laptop.GUI.BanHang
 
         private BindingList<LaptopDTO> listSP; // Để tự động cập nhật list
 
-        private List<LoaiLaptopDTO> listLoaiLaptop;
+        private Dictionary<String, long> laptopWithGiaBan;
 
 
         private LaptopBUS LaptopBUS;
@@ -50,7 +50,7 @@ namespace CSharp_laptop.GUI.BanHang
 
         private KhachHangBUS KhachHangBUS;
 
-        private long ThanhTien;
+        private long ThanhTien, TongTien, GiamGia;
 
 
 
@@ -68,7 +68,7 @@ namespace CSharp_laptop.GUI.BanHang
 
             listSP = new BindingList<LaptopDTO>();
 
-            listLoaiLaptop = LoaiLaptopBUS.GetLaptops();
+            laptopWithGiaBan = new Dictionary<string, long>();
 
             Load += Form1_Load;
 
@@ -85,6 +85,10 @@ namespace CSharp_laptop.GUI.BanHang
             txtThanhTien.Enabled = false;
 
             txtTienThoi.Enabled = false;
+
+            txtTichDiem.Text = "0";
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -133,6 +137,7 @@ namespace CSharp_laptop.GUI.BanHang
             btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
             btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dataGridView2.Columns.Add(btnDelete);
+
 
         }
 
@@ -188,22 +193,31 @@ namespace CSharp_laptop.GUI.BanHang
                     {
 
 
-                        scannedCodes.Add(scannedCode); // Lưu mã vào danh sách đã quét
-
                         LaptopDTO tempLaptop = LaptopBUS.GetLaptopByIMEI(scannedCode);
 
+                        if (tempLaptop.TrangThai == 1)
+                        {
 
-                        // Xử lý mã mới
-                        listSP.Add(tempLaptop);
-
-                        ThanhTien += GetGiaBan(tempLaptop.LoaiLaptop);
-
-                        txtThanhTien.Text = ThanhTien.ToString("N0");
+                            scannedCodes.Add(scannedCode); // Lưu mã vào danh sách đã quét
 
 
+                            // Xử lý mã mới
+                            listSP.Add(tempLaptop);
 
-                        // Phát âm thanh báo hiệu
-                        PlayBeepSound();
+                            laptopWithGiaBan.Add(tempLaptop.IMEI, LaptopBUS.GetGiaBanByIMEI(tempLaptop.IMEI));
+
+                            ThanhTien += laptopWithGiaBan[tempLaptop.IMEI];
+
+                            txtThanhTien.Text = ThanhTien.ToString("N0");
+
+                            CapNhatGia();
+
+
+
+                            // Phát âm thanh báo hiệu
+                            PlayBeepSound();
+                        }
+
 
                     }
 
@@ -228,7 +242,7 @@ namespace CSharp_laptop.GUI.BanHang
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-            scannedCodes.Clear();
+            Reset();
         }
 
         private void PlayBeepSound()
@@ -261,19 +275,7 @@ namespace CSharp_laptop.GUI.BanHang
             }
         }
 
-        private long GetGiaBan(String IdLaptop)
-        {
-            for (int i = 0; i < listLoaiLaptop.Count; i++)
-            {
-                LoaiLaptopDTO n = listLoaiLaptop[i];
-                if (n.IDLoaiLaptop == IdLaptop)
-                {
-                    return n.GiaBan;
-                }
-            }
 
-            return 0;
-        }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
@@ -294,18 +296,34 @@ namespace CSharp_laptop.GUI.BanHang
 
                 if (tempLaptop != null)
                 {
-                    scannedCodes.Add(userInput); // Lưu mã vào danh sách đã quét
+                    if (tempLaptop.TrangThai == 1)
+                    {
 
-                    // Xử lý mã mới
-                    listSP.Add(tempLaptop);
-
-                    ThanhTien += GetGiaBan(tempLaptop.LoaiLaptop);
-
-                    txtThanhTien.Text = ThanhTien.ToString("N0");
+                        scannedCodes.Add(userInput); // Lưu mã vào danh sách đã quét
 
 
-                    // Phát âm thanh báo hiệu
-                    PlayBeepSound();
+                        // Xử lý mã mới
+                        listSP.Add(tempLaptop);
+
+                        laptopWithGiaBan.Add(tempLaptop.IMEI, LaptopBUS.GetGiaBanByIMEI(tempLaptop.IMEI));
+
+                        ThanhTien += laptopWithGiaBan[tempLaptop.IMEI];
+
+
+                        txtThanhTien.Text = ThanhTien.ToString("N0");
+
+                        CapNhatGia();
+
+
+
+                        // Phát âm thanh báo hiệu
+                        PlayBeepSound();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Mã này đã bán rồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
                 else
                 {
@@ -336,9 +354,13 @@ namespace CSharp_laptop.GUI.BanHang
                 {
                     scannedCodes.Remove(laptopDTO.IMEI);
 
-                    ThanhTien -= GetGiaBan(laptopDTO.LoaiLaptop);
+                    ThanhTien -= laptopWithGiaBan[laptopDTO.IMEI];
 
                     txtThanhTien.Text = txtThanhTien.Text = ThanhTien.ToString("N0");
+
+                    CapNhatGia();
+
+                    laptopWithGiaBan.Remove(laptopDTO.IMEI);
 
                     listSP.Remove(laptopDTO);
 
@@ -369,15 +391,102 @@ namespace CSharp_laptop.GUI.BanHang
                     txtDiaChi.Text = khachHangDTO.DiaChiKH;
                     txtTichDiem.Text = khachHangDTO.TichDiem.ToString();
 
+                    CapNhatGia();
+
                 }
                 else
                 {
                     MessageBox.Show("Thông tin khách chưa được lưu trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtSDT.Text = "";
+                    txtID.Text = "";
+                    txtKhachHang.Text = "";
+                    txtDiaChi.Text = "";
+                    txtTichDiem.Text = "0";
+
+                    mainForm.OpenChildForm(new KhachHangGUI(mainForm));
+
                 }
 
                 e.Handled = true; // Ngăn xử lý mặc định của phím
                 e.SuppressKeyPress = true; // Ngăn chặn âm thanh 'beep'
             }
         }
+
+        private long GiaGiam()
+        {
+            long GiaGiam = int.Parse(txtTichDiem.Text) * 1000;
+            if (ThanhTien < GiaGiam)
+            {
+                return ThanhTien;
+            }
+            return GiaGiam;
+        }
+
+        private void CapNhatGia()
+        {
+            GiamGia = GiaGiam();
+
+            txtGiamGia.Text = GiamGia.ToString("N0");
+
+            TongTien = ThanhTien - GiamGia;
+
+            txtTongTien.Text = TongTien.ToString("N0");
+
+            if (!txtTienThoi.Text.Equals("") && !txtKhachDua.Text.Equals(""))
+            {
+                long KhachDua = long.Parse(txtKhachDua.Text);
+
+                long TienThoi = KhachDua - TongTien;
+
+                txtTienThoi.Text = TienThoi.ToString("N0");
+            }
+
+
+        }
+
+        private void txtKhachDua_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                long KhachDua = long.Parse(txtKhachDua.Text);
+
+                long TienThoi = KhachDua - TongTien;
+
+                txtTienThoi.Text = TienThoi.ToString("N0");
+
+                e.Handled = true; // Ngăn xử lý mặc định của phím
+                e.SuppressKeyPress = true; // Ngăn chặn âm thanh 'beep'
+            }
+        }
+
+        private void Reset()
+        {
+            // Xóa danh sách đã scan
+            scannedCodes.Clear();
+
+            listSP.Clear();
+
+            laptopWithGiaBan.Clear();
+
+            txtSDT.Text = "";
+            txtID.Text = "";
+            txtKhachHang.Text = "";
+            txtDiaChi.Text = "";
+            txtTichDiem.Text = "0";
+
+            txtThanhTien.Text = "";
+            txtGiamGia.Text = "";
+            txtTongTien.Text = "";
+            txtKhachDua.Text = "";
+            txtTienThoi.Text = "";
+        }
+
+        private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new HoaDon(mainForm));
+        }
     }
+
+
 }
