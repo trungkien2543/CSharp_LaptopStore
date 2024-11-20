@@ -117,11 +117,6 @@ namespace CSharp_laptop.GUI
             mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
         }
 
-        private void vbButton2_Click(object sender, EventArgs e)
-        {
-            string searchTerm = rjTextBox1.Texts;
-            dataGridView2.DataSource = laptopBUS.SearchLaptop(searchTerm);
-        }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -164,25 +159,6 @@ namespace CSharp_laptop.GUI
             }
         }
 
-        private void TextBox_Enter(object sender, EventArgs e)
-        {
-
-            if (rjTextBox1.Texts == "Tìm kiếm")
-            {
-                rjTextBox1.Texts = "";
-                rjTextBox1.ForeColor = Color.Black; // Đổi màu chữ về màu bình thường
-            }
-        }
-
-        private void TextBox_Leave(object sender, EventArgs e)
-        {
-
-            if (string.IsNullOrWhiteSpace(rjTextBox1.Texts))
-            {
-                rjTextBox1.Texts = "Tìm kiếm"; // Văn bản hint
-                rjTextBox1.ForeColor = Color.Gray; // Đổi màu chữ sang màu xám
-            }
-        }
 
         private void find(object sender, EventArgs e)
         {

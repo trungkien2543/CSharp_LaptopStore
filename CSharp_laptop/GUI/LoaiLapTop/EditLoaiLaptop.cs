@@ -56,9 +56,6 @@ namespace CSharp_laptop.GUI
                 rjTextBox7.Texts = sanPhamDTO.KichThuoc;
                 rjTextBox8.Texts = sanPhamDTO.HinhAnh;
 
-                textBox1.Text = sanPhamDTO.Hang;
-                textBox2.Text = sanPhamDTO.KhuyenMai;
-
                 cbbhang.SelectedValue = sanPhamDTO.Hang;
                 cbbkm.SelectedValue = sanPhamDTO.KhuyenMai;
 

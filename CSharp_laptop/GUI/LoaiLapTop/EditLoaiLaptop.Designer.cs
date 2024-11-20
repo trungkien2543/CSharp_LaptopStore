@@ -61,8 +61,6 @@
             cbbhang = new Guna.UI2.WinForms.Guna2ComboBox();
             artanPanel3 = new ArtanPanel();
             artanPanel4 = new ArtanPanel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             artanPanel1.SuspendLayout();
             artanPanel2.SuspendLayout();
@@ -478,8 +476,6 @@
             artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel2.BackColor = Color.White;
             artanPanel2.BorderRadius = 30;
-            artanPanel2.Controls.Add(textBox2);
-            artanPanel2.Controls.Add(textBox1);
             artanPanel2.Controls.Add(cbbkm);
             artanPanel2.Controls.Add(cbbhang);
             artanPanel2.Controls.Add(rjTextBox4);
@@ -577,20 +573,6 @@
             artanPanel4.Size = new Size(347, 454);
             artanPanel4.TabIndex = 40;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(424, 369);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 40;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(566, 369);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 41;
-            // 
             // EditLoaiLaptop
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -647,7 +629,5 @@
         private ArtanPanel artanPanel4;
         private Guna.UI2.WinForms.Guna2ComboBox cbbhang;
         private Guna.UI2.WinForms.Guna2ComboBox cbbkm;
-        private TextBox textBox2;
-        private TextBox textBox1;
     }
 }
