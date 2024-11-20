@@ -71,8 +71,8 @@
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             NamLabel = new Label();
             NuLabel = new Label();
-            guna2ImageRadioButton2 = new Guna.UI2.WinForms.Guna2ImageRadioButton();
-            guna2ImageRadioButton1 = new Guna.UI2.WinForms.Guna2ImageRadioButton();
+            NamRadioButton = new Guna.UI2.WinForms.Guna2ImageRadioButton();
+            NuRadioButton = new Guna.UI2.WinForms.Guna2ImageRadioButton();
             guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2TextBoxDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBoxCCCD = new Guna.UI2.WinForms.Guna2TextBox();
@@ -123,7 +123,7 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(3, -2);
+            dataGridView1.Location = new Point(3, 3);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -138,7 +138,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1143, 610);
+            dataGridView1.Size = new Size(1143, 605);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
@@ -316,41 +316,41 @@
             NuLabel.TabIndex = 9;
             NuLabel.Text = "Nữ";
             // 
-            // guna2ImageRadioButton2
+            // NamRadioButton
             // 
-            guna2ImageRadioButton2.BackColor = Color.Transparent;
-            guna2ImageRadioButton2.CheckedState.Image = Properties.Resources.man;
-            guna2ImageRadioButton2.CheckedState.ImageSize = new Size(42, 42);
-            guna2ImageRadioButton2.HoverState.ImageSize = new Size(32, 32);
-            guna2ImageRadioButton2.Image = Properties.Resources.man_choice;
-            guna2ImageRadioButton2.ImageOffset = new Point(0, 0);
-            guna2ImageRadioButton2.ImageRotate = 0F;
-            guna2ImageRadioButton2.ImageSize = new Size(42, 42);
-            guna2ImageRadioButton2.ImeMode = ImeMode.NoControl;
-            guna2ImageRadioButton2.Location = new Point(648, 221);
-            guna2ImageRadioButton2.Name = "guna2ImageRadioButton2";
-            guna2ImageRadioButton2.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2ImageRadioButton2.Size = new Size(112, 46);
-            guna2ImageRadioButton2.TabIndex = 8;
-            guna2ImageRadioButton2.CheckedChanged += guna2ImageRadioButton2_CheckedChanged;
+            NamRadioButton.BackColor = Color.Transparent;
+            NamRadioButton.CheckedState.Image = Properties.Resources.man;
+            NamRadioButton.CheckedState.ImageSize = new Size(42, 42);
+            NamRadioButton.HoverState.ImageSize = new Size(32, 32);
+            NamRadioButton.Image = Properties.Resources.man_choice;
+            NamRadioButton.ImageOffset = new Point(0, 0);
+            NamRadioButton.ImageRotate = 0F;
+            NamRadioButton.ImageSize = new Size(42, 42);
+            NamRadioButton.ImeMode = ImeMode.NoControl;
+            NamRadioButton.Location = new Point(648, 221);
+            NamRadioButton.Name = "NamRadioButton";
+            NamRadioButton.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            NamRadioButton.Size = new Size(112, 46);
+            NamRadioButton.TabIndex = 8;
+            NamRadioButton.CheckedChanged += guna2ImageRadioButton2_CheckedChanged;
             // 
-            // guna2ImageRadioButton1
+            // NuRadioButton
             // 
-            guna2ImageRadioButton1.BackColor = Color.Transparent;
-            guna2ImageRadioButton1.CheckedState.Image = Properties.Resources.woman_choice;
-            guna2ImageRadioButton1.CheckedState.ImageSize = new Size(42, 42);
-            guna2ImageRadioButton1.HoverState.ImageSize = new Size(32, 32);
-            guna2ImageRadioButton1.Image = Properties.Resources.woman;
-            guna2ImageRadioButton1.ImageOffset = new Point(0, 0);
-            guna2ImageRadioButton1.ImageRotate = 0F;
-            guna2ImageRadioButton1.ImageSize = new Size(42, 42);
-            guna2ImageRadioButton1.ImeMode = ImeMode.NoControl;
-            guna2ImageRadioButton1.Location = new Point(504, 221);
-            guna2ImageRadioButton1.Name = "guna2ImageRadioButton1";
-            guna2ImageRadioButton1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ImageRadioButton1.Size = new Size(95, 46);
-            guna2ImageRadioButton1.TabIndex = 7;
-            guna2ImageRadioButton1.CheckedChanged += guna2ImageRadioButton1_CheckedChanged;
+            NuRadioButton.BackColor = Color.Transparent;
+            NuRadioButton.CheckedState.Image = Properties.Resources.woman_choice;
+            NuRadioButton.CheckedState.ImageSize = new Size(42, 42);
+            NuRadioButton.HoverState.ImageSize = new Size(32, 32);
+            NuRadioButton.Image = Properties.Resources.woman;
+            NuRadioButton.ImageOffset = new Point(0, 0);
+            NuRadioButton.ImageRotate = 0F;
+            NuRadioButton.ImageSize = new Size(42, 42);
+            NuRadioButton.ImeMode = ImeMode.NoControl;
+            NuRadioButton.Location = new Point(504, 221);
+            NuRadioButton.Name = "NuRadioButton";
+            NuRadioButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            NuRadioButton.Size = new Size(95, 46);
+            NuRadioButton.TabIndex = 7;
+            NuRadioButton.CheckedChanged += guna2ImageRadioButton1_CheckedChanged;
             // 
             // guna2DateTimePicker1
             // 
@@ -421,6 +421,7 @@
             guna2TextBoxCCCD.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2TextBoxCCCD.Size = new Size(478, 38);
             guna2TextBoxCCCD.TabIndex = 4;
+            guna2TextBoxCCCD.KeyPress += guna2TextBoxCCCD_KeyPress;
             // 
             // guna2TextBoxEmail
             // 
@@ -472,6 +473,7 @@
             guna2TextBoxSDT.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2TextBoxSDT.Size = new Size(483, 38);
             guna2TextBoxSDT.TabIndex = 2;
+            guna2TextBoxSDT.KeyPress += guna2TextBoxSDT_KeyPress;
             // 
             // guna2TextBoxTen
             // 
@@ -625,9 +627,9 @@
             editpanel.Controls.Add(NamLabel);
             editpanel.Controls.Add(guna2TextBoxID);
             editpanel.Controls.Add(NuLabel);
-            editpanel.Controls.Add(guna2ImageRadioButton2);
+            editpanel.Controls.Add(NamRadioButton);
             editpanel.Controls.Add(guna2TextBoxTen);
-            editpanel.Controls.Add(guna2ImageRadioButton1);
+            editpanel.Controls.Add(NuRadioButton);
             editpanel.Controls.Add(guna2TextBoxSDT);
             editpanel.Controls.Add(guna2DateTimePicker1);
             editpanel.Controls.Add(guna2TextBoxEmail);
@@ -698,8 +700,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxDiaChi;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxCCCD;
-        private Guna.UI2.WinForms.Guna2ImageRadioButton guna2ImageRadioButton1;
-        private Guna.UI2.WinForms.Guna2ImageRadioButton guna2ImageRadioButton2;
+        private Guna.UI2.WinForms.Guna2ImageRadioButton NuRadioButton;
+        private Guna.UI2.WinForms.Guna2ImageRadioButton NamRadioButton;
         private Label NamLabel;
         private Label NuLabel;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;

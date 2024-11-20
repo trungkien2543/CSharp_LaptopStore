@@ -33,5 +33,10 @@ namespace CSharp_laptop.BUS
         {
             return dao.FindNhanVienById(idNhanVien);
         }
+
+        public bool UpdateNhanVien(NhanVienDTO nhanvien)
+        {
+            return dao.UpdateNhanVien(nhanvien);
+        }
     }
 }

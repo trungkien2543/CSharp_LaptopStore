@@ -22,14 +22,11 @@ namespace CSharp_laptop.GUI
         bool hided;
         MainForm mainForm;
         NhanVienBUS bus;
-        List<NhanVienDTO> nvs;
         List<VBButton> btnEditList;
         List<VBButton> btnDelList;
         public NhanVienGUI(MainForm mainForm)
         {
             bus = new NhanVienBUS();
-
-            nvs = bus.getAllNhanVien();
 
             btnEditList = new List<VBButton>();
             btnDelList = new List<VBButton>();
@@ -56,7 +53,12 @@ namespace CSharp_laptop.GUI
 
         private void NhanVienGUI_Load(object sender, EventArgs e)
         {
-
+            LoadTable();
+        }
+        private void LoadTable()
+        {
+            dataGridView1.Rows.Clear();
+            List<NhanVienDTO> nvs = bus.getAllNhanVien();
             for (int i = 0; i < nvs.Count; i++)
             {
                 NhanVienDTO nv = nvs[i];
@@ -106,13 +108,13 @@ namespace CSharp_laptop.GUI
                 }
                 if (dataGridView1.Rows[rowIndex].Cells[5].Value.ToString() != "Nam")
                 {
-                    guna2ImageRadioButton1.Checked = true;
-                    guna2ImageRadioButton2.Checked = false;
+                    NuRadioButton.Checked = true;
+                    NamRadioButton.Checked = false;
                 }
                 else
                 {
-                    guna2ImageRadioButton1.Checked = false;
-                    guna2ImageRadioButton2.Checked = true;
+                    NuRadioButton.Checked = false;
+                    NamRadioButton.Checked = true;
                 }
             }
         }
@@ -122,6 +124,29 @@ namespace CSharp_laptop.GUI
             if (clickedButton != null)
             {
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
+
+                int rowIndex = int.Parse(clickedButton.Name);
+
+                String ma = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa nhân viên " + ma, "Xóa Nhân Viên", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    if (bus.DeleteNhanVien(ma))
+                    {
+                        MessageBox.Show("Xóa Thành Công!");
+                    } else
+                    {
+
+                        MessageBox.Show("Xóa Ko Thành Công!");
+                    }
+                    LoadTable();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+
+                }
+
             }
         }
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -250,7 +275,7 @@ namespace CSharp_laptop.GUI
 
         private void guna2ImageRadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2ImageRadioButton1.Checked)
+            if (NuRadioButton.Checked)
             {
                 NuLabel.ForeColor = Color.FromArgb(46, 88, 255);
             }
@@ -263,7 +288,7 @@ namespace CSharp_laptop.GUI
 
         private void guna2ImageRadioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2ImageRadioButton2.Checked)
+            if (NamRadioButton.Checked)
             {
                 NamLabel.ForeColor = Color.FromArgb(46, 88, 255);
             }
@@ -282,10 +307,29 @@ namespace CSharp_laptop.GUI
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(guna2TextBoxID.Text))
+            if (nameprocess.Text == "Thêm Nhân Viên")
             {
-
+                ThemNhanVien();
+            } else
+            {
+                SuaNhanVien();
             }
+
+
+            LoadTable();
+        }
+        private void SuaNhanVien()
+        {
+            if (KiemtraTextBox())
+            {
+                return;
+            }
+            NhanVienDTO nhanvientemp = bus.FindNhanVienById(guna2TextBoxID.Text);
+            if (nhanvientemp == null)
+            {
+                MessageBox.Show("Mã Nhân Viên không tồn tại", "Lỗi!"); return;
+            }
+
 
             string id = guna2TextBoxID.Text;
             string ten = guna2TextBoxTen.Text;
@@ -293,6 +337,78 @@ namespace CSharp_laptop.GUI
             string STD = guna2TextBoxSDT.Text;
             string diachi = guna2TextBoxDiaChi.Text;
             string cccd = guna2TextBoxCCCD.Text;
+            string ngaysinh = guna2DateTimePicker1.Value.ToString("dd/MM/yyyy");
+            NhanVienDTO nv = new NhanVienDTO(id, ten, ngaysinh, STD, diachi, NamRadioButton.Checked, cccd, email);
+            if (bus.UpdateNhanVien(nv))
+            {
+                MessageBox.Show("Sửa Nhân Viên Thành Công!", "Thông Báo");
+            }
+            else
+            {
+                MessageBox.Show("Sửa Nhân Viên Không Thành Công!", "Thông Báo");
+            }
+        }
+        private void ThemNhanVien()
+        {
+            if (KiemtraTextBox())
+            {
+                return;
+            }
+            NhanVienDTO nhanvientemp = bus.FindNhanVienById(guna2TextBoxID.Text);
+            if (nhanvientemp != null)
+            {
+                MessageBox.Show("Mã Nhân Viên bị trùng với nhân viên " + nhanvientemp.TenNV, "Lỗi!"); return;
+            }
+            
+            string id = guna2TextBoxID.Text;
+            string ten = guna2TextBoxTen.Text;
+            string email = guna2TextBoxEmail.Text;
+            string STD = guna2TextBoxSDT.Text;
+            string diachi = guna2TextBoxDiaChi.Text;
+            string cccd = guna2TextBoxCCCD.Text;
+            string ngaysinh = guna2DateTimePicker1.Value.ToString("dd/MM/yyyy");
+            NhanVienDTO nv = new NhanVienDTO(id, ten, ngaysinh, STD, diachi, NamRadioButton.Checked, cccd, email);
+            if (bus.AddNhanVien(nv))
+            {
+                MessageBox.Show("Thêm Nhân Viên Thành Công!", "Thông Báo");
+            } else
+            {
+                MessageBox.Show("Thêm Nhân Viên Không Thành Công!", "Thông Báo");
+            }
+
+        }
+
+        private bool KiemtraTextBox()
+        {
+            if (string.IsNullOrEmpty(guna2TextBoxID.Text))
+            {
+                MessageBox.Show("Mã Nhân Viên chưa được nhập!", "Lỗi!"); return true;
+            }
+            if (string.IsNullOrEmpty(guna2TextBoxTen.Text))
+            {
+                MessageBox.Show("Tên Nhân Viên chưa được nhập!", "Lỗi!"); return true;
+            }
+            if (string.IsNullOrEmpty(guna2TextBoxEmail.Text))
+            {
+                MessageBox.Show("Email chưa được nhập!", "Lỗi!"); return true;
+            }
+            if (string.IsNullOrEmpty(guna2TextBoxSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại chưa được nhập!", "Lỗi!"); return true;
+            }
+            if (string.IsNullOrEmpty(guna2TextBoxDiaChi.Text))
+            {
+                MessageBox.Show("Địa chỉ chưa được nhập!", "Lỗi!"); return true;
+            }
+            if (string.IsNullOrEmpty(guna2TextBoxCCCD.Text))
+            {
+                MessageBox.Show("CCCD chưa được nhập!", "Lỗi!"); return true;
+            }
+            if (!NuRadioButton.Checked && !NamRadioButton.Checked)
+            {
+                MessageBox.Show("Vui lòng chọn giới tính!", "Lỗi!"); return true;
+            }
+            return false;
         }
 
         private void guna2CircleButton3_Click(object sender, EventArgs e)
@@ -324,6 +440,24 @@ namespace CSharp_laptop.GUI
             int doDai = danhSach + 1;
             string soChuoi = doDai.ToString("D3");
             return "NV" + soChuoi;
+        }
+
+        private void guna2TextBoxSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu không phải là số và không phải là phím Backspace
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho ký tự được nhập vào TextBox
+            }
+        }
+
+        private void guna2TextBoxCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu không phải là số và không phải là phím Backspace
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho ký tự được nhập vào TextBox
+            }
         }
     }
 }
