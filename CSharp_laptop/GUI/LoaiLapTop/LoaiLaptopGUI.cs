@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
 
 namespace CSharp_laptop.GUI
 {
@@ -41,11 +42,6 @@ namespace CSharp_laptop.GUI
         private void button1_Click(object sender, EventArgs e)
         {
             mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
-        }
-
-        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void LoadLaptops()
@@ -222,6 +218,55 @@ namespace CSharp_laptop.GUI
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Reset();
+        }
+
+        private void ExportToExcel()
+        {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+
+            using (var package = new ExcelPackage())
+            {
+                // Tạo một worksheet
+                var worksheet = package.Workbook.Worksheets.Add("Danh sách Laptop");
+
+                // Thêm header vào Excel
+                worksheet.Cells[1, 1].Value = "ID";
+                worksheet.Cells[1, 2].Value = "Tên Sản Phẩm";
+                worksheet.Cells[1, 3].Value = "Giá Bán";
+                worksheet.Cells[1, 4].Value = "Hãng";
+                worksheet.Cells[1, 5].Value = "CPU";
+                worksheet.Cells[1, 6].Value = "RAM";
+                worksheet.Cells[1, 7].Value = "GPU";
+                worksheet.Cells[1, 8].Value = "Kích Thước";
+                worksheet.Cells[1, 9].Value = "SL Tồn Kho";
+
+                // Đổ dữ liệu từ danh sách vào Excel
+                for (int i = 0; i < laptops.Count; i++)
+                {
+                    var laptop = laptops[i];
+                    worksheet.Cells[i + 2, 1].Value = laptop.IDLoaiLaptop;
+                    worksheet.Cells[i + 2, 2].Value = laptop.TenSP;
+                    worksheet.Cells[i + 2, 3].Value = laptop.GiaBan;
+                    worksheet.Cells[i + 2, 4].Value = laptop.Hang;
+                    worksheet.Cells[i + 2, 5].Value = laptop.CPU;
+                    worksheet.Cells[i + 2, 6].Value = laptop.RAM;
+                    worksheet.Cells[i + 2, 7].Value = laptop.GPU;
+                    worksheet.Cells[i + 2, 8].Value = laptop.KichThuoc;
+                    worksheet.Cells[i + 2, 9].Value = laptop.SLTonKho;
+                }
+
+                // Lưu file Excel
+                var filePath = "DanhSachLaptop.xlsx";
+                File.WriteAllBytes(filePath, package.GetAsByteArray());
+
+                MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
+            }
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
         }
     }
 }
