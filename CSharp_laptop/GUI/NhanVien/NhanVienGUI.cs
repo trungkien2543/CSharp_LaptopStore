@@ -84,6 +84,7 @@ namespace CSharp_laptop.GUI
             if (clickedButton != null)
             {
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
+                nameprocess.Text = "Sửa Nhân Viên";
 
                 if (hided)
                 {
@@ -281,7 +282,17 @@ namespace CSharp_laptop.GUI
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(guna2TextBoxID.Text))
+            {
 
+            }
+
+            string id = guna2TextBoxID.Text;
+            string ten = guna2TextBoxTen.Text;
+            string email = guna2TextBoxEmail.Text;
+            string STD = guna2TextBoxSDT.Text;
+            string diachi = guna2TextBoxDiaChi.Text;
+            string cccd = guna2TextBoxCCCD.Text;
         }
 
         private void guna2CircleButton3_Click(object sender, EventArgs e)
@@ -295,7 +306,8 @@ namespace CSharp_laptop.GUI
 
         private void vbButton2_Click_1(object sender, EventArgs e)
         {
-            guna2TextBoxID.Text = "";
+            nameprocess.Text = "Thêm Nhân Viên";
+            guna2TextBoxID.Text = TaoMaNV(bus.getAllNhanVien().Count);
             guna2TextBoxTen.Text = "";
             guna2TextBoxEmail.Text = "";
             guna2TextBoxSDT.Text = "";
@@ -306,6 +318,12 @@ namespace CSharp_laptop.GUI
                 button1.Text = "HIDE";
                 timer1.Start();
             }
+        }
+        private string TaoMaNV(int danhSach)
+        {
+            int doDai = danhSach + 1;
+            string soChuoi = doDai.ToString("D3");
+            return "NV" + soChuoi;
         }
     }
 }

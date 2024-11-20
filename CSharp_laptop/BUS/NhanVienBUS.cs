@@ -10,16 +10,28 @@ namespace CSharp_laptop.BUS
 {
     internal class NhanVienBUS
     {
-        private NhanVienDAO dao = new NhanVienDAO();
+        private NhanVienDAO dao;
 
         public NhanVienBUS()
         {
-
+            dao = new NhanVienDAO();
         }
 
         public List<NhanVienDTO> getAllNhanVien()
         {
             return dao.GetAllNhanVien();
+        }
+        public bool AddNhanVien(NhanVienDTO nhanvien)
+        {
+            return dao.AddNhanVien(nhanvien);
+        }
+        public bool DeleteNhanVien(string idNhanVien)
+        {
+            return dao.DeleteNhanVien(idNhanVien);
+        }
+        public NhanVienDTO FindNhanVienById(string idNhanVien)
+        {
+            return dao.FindNhanVienById(idNhanVien);
         }
     }
 }
