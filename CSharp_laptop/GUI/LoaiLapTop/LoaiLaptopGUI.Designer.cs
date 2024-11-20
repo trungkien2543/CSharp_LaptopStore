@@ -55,6 +55,7 @@
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             dataGridView2 = new DataGridView();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            vbButton2 = new VBButton();
             label1 = new Label();
             txtTen = new Guna.UI2.WinForms.Guna2TextBox();
             vbButton1 = new VBButton();
@@ -73,6 +74,7 @@
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            vbButton3 = new VBButton();
             panel1.SuspendLayout();
             guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -160,6 +162,8 @@
             // 
             guna2GradientPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             guna2GradientPanel1.BorderRadius = 15;
+            guna2GradientPanel1.Controls.Add(vbButton3);
+            guna2GradientPanel1.Controls.Add(vbButton2);
             guna2GradientPanel1.Controls.Add(label1);
             guna2GradientPanel1.Controls.Add(txtTen);
             guna2GradientPanel1.Controls.Add(vbButton1);
@@ -185,6 +189,28 @@
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2GradientPanel1.Size = new Size(235, 815);
             guna2GradientPanel1.TabIndex = 45;
+            // 
+            // vbButton2
+            // 
+            vbButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            vbButton2.BackColor = Color.Green;
+            vbButton2.BackgroundColor = Color.Green;
+            vbButton2.BorderColor = Color.PaleVioletRed;
+            vbButton2.BorderRadius = 15;
+            vbButton2.BorderSize = 0;
+            vbButton2.FlatAppearance.BorderSize = 0;
+            vbButton2.FlatStyle = FlatStyle.Flat;
+            vbButton2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            vbButton2.ForeColor = Color.White;
+            vbButton2.Location = new Point(8, 641);
+            vbButton2.Name = "vbButton2";
+            vbButton2.Size = new Size(209, 44);
+            vbButton2.TabIndex = 15;
+            vbButton2.Text = "Export Excel";
+            vbButton2.TextColor = Color.White;
+            vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton2.UseVisualStyleBackColor = false;
+            vbButton2.Click += vbButton2_Click;
             // 
             // label1
             // 
@@ -228,8 +254,8 @@
             // vbButton1
             // 
             vbButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton1.BackColor = Color.FromArgb(247, 176, 118);
-            vbButton1.BackgroundColor = Color.FromArgb(247, 176, 118);
+            vbButton1.BackColor = Color.Navy;
+            vbButton1.BackgroundColor = Color.Navy;
             vbButton1.BorderColor = Color.PaleVioletRed;
             vbButton1.BorderRadius = 15;
             vbButton1.BorderSize = 0;
@@ -471,6 +497,28 @@
             guna2HtmlLabel4.TabIndex = 8;
             guna2HtmlLabel4.Text = "GPU";
             // 
+            // vbButton3
+            // 
+            vbButton3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            vbButton3.BackColor = Color.FromArgb(192, 0, 0);
+            vbButton3.BackgroundColor = Color.FromArgb(192, 0, 0);
+            vbButton3.BorderColor = Color.PaleVioletRed;
+            vbButton3.BorderRadius = 15;
+            vbButton3.BorderSize = 0;
+            vbButton3.FlatAppearance.BorderSize = 0;
+            vbButton3.FlatStyle = FlatStyle.Flat;
+            vbButton3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            vbButton3.ForeColor = Color.White;
+            vbButton3.Location = new Point(8, 709);
+            vbButton3.Name = "vbButton3";
+            vbButton3.Size = new Size(209, 44);
+            vbButton3.TabIndex = 16;
+            vbButton3.Text = "Import Excel";
+            vbButton3.TextColor = Color.White;
+            vbButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton3.UseVisualStyleBackColor = false;
+            vbButton3.Click += vbButton3_Click;
+            // 
             // LoaiLaptopGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -513,5 +561,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private VBButton vbButton2;
+        private VBButton vbButton3;
     }
 }
