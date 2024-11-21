@@ -353,6 +353,10 @@ namespace CSharp_laptop.GUI
         {
             this.OnKeyPress(e);
         }
+        private void textBox1_TextChange(object sender, KeyPressEventArgs e)
+        {
+            this.OnTextChanged(e);
+        }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {

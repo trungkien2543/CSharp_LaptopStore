@@ -34,7 +34,7 @@ namespace CSharp_laptop.DAO
                         {
                             IMEI = reader["IMEI"].ToString(),
                             ThoiGianBaoHanh = long.Parse(reader["ThoiGianBaoHanh"].ToString()),
-                            TrangThai = reader["TrangThai"].ToString(),
+                            TrangThai = int.Parse(reader["TrangThai"].ToString()),
                             LoaiLaptop = reader["LoaiLaptop"].ToString()
                         };
                         laptops.Add(laptop);
@@ -63,7 +63,7 @@ namespace CSharp_laptop.DAO
                         {
                             IMEI = reader["IMEI"].ToString(),
                             ThoiGianBaoHanh = long.Parse(reader["ThoiGianBaoHanh"].ToString()),
-                            TrangThai = reader["TrangThai"].ToString(),
+                            TrangThai = int.Parse(reader["TrangThai"].ToString()),
                             LoaiLaptop = reader["LoaiLaptop"].ToString()
                         };
                     }
@@ -72,6 +72,35 @@ namespace CSharp_laptop.DAO
 
             return laptop;
         }
+
+
+        public long GetGiaBanByIMEI(string IMEI)
+        {
+            long giaBan = 0;
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT \r\n     CAST(loailaptop.GiaBan -  loailaptop.GiaBan * \r\n    CASE \r\n        WHEN khuyenmai.MucGiamGia IS NOT NULL THEN (khuyenmai.MucGiamGia / 100) \r\n        ELSE 0\r\n    END AS INT) AS GiaBan  \r\nFROM \r\n    laptop \r\nJOIN \r\n    loailaptop ON laptop.LoaiLaptop = loailaptop.IDLoaiLaptop \r\nLEFT JOIN \r\n    khuyenmai ON khuyenmai.ID_KhuyenMai = loailaptop.KhuyenMai \r\nWHERE \r\n    laptop.IMEI = @IMEI;";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IMEI", IMEI);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        giaBan = long.Parse(reader["GiaBan"].ToString());
+                    }
+                }
+            }
+
+
+
+
+
+            return giaBan;
+        }
+
+        
 
     }
 }

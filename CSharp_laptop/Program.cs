@@ -12,20 +12,23 @@ namespace CSharp_laptop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            MainForm mainf = new MainForm();
+            Application.Run(mainf); // Hiển thị MainForm
+
 
             // Hiển thị SplashForm
-            SplashForm splash = new SplashForm();
-            splash.Show();
+            //SplashForm splash = new SplashForm();
+            //splash.Show();
 
-            // Load Form chính ở chế độ nền
-            Task.Run(() =>
-            {
-                // Giả lập công việc load của form chính (ví dụ, load dữ liệu, tài nguyên, etc.)
-                MainForm mainf = new MainForm();
-                // Khởi tạo và hiển thị MainForm sau khi đã load xong
-                splash.Invoke(new Action(() => splash.Close())); // Đóng SplashForm
-                Application.Run(mainf); // Hiển thị MainForm
-            });
+            //// Load Form chính ở chế độ nền
+            //Task.Run(() =>
+            //{
+            //    // Giả lập công việc load của form chính (ví dụ, load dữ liệu, tài nguyên, etc.)
+                
+            //    // Khởi tạo và hiển thị MainForm sau khi đã load xong
+            //    splash.Invoke(new Action(() => splash.Close())); // Đóng SplashForm
+                
+            //});
 
             Application.Run();
         }

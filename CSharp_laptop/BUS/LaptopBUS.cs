@@ -21,5 +21,10 @@ namespace CSharp_laptop.BUS
         {
             return laptopDAO.GetLaptopByIMEI(imei);
         }
+
+        public long GetGiaBanByIMEI(string imei)
+        {
+            return laptopDAO.GetGiaBanByIMEI(imei) ;
+        }
     }
 }

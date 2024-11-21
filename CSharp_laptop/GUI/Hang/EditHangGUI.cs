@@ -32,7 +32,7 @@ namespace CSharp_laptop.GUI
             {
                 loaddata_textbox(id);
             }
-            
+
         }
 
         void loaddata_textbox(string id)
@@ -41,7 +41,7 @@ namespace CSharp_laptop.GUI
 
             rjTextBox1.Texts = hang.ID_Hang;
             rjTextBox2.Texts = hang.TenHang;
-            rjTextBox3.Texts= hang.DiaChi;
+            rjTextBox3.Texts = hang.DiaChi;
             rjTextBox4.Texts = hang.SDT;
 
         }
@@ -51,10 +51,13 @@ namespace CSharp_laptop.GUI
 
             HangDTO hang = new HangDTO
             {
-                ID_Hang = rjTextBox1.Texts, TenHang = rjTextBox2.Texts, DiaChi = rjTextBox3.Texts, SDT = rjTextBox4.Texts
+                ID_Hang = rjTextBox1.Texts,
+                TenHang = rjTextBox2.Texts,
+                DiaChi = rjTextBox3.Texts,
+                SDT = rjTextBox4.Texts
             };
 
-            bool result = (function == "add") ? SaveHang(hang,true) : SaveHang(hang,false);
+            bool result = (function == "add") ? SaveHang(hang, true) : SaveHang(hang, false);
         }
 
         bool SaveHang(HangDTO hang, bool isAdd)
@@ -74,7 +77,7 @@ namespace CSharp_laptop.GUI
 
             string action = isAdd ? "Thêm" : "Update";
             MessageBox.Show(result ? $"{action} thành công" : $"{action} thất bại");
-           
+
             return result;
         }
 
@@ -83,5 +86,12 @@ namespace CSharp_laptop.GUI
             mainForm.OpenChildForm(new HangGUI(mainForm));
         }
 
+        private void rjTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
     }
 }

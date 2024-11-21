@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -53,8 +57,8 @@
             rjTextBox8 = new RJTextBox();
             artanPanel1 = new ArtanPanel();
             artanPanel2 = new ArtanPanel();
-            rjComboBox2 = new RJComboBox.RJComboBox();
-            rjComboBox1 = new RJComboBox.RJComboBox();
+            cbbkm = new Guna.UI2.WinForms.Guna2ComboBox();
+            cbbhang = new Guna.UI2.WinForms.Guna2ComboBox();
             artanPanel3 = new ArtanPanel();
             artanPanel4 = new ArtanPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -340,6 +344,7 @@
             rjTextBox3.TabIndex = 31;
             rjTextBox3.Texts = "";
             rjTextBox3.UnderlinedStyle = false;
+            rjTextBox3.KeyPress += rjTextBox3_KeyPress;
             // 
             // rjTextBox4
             // 
@@ -471,8 +476,8 @@
             artanPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel2.BackColor = Color.White;
             artanPanel2.BorderRadius = 30;
-            artanPanel2.Controls.Add(rjComboBox2);
-            artanPanel2.Controls.Add(rjComboBox1);
+            artanPanel2.Controls.Add(cbbkm);
+            artanPanel2.Controls.Add(cbbhang);
             artanPanel2.Controls.Add(rjTextBox4);
             artanPanel2.Controls.Add(label2);
             artanPanel2.Controls.Add(label3);
@@ -498,43 +503,41 @@
             artanPanel2.Size = new Size(892, 454);
             artanPanel2.TabIndex = 38;
             // 
-            // rjComboBox2
+            // cbbkm
             // 
-            rjComboBox2.BackColor = Color.WhiteSmoke;
-            rjComboBox2.BorderColor = Color.MediumSlateBlue;
-            rjComboBox2.BorderSize = 1;
-            rjComboBox2.DropDownStyle = ComboBoxStyle.DropDown;
-            rjComboBox2.Font = new Font("Segoe UI", 10F);
-            rjComboBox2.ForeColor = Color.DimGray;
-            rjComboBox2.IconColor = Color.MediumSlateBlue;
-            rjComboBox2.ListBackColor = Color.FromArgb(230, 228, 245);
-            rjComboBox2.ListTextColor = Color.DimGray;
-            rjComboBox2.Location = new Point(425, 304);
-            rjComboBox2.MinimumSize = new Size(200, 30);
-            rjComboBox2.Name = "rjComboBox2";
-            rjComboBox2.Padding = new Padding(1);
-            rjComboBox2.Size = new Size(286, 30);
-            rjComboBox2.TabIndex = 37;
-            rjComboBox2.Texts = "";
+            cbbkm.BackColor = Color.Transparent;
+            cbbkm.CustomizableEdges = customizableEdges1;
+            cbbkm.DrawMode = DrawMode.OwnerDrawFixed;
+            cbbkm.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbbkm.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbbkm.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbbkm.Font = new Font("Segoe UI", 10F);
+            cbbkm.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbkm.ItemHeight = 30;
+            cbbkm.Location = new Point(425, 301);
+            cbbkm.Margin = new Padding(2, 1, 2, 1);
+            cbbkm.Name = "cbbkm";
+            cbbkm.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            cbbkm.Size = new Size(285, 36);
+            cbbkm.TabIndex = 39;
             // 
-            // rjComboBox1
+            // cbbhang
             // 
-            rjComboBox1.BackColor = Color.WhiteSmoke;
-            rjComboBox1.BorderColor = Color.MediumSlateBlue;
-            rjComboBox1.BorderSize = 1;
-            rjComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            rjComboBox1.Font = new Font("Segoe UI", 10F);
-            rjComboBox1.ForeColor = Color.DimGray;
-            rjComboBox1.IconColor = Color.MediumSlateBlue;
-            rjComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
-            rjComboBox1.ListTextColor = Color.DimGray;
-            rjComboBox1.Location = new Point(48, 304);
-            rjComboBox1.MinimumSize = new Size(200, 30);
-            rjComboBox1.Name = "rjComboBox1";
-            rjComboBox1.Padding = new Padding(1);
-            rjComboBox1.Size = new Size(286, 30);
-            rjComboBox1.TabIndex = 36;
-            rjComboBox1.Texts = "";
+            cbbhang.BackColor = Color.Transparent;
+            cbbhang.CustomizableEdges = customizableEdges3;
+            cbbhang.DrawMode = DrawMode.OwnerDrawFixed;
+            cbbhang.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbbhang.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbbhang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbbhang.Font = new Font("Segoe UI", 10F);
+            cbbhang.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbhang.ItemHeight = 30;
+            cbbhang.Location = new Point(50, 301);
+            cbbhang.Margin = new Padding(2, 1, 2, 1);
+            cbbhang.Name = "cbbhang";
+            cbbhang.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            cbbhang.Size = new Size(280, 36);
+            cbbhang.TabIndex = 38;
             // 
             // artanPanel3
             // 
@@ -576,9 +579,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(149, 147, 186);
             ClientSize = new Size(1253, 711);
+            Controls.Add(artanPanel2);
             Controls.Add(artanPanel4);
             Controls.Add(artanPanel3);
-            Controls.Add(artanPanel2);
             Controls.Add(artanPanel1);
             Name = "EditLoaiLaptop";
             Text = "ChiTietSanPham";
@@ -624,7 +627,7 @@
         private ArtanPanel artanPanel2;
         private ArtanPanel artanPanel3;
         private ArtanPanel artanPanel4;
-        private RJComboBox.RJComboBox rjComboBox2;
-        private RJComboBox.RJComboBox rjComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbhang;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbkm;
     }
 }

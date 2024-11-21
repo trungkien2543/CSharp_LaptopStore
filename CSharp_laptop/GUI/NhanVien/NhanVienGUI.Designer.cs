@@ -71,8 +71,8 @@
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             NamLabel = new Label();
             NuLabel = new Label();
-            guna2ImageRadioButton2 = new Guna.UI2.WinForms.Guna2ImageRadioButton();
-            guna2ImageRadioButton1 = new Guna.UI2.WinForms.Guna2ImageRadioButton();
+            NamRadioButton = new Guna.UI2.WinForms.Guna2ImageRadioButton();
+            NuRadioButton = new Guna.UI2.WinForms.Guna2ImageRadioButton();
             guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2TextBoxDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBoxCCCD = new Guna.UI2.WinForms.Guna2TextBox();
@@ -86,6 +86,7 @@
             rjTextBox1 = new RJTextBox();
             vbButton1 = new VBButton();
             editpanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            nameprocess = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             editpanel.SuspendLayout();
@@ -122,7 +123,7 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(3, -2);
+            dataGridView1.Location = new Point(3, 3);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -137,7 +138,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1143, 610);
+            dataGridView1.Size = new Size(1143, 605);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
@@ -284,7 +285,7 @@
             guna2CircleButton2.Image = Properties.Resources.diskette;
             guna2CircleButton2.ImageOffset = new Point(1, 0);
             guna2CircleButton2.ImageSize = new Size(30, 30);
-            guna2CircleButton2.Location = new Point(1069, 158);
+            guna2CircleButton2.Location = new Point(1065, 204);
             guna2CircleButton2.Name = "guna2CircleButton2";
             guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -297,7 +298,7 @@
             NamLabel.AutoSize = true;
             NamLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NamLabel.ForeColor = Color.Black;
-            NamLabel.Location = new Point(729, 185);
+            NamLabel.Location = new Point(725, 231);
             NamLabel.Name = "NamLabel";
             NamLabel.Size = new Size(65, 32);
             NamLabel.TabIndex = 10;
@@ -309,47 +310,47 @@
             NuLabel.AutoSize = true;
             NuLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NuLabel.ForeColor = Color.Black;
-            NuLabel.Location = new Point(578, 185);
+            NuLabel.Location = new Point(574, 231);
             NuLabel.Name = "NuLabel";
             NuLabel.Size = new Size(46, 32);
             NuLabel.TabIndex = 9;
             NuLabel.Text = "Nữ";
             // 
-            // guna2ImageRadioButton2
+            // NamRadioButton
             // 
-            guna2ImageRadioButton2.BackColor = Color.Transparent;
-            guna2ImageRadioButton2.CheckedState.Image = Properties.Resources.man;
-            guna2ImageRadioButton2.CheckedState.ImageSize = new Size(42, 42);
-            guna2ImageRadioButton2.HoverState.ImageSize = new Size(32, 32);
-            guna2ImageRadioButton2.Image = Properties.Resources.man_choice;
-            guna2ImageRadioButton2.ImageOffset = new Point(0, 0);
-            guna2ImageRadioButton2.ImageRotate = 0F;
-            guna2ImageRadioButton2.ImageSize = new Size(42, 42);
-            guna2ImageRadioButton2.ImeMode = ImeMode.NoControl;
-            guna2ImageRadioButton2.Location = new Point(652, 175);
-            guna2ImageRadioButton2.Name = "guna2ImageRadioButton2";
-            guna2ImageRadioButton2.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2ImageRadioButton2.Size = new Size(112, 46);
-            guna2ImageRadioButton2.TabIndex = 8;
-            guna2ImageRadioButton2.CheckedChanged += guna2ImageRadioButton2_CheckedChanged;
+            NamRadioButton.BackColor = Color.Transparent;
+            NamRadioButton.CheckedState.Image = Properties.Resources.man;
+            NamRadioButton.CheckedState.ImageSize = new Size(42, 42);
+            NamRadioButton.HoverState.ImageSize = new Size(32, 32);
+            NamRadioButton.Image = Properties.Resources.man_choice;
+            NamRadioButton.ImageOffset = new Point(0, 0);
+            NamRadioButton.ImageRotate = 0F;
+            NamRadioButton.ImageSize = new Size(42, 42);
+            NamRadioButton.ImeMode = ImeMode.NoControl;
+            NamRadioButton.Location = new Point(648, 221);
+            NamRadioButton.Name = "NamRadioButton";
+            NamRadioButton.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            NamRadioButton.Size = new Size(112, 46);
+            NamRadioButton.TabIndex = 8;
+            NamRadioButton.CheckedChanged += guna2ImageRadioButton2_CheckedChanged;
             // 
-            // guna2ImageRadioButton1
+            // NuRadioButton
             // 
-            guna2ImageRadioButton1.BackColor = Color.Transparent;
-            guna2ImageRadioButton1.CheckedState.Image = Properties.Resources.woman_choice;
-            guna2ImageRadioButton1.CheckedState.ImageSize = new Size(42, 42);
-            guna2ImageRadioButton1.HoverState.ImageSize = new Size(32, 32);
-            guna2ImageRadioButton1.Image = Properties.Resources.woman;
-            guna2ImageRadioButton1.ImageOffset = new Point(0, 0);
-            guna2ImageRadioButton1.ImageRotate = 0F;
-            guna2ImageRadioButton1.ImageSize = new Size(42, 42);
-            guna2ImageRadioButton1.ImeMode = ImeMode.NoControl;
-            guna2ImageRadioButton1.Location = new Point(508, 175);
-            guna2ImageRadioButton1.Name = "guna2ImageRadioButton1";
-            guna2ImageRadioButton1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ImageRadioButton1.Size = new Size(95, 46);
-            guna2ImageRadioButton1.TabIndex = 7;
-            guna2ImageRadioButton1.CheckedChanged += guna2ImageRadioButton1_CheckedChanged;
+            NuRadioButton.BackColor = Color.Transparent;
+            NuRadioButton.CheckedState.Image = Properties.Resources.woman_choice;
+            NuRadioButton.CheckedState.ImageSize = new Size(42, 42);
+            NuRadioButton.HoverState.ImageSize = new Size(32, 32);
+            NuRadioButton.Image = Properties.Resources.woman;
+            NuRadioButton.ImageOffset = new Point(0, 0);
+            NuRadioButton.ImageRotate = 0F;
+            NuRadioButton.ImageSize = new Size(42, 42);
+            NuRadioButton.ImeMode = ImeMode.NoControl;
+            NuRadioButton.Location = new Point(504, 221);
+            NuRadioButton.Name = "NuRadioButton";
+            NuRadioButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            NuRadioButton.Size = new Size(95, 46);
+            NuRadioButton.TabIndex = 7;
+            NuRadioButton.CheckedChanged += guna2ImageRadioButton1_CheckedChanged;
             // 
             // guna2DateTimePicker1
             // 
@@ -361,7 +362,7 @@
             guna2DateTimePicker1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2DateTimePicker1.ForeColor = Color.DimGray;
             guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(508, 19);
+            guna2DateTimePicker1.Location = new Point(504, 65);
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -385,7 +386,7 @@
             guna2TextBoxDiaChi.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxDiaChi.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxDiaChi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxDiaChi.Location = new Point(508, 123);
+            guna2TextBoxDiaChi.Location = new Point(504, 169);
             guna2TextBoxDiaChi.Margin = new Padding(5);
             guna2TextBoxDiaChi.Name = "guna2TextBoxDiaChi";
             guna2TextBoxDiaChi.PasswordChar = '\0';
@@ -411,7 +412,7 @@
             guna2TextBoxCCCD.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxCCCD.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxCCCD.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxCCCD.Location = new Point(508, 71);
+            guna2TextBoxCCCD.Location = new Point(504, 117);
             guna2TextBoxCCCD.Margin = new Padding(5);
             guna2TextBoxCCCD.Name = "guna2TextBoxCCCD";
             guna2TextBoxCCCD.PasswordChar = '\0';
@@ -420,6 +421,7 @@
             guna2TextBoxCCCD.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2TextBoxCCCD.Size = new Size(478, 38);
             guna2TextBoxCCCD.TabIndex = 4;
+            guna2TextBoxCCCD.KeyPress += guna2TextBoxCCCD_KeyPress;
             // 
             // guna2TextBoxEmail
             // 
@@ -436,7 +438,7 @@
             guna2TextBoxEmail.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxEmail.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxEmail.Location = new Point(15, 175);
+            guna2TextBoxEmail.Location = new Point(11, 221);
             guna2TextBoxEmail.Margin = new Padding(5);
             guna2TextBoxEmail.Name = "guna2TextBoxEmail";
             guna2TextBoxEmail.PasswordChar = '\0';
@@ -462,7 +464,7 @@
             guna2TextBoxSDT.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxSDT.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxSDT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxSDT.Location = new Point(15, 123);
+            guna2TextBoxSDT.Location = new Point(11, 169);
             guna2TextBoxSDT.Margin = new Padding(5);
             guna2TextBoxSDT.Name = "guna2TextBoxSDT";
             guna2TextBoxSDT.PasswordChar = '\0';
@@ -471,6 +473,7 @@
             guna2TextBoxSDT.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2TextBoxSDT.Size = new Size(483, 38);
             guna2TextBoxSDT.TabIndex = 2;
+            guna2TextBoxSDT.KeyPress += guna2TextBoxSDT_KeyPress;
             // 
             // guna2TextBoxTen
             // 
@@ -487,7 +490,7 @@
             guna2TextBoxTen.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxTen.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxTen.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxTen.Location = new Point(15, 71);
+            guna2TextBoxTen.Location = new Point(11, 117);
             guna2TextBoxTen.Margin = new Padding(5);
             guna2TextBoxTen.Name = "guna2TextBoxTen";
             guna2TextBoxTen.PasswordChar = '\0';
@@ -513,7 +516,7 @@
             guna2TextBoxID.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxID.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxID.Location = new Point(15, 19);
+            guna2TextBoxID.Location = new Point(11, 65);
             guna2TextBoxID.Margin = new Padding(5);
             guna2TextBoxID.Name = "guna2TextBoxID";
             guna2TextBoxID.PasswordChar = '\0';
@@ -591,6 +594,7 @@
             rjTextBox1.TabIndex = 42;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
+            rjTextBox1._TextChanged += rjTextBox1_TextChanged;
             // 
             // vbButton1
             // 
@@ -612,20 +616,22 @@
             vbButton1.TextAlign = ContentAlignment.TopLeft;
             vbButton1.TextColor = Color.White;
             vbButton1.UseVisualStyleBackColor = false;
+            vbButton1.Click += vbButton1_Click;
             // 
             // editpanel
             // 
             editpanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             editpanel.BackColor = Color.Transparent;
             editpanel.BorderRadius = 12;
+            editpanel.Controls.Add(nameprocess);
             editpanel.Controls.Add(guna2CircleButton3);
             editpanel.Controls.Add(guna2CircleButton2);
             editpanel.Controls.Add(NamLabel);
             editpanel.Controls.Add(guna2TextBoxID);
             editpanel.Controls.Add(NuLabel);
-            editpanel.Controls.Add(guna2ImageRadioButton2);
+            editpanel.Controls.Add(NamRadioButton);
             editpanel.Controls.Add(guna2TextBoxTen);
-            editpanel.Controls.Add(guna2ImageRadioButton1);
+            editpanel.Controls.Add(NuRadioButton);
             editpanel.Controls.Add(guna2TextBoxSDT);
             editpanel.Controls.Add(guna2DateTimePicker1);
             editpanel.Controls.Add(guna2TextBoxEmail);
@@ -635,11 +641,22 @@
             editpanel.FillColor = Color.FromArgb(85, 81, 132);
             editpanel.FillColor2 = Color.FromArgb(210, 220, 230);
             editpanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            editpanel.Location = new Point(3, 454);
+            editpanel.Location = new Point(3, 407);
             editpanel.Name = "editpanel";
             editpanel.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            editpanel.Size = new Size(1160, 256);
+            editpanel.Size = new Size(1160, 303);
             editpanel.TabIndex = 44;
+            // 
+            // nameprocess
+            // 
+            nameprocess.AutoSize = true;
+            nameprocess.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nameprocess.ForeColor = Color.White;
+            nameprocess.Location = new Point(11, 10);
+            nameprocess.Name = "nameprocess";
+            nameprocess.Size = new Size(203, 32);
+            nameprocess.TabIndex = 12;
+            nameprocess.Text = "Thêm Nhân Viên";
             // 
             // NhanVienGUI
             // 
@@ -685,8 +702,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxDiaChi;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxCCCD;
-        private Guna.UI2.WinForms.Guna2ImageRadioButton guna2ImageRadioButton1;
-        private Guna.UI2.WinForms.Guna2ImageRadioButton guna2ImageRadioButton2;
+        private Guna.UI2.WinForms.Guna2ImageRadioButton NuRadioButton;
+        private Guna.UI2.WinForms.Guna2ImageRadioButton NamRadioButton;
         private Label NamLabel;
         private Label NuLabel;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
@@ -696,5 +713,6 @@
         private RJTextBox rjTextBox1;
         private VBButton vbButton1;
         private Guna.UI2.WinForms.Guna2GradientPanel editpanel;
+        private Label nameprocess;
     }
 }

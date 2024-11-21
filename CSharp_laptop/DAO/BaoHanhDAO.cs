@@ -42,5 +42,64 @@ namespace CSharp_laptop.DAO
 
             return baoHanhs;
         }
+
+        public bool InsertBaoHanh(BaoHanhDTO baohanh)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO baohanh (MaBaoHanh, IMEI, NgayBaoHanh, NgayTra, GhiChu) " +
+                                   "VALUES (@MaBaoHanh, @IMEI, @NgayBaoHanh, @NgayTra, @GhiChu)";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@MaBaoHanh", baohanh.MaBaoHanh);
+                    cmd.Parameters.AddWithValue("@IMEI", baohanh.IMEI);
+                    cmd.Parameters.AddWithValue("@NgayBaoHanh", baohanh.NgayBaoHanh);
+                    cmd.Parameters.AddWithValue("@NgayTra", baohanh.NgayTra);
+                    cmd.Parameters.AddWithValue("@GhiChu", baohanh.GhiChu);
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateBaoHanh(BaoHanhDTO baohanh)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE baohanh SET NgayBaoHanh = @NgayBaoHanh, NgayTra = @NgayTra, GhiChu = @GhiChu " +
+                                   "WHERE MaBaoHanh = @MaBaoHanh";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@MaBaoHanh", baohanh.MaBaoHanh);
+                    cmd.Parameters.AddWithValue("@NgayBaoHanh", baohanh.NgayBaoHanh);
+                    cmd.Parameters.AddWithValue("@NgayTra", baohanh.NgayTra);
+                    cmd.Parameters.AddWithValue("@GhiChu", baohanh.GhiChu);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+
+
     }
 }

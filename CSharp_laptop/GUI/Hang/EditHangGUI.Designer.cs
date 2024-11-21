@@ -194,6 +194,7 @@
             rjTextBox4.TabIndex = 28;
             rjTextBox4.Texts = "";
             rjTextBox4.UnderlinedStyle = false;
+            rjTextBox4.KeyPress += rjTextBox4_KeyPress;
             // 
             // artanPanel1
             // 

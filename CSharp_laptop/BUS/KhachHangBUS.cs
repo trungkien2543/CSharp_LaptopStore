@@ -1,5 +1,6 @@
 ﻿using CSharp_laptop.DAO;
 using CSharp_laptop.DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace CSharp_laptop.BUS
         public bool AddKhachHang(KhachHangDTO kh)
         {
             return dao.AddKhachHang(kh);
+        }
+
+        public KhachHangDTO findKhachHang(String SDT)
+        {
+            return dao.GetKhachHangBySDT(SDT);
         }
     }
 }

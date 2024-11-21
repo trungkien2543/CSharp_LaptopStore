@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
 
 namespace CSharp_laptop.GUI
 {
@@ -19,6 +20,18 @@ namespace CSharp_laptop.GUI
         private LoaiLaptopBUS laptopBUS = new LoaiLaptopBUS();
 
         private List<LoaiLaptopDTO> laptops;
+
+        private KhuyenMaiBUS khuyenMaiBUS = new KhuyenMaiBUS();
+
+        private HangBUS hangBUS = new HangBUS();
+
+        private Dictionary<string, string> HangDictionary = new Dictionary<string, string>  // Dictionary cho hãng
+        {
+        };
+        
+        private Dictionary<string, string> KhuyenMaiDictionary = new Dictionary<string, string> // Dictionary cho khuyến mãi
+        {
+        };
 
         string selectedLaptopID;
         string soluong_lap;
@@ -30,22 +43,12 @@ namespace CSharp_laptop.GUI
 
             Reset();
 
-
             AddButtonsToDataGridView();
-
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
-        }
-
-        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void LoadLaptops()
@@ -54,6 +57,8 @@ namespace CSharp_laptop.GUI
             soluong_lap = (1 + laptops.Count).ToString();
 
             dataGridView2.DataSource = laptops;
+            TaiDuLieuHang();
+            TaiDuLieuKhuyenMai();
         }
 
         private void edittable()
@@ -117,11 +122,6 @@ namespace CSharp_laptop.GUI
             mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
         }
 
-        private void vbButton2_Click(object sender, EventArgs e)
-        {
-            string searchTerm = rjTextBox1.Texts;
-            dataGridView2.DataSource = laptopBUS.SearchLaptop(searchTerm);
-        }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -162,27 +162,8 @@ namespace CSharp_laptop.GUI
             {
                 mainForm.OpenChildForm(new LaptopGUI(selectedLaptopID, mainForm));
             }
-        }
+        } // nút sửa và xóa
 
-        private void TextBox_Enter(object sender, EventArgs e)
-        {
-
-            if (rjTextBox1.Texts == "Tìm kiếm")
-            {
-                rjTextBox1.Texts = "";
-                rjTextBox1.ForeColor = Color.Black; // Đổi màu chữ về màu bình thường
-            }
-        }
-
-        private void TextBox_Leave(object sender, EventArgs e)
-        {
-
-            if (string.IsNullOrWhiteSpace(rjTextBox1.Texts))
-            {
-                rjTextBox1.Texts = "Tìm kiếm"; // Văn bản hint
-                rjTextBox1.ForeColor = Color.Gray; // Đổi màu chữ sang màu xám
-            }
-        }
 
         private void find(object sender, EventArgs e)
         {
@@ -217,7 +198,7 @@ namespace CSharp_laptop.GUI
 
 
             dataGridView2.DataSource = laptops;
-        }
+        } // bộ lọc
 
 
         private void LoadDataForComboBox(ComboBox comboBox, String Item)
@@ -246,6 +227,177 @@ namespace CSharp_laptop.GUI
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Reset();
+        }
+
+        private void ExportToExcel()  // export excel
+        {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage())
+            {
+                // Tạo một worksheet
+                var worksheet = package.Workbook.Worksheets.Add("Danh sách Laptop");
+
+                // Thêm header vào Excel
+                worksheet.Cells[1, 1].Value = "ID";
+                worksheet.Cells[1, 2].Value = "Tên Sản Phẩm";
+                worksheet.Cells[1, 3].Value = "Giá Bán";
+                worksheet.Cells[1, 4].Value = "Hãng";
+                worksheet.Cells[1, 5].Value = "CPU";
+                worksheet.Cells[1, 6].Value = "RAM";
+                worksheet.Cells[1, 7].Value = "GPU";
+                worksheet.Cells[1, 8].Value = "Kích Thước";
+                worksheet.Cells[1, 9].Value = "SL Tồn Kho";
+                worksheet.Cells[1, 10].Value = "Khuyến Mãi";
+
+                // Đổ dữ liệu từ danh sách vào Excel
+                for (int i = 0; i < laptops.Count; i++)
+                {
+                    var laptop = laptops[i];
+                    worksheet.Cells[i + 2, 1].Value = laptop.IDLoaiLaptop;
+                    worksheet.Cells[i + 2, 2].Value = laptop.TenSP;
+                    worksheet.Cells[i + 2, 3].Value = laptop.GiaBan;
+                    worksheet.Cells[i + 2, 4].Value = laptop.Hang;
+                    worksheet.Cells[i + 2, 5].Value = laptop.CPU;
+                    worksheet.Cells[i + 2, 6].Value = laptop.RAM;
+                    worksheet.Cells[i + 2, 7].Value = laptop.GPU;
+                    worksheet.Cells[i + 2, 8].Value = laptop.KichThuoc;
+                    worksheet.Cells[i + 2, 9].Value = laptop.SLTonKho;
+                    worksheet.Cells[i + 2, 10].Value = laptop.KhuyenMai;
+                }
+
+                // Hiển thị hộp thoại lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                saveFileDialog.FileName = "DanhSachLaptop.xlsx"; // Tên file mặc định
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lưu file Excel tại vị trí người dùng chọn
+                    var filePath = saveFileDialog.FileName;
+                    File.WriteAllBytes(filePath, package.GetAsByteArray());
+
+                    MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
+                }
+            }
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }// nút export excel
+
+        private List<LoaiLaptopDTO> ImportFromExcel(string filePath)        // import excel
+        {
+            List<LoaiLaptopDTO> laptops2 = new List<LoaiLaptopDTO>();
+
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+
+            try
+            {
+                using (var package = new ExcelPackage(new FileInfo(filePath)))
+                {
+                    // Lấy sheet đầu tiên
+                    var worksheet = package.Workbook.Worksheets[0];
+                    int rowCount = worksheet.Dimension.Rows;
+
+                    for (int row = 2; row <= rowCount; row++) // Bắt đầu từ dòng 2 (bỏ qua header)
+                    {
+                        string hangValue = worksheet.Cells[row, 4].Value?.ToString();
+                        string kmValue = worksheet.Cells[row, 10].Value?.ToString();
+
+                        // Tra cứu mã hãng và mã khuyến mãi
+                        string hangKey = HangDictionary.FirstOrDefault(x => x.Value == hangValue).Key ?? "Unknown";
+                        string kmKey = KhuyenMaiDictionary.FirstOrDefault(x => x.Value == kmValue).Key ?? "Unknown";
+
+                        MessageBox.Show(hangKey + kmKey);
+
+                        LoaiLaptopDTO laptop = new LoaiLaptopDTO
+                        {
+                            IDLoaiLaptop = worksheet.Cells[row, 1].Value?.ToString(),
+                            TenSP = worksheet.Cells[row, 2].Value?.ToString(),
+                            GiaBan = long.Parse(worksheet.Cells[row, 3].Value?.ToString() ?? "0"),
+                            Hang = hangKey, // Lưu mã hãng
+                            CPU = worksheet.Cells[row, 5].Value?.ToString(),
+                            RAM = int.Parse(worksheet.Cells[row, 6].Value?.ToString() ?? "0"),
+                            GPU = worksheet.Cells[row, 7].Value?.ToString(),
+                            HinhAnh = worksheet.Cells[row, 8].Value?.ToString(),
+                            KichThuoc = worksheet.Cells[row, 9].Value?.ToString(),
+                            KhuyenMai = kmKey // Lưu mã khuyến mãi
+                        };
+
+                        laptops2.Add(laptop);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error while reading Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return laptops2;
+        }
+
+        private void SaveLaptopsToDatabase(List<LoaiLaptopDTO> laptops)     // lưu sản phẩm mới từ excel
+        {
+            foreach (var laptop in laptops)
+            {
+                bool result = laptopBUS.AddLaptop(laptop); // Gọi hàm thêm dữ liệu vào DB
+                if (!result)
+                {
+                    MessageBox.Show($"Lỗi khi lưu laptop: {laptop.TenSP} vì trùng ID" , "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            //MessageBox.Show("Hoàn thành việc nhập dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void vbButton3_Click(object sender, EventArgs e)        // Nút import excel
+        {
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Excel Files|*.xlsx;*.xls"; // Lọc các file Excel
+                openFileDialog.Title = "Chọn file Excel";
+
+                // Kiểm tra xem người dùng có chọn file hay không
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn file được chọn
+                    string filePath = openFileDialog.FileName;
+
+                    // Gọi hàm nhập dữ liệu và lưu vào database
+                    SaveLaptopsToDatabase(ImportFromExcel(filePath));
+
+                    //MessageBox.Show("Dữ liệu từ file Excel đã được thêm vào cơ sở dữ liệu.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa chọn file.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+        }
+
+        private void TaiDuLieuKhuyenMai()
+        {
+            // Lấy dữ liệu khuyến mãi từ lớp BUS
+            Dictionary<string, string> khuyenMai = khuyenMaiBUS.GetKhuyenMai();
+
+
+            // Lưu vào Dictionary cho việc tra cứu
+            KhuyenMaiDictionary = khuyenMai;
+        }
+
+        private void TaiDuLieuHang()
+        {
+            // Lấy dữ liệu hãng sản xuất từ lớp BUS
+            Dictionary<string, string> hangSanXuat = hangBUS.GetHangSanXuat();
+
+            // Lưu vào Dictionary cho việc tra cứu
+            HangDictionary = hangSanXuat;
         }
     }
 }
