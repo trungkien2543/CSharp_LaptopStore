@@ -131,25 +131,26 @@ namespace CSharp_laptop.DAO
                 {
                     query = "UPDATE Khuyenmai SET TenKhuyenMai = @TenKhuyenMai, MucGiamGia = @MucGiamGia, MoTaKM = @MoTaKM, ThoiGianBatDau = @ThoiGianBatDau, ThoiGianKetThuc = @ThoiGianKetThuc, ThoiGianTaoKM = @NgayTao WHERE ID_KhuyenMai = @ID_KhuyenMai";
                 }
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                // Thêm các tham số để tránh SQL Injection
-                cmd.Parameters.AddWithValue("@ID_KhuyenMai", khuyenMai.IDKM);
-                cmd.Parameters.AddWithValue("@TenKhuyenMai", khuyenMai.TenKM);
-                cmd.Parameters.AddWithValue("@MucGiamGia", khuyenMai.MucGiamGia);
-                cmd.Parameters.AddWithValue("@MoTaKM", khuyenMai.MoTa);
-                cmd.Parameters.AddWithValue("@ThoiGianBatDau", khuyenMai.ThoiGianBatDau);
-                cmd.Parameters.AddWithValue("@ThoiGianKetThuc", khuyenMai.ThoiGianKetThuc);
-                cmd.Parameters.AddWithValue("@NgayTao", khuyenMai.NgayTao);
-
-                try
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    isSuccess = rowsAffected > 0;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
+                    // Thêm các tham số để tránh SQL Injection
+                    cmd.Parameters.AddWithValue("@ID_KhuyenMai", khuyenMai.IDKM);
+                    cmd.Parameters.AddWithValue("@TenKhuyenMai", khuyenMai.TenKM);
+                    cmd.Parameters.AddWithValue("@MucGiamGia", khuyenMai.MucGiamGia);
+                    cmd.Parameters.AddWithValue("@MoTaKM", khuyenMai.MoTa);
+                    cmd.Parameters.AddWithValue("@ThoiGianBatDau", khuyenMai.ThoiGianBatDau);
+                    cmd.Parameters.AddWithValue("@ThoiGianKetThuc", khuyenMai.ThoiGianKetThuc);
+                    cmd.Parameters.AddWithValue("@NgayTao", khuyenMai.NgayTao);
+
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        isSuccess = rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
             }
             return isSuccess;

@@ -1,5 +1,6 @@
 ﻿using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
+using Google.Protobuf.Collections;
 using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace CSharp_laptop.GUI
         private PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
         private BindingList<PhieuNhapDTO> phieuNhapList;
 
-        private List<ChiTietPhieuNhapDTO> ctPNList = new List<ChiTietPhieuNhapDTO>();
+        private BindingList<ChiTietPhieuNhapDTO> ctPNList = new BindingList<ChiTietPhieuNhapDTO>();
 
         private NhanVienBUS nhanVienBUS = new NhanVienBUS();
         private HangBUS hangBUS = new HangBUS();
@@ -57,11 +58,9 @@ namespace CSharp_laptop.GUI
 
         private void But_them_Click(object sender, EventArgs e)
         {
-
-
             sp_box.Visible = false;
             idPN = phieuNhapBUS.GetMaxID();
-            text_IDPN.Texts = idPN;
+            text_IDPN.Texts = idPN.ToString();
             AddNhanVienCBB();
             AddNccCBB();
             tabControl1.SelectedIndex = 1;
@@ -114,10 +113,10 @@ namespace CSharp_laptop.GUI
                 string name = loaiLaptopList[i].IDLoaiLaptop + " - " + loaiLaptopList[i].TenSP;
                 items.Add(id, name);
             }
-            combohox_ll.Text = "Chọn";
-            combohox_ll.DataSource = new BindingSource(items, null);
-            combohox_ll.DisplayMember = "Value";
-            combohox_ll.ValueMember = "Key";
+            combobox_ll.Text = "Chọn";
+            combobox_ll.DataSource = new BindingSource(items, null);
+            combobox_ll.DisplayMember = "Value";
+            combobox_ll.ValueMember = "Key";
         }
 
         private void huy_but_Click(object sender, EventArgs e)
@@ -154,6 +153,7 @@ namespace CSharp_laptop.GUI
         {
             string selectedValue = comboBox_ncc.SelectedValue.ToString();
             text_hang.Texts = selectedValue;
+            text_mess1.Text = "";
             AddLoaiLaptopCBB(selectedValue);
             sp_box.Visible = true;
         }
@@ -175,18 +175,60 @@ namespace CSharp_laptop.GUI
             dataGridView_PN.DataSource = phieuNhapList;
         }
 
-        private string idPN;
+        private bool CheckIMEI(string imei)
+        {
+            for (int i = 0; i < ctPNList.Count; i++)
+            {
+                if (imei == ctPNList[i].IMEI)
+                {
+                    text_mess1.Text = "IMEI đã tồn tại";
+                    return false;
+                }
+            }
+            text_mess1.Text = "";
+            return true;
+        }
+
+
+        private int idPN;
+        int tgBaoHanh;
+        private PhieuNhapDTO phieuNhap;
         private void But_sp_Click(object sender, EventArgs e)
         {
+            string selectedValue = combobox_ll.SelectedValue.ToString();
+            text_hang.Texts = selectedValue;
             ChiTietPhieuNhapDTO ctPN = new ChiTietPhieuNhapDTO()
             {
-                IMEI = text_IMEI.Texts,
+                IMEI = text_hang.Texts + selectedValue + text_IMEI.Texts,
+                IDLoaiLaptop = selectedValue,
                 GiaNhap = int.Parse(text_gia.Texts),
-                IDPN = idPN
+                ThoiGianBaoHanh = 12
             };
-            ctPNList.Add(ctPN);
-            dataGridView_ctpn1.DataSource = ctPNList;
+            if (CheckIMEI(ctPN.IMEI))
+            {
+                ctPNList.Add(ctPN);
+                dataGridView_ctpn1.DataSource = ctPNList;
+            }
+
+
+            //khuyenMaiList = khuyenMaiBUS.getKhuyenMaiArr();
+            //KM_dataGridView.DataSource = khuyenMaiList;
+
             //MessageBox.Show("abc: " + ctPN.IMEI + " " + ctPN.GiaNhap + " " + ctPN.IDPN);
+        }
+
+        private void vbButton3_Click(object sender, EventArgs e)
+        {
+            PhieuNhapDTO phieuNhap = new PhieuNhapDTO()
+            {
+                ID = idPN,
+                IDNV = comboBox_nv.SelectedValue.ToString(),
+                IDNCC = comboBox_ncc.SelectedValue.ToString(),
+                TongTien = 0,
+                NgayTao = dateTimePicker1.Value.Date
+            };
+            //MessageBox.Show("value: " + phieuNhap.ID + phieuNhap.IDNCC + phieuNhap.IDNV +" "+ phieuNhap.TongTien + phieuNhap.NgayTao);
+            phieuNhapBUS.AddPhieuNhap(idPN, phieuNhap, ctPNList);
         }
     }
 }

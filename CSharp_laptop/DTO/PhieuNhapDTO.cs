@@ -8,8 +8,8 @@ namespace CSharp_laptop.DTO
 {
     internal class PhieuNhapDTO
     {
-        public string ID { get; set; }
-        public string IDNV   { get; set; }
+        public int ID { get; set; }
+        public string IDNV { get; set; }
         public string IDNCC { get; set; }
         public int TongTien { get; set; }
         public DateTime NgayTao { get; set; }
@@ -18,7 +18,7 @@ namespace CSharp_laptop.DTO
         {
         }
 
-        public PhieuNhapDTO(string iD, string iDNV, string iDNCC, int tongTien, DateTime ngayTao)
+        public PhieuNhapDTO(int iD, string iDNV, string iDNCC, int tongTien, DateTime ngayTao)
         {
             ID = iD;
             IDNV = iDNV;

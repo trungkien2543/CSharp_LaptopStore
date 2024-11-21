@@ -50,6 +50,9 @@
             panel7 = new Panel();
             artanPanel7 = new ArtanPanel();
             dataGridView_ctpn1 = new DataGridView();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             artanPanel1 = new ArtanPanel();
             dataGridView_ = new DataGridView();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
@@ -60,17 +63,19 @@
             artanPanel6 = new ArtanPanel();
             label7 = new Label();
             panel5 = new Panel();
-            rjTextBox3 = new RJTextBox();
+            text_tongtien = new RJTextBox();
             km_box = new ArtanPanel();
             sp_box = new ArtanPanel();
             label11 = new Label();
             panel9 = new Panel();
+            comboBox_tgbh = new ComboBox();
+            text_mess1 = new Label();
             label8 = new Label();
             text_hang = new RJTextBox();
             label10 = new Label();
             text_IMEI = new RJTextBox();
             label14 = new Label();
-            combohox_ll = new ComboBox();
+            combobox_ll = new ComboBox();
             but_trolai = new VBButton();
             label1 = new Label();
             text_gia = new RJTextBox();
@@ -116,9 +121,6 @@
             label4 = new Label();
             rjTextBox5 = new RJTextBox();
             rjTextBox4 = new RJTextBox();
-            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel2.SuspendLayout();
@@ -393,6 +395,29 @@
             dataGridView_ctpn1.Size = new Size(523, 292);
             dataGridView_ctpn1.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn7.DataPropertyName = "IMEI";
+            dataGridViewTextBoxColumn7.HeaderText = "IMEI";
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn9.DataPropertyName = "iDLoaiLaptop";
+            dataGridViewTextBoxColumn9.HeaderText = "ID loại laptop";
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.DataPropertyName = "GiaNhap";
+            Column6.HeaderText = "Giá nhập";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
             // artanPanel1
             // 
             artanPanel1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -505,36 +530,36 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(rjTextBox3);
+            panel5.Controls.Add(text_tongtien);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(4, 30);
             panel5.Name = "panel5";
             panel5.Size = new Size(432, 60);
             panel5.TabIndex = 0;
             // 
-            // rjTextBox3
+            // text_tongtien
             // 
-            rjTextBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rjTextBox3.BackColor = SystemColors.Window;
-            rjTextBox3.BorderColor = Color.FromArgb(85, 81, 132);
-            rjTextBox3.BorderFocusColor = Color.YellowGreen;
-            rjTextBox3.BorderRadius = 5;
-            rjTextBox3.BorderSize = 1;
-            rjTextBox3.Enabled = false;
-            rjTextBox3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjTextBox3.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox3.Location = new Point(66, 13);
-            rjTextBox3.Margin = new Padding(4);
-            rjTextBox3.Multiline = false;
-            rjTextBox3.Name = "rjTextBox3";
-            rjTextBox3.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox3.PasswordChar = false;
-            rjTextBox3.PlaceholderColor = Color.DarkGray;
-            rjTextBox3.PlaceholderText = "";
-            rjTextBox3.Size = new Size(300, 34);
-            rjTextBox3.TabIndex = 22;
-            rjTextBox3.Texts = "";
-            rjTextBox3.UnderlinedStyle = false;
+            text_tongtien.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            text_tongtien.BackColor = SystemColors.Window;
+            text_tongtien.BorderColor = Color.FromArgb(85, 81, 132);
+            text_tongtien.BorderFocusColor = Color.YellowGreen;
+            text_tongtien.BorderRadius = 5;
+            text_tongtien.BorderSize = 1;
+            text_tongtien.Enabled = false;
+            text_tongtien.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_tongtien.ForeColor = Color.FromArgb(64, 64, 64);
+            text_tongtien.Location = new Point(66, 13);
+            text_tongtien.Margin = new Padding(4);
+            text_tongtien.Multiline = false;
+            text_tongtien.Name = "text_tongtien";
+            text_tongtien.Padding = new Padding(10, 7, 10, 7);
+            text_tongtien.PasswordChar = false;
+            text_tongtien.PlaceholderColor = Color.DarkGray;
+            text_tongtien.PlaceholderText = "";
+            text_tongtien.Size = new Size(300, 34);
+            text_tongtien.TabIndex = 22;
+            text_tongtien.Texts = "";
+            text_tongtien.UnderlinedStyle = false;
             // 
             // km_box
             // 
@@ -587,12 +612,14 @@
             // 
             // panel9
             // 
+            panel9.Controls.Add(comboBox_tgbh);
+            panel9.Controls.Add(text_mess1);
             panel9.Controls.Add(label8);
             panel9.Controls.Add(text_hang);
             panel9.Controls.Add(label10);
             panel9.Controls.Add(text_IMEI);
             panel9.Controls.Add(label14);
-            panel9.Controls.Add(combohox_ll);
+            panel9.Controls.Add(combobox_ll);
             panel9.Controls.Add(but_trolai);
             panel9.Controls.Add(label1);
             panel9.Controls.Add(text_gia);
@@ -604,6 +631,27 @@
             panel9.Size = new Size(432, 435);
             panel9.TabIndex = 0;
             panel9.Paint += panel9_Paint;
+            // 
+            // comboBox_tgbh
+            // 
+            comboBox_tgbh.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox_tgbh.FormattingEnabled = true;
+            comboBox_tgbh.Items.AddRange(new object[] { "12", "24" });
+            comboBox_tgbh.Location = new Point(66, 172);
+            comboBox_tgbh.Name = "comboBox_tgbh";
+            comboBox_tgbh.Size = new Size(300, 23);
+            comboBox_tgbh.TabIndex = 30;
+            // 
+            // text_mess1
+            // 
+            text_mess1.AutoSize = true;
+            text_mess1.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_mess1.ForeColor = Color.Red;
+            text_mess1.Location = new Point(74, 324);
+            text_mess1.Name = "text_mess1";
+            text_mess1.Size = new Size(22, 16);
+            text_mess1.TabIndex = 29;
+            text_mess1.Text = "abc";
             // 
             // label8
             // 
@@ -624,6 +672,7 @@
             text_hang.BorderFocusColor = Color.YellowGreen;
             text_hang.BorderRadius = 7;
             text_hang.BorderSize = 1;
+            text_hang.Enabled = false;
             text_hang.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             text_hang.ForeColor = Color.FromArgb(64, 64, 64);
             text_hang.Location = new Point(66, 52);
@@ -684,15 +733,15 @@
             label14.TabIndex = 18;
             label14.Text = "Giá nhập:";
             // 
-            // combohox_ll
+            // combobox_ll
             // 
-            combohox_ll.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            combohox_ll.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            combohox_ll.FormattingEnabled = true;
-            combohox_ll.Location = new Point(66, 140);
-            combohox_ll.Name = "combohox_ll";
-            combohox_ll.Size = new Size(300, 27);
-            combohox_ll.TabIndex = 17;
+            combobox_ll.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            combobox_ll.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            combobox_ll.FormattingEnabled = true;
+            combobox_ll.Location = new Point(66, 140);
+            combobox_ll.Name = "combobox_ll";
+            combobox_ll.Size = new Size(300, 27);
+            combobox_ll.TabIndex = 17;
             // 
             // but_trolai
             // 
@@ -954,6 +1003,7 @@
             vbButton3.Text = "Đồng ý";
             vbButton3.TextColor = Color.White;
             vbButton3.UseVisualStyleBackColor = false;
+            vbButton3.Click += vbButton3_Click;
             // 
             // huy_but
             // 
@@ -1341,28 +1391,6 @@
             rjTextBox4.Texts = "";
             rjTextBox4.UnderlinedStyle = false;
             // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn7.DataPropertyName = "IMEI";
-            dataGridViewTextBoxColumn7.HeaderText = "IMEI";
-            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            dataGridViewTextBoxColumn9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn9.HeaderText = "ID loại laptop";
-            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.DataPropertyName = "GiaNhap";
-            Column6.HeaderText = "Giá nhập";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
             // PhieuNhapGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1470,7 +1498,7 @@
         private ArtanPanel artanPanel6;
         private Label label7;
         private Panel panel5;
-        private RJTextBox rjTextBox3;
+        private RJTextBox text_tongtien;
         private ArtanPanel sp_box;
         private Panel panel9;
         private VBButton but_trolai;
@@ -1480,7 +1508,7 @@
         private RJTextBox text_gia;
         private Label label11;
         private Label label14;
-        private ComboBox combohox_ll;
+        private ComboBox combobox_ll;
         private RJTextBox text_IMEI;
         private VBButton But_sp;
         private DataGridViewTextBoxColumn Column1;
@@ -1494,5 +1522,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewTextBoxColumn Column6;
+        private Label text_mess1;
+        private ComboBox comboBox_tgbh;
     }
 }
