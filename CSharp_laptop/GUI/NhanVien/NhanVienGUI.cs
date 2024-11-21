@@ -41,11 +41,6 @@ namespace CSharp_laptop.GUI
             hided = true;
         }
 
-        private void vbButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
 
@@ -135,7 +130,8 @@ namespace CSharp_laptop.GUI
                     if (bus.DeleteNhanVien(ma))
                     {
                         MessageBox.Show("Xóa Thành Công!");
-                    } else
+                    }
+                    else
                     {
 
                         MessageBox.Show("Xóa Ko Thành Công!");
@@ -213,21 +209,6 @@ namespace CSharp_laptop.GUI
                 }
 
             }
-        }
-
-        private void vbButton1_Click_1(object sender, EventArgs e)
-        {
-            mainForm.OpenChildForm(new CreateNhanVienGUI(mainForm));
-        }
-
-        private void vbButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vbButton1_Click_2(object sender, EventArgs e)
-        {
-            mainForm.OpenChildForm(new CreateNhanVienGUI(mainForm));
         }
         private void dataGridView1_SizeChanged(object sender, EventArgs e)
         {
@@ -310,7 +291,8 @@ namespace CSharp_laptop.GUI
             if (nameprocess.Text == "Thêm Nhân Viên")
             {
                 ThemNhanVien();
-            } else
+            }
+            else
             {
                 SuaNhanVien();
             }
@@ -359,7 +341,7 @@ namespace CSharp_laptop.GUI
             {
                 MessageBox.Show("Mã Nhân Viên bị trùng với nhân viên " + nhanvientemp.TenNV, "Lỗi!"); return;
             }
-            
+
             string id = guna2TextBoxID.Text;
             string ten = guna2TextBoxTen.Text;
             string email = guna2TextBoxEmail.Text;
@@ -371,7 +353,8 @@ namespace CSharp_laptop.GUI
             if (bus.AddNhanVien(nv))
             {
                 MessageBox.Show("Thêm Nhân Viên Thành Công!", "Thông Báo");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Thêm Nhân Viên Không Thành Công!", "Thông Báo");
             }
@@ -459,5 +442,21 @@ namespace CSharp_laptop.GUI
                 e.Handled = true; // Ngăn không cho ký tự được nhập vào TextBox
             }
         }
+
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+            string filterText = rjTextBox1.Text.ToLower();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.IsNewRow) continue; // Bỏ qua dòng mới
+                bool visible = row.Cells["Column2"].Value.ToString().ToLower().Contains(filterText);
+                row.Visible = visible; // Hiển thị hoặc ẩn hàng dựa trên điều kiện
+            }
+        }
+        private void rjTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(rjTextBox1.Texts);
+        }
+        
     }
 }

@@ -594,6 +594,7 @@
             rjTextBox1.TabIndex = 42;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
+            rjTextBox1._TextChanged += rjTextBox1_TextChanged;
             // 
             // vbButton1
             // 
@@ -615,6 +616,7 @@
             vbButton1.TextAlign = ContentAlignment.TopLeft;
             vbButton1.TextColor = Color.White;
             vbButton1.UseVisualStyleBackColor = false;
+            vbButton1.Click += vbButton1_Click;
             // 
             // editpanel
             // 
