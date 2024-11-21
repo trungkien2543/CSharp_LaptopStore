@@ -71,6 +71,7 @@
             vbButton2 = new VBButton();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             editpanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            nameprocess = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             editpanel.SuspendLayout();
@@ -198,7 +199,7 @@
             guna2TextBoxDiem.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxDiem.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxDiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxDiem.Location = new Point(14, 124);
+            guna2TextBoxDiem.Location = new Point(8, 162);
             guna2TextBoxDiem.Margin = new Padding(5);
             guna2TextBoxDiem.Name = "guna2TextBoxDiem";
             guna2TextBoxDiem.PasswordChar = '\0';
@@ -255,6 +256,7 @@
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton2.Size = new Size(62, 62);
             guna2CircleButton2.TabIndex = 10;
+            guna2CircleButton2.Click += guna2CircleButton2_Click;
             // 
             // guna2TextBoxDC
             // 
@@ -271,7 +273,7 @@
             guna2TextBoxDC.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxDC.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxDC.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxDC.Location = new Point(507, 70);
+            guna2TextBoxDC.Location = new Point(501, 108);
             guna2TextBoxDC.Margin = new Padding(5);
             guna2TextBoxDC.Name = "guna2TextBoxDC";
             guna2TextBoxDC.PasswordChar = '\0';
@@ -297,7 +299,7 @@
             guna2TextBoxSDT.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxSDT.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxSDT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxSDT.Location = new Point(507, 18);
+            guna2TextBoxSDT.Location = new Point(501, 56);
             guna2TextBoxSDT.Margin = new Padding(5);
             guna2TextBoxSDT.Name = "guna2TextBoxSDT";
             guna2TextBoxSDT.PasswordChar = '\0';
@@ -322,7 +324,7 @@
             guna2TextBoxTen.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxTen.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxTen.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxTen.Location = new Point(14, 70);
+            guna2TextBoxTen.Location = new Point(8, 108);
             guna2TextBoxTen.Margin = new Padding(5);
             guna2TextBoxTen.Name = "guna2TextBoxTen";
             guna2TextBoxTen.PasswordChar = '\0';
@@ -348,7 +350,7 @@
             guna2TextBoxID.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBoxID.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBoxID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBoxID.Location = new Point(14, 18);
+            guna2TextBoxID.Location = new Point(8, 56);
             guna2TextBoxID.Margin = new Padding(5);
             guna2TextBoxID.Name = "guna2TextBoxID";
             guna2TextBoxID.PasswordChar = '\0';
@@ -461,6 +463,7 @@
             editpanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             editpanel.BackColor = Color.Transparent;
             editpanel.BorderRadius = 12;
+            editpanel.Controls.Add(nameprocess);
             editpanel.Controls.Add(guna2TextBoxDiem);
             editpanel.Controls.Add(guna2TextBoxSDT);
             editpanel.Controls.Add(guna2CircleButton3);
@@ -477,6 +480,17 @@
             editpanel.ShadowDecoration.CustomizableEdges = customizableEdges16;
             editpanel.Size = new Size(1160, 248);
             editpanel.TabIndex = 48;
+            // 
+            // nameprocess
+            // 
+            nameprocess.AutoSize = true;
+            nameprocess.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nameprocess.ForeColor = Color.White;
+            nameprocess.Location = new Point(8, 10);
+            nameprocess.Name = "nameprocess";
+            nameprocess.Size = new Size(221, 32);
+            nameprocess.TabIndex = 13;
+            nameprocess.Text = "Thêm Khách Hàng";
             // 
             // KhachHangGUI
             // 
@@ -497,6 +511,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             guna2GradientPanel1.ResumeLayout(false);
             editpanel.ResumeLayout(false);
+            editpanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -523,5 +538,6 @@
         private VBButton vbButton2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientPanel editpanel;
+        private Label nameprocess;
     }
 }

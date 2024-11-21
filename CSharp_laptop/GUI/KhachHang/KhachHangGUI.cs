@@ -41,6 +41,7 @@ namespace CSharp_laptop.GUI
 
         private void KhachHangGUI_Load(object sender, EventArgs e)
         {
+
             for (int i = 0; i < dtos.Count; i++)
             {
                 KhachHangDTO kh = dtos[i];
@@ -84,6 +85,8 @@ namespace CSharp_laptop.GUI
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
+
+                nameprocess.Text = "Sủa Khách Hàng";
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
                 int rowIndex = int.Parse(clickedButton.Name);
 
@@ -202,7 +205,7 @@ namespace CSharp_laptop.GUI
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -237,6 +240,7 @@ namespace CSharp_laptop.GUI
 
         private void vbButton2_Click_1(object sender, EventArgs e)
         {
+            nameprocess.Text = "Thêm Khách Hàng";
             guna2TextBoxID.Text = "";
             guna2TextBoxTen.Text = "";
             guna2TextBoxDC.Text = "";
@@ -247,6 +251,22 @@ namespace CSharp_laptop.GUI
                 button1.Text = "HIDE";
                 timer1.Start();
             }
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            if (nameprocess.Text == "Thêm Khách Hàng")
+            {
+                ThemKhachHang();
+            } else
+            {
+
+            }
+        }
+
+        private void ThemKhachHang()
+        {
+
         }
     }
 }

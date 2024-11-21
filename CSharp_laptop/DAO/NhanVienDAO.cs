@@ -185,8 +185,49 @@ namespace CSharp_laptop.DAO
                     Console.WriteLine("Error: " + ex.Message); // Có thể thay thế bằng ghi log.
                 }
             }
-
             return nhanvien;
         }
+        public List<NhanVienDTO> SearchNhanVien(string searchTerm)
+        {
+            List<NhanVienDTO> nhanviens = new List<NhanVienDTO>();
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+                SELECT `ID_NhanVien`, `TenNV`, `NgaySinh`, `SDT`, `DiaChi`, `GioiTinh`, `CCCD`, `Email` 
+                FROM `nhanvien`
+                WHERE 
+                    `TenNV` LIKE @SearchTerm OR
+                    `Email` LIKE @SearchTerm OR
+                    `SDT` LIKE @SearchTerm OR
+                    `DiaChi` LIKE @SearchTerm";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        NhanVienDTO nhanvien = new NhanVienDTO
+                        {
+                            ID_NhanVien = reader["ID_NhanVien"].ToString(),
+                            TenNV = reader["TenNV"].ToString(),
+                            NgaySinh = reader["NgaySinh"].ToString(),
+                            SDT = reader["SDT"].ToString(),
+                            DiaChi = reader["DiaChi"].ToString(),
+                            GioiTinh = reader["GioiTinh"].ToString() == "True",
+                            CCCD = reader["CCCD"].ToString(),
+                            Email = reader["Email"].ToString()
+                        };
+                        nhanviens.Add(nhanvien);
+                    }
+                }
+            }
+
+            return nhanviens;
+        }
+
     }
 }

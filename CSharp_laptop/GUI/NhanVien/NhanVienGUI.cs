@@ -24,13 +24,10 @@ namespace CSharp_laptop.GUI
         NhanVienBUS bus;
         List<VBButton> btnEditList;
         List<VBButton> btnDelList;
+
         public NhanVienGUI(MainForm mainForm)
         {
             bus = new NhanVienBUS();
-
-            btnEditList = new List<VBButton>();
-            btnDelList = new List<VBButton>();
-
             this.mainForm = mainForm;
 
             InitializeComponent();
@@ -48,12 +45,17 @@ namespace CSharp_laptop.GUI
 
         private void NhanVienGUI_Load(object sender, EventArgs e)
         {
-            LoadTable();
+            LoadTable(bus.getAllNhanVien());
         }
-        private void LoadTable()
+        private void LoadTable(List<NhanVienDTO> nvs)
         {
+            btnEditList = new List<VBButton>();
+            btnDelList = new List<VBButton>();
             dataGridView1.Rows.Clear();
-            List<NhanVienDTO> nvs = bus.getAllNhanVien();
+            dataGridView1.Controls.Clear();
+            dataGridView1.Refresh();
+
+            dataGridView1.Refresh();
             for (int i = 0; i < nvs.Count; i++)
             {
                 NhanVienDTO nv = nvs[i];
@@ -136,7 +138,7 @@ namespace CSharp_laptop.GUI
 
                         MessageBox.Show("Xóa Ko Thành Công!");
                     }
-                    LoadTable();
+                    LoadTable(bus.getAllNhanVien());
                 }
                 else if (result == DialogResult.Cancel)
                 {
@@ -298,7 +300,7 @@ namespace CSharp_laptop.GUI
             }
 
 
-            LoadTable();
+            LoadTable(bus.getAllNhanVien());
         }
         private void SuaNhanVien()
         {
@@ -445,7 +447,7 @@ namespace CSharp_laptop.GUI
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-            string filterText = rjTextBox1.Text.ToLower();
+            string filterText = searchTextBox.Text.ToLower();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.IsNewRow) continue; // Bỏ qua dòng mới
@@ -455,7 +457,7 @@ namespace CSharp_laptop.GUI
         }
         private void rjTextBox1_TextChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(rjTextBox1.Texts);
+            LoadTable(bus.SearchNhanVien(searchTextBox.Texts));
         }
         
     }

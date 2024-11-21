@@ -100,6 +100,32 @@ namespace CSharp_laptop.DAO
             }
             return khach;
         }
+        public bool DeleteKhachHang(string idKhachHang)
+        {
+            bool isSuccess = false;
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "DELETE FROM `khachhang` WHERE `ID_KhachHang` = @ID_KhachHang";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ID_KhachHang", idKhachHang);
+
+                try
+                {
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    isSuccess = rowsAffected > 0; // Kiểm tra nếu có ít nhất một dòng bị xóa.
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message); // Ghi lại lỗi nếu xảy ra vấn đề.
+                }
+            }
+
+            return isSuccess;
+        }
+
 
     }
 }
