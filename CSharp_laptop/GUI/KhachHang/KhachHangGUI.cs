@@ -266,7 +266,25 @@ namespace CSharp_laptop.GUI
 
         private void ThemKhachHang()
         {
-
+            
         }
+        private bool checkTextBox()
+        {
+            if (string.IsNullOrEmpty(guna2TextBoxID.Text))
+            {
+                MessageBox.Show("Mã Nhân Viên chưa được nhập!", "Lỗi!"); return true;
+            }
+            if (string.IsNullOrEmpty(guna2TextBoxTen.Text))
+            {
+                MessageBox.Show("Tên Nhân Viên chưa được nhập!", "Lỗi!"); return true;
+            }
+            if (string.IsNullOrEmpty(guna2TextBoxDC.Text))
+            {
+                MessageBox.Show("Email chưa được nhập!", "Lỗi!"); return true;
+            }
+            return false;
+        }
+
+
     }
 }
