@@ -41,9 +41,7 @@
             dateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
-            label1 = new Label();
             dataGridView1 = new DataGridView();
-            label7 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -167,61 +165,41 @@
             // 
             // pieChart1
             // 
+            pieChart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pieChart1.InitialRotation = 0D;
             pieChart1.IsClockwise = true;
-            pieChart1.Location = new Point(29, 140);
+            pieChart1.Location = new Point(12, 147);
             pieChart1.Margin = new Padding(3, 2, 3, 2);
             pieChart1.MaxAngle = 360D;
             pieChart1.MaxValue = null;
             pieChart1.MinValue = 0D;
             pieChart1.Name = "pieChart1";
-            pieChart1.Size = new Size(494, 416);
+            pieChart1.Size = new Size(459, 416);
             pieChart1.TabIndex = 4;
             pieChart1.Total = null;
             pieChart1.Load += pieChart1_Load;
             // 
-            // label1
-            // 
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(80, 619);
-            label1.Name = "label1";
-            label1.Size = new Size(315, 46);
-            label1.TabIndex = 11;
-            label1.Text = "Biểu đồ tròn thống kê các loại laptop đã bán theo khoảng thời gian đã chọn";
-            // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(529, 204);
+            dataGridView1.Location = new Point(535, 147);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(430, 273);
+            dataGridView1.Size = new Size(430, 416);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label7.Location = new Point(582, 579);
-            label7.Name = "label7";
-            label7.Size = new Size(330, 46);
-            label7.TabIndex = 13;
-            label7.Text = "Bảng thống kê doanh thu các loại laptop đã bán theo khoảng thời gian đã chọn";
             // 
             // HangLaptop
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(149, 147, 186);
-            Controls.Add(label7);
             Controls.Add(dataGridView1);
-            Controls.Add(label1);
             Controls.Add(pieChart1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -242,9 +220,7 @@
         private Label label3;
         private Panel panel2;
         private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
-        private Label label1;
         private DataGridView dataGridView1;
-        private Label label7;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker2;
         private CSharp_laptop.VBButton vbButton1;

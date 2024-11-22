@@ -213,5 +213,10 @@ namespace CustomTabControl
             // Gọi hàm LoadGridViewData để cập nhật DataGridView với dữ liệu mới
             LoadGridViewData(startDate, endDate);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
