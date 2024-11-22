@@ -374,6 +374,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton2.Size = new Size(75, 75);
             guna2CircleButton2.TabIndex = 17;
+            guna2CircleButton2.Click += guna2CircleButton2_Click;
             // 
             // txtTienThoi
             // 

@@ -18,6 +18,8 @@ using System.Text.RegularExpressions;
 using CSharp_laptop.DTO;
 using System.Media;
 using Microsoft.VisualBasic;
+using System.Transactions;
+using MySql.Data.MySqlClient;
 
 
 namespace CSharp_laptop.GUI.BanHang
@@ -50,6 +52,10 @@ namespace CSharp_laptop.GUI.BanHang
 
         private KhachHangBUS KhachHangBUS;
 
+        private HoaDonBUS HoaDonBUS;
+
+        private ChiTietHoaDonBUS ChiTietHoaDonBUS;
+
         private long ThanhTien, TongTien, GiamGia;
 
 
@@ -65,6 +71,10 @@ namespace CSharp_laptop.GUI.BanHang
             LoaiLaptopBUS = new LoaiLaptopBUS();
 
             KhachHangBUS = new KhachHangBUS();
+
+            HoaDonBUS = new HoaDonBUS();
+
+            ChiTietHoaDonBUS = new ChiTietHoaDonBUS();
 
             listSP = new BindingList<LaptopDTO>();
 
@@ -486,6 +496,70 @@ namespace CSharp_laptop.GUI.BanHang
         {
             mainForm.OpenChildForm(new HoaDon(mainForm));
         }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+
+            // Thêm hóa đơn
+
+
+            // Thêm chi tiết hóa đơn
+
+            // Cập nhật tích điểm cho khách hàng
+
+
+            // Cập nhật trạng thái của laptop
+
+            // Cập nhật số lượng tồn kho
+
+            if (txtID.Text.Equals(""))
+            {
+                MessageBox.Show("Chưa có thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            // CHAP 1: Tạo đối tượng HoaDonDTO
+            HoaDonDTO hoaDonDTO = new HoaDonDTO
+            {
+                NgayLap = DateTime.Now,
+                MaNV = mainForm.NhanVienDangNhap,
+                MaKH = txtID.Text,
+                TongTien = TongTien
+            };
+
+            // CHAP 2: Tạo danh sách ChiTietHoaDonDTO
+            List<ChiTietHoaDonDTO> chiTietHoaDonList = new List<ChiTietHoaDonDTO>();
+            foreach (var sp in listSP)
+            {
+                ChiTietHoaDonDTO chiTietHoaDon = new ChiTietHoaDonDTO
+                { 
+                    IMEI = sp.IMEI,
+                    GiaBan = laptopWithGiaBan[sp.IMEI]
+                };
+                chiTietHoaDonList.Add(chiTietHoaDon);
+            }
+
+            // CHAP 3: Tích điểm
+            
+
+            int DiemHienTai = int.Parse(txtTichDiem.Text);
+
+            int DiemGiam = (int) (GiamGia / 1000);
+
+            int DiemThem = (int) (TongTien / 100000);
+
+            int TichDiemTong = DiemHienTai - DiemGiam + DiemThem;
+
+
+
+            // Gọi BUS để thêm hóa đơn và chi tiết hóa đơn
+            if (HoaDonBUS.AddHoaDon(hoaDonDTO, chiTietHoaDonList, TichDiemTong))
+            {
+                MessageBox.Show("Thêm hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 
 

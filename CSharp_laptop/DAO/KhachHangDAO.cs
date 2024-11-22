@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace CSharp_laptop.DAO
 {
@@ -124,6 +125,18 @@ namespace CSharp_laptop.DAO
             }
 
             return isSuccess;
+        }
+
+
+        public static bool TichDiem(string idKhachHang, int TichDiem, MySqlTransaction transaction)
+        {
+
+            string query = "UPDATE khachhang SET TichDiem = @TichDiem WHERE ID_KhachHang = @ID_KhachHang;";
+            MySqlCommand command = new MySqlCommand(query, transaction.Connection, transaction);
+            command.Parameters.AddWithValue("@TichDiem", TichDiem);
+            command.Parameters.AddWithValue("@ID_KhachHang", idKhachHang?? (object)DBNull.Value);
+
+            return command.ExecuteNonQuery() > 0;
         }
 
 
