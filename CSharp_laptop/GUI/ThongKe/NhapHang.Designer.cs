@@ -101,6 +101,7 @@
             comboBoxYear.ShadowDecoration.CustomizableEdges = customizableEdges2;
             comboBoxYear.Size = new Size(154, 36);
             comboBoxYear.TabIndex = 19;
+            comboBoxYear.SelectedIndexChanged += comboBoxYear_SelectedIndexChanged_1;
             // 
             // guna2HtmlLabel2
             // 
@@ -164,7 +165,7 @@
             cbxHang.Font = new Font("Segoe UI", 10F);
             cbxHang.ForeColor = Color.FromArgb(68, 88, 112);
             cbxHang.ItemHeight = 30;
-            cbxHang.Location = new Point(24, 164);
+            cbxHang.Location = new Point(24, 148);
             cbxHang.Margin = new Padding(3, 2, 3, 2);
             cbxHang.Name = "cbxHang";
             cbxHang.ShadowDecoration.CustomizableEdges = customizableEdges4;
