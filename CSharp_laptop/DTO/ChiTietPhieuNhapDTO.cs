@@ -9,18 +9,20 @@ namespace CSharp_laptop.DTO
     internal class ChiTietPhieuNhapDTO
     {
         public string IMEI { get; set; }
+        public string IDLoaiLaptop { get; set; }
         public int GiaNhap { get; set; }
-        public string IDPN { get; set; }
+        public int ThoiGianBaoHanh { get; set; }
 
         public ChiTietPhieuNhapDTO()
         {
         }
 
-        public ChiTietPhieuNhapDTO(string iMEI, int giaNhap, string iDPN)
+        public ChiTietPhieuNhapDTO(string iMEI, string iDLoaiLaptop, int giaNhap, int thoiGianBaoHanh)
         {
             IMEI = iMEI;
+            IDLoaiLaptop = iDLoaiLaptop;
             GiaNhap = giaNhap;
-            IDPN = iDPN;
+            ThoiGianBaoHanh = thoiGianBaoHanh;
         }
     }
 }

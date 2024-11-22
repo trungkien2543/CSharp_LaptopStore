@@ -31,12 +31,12 @@ namespace CSharp_laptop.DAO
                     {
                         PhieuNhapDTO phieuNhap = new PhieuNhapDTO()
                         {
-                            ID = reader["ID_PhieuNhap"].ToString(),
+                            ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
                             IDNV = reader["MaNV"].ToString(),
                             IDNCC = reader["MaNCC"].ToString(),
                             TongTien = int.Parse(reader["TongTIen"].ToString()),
-                            NgayTao = reader.GetDateTime(4)
-                        };
+                            NgayTao = reader.GetDateTime(3)
+                        }; 
                         Console.WriteLine("data:" + phieuNhap.ID + phieuNhap.IDNV + phieuNhap.IDNCC + phieuNhap.TongTien + phieuNhap.NgayTao);
                         phieuNhapList.Add(phieuNhap);
                     }
@@ -45,10 +45,9 @@ namespace CSharp_laptop.DAO
             return phieuNhapList;
         }
 
-        public string GetMaxID()
+        public int GetMaxID()
         {
-            string id = "PN001";
-
+            int id = 1;
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
@@ -57,13 +56,84 @@ namespace CSharp_laptop.DAO
                 object result = cmd.ExecuteScalar();
                 if (result != DBNull.Value)
                 {
-                    string maxID = result.ToString();
-                    int numberPart = int.Parse(maxID.Substring(2));// Lấy phần số từ ID hiện tại (bỏ phần "KH")
-                    numberPart++;
-                    id = "PN" + numberPart.ToString("D3");// Tạo ID mới với định dạng "PN" + số tự động tăng với 3 chữ số
+                    id = int.Parse(result.ToString())+1;
                 }
             }
             return id;
+        }
+
+        public bool AddPhieuNhap(PhieuNhapDTO phieuNhap)
+        {
+            bool isSuccess = false;
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "INSERT INTO phieunhap (MaNV, MaNcc, TongTien,NgayNhap) VALUES (@MaNV, @MaNcc, @TongTien, @NgayNhap)";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaNV", phieuNhap.IDNV);
+                    cmd.Parameters.AddWithValue("@MaNcc", phieuNhap.IDNCC);
+                    cmd.Parameters.AddWithValue("@TongTien", phieuNhap.TongTien);
+                    cmd.Parameters.AddWithValue("@NgayNhap", phieuNhap.NgayTao);
+
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        isSuccess = rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+            return isSuccess;
+        }
+
+        public bool AddCTPhieuNhapi(int idPN, ChiTietPhieuNhapDTO ctpn)
+        {
+            bool isSuccess = false;
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query2 = "INSERT INTO laptop (IMEI, ThoiGianBaoHanh, TrangThai, LoaiLaptop) VALUES (@IMEI, @ThoiGianBaoHanh, @TrangThai, @LoaiLaptop)";
+                using (MySqlCommand cmd = new MySqlCommand(query2, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IMEI", ctpn.IMEI);
+                    cmd.Parameters.AddWithValue("@ThoiGianBaoHanh", ctpn.ThoiGianBaoHanh);
+                    cmd.Parameters.AddWithValue("@TrangThai", 1);
+                    cmd.Parameters.AddWithValue("@LoaiLaptop", ctpn.IDLoaiLaptop);
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        isSuccess = rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+
+                string query = "INSERT INTO chitietphieunhap (IMEI, GiaNhap, ID_PhieuNhap)  VALUES (@IMEI, @GiaNhap, @ID_PhieuNhap)";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IMEI", ctpn.IMEI);
+                    cmd.Parameters.AddWithValue("@GiaNhap", ctpn.GiaNhap);
+                    cmd.Parameters.AddWithValue("@ID_PhieuNhap", idPN);
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        isSuccess = rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+
+                
+            }
+            return isSuccess;
         }
     }
 }
