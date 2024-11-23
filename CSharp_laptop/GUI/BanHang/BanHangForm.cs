@@ -518,6 +518,20 @@ namespace CSharp_laptop.GUI.BanHang
                 return;
             }
 
+            if (listSP.Count == 0) {
+                MessageBox.Show("Chưa có sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
+            {
+                videoCaptureDevice.SignalToStop();
+                videoCaptureDevice.WaitForStop();
+
+                lblCamera.Visible = false;
+            }
+
+
 
             // CHAP 1: Tạo đối tượng HoaDonDTO
             HoaDonDTO hoaDonDTO = new HoaDonDTO
@@ -547,15 +561,22 @@ namespace CSharp_laptop.GUI.BanHang
 
             int DiemGiam = (int) (GiamGia / 1000);
 
-            int DiemThem = (int) (TongTien / 100000);
+            int DiemThem = (int) (TongTien / 500000);
 
             int TichDiemTong = DiemHienTai - DiemGiam + DiemThem;
+
+            // CHAP 4: Cập nhật trạng thái sản phẩm
+
+
+            // CHAP 5: Cập nhật số lượng tồn kho
+
 
 
 
             // Gọi BUS để thêm hóa đơn và chi tiết hóa đơn
             if (HoaDonBUS.AddHoaDon(hoaDonDTO, chiTietHoaDonList, TichDiemTong))
             {
+                Reset();
                 MessageBox.Show("Thêm hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

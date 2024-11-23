@@ -61,6 +61,16 @@ namespace CSharp_laptop.BUS {
                     if (!KhachHangDAO.TichDiem(hoaDonDTO.MaKH, TichDiem, transaction))
                         throw new Exception("Lỗi khi tích điểm");
 
+                    // Cập nhật trạng thái sản phẩm
+
+                    if (!LaptopDAO.CapNhatTrangThai(maHoaDon, 1, transaction))
+                        throw new Exception("Lỗi khi cập nhật trạng thái");
+
+                    // Cập nhật số lượng tồn kho
+                    if (!LoaiLaptopDAO.CapNhatTonKhoKhiBan(maHoaDon,transaction))
+                        throw new Exception("Lỗi khi cập nhật số lượng tồn kho");
+
+
                     // Commit transaction nếu tất cả thành công
                     transaction.Commit();
                     return true;
