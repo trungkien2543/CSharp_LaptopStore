@@ -228,6 +228,41 @@ namespace CSharp_laptop.DAO
 
             return nhanviens;
         }
+        public List<string> GetNhanVienChuaCoTaiKhoan()
+        {
+            List<string> ids = new List<string>();
+
+            try
+            {
+                using (MySqlConnection conn = connectionHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = @"SELECT ID_NhanVien FROM nhanvien WHERE ID_NhanVien NOT IN (SELECT TenDN FROM taikhoan)";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string id = reader["ID_NhanVien"].ToString();
+                            ids.Add(id);
+
+                            // Debugging: Hiển thị ID trong MessageBox nếu cần thiết
+                            // Bạn có thể bỏ dòng này trong mã sản xuất
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi nếu có sự cố với kết nối hoặc truy vấn
+                MessageBox.Show($"Lỗi: {ex.Message}");
+            }
+
+            return ids;
+        }
+
 
     }
 }
