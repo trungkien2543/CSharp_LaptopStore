@@ -47,14 +47,14 @@ namespace CSharp_laptop.GUI
             {
                 LoaiLaptopDTO sanPhamDTO = loaiLaptopBUS.GetLaptopByID(idLaptop);
 
-                rjTextBox1.Texts = sanPhamDTO.IDLoaiLaptop;
-                rjTextBox2.Texts = sanPhamDTO.TenSP;
-                rjTextBox3.Texts = sanPhamDTO.GiaBan.ToString();
-                rjTextBox4.Texts = sanPhamDTO.GPU;
-                rjTextBox5.Texts = sanPhamDTO.CPU;
-                rjTextBox6.Texts = sanPhamDTO.RAM.ToString();
-                rjTextBox7.Texts = sanPhamDTO.KichThuoc;
-                rjTextBox8.Texts = sanPhamDTO.HinhAnh;
+                tb_id.Text = sanPhamDTO.IDLoaiLaptop;
+                tb_ten.Text = sanPhamDTO.TenSP;
+                tb_gia.Text = sanPhamDTO.GiaBan.ToString();
+                tb_gpu.Text = sanPhamDTO.GPU;
+                tb_cpu.Text = sanPhamDTO.CPU;
+                tb_ram.Text = sanPhamDTO.RAM.ToString();
+                tb_kichthuoc.Text = sanPhamDTO.KichThuoc;
+                tb_anh.Text = sanPhamDTO.HinhAnh;
 
                 cbbhang.SelectedValue = sanPhamDTO.Hang;
                 cbbkm.SelectedValue = sanPhamDTO.KhuyenMai;
@@ -99,15 +99,15 @@ namespace CSharp_laptop.GUI
         {
             LoaiLaptopDTO laptop = new LoaiLaptopDTO
             {
-                IDLoaiLaptop = rjTextBox1.Texts,
-                TenSP = rjTextBox2.Texts,
-                GiaBan = long.Parse(rjTextBox3.Texts),  // Chuyển đổi từ chuỗi sang số nguyên
+                IDLoaiLaptop = tb_id.Text,
+                TenSP = tb_ten.Text,
+                GiaBan = long.Parse(tb_gia.Text),  // Chuyển đổi từ chuỗi sang số nguyên
                 Hang = ((KeyValuePair<string, string>)cbbhang.SelectedItem).Key,
-                CPU = rjTextBox5.Texts,
+                CPU = tb_cpu.Text,
                 RAM = int.Parse(rjTextBox6.Texts),  // Chuyển đổi từ chuỗi sang số nguyên
-                GPU = rjTextBox4.Texts,
-                HinhAnh = rjTextBox8.Texts,
-                KichThuoc = rjTextBox7.Texts,
+                GPU = tb_gpu.Text,
+                HinhAnh = tb_anh.Text,
+                KichThuoc = tb_kichthuoc.Text,
                 KhuyenMai = ((KeyValuePair<string, string>)cbbkm.SelectedItem).Key
 
             };

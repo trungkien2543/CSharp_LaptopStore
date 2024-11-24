@@ -27,11 +27,13 @@ namespace CSharp_laptop.GUI.Laptop
             this.mainForm = mainForm;
             edittable();
 
+            tb_ghichu.ReadOnly = true;
+            tb_mabh.ReadOnly = true;
         }
 
         private void check_bh()
         {
-            List<BaoHanhDTO> baoHanhs = baoHanhBUS.GetAllBaoHanhsByIMEI(rjTextBox1.Texts);
+            List<BaoHanhDTO> baoHanhs = baoHanhBUS.GetAllBaoHanhsByIMEI(tb_timkiem.Text);
             if (baoHanhs.Count == 0)
             {
                 Console.WriteLine("No warranty records found for this IMEI.");
@@ -45,7 +47,7 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void load_inforlap()
         {
-            LaptopDTO laptop = laptopBUS.GetLaptopByIMEI(rjTextBox1.Texts);
+            LaptopDTO laptop = laptopBUS.GetLaptopByIMEI(tb_timkiem.Text);
             if (laptop == null)
             {
                 Console.WriteLine("No laptop found with this IMEI.");
@@ -78,14 +80,15 @@ namespace CSharp_laptop.GUI.Laptop
             dataGridView2.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
 
             //dataGridView2.Columns["IMEI"].Visible = false;
+
+            
         }
 
         private void reset()
         {
-            rjTextBox4.Texts = "";
-            dateTimePicker1.Value = DateTime.Now;
-            dateTimePicker2.Value = DateTime.Now;
-            rjTextBox5.Texts = "";
+            tb_mabh.Text = "";
+            tb_ghichu.Text = "";
+
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -93,12 +96,15 @@ namespace CSharp_laptop.GUI.Laptop
             if (e.RowIndex >= 0)
             {
                 chucnang = "update";
+                tb_ghichu.ReadOnly = false;
 
                 DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
-                rjTextBox4.Texts = row.Cells["GhiChu"].Value.ToString();
-                rjTextBox5.Texts = row.Cells["MaBaoHanh"].Value.ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(row.Cells["NgayBaoHanh"].Value);
-                dateTimePicker2.Value = Convert.ToDateTime(row.Cells["NgayTra"].Value);
+
+                tb_ghichu.Text = row.Cells["GhiChu"].Value.ToString();
+                tb_mabh.Text = row.Cells["MaBaoHanh"].Value.ToString();
+
+                guna2DateTimePicker1.Value = Convert.ToDateTime(row.Cells["NgayBaoHanh"].Value);
+                guna2DateTimePicker2.Value = Convert.ToDateTime(row.Cells["NgayTra"].Value);
             }
         }
 
@@ -106,6 +112,7 @@ namespace CSharp_laptop.GUI.Laptop
         {
             chucnang = "add";
             reset();
+            tb_ghichu.ReadOnly = false;
         }
 
         private void vbButton1_Click_1(object sender, EventArgs e)
@@ -116,10 +123,10 @@ namespace CSharp_laptop.GUI.Laptop
                 {
                     BaoHanhDTO baoHanh = new BaoHanhDTO
                     {
-                        IMEI = rjTextBox1.Texts,
-                        NgayBaoHanh = dateTimePicker1.Value,
-                        NgayTra = dateTimePicker2.Value,
-                        GhiChu = rjTextBox4.Texts
+                        IMEI = tb_timkiem.Text,
+                        NgayBaoHanh = guna2DateTimePicker1.Value,
+                        NgayTra = guna2DateTimePicker2.Value,
+                        GhiChu = tb_ghichu.Text
                     };
 
                     if (baoHanhBUS.AddBaoHanh(baoHanh))
@@ -127,6 +134,7 @@ namespace CSharp_laptop.GUI.Laptop
                         MessageBox.Show("Thêm bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         load_inforlap();
                         reset();
+                        check_bh();
                     }
                     else
                     {
@@ -145,16 +153,17 @@ namespace CSharp_laptop.GUI.Laptop
                 {
                     BaoHanhDTO baoHanh = new BaoHanhDTO
                     {
-                        MaBaoHanh = long.Parse(rjTextBox5.Texts), // Ensure this is filled in correctly
-                        IMEI = rjTextBox5.Texts,
-                        NgayBaoHanh = dateTimePicker1.Value,
-                        NgayTra = dateTimePicker2.Value,
-                        GhiChu = rjTextBox4.Texts
+                        MaBaoHanh = long.Parse(tb_mabh.Text), // Ensure this is filled in correctly
+                        IMEI = tb_timkiem.Text,
+                        NgayBaoHanh = guna2DateTimePicker1.Value,
+                        NgayTra = guna2DateTimePicker2.Value,
+                        GhiChu = tb_ghichu.Text
                     };
 
                     if (baoHanhBUS.UpdateBaoHanh(baoHanh))
                     {
                         MessageBox.Show("Cập nhật bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        check_bh();
                         load_inforlap() ;
                         
                     }
