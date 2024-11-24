@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
 using CSharp_laptop.GUI.BanHang;
 using CSharp_laptop.GUI.Laptop;
@@ -94,6 +95,10 @@ namespace CSharp_laptop.GUI
             this.baoHanhGUI = new BaoHanhGUI(this);
 
             this.phieuNhapGUI = new PhieuNhapGUI();
+
+
+            KhuyenMaiBUS khuyenMaiBUS = new KhuyenMaiBUS();
+            khuyenMaiBUS.KiemTraKhuyenMaiHetHan();
 
         }
         public void OpenChildForm(Form childForm)
@@ -590,5 +595,7 @@ namespace CSharp_laptop.GUI
         {
 
         }
+
+
     }
 }

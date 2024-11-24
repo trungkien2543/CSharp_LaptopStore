@@ -48,5 +48,20 @@ namespace CSharp_laptop.BUS
         {
             return khuyenMaiDAO.DeleteKhuyenMai(id);
         }
+
+        public void KiemTraKhuyenMaiHetHan()
+        {
+            BindingList<KhuyenMaiDTO> l = khuyenMaiDAO.GetKhuyenMaiArr();
+            for (int i = 0; i < l.Count; i++) 
+            {
+                DateTime today = DateTime.Now;
+                DateTime thoiGianKetThucKM = l[i].ThoiGianKetThuc;
+                if (today <= thoiGianKetThucKM)
+                {
+                    khuyenMaiDAO.KiemTraKhuyenMaiHetHan(l[i].IDKM);
+
+                }
+            }
+        }
     }
 }

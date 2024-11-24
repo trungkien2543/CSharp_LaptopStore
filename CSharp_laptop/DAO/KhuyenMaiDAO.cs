@@ -1,5 +1,6 @@
 ﻿using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
+using LaptopStore.DTO;
 using LiveChartsCore.Themes;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
@@ -179,8 +180,27 @@ namespace CSharp_laptop.DAO
                         Console.WriteLine("Không tìm thấy nhân viên với ID đã cho.");
                     }
                 }
+
+                string query2 = "UPDATE loailaptop SET KhuyenMai = NULL WHERE KhuyenMai = @ID_KhuyenMai";
+                using (MySqlCommand cmd = new MySqlCommand(query2, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_KhuyenMai", id);
+                }
             }
             return isSuccess;
+        }
+
+        public void KiemTraKhuyenMaiHetHan(string ID_KhuyenMai)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE loailaptop SET KhuyenMai = NULL WHERE KhuyenMai = @ID_KhuyenMai";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_KhuyenMai", ID_KhuyenMai);
+                }
+            }
         }
     }
 }
