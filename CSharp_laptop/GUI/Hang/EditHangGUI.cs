@@ -28,6 +28,11 @@ namespace CSharp_laptop.GUI
             this.function = function;
             this.id = id;
 
+            if (function == "add")
+            {
+                rjTextBox1.Texts = id;
+            }
+            else
             if (function == "update")
             {
                 loaddata_textbox(id);

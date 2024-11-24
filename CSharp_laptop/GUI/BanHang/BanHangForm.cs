@@ -18,6 +18,8 @@ using System.Text.RegularExpressions;
 using CSharp_laptop.DTO;
 using System.Media;
 using Microsoft.VisualBasic;
+using System.Transactions;
+using MySql.Data.MySqlClient;
 
 
 namespace CSharp_laptop.GUI.BanHang
@@ -50,6 +52,10 @@ namespace CSharp_laptop.GUI.BanHang
 
         private KhachHangBUS KhachHangBUS;
 
+        private HoaDonBUS HoaDonBUS;
+
+        private ChiTietHoaDonBUS ChiTietHoaDonBUS;
+
         private long ThanhTien, TongTien, GiamGia;
 
 
@@ -65,6 +71,10 @@ namespace CSharp_laptop.GUI.BanHang
             LoaiLaptopBUS = new LoaiLaptopBUS();
 
             KhachHangBUS = new KhachHangBUS();
+
+            HoaDonBUS = new HoaDonBUS();
+
+            ChiTietHoaDonBUS = new ChiTietHoaDonBUS();
 
             listSP = new BindingList<LaptopDTO>();
 
@@ -483,6 +493,96 @@ namespace CSharp_laptop.GUI.BanHang
         }
 
         private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new HoaDon(mainForm));
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+
+            // Thêm hóa đơn
+
+
+            // Thêm chi tiết hóa đơn
+
+            // Cập nhật tích điểm cho khách hàng
+
+
+            // Cập nhật trạng thái của laptop
+
+            // Cập nhật số lượng tồn kho
+
+            if (txtID.Text.Equals(""))
+            {
+                MessageBox.Show("Chưa có thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (listSP.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
+            {
+                videoCaptureDevice.SignalToStop();
+                videoCaptureDevice.WaitForStop();
+
+                lblCamera.Visible = false;
+            }
+
+
+
+            // CHAP 1: Tạo đối tượng HoaDonDTO
+            HoaDonDTO hoaDonDTO = new HoaDonDTO
+            {
+                NgayLap = DateTime.Now,
+                MaNV = mainForm.NhanVienDangNhap,
+                MaKH = txtID.Text,
+                TongTien = TongTien
+            };
+
+            // CHAP 2: Tạo danh sách ChiTietHoaDonDTO
+            List<ChiTietHoaDonDTO> chiTietHoaDonList = new List<ChiTietHoaDonDTO>();
+            foreach (var sp in listSP)
+            {
+                ChiTietHoaDonDTO chiTietHoaDon = new ChiTietHoaDonDTO
+                {
+                    IMEI = sp.IMEI,
+                    GiaBan = laptopWithGiaBan[sp.IMEI]
+                };
+                chiTietHoaDonList.Add(chiTietHoaDon);
+            }
+
+            // CHAP 3: Tích điểm
+
+
+            int DiemHienTai = int.Parse(txtTichDiem.Text);
+
+            int DiemGiam = (int)(GiamGia / 1000);
+
+            int DiemThem = (int)(TongTien / 500000);
+
+            int TichDiemTong = DiemHienTai - DiemGiam + DiemThem;
+
+            // CHAP 4: Cập nhật trạng thái sản phẩm
+
+
+            // CHAP 5: Cập nhật số lượng tồn kho
+
+
+
+
+            // Gọi BUS để thêm hóa đơn và chi tiết hóa đơn
+            if (HoaDonBUS.AddHoaDon(hoaDonDTO, chiTietHoaDonList, TichDiemTong))
+            {
+                Reset();
+                MessageBox.Show("Thêm hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
         {
             mainForm.OpenChildForm(new HoaDon(mainForm));
         }

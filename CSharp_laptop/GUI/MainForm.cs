@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using CSharp_laptop.DTO;
 using CSharp_laptop.GUI.BanHang;
 using CSharp_laptop.GUI.Laptop;
 using CustomTabControl;
@@ -53,11 +54,15 @@ namespace CSharp_laptop.GUI
         
         private PhieuNhapGUI phieuNhapGUI;
 
-        public MainForm()
+        public String  NhanVienDangNhap;
+
+        public MainForm(String nhanVienDangNhap)
         {
 
-
             InitializeComponent();
+
+            this.NhanVienDangNhap = nhanVienDangNhap;
+
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);

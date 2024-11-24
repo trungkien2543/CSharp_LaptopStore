@@ -41,11 +41,6 @@ namespace CSharp_laptop.BUS
             return loailaptopDAO.DeleteLaptop(idLaptop);
         }
 
-        public long GetNextID()
-        {
-            return loailaptopDAO.GetNextID();
-        }
-
         public bool UpdateLaptop(LoaiLaptopDTO laptop)
         {
             if (string.IsNullOrEmpty(laptop.TenSP) || laptop.GiaBan <= 0)

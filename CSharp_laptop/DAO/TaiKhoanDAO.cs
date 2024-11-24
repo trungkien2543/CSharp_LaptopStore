@@ -52,6 +52,7 @@ namespace CSharp_laptop.DAO
                 return count > 0;
             }
         }
+
         public bool AddTaiKhoan(TaiKhoanDTO taiKhoan)
         {
             using (MySqlConnection conn = connectionHelper.GetConnection())
@@ -120,6 +121,35 @@ namespace CSharp_laptop.DAO
                 }
             }
         }
+
+        public bool XoaTaiKhoan(string tenDN)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    // Câu lệnh SQL để xóa tài khoản theo TenDN
+                    string query = "DELETE FROM taikhoan WHERE TenDN = @TenDN";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    // Thêm tham số TenDN vào câu lệnh để ngăn chặn SQL Injection
+                    cmd.Parameters.AddWithValue("@TenDN", tenDN);
+
+                    // Thực thi câu lệnh SQL
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    // Nếu số dòng bị ảnh hưởng > 0, xóa thành công
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+
 
 
         public Dictionary<string, string> GetAllQuyen()

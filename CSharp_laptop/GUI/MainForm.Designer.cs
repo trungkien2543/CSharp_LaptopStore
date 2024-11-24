@@ -177,7 +177,7 @@ namespace CSharp_laptop.GUI
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 0);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1353, 813);
+            panelContainer.Size = new Size(1353, 863);
             panelContainer.TabIndex = 2;
             panelContainer.Paint += panelContainer_Paint_1;
             // 
@@ -194,7 +194,7 @@ namespace CSharp_laptop.GUI
             MenuPanel.Location = new Point(12, 7);
             MenuPanel.Name = "MenuPanel";
             MenuPanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            MenuPanel.Size = new Size(175, 794);
+            MenuPanel.Size = new Size(175, 844);
             MenuPanel.TabIndex = 8;
             // 
             // MenuChoice
@@ -213,7 +213,7 @@ namespace CSharp_laptop.GUI
             MenuChoice.Controls.Add(btnSanPham);
             MenuChoice.Location = new Point(0, 120);
             MenuChoice.Name = "MenuChoice";
-            MenuChoice.Size = new Size(175, 600);
+            MenuChoice.Size = new Size(175, 650);
             MenuChoice.TabIndex = 1;
             // 
             // iconButton1
@@ -507,7 +507,7 @@ namespace CSharp_laptop.GUI
             panelDesktop.Controls.Add(label1);
             panelDesktop.Location = new Point(193, 50);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1157, 760);
+            panelDesktop.Size = new Size(1157, 810);
             panelDesktop.TabIndex = 5;
             // 
             // label1
@@ -529,7 +529,7 @@ namespace CSharp_laptop.GUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1353, 813);
+            ClientSize = new Size(1353, 863);
             Controls.Add(panelContainer);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;

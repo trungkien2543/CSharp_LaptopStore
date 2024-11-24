@@ -240,13 +240,13 @@ namespace CustomTabControl
             {
                 // Điều kiện lọc hãng nếu hãng không phải là "Tất cả"
                 string query = @"
-            SELECT 
-                HangSanXuat.TenHang,
-                COUNT(Laptop.IMEI) AS SoLuongTon
-            FROM Laptop
-            JOIN LoaiLaptop ON Laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop
-            JOIN HangSanXuat ON LoaiLaptop.Hang = HangSanXuat.ID_Hang
-            WHERE Laptop.TrangThai = 1";
+                SELECT 
+                    HangSanXuat.TenHang,
+                    COUNT(Laptop.IMEI) AS SoLuongTon
+                FROM Laptop
+                JOIN LoaiLaptop ON Laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop
+                JOIN HangSanXuat ON LoaiLaptop.Hang = HangSanXuat.ID_Hang
+                WHERE Laptop.TrangThai = 0";
 
                 if (brand != "Tất cả")
                 {
@@ -299,9 +299,9 @@ namespace CustomTabControl
             using (var connection = connectionHelper.GetConnection())
             {
                 string query = @"
-            SELECT DISTINCT TenHang
-            FROM HangSanXuat
-            ORDER BY TenHang";
+                SELECT DISTINCT TenHang
+                FROM HangSanXuat
+                ORDER BY TenHang";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 connection.Open();
@@ -329,6 +329,11 @@ namespace CustomTabControl
         }
 
         private void comboBoxYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxYear_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

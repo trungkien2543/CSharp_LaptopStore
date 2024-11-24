@@ -162,24 +162,6 @@ namespace CSharp_laptop.DAO
             }
         }
 
-        public long GetNextID()
-        {
-            long nextId = 1; // Giả định ID bắt đầu từ 1
-            using (MySqlConnection conn = connectionHelper.GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT MAX(IDLoaiLaptop) FROM loailaptop";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                object result = cmd.ExecuteScalar();
-                if (result != DBNull.Value)
-                {
-                    nextId = Convert.ToInt64(result) + 1; // Lấy ID lớn nhất và cộng thêm 1
-                }
-            }
-            return nextId;
-        }
-
         public bool UpdateLoaiLaptop(LoaiLaptopDTO laptop)
         {
             using (MySqlConnection conn = connectionHelper.GetConnection())
@@ -379,5 +361,30 @@ namespace CSharp_laptop.DAO
             }
             return loaiLaptopList;
         }
+
+
+        public static bool CapNhatTonKhoKhiBan(int MaHD, MySqlTransaction transaction)
+        {
+            string query = @"
+                            UPDATE LoaiLaptop
+                            SET SLTonKho = (
+                                SELECT COUNT(laptop.IMEI)
+                                FROM laptop
+                                WHERE laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop AND laptop.TrangThai != 0
+                            )
+                            WHERE IDLoaiLaptop IN (
+                                SELECT laptop.LoaiLaptop
+                                FROM laptop
+                                JOIN chitiethoadon ON chitiethoadon.IMEI = laptop.IMEI
+                                JOIN hoadon ON chitiethoadon.ID_HoaDon = hoadon.ID_HoaDon
+                                WHERE hoadon.ID_HoaDon = @MaHD
+                            );";
+
+            MySqlCommand command = new MySqlCommand(query, transaction.Connection, transaction);
+            command.Parameters.AddWithValue("@MaHD", MaHD);
+
+            return command.ExecuteNonQuery() > 0;
+        }
+
     }
 }

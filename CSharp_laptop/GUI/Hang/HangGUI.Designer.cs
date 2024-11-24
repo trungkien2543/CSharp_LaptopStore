@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HangGUI));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             vbButton1 = new VBButton();
             rjTextBox1 = new RJTextBox();
             artanPanel2 = new ArtanPanel();
@@ -45,6 +48,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(149, 147, 186);
+            panel1.Controls.Add(guna2CircleButton1);
             panel1.Controls.Add(vbButton1);
             panel1.Controls.Add(rjTextBox1);
             panel1.Controls.Add(artanPanel2);
@@ -54,6 +58,30 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1147, 674);
             panel1.TabIndex = 4;
+            // 
+            // guna2CircleButton1
+            // 
+            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2CircleButton1.BackColor = Color.Transparent;
+            guna2CircleButton1.BorderColor = Color.White;
+            guna2CircleButton1.BorderThickness = 1;
+            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton1.FillColor = Color.DeepSkyBlue;
+            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton1.ForeColor = Color.White;
+            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
+            guna2CircleButton1.ImageSize = new Size(25, 25);
+            guna2CircleButton1.Location = new Point(435, 16);
+            guna2CircleButton1.Margin = new Padding(0);
+            guna2CircleButton1.Name = "guna2CircleButton1";
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CircleButton1.Size = new Size(40, 40);
+            guna2CircleButton1.TabIndex = 61;
+            guna2CircleButton1.Click += guna2CircleButton1_Click;
             // 
             // vbButton1
             // 
@@ -190,6 +218,7 @@
             vbButton2.TextColor = Color.White;
             vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             vbButton2.UseVisualStyleBackColor = false;
+            vbButton2.Click += vbButton2_Click;
             // 
             // HangGUI
             // 
@@ -213,5 +242,6 @@
         private RJTextBox rjTextBox1;
         private ArtanPanel artanPanel2;
         private DataGridView dataGridView2;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
     }
 }

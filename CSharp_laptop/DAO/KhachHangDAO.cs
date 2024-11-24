@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace CSharp_laptop.DAO
 {
@@ -100,6 +101,44 @@ namespace CSharp_laptop.DAO
             }
             return khach;
         }
+        public bool DeleteKhachHang(string idKhachHang)
+        {
+            bool isSuccess = false;
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "DELETE FROM `khachhang` WHERE `ID_KhachHang` = @ID_KhachHang";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ID_KhachHang", idKhachHang);
+
+                try
+                {
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    isSuccess = rowsAffected > 0; // Kiểm tra nếu có ít nhất một dòng bị xóa.
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message); // Ghi lại lỗi nếu xảy ra vấn đề.
+                }
+            }
+
+            return isSuccess;
+        }
+
+
+        public static bool TichDiem(string idKhachHang, int TichDiem, MySqlTransaction transaction)
+        {
+
+            string query = "UPDATE khachhang SET TichDiem = @TichDiem WHERE ID_KhachHang = @ID_KhachHang;";
+            MySqlCommand command = new MySqlCommand(query, transaction.Connection, transaction);
+            command.Parameters.AddWithValue("@TichDiem", TichDiem);
+            command.Parameters.AddWithValue("@ID_KhachHang", idKhachHang?? (object)DBNull.Value);
+
+            return command.ExecuteNonQuery() > 0;
+        }
+
 
     }
 }

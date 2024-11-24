@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace CSharp_laptop.GUI
@@ -17,6 +18,10 @@ namespace CSharp_laptop.GUI
     {
         private HangBUS hangBUS = new HangBUS();
         private MainForm mainForm;
+
+        List<HangDTO> hangs;
+
+        string HangID;
 
         String selectedHangID;
         public HangGUI(MainForm mainForm)
@@ -31,7 +36,7 @@ namespace CSharp_laptop.GUI
 
         private void loadHangs()
         {
-            List<HangDTO> hangs = hangBUS.GetHangs();
+            hangs = hangBUS.GetHangs();
             dataGridView2.DataSource = hangs;
         }
 
@@ -66,13 +71,14 @@ namespace CSharp_laptop.GUI
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new EditHangGUI(mainForm, "add", "H"));
+            auto_ID();
+            mainForm.OpenChildForm(new EditHangGUI(mainForm, "add", HangID));
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
-            { 
+            {
 
                 DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
                 string idHang = row.Cells["ID_Hang"].Value.ToString();
@@ -82,7 +88,7 @@ namespace CSharp_laptop.GUI
 
             if (e.ColumnIndex == dataGridView2.Columns["btnEdit"].Index && e.RowIndex >= 0)
             {
-                mainForm.OpenChildForm(new EditHangGUI(mainForm,"update",selectedHangID));
+                mainForm.OpenChildForm(new EditHangGUI(mainForm, "update", selectedHangID));
 
             }
             else if (e.ColumnIndex == dataGridView2.Columns["btnDelete"].Index && e.RowIndex >= 0)
@@ -101,7 +107,26 @@ namespace CSharp_laptop.GUI
                 loadHangs();
             }
 
-            
+
+        }
+
+        private void auto_ID()
+        {
+            int soluong_lap = hangs.Count + 1; // Tính số lượng laptop mới
+
+            if (soluong_lap < 10)
+            {
+                HangID = "H00" + soluong_lap; // Ví dụ: L001, L002...
+            }
+            else if (soluong_lap < 100)
+            {
+                HangID = "H0" + soluong_lap; // Ví dụ: L010, L099...
+            }
+            else
+            {
+                HangID = "H" + soluong_lap; // Ví dụ: L100, L101...
+            }
+
         }
 
         private void TextBox_Enter(object sender, EventArgs e)
@@ -122,6 +147,18 @@ namespace CSharp_laptop.GUI
                 rjTextBox1.Texts = "Tìm kiếm"; // Văn bản hint
                 rjTextBox1.ForeColor = Color.Gray; // Đổi màu chữ sang màu xám
             }
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+            string searchTerm = rjTextBox1.Texts.Trim(); // Lấy từ khóa tìm kiếm từ TextBox
+            DataTable result = hangBUS.SearchHangSanXuat(searchTerm); // Gọi BUS để tìm kiếm
+            dataGridView2.DataSource = result; // Hiển thị dữ liệu lên DataGridView
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            loadHangs();
         }
     }
 }

@@ -185,8 +185,84 @@ namespace CSharp_laptop.DAO
                     Console.WriteLine("Error: " + ex.Message); // Có thể thay thế bằng ghi log.
                 }
             }
-
             return nhanvien;
         }
+        public List<NhanVienDTO> SearchNhanVien(string searchTerm)
+        {
+            List<NhanVienDTO> nhanviens = new List<NhanVienDTO>();
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+                SELECT `ID_NhanVien`, `TenNV`, `NgaySinh`, `SDT`, `DiaChi`, `GioiTinh`, `CCCD`, `Email` 
+                FROM `nhanvien`
+                WHERE 
+                    `TenNV` LIKE @SearchTerm OR
+                    `Email` LIKE @SearchTerm OR
+                    `SDT` LIKE @SearchTerm OR
+                    `DiaChi` LIKE @SearchTerm";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        NhanVienDTO nhanvien = new NhanVienDTO
+                        {
+                            ID_NhanVien = reader["ID_NhanVien"].ToString(),
+                            TenNV = reader["TenNV"].ToString(),
+                            NgaySinh = reader["NgaySinh"].ToString(),
+                            SDT = reader["SDT"].ToString(),
+                            DiaChi = reader["DiaChi"].ToString(),
+                            GioiTinh = reader["GioiTinh"].ToString() == "True",
+                            CCCD = reader["CCCD"].ToString(),
+                            Email = reader["Email"].ToString()
+                        };
+                        nhanviens.Add(nhanvien);
+                    }
+                }
+            }
+
+            return nhanviens;
+        }
+        public List<string> GetNhanVienChuaCoTaiKhoan()
+        {
+            List<string> ids = new List<string>();
+
+            try
+            {
+                using (MySqlConnection conn = connectionHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = @"SELECT ID_NhanVien FROM nhanvien WHERE ID_NhanVien NOT IN (SELECT TenDN FROM taikhoan)";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string id = reader["ID_NhanVien"].ToString();
+                            ids.Add(id);
+
+                            // Debugging: Hiển thị ID trong MessageBox nếu cần thiết
+                            // Bạn có thể bỏ dòng này trong mã sản xuất
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi nếu có sự cố với kết nối hoặc truy vấn
+                MessageBox.Show($"Lỗi: {ex.Message}");
+            }
+
+            return ids;
+        }
+
+
     }
 }

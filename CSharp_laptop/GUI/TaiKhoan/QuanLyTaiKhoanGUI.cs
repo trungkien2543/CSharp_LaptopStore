@@ -13,7 +13,6 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CSharp_laptop.GUI.TaiKhoan;
 using CSharp_laptop.GUI.NhanVien;
 using Guna.UI2.WinForms;
 using CSharp_laptop.DAO;
@@ -54,6 +53,7 @@ namespace CSharp_laptop.GUI
 
             InitializeComponent();
             TaiDuLieuComboBoxQuyen();
+            loadcombobox();
 
             PH = editpanel.Location.Y;
 
@@ -61,27 +61,35 @@ namespace CSharp_laptop.GUI
             hided = true;
 
 
-            
+
+        }
+
+        private void loadcombobox()
+        {
+            NhanVienBUS nhanVienBUS = new NhanVienBUS();
+
+            List<string> ids = nhanVienBUS.GetNhanVienChuaCoTaiKhoan();
+            guna2ComboBox1.Items.Clear();
+            foreach (string id in ids)
+            {
+                guna2ComboBox1.Items.Add(id);
+            }
+
+            if (guna2ComboBox1.Items.Count > 0)
+            {
+                guna2ComboBox1.SelectedIndex = 0;
+            }
         }
 
         private void LoadDataToDataGridView()
         {
-            
+
 
             for (int i = 0; i < nvs.Count; i++)
             {
                 TaiKhoanDTO nv = nvs[i];
                 dataGridView1.Rows.Add(new object[] { nv.TenDN, nv.MatKhau, nv.Quyen });
             }
-        }
-        private void LoadTaiKhoan()
-        {
-
-            //List<TaiKhoanDTO> tk = TaiKhoanBUS.GetAllTaiKhoan();
-            //soluong_tk = (1 + tk.Count).ToString();
-
-            //dataGridView1.DataSource = tk;
-
         }
         private void TaiKhoanGUI_Load(object sender, EventArgs e)
         {
@@ -91,35 +99,18 @@ namespace CSharp_laptop.GUI
             tabControl1.SizeMode = TabSizeMode.Fixed;// Đảm bảo kích thước các tab được cố định, không tự thay đổi
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            mainForm.OpenChildForm(new CreateTaiKhoanGUI(mainForm));
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         private bool IsbtnEditListNameExist(string name)
         {
             // Kiểm tra xem có Button nào trong danh sách có Name khớp với tên cần tìm không
             return btnEditList.Any(btn => btn.Name == name);
         }
+
         private bool IsbtnDelListNameExist(string name)
         {
             // Kiểm tra xem có Button nào trong danh sách có Name khớp với tên cần tìm không
             return btnDelList.Any(btn => btn.Name == name);
         }
+
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
@@ -140,14 +131,39 @@ namespace CSharp_laptop.GUI
             }
 
         }
+
         private void BtnDel_Click(object sender, EventArgs e)
         {
-            Button clickedButton = sender as Button;
+           Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
-                dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
+                int rowIndex = int.Parse(clickedButton.Name);
+                dataGridView1.Rows[rowIndex].Selected = true;
+
+                // Hiển thị thông báo xác nhận
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Nếu người dùng chọn Yes, tiến hành xóa tài khoản
+                if (result == DialogResult.Yes)
+                {
+                    TaiKhoanBUS tk = new TaiKhoanBUS();
+                    bool isDeleted = tk.XoaTaiKhoan(dataGridView1.Rows[rowIndex].Cells[0].Value.ToString());
+
+                    if (isDeleted)
+                    {
+                        reset();
+                        MessageBox.Show("Tài khoản đã được xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Cập nhật lại danh sách tài khoản hoặc làm mới DataGridView nếu cần
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa tài khoản thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
+
         }
+
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns["Column7"].Index && e.RowIndex >= 0)
@@ -246,53 +262,12 @@ namespace CSharp_laptop.GUI
 
         }
 
-
-        private void vbButton2_Click_1(object sender, EventArgs e)
-        {
-            guna2TextBoxID.Text = "";
-            guna2TextBoxTen.Text = "";
-            guna2TextBoxDiem.Text = "";
-            if (hided)
-            {
-                button1.Text = "HIDE";
-                timer1.Start();
-            }
-        }
-
-        private void artanPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void vbButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_SizeChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void artanPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void vbButton1_Click(object sender, EventArgs e)
         {
             //mainForm.OpenChildForm(new CreateTaiKhoanGUI(mainForm));
             tabControl1.SelectedIndex = 1;
+            
+
 
         }
 
@@ -320,6 +295,32 @@ namespace CSharp_laptop.GUI
         private void vbButton4_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
+            reset();
+
+        }
+
+        private void reset()
+        {
+
+            dataGridView1.Rows.Clear();
+
+            // Xóa tất cả các nút trong btnEditList khỏi DataGridView
+            foreach (VBButton btn in btnEditList)
+            {
+                dataGridView1.Controls.Remove(btn); // Xóa khỏi DataGridView
+            }
+            btnEditList.Clear(); // Xóa tất cả các tham chiếu trong danh sách
+
+            // Xóa tất cả các nút trong btnDelList khỏi DataGridView
+            foreach (VBButton btn in btnDelList)
+            {
+                dataGridView1.Controls.Remove(btn); // Xóa khỏi DataGridView
+            }
+            btnDelList.Clear(); // Xóa tất cả các tham chiếu trong danh sách
+            LoadDataToDataGridView();
+            nvs = taiKhoanBUS.GetAllTaiKhoan();
+
+            
         }
         private void TaiDuLieuComboBoxQuyen()
         {
@@ -331,8 +332,10 @@ namespace CSharp_laptop.GUI
 
         private void vbButton3_Click(object sender, EventArgs e)
         {
+           
+
             // Lấy thông tin từ các TextBox và ComboBox
-            string tenDN = rjTextBox2.Texts; // Lấy tên đăng nhập và loại bỏ khoảng trắng
+            string tenDN = guna2ComboBox1.Texts; // Lấy tên đăng nhập và loại bỏ khoảng trắng
             string matKhau = rjTextBox1.Texts; // Lấy mật khẩu và loại bỏ khoảng trắng
             string quyen = ((KeyValuePair<string, string>)rjComboBox2.SelectedItem).Key; // Lấy quyền từ ComboBox
 
@@ -343,14 +346,14 @@ namespace CSharp_laptop.GUI
                 MatKhau = matKhau,
                 Quyen = quyen
             };
-
             bool isAdded = taiKhoanBUS.AddTaiKhoan(taiKhoan);
 
             if (isAdded)
             {
+                reset();
                 MessageBox.Show("Tài khoản đã được thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 rjTextBox1.Text = "";
-                rjTextBox2.Text = ""; // Sử dụng Clear() để xóa nội dung
+               //jTextBox2.Text = ""; // Sử dụng Clear() để xóa nội dung
                 rjComboBox2.SelectedIndex = 0; // Hoặc chọn một giá trị mặc định
             }
             else
@@ -381,17 +384,25 @@ namespace CSharp_laptop.GUI
 
             if (isUpdated)
             {
+                reset();
                 MessageBox.Show("Tài khoản đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Có lỗi xảy ra khi cập nhật tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
             this.Refresh();
+        }
+
+        private void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

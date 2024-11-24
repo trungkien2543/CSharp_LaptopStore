@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_laptop.DTO
 {
-    internal class LaptopDTO
+    public class LaptopDTO
     {
         public string IMEI { get; set; }
         public long ThoiGianBaoHanh { get; set; }

@@ -38,5 +38,15 @@ namespace CSharp_laptop.BUS
         {
             return dao.UpdateNhanVien(nhanvien);
         }
+
+        public List<NhanVienDTO> SearchNhanVien(string searchTerm)
+        {
+            return dao.SearchNhanVien(searchTerm);
+        }
+        public List<string> GetNhanVienChuaCoTaiKhoan()
+        {
+            return dao.GetNhanVienChuaCoTaiKhoan();
+        }
+
     }
 }

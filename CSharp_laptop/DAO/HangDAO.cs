@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -191,6 +192,31 @@ namespace CSharp_laptop.DAO
                     return false;
                 }
             }
+        }
+
+        public DataTable SearchHangSanXuat(string searchTerm)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT * 
+                         FROM hangsanxuat 
+                         WHERE ID_Hang LIKE @SearchTerm 
+                            OR TenHang LIKE @SearchTerm 
+                            OR DiaChi LIKE @SearchTerm 
+                            OR SDT LIKE @SearchTerm";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    // Gắn tham số @SearchTerm
+                    cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+
+                    // Sử dụng DataAdapter để điền dữ liệu vào DataTable
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+            return dt;
         }
 
     }

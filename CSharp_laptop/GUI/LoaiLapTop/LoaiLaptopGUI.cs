@@ -35,6 +35,9 @@ namespace CSharp_laptop.GUI
 
         string selectedLaptopID;
         string soluong_lap;
+
+        string maLaptop;
+
         private MainForm mainForm;
         public LoaiLaptopGUI(MainForm mainForm)
         {
@@ -46,11 +49,6 @@ namespace CSharp_laptop.GUI
             AddButtonsToDataGridView();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
-        }
-
         private void LoadLaptops()
         {
             laptops = laptopBUS.GetLaptops();
@@ -59,6 +57,25 @@ namespace CSharp_laptop.GUI
             dataGridView2.DataSource = laptops;
             TaiDuLieuHang();
             TaiDuLieuKhuyenMai();
+        }
+
+        private void auto_ID()
+        {
+            int soluong_lap = laptops.Count + 1; // Tính số lượng laptop mới
+
+            if (soluong_lap < 10)
+            {
+                maLaptop = "L00" + soluong_lap; // Ví dụ: L001, L002...
+            }
+            else if (soluong_lap < 100)
+            {
+                maLaptop = "L0" + soluong_lap; // Ví dụ: L010, L099...
+            }
+            else
+            {
+                maLaptop = "L" + soluong_lap; // Ví dụ: L100, L101...
+            }
+            
         }
 
         private void edittable()
@@ -119,7 +136,8 @@ namespace CSharp_laptop.GUI
 
         private void vbButton1_Click(object sender, EventArgs e)
         {
-            mainForm.OpenChildForm(new EditLoaiLaptop("L" + soluong_lap, "add", mainForm));
+            auto_ID();
+            mainForm.OpenChildForm(new EditLoaiLaptop(maLaptop, "add", mainForm));
         }
 
 

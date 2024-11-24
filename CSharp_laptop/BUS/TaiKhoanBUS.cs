@@ -41,5 +41,18 @@ namespace CSharp_laptop.BUS
         {
             return dao.GetAllQuyen();
         }
+        public bool XoaTaiKhoan(string tenDN)
+        {
+            try
+            {
+                return dao.XoaTaiKhoan(tenDN); // Gọi DAO để xóa tài khoản
+            }
+            catch (Exception ex)
+            {
+                // Nếu có lỗi trong quá trình xóa tài khoản
+                Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+        }
     }
 }

@@ -124,19 +124,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="guna2CircleButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAbxJREFUWEfVl01OwlAURklgysBEWIKgAzXBsaIOxaGrIboLxWgC/mwA96ADV+Hv
-        TJ2pAzXB873eSBAor7QVPMmJ7et97z4svb1k/hWdTieHG7iL53iBbTvW2DrmLDw5WLSMLXzBUTyjYss2
-        fXxYpIhH+IlR0ZxDLNpy0WDiEt5iXB5xxZb1gwnb+KbZCfGKNVs+HAKXbULSvGP4f4IA3fMHRafEHRYs
-        XT9cPHZh6dKwdL1woYTjfNuj8oULlrYLg3p2/4qmpQ1gQBXOp8iIe/sbBxWrbsXkZNMNj+YKq8FhbKqW
-        3m1gLxgLRcnzWHFn8albereB02BsKJeYt9ikNnDikgtO9FYbxk9ywfEM7kTwGgfRtiWnYwOTuAUtl1xw
-        omZiFG4TmMqXUJ2MD0k+hquW3m1AhUjFwYckCtETZi19AAOTK8WCwTn8cJfTRS+8eUvbCxfUw6XNvqXr
-        h4tqSNQ0pIV6zFlLNxgC0mzJKpYmHAJrmOQmtNaWLe8HExbxRrNjoh7T75P/hokFbOA4rZqeqAMMv+c+
-        sIj6xSb6FCvFKLZk05ODRbOoUlzHM9QPU6mXmcbWsLfCTTeZzDcbJvkytDbp7QAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="guna2CircleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

@@ -32,6 +32,16 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             button1 = new Button();
             label3 = new Label();
             label4 = new Label();
@@ -44,9 +54,7 @@
             artanPanel4 = new ArtanPanel();
             dataGridView2 = new DataGridView();
             artanPanel3 = new ArtanPanel();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            rjTextBox1 = new RJTextBox();
+            tb_timkiem = new Guna.UI2.WinForms.Guna2TextBox();
             vbButton3 = new VBButton();
             vbButton2 = new VBButton();
             label2 = new Label();
@@ -59,13 +67,15 @@
             label7 = new Label();
             label10 = new Label();
             artanPanel1 = new ArtanPanel();
-            rjTextBox5 = new RJTextBox();
-            rjTextBox4 = new RJTextBox();
+            guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            tb_ghichu = new Guna.UI2.WinForms.Guna2TextBox();
+            label19 = new Label();
+            tb_mabh = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             label14 = new Label();
             label15 = new Label();
             label16 = new Label();
             vbButton1 = new VBButton();
-            label19 = new Label();
             panel1.SuspendLayout();
             artanPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -99,7 +109,7 @@
             label3.BackColor = Color.FromArgb(0, 0, 0, 0);
             label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(74, 12);
+            label3.Location = new Point(70, 32);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(180, 30);
@@ -113,7 +123,7 @@
             label4.BackColor = Color.FromArgb(0, 0, 0, 0);
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(74, 111);
+            label4.Location = new Point(70, 131);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(122, 30);
@@ -127,7 +137,7 @@
             label5.BackColor = Color.FromArgb(0, 0, 0, 0);
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(74, 161);
+            label5.Location = new Point(70, 181);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(199, 30);
@@ -141,7 +151,7 @@
             label8.BackColor = Color.FromArgb(0, 0, 0, 0);
             label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(74, 310);
+            label8.Location = new Point(70, 330);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(112, 30);
@@ -155,7 +165,7 @@
             label13.BackColor = Color.FromArgb(0, 0, 0, 0);
             label13.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(307, 111);
+            label13.Location = new Point(303, 131);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
             label13.Size = new Size(103, 30);
@@ -169,7 +179,7 @@
             label12.BackColor = Color.FromArgb(0, 0, 0, 0);
             label12.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(307, 161);
+            label12.Location = new Point(303, 181);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
             label12.Size = new Size(101, 30);
@@ -183,7 +193,7 @@
             label9.BackColor = Color.FromArgb(0, 0, 0, 0);
             label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(307, 310);
+            label9.Location = new Point(303, 330);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(163, 30);
@@ -203,7 +213,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1219, 695);
+            panel1.Size = new Size(1219, 751);
             panel1.TabIndex = 2;
             // 
             // artanPanel4
@@ -216,10 +226,10 @@
             artanPanel4.GradientAngle = 30F;
             artanPanel4.GradientBottomColor = Color.FromArgb(85, 81, 132);
             artanPanel4.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel4.Location = new Point(10, 383);
+            artanPanel4.Location = new Point(10, 441);
             artanPanel4.Name = "artanPanel4";
             artanPanel4.Padding = new Padding(4, 0, 4, 15);
-            artanPanel4.Size = new Size(623, 312);
+            artanPanel4.Size = new Size(623, 310);
             artanPanel4.TabIndex = 48;
             // 
             // dataGridView2
@@ -267,7 +277,7 @@
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(615, 297);
+            dataGridView2.Size = new Size(615, 295);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -276,7 +286,7 @@
             artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel3.BackColor = Color.White;
             artanPanel3.BorderRadius = 30;
-            artanPanel3.Controls.Add(rjTextBox1);
+            artanPanel3.Controls.Add(tb_timkiem);
             artanPanel3.Controls.Add(vbButton3);
             artanPanel3.Controls.Add(vbButton2);
             artanPanel3.Controls.Add(label2);
@@ -288,46 +298,34 @@
             artanPanel3.Location = new Point(10, 14);
             artanPanel3.Margin = new Padding(4, 3, 4, 3);
             artanPanel3.Name = "artanPanel3";
-            artanPanel3.Size = new Size(623, 363);
+            artanPanel3.Size = new Size(623, 421);
             artanPanel3.TabIndex = 47;
             // 
-            // dateTimePicker2
+            // tb_timkiem
             // 
-            dateTimePicker2.CalendarFont = new Font("Segoe UI", 12F);
-            dateTimePicker2.Location = new Point(241, 131);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(287, 23);
-            dateTimePicker2.TabIndex = 51;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.CalendarFont = new Font("Segoe UI", 12F);
-            dateTimePicker1.Location = new Point(241, 79);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(287, 23);
-            dateTimePicker1.TabIndex = 50;
-            // 
-            // rjTextBox1
-            // 
-            rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.FromArgb(247, 176, 118);
-            rjTextBox1.BorderFocusColor = Color.FromArgb(85, 81, 132);
-            rjTextBox1.BorderRadius = 5;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(21, 150);
-            rjTextBox1.Margin = new Padding(4);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = Color.DarkGray;
-            rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(287, 31);
-            rjTextBox1.TabIndex = 49;
-            rjTextBox1.Texts = "";
-            rjTextBox1.UnderlinedStyle = false;
+            tb_timkiem.BackColor = Color.Transparent;
+            tb_timkiem.BorderColor = Color.FromArgb(247, 176, 118);
+            tb_timkiem.BorderRadius = 5;
+            tb_timkiem.BorderThickness = 2;
+            tb_timkiem.CustomizableEdges = customizableEdges1;
+            tb_timkiem.DefaultText = "";
+            tb_timkiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_timkiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_timkiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_timkiem.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_timkiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_timkiem.Font = new Font("Segoe UI", 12F);
+            tb_timkiem.ForeColor = Color.Black;
+            tb_timkiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_timkiem.Location = new Point(20, 139);
+            tb_timkiem.Margin = new Padding(4);
+            tb_timkiem.Name = "tb_timkiem";
+            tb_timkiem.PasswordChar = '\0';
+            tb_timkiem.PlaceholderText = "";
+            tb_timkiem.SelectedText = "";
+            tb_timkiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            tb_timkiem.Size = new Size(303, 42);
+            tb_timkiem.TabIndex = 52;
             // 
             // vbButton3
             // 
@@ -429,7 +427,7 @@
             artanPanel2.Location = new Point(640, 14);
             artanPanel2.Margin = new Padding(4, 3, 4, 3);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Size = new Size(569, 363);
+            artanPanel2.Size = new Size(569, 421);
             artanPanel2.TabIndex = 46;
             // 
             // label17
@@ -439,7 +437,7 @@
             label17.BackColor = Color.FromArgb(0, 0, 0, 0);
             label17.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label17.ForeColor = Color.White;
-            label17.Location = new Point(74, 259);
+            label17.Location = new Point(70, 279);
             label17.Margin = new Padding(4, 0, 4, 0);
             label17.Name = "label17";
             label17.Size = new Size(152, 30);
@@ -453,7 +451,7 @@
             label18.BackColor = Color.FromArgb(0, 0, 0, 0);
             label18.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(307, 259);
+            label18.Location = new Point(303, 279);
             label18.Margin = new Padding(4, 0, 4, 0);
             label18.Name = "label18";
             label18.Size = new Size(103, 30);
@@ -468,7 +466,7 @@
             label6.BackColor = Color.FromArgb(0, 0, 0, 0);
             label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(74, 210);
+            label6.Location = new Point(70, 230);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(146, 30);
@@ -482,7 +480,7 @@
             label11.BackColor = Color.FromArgb(0, 0, 0, 0);
             label11.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(307, 210);
+            label11.Location = new Point(303, 230);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(103, 30);
@@ -497,7 +495,7 @@
             label7.BackColor = Color.FromArgb(0, 0, 0, 0);
             label7.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(74, 62);
+            label7.Location = new Point(70, 82);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(58, 30);
@@ -511,7 +509,7 @@
             label10.BackColor = Color.FromArgb(0, 0, 0, 0);
             label10.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(307, 62);
+            label10.Location = new Point(303, 82);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(61, 30);
@@ -523,11 +521,11 @@
             artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             artanPanel1.BackColor = Color.White;
             artanPanel1.BorderRadius = 30;
+            artanPanel1.Controls.Add(guna2DateTimePicker2);
+            artanPanel1.Controls.Add(tb_ghichu);
             artanPanel1.Controls.Add(label19);
-            artanPanel1.Controls.Add(dateTimePicker2);
-            artanPanel1.Controls.Add(rjTextBox5);
-            artanPanel1.Controls.Add(dateTimePicker1);
-            artanPanel1.Controls.Add(rjTextBox4);
+            artanPanel1.Controls.Add(tb_mabh);
+            artanPanel1.Controls.Add(guna2DateTimePicker1);
             artanPanel1.Controls.Add(label14);
             artanPanel1.Controls.Add(label15);
             artanPanel1.Controls.Add(label16);
@@ -536,57 +534,117 @@
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.FromArgb(85, 81, 132);
             artanPanel1.GradientTopColor = Color.FromArgb(149, 147, 186);
-            artanPanel1.Location = new Point(640, 383);
+            artanPanel1.Location = new Point(640, 441);
             artanPanel1.Margin = new Padding(4, 3, 4, 3);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(569, 309);
+            artanPanel1.Size = new Size(569, 307);
             artanPanel1.TabIndex = 45;
             // 
-            // rjTextBox5
+            // guna2DateTimePicker2
             // 
-            rjTextBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            rjTextBox5.BackColor = SystemColors.Window;
-            rjTextBox5.BorderColor = Color.FromArgb(247, 176, 118);
-            rjTextBox5.BorderFocusColor = Color.FromArgb(85, 81, 132);
-            rjTextBox5.BorderRadius = 5;
-            rjTextBox5.BorderSize = 2;
-            rjTextBox5.Font = new Font("Microsoft Sans Serif", 12F);
-            rjTextBox5.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox5.Location = new Point(241, 14);
-            rjTextBox5.Margin = new Padding(4);
-            rjTextBox5.Multiline = false;
-            rjTextBox5.Name = "rjTextBox5";
-            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox5.PasswordChar = false;
-            rjTextBox5.PlaceholderColor = Color.DarkGray;
-            rjTextBox5.PlaceholderText = "";
-            rjTextBox5.Size = new Size(287, 35);
-            rjTextBox5.TabIndex = 48;
-            rjTextBox5.Texts = "";
-            rjTextBox5.UnderlinedStyle = false;
+            guna2DateTimePicker2.BackColor = Color.Transparent;
+            guna2DateTimePicker2.BorderRadius = 5;
+            guna2DateTimePicker2.Checked = true;
+            guna2DateTimePicker2.CustomizableEdges = customizableEdges3;
+            guna2DateTimePicker2.FillColor = Color.FromArgb(247, 176, 118);
+            guna2DateTimePicker2.Font = new Font("Segoe UI", 12F);
+            guna2DateTimePicker2.ForeColor = Color.White;
+            guna2DateTimePicker2.Format = DateTimePickerFormat.Long;
+            guna2DateTimePicker2.Location = new Point(241, 131);
+            guna2DateTimePicker2.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            guna2DateTimePicker2.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            guna2DateTimePicker2.Name = "guna2DateTimePicker2";
+            guna2DateTimePicker2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2DateTimePicker2.Size = new Size(287, 36);
+            guna2DateTimePicker2.TabIndex = 54;
+            guna2DateTimePicker2.Value = new DateTime(2024, 11, 24, 15, 38, 16, 112);
             // 
-            // rjTextBox4
+            // tb_ghichu
             // 
-            rjTextBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            rjTextBox4.BackColor = SystemColors.Window;
-            rjTextBox4.BorderColor = Color.FromArgb(247, 176, 118);
-            rjTextBox4.BorderFocusColor = Color.FromArgb(85, 81, 132);
-            rjTextBox4.BorderRadius = 5;
-            rjTextBox4.BorderSize = 2;
-            rjTextBox4.Font = new Font("Microsoft Sans Serif", 12F);
-            rjTextBox4.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox4.Location = new Point(241, 190);
-            rjTextBox4.Margin = new Padding(4);
-            rjTextBox4.Multiline = false;
-            rjTextBox4.Name = "rjTextBox4";
-            rjTextBox4.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox4.PasswordChar = false;
-            rjTextBox4.PlaceholderColor = Color.DarkGray;
-            rjTextBox4.PlaceholderText = "";
-            rjTextBox4.Size = new Size(287, 35);
-            rjTextBox4.TabIndex = 47;
-            rjTextBox4.Texts = "";
-            rjTextBox4.UnderlinedStyle = false;
+            tb_ghichu.BackColor = Color.Transparent;
+            tb_ghichu.BorderColor = Color.FromArgb(247, 176, 118);
+            tb_ghichu.BorderRadius = 5;
+            tb_ghichu.BorderThickness = 2;
+            tb_ghichu.CustomizableEdges = customizableEdges5;
+            tb_ghichu.DefaultText = "";
+            tb_ghichu.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_ghichu.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_ghichu.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_ghichu.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_ghichu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_ghichu.Font = new Font("Segoe UI", 12F);
+            tb_ghichu.ForeColor = Color.Black;
+            tb_ghichu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_ghichu.Location = new Point(241, 190);
+            tb_ghichu.Margin = new Padding(4);
+            tb_ghichu.Name = "tb_ghichu";
+            tb_ghichu.PasswordChar = '\0';
+            tb_ghichu.PlaceholderText = "";
+            tb_ghichu.SelectedText = "";
+            tb_ghichu.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            tb_ghichu.Size = new Size(287, 36);
+            tb_ghichu.TabIndex = 51;
+            // 
+            // label19
+            // 
+            label19.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label19.AutoSize = true;
+            label19.BackColor = Color.FromArgb(0, 0, 0, 0);
+            label19.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(32, 19);
+            label19.Margin = new Padding(4, 0, 4, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(143, 30);
+            label19.TabIndex = 52;
+            label19.Text = "Mã bảo hành";
+            // 
+            // tb_mabh
+            // 
+            tb_mabh.BackColor = Color.Transparent;
+            tb_mabh.BorderColor = Color.FromArgb(247, 176, 118);
+            tb_mabh.BorderRadius = 5;
+            tb_mabh.BorderThickness = 2;
+            tb_mabh.CustomizableEdges = customizableEdges7;
+            tb_mabh.DefaultText = "";
+            tb_mabh.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_mabh.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_mabh.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_mabh.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_mabh.Enabled = false;
+            tb_mabh.FillColor = Color.Gainsboro;
+            tb_mabh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_mabh.Font = new Font("Segoe UI", 12F);
+            tb_mabh.ForeColor = Color.Black;
+            tb_mabh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_mabh.Location = new Point(241, 19);
+            tb_mabh.Margin = new Padding(4);
+            tb_mabh.Name = "tb_mabh";
+            tb_mabh.PasswordChar = '\0';
+            tb_mabh.PlaceholderText = "";
+            tb_mabh.SelectedText = "";
+            tb_mabh.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            tb_mabh.Size = new Size(287, 36);
+            tb_mabh.TabIndex = 50;
+            // 
+            // guna2DateTimePicker1
+            // 
+            guna2DateTimePicker1.BackColor = Color.Transparent;
+            guna2DateTimePicker1.BorderRadius = 5;
+            guna2DateTimePicker1.Checked = true;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges9;
+            guna2DateTimePicker1.FillColor = Color.FromArgb(247, 176, 118);
+            guna2DateTimePicker1.Font = new Font("Segoe UI", 12F);
+            guna2DateTimePicker1.ForeColor = Color.White;
+            guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
+            guna2DateTimePicker1.Location = new Point(241, 72);
+            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2DateTimePicker1.Size = new Size(287, 36);
+            guna2DateTimePicker1.TabIndex = 53;
+            guna2DateTimePicker1.Value = new DateTime(2024, 11, 24, 15, 38, 16, 112);
             // 
             // label14
             // 
@@ -655,25 +713,11 @@
             vbButton1.UseVisualStyleBackColor = false;
             vbButton1.Click += vbButton1_Click_1;
             // 
-            // label19
-            // 
-            label19.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label19.AutoSize = true;
-            label19.BackColor = Color.FromArgb(0, 0, 0, 0);
-            label19.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(32, 19);
-            label19.Margin = new Padding(4, 0, 4, 0);
-            label19.Name = "label19";
-            label19.Size = new Size(143, 30);
-            label19.TabIndex = 52;
-            label19.Text = "Mã bảo hành";
-            // 
             // BaoHanhGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1229, 703);
+            ClientSize = new Size(1229, 759);
             Controls.Add(panel1);
             Margin = new Padding(4, 3, 4, 3);
             Name = "BaoHanhGUI";
@@ -703,12 +747,10 @@
         private ArtanPanel artanPanel3;
         private ArtanPanel artanPanel2;
         private ArtanPanel artanPanel1;
-        private RJTextBox rjTextBox4;
         private Label label14;
         private Label label15;
         private Label label16;
         private VBButton vbButton1;
-        private RJTextBox rjTextBox1;
         private VBButton vbButton3;
         private VBButton vbButton2;
         private Label label2;
@@ -721,9 +763,11 @@
         private Label label18;
         private Label label6;
         private Label label11;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private RJTextBox rjTextBox5;
         private Label label19;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2TextBox tb_timkiem;
+        private Guna.UI2.WinForms.Guna2TextBox tb_ghichu;
+        private Guna.UI2.WinForms.Guna2TextBox tb_mabh;
     }
 }

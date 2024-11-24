@@ -2,9 +2,11 @@
 using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CSharp_laptop.BUS
 {
@@ -45,6 +47,11 @@ namespace CSharp_laptop.BUS
         public bool DeleteHangSanXuat(string idHang)
         {
             return hangDAO.DeleteHangSanXuat(idHang);
+        }
+
+        public DataTable SearchHangSanXuat(string searchTerm)
+        {
+            return hangDAO.SearchHangSanXuat(searchTerm);
         }
     }
 }
