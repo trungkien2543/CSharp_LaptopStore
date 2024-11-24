@@ -52,6 +52,8 @@ namespace CSharp_laptop.GUI
             dataGridView1.Rows.Clear();
             dataGridView1.Controls.Clear();
             dataGridView1.Refresh();
+
+            dtos = bus.getAllKhachHang();
             for (int i = 0; i < dtos.Count; i++)
             {
                 KhachHangDTO kh = dtos[i];
@@ -119,6 +121,30 @@ namespace CSharp_laptop.GUI
             if (clickedButton != null)
             {
                 dataGridView1.Rows[int.Parse(clickedButton.Name)].Selected = true;
+
+                int rowIndex = int.Parse(clickedButton.Name);
+
+                String ma = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa khách hàng " + ma, "Xóa Khách hàng", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    if (bus.DeleteKhachHang(ma))
+                    {
+                        MessageBox.Show("Xóa Thành Công!");
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Xóa Ko Thành Công!");
+                    }
+                    LoadTable();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+
+                }
+
             }
         }
 
