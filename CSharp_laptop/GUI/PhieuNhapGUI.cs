@@ -186,18 +186,30 @@ namespace CSharp_laptop.GUI
                     return false;
                 }
             }
+            LaptopBUS abc = new LaptopBUS();
+            List<LaptopDTO> lltArr = new List<LaptopDTO>();
+            //lltArr = abc.get();
+            for (int i = 0; i < lltArr.Count; i++)
+            {
+                if (imei == lltArr[i].)
+                {
+                    text_mess1.Text = "IMEI đã tồn tại";
+                    return false;
+                }
+            }
             //Thiếu kiểm tra IMEI ở laptop
             text_mess1.Text = "";
             return true;
         }
 
+        //--------------------------//
+        //tabControl2
 
         private int idPN;
         int tgBaoHanh;
         private PhieuNhapDTO phieuNhap;
         private BindingList<LoaiLapPnDTO> lltList = new BindingList<LoaiLapPnDTO>();
 
-        //private LoaiLaptopPhieuNhapDTO lltpn;
         private void But_sp_Click(object sender, EventArgs e)
         {
             string selectedValue = combobox_ll.SelectedValue.ToString();

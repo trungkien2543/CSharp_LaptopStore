@@ -39,7 +39,7 @@ namespace CSharp_laptop.GUI
 
         }
         //--------------------------//
-        //tabControl0
+        //tabControl1
         private void tk_but_Click(object sender, EventArgs e)
         {
 
@@ -130,7 +130,7 @@ namespace CSharp_laptop.GUI
 
 
         //--------------------------//
-        //tabControl1
+        //tabControl2
         private void huy_but_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
