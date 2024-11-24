@@ -42,6 +42,46 @@ namespace CSharp_laptop.DAO
             }
             return result;
         }
+        public List<HoaDonDTO> FindWithCondition(string find, DateTime From, DateTime To)
+        {
+            List<HoaDonDTO> result = new();
+            using (MySqlConnection connection = connectionHelper.GetConnection())
+            {
+                string query = @"
+            SELECT * 
+            FROM hoadon 
+            WHERE 
+                (hoadon.ID_HoaDon LIKE @FIND 
+                OR hoadon.MaNV LIKE @FIND 
+                OR hoadon.MaKH LIKE @FIND) 
+                AND hoadon.NgayLap BETWEEN @From AND @To;";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@FIND", "%" + find + "%");
+                command.Parameters.AddWithValue("@From", From);
+                command.Parameters.AddWithValue("@To", To);
+
+                connection.Open();
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        HoaDonDTO hoadon = new HoaDonDTO
+                        {
+                            ID_HoaDon = Convert.ToInt64(reader["ID_HoaDon"]),
+                            MaNV = reader["MaNV"]?.ToString(),
+                            MaKH = reader["MaKH"]?.ToString(),
+                            NgayLap = reader["NgayLap"] == DBNull.Value ? null : Convert.ToDateTime(reader["NgayLap"]),
+                            TongTien = reader["TongTien"] == DBNull.Value ? null : Convert.ToInt64(reader["TongTien"])
+                        };
+                        result.Add(hoadon);
+                    }
+                }
+            }
+            return result;
+        }
+
+
 
         public static int AddHoaDon(HoaDonDTO hoaDonDTO, MySqlTransaction transaction)
         {

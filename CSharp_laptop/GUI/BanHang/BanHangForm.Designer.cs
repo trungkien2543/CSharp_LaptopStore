@@ -43,12 +43,8 @@ namespace CSharp_laptop.GUI.BanHang
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHangForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -59,11 +55,11 @@ namespace CSharp_laptop.GUI.BanHang
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -73,6 +69,11 @@ namespace CSharp_laptop.GUI.BanHang
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHangForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -82,8 +83,6 @@ namespace CSharp_laptop.GUI.BanHang
             cbxCamera = new Guna.UI2.WinForms.Guna2ComboBox();
             dataGridView2 = new DataGridView();
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             txtTienThoi = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -102,6 +101,8 @@ namespace CSharp_laptop.GUI.BanHang
             txtID = new Guna.UI2.WinForms.Guna2TextBox();
             txtKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
             txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             guna2GradientPanel2.SuspendLayout();
@@ -279,7 +280,7 @@ namespace CSharp_laptop.GUI.BanHang
             // guna2GradientPanel2
             // 
             guna2GradientPanel2.BorderRadius = 12;
-            guna2GradientPanel2.Controls.Add(guna2CircleButton3);
+            guna2GradientPanel2.Controls.Add(guna2Button4);
             guna2GradientPanel2.Controls.Add(guna2CircleButton1);
             guna2GradientPanel2.Controls.Add(guna2CircleButton2);
             guna2GradientPanel2.Controls.Add(txtTienThoi);
@@ -292,7 +293,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2GradientPanel2.Controls.Add(guna2HtmlLabel4);
             guna2GradientPanel2.Controls.Add(txtThanhTien);
             guna2GradientPanel2.Controls.Add(guna2HtmlLabel3);
-            guna2GradientPanel2.CustomizableEdges = customizableEdges24;
+            guna2GradientPanel2.CustomizableEdges = customizableEdges25;
             guna2GradientPanel2.Dock = DockStyle.Right;
             guna2GradientPanel2.FillColor = Color.FromArgb(85, 81, 132);
             guna2GradientPanel2.FillColor2 = Color.FromArgb(210, 220, 230);
@@ -300,57 +301,9 @@ namespace CSharp_laptop.GUI.BanHang
             guna2GradientPanel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             guna2GradientPanel2.Location = new Point(847, 0);
             guna2GradientPanel2.Name = "guna2GradientPanel2";
-            guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2GradientPanel2.Size = new Size(294, 721);
             guna2GradientPanel2.TabIndex = 46;
-            // 
-            // guna2CircleButton3
-            // 
-            guna2CircleButton3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2CircleButton3.BackColor = Color.Transparent;
-            guna2CircleButton3.BorderColor = Color.White;
-            guna2CircleButton3.BorderThickness = 1;
-            guna2CircleButton3.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton3.FillColor = Color.FromArgb(85, 81, 132);
-            guna2CircleButton3.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton3.ForeColor = Color.White;
-            guna2CircleButton3.Image = (Image)resources.GetObject("guna2CircleButton3.Image");
-            guna2CircleButton3.ImageOffset = new Point(1, 0);
-            guna2CircleButton3.ImageSize = new Size(30, 30);
-            guna2CircleButton3.Location = new Point(216, 573);
-            guna2CircleButton3.Name = "guna2CircleButton3";
-            guna2CircleButton3.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton3.Size = new Size(75, 75);
-            guna2CircleButton3.TabIndex = 61;
-            guna2CircleButton3.Click += guna2CircleButton3_Click;
-            // 
-            // guna2CircleButton1
-            // 
-            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2CircleButton1.BackColor = Color.Transparent;
-            guna2CircleButton1.BorderColor = Color.White;
-            guna2CircleButton1.BorderThickness = 1;
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.FillColor = Color.DeepSkyBlue;
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
-            guna2CircleButton1.ImageOffset = new Point(1, 0);
-            guna2CircleButton1.ImageSize = new Size(30, 30);
-            guna2CircleButton1.Location = new Point(108, 574);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(75, 75);
-            guna2CircleButton1.TabIndex = 60;
-            guna2CircleButton1.Click += guna2CircleButton1_Click;
             // 
             // guna2CircleButton2
             // 
@@ -368,9 +321,9 @@ namespace CSharp_laptop.GUI.BanHang
             guna2CircleButton2.Image = Properties.Resources.diskette;
             guna2CircleButton2.ImageOffset = new Point(1, 0);
             guna2CircleButton2.ImageSize = new Size(30, 30);
-            guna2CircleButton2.Location = new Point(8, 574);
+            guna2CircleButton2.Location = new Point(45, 574);
             guna2CircleButton2.Name = "guna2CircleButton2";
-            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton2.Size = new Size(75, 75);
             guna2CircleButton2.TabIndex = 17;
@@ -380,7 +333,7 @@ namespace CSharp_laptop.GUI.BanHang
             // 
             txtTienThoi.BackColor = Color.Transparent;
             txtTienThoi.BorderRadius = 10;
-            txtTienThoi.CustomizableEdges = customizableEdges14;
+            txtTienThoi.CustomizableEdges = customizableEdges15;
             txtTienThoi.DefaultText = "";
             txtTienThoi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTienThoi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -397,7 +350,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtTienThoi.PasswordChar = '\0';
             txtTienThoi.PlaceholderText = "";
             txtTienThoi.SelectedText = "";
-            txtTienThoi.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            txtTienThoi.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtTienThoi.Size = new Size(284, 63);
             txtTienThoi.TabIndex = 59;
             txtTienThoi.TextChanged += guna2TextBox2_TextChanged;
@@ -417,7 +370,7 @@ namespace CSharp_laptop.GUI.BanHang
             // 
             txtKhachDua.BackColor = Color.Transparent;
             txtKhachDua.BorderRadius = 10;
-            txtKhachDua.CustomizableEdges = customizableEdges16;
+            txtKhachDua.CustomizableEdges = customizableEdges17;
             txtKhachDua.DefaultText = "";
             txtKhachDua.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtKhachDua.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -434,7 +387,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtKhachDua.PasswordChar = '\0';
             txtKhachDua.PlaceholderText = "";
             txtKhachDua.SelectedText = "";
-            txtKhachDua.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            txtKhachDua.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtKhachDua.Size = new Size(284, 63);
             txtKhachDua.TabIndex = 57;
             txtKhachDua.KeyDown += txtKhachDua_KeyDown;
@@ -454,7 +407,7 @@ namespace CSharp_laptop.GUI.BanHang
             // 
             txtTongTien.BackColor = Color.Transparent;
             txtTongTien.BorderRadius = 10;
-            txtTongTien.CustomizableEdges = customizableEdges18;
+            txtTongTien.CustomizableEdges = customizableEdges19;
             txtTongTien.DefaultText = "";
             txtTongTien.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTongTien.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -471,7 +424,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtTongTien.PasswordChar = '\0';
             txtTongTien.PlaceholderText = "";
             txtTongTien.SelectedText = "";
-            txtTongTien.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            txtTongTien.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtTongTien.Size = new Size(284, 63);
             txtTongTien.TabIndex = 55;
             // 
@@ -490,7 +443,7 @@ namespace CSharp_laptop.GUI.BanHang
             // 
             txtGiamGia.BackColor = Color.Transparent;
             txtGiamGia.BorderRadius = 10;
-            txtGiamGia.CustomizableEdges = customizableEdges20;
+            txtGiamGia.CustomizableEdges = customizableEdges21;
             txtGiamGia.DefaultText = "";
             txtGiamGia.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtGiamGia.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -507,7 +460,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtGiamGia.PasswordChar = '\0';
             txtGiamGia.PlaceholderText = "";
             txtGiamGia.SelectedText = "";
-            txtGiamGia.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            txtGiamGia.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtGiamGia.Size = new Size(284, 63);
             txtGiamGia.TabIndex = 53;
             // 
@@ -526,7 +479,7 @@ namespace CSharp_laptop.GUI.BanHang
             // 
             txtThanhTien.BackColor = Color.Transparent;
             txtThanhTien.BorderRadius = 10;
-            txtThanhTien.CustomizableEdges = customizableEdges22;
+            txtThanhTien.CustomizableEdges = customizableEdges23;
             txtThanhTien.DefaultText = "";
             txtThanhTien.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtThanhTien.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -543,7 +496,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtThanhTien.PasswordChar = '\0';
             txtThanhTien.PlaceholderText = "";
             txtThanhTien.SelectedText = "";
-            txtThanhTien.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            txtThanhTien.ShadowDecoration.CustomizableEdges = customizableEdges24;
             txtThanhTien.Size = new Size(284, 63);
             txtThanhTien.TabIndex = 51;
             // 
@@ -563,12 +516,12 @@ namespace CSharp_laptop.GUI.BanHang
             guna2GradientPanel3.BorderRadius = 12;
             guna2GradientPanel3.Controls.Add(guna2GradientPanel4);
             guna2GradientPanel3.Controls.Add(guna2GradientPanel1);
-            guna2GradientPanel3.CustomizableEdges = customizableEdges38;
+            guna2GradientPanel3.CustomizableEdges = customizableEdges39;
             guna2GradientPanel3.Dock = DockStyle.Fill;
             guna2GradientPanel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel3.Location = new Point(0, 0);
             guna2GradientPanel3.Name = "guna2GradientPanel3";
-            guna2GradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges39;
+            guna2GradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges40;
             guna2GradientPanel3.Size = new Size(847, 721);
             guna2GradientPanel3.TabIndex = 47;
             // 
@@ -580,12 +533,12 @@ namespace CSharp_laptop.GUI.BanHang
             guna2GradientPanel4.Controls.Add(txtID);
             guna2GradientPanel4.Controls.Add(txtKhachHang);
             guna2GradientPanel4.Controls.Add(txtDiaChi);
-            guna2GradientPanel4.CustomizableEdges = customizableEdges36;
+            guna2GradientPanel4.CustomizableEdges = customizableEdges37;
             guna2GradientPanel4.Dock = DockStyle.Bottom;
             guna2GradientPanel4.FillColor = Color.FromArgb(85, 81, 132);
             guna2GradientPanel4.Location = new Point(0, 545);
             guna2GradientPanel4.Name = "guna2GradientPanel4";
-            guna2GradientPanel4.ShadowDecoration.CustomizableEdges = customizableEdges37;
+            guna2GradientPanel4.ShadowDecoration.CustomizableEdges = customizableEdges38;
             guna2GradientPanel4.Size = new Size(847, 176);
             guna2GradientPanel4.TabIndex = 46;
             // 
@@ -594,7 +547,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtTichDiem.BackColor = Color.Transparent;
             txtTichDiem.BorderRadius = 10;
             txtTichDiem.BorderThickness = 2;
-            txtTichDiem.CustomizableEdges = customizableEdges26;
+            txtTichDiem.CustomizableEdges = customizableEdges27;
             txtTichDiem.DefaultText = "";
             txtTichDiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTichDiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -612,7 +565,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtTichDiem.PlaceholderForeColor = Color.Gray;
             txtTichDiem.PlaceholderText = "Tính Điểm";
             txtTichDiem.SelectedText = "";
-            txtTichDiem.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            txtTichDiem.ShadowDecoration.CustomizableEdges = customizableEdges28;
             txtTichDiem.Size = new Size(342, 38);
             txtTichDiem.TabIndex = 18;
             // 
@@ -623,7 +576,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtSDT.BackColor = Color.Transparent;
             txtSDT.BorderRadius = 10;
             txtSDT.BorderThickness = 2;
-            txtSDT.CustomizableEdges = customizableEdges28;
+            txtSDT.CustomizableEdges = customizableEdges29;
             txtSDT.DefaultText = "";
             txtSDT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSDT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -640,7 +593,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtSDT.PlaceholderForeColor = Color.Gray;
             txtSDT.PlaceholderText = "Số Điện Thoại";
             txtSDT.SelectedText = "";
-            txtSDT.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            txtSDT.ShadowDecoration.CustomizableEdges = customizableEdges30;
             txtSDT.Size = new Size(473, 38);
             txtSDT.TabIndex = 15;
             txtSDT.TextChanged += txtSDT_TextChanged;
@@ -652,7 +605,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtID.BackColor = Color.Transparent;
             txtID.BorderRadius = 10;
             txtID.BorderThickness = 2;
-            txtID.CustomizableEdges = customizableEdges30;
+            txtID.CustomizableEdges = customizableEdges31;
             txtID.DefaultText = "";
             txtID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -670,7 +623,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtID.PlaceholderForeColor = Color.Gray;
             txtID.PlaceholderText = "ID Khách Hàng";
             txtID.SelectedText = "";
-            txtID.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            txtID.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtID.Size = new Size(342, 38);
             txtID.TabIndex = 13;
             // 
@@ -679,7 +632,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtKhachHang.BackColor = Color.Transparent;
             txtKhachHang.BorderRadius = 10;
             txtKhachHang.BorderThickness = 2;
-            txtKhachHang.CustomizableEdges = customizableEdges32;
+            txtKhachHang.CustomizableEdges = customizableEdges33;
             txtKhachHang.DefaultText = "";
             txtKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -697,7 +650,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtKhachHang.PlaceholderForeColor = Color.Gray;
             txtKhachHang.PlaceholderText = "Tên Khách Hàng";
             txtKhachHang.SelectedText = "";
-            txtKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            txtKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges34;
             txtKhachHang.Size = new Size(342, 38);
             txtKhachHang.TabIndex = 14;
             // 
@@ -707,7 +660,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtDiaChi.BackColor = Color.Transparent;
             txtDiaChi.BorderRadius = 10;
             txtDiaChi.BorderThickness = 2;
-            txtDiaChi.CustomizableEdges = customizableEdges34;
+            txtDiaChi.CustomizableEdges = customizableEdges35;
             txtDiaChi.DefaultText = "";
             txtDiaChi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtDiaChi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -725,9 +678,53 @@ namespace CSharp_laptop.GUI.BanHang
             txtDiaChi.PlaceholderForeColor = Color.Gray;
             txtDiaChi.PlaceholderText = "Địa Chỉ";
             txtDiaChi.SelectedText = "";
-            txtDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges35;
+            txtDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges36;
             txtDiaChi.Size = new Size(473, 92);
             txtDiaChi.TabIndex = 16;
+            // 
+            // guna2CircleButton1
+            // 
+            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2CircleButton1.BackColor = Color.Transparent;
+            guna2CircleButton1.BorderColor = Color.White;
+            guna2CircleButton1.BorderThickness = 1;
+            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton1.FillColor = Color.DeepSkyBlue;
+            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton1.ForeColor = Color.White;
+            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
+            guna2CircleButton1.ImageOffset = new Point(1, 0);
+            guna2CircleButton1.ImageSize = new Size(30, 30);
+            guna2CircleButton1.Location = new Point(191, 574);
+            guna2CircleButton1.Name = "guna2CircleButton1";
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CircleButton1.Size = new Size(75, 75);
+            guna2CircleButton1.TabIndex = 60;
+            guna2CircleButton1.Click += guna2CircleButton1_Click;
+            // 
+            // guna2Button4
+            // 
+            guna2Button4.BackColor = Color.Transparent;
+            guna2Button4.BorderRadius = 10;
+            guna2Button4.CustomizableEdges = customizableEdges11;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.FromArgb(85, 81, 132);
+            guna2Button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2Button4.ForeColor = Color.White;
+            guna2Button4.Location = new Point(45, 665);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button4.Size = new Size(221, 41);
+            guna2Button4.TabIndex = 61;
+            guna2Button4.Text = "Danh sách hóa đơn";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // BanHangForm
             // 
@@ -767,8 +764,6 @@ namespace CSharp_laptop.GUI.BanHang
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2TextBox txtTongTien;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2TextBox txtTichDiem;
         private Guna.UI2.WinForms.Guna2TextBox txtSDT;
@@ -780,5 +775,7 @@ namespace CSharp_laptop.GUI.BanHang
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }

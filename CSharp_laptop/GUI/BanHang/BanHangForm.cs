@@ -518,7 +518,8 @@ namespace CSharp_laptop.GUI.BanHang
                 return;
             }
 
-            if (listSP.Count == 0) {
+            if (listSP.Count == 0)
+            {
                 MessageBox.Show("Chưa có sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -547,7 +548,7 @@ namespace CSharp_laptop.GUI.BanHang
             foreach (var sp in listSP)
             {
                 ChiTietHoaDonDTO chiTietHoaDon = new ChiTietHoaDonDTO
-                { 
+                {
                     IMEI = sp.IMEI,
                     GiaBan = laptopWithGiaBan[sp.IMEI]
                 };
@@ -555,13 +556,13 @@ namespace CSharp_laptop.GUI.BanHang
             }
 
             // CHAP 3: Tích điểm
-            
+
 
             int DiemHienTai = int.Parse(txtTichDiem.Text);
 
-            int DiemGiam = (int) (GiamGia / 1000);
+            int DiemGiam = (int)(GiamGia / 1000);
 
-            int DiemThem = (int) (TongTien / 500000);
+            int DiemThem = (int)(TongTien / 500000);
 
             int TichDiemTong = DiemHienTai - DiemGiam + DiemThem;
 
@@ -581,6 +582,10 @@ namespace CSharp_laptop.GUI.BanHang
             }
         }
 
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            mainForm.OpenChildForm(new HoaDon(mainForm));
+        }
     }
 
 

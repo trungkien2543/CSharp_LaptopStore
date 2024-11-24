@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using CSharp_laptop.DTO;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 
 namespace CSharp_laptop.DAO
 {
@@ -37,7 +39,43 @@ namespace CSharp_laptop.DAO
             return result;
         }
 
-       
+        public List<ChiTietHoaDonDTO> GetChiTietHoaDonWithHoaDon(string find, DateTime From, DateTime To)
+        {
+            List<ChiTietHoaDonDTO> result = new();
+            using (MySqlConnection connection = connectionHelper.GetConnection())
+            {
+                string query = @"SELECT * FROM chitiethoadon WHERE chitiethoadon.ID_HoaDon IN (" + @"
+                                                                                                SELECT hoadon.ID_HoaDon
+                                                                                                FROM hoadon 
+                                                                                                WHERE 
+                                                                                                    (hoadon.ID_HoaDon LIKE @FIND 
+                                                                                                    OR hoadon.MaNV LIKE @FIND 
+                                                                                                    OR hoadon.MaKH LIKE @FIND) 
+                                                                                                    AND hoadon.NgayLap BETWEEN @From AND @To);";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@FIND", "%" + find + "%");
+                command.Parameters.AddWithValue("@From", From);
+                command.Parameters.AddWithValue("@To", To);
+
+
+                connection.Open();
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ChiTietHoaDonDTO chiTiet = new ChiTietHoaDonDTO
+                        {
+                            IMEI = reader["IMEI"].ToString(),
+                            ID_HoaDon = Convert.ToInt64(reader["ID_HoaDon"]),
+                            GiaBan = Convert.ToInt64(reader["GiaBan"])
+                        };
+                        result.Add(chiTiet);
+                    }
+                }
+            }
+            return result;
+        }
+
         public static bool AddChiTietHoaDon(ChiTietHoaDonDTO chiTietHoaDonDTO, MySqlTransaction transaction)
         {
             string query = "INSERT INTO chitiethoadon (IMEI, ID_HoaDon, GiaBan) VALUES (@IMEI, @ID_HoaDon, @GiaBan)";
