@@ -108,7 +108,29 @@ namespace CSharp_laptop.DAO
         }
 
 
-
+        public DataTable SearchLaptop(string searchTerm, string laptopID)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT * 
+                             FROM laptop 
+                             WHERE (IMEI LIKE @SearchTerm 
+                                 OR ThoiGianBaoHanh LIKE @SearchTerm 
+                                 OR TrangThai LIKE @SearchTerm 
+                                 OR LoaiLaptop LIKE @SearchTerm)
+                               AND LoaiLaptop = @LaptopID";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+                    cmd.Parameters.AddWithValue("@LaptopID", laptopID); // Tham số LaptopID
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+            return dt;
+        }
 
 
     }

@@ -9,7 +9,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using Image = System.Drawing.Image;
 
 namespace CSharp_laptop.GUI.Laptop
 {
@@ -41,6 +43,11 @@ namespace CSharp_laptop.GUI.Laptop
             label18.Text = sanPhamDTO.KichThuoc;
             label12.Text = sanPhamDTO.HinhAnh;
             label20.Text = sanPhamDTO.KhuyenMai;
+
+            if (!string.IsNullOrEmpty(label12.Text))
+            {
+                pictureBox1.Image = Image.FromFile(label12.Text);
+            }
 
             LoadLaptops(laptopID);
             edittable();
@@ -76,6 +83,13 @@ namespace CSharp_laptop.GUI.Laptop
         {
             List<LaptopDTO> laptops = laptopBUS.GetLaptopsByLoai(loaiLaptop);
             dataGridView2.DataSource = laptops;
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+            string searchTerm = rjTextBox1.Texts.Trim(); // Lấy từ TextBox
+            DataTable result = laptopBUS.SearchLaptop(searchTerm, laptopID); // Gọi BUS để tìm kiếm
+            dataGridView2.DataSource = result;
         }
     }
 }

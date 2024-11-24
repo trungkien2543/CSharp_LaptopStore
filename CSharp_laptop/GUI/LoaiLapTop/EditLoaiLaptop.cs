@@ -41,7 +41,7 @@ namespace CSharp_laptop.GUI
 
             if (chucnang == "add")
             {
-                rjTextBox1.Texts = idLaptop;
+                tb_id.Text = idLaptop;
             }
             else
             {
@@ -61,13 +61,13 @@ namespace CSharp_laptop.GUI
 
                 label1.Text = chucnang;
 
-                //if (!string.IsNullOrEmpty(rjTextBox8.Texts))
-                //{
-                //    pictureBox1.Image = Image.FromFile(rjTextBox8.Texts);
-                //}
+                if (!string.IsNullOrEmpty(tb_anh.Text))
+                {
+                    pictureBox1.Image = Image.FromFile(tb_anh.Text);
+                }
             }
 
-            
+
         }
 
         private void TaiDuLieuComboBoxKhuyenMai()
@@ -104,7 +104,7 @@ namespace CSharp_laptop.GUI
                 GiaBan = long.Parse(tb_gia.Text),  // Chuyển đổi từ chuỗi sang số nguyên
                 Hang = ((KeyValuePair<string, string>)cbbhang.SelectedItem).Key,
                 CPU = tb_cpu.Text,
-                RAM = int.Parse(rjTextBox6.Texts),  // Chuyển đổi từ chuỗi sang số nguyên
+                RAM = int.Parse(tb_ram.Text),  // Chuyển đổi từ chuỗi sang số nguyên
                 GPU = tb_gpu.Text,
                 HinhAnh = tb_anh.Text,
                 KichThuoc = tb_kichthuoc.Text,
@@ -158,7 +158,7 @@ namespace CSharp_laptop.GUI
                 string imagePath = openFileDialog.FileName;
 
                 // Hiển thị đường dẫn ảnh trong TextBox
-                rjTextBox8.Texts = imagePath;
+                tb_anh.Text = imagePath;
 
                 // Kiểm tra file có tồn tại không trước khi hiển thị
                 if (File.Exists(imagePath))
@@ -176,7 +176,7 @@ namespace CSharp_laptop.GUI
             }
         }
 
-        private void rjTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void tb_gia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
