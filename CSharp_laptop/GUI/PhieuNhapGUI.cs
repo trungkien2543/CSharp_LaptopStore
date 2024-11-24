@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CSharp_laptop.GUI
 {
@@ -185,6 +186,7 @@ namespace CSharp_laptop.GUI
                     return false;
                 }
             }
+            //Thiếu kiểm tra IMEI ở laptop
             text_mess1.Text = "";
             return true;
         }
@@ -193,6 +195,9 @@ namespace CSharp_laptop.GUI
         private int idPN;
         int tgBaoHanh;
         private PhieuNhapDTO phieuNhap;
+        private BindingList<LoaiLapPnDTO> lltList = new BindingList<LoaiLapPnDTO>();
+
+        //private LoaiLaptopPhieuNhapDTO lltpn;
         private void But_sp_Click(object sender, EventArgs e)
         {
             string selectedValue = combobox_ll.SelectedValue.ToString();
@@ -204,19 +209,85 @@ namespace CSharp_laptop.GUI
                 GiaNhap = int.Parse(text_gia.Texts),
                 ThoiGianBaoHanh = 12
             };
+            int kt = 0;
+            if (KiemTraGiaNhap())
+            {
+                kt--;
+            }
             if (CheckIMEI(ctPN.IMEI))
+            {
+                kt--;
+            }
+
+            if(kt==0)
             {
                 ctPNList.Add(ctPN);
                 dataGridView_ctpn1.DataSource = ctPNList;
+
+                if (lltList.Count > 0)
+                {
+                    int d = 0;
+                    for (int i = 0; i < lltList.Count; i++)
+                    {
+                        if (selectedValue == lltList[i].IDLoaiLaptop)
+                        {
+                            lltList[i].SoLuong++;
+                            lltList.ResetBindings();
+                            break;
+                        }
+                        else
+                        {
+                            d++;
+                        }
+                    }
+                    if (d == lltList.Count)
+                    {
+                        string selectedText = combobox_ll.SelectedItem.ToString();
+                        string[] parts = selectedText.Split('-');
+                        string result = parts[1].Trim();
+                        LoaiLapPnDTO llt = new LoaiLapPnDTO()
+                        {
+                            IDLoaiLaptop = selectedValue,
+                            TenSanPham = result,
+                            SoLuong = 1
+                        };
+                        lltList.Add(llt);
+
+                    }
+                }
+                else
+                {
+                    string selectedText = combobox_ll.SelectedItem.ToString();
+                    string[] parts = selectedText.Split('-');
+                    string result = parts[1].Trim();
+                    LoaiLapPnDTO llt = new LoaiLapPnDTO()
+                    {
+                        IDLoaiLaptop = selectedValue,
+                        TenSanPham = result,
+                        SoLuong = 1
+                    };
+                    lltList.Add(llt);
+
+                }
+                dataGridView_sp.DataSource = lltList;
             }
-
-
-            //khuyenMaiList = khuyenMaiBUS.getKhuyenMaiArr();
-            //KM_dataGridView.DataSource = khuyenMaiList;
-
-            //MessageBox.Show("abc: " + ctPN.IMEI + " " + ctPN.GiaNhap + " " + ctPN.IDPN);
         }
 
+        private bool KiemTraGiaNhap()
+        {
+            string input = text_gia.Texts;
+            if (int.TryParse(input, out int result))
+            {
+                if (result > 0)
+                {
+                    text_mes2.Text = "";
+                    return true;
+                }
+                text_mes2.Text = "Giá phải lớn hơn 0.";
+            }
+            text_mes2.Text = "Vui lòng nhập giá hợp lệ.";
+            return false; 
+        }
         private void vbButton3_Click(object sender, EventArgs e)
         {
             PhieuNhapDTO phieuNhap = new PhieuNhapDTO()

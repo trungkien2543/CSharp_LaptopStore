@@ -54,11 +54,7 @@
             dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             artanPanel1 = new ArtanPanel();
-            dataGridView_ = new DataGridView();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
+            dataGridView_sp = new DataGridView();
             panel6 = new Panel();
             artanPanel6 = new ArtanPanel();
             label7 = new Label();
@@ -68,6 +64,7 @@
             sp_box = new ArtanPanel();
             label11 = new Label();
             panel9 = new Panel();
+            text_mes2 = new Label();
             comboBox_tgbh = new ComboBox();
             text_mess1 = new Label();
             label8 = new Label();
@@ -121,6 +118,12 @@
             label4 = new Label();
             rjTextBox5 = new RJTextBox();
             rjTextBox4 = new RJTextBox();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel2.SuspendLayout();
@@ -130,7 +133,7 @@
             artanPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_ctpn1).BeginInit();
             artanPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_sp).BeginInit();
             panel6.SuspendLayout();
             artanPanel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -423,7 +426,7 @@
             artanPanel1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             artanPanel1.BackColor = Color.White;
             artanPanel1.BorderRadius = 20;
-            artanPanel1.Controls.Add(dataGridView_);
+            artanPanel1.Controls.Add(dataGridView_sp);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 70F;
             artanPanel1.GradientBottomColor = Color.FromArgb(210, 220, 230);
@@ -434,14 +437,14 @@
             artanPanel1.Size = new Size(535, 278);
             artanPanel1.TabIndex = 23;
             // 
-            // dataGridView_
+            // dataGridView_sp
             // 
-            dataGridView_.AllowUserToAddRows = false;
-            dataGridView_.AllowUserToDeleteRows = false;
-            dataGridView_.BackgroundColor = Color.White;
-            dataGridView_.BorderStyle = BorderStyle.None;
-            dataGridView_.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView_.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView_sp.AllowUserToAddRows = false;
+            dataGridView_sp.AllowUserToDeleteRows = false;
+            dataGridView_sp.BackgroundColor = Color.White;
+            dataGridView_sp.BorderStyle = BorderStyle.None;
+            dataGridView_sp.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView_sp.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(85, 81, 132);
             dataGridViewCellStyle3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -449,44 +452,16 @@
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView_.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView_.ColumnHeadersHeight = 35;
-            dataGridView_.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, Column9 });
-            dataGridView_.Dock = DockStyle.Fill;
-            dataGridView_.EnableHeadersVisualStyles = false;
-            dataGridView_.Location = new Point(4, 0);
-            dataGridView_.Name = "dataGridView_";
-            dataGridView_.ReadOnly = true;
-            dataGridView_.Size = new Size(527, 268);
-            dataGridView_.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.HeaderText = "ID loại laptop";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.HeaderText = "Tên sản phẩm:";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn6.HeaderText = "Số lượng";
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column9.HeaderText = "Thành tiền";
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
+            dataGridView_sp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView_sp.ColumnHeadersHeight = 35;
+            dataGridView_sp.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, Column8, Column7, dataGridViewTextBoxColumn6, Column9 });
+            dataGridView_sp.Dock = DockStyle.Fill;
+            dataGridView_sp.EnableHeadersVisualStyles = false;
+            dataGridView_sp.Location = new Point(4, 0);
+            dataGridView_sp.Name = "dataGridView_sp";
+            dataGridView_sp.ReadOnly = true;
+            dataGridView_sp.Size = new Size(527, 268);
+            dataGridView_sp.TabIndex = 0;
             // 
             // panel6
             // 
@@ -612,6 +587,7 @@
             // 
             // panel9
             // 
+            panel9.Controls.Add(text_mes2);
             panel9.Controls.Add(comboBox_tgbh);
             panel9.Controls.Add(text_mess1);
             panel9.Controls.Add(label8);
@@ -631,6 +607,17 @@
             panel9.Size = new Size(432, 435);
             panel9.TabIndex = 0;
             panel9.Paint += panel9_Paint;
+            // 
+            // text_mes2
+            // 
+            text_mes2.AutoSize = true;
+            text_mes2.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_mes2.ForeColor = Color.Red;
+            text_mes2.Location = new Point(74, 249);
+            text_mes2.Name = "text_mes2";
+            text_mes2.Size = new Size(22, 16);
+            text_mes2.TabIndex = 31;
+            text_mes2.Text = "abc";
             // 
             // comboBox_tgbh
             // 
@@ -1391,6 +1378,52 @@
             rjTextBox4.Texts = "";
             rjTextBox4.UnderlinedStyle = false;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn4.DataPropertyName = "IDLoaiLaptop";
+            dataGridViewTextBoxColumn4.HeaderText = "ID loại laptop";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.DataPropertyName = "TenSanPham";
+            dataGridViewTextBoxColumn5.HeaderText = "Tên sản phẩm:";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.DataPropertyName = "TGBaoHanh";
+            Column8.HeaderText = "Thời gian bảo hành";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.DataPropertyName = "GiaNhap";
+            Column7.HeaderText = "Giá nhập";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn6.DataPropertyName = "SoLuong";
+            dataGridViewTextBoxColumn6.HeaderText = "Số lượng";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column9.DataPropertyName = "ThanhTien";
+            Column9.HeaderText = "Thành tiền";
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            // 
             // PhieuNhapGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1409,7 +1442,7 @@
             artanPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView_ctpn1).EndInit();
             artanPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView_).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_sp).EndInit();
             panel6.ResumeLayout(false);
             artanPanel6.ResumeLayout(false);
             artanPanel6.PerformLayout();
@@ -1482,16 +1515,12 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DateTimePicker dateTimePicker1;
         private ArtanPanel artanPanel1;
-        private DataGridView dataGridView_;
+        private DataGridView dataGridView_sp;
         private ArtanPanel artanPanel7;
         private DataGridView dataGridView_ctpn1;
         private Panel panel6;
         private Panel panel7;
         private Panel panel8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn Column9;
         private VBButton but_them_sp;
         private VBButton huy_but;
         private VBButton vbButton3;
@@ -1524,5 +1553,12 @@
         private DataGridViewTextBoxColumn Column6;
         private Label text_mess1;
         private ComboBox comboBox_tgbh;
+        private Label text_mes2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn Column9;
     }
 }

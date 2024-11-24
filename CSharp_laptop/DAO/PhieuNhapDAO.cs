@@ -68,9 +68,10 @@ namespace CSharp_laptop.DAO
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO phieunhap (MaNV, MaNcc, TongTien,NgayNhap) VALUES (@MaNV, @MaNcc, @TongTien, @NgayNhap)";
+                string query = "INSERT INTO phieunhap (ID_PhieuNhap, MaNV, MaNcc, TongTien, NgayNhap) VALUES (@ID_PhieuNhap, @MaNV, @MaNcc, @TongTien, @NgayNhap)";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@ID_PhieuNhap", phieuNhap.ID);
                     cmd.Parameters.AddWithValue("@MaNV", phieuNhap.IDNV);
                     cmd.Parameters.AddWithValue("@MaNcc", phieuNhap.IDNCC);
                     cmd.Parameters.AddWithValue("@TongTien", phieuNhap.TongTien);
@@ -96,8 +97,8 @@ namespace CSharp_laptop.DAO
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query2 = "INSERT INTO laptop (IMEI, ThoiGianBaoHanh, TrangThai, LoaiLaptop) VALUES (@IMEI, @ThoiGianBaoHanh, @TrangThai, @LoaiLaptop)";
-                using (MySqlCommand cmd = new MySqlCommand(query2, conn))
+                string query1 = "INSERT INTO laptop (IMEI, ThoiGianBaoHanh, TrangThai, LoaiLaptop) VALUES (@IMEI, @ThoiGianBaoHanh, @TrangThai, @LoaiLaptop)";
+                using (MySqlCommand cmd = new MySqlCommand(query1, conn))
                 {
                     cmd.Parameters.AddWithValue("@IMEI", ctpn.IMEI);
                     cmd.Parameters.AddWithValue("@ThoiGianBaoHanh", ctpn.ThoiGianBaoHanh);
@@ -114,8 +115,8 @@ namespace CSharp_laptop.DAO
                     }
                 }
 
-                string query = "INSERT INTO chitietphieunhap (IMEI, GiaNhap, ID_PhieuNhap)  VALUES (@IMEI, @GiaNhap, @ID_PhieuNhap)";
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                string query2 = "INSERT INTO chitietphieunhap (IMEI, GiaNhap, ID_PhieuNhap)  VALUES (@IMEI, @GiaNhap, @ID_PhieuNhap)";
+                using (MySqlCommand cmd = new MySqlCommand(query2, conn))
                 {
                     cmd.Parameters.AddWithValue("@IMEI", ctpn.IMEI);
                     cmd.Parameters.AddWithValue("@GiaNhap", ctpn.GiaNhap);
@@ -130,8 +131,31 @@ namespace CSharp_laptop.DAO
                         MessageBox.Show("Error: " + ex.Message);
                     }
                 }
+            }
+            return isSuccess;
+        }
 
-                
+        public bool UpdateSoLuongSP(LoaiLapPnDTO llt)
+        {
+            bool isSuccess = false;
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE loailaptop SET SLTonKho = @SLTonKho WHERE IDLoaiLaptop = @IDLoaiLaptop";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IDLoaiLaptop", llt.IDLoaiLaptop);
+                    cmd.Parameters.AddWithValue("@SLTonKho", llt.SoLuong);
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        isSuccess = rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
             }
             return isSuccess;
         }
