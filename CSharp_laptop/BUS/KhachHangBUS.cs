@@ -35,5 +35,13 @@ namespace CSharp_laptop.BUS
         {
             return dao.DeleteKhachHang(idKhachHang);
         }
+        public KhachHangDTO GetKhachHangById(string idKhachHang)
+        {
+            return dao.GetKhachHangById(idKhachHang);
+        }
+        public bool UpdateKhachHang(KhachHangDTO khachHang)
+        {
+            return dao.UpdateKhachHang(khachHang);
+        }
     }
 }

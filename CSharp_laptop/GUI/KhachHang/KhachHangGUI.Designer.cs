@@ -208,6 +208,7 @@
             guna2TextBoxDiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2TextBoxDiem.Size = new Size(483, 38);
             guna2TextBoxDiem.TabIndex = 12;
+            guna2TextBoxDiem.KeyPress += guna2TextBoxDiem_KeyPress;
             // 
             // guna2CircleButton3
             // 
@@ -308,6 +309,7 @@
             guna2TextBoxSDT.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2TextBoxSDT.Size = new Size(483, 38);
             guna2TextBoxSDT.TabIndex = 2;
+            guna2TextBoxSDT.KeyPress += guna2TextBoxSDT_KeyPress;
             // 
             // guna2TextBoxTen
             // 

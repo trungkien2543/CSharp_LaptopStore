@@ -70,6 +70,43 @@ namespace CSharp_laptop.DAO
             }
             return isSuccess;
         }
+        public bool UpdateKhachHang(KhachHangDTO khachHang)
+        {
+            bool isSuccess = false;
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            UPDATE `khachhang` 
+            SET 
+                `TenKH` = @TenKH,
+                `DiaChiKH` = @DiaChiKH,
+                `SDT` = @SDT,
+                `TichDiem` = @TichDiem
+            WHERE `ID_KhachHang` = @ID_KhachHang";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ID_KhachHang", khachHang.ID_KhachHang);
+                cmd.Parameters.AddWithValue("@TenKH", khachHang.TenKH);
+                cmd.Parameters.AddWithValue("@DiaChiKH", khachHang.DiaChiKH);
+                cmd.Parameters.AddWithValue("@SDT", khachHang.SDT);
+                cmd.Parameters.AddWithValue("@TichDiem", khachHang.TichDiem);
+
+                try
+                {
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    isSuccess = rowsAffected > 0; // Kiểm tra nếu có ít nhất một dòng bị cập nhật.
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message); // Log lỗi nếu xảy ra vấn đề.
+                }
+            }
+
+            return isSuccess;
+        }
+
 
         public KhachHangDTO GetKhachHangBySDT(String SDT)
         {
@@ -137,6 +174,39 @@ namespace CSharp_laptop.DAO
             command.Parameters.AddWithValue("@ID_KhachHang", idKhachHang?? (object)DBNull.Value);
 
             return command.ExecuteNonQuery() > 0;
+        }
+        public KhachHangDTO GetKhachHangById(string idKhachHang)
+        {
+            KhachHangDTO khachHang = null;
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT `ID_KhachHang`, `TenKH`, `DiaChiKH`, `SDT`, `TichDiem` 
+            FROM `khachhang`
+            WHERE `ID_KhachHang` = @ID_KhachHang";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ID_KhachHang", idKhachHang);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        khachHang = new KhachHangDTO
+                        {
+                            ID_KhachHang = reader["ID_KhachHang"].ToString(),
+                            TenKH = reader["TenKH"].ToString(),
+                            DiaChiKH = reader["DiaChiKH"].ToString(),
+                            SDT = reader["SDT"].ToString(),
+                            TichDiem = int.Parse(reader["TichDiem"].ToString())
+                        };
+                    }
+                }
+            }
+
+            return khachHang;
         }
 
 

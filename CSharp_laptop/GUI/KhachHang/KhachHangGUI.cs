@@ -41,7 +41,17 @@ namespace CSharp_laptop.GUI
 
         private void KhachHangGUI_Load(object sender, EventArgs e)
         {
+            LoadTable();
 
+
+        }
+        private void LoadTable()
+        {
+            btnEditList = new List<VBButton>();
+            btnDelList = new List<VBButton>();
+            dataGridView1.Rows.Clear();
+            dataGridView1.Controls.Clear();
+            dataGridView1.Refresh();
             for (int i = 0; i < dtos.Count; i++)
             {
                 KhachHangDTO kh = dtos[i];
@@ -241,7 +251,7 @@ namespace CSharp_laptop.GUI
         private void vbButton2_Click_1(object sender, EventArgs e)
         {
             nameprocess.Text = "Thêm Khách Hàng";
-            guna2TextBoxID.Text = "";
+            guna2TextBoxID.Text = TaoMaKH(bus.getAllKhachHang().Count);
             guna2TextBoxTen.Text = "";
             guna2TextBoxDC.Text = "";
             guna2TextBoxSDT.Text = "";
@@ -252,39 +262,114 @@ namespace CSharp_laptop.GUI
                 timer1.Start();
             }
         }
+        private string TaoMaKH(int danhSach)
+        {
+            int doDai = danhSach + 1;
+            string soChuoi = doDai.ToString("D3");
+            return "KH" + soChuoi;
+        }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
             if (nameprocess.Text == "Thêm Khách Hàng")
             {
                 ThemKhachHang();
-            } else
+            }
+            else
             {
+                SuaKhachHang();
+            }
+
+            LoadTable();
+        }
+        private void SuaKhachHang()
+        {
+            if (checkTextBox())
+                return;
+            if (bus.GetKhachHangById(guna2TextBoxID.Text) == null)
+            {
+                MessageBox.Show("Mã Khách hàng không tồn tại!", "Lỗi!");
+                return;
+            }
+            string id = guna2TextBoxID.Text;
+            string ten = guna2TextBoxTen.Text;
+            string DC = guna2TextBoxDC.Text;
+            string sdt = guna2TextBoxSDT.Text;
+            int diem = int.Parse(guna2TextBoxDiem.Text);
+            KhachHangDTO kh = new KhachHangDTO(id, ten, DC, sdt, diem);
+
+            if (bus.UpdateKhachHang(kh))
+            {
+                MessageBox.Show("Sửa khách hàng thành công!", "Thông Báo");
+            }
+            else
+            {
+                MessageBox.Show("Sửa khách thất bại!", "Thông Báo");
 
             }
         }
 
         private void ThemKhachHang()
         {
-            
+            if (checkTextBox())
+                return;
+            if (bus.GetKhachHangById(guna2TextBoxID.Text) != null)
+            {
+                MessageBox.Show("Mã Khách hàng đã tồn tại!", "Lỗi!");
+                return;
+            }
+            string id = guna2TextBoxID.Text;
+            string ten = guna2TextBoxTen.Text;
+            string DC = guna2TextBoxDC.Text;
+            string sdt = guna2TextBoxSDT.Text;
+            int diem = int.Parse(guna2TextBoxDiem.Text);
+            KhachHangDTO kh = new KhachHangDTO(id, ten, DC, sdt, diem);
+
+            if (bus.AddKhachHang(kh))
+            {
+                MessageBox.Show("Thêm khách hàng thành công!", "Thông Báo");
+            } else
+            {
+                MessageBox.Show("Thêm khách thất bại!", "Thông Báo");
+
+            }
+
         }
         private bool checkTextBox()
         {
             if (string.IsNullOrEmpty(guna2TextBoxID.Text))
             {
-                MessageBox.Show("Mã Nhân Viên chưa được nhập!", "Lỗi!"); return true;
+                MessageBox.Show("Mã Khách hàng chưa được nhập!", "Lỗi!"); return true;
             }
             if (string.IsNullOrEmpty(guna2TextBoxTen.Text))
             {
-                MessageBox.Show("Tên Nhân Viên chưa được nhập!", "Lỗi!"); return true;
+                MessageBox.Show("Tên Khách hàng chưa được nhập!", "Lỗi!"); return true;
             }
             if (string.IsNullOrEmpty(guna2TextBoxDC.Text))
             {
                 MessageBox.Show("Email chưa được nhập!", "Lỗi!"); return true;
             }
+            if (string.IsNullOrEmpty(guna2TextBoxSDT.Text))
+            {
+                MessageBox.Show("Số Điện thoại chưa được nhập!", "Lỗi!"); return true;
+            }
             return false;
         }
 
+        private void guna2TextBoxSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho ký tự được nhập vào TextBox
+            }
+        }
 
+        private void guna2TextBoxDiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho ký tự được nhập vào TextBox
+            }
+        }
     }
 }
