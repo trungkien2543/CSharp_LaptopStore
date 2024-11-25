@@ -179,6 +179,90 @@ namespace CSharp_laptop.DAO
             }
         }
 
+        public bool CheckSPPN(int id)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT laptop.TrangThai FROM chitietphieunhap INNER JOIN laptop ON chitietphieunhap.IMEI = laptop.IMEI WHERE chitietphieunhap.ID_PhieuNhap = @ID_PhieuNhap";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_PhieuNhap", id);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int tt = int.Parse(reader.ToString());
+                            if (tt == 0)
+                            {
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+                }
+            }
+        }
+
+        public PhieuNhapDTO Get1PhieuNhapByID(int id)
+        {
+            PhieuNhapDTO phieuNhap = null;
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM phieunhap WHERE ID_PhieuNhap = @id";
+                using(MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        phieuNhap = new PhieuNhapDTO()
+                        {
+                            ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
+                            IDNV = reader["MaNV"].ToString(),
+                            IDNCC = reader["MaNCC"].ToString(),
+                            TongTien = int.Parse(reader["TongTIen"].ToString()),
+                            NgayTao = reader.GetDateTime(3)
+                        };
+                    }
+                }      
+            }
+            return phieuNhap;
+        }
+        //public BindingList<ChiTietPhieuNhapDTO> GetChiTietPhieuNhap(int id)
+        //{
+        //    BindingList<ChiTietPhieuNhapDTO> ctpnList = new BindingList<ChiTietPhieuNhapDTO>();
+
+        //    using (MySqlConnection conn = connectionHelper.GetConnection())
+        //    {
+        //        conn.Open();
+        //        string query = "SELECT * FROM chitietphieunhap WHERE ID_PhieuNhap = @id";
+        //        using(MySqlCommand cmd = new MySqlCommand(query, conn))
+        //        {
+        //            using (MySqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    ChiTietPhieuNhapDTO ctpn = new ChiTietPhieuNhapDTO()
+        //                    {
+        //                        IMEI = reader["IMEI"].ToString(),
+                                
+        //                        GiaNhap = int.Parse(reader["GiaNhap"].ToString())
+        //                        //ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
+        //                        //IDNV = reader["MaNV"].ToString(),
+        //                        //IDNCC = reader["MaNCC"].ToString(),
+        //                        //TongTien = int.Parse(reader["TongTIen"].ToString()),
+        //                        //NgayTao = reader.GetDateTime(3)
+        //                    };
+        //                    Console.WriteLine("data:" + phieuNhap.ID + phieuNhap.IDNV + phieuNhap.IDNCC + phieuNhap.TongTien + phieuNhap.NgayTao);
+        //                    //ctpnList.Add(phieuNhap);
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return ctpnList;
+        //}
+
         //public List<string> GetIMEIList()
         //{
         //    List<string> IMIEIArr = new List<string>();

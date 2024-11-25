@@ -64,13 +64,14 @@
             tabPage2 = new TabPage();
             panel7 = new Panel();
             artanPanel7 = new ArtanPanel();
-            dataGridView_ctpn1 = new DataGridView();
+            dataGridView_ctpn = new DataGridView();
             dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            IDllt = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
+            Column13 = new DataGridViewTextBoxColumn();
             artanPanel1 = new ArtanPanel();
             dataGridView_sp = new DataGridView();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            IDllt2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
@@ -138,7 +139,7 @@
             tabPage2.SuspendLayout();
             panel7.SuspendLayout();
             artanPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_ctpn1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_ctpn).BeginInit();
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_sp).BeginInit();
             panel6.SuspendLayout();
@@ -550,7 +551,7 @@
             // 
             artanPanel7.BackColor = Color.White;
             artanPanel7.BorderRadius = 20;
-            artanPanel7.Controls.Add(dataGridView_ctpn1);
+            artanPanel7.Controls.Add(dataGridView_ctpn);
             artanPanel7.Dock = DockStyle.Top;
             artanPanel7.ForeColor = Color.Black;
             artanPanel7.GradientAngle = 65F;
@@ -562,14 +563,14 @@
             artanPanel7.Size = new Size(600, 302);
             artanPanel7.TabIndex = 25;
             // 
-            // dataGridView_ctpn1
+            // dataGridView_ctpn
             // 
-            dataGridView_ctpn1.AllowUserToAddRows = false;
-            dataGridView_ctpn1.AllowUserToDeleteRows = false;
-            dataGridView_ctpn1.BackgroundColor = Color.White;
-            dataGridView_ctpn1.BorderStyle = BorderStyle.None;
-            dataGridView_ctpn1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView_ctpn1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView_ctpn.AllowUserToAddRows = false;
+            dataGridView_ctpn.AllowUserToDeleteRows = false;
+            dataGridView_ctpn.BackgroundColor = Color.White;
+            dataGridView_ctpn.BorderStyle = BorderStyle.None;
+            dataGridView_ctpn.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView_ctpn.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(85, 81, 132);
             dataGridViewCellStyle3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -577,16 +578,17 @@
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView_ctpn1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView_ctpn1.ColumnHeadersHeight = 35;
-            dataGridView_ctpn1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn9, Column6 });
-            dataGridView_ctpn1.Dock = DockStyle.Fill;
-            dataGridView_ctpn1.EnableHeadersVisualStyles = false;
-            dataGridView_ctpn1.Location = new Point(4, 0);
-            dataGridView_ctpn1.Name = "dataGridView_ctpn1";
-            dataGridView_ctpn1.ReadOnly = true;
-            dataGridView_ctpn1.Size = new Size(592, 292);
-            dataGridView_ctpn1.TabIndex = 0;
+            dataGridView_ctpn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView_ctpn.ColumnHeadersHeight = 35;
+            dataGridView_ctpn.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, IDllt, Column6, Column13 });
+            dataGridView_ctpn.Dock = DockStyle.Fill;
+            dataGridView_ctpn.EnableHeadersVisualStyles = false;
+            dataGridView_ctpn.Location = new Point(4, 0);
+            dataGridView_ctpn.Name = "dataGridView_ctpn";
+            dataGridView_ctpn.ReadOnly = true;
+            dataGridView_ctpn.Size = new Size(592, 292);
+            dataGridView_ctpn.TabIndex = 0;
+            dataGridView_ctpn.CellClick += dataGridView_ctpn_CellClick;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -596,13 +598,13 @@
             dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn9
+            // IDllt
             // 
-            dataGridViewTextBoxColumn9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn9.DataPropertyName = "iDLoaiLaptop";
-            dataGridViewTextBoxColumn9.HeaderText = "ID loại laptop";
-            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            dataGridViewTextBoxColumn9.ReadOnly = true;
+            IDllt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            IDllt.DataPropertyName = "iDLoaiLaptop";
+            IDllt.HeaderText = "ID loại laptop";
+            IDllt.Name = "IDllt";
+            IDllt.ReadOnly = true;
             // 
             // Column6
             // 
@@ -610,6 +612,14 @@
             Column6.HeaderText = "Giá nhập";
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            Column13.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column13.DataPropertyName = "ThoiGianBaoHanh";
+            Column13.HeaderText = "Thời gian bảo hành";
+            Column13.Name = "Column13";
+            Column13.ReadOnly = true;
             // 
             // artanPanel1
             // 
@@ -644,7 +654,7 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dataGridView_sp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView_sp.ColumnHeadersHeight = 35;
-            dataGridView_sp.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, Column8, Column7, dataGridViewTextBoxColumn6, Column9 });
+            dataGridView_sp.Columns.AddRange(new DataGridViewColumn[] { IDllt2, dataGridViewTextBoxColumn5, Column8, Column7, dataGridViewTextBoxColumn6, Column9 });
             dataGridView_sp.Dock = DockStyle.Fill;
             dataGridView_sp.EnableHeadersVisualStyles = false;
             dataGridView_sp.Location = new Point(4, 0);
@@ -652,14 +662,15 @@
             dataGridView_sp.ReadOnly = true;
             dataGridView_sp.Size = new Size(512, 268);
             dataGridView_sp.TabIndex = 0;
+            dataGridView_sp.CellClick += dataGridView_sp_CellClick;
             // 
-            // dataGridViewTextBoxColumn4
+            // IDllt2
             // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.DataPropertyName = "IDLoaiLaptop";
-            dataGridViewTextBoxColumn4.HeaderText = "ID loại laptop";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
+            IDllt2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            IDllt2.DataPropertyName = "IDLoaiLaptop";
+            IDllt2.HeaderText = "ID loại laptop";
+            IDllt2.Name = "IDllt2";
+            IDllt2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -1407,6 +1418,7 @@
             dataGridView_PN.ReadOnly = true;
             dataGridView_PN.Size = new Size(1113, 602);
             dataGridView_PN.TabIndex = 0;
+            dataGridView_PN.CellClick += dataGridView_PN_CellClick;
             // 
             // Column1
             // 
@@ -1484,7 +1496,7 @@
             tabPage2.ResumeLayout(false);
             panel7.ResumeLayout(false);
             artanPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView_ctpn1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_ctpn).EndInit();
             artanPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView_sp).EndInit();
             panel6.ResumeLayout(false);
@@ -1539,10 +1551,7 @@
         private TabPage tabPage2;
         private Panel panel7;
         private ArtanPanel artanPanel7;
-        private DataGridView dataGridView_ctpn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewTextBoxColumn Column6;
+        private DataGridView dataGridView_ctpn;
         private ArtanPanel artanPanel1;
         private DataGridView dataGridView_sp;
         private Panel panel6;
@@ -1596,10 +1605,16 @@
         private TabControl tabControl1;
         private Label label2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn IDllt;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column13;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn IDllt2;
     }
 }

@@ -2,6 +2,7 @@
 using CSharp_laptop.DTO;
 using Google.Protobuf.Collections;
 using LaptopStore.DTO;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CSharp_laptop.GUI
@@ -39,6 +41,7 @@ namespace CSharp_laptop.GUI
             tabControl1.SizeMode = TabSizeMode.Fixed;// Đảm bảo kích thước các tab được cố định, không tự thay đổi
 
             LoadPhieuNhapData();
+            Customtable();
         }
 
         private void them_but_Click(object sender, EventArgs e)
@@ -180,31 +183,31 @@ namespace CSharp_laptop.GUI
             //MessageBox.Show("abc" + phieuNhapList[0].ID);
             dataGridView_PN.DataSource = phieuNhapList;
         }
-        private bool CheckIMEI(string imei)
-        {
-            for (int i = 0; i < ctPNList.Count; i++)
-            {
-                if (imei == ctPNList[i].IMEI)
-                {
-                    text_mess1.Text = "IMEI đã tồn tại";
-                    return false;
-                }
-            }
-            LaptopBUS abc = new LaptopBUS();
-            List<LaptopDTO> lltArr = new List<LaptopDTO>();
-            //lltArr = abc.get();
-            for (int i = 0; i < lltArr.Count; i++)
-            {
-                //if (imei == lltArr[i].)
-                //{
-                //    text_mess1.Text = "IMEI đã tồn tại";
-                //    return false;
-                //}
-            }
-            //Thiếu kiểm tra IMEI ở laptop
-            text_mess1.Text = "";
-            return true;
-        }
+        //private bool CheckIMEI(string imei)
+        //{
+        //    for (int i = 0; i < ctPNList.Count; i++)
+        //    {
+        //        if (imei == ctPNList[i].IMEI)
+        //        {
+        //            text_mess1.Text = "IMEI đã tồn tại";
+        //            return false;
+        //        }
+        //    }
+        //    LaptopBUS abc = new LaptopBUS();
+        //    List<LaptopDTO> lltArr = new List<LaptopDTO>();
+        //    //lltArr = abc.get();
+        //    for (int i = 0; i < lltArr.Count; i++)
+        //    {
+        //        //if (imei == lltArr[i].)
+        //        //{
+        //        //    text_mess1.Text = "IMEI đã tồn tại";
+        //        //    return false;
+        //        //}
+        //    }
+        //    //Thiếu kiểm tra IMEI ở laptop
+        //    text_mess1.Text = "";
+        //    return true;
+        //}
 
         //--------------------------//
         //tabControl2
@@ -242,7 +245,7 @@ namespace CSharp_laptop.GUI
                 };
                 //MessageBox.Show("kq: " + ctPN.IMEI + ctPN.IDLoaiLaptop + ctPN.GiaNhap + ctPN.ThoiGianBaoHanh);
                 ctPNList.Add(ctPN);
-                dataGridView_ctpn1.DataSource = ctPNList;
+                dataGridView_ctpn.DataSource = ctPNList;
 
                 if (lltList.Count > 0)
                 {
@@ -298,8 +301,19 @@ namespace CSharp_laptop.GUI
                 }
                 dataGridView_sp.DataSource = lltList;
             }
+
+            text_tongtien.Texts = TongTIen().ToString();
         }
 
+        private int TongTIen()
+        {
+            int tt = 0;
+            for (int i = 0; i < lltList.Count; i++)
+            {
+                tt += lltList[i].ThanhTien;
+            }
+            return tt;
+        }
         private bool CheckIMEI(string imei)// Kiểm tra IMEI
         {
             if (text_IMEI.Texts == "")
@@ -376,7 +390,7 @@ namespace CSharp_laptop.GUI
                     comboBox_ncc.SelectedIndex = sttHang;
                     ChonHang = true;
                 }
-            }     
+            }
             //if (ChonHang == true)
             //{
             //    MessageBox.Show("thay NCC");
@@ -384,6 +398,121 @@ namespace CSharp_laptop.GUI
             //    lltList.Clear();
             //}
             //phieuNhapBUS.AddPhieuNhap(idPN, phieuNhap, ctPNList);
+        }
+
+        void Customtable()
+        {
+            DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
+            btnEdit.Name = "btnEdit";
+            btnEdit.HeaderText = "Sửa";
+            btnEdit.Text = "✏️";
+            btnEdit.Width = 60;
+            btnEdit.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
+            btnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView_PN.Columns.Add(btnEdit);
+
+            // Thêm cột nút "Xóa"
+            DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
+            btnDelete.Name = "btnDelete";
+            btnDelete.HeaderText = "Xóa";
+            btnDelete.Text = "❌";
+            btnDelete.Width = 60;
+            btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
+            btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView_PN.Columns.Add(btnDelete);
+
+            DataGridViewButtonColumn btnDelete1 = new DataGridViewButtonColumn();
+            btnDelete1.Name = "btnDelete";
+            btnDelete1.HeaderText = "Xóa";
+            btnDelete1.Text = "❌";
+            btnDelete1.Width = 60;
+            btnDelete1.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
+            btnDelete1.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView_ctpn.Columns.Add(btnDelete1);
+
+            DataGridViewButtonColumn btnDelete3 = new DataGridViewButtonColumn();
+            btnDelete3.Name = "btnDelete";
+            btnDelete3.HeaderText = "Xóa";
+            btnDelete3.Text = "❌";
+            btnDelete3.Width = 60;
+            btnDelete3.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
+            btnDelete3.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView_sp.Columns.Add(btnDelete3);
+        }
+
+        private void dataGridView_ctpn_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView_ctpn.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView_ctpn.Rows[e.RowIndex];
+                string idLoaiLaptop = row.Cells["IDllt"].Value.ToString();
+
+                ctPNList.Remove((ChiTietPhieuNhapDTO)row.DataBoundItem);
+                for (int i = 0; i < lltList.Count; i++)
+                {
+                    if (lltList[i].IDLoaiLaptop == idLoaiLaptop)
+                    {
+                        lltList[i].SoLuong--;
+                        lltList.ResetBindings();
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void dataGridView_sp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView_sp.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView_sp.Rows[e.RowIndex];
+                string idLoaiLaptop = row.Cells["IDllt2"].Value.ToString();
+
+                lltList.Remove((LoaiLapPnDTO)row.DataBoundItem);
+                for (int i = ctPNList.Count - 1; i >= 0; i--)
+                {
+                    if (idLoaiLaptop == ctPNList[i].IDLoaiLaptop)
+                    {
+                        ctPNList.RemoveAt(i);
+                    }
+                }
+
+            }
+        }
+
+        private void dataGridView_PN_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView_PN.Columns["btnEdit"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView_PN.Rows[e.RowIndex];
+                int id = int.Parse(row.Cells["ID"].Value.ToString());
+                if(phieuNhapBUS.CheckSPPN(id))
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Không thể sửa Phiếu nhập vì có sản phẩm đã bán");
+                }
+            }
+            if (e.ColumnIndex == dataGridView_PN.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
+
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa không?", "Xác nhận",
+                                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    //string id = row.Cells["ID"].Value.ToString();
+                    //khuyenMaiBUS.DeleteKhuyenMai(id);
+
+                    khuyenMaiList.Remove((KhuyenMaiDTO)row.DataBoundItem);
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }

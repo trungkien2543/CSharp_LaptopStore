@@ -51,5 +51,9 @@ namespace CSharp_laptop.BUS
             return phieuNhapDAO.CheckIMEI(imei);
         }
 
+        public bool CheckSPPN(int id)
+        {
+            return phieuNhapDAO.CheckSPPN(id);
+        }
     }
 }
