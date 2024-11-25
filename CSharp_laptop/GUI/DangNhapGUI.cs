@@ -117,9 +117,13 @@ namespace CSharp_laptop.GUI
             if (isLoginSuccessful)
             {
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Hide(); // Ẩn form đăng nhập
+
                 GUI.MainForm mf = new GUI.MainForm(tenDangNhap);
                 mf.Show();
-                this.Hide(); // Ẩn form đăng nhập
+
+
             }
             else
             {

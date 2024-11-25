@@ -180,6 +180,31 @@ namespace CSharp_laptop.GUI
             //MessageBox.Show("abc" + phieuNhapList[0].ID);
             dataGridView_PN.DataSource = phieuNhapList;
         }
+        private bool CheckIMEI(string imei)
+        {
+            for (int i = 0; i < ctPNList.Count; i++)
+            {
+                if (imei == ctPNList[i].IMEI)
+                {
+                    text_mess1.Text = "IMEI đã tồn tại";
+                    return false;
+                }
+            }
+            LaptopBUS abc = new LaptopBUS();
+            List<LaptopDTO> lltArr = new List<LaptopDTO>();
+            //lltArr = abc.get();
+            for (int i = 0; i < lltArr.Count; i++)
+            {
+                //if (imei == lltArr[i].)
+                //{
+                //    text_mess1.Text = "IMEI đã tồn tại";
+                //    return false;
+                //}
+            }
+            //Thiếu kiểm tra IMEI ở laptop
+            text_mess1.Text = "";
+            return true;
+        }
 
         //--------------------------//
         //tabControl2
@@ -358,6 +383,7 @@ namespace CSharp_laptop.GUI
             //    ctPNList.Clear();
             //    lltList.Clear();
             //}
+            //phieuNhapBUS.AddPhieuNhap(idPN, phieuNhap, ctPNList);
         }
     }
 }

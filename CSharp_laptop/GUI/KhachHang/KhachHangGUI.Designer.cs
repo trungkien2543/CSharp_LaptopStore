@@ -72,6 +72,7 @@
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             editpanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             nameprocess = new Label();
+            vbButton3 = new VBButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             editpanel.SuspendLayout();
@@ -208,6 +209,7 @@
             guna2TextBoxDiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2TextBoxDiem.Size = new Size(483, 38);
             guna2TextBoxDiem.TabIndex = 12;
+            guna2TextBoxDiem.KeyPress += guna2TextBoxDiem_KeyPress;
             // 
             // guna2CircleButton3
             // 
@@ -308,6 +310,7 @@
             guna2TextBoxSDT.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2TextBoxSDT.Size = new Size(483, 38);
             guna2TextBoxSDT.TabIndex = 2;
+            guna2TextBoxSDT.KeyPress += guna2TextBoxSDT_KeyPress;
             // 
             // guna2TextBoxTen
             // 
@@ -492,12 +495,32 @@
             nameprocess.TabIndex = 13;
             nameprocess.Text = "Thêm Khách Hàng";
             // 
+            // vbButton3
+            // 
+            vbButton3.BackColor = Color.MediumSlateBlue;
+            vbButton3.BackgroundColor = Color.MediumSlateBlue;
+            vbButton3.BorderColor = Color.PaleVioletRed;
+            vbButton3.BorderRadius = 20;
+            vbButton3.BorderSize = 0;
+            vbButton3.FlatAppearance.BorderSize = 0;
+            vbButton3.FlatStyle = FlatStyle.Flat;
+            vbButton3.ForeColor = Color.White;
+            vbButton3.Location = new Point(592, 9);
+            vbButton3.Name = "vbButton3";
+            vbButton3.Size = new Size(133, 41);
+            vbButton3.TabIndex = 49;
+            vbButton3.Text = "in PDF";
+            vbButton3.TextColor = Color.White;
+            vbButton3.UseVisualStyleBackColor = false;
+            vbButton3.Click += vbButton3_Click;
+            // 
             // KhachHangGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(149, 147, 186);
             ClientSize = new Size(1172, 737);
+            Controls.Add(vbButton3);
             Controls.Add(editpanel);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(rjTextBox1);
@@ -539,5 +562,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientPanel editpanel;
         private Label nameprocess;
+        private VBButton vbButton3;
     }
 }

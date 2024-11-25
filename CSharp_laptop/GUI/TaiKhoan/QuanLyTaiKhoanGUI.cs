@@ -392,7 +392,8 @@ namespace CSharp_laptop.GUI
                 MessageBox.Show("Có lỗi xảy ra khi cập nhật tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            this.Refresh();
+            //this.Refresh();
+            reset();
         }
 
         private void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
