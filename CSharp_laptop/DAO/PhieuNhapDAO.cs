@@ -51,7 +51,7 @@ namespace CSharp_laptop.DAO
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT MAX(ID_PhieuNhap) From phieunhap";
+                string query = "SELECT MAX(ID_PhieuNhap) FROM phieunhap";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 object result = cmd.ExecuteScalar();
                 if (result != DBNull.Value)
@@ -159,5 +159,48 @@ namespace CSharp_laptop.DAO
             }
             return isSuccess;
         }
+
+        public bool CheckIMEI(string imei)
+        {
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM laptop WHERE IMEI = @imei";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@imei", imei);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+
+        //public List<string> GetIMEIList()
+        //{
+        //    List<string> IMIEIArr = new List<string>();
+
+        //    using (MySqlConnection conn = connectionHelper.GetConnection())
+        //    {
+        //        conn.Open();
+        //        string query = "SELECT IMEI FROM laptop";
+        //        using(MySqlCommand cmd = new MySqlCommand(query, conn))
+        //        {
+        //            using (MySqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    string IMEI = reader.ToString();
+        //                    IMIEIArr.Add(IMEI);
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    return IMIEIArr;
+        //}
     }
 }

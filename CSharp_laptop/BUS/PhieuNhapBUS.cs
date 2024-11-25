@@ -26,7 +26,7 @@ namespace CSharp_laptop.BUS
             return phieuNhapDAO.GetAllPhieuNhap();
         }
 
-        public bool AddPhieuNhap(int idPN, PhieuNhapDTO phieuNhap, BindingList<ChiTietPhieuNhapDTO> ctpnArr, BindingList<LoaiLapPnDTO> llt)
+        public bool AddPhieuNhap(PhieuNhapDTO phieuNhap, BindingList<ChiTietPhieuNhapDTO> ctpnArr, BindingList<LoaiLapPnDTO> llt)
         {
             bool isSuccess = false;
             if (phieuNhapDAO.AddPhieuNhap(phieuNhap)) isSuccess = true;
@@ -34,7 +34,7 @@ namespace CSharp_laptop.BUS
 
             for (int i = 0; i < ctpnArr.Count; i++)
             {
-                if (phieuNhapDAO.AddCTPhieuNhapi(idPN, ctpnArr[i])) isSuccess = true;
+                if (phieuNhapDAO.AddCTPhieuNhapi(phieuNhap.ID, ctpnArr[i])) isSuccess = true;
                 else isSuccess = false;
             }
 
@@ -44,6 +44,11 @@ namespace CSharp_laptop.BUS
             }
 
             return isSuccess;
+        }
+
+        public bool CheckIMEI(string imei)
+        {
+            return phieuNhapDAO.CheckIMEI(imei);
         }
 
     }
