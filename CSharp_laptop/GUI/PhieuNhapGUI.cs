@@ -494,25 +494,25 @@ namespace CSharp_laptop.GUI
                     MessageBox.Show("Không thể sửa Phiếu nhập vì có sản phẩm đã bán");
                 }
             }
-            if (e.ColumnIndex == dataGridView_PN.Columns["btnDelete"].Index && e.RowIndex >= 0)
-            {
-                DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
+            //if (e.ColumnIndex == dataGridView_PN.Columns["btnDelete"].Index && e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
 
-                DialogResult result = MessageBox.Show("Bạn có muốn xóa không?", "Xác nhận",
-                                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //    DialogResult result = MessageBox.Show("Bạn có muốn xóa không?", "Xác nhận",
+            //                          MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                if (result == DialogResult.Yes)
-                {
-                    //string id = row.Cells["ID"].Value.ToString();
-                    //khuyenMaiBUS.DeleteKhuyenMai(id);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        //string id = row.Cells["ID"].Value.ToString();
+            //        //khuyenMaiBUS.DeleteKhuyenMai(id);
 
-                    khuyenMaiList.Remove((KhuyenMaiDTO)row.DataBoundItem);
-                }
-                else
-                {
+            //        khuyenMaiList.Remove((KhuyenMaiDTO)row.DataBoundItem);
+            //    }
+            //    else
+            //    {
 
-                }
-            }
+            //    }
+            //}
         }
     }
 }
