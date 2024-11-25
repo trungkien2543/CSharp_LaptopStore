@@ -117,9 +117,22 @@ namespace CSharp_laptop.GUI
             if (isLoginSuccessful)
             {
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GUI.MainForm mf = new GUI.MainForm(tenDangNhap);
-                mf.Show();
+
                 this.Hide(); // Ẩn form đăng nhập
+                SplashForm splash = new SplashForm();
+                splash.Show();
+
+                // Load Form chính ở chế độ nền
+                Task.Run(() =>
+                {
+                    // Giả lập công việc load của form chính (ví dụ, load dữ liệu, tài nguyên, etc.)
+                    GUI.MainForm mf = new GUI.MainForm(tenDangNhap);
+
+                    // Khởi tạo và hiển thị MainForm sau khi đã load xong
+                    splash.Invoke(new Action(() => splash.Close())); // Đóng SplashForm
+                    mf.Show();
+
+                });
             }
             else
             {
