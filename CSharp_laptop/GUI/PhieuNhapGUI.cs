@@ -191,11 +191,11 @@ namespace CSharp_laptop.GUI
             //lltArr = abc.get();
             for (int i = 0; i < lltArr.Count; i++)
             {
-                if (imei == lltArr[i].)
-                {
-                    text_mess1.Text = "IMEI đã tồn tại";
-                    return false;
-                }
+                //if (imei == lltArr[i].)
+                //{
+                //    text_mess1.Text = "IMEI đã tồn tại";
+                //    return false;
+                //}
             }
             //Thiếu kiểm tra IMEI ở laptop
             text_mess1.Text = "";
@@ -311,7 +311,7 @@ namespace CSharp_laptop.GUI
                 NgayTao = dateTimePicker1.Value.Date
             };
             //MessageBox.Show("value: " + phieuNhap.ID + phieuNhap.IDNCC + phieuNhap.IDNV +" "+ phieuNhap.TongTien + phieuNhap.NgayTao);
-            phieuNhapBUS.AddPhieuNhap(idPN, phieuNhap, ctPNList);
+            //phieuNhapBUS.AddPhieuNhap(idPN, phieuNhap, ctPNList);
         }
     }
 }
