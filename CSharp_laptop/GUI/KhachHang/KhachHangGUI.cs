@@ -18,6 +18,7 @@ using iTextSharp.text;
 using iTextSharp.tool.xml;
 using Document = iTextSharp.text.Document;
 using PageSize = iTextSharp.text.PageSize;
+using OfficeOpenXml;
 
 namespace CSharp_laptop.GUI
 {
@@ -409,66 +410,45 @@ namespace CSharp_laptop.GUI
 
         private void vbButton3_Click(object sender, EventArgs e)
         {
-            SaveFileDialog savefile = new SaveFileDialog();
-            savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
-
-
-            //string PaginaHTML_Texto = "<table border=\"1\"><tr><td>HOLA MUNDO</td></tr></table>";
-            string PaginaHTML_Texto = Properties.Resources.Plantilla.ToString();
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE", "con cak");
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DOCUMENTO", "con cak2");
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
-
-            string filas = string.Empty;
-            decimal total = 0;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            using (var package = new ExcelPackage())
             {
-                filas += "<tr>";
-                filas += "<td>" + row.Cells["Column1"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Column2"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Column3"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Column4"].Value.ToString() + "</td>";
-                filas += "</tr>";
-                total += decimal.Parse(row.Cells["Column5"].Value.ToString());
-            }
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
+                var worksheet = package.Workbook.Worksheets.Add("Danh sách Khách hàng");
 
+                worksheet.Cells[1, 1].Value = "ID";
+                worksheet.Cells[1, 2].Value = "Tên Khách Hàng";
+                worksheet.Cells[1, 3].Value = "Địa chỉ";
+                worksheet.Cells[1, 4].Value = "SĐT";
+                worksheet.Cells[1, 5].Value = "Tích Điểm";
 
-
-            if (savefile.ShowDialog() == DialogResult.OK)
-            {
-                using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
+                for (int i = 0; i < dataGridView1.Rows.Count; i++) // Lặp qua các hàng
                 {
-                    //Creamos un nuevo documento y lo definimos como PDF
-                    Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+                    if (dataGridView1.Rows[i].IsNewRow) // Bỏ qua dòng mới (nếu có)
+                        continue;
 
-                    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
-                    pdfDoc.Open();
-                    pdfDoc.Add(new Phrase(""));
-
-                    //Agregamos la imagen del banner al documento
-                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.shop, System.Drawing.Imaging.ImageFormat.Png);
-                    img.ScaleToFit(60, 60);
-                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
-
-                    //img.SetAbsolutePosition(10,100);
-                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
-                    pdfDoc.Add(img);
-
-
-                    //pdfDoc.Add(new Phrase("Hola Mundo"));
-                    using (StringReader sr = new StringReader(PaginaHTML_Texto))
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++) // Lặp qua các cột
                     {
-                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                        worksheet.Cells[i + 2, j + 1].Value = dataGridView1.Rows[i].Cells[j].Value; // Gán giá trị vào Excel
                     }
-
-                    pdfDoc.Close();
-                    stream.Close();
                 }
 
+                worksheet.Cells[1, 1, 1, dataGridView1.Columns.Count].Style.Font.Bold = true; // In đậm tiêu đề
+                worksheet.Cells[1, 1, dataGridView1.Rows.Count + 1, dataGridView1.Columns.Count].AutoFitColumns(); // Tự động chỉnh độ rộng cột
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                saveFileDialog.FileName = "DanhSachKhach.xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = saveFileDialog.FileName;
+                    File.WriteAllBytes(filePath, package.GetAsByteArray());
+
+                    MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
+                }
             }
         }
+
     }
 }
