@@ -21,6 +21,10 @@ namespace CSharp_laptop.GUI.Laptop
         private LoaiLaptopBUS loaiLaptopBUS = new LoaiLaptopBUS();
         string chucnang;
 
+        private HoaDonBUS hoaDonBUS = new HoaDonBUS();
+
+        LaptopDTO laptop;
+
         public BaoHanhGUI(MainForm mainForm)
         {
             InitializeComponent();
@@ -47,7 +51,7 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void load_inforlap()
         {
-            LaptopDTO laptop = laptopBUS.GetLaptopByIMEI(tb_timkiem.Text);
+            laptop = laptopBUS.GetLaptopByIMEI(tb_timkiem.Text);
             if (laptop == null)
             {
                 Console.WriteLine("No laptop found with this IMEI.");
@@ -64,10 +68,53 @@ namespace CSharp_laptop.GUI.Laptop
 
         }
 
+
+        private void load_date_baohanh()
+        {
+            string imei = tb_timkiem.Text.Trim();
+
+            try
+            {
+                HoaDonDTO hoadon = hoaDonBUS.GetHoaDonByIMEI(imei);
+
+                if (hoadon != null)
+                {
+                    label11.Text = hoadon.NgayLap.Value.ToString("yyyy-MM-dd");
+                }
+                else
+                {
+                    MessageBox.Show("No invoice found for the provided IMEI.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                DateTime? warrantyEndDate = hoaDonBUS.GetWarrantyEndDate(imei);
+
+                if (warrantyEndDate.HasValue)
+                {
+                    label18.Text = warrantyEndDate.Value.ToString("yyyy-MM-dd");
+                }
+                else
+                {
+                    MessageBox.Show("No warranty information found for the provided IMEI.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void vbButton2_Click(object sender, EventArgs e)
         {
             check_bh();
             load_inforlap();
+            load_date_baohanh();
         }
 
         private void edittable()
