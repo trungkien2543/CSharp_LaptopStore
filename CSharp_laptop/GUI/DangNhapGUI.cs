@@ -26,7 +26,8 @@ namespace CSharp_laptop.GUI
 
             rjTextBox1.Texts = "NV001";
             rjTextBox2.Focus();
-
+            button1.FlatStyle = FlatStyle.Flat;  // Đặt style phẳng
+            //button1.FlatAppearance.BorderSize = 0;  // Xóa viền
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -159,20 +160,25 @@ namespace CSharp_laptop.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
 
             if (rjTextBox2.PasswordChar)
             {
                 // Nếu mật khẩu đang ẩn, thì hiển thị nó
                 rjTextBox2.PasswordChar = false;
-                 
+
             }
             else
             {
                 // Nếu mật khẩu đang hiển thị, thì ẩn nó
                 rjTextBox2.PasswordChar = true;
-                
+
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Ráng nhớ lại xem", "Quên mật khẩu hả?", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

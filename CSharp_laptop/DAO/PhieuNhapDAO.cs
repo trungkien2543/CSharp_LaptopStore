@@ -322,29 +322,5 @@ namespace CSharp_laptop.DAO
             }
             return ctpn2List;
         }
-
-        //public List<string> GetIMEIList()
-        //{
-        //    List<string> IMIEIArr = new List<string>();
-
-        //    using (MySqlConnection conn = connectionHelper.GetConnection())
-        //    {
-        //        conn.Open();
-        //        string query = "SELECT IMEI FROM laptop";
-        //        using(MySqlCommand cmd = new MySqlCommand(query, conn))
-        //        {
-        //            using (MySqlDataReader reader = cmd.ExecuteReader())
-        //            {
-        //                while (reader.Read())
-        //                {
-        //                    string IMEI = reader.ToString();
-        //                    IMIEIArr.Add(IMEI);
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    return IMIEIArr;
-        //}
     }
 }
