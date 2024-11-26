@@ -94,7 +94,7 @@ namespace CSharp_laptop.GUI
 
             this.baoHanhGUI = new BaoHanhGUI(this);
 
-            this.phieuNhapGUI = new PhieuNhapGUI();
+            this.phieuNhapGUI = new PhieuNhapGUI(this);
 
 
             KhuyenMaiBUS khuyenMaiBUS = new KhuyenMaiBUS();

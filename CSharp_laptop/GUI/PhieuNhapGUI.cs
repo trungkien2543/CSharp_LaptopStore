@@ -21,15 +21,23 @@ namespace CSharp_laptop.GUI
     public partial class PhieuNhapGUI : Form
     {
         private PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
+
         private BindingList<PhieuNhapDTO> phieuNhapList;
 
 
         private NhanVienBUS nhanVienBUS = new NhanVienBUS();
+
         private HangBUS hangBUS = new HangBUS();
+
         private LoaiLaptopBUS loaiLaptopBUS = new LoaiLaptopBUS();
-        public PhieuNhapGUI()
+
+        private MainForm mainForm;
+
+        public PhieuNhapGUI(MainForm mainForm)
         {
             InitializeComponent();
+
+            this.mainForm = mainForm;
 
         }
 
@@ -362,7 +370,7 @@ namespace CSharp_laptop.GUI
             PhieuNhapDTO phieuNhap = new PhieuNhapDTO()
             {
                 ID = idPN,
-                IDNV = comboBox_nv.SelectedValue.ToString(),
+                IDNV = mainForm.NhanVienDangNhap,
                 IDNCC = comboBox_ncc.SelectedValue.ToString(),
                 TongTien = 0,
                 NgayTao = dateTimePicker1.Value.Date
