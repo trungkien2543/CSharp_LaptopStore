@@ -51,9 +51,24 @@ namespace CSharp_laptop.BUS
             return phieuNhapDAO.CheckIMEI(imei);
         }
 
-        public bool CheckSPPN(int id)
+        //public bool CheckSPPN(int id)
+        //{
+        //    return phieuNhapDAO.CheckSPPN(id);
+        //}
+
+        public PhieuNhapDTO GetPhieuNhapByID(int id)
         {
-            return phieuNhapDAO.CheckSPPN(id);
+            return phieuNhapDAO.Get1PhieuNhapByID(id);
+        }
+
+        public BindingList<ChiTietPhieuNhapDTO> GetChiTietPhieuNhap1(int id)
+        {
+            return phieuNhapDAO.GetChiTietPhieuNhap1(id);
+        }
+
+        public BindingList<LoaiLapPnDTO> GetChiTietPhieuNhap2(int id)
+        {
+            return phieuNhapDAO.GetChiTietPhieuNhap2(id);
         }
     }
 }
