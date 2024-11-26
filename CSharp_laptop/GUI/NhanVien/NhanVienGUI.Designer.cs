@@ -64,8 +64,6 @@
             Column6 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
             button1 = new Button();
             guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -114,7 +112,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 35;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column9, Column10, Column7, Column8 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column9, Column10 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -142,10 +140,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1143, 605);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            dataGridView1.CellPainting += dataGridView1_CellPainting;
-            dataGridView1.RowsAdded += dataGridView1_RowsAdded;
-            dataGridView1.SizeChanged += dataGridView1_SizeChanged;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Column1
             // 
@@ -218,24 +213,6 @@
             Column10.ReadOnly = true;
             Column10.Width = 175;
             // 
-            // Column7
-            // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column7.FillWeight = 40F;
-            Column7.HeaderText = "Edit";
-            Column7.MinimumWidth = 9;
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column8.FillWeight = 40F;
-            Column8.HeaderText = "Delete";
-            Column8.MinimumWidth = 9;
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
             // button1
             // 
             button1.Location = new Point(-120, 148);
@@ -244,7 +221,6 @@
             button1.TabIndex = 24;
             button1.Text = "SHOW";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // guna2CircleButton3
             // 
@@ -527,7 +503,6 @@
             guna2TextBoxID.ShadowDecoration.CustomizableEdges = customizableEdges18;
             guna2TextBoxID.Size = new Size(483, 38);
             guna2TextBoxID.TabIndex = 0;
-            guna2TextBoxID.TextChanged += guna2TextBox1_TextChanged;
             // 
             // timer1
             // 
@@ -618,7 +593,6 @@
             vbButton1.TextAlign = ContentAlignment.TopLeft;
             vbButton1.TextColor = Color.White;
             vbButton1.UseVisualStyleBackColor = false;
-            vbButton1.Click += vbButton1_Click;
             // 
             // editpanel
             // 
@@ -731,16 +705,6 @@
 
         #endregion
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Timer timer1;
         private Button button1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxID;
@@ -764,5 +728,13 @@
         private Label nameprocess;
         private VBButton btnImport;
         private VBButton btnExport;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
     }
 }
