@@ -260,7 +260,15 @@ namespace CSharp_laptop.Properties {
                 return ResourceManager.GetString("Plantilla", resourceCulture);
             }
         }
-        
+
+        internal static string Cthd_thaythe
+        {
+            get
+            {
+                return ResourceManager.GetString("Cthd_thaythe", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
