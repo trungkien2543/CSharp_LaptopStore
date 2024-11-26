@@ -329,7 +329,7 @@ namespace CSharp_laptop.GUI
                         string hangKey = HangDictionary.FirstOrDefault(x => x.Value == hangValue).Key ?? "Unknown";
                         string kmKey = KhuyenMaiDictionary.FirstOrDefault(x => x.Value == kmValue).Key ?? "Unknown";
 
-                        MessageBox.Show(hangKey + kmKey);
+                        //MessageBox.Show(hangKey + kmKey);
 
                         LoaiLaptopDTO laptop = new LoaiLaptopDTO
                         {
@@ -388,8 +388,7 @@ namespace CSharp_laptop.GUI
 
                     // Gọi hàm nhập dữ liệu và lưu vào database
                     SaveLaptopsToDatabase(ImportFromExcel(filePath));
-
-                    //MessageBox.Show("Dữ liệu từ file Excel đã được thêm vào cơ sở dữ liệu.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadLaptops();
                 }
                 else
                 {

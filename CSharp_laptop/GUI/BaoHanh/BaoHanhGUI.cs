@@ -49,15 +49,21 @@ namespace CSharp_laptop.GUI.Laptop
             if (laptop == null)
             {
                 MessageBox.Show("IMEI chưa trùng khớp");
+                lb_imei.Text = "";
+                lb_ten.Text = "";
+                lb_tgianbh.Text = "";
+                lb_nbd.Text = "";
+                lb_nkt.Text = "";
+                lb_tt.Text = "";
             }
             else
             {
-                label10.Text = laptop.IMEI;
-                label12.Text = laptop.ThoiGianBaoHanh.ToString();
-                label9.Text = laptop.TrangThai.ToString();
+                lb_imei.Text = laptop.IMEI;
+                lb_tgianbh.Text = laptop.ThoiGianBaoHanh.ToString();
+                lb_tt.Text = laptop.TrangThai.ToString();
 
                 LoaiLaptopDTO loaiLaptopDTO = loaiLaptopBUS.GetLaptopByID(laptop.LoaiLaptop);
-                label13.Text = loaiLaptopDTO.TenSP;
+                lb_ten.Text = loaiLaptopDTO.TenSP;
             }
 
         }
@@ -71,7 +77,7 @@ namespace CSharp_laptop.GUI.Laptop
 
             if (hoadon != null)
             {
-                label11.Text = hoadon.NgayLap.Value.ToString("yyyy-MM-dd");
+                lb_nbd.Text = hoadon.NgayLap.Value.ToString("yyyy-MM-dd");
             }
 
 
@@ -79,7 +85,7 @@ namespace CSharp_laptop.GUI.Laptop
 
             if (warrantyEndDate.HasValue)
             {
-                label18.Text = warrantyEndDate.Value.ToString("yyyy-MM-dd");
+                lb_nkt.Text = warrantyEndDate.Value.ToString("yyyy-MM-dd");
             }
 
 
@@ -143,6 +149,16 @@ namespace CSharp_laptop.GUI.Laptop
             {
                 try
                 {
+                    // Lấy thông tin ngày kết thúc bảo hành
+                    DateTime? warrantyEndDate = hoaDonBUS.GetWarrantyEndDate(tb_timkiem.Text);
+
+                    // Kiểm tra nếu đã hết hạn bảo hành
+                    if (warrantyEndDate.HasValue && DateTime.Now > warrantyEndDate.Value)
+                    {
+                        MessageBox.Show("Sản phẩm đã hết thời gian bảo hành, không thể thêm bảo hành mới.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return; // Dừng thực hiện chức năng "add"
+                    }
+
                     BaoHanhDTO baoHanh = new BaoHanhDTO
                     {
                         IMEI = tb_timkiem.Text,
