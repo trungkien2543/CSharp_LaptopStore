@@ -44,10 +44,10 @@ namespace CSharp_laptop.GUI.Laptop
             label12.Text = sanPhamDTO.HinhAnh;
             label20.Text = sanPhamDTO.KhuyenMai;
 
-            if (!string.IsNullOrEmpty(label12.Text))
-            {
-                pictureBox1.Image = Image.FromFile(label12.Text);
-            }
+            //if (!string.IsNullOrEmpty(label12.Text))
+            //{
+            //    pictureBox1.Image = Image.FromFile(label12.Text);
+            //}
 
             LoadLaptops(laptopID);
             edittable();

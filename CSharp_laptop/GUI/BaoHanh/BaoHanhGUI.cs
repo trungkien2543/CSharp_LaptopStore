@@ -35,17 +35,11 @@ namespace CSharp_laptop.GUI.Laptop
             tb_mabh.ReadOnly = true;
         }
 
-        private void check_bh()
+        private void load_bh()
         {
             List<BaoHanhDTO> baoHanhs = baoHanhBUS.GetAllBaoHanhsByIMEI(tb_timkiem.Text);
-            if (baoHanhs.Count == 0)
-            {
-
-            }
-            else
-            {
-                dataGridView2.DataSource = baoHanhs;
-            }
+            
+            dataGridView2.DataSource = baoHanhs;
 
         }
 
@@ -93,7 +87,7 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void vbButton2_Click(object sender, EventArgs e)
         {
-            check_bh();
+            load_bh();
             load_inforlap();
             load_date_baohanh();
         }
@@ -162,7 +156,7 @@ namespace CSharp_laptop.GUI.Laptop
                         MessageBox.Show("Thêm bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         load_inforlap();
                         reset();
-                        check_bh();
+                        load_bh();
                     }
                     else
                     {
@@ -191,7 +185,7 @@ namespace CSharp_laptop.GUI.Laptop
                     if (baoHanhBUS.UpdateBaoHanh(baoHanh))
                     {
                         MessageBox.Show("Cập nhật bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        check_bh();
+                        load_bh();
                         load_inforlap() ;
                     }
                     else

@@ -219,7 +219,7 @@ namespace CSharp_laptop.GUI
         } // bộ lọc
 
 
-        private void LoadDataForComboBox(ComboBox comboBox, String Item)
+        private void LoadDataForComboBox(ComboBox comboBox, String Item)        // Kiên
         {
             List<String> strings = new List<String>();
             strings.Add("");
@@ -228,7 +228,7 @@ namespace CSharp_laptop.GUI
             comboBox.DataSource = strings;
         }
 
-        private void Reset()
+        private void Reset()        // Kiên
         {
             LoadLaptops();
             edittable();
