@@ -65,7 +65,7 @@ namespace CSharp_laptop.DAO
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    //MessageBox.Show("Error: " + ex.Message);
                 }
             }
             return isSuccess;
@@ -100,7 +100,7 @@ namespace CSharp_laptop.DAO
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message); // Log lỗi nếu xảy ra vấn đề.
+                    Console.WriteLine("Error: " + ex.Message); 
                 }
             }
 
