@@ -36,9 +36,7 @@ namespace CSharp_laptop.GUI
         public PhieuNhapGUI(MainForm mainForm)
         {
             InitializeComponent();
-
             this.mainForm = mainForm;
-
         }
 
         private void PhieuNhapGUI_Load(object sender, EventArgs e)
@@ -72,27 +70,9 @@ namespace CSharp_laptop.GUI
             sp_box.Visible = false;
             idPN = phieuNhapBUS.GetMaxID();
             text_IDPN.Texts = idPN.ToString();
-            AddNhanVienCBB();
+            text_nv.Texts = mainForm.NhanVienDangNhap;
             AddNccCBB();
             tabControl1.SelectedIndex = 1;
-        }
-
-        private void AddNhanVienCBB()
-        {
-            List<NhanVienDTO> nhanVienList = nhanVienBUS.getAllNhanVien();
-            Dictionary<string, string> items = new Dictionary<string, string>();
-            //items.Add(id, name);
-
-            for (int i = 0; i < nhanVienList.Count; i++)
-            {
-                string id = nhanVienList[i].ID_NhanVien;
-                string name = nhanVienList[i].ID_NhanVien + " - " + nhanVienList[i].TenNV;
-                items.Add(id, name);
-            }
-
-            comboBox_nv.DataSource = new BindingSource(items, null);
-            comboBox_nv.DisplayMember = "Value";
-            comboBox_nv.ValueMember = "Key";
         }
 
         private void AddNccCBB()
@@ -156,8 +136,11 @@ namespace CSharp_laptop.GUI
 
         private void huy_but_Click_1(object sender, EventArgs e)
         {
+            ChonHang = false;
+            text_tongtien.Texts = "";
             ctPNList.Clear();
             lltList.Clear();
+            but_them_sp.Visible = true;
             tabControl1.SelectedIndex = 0;
         }
 
@@ -193,31 +176,6 @@ namespace CSharp_laptop.GUI
             //MessageBox.Show("abc" + phieuNhapList[0].ID);
             dataGridView_PN.DataSource = phieuNhapList;
         }
-        //private bool CheckIMEI(string imei)
-        //{
-        //    for (int i = 0; i < ctPNList.Count; i++)
-        //    {
-        //        if (imei == ctPNList[i].IMEI)
-        //        {
-        //            text_mess1.Text = "IMEI đã tồn tại";
-        //            return false;
-        //        }
-        //    }
-        //    LaptopBUS abc = new LaptopBUS();
-        //    List<LaptopDTO> lltArr = new List<LaptopDTO>();
-        //    //lltArr = abc.get();
-        //    for (int i = 0; i < lltArr.Count; i++)
-        //    {
-        //        //if (imei == lltArr[i].)
-        //        //{
-        //        //    text_mess1.Text = "IMEI đã tồn tại";
-        //        //    return false;
-        //        //}
-        //    }
-        //    //Thiếu kiểm tra IMEI ở laptop
-        //    text_mess1.Text = "";
-        //    return true;
-        //}
 
         //--------------------------//
         //tabControl2
@@ -251,7 +209,7 @@ namespace CSharp_laptop.GUI
                     IMEI = imei,
                     IDLoaiLaptop = idLoaiLap,
                     GiaNhap = int.Parse(text_gia.Texts),
-                    ThoiGianBaoHanh = comboBox_tgbh.SelectedIndex
+                    ThoiGianBaoHanh = int.Parse(comboBox_tgbh.Text)
                 };
                 //MessageBox.Show("kq: " + ctPN.IMEI + ctPN.IDLoaiLaptop + ctPN.GiaNhap + ctPN.ThoiGianBaoHanh);
                 ctPNList.Add(ctPN);
@@ -289,7 +247,6 @@ namespace CSharp_laptop.GUI
                             ThanhTien = int.Parse(text_gia.Texts.ToString())
                         };
                         lltList.Add(llt);
-
                     }
                 }
                 else
@@ -307,22 +264,24 @@ namespace CSharp_laptop.GUI
                         ThanhTien = int.Parse(text_gia.Texts.ToString())
                     };
                     lltList.Add(llt);
-
                 }
-                dataGridView_sp.DataSource = lltList;
             }
-
-            text_tongtien.Texts = TongTIen().ToString();
+            dataGridView_ctpn.DataSource = ctPNList;
+            dataGridView_sp.DataSource = lltList;
+            TongTIen();
         }
 
-        private int TongTIen()
+        private void TongTIen()
         {
             int tt = 0;
-            for (int i = 0; i < lltList.Count; i++)
+            if (lltList.Count > 0)
             {
-                tt += lltList[i].ThanhTien;
+                for (int i = 0; i < lltList.Count; i++)
+                {
+                    tt += lltList[i].ThanhTien;
+                }
             }
-            return tt;
+            text_tongtien.Texts = tt.ToString();
         }
         private bool CheckIMEI(string imei)// Kiểm tra IMEI
         {
@@ -369,7 +328,7 @@ namespace CSharp_laptop.GUI
 
         private void vbButton3_Click(object sender, EventArgs e)
         {
-            PhieuNhapDTO phieuNhap = new PhieuNhapDTO()
+            PhieuNhapDTO phieuNhap1 = new PhieuNhapDTO()
             {
                 ID = idPN,
                 IDNV = mainForm.NhanVienDangNhap,
@@ -377,8 +336,10 @@ namespace CSharp_laptop.GUI
                 TongTien = 0,
                 NgayTao = dateTimePicker1.Value.Date
             };
-            //MessageBox.Show("value: " + phieuNhap.ID + phieuNhap.IDNCC + phieuNhap.IDNV +" "+ phieuNhap.TongTien + phieuNhap.NgayTao);
-            phieuNhapBUS.AddPhieuNhap(phieuNhap, ctPNList, lltList);
+            phieuNhapBUS.AddPhieuNhap(phieuNhap1, ctPNList, lltList);
+
+            LoadPhieuNhapData();
+            tabControl1.SelectedIndex = 0;
         }
 
         private void comboBox_ncc_Click(object sender, EventArgs e)
@@ -398,16 +359,8 @@ namespace CSharp_laptop.GUI
                 {
                     ChonHang = false;
                     comboBox_ncc.SelectedIndex = sttHang;
-                    ChonHang = true;
                 }
             }
-            //if (ChonHang == true)
-            //{
-            //    MessageBox.Show("thay NCC");
-            //    ctPNList.Clear();
-            //    lltList.Clear();
-            //}
-            //phieuNhapBUS.AddPhieuNhap(idPN, phieuNhap, ctPNList);
         }
 
         void Customtable()
@@ -444,10 +397,12 @@ namespace CSharp_laptop.GUI
                     if (lltList[i].IDLoaiLaptop == idLoaiLaptop)
                     {
                         lltList[i].SoLuong--;
+                        lltList[i].ThanhTien -= lltList[i].GiaNhap;
                         lltList.ResetBindings();
                         break;
                     }
                 }
+                TongTIen();
             }
         }
 
@@ -466,7 +421,7 @@ namespace CSharp_laptop.GUI
                         ctPNList.RemoveAt(i);
                     }
                 }
-
+                TongTIen();
             }
         }
 
@@ -475,6 +430,7 @@ namespace CSharp_laptop.GUI
             DataGridViewRow row = dataGridView_PN.Rows[e.RowIndex];
             int id = int.Parse(row.Cells["ID"].Value.ToString());
 
+            vbButton3.Visible = false;
             but_them_sp.Visible = false;
             phieuNhap = phieuNhapBUS.GetPhieuNhapByID(id);
             ctPNList = phieuNhapBUS.GetChiTietPhieuNhap1(id);
@@ -485,10 +441,26 @@ namespace CSharp_laptop.GUI
             //comboBox_ncc.Items.Add(phieuNhap.IDNCC);
             dateTimePicker1.Value = phieuNhap.NgayTao;
 
+            TongTIen();
+
             dataGridView_ctpn.DataSource = ctPNList;
             dataGridView_sp.DataSource = lltList;
 
             tabControl1.SelectedIndex = 1;
+        }
+
+        private void combobox_ll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            text_gia.Texts = "";
+            for (int i = 0; i < lltList.Count; i++)
+            {
+                if (combobox_ll.SelectedValue.ToString() == lltList[i].IDLoaiLaptop)
+                {
+                    comboBox_tgbh.Text = lltList[i].ThoiGianBaoHanh.ToString();
+                    text_gia.Texts = lltList[i].GiaNhap.ToString();
+                    break;
+                }
+            }
         }
     }
 }
