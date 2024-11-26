@@ -586,6 +586,8 @@ namespace CSharp_laptop.GUI.BanHang
         {
             mainForm.OpenChildForm(new HoaDon(mainForm));
         }
+
+
     }
 
 

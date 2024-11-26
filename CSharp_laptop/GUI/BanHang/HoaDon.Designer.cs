@@ -202,6 +202,7 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(1109, 581);
             dataGridView2.TabIndex = 0;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // vbButton3
             // 
