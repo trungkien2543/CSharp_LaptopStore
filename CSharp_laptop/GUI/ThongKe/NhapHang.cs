@@ -246,7 +246,7 @@ namespace CustomTabControl
                 FROM Laptop
                 JOIN LoaiLaptop ON Laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop
                 JOIN HangSanXuat ON LoaiLaptop.Hang = HangSanXuat.ID_Hang
-                WHERE Laptop.TrangThai = 0";
+                WHERE Laptop.TrangThai = 1";
 
                 if (brand != "Tất cả")
                 {
