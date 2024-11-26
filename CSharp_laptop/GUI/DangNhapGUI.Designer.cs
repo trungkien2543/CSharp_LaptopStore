@@ -218,12 +218,13 @@
             linkLabel1.TabIndex = 17;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password ?";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(623, 310);
+            pictureBox2.Location = new Point(623, 308);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(46, 39);
@@ -234,10 +235,10 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(623, 374);
+            pictureBox3.Location = new Point(623, 376);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(59, 63);
+            pictureBox3.Size = new Size(55, 57);
             pictureBox3.TabIndex = 19;
             pictureBox3.TabStop = false;
             // 
@@ -324,12 +325,14 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Transparent;
+            button1.BackColor = Color.White;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.CausesValidation = false;
             button1.ForeColor = Color.Transparent;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1065, 391);
+            button1.Location = new Point(1072, 386);
             button1.Name = "button1";
-            button1.Size = new Size(38, 32);
+            button1.Size = new Size(36, 37);
             button1.TabIndex = 22;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;

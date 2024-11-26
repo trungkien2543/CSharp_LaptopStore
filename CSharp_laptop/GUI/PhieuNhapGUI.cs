@@ -3,6 +3,7 @@ using CSharp_laptop.DTO;
 using Google.Protobuf.Collections;
 using LaptopStore.DTO;
 using Microsoft.VisualBasic;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -495,6 +496,88 @@ namespace CSharp_laptop.GUI
             tabControl1.SelectedIndex = 1;
         }
 
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+        private void ExportToExcel()  // export excel
+        {
+            phieuNhapList = phieuNhapBUS.GetAllPhieuNhap();
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage())
+            {
+                // Tạo một worksheet
+                var worksheet = package.Workbook.Worksheets.Add("Danh sách phiếu nhập");
+
+                // Thêm tiêu đề ở dòng đầu tiên
+                worksheet.Cells["A1:E1"].Merge = true; // Hợp nhất các ô từ A1 đến G1
+                worksheet.Cells["A1"].Value = "DANH SÁCH PHIẾU NHẬP"; // Nội dung tiêu đề
+                worksheet.Cells["A1"].Style.Font.Size = 18; // Font chữ lớn
+                worksheet.Cells["A1"].Style.Font.Bold = true; // In đậm
+                worksheet.Cells["A1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                worksheet.Cells["A1"].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa theo chiều dọc
+                worksheet.Row(1).Height = 40; // Tăng chiều cao dòng tiêu đề
+
+                // Thêm header vào Excel (dòng thứ hai)
+                worksheet.Cells[2, 1].Value = "ID phiếu nhập";
+                worksheet.Cells[2, 2].Value = "ID nhân viên";
+                worksheet.Cells[2, 3].Value = "ID nhà cung cấp";
+                worksheet.Cells[2, 4].Value = "Tổng tiền";
+                worksheet.Cells[2, 5].Value = "Ngày tạo";
+
+                // Định dạng header
+                using (var range = worksheet.Cells[2, 1, 2, 5]) // Phạm vi các ô header
+                {
+                    range.Style.Font.Bold = true; // In đậm
+                    range.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                    range.Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa dọc
+                    range.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid; // Nền solid
+                    range.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray); // Màu nền xám nhạt
+                    range.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin); // Viền
+                }
+
+                // Đổ dữ liệu từ danh sách vào Excel (bắt đầu từ dòng 3)
+                for (int i = 0; i < phieuNhapList.Count; i++)
+                {
+                    var PN = phieuNhapList[i];
+                    worksheet.Cells[i + 3, 1].Value = PN.ID;
+                    worksheet.Cells[i + 3, 2].Value = PN.IDNV;
+                    worksheet.Cells[i + 3, 3].Value = PN.IDNCC;
+                    worksheet.Cells[i + 3, 4].Value = PN.TongTien;
+                    worksheet.Cells[i + 3, 5].Value = PN.NgayTao.ToString("yyyy-MM-dd HH:mm:ss");
+
+                }
+
+                // Kẻ bảng và căn giữa dữ liệu
+                var dataRange = worksheet.Cells[2, 1, phieuNhapList.Count + 2, 5]; // Phạm vi bảng (bao gồm header và dữ liệu)
+                dataRange.Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange.Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange.Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange.Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+                dataRange.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                dataRange.Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa dọc
+
+                // Tự động căn chỉnh kích thước cột
+                worksheet.Cells.AutoFitColumns();
+
+                // Hiển thị hộp thoại lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                saveFileDialog.FileName = "DanhSachPhieuNhap.xlsx"; // Tên file mặc định
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lưu file Excel tại vị trí người dùng chọn
+                    var filePath = saveFileDialog.FileName;
+                    File.WriteAllBytes(filePath, package.GetAsByteArray());
+
+                    MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
+                }
+            }
+        }
         private void combobox_ll_SelectedIndexChanged(object sender, EventArgs e)
         {
             text_gia.Texts = "";
@@ -505,8 +588,10 @@ namespace CSharp_laptop.GUI
                     comboBox_tgbh.Text = lltList[i].ThoiGianBaoHanh.ToString();
                     text_gia.Texts = lltList[i].GiaNhap.ToString();
                     break;
+
                 }
             }
         }
     }
+
 }

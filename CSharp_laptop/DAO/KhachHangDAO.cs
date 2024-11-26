@@ -208,6 +208,40 @@ namespace CSharp_laptop.DAO
 
             return khachHang;
         }
+        public List<KhachHangDTO> SearchKhachHang(string keyword)
+        {
+            List<KhachHangDTO> khachhangs = new List<KhachHangDTO>();
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT `ID_KhachHang`, `TenKH`, `DiaChiKH`, `SDT`, `TichDiem` 
+            FROM `khachhang` 
+            WHERE `TenKH` LIKE @keyword 
+               OR `DiaChiKH` LIKE @keyword 
+               OR `SDT` LIKE @keyword";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        KhachHangDTO khach = new KhachHangDTO
+                        {
+                            ID_KhachHang = reader["ID_KhachHang"].ToString(),
+                            TenKH = reader["TenKH"].ToString(),
+                            DiaChiKH = reader["DiaChiKH"].ToString(),
+                            SDT = reader["SDT"].ToString(),
+                            TichDiem = int.Parse(reader["TichDiem"].ToString())
+                        };
+                        khachhangs.Add(khach);
+                    }
+                }
+            }
+            return khachhangs;
+        }
 
 
     }

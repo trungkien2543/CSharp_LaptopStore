@@ -37,6 +37,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
+
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+
+
             tabPage3 = new TabPage();
             artanPanel5 = new ArtanPanel();
             dataGridView3 = new DataGridView();
@@ -130,6 +141,10 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             tabControl1 = new TabControl();
+
+            btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
+
+            text_nv = new RJTextBox();
             tabPage3.SuspendLayout();
             artanPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -1341,6 +1356,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(149, 147, 186);
+            tabPage1.Controls.Add(btnXuatExcel);
             tabPage1.Controls.Add(rjTextBox1);
             tabPage1.Controls.Add(vbButton1);
             tabPage1.Controls.Add(them_but);
@@ -1529,6 +1545,53 @@
             tabControl1.Size = new Size(1149, 730);
             tabControl1.TabIndex = 1;
             // 
+            // btnXuatExcel
+            // 
+            btnXuatExcel.CustomizableEdges = customizableEdges1;
+            btnXuatExcel.DisabledState.BorderColor = Color.DarkGray;
+            btnXuatExcel.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnXuatExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnXuatExcel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnXuatExcel.FillColor = Color.Green;
+            btnXuatExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnXuatExcel.ForeColor = Color.White;
+            btnXuatExcel.Image = Properties.Resources.icons8_microsoft_excel_32;
+            btnXuatExcel.ImageAlign = HorizontalAlignment.Left;
+            btnXuatExcel.Location = new Point(867, 20);
+            btnXuatExcel.Name = "btnXuatExcel";
+            btnXuatExcel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnXuatExcel.Size = new Size(130, 40);
+            btnXuatExcel.TabIndex = 40;
+            btnXuatExcel.Text = "Xuất Excel";
+            btnXuatExcel.TextAlign = HorizontalAlignment.Right;
+            btnXuatExcel.Click += btnXuatExcel_Click;
+
+            // text_nv
+            // 
+            text_nv.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            text_nv.BackColor = SystemColors.Window;
+            text_nv.BorderColor = Color.FromArgb(85, 81, 132);
+            text_nv.BorderFocusColor = Color.YellowGreen;
+            text_nv.BorderRadius = 7;
+            text_nv.BorderSize = 1;
+            text_nv.Enabled = false;
+            text_nv.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            text_nv.ForeColor = Color.FromArgb(64, 64, 64);
+            text_nv.Location = new Point(66, 136);
+            text_nv.Margin = new Padding(4);
+            text_nv.MaximumSize = new Size(420, 34);
+            text_nv.Multiline = false;
+            text_nv.Name = "text_nv";
+            text_nv.Padding = new Padding(10, 7, 10, 7);
+            text_nv.PasswordChar = false;
+            text_nv.PlaceholderColor = Color.DarkGray;
+            text_nv.PlaceholderText = "";
+            text_nv.RightToLeft = RightToLeft.No;
+            text_nv.Size = new Size(370, 34);
+            text_nv.TabIndex = 28;
+            text_nv.Texts = "";
+            text_nv.UnderlinedStyle = false;
+            // 
             // PhieuNhapGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1670,6 +1733,10 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn IDllt2;
+
+        private Guna.UI2.WinForms.Guna2Button btnXuatExcel;
+
         private RJTextBox text_nv;
+
     }
 }
