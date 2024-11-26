@@ -46,6 +46,7 @@
             rjTextBox1 = new RJTextBox();
             rjTextBox2 = new RJTextBox();
             pictureBox1 = new PictureBox();
+            button1 = new Button();
             panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -233,10 +234,10 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(623, 382);
+            pictureBox3.Location = new Point(623, 374);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(46, 39);
+            pictureBox3.Size = new Size(59, 63);
             pictureBox3.TabIndex = 19;
             pictureBox3.TabStop = false;
             // 
@@ -302,9 +303,10 @@
             rjTextBox2.PlaceholderColor = Color.DarkCyan;
             rjTextBox2.PlaceholderText = "";
             rjTextBox2.Size = new Size(400, 37);
-            rjTextBox2.TabIndex = 22;
+            rjTextBox2.TabIndex = 0;
             rjTextBox2.Texts = "";
             rjTextBox2.UnderlinedStyle = false;
+            rjTextBox2._TextChanged += rjTextBox2__TextChanged;
             // 
             // pictureBox1
             // 
@@ -318,6 +320,19 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.ForeColor = Color.Transparent;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(1065, 391);
+            button1.Name = "button1";
+            button1.Size = new Size(38, 32);
+            button1.TabIndex = 22;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // DangNhapGUI
             // 
@@ -327,6 +342,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1369, 825);
+            Controls.Add(button1);
             Controls.Add(rjTextBox2);
             Controls.Add(rjTextBox1);
             Controls.Add(vbButton1);
@@ -364,5 +380,6 @@
         private RJTextBox rjTextBox1;
         private RJTextBox rjTextBox2;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

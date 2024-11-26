@@ -134,7 +134,7 @@ namespace CSharp_laptop.GUI
 
         private void BtnDel_Click(object sender, EventArgs e)
         {
-           Button clickedButton = sender as Button;
+            Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
                 int rowIndex = int.Parse(clickedButton.Name);
@@ -161,6 +161,7 @@ namespace CSharp_laptop.GUI
                     }
                 }
             }
+            reset();
 
         }
 
@@ -234,7 +235,7 @@ namespace CSharp_laptop.GUI
         {
             // Xác định vị trí trung tâm theo cả hai chiều
             int targetX = (this.Width - editpanel.Width) / 2;
-            int targetY = (this.Height - editpanel.Height) / 2 + 158;
+            int targetY = (this.Height - editpanel.Height) / 2 + 178;
 
             if (hided)
             {
@@ -266,7 +267,7 @@ namespace CSharp_laptop.GUI
         {
             //mainForm.OpenChildForm(new CreateTaiKhoanGUI(mainForm));
             tabControl1.SelectedIndex = 1;
-            
+
 
 
         }
@@ -320,7 +321,7 @@ namespace CSharp_laptop.GUI
             LoadDataToDataGridView();
             nvs = taiKhoanBUS.GetAllTaiKhoan();
 
-            
+
         }
         private void TaiDuLieuComboBoxQuyen()
         {
@@ -332,7 +333,7 @@ namespace CSharp_laptop.GUI
 
         private void vbButton3_Click(object sender, EventArgs e)
         {
-           
+
 
             // Lấy thông tin từ các TextBox và ComboBox
             string tenDN = guna2ComboBox1.Texts; // Lấy tên đăng nhập và loại bỏ khoảng trắng
@@ -353,8 +354,9 @@ namespace CSharp_laptop.GUI
                 reset();
                 MessageBox.Show("Tài khoản đã được thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 rjTextBox1.Text = "";
-               //jTextBox2.Text = ""; // Sử dụng Clear() để xóa nội dung
+                //jTextBox2.Text = ""; // Sử dụng Clear() để xóa nội dung
                 rjComboBox2.SelectedIndex = 0; // Hoặc chọn một giá trị mặc định
+                loadcombobox();
             }
             else
             {
@@ -402,6 +404,11 @@ namespace CSharp_laptop.GUI
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

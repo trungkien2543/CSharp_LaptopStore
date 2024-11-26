@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             artanPanel1 = new ArtanPanel();
             button1 = new Button();
             vbButton1 = new VBButton();
@@ -66,6 +66,7 @@
             artanPanel3 = new ArtanPanel();
             label6 = new Label();
             artanPanel4 = new ArtanPanel();
+            guna2ComboBox1 = new RJComboBox.RJComboBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -74,7 +75,6 @@
             rjComboBox2 = new RJComboBox.RJComboBox();
             rjTextBox1 = new RJTextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            guna2ComboBox1 = new RJComboBox.RJComboBox();
             artanPanel1.SuspendLayout();
             editpanel.SuspendLayout();
             artanPanel2.SuspendLayout();
@@ -102,7 +102,6 @@
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1192, 117);
             artanPanel1.TabIndex = 15;
-
             // 
             // button1
             // 
@@ -160,13 +159,13 @@
             editpanel.Controls.Add(guna2TextBoxID);
             editpanel.Controls.Add(guna2CircleButton2);
             editpanel.Controls.Add(guna2TextBoxTen);
-            editpanel.CustomizableEdges = customizableEdges19;
+            editpanel.CustomizableEdges = customizableEdges9;
             editpanel.FillColor = Color.FromArgb(85, 81, 132);
             editpanel.FillColor2 = Color.FromArgb(210, 220, 230);
             editpanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             editpanel.Location = new Point(4, 408);
             editpanel.Name = "editpanel";
-            editpanel.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            editpanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
             editpanel.Size = new Size(1184, 171);
             editpanel.TabIndex = 49;
             editpanel.Paint += editpanel_Paint;
@@ -176,7 +175,7 @@
             guna2TextBoxDiem.BackColor = Color.Transparent;
             guna2TextBoxDiem.BorderRadius = 10;
             guna2TextBoxDiem.BorderThickness = 2;
-            guna2TextBoxDiem.CustomizableEdges = customizableEdges11;
+            guna2TextBoxDiem.CustomizableEdges = customizableEdges1;
             guna2TextBoxDiem.DefaultText = "";
             guna2TextBoxDiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBoxDiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -192,7 +191,7 @@
             guna2TextBoxDiem.PasswordChar = '\0';
             guna2TextBoxDiem.PlaceholderText = "Quyền";
             guna2TextBoxDiem.SelectedText = "";
-            guna2TextBoxDiem.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2TextBoxDiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2TextBoxDiem.Size = new Size(629, 38);
             guna2TextBoxDiem.TabIndex = 12;
             // 
@@ -215,7 +214,7 @@
             guna2CircleButton3.ImageSize = new Size(18, 18);
             guna2CircleButton3.Location = new Point(1136, 16);
             guna2CircleButton3.Name = "guna2CircleButton3";
-            guna2CircleButton3.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2CircleButton3.ShadowDecoration.CustomizableEdges = customizableEdges3;
             guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton3.Size = new Size(30, 30);
             guna2CircleButton3.TabIndex = 11;
@@ -227,7 +226,7 @@
             guna2TextBoxID.BackColor = Color.Transparent;
             guna2TextBoxID.BorderRadius = 10;
             guna2TextBoxID.BorderThickness = 2;
-            guna2TextBoxID.CustomizableEdges = customizableEdges14;
+            guna2TextBoxID.CustomizableEdges = customizableEdges4;
             guna2TextBoxID.DefaultText = "";
             guna2TextBoxID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBoxID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -244,7 +243,7 @@
             guna2TextBoxID.PasswordChar = '\0';
             guna2TextBoxID.PlaceholderText = "Tên tài khoản";
             guna2TextBoxID.SelectedText = "";
-            guna2TextBoxID.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            guna2TextBoxID.ShadowDecoration.CustomizableEdges = customizableEdges5;
             guna2TextBoxID.Size = new Size(629, 38);
             guna2TextBoxID.TabIndex = 0;
             // 
@@ -266,7 +265,7 @@
             guna2CircleButton2.ImageSize = new Size(30, 30);
             guna2CircleButton2.Location = new Point(904, 53);
             guna2CircleButton2.Name = "guna2CircleButton2";
-            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton2.Size = new Size(62, 62);
             guna2CircleButton2.TabIndex = 10;
@@ -277,7 +276,7 @@
             guna2TextBoxTen.BackColor = Color.Transparent;
             guna2TextBoxTen.BorderRadius = 10;
             guna2TextBoxTen.BorderThickness = 2;
-            guna2TextBoxTen.CustomizableEdges = customizableEdges17;
+            guna2TextBoxTen.CustomizableEdges = customizableEdges7;
             guna2TextBoxTen.DefaultText = "";
             guna2TextBoxTen.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBoxTen.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -293,7 +292,7 @@
             guna2TextBoxTen.PasswordChar = '\0';
             guna2TextBoxTen.PlaceholderText = "Mật khẩu";
             guna2TextBoxTen.SelectedText = "";
-            guna2TextBoxTen.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2TextBoxTen.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2TextBoxTen.Size = new Size(629, 38);
             guna2TextBoxTen.TabIndex = 1;
             // 
@@ -325,24 +324,24 @@
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 35;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column7, Column8 });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(100, 100, 180);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
@@ -350,14 +349,14 @@
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -503,6 +502,27 @@
             artanPanel4.Size = new Size(552, 498);
             artanPanel4.TabIndex = 17;
             // 
+            // guna2ComboBox1
+            // 
+            guna2ComboBox1.BackColor = Color.WhiteSmoke;
+            guna2ComboBox1.BorderColor = Color.Black;
+            guna2ComboBox1.BorderSize = 1;
+            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
+            guna2ComboBox1.Font = new Font("Segoe UI", 10F);
+            guna2ComboBox1.ForeColor = Color.DimGray;
+            guna2ComboBox1.IconColor = Color.FromArgb(247, 176, 118);
+            guna2ComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
+            guna2ComboBox1.ListTextColor = Color.DimGray;
+            guna2ComboBox1.Location = new Point(54, 55);
+            guna2ComboBox1.Margin = new Padding(3, 4, 3, 4);
+            guna2ComboBox1.MinimumSize = new Size(229, 40);
+            guna2ComboBox1.Name = "guna2ComboBox1";
+            guna2ComboBox1.Padding = new Padding(1);
+            guna2ComboBox1.Size = new Size(453, 40);
+            guna2ComboBox1.TabIndex = 44;
+            guna2ComboBox1.Texts = "";
+            guna2ComboBox1.OnSelectedIndexChanged += guna2ComboBox1_OnSelectedIndexChanged;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -628,26 +648,6 @@
             rjTextBox1.TabIndex = 10;
             rjTextBox1.Texts = "";
             rjTextBox1.UnderlinedStyle = false;
-            // 
-            // guna2ComboBox1
-            // 
-            guna2ComboBox1.BackColor = Color.WhiteSmoke;
-            guna2ComboBox1.BorderColor = Color.Black;
-            guna2ComboBox1.BorderSize = 1;
-            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            guna2ComboBox1.Font = new Font("Segoe UI", 10F);
-            guna2ComboBox1.ForeColor = Color.DimGray;
-            guna2ComboBox1.IconColor = Color.FromArgb(247, 176, 118);
-            guna2ComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
-            guna2ComboBox1.ListTextColor = Color.DimGray;
-            guna2ComboBox1.Location = new Point(54, 55);
-            guna2ComboBox1.Margin = new Padding(3, 4, 3, 4);
-            guna2ComboBox1.MinimumSize = new Size(229, 40);
-            guna2ComboBox1.Name = "guna2ComboBox1";
-            guna2ComboBox1.Padding = new Padding(1);
-            guna2ComboBox1.Size = new Size(453, 40);
-            guna2ComboBox1.TabIndex = 44;
-            guna2ComboBox1.Texts = "";
             // 
             // QuanLyTaiKhoanGUI
             // 

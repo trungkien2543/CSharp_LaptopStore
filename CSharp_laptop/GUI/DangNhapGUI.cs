@@ -14,9 +14,19 @@ namespace CSharp_laptop.GUI
 {
     public partial class DangNhapGUI : Form
     {
+
         public DangNhapGUI()
         {
             InitializeComponent();
+
+            rjTextBox2.PasswordChar = true;  // Ẩn mật khẩu khi nhập
+
+
+            this.AcceptButton = vbButton1;
+
+            rjTextBox1.Texts = "NV001";
+            rjTextBox2.Focus();
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -116,7 +126,7 @@ namespace CSharp_laptop.GUI
 
             if (isLoginSuccessful)
             {
-                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide(); // Ẩn form đăng nhập
 
@@ -135,6 +145,34 @@ namespace CSharp_laptop.GUI
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void rjTextBox2__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+
+            if (rjTextBox2.PasswordChar)
+            {
+                // Nếu mật khẩu đang ẩn, thì hiển thị nó
+                rjTextBox2.PasswordChar = false;
+                 
+            }
+            else
+            {
+                // Nếu mật khẩu đang hiển thị, thì ẩn nó
+                rjTextBox2.PasswordChar = true;
+                
+            }
         }
     }
 }
