@@ -2,6 +2,7 @@
 using CSharp_laptop.DAO;
 using CSharp_laptop.DTO;
 using MySql.Data.MySqlClient;
+using OfficeOpenXml;
 using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
@@ -123,7 +124,7 @@ namespace CSharp_laptop.GUI
                 }
                 else
                 {
-                    
+
                 }
             }
         }
@@ -197,6 +198,102 @@ namespace CSharp_laptop.GUI
             {
                 text_mess1.Text = "Vui lòng nhập một số trong khoảng từ 0 đến 100.";
             }
+        }
+
+        private void vbButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+
+        private void ExportToExcel()  // export excel
+        {
+            khuyenMaiList = khuyenMaiBUS.getKhuyenMaiArr();
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage())
+            {
+                // Tạo một worksheet
+                var worksheet = package.Workbook.Worksheets.Add("Danh sách khuyến mãi");
+
+                // Thêm tiêu đề ở dòng đầu tiên
+                worksheet.Cells["A1:G1"].Merge = true; // Hợp nhất các ô từ A1 đến G1
+                worksheet.Cells["A1"].Value = "DANH SÁCH KHUYẾN MÃI"; // Nội dung tiêu đề
+                worksheet.Cells["A1"].Style.Font.Size = 18; // Font chữ lớn
+                worksheet.Cells["A1"].Style.Font.Bold = true; // In đậm
+                worksheet.Cells["A1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                worksheet.Cells["A1"].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa theo chiều dọc
+                worksheet.Row(1).Height = 40; // Tăng chiều cao dòng tiêu đề
+
+                // Thêm header vào Excel (dòng thứ hai)
+                worksheet.Cells[2, 1].Value = "ID";
+                worksheet.Cells[2, 2].Value = "Tên Khuyến Mãi";
+                worksheet.Cells[2, 3].Value = "Mức giảm giá(%)";
+                worksheet.Cells[2, 4].Value = "Mô tả";
+                worksheet.Cells[2, 5].Value = "Thời gian bắt đầu";
+                worksheet.Cells[2, 6].Value = "Thời gian kết thúc";
+                worksheet.Cells[2, 7].Value = "Ngày tạo";
+
+                // Định dạng header
+                using (var range = worksheet.Cells[2, 1, 2, 7]) // Phạm vi các ô header
+                {
+                    range.Style.Font.Bold = true; // In đậm
+                    range.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                    range.Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa dọc
+                    range.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid; // Nền solid
+                    range.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray); // Màu nền xám nhạt
+                    range.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin); // Viền
+                }
+
+                // Đổ dữ liệu từ danh sách vào Excel (bắt đầu từ dòng 3)
+                for (int i = 0; i < khuyenMaiList.Count; i++)
+                {
+                    var KM = khuyenMaiList[i];
+                    worksheet.Cells[i + 3, 1].Value = KM.IDKM;
+                    worksheet.Cells[i + 3, 2].Value = KM.TenKM;
+                    worksheet.Cells[i + 3, 3].Value = KM.MucGiamGia;
+                    worksheet.Cells[i + 3, 4].Value = KM.MoTa;
+                    worksheet.Cells[i + 3, 5].Value = KM.ThoiGianBatDau.ToString("yyyy-MM-dd HH:mm:ss");
+                    worksheet.Cells[i + 3, 6].Value = KM.ThoiGianKetThuc.ToString("yyyy-MM-dd HH:mm:ss");
+                    worksheet.Cells[i + 3, 7].Value = KM.NgayTao.ToString("yyyy-MM-dd HH:mm:ss");
+                }
+
+                // Kẻ bảng và căn giữa dữ liệu
+                var dataRange = worksheet.Cells[2, 1, khuyenMaiList.Count + 2, 7]; // Phạm vi bảng (bao gồm header và dữ liệu)
+                dataRange.Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange.Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange.Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange.Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+                dataRange.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                dataRange.Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa dọc
+
+                // Tự động căn chỉnh kích thước cột
+                worksheet.Cells.AutoFitColumns();
+
+                // Hiển thị hộp thoại lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                saveFileDialog.FileName = "DanhSachKhuyenMai.xlsx"; // Tên file mặc định
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lưu file Excel tại vị trí người dùng chọn
+                    var filePath = saveFileDialog.FileName;
+                    File.WriteAllBytes(filePath, package.GetAsByteArray());
+
+                    MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
+                }
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
