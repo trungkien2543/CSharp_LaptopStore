@@ -48,13 +48,13 @@ namespace CSharp_laptop.GUI.Laptop
             laptop = laptopBUS.GetLaptopByIMEI(tb_timkiem.Text);
             if (laptop == null)
             {
-                MessageBox.Show("IMEI chưa trùng khớp");
                 lb_imei.Text = "";
                 lb_ten.Text = "";
                 lb_tgianbh.Text = "";
                 lb_nbd.Text = "";
                 lb_nkt.Text = "";
                 lb_tt.Text = "";
+                reset();
             }
             else
             {

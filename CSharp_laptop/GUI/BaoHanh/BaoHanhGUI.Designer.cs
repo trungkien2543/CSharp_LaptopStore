@@ -109,7 +109,7 @@
             label3.BackColor = Color.FromArgb(0, 0, 0, 0);
             label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(70, 32);
+            label3.Location = new Point(71, 16);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(180, 30);
@@ -123,7 +123,7 @@
             label4.BackColor = Color.FromArgb(0, 0, 0, 0);
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(70, 131);
+            label4.Location = new Point(71, 115);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(122, 30);
@@ -137,7 +137,7 @@
             label5.BackColor = Color.FromArgb(0, 0, 0, 0);
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(70, 181);
+            label5.Location = new Point(71, 165);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(199, 30);
@@ -151,7 +151,7 @@
             label8.BackColor = Color.FromArgb(0, 0, 0, 0);
             label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(70, 330);
+            label8.Location = new Point(71, 314);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(112, 30);
@@ -165,12 +165,11 @@
             lb_ten.BackColor = Color.FromArgb(0, 0, 0, 0);
             lb_ten.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             lb_ten.ForeColor = Color.White;
-            lb_ten.Location = new Point(303, 131);
+            lb_ten.Location = new Point(304, 115);
             lb_ten.Margin = new Padding(4, 0, 4, 0);
             lb_ten.Name = "lb_ten";
-            lb_ten.Size = new Size(24, 30);
+            lb_ten.Size = new Size(0, 30);
             lb_ten.TabIndex = 14;
-            lb_ten.Text = "a";
             // 
             // lb_tgianbh
             // 
@@ -179,12 +178,11 @@
             lb_tgianbh.BackColor = Color.FromArgb(0, 0, 0, 0);
             lb_tgianbh.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             lb_tgianbh.ForeColor = Color.White;
-            lb_tgianbh.Location = new Point(303, 181);
+            lb_tgianbh.Location = new Point(304, 165);
             lb_tgianbh.Margin = new Padding(4, 0, 4, 0);
             lb_tgianbh.Name = "lb_tgianbh";
-            lb_tgianbh.Size = new Size(24, 30);
+            lb_tgianbh.Size = new Size(0, 30);
             lb_tgianbh.TabIndex = 15;
-            lb_tgianbh.Text = "a";
             // 
             // lb_tt
             // 
@@ -193,12 +191,11 @@
             lb_tt.BackColor = Color.FromArgb(0, 0, 0, 0);
             lb_tt.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             lb_tt.ForeColor = Color.White;
-            lb_tt.Location = new Point(303, 330);
+            lb_tt.Location = new Point(304, 314);
             lb_tt.Margin = new Padding(4, 0, 4, 0);
             lb_tt.Name = "lb_tt";
-            lb_tt.Size = new Size(24, 30);
+            lb_tt.Size = new Size(0, 30);
             lb_tt.TabIndex = 18;
-            lb_tt.Text = "a";
             lb_tt.TextAlign = ContentAlignment.BottomLeft;
             // 
             // panel1
@@ -226,10 +223,10 @@
             artanPanel4.GradientAngle = 30F;
             artanPanel4.GradientBottomColor = Color.FromArgb(85, 81, 132);
             artanPanel4.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel4.Location = new Point(10, 441);
+            artanPanel4.Location = new Point(10, 382);
             artanPanel4.Name = "artanPanel4";
             artanPanel4.Padding = new Padding(4, 0, 4, 15);
-            artanPanel4.Size = new Size(623, 310);
+            artanPanel4.Size = new Size(623, 369);
             artanPanel4.TabIndex = 48;
             // 
             // dataGridView2
@@ -277,7 +274,7 @@
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(615, 295);
+            dataGridView2.Size = new Size(615, 354);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -287,7 +284,6 @@
             artanPanel3.BackColor = Color.White;
             artanPanel3.BorderRadius = 30;
             artanPanel3.Controls.Add(tb_timkiem);
-            artanPanel3.Controls.Add(vbButton3);
             artanPanel3.Controls.Add(vbButton2);
             artanPanel3.Controls.Add(label2);
             artanPanel3.Controls.Add(label1);
@@ -298,7 +294,7 @@
             artanPanel3.Location = new Point(10, 14);
             artanPanel3.Margin = new Padding(4, 3, 4, 3);
             artanPanel3.Name = "artanPanel3";
-            artanPanel3.Size = new Size(623, 421);
+            artanPanel3.Size = new Size(623, 362);
             artanPanel3.TabIndex = 47;
             // 
             // tb_timkiem
@@ -329,8 +325,8 @@
             // 
             // vbButton3
             // 
-            vbButton3.BackColor = Color.FromArgb(247, 176, 118);
-            vbButton3.BackgroundColor = Color.FromArgb(247, 176, 118);
+            vbButton3.BackColor = Color.Red;
+            vbButton3.BackgroundColor = Color.Red;
             vbButton3.BorderColor = Color.PaleVioletRed;
             vbButton3.BorderRadius = 20;
             vbButton3.BorderSize = 0;
@@ -339,13 +335,13 @@
             vbButton3.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton3.ForeColor = Color.White;
             vbButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton3.Location = new Point(21, 247);
+            vbButton3.Location = new Point(28, 15);
             vbButton3.Margin = new Padding(4, 3, 4, 3);
             vbButton3.Name = "vbButton3";
             vbButton3.Padding = new Padding(7, 0, 0, 0);
-            vbButton3.Size = new Size(136, 44);
+            vbButton3.Size = new Size(499, 44);
             vbButton3.TabIndex = 48;
-            vbButton3.Text = "Thêm mới";
+            vbButton3.Text = "Nhấn để cho phép nhập và tạo mới bảo hành";
             vbButton3.TextColor = Color.White;
             vbButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             vbButton3.UseVisualStyleBackColor = false;
@@ -427,7 +423,7 @@
             artanPanel2.Location = new Point(640, 14);
             artanPanel2.Margin = new Padding(4, 3, 4, 3);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Size = new Size(569, 421);
+            artanPanel2.Size = new Size(569, 362);
             artanPanel2.TabIndex = 46;
             // 
             // label17
@@ -437,7 +433,7 @@
             label17.BackColor = Color.FromArgb(0, 0, 0, 0);
             label17.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label17.ForeColor = Color.White;
-            label17.Location = new Point(70, 279);
+            label17.Location = new Point(71, 263);
             label17.Margin = new Padding(4, 0, 4, 0);
             label17.Name = "label17";
             label17.Size = new Size(152, 30);
@@ -451,12 +447,11 @@
             lb_nkt.BackColor = Color.FromArgb(0, 0, 0, 0);
             lb_nkt.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             lb_nkt.ForeColor = Color.White;
-            lb_nkt.Location = new Point(303, 279);
+            lb_nkt.Location = new Point(304, 263);
             lb_nkt.Margin = new Padding(4, 0, 4, 0);
             lb_nkt.Name = "lb_nkt";
-            lb_nkt.Size = new Size(24, 30);
+            lb_nkt.Size = new Size(0, 30);
             lb_nkt.TabIndex = 24;
-            lb_nkt.Text = "a";
             lb_nkt.TextAlign = ContentAlignment.BottomLeft;
             // 
             // label6
@@ -466,7 +461,7 @@
             label6.BackColor = Color.FromArgb(0, 0, 0, 0);
             label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(70, 230);
+            label6.Location = new Point(71, 214);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(146, 30);
@@ -480,12 +475,11 @@
             lb_nbd.BackColor = Color.FromArgb(0, 0, 0, 0);
             lb_nbd.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             lb_nbd.ForeColor = Color.White;
-            lb_nbd.Location = new Point(303, 230);
+            lb_nbd.Location = new Point(304, 214);
             lb_nbd.Margin = new Padding(4, 0, 4, 0);
             lb_nbd.Name = "lb_nbd";
-            lb_nbd.Size = new Size(24, 30);
+            lb_nbd.Size = new Size(0, 30);
             lb_nbd.TabIndex = 22;
-            lb_nbd.Text = "a";
             lb_nbd.TextAlign = ContentAlignment.BottomLeft;
             // 
             // label7
@@ -495,7 +489,7 @@
             label7.BackColor = Color.FromArgb(0, 0, 0, 0);
             label7.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(70, 82);
+            label7.Location = new Point(71, 66);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(58, 30);
@@ -509,12 +503,11 @@
             lb_imei.BackColor = Color.FromArgb(0, 0, 0, 0);
             lb_imei.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             lb_imei.ForeColor = Color.White;
-            lb_imei.Location = new Point(303, 82);
+            lb_imei.Location = new Point(304, 66);
             lb_imei.Margin = new Padding(4, 0, 4, 0);
             lb_imei.Name = "lb_imei";
-            lb_imei.Size = new Size(24, 30);
+            lb_imei.Size = new Size(0, 30);
             lb_imei.TabIndex = 20;
-            lb_imei.Text = "a";
             // 
             // artanPanel1
             // 
@@ -522,6 +515,7 @@
             artanPanel1.BackColor = Color.White;
             artanPanel1.BorderRadius = 30;
             artanPanel1.Controls.Add(guna2DateTimePicker2);
+            artanPanel1.Controls.Add(vbButton3);
             artanPanel1.Controls.Add(tb_ghichu);
             artanPanel1.Controls.Add(label19);
             artanPanel1.Controls.Add(tb_mabh);
@@ -534,10 +528,10 @@
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.FromArgb(85, 81, 132);
             artanPanel1.GradientTopColor = Color.FromArgb(149, 147, 186);
-            artanPanel1.Location = new Point(640, 441);
+            artanPanel1.Location = new Point(640, 382);
             artanPanel1.Margin = new Padding(4, 3, 4, 3);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(569, 307);
+            artanPanel1.Size = new Size(569, 366);
             artanPanel1.TabIndex = 45;
             // 
             // guna2DateTimePicker2
@@ -550,7 +544,7 @@
             guna2DateTimePicker2.Font = new Font("Segoe UI", 12F);
             guna2DateTimePicker2.ForeColor = Color.White;
             guna2DateTimePicker2.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker2.Location = new Point(241, 131);
+            guna2DateTimePicker2.Location = new Point(240, 190);
             guna2DateTimePicker2.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker2.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker2.Name = "guna2DateTimePicker2";
@@ -575,7 +569,7 @@
             tb_ghichu.Font = new Font("Segoe UI", 12F);
             tb_ghichu.ForeColor = Color.Black;
             tb_ghichu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_ghichu.Location = new Point(241, 190);
+            tb_ghichu.Location = new Point(240, 249);
             tb_ghichu.Margin = new Padding(4);
             tb_ghichu.Name = "tb_ghichu";
             tb_ghichu.PasswordChar = '\0';
@@ -592,7 +586,7 @@
             label19.BackColor = Color.FromArgb(0, 0, 0, 0);
             label19.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label19.ForeColor = Color.White;
-            label19.Location = new Point(32, 19);
+            label19.Location = new Point(31, 78);
             label19.Margin = new Padding(4, 0, 4, 0);
             label19.Name = "label19";
             label19.Size = new Size(143, 30);
@@ -617,7 +611,7 @@
             tb_mabh.Font = new Font("Segoe UI", 12F);
             tb_mabh.ForeColor = Color.Black;
             tb_mabh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_mabh.Location = new Point(241, 19);
+            tb_mabh.Location = new Point(240, 78);
             tb_mabh.Margin = new Padding(4);
             tb_mabh.Name = "tb_mabh";
             tb_mabh.PasswordChar = '\0';
@@ -637,7 +631,7 @@
             guna2DateTimePicker1.Font = new Font("Segoe UI", 12F);
             guna2DateTimePicker1.ForeColor = Color.White;
             guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(241, 72);
+            guna2DateTimePicker1.Location = new Point(240, 131);
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -653,7 +647,7 @@
             label14.BackColor = Color.FromArgb(0, 0, 0, 0);
             label14.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(29, 72);
+            label14.Location = new Point(28, 131);
             label14.Margin = new Padding(4, 0, 4, 0);
             label14.Name = "label14";
             label14.Size = new Size(164, 30);
@@ -667,7 +661,7 @@
             label15.BackColor = Color.FromArgb(0, 0, 0, 0);
             label15.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label15.ForeColor = Color.White;
-            label15.Location = new Point(29, 131);
+            label15.Location = new Point(28, 190);
             label15.Margin = new Padding(4, 0, 4, 0);
             label15.Name = "label15";
             label15.Size = new Size(197, 30);
@@ -681,7 +675,7 @@
             label16.BackColor = Color.FromArgb(0, 0, 0, 0);
             label16.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(29, 190);
+            label16.Location = new Point(28, 249);
             label16.Margin = new Padding(4, 0, 4, 0);
             label16.Name = "label16";
             label16.Size = new Size(89, 30);
@@ -701,7 +695,7 @@
             vbButton1.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
             vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(30, 242);
+            vbButton1.Location = new Point(29, 301);
             vbButton1.Margin = new Padding(4, 3, 4, 3);
             vbButton1.Name = "vbButton1";
             vbButton1.Padding = new Padding(7, 0, 0, 0);
