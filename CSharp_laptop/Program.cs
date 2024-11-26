@@ -32,6 +32,9 @@ namespace CSharp_laptop
             DangNhapGUI dangNhapGUI = new DangNhapGUI();
             Application.Run(dangNhapGUI); // Hiển thị MainForm
 
+            //MainForm dangNhapGUI = new MainForm("NV001");
+            //Application.Run(dangNhapGUI); // Hiển thị MainForm
+
         }
     }
 }

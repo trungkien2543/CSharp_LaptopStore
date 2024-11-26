@@ -21,15 +21,23 @@ namespace CSharp_laptop.GUI
     public partial class PhieuNhapGUI : Form
     {
         private PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
+
         private BindingList<PhieuNhapDTO> phieuNhapList;
 
 
         private NhanVienBUS nhanVienBUS = new NhanVienBUS();
+
         private HangBUS hangBUS = new HangBUS();
+
         private LoaiLaptopBUS loaiLaptopBUS = new LoaiLaptopBUS();
-        public PhieuNhapGUI()
+
+        private MainForm mainForm;
+
+        public PhieuNhapGUI(MainForm mainForm)
         {
             InitializeComponent();
+
+            this.mainForm = mainForm;
 
         }
 
@@ -148,6 +156,8 @@ namespace CSharp_laptop.GUI
 
         private void huy_but_Click_1(object sender, EventArgs e)
         {
+            ctPNList.Clear();
+            lltList.Clear();
             tabControl1.SelectedIndex = 0;
         }
 
@@ -362,7 +372,7 @@ namespace CSharp_laptop.GUI
             PhieuNhapDTO phieuNhap = new PhieuNhapDTO()
             {
                 ID = idPN,
-                IDNV = comboBox_nv.SelectedValue.ToString(),
+                IDNV = mainForm.NhanVienDangNhap,
                 IDNCC = comboBox_ncc.SelectedValue.ToString(),
                 TongTien = 0,
                 NgayTao = dateTimePicker1.Value.Date
@@ -402,25 +412,6 @@ namespace CSharp_laptop.GUI
 
         void Customtable()
         {
-            DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
-            btnEdit.Name = "btnEdit";
-            btnEdit.HeaderText = "Sửa";
-            btnEdit.Text = "✏️";
-            btnEdit.Width = 60;
-            btnEdit.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
-            btnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView_PN.Columns.Add(btnEdit);
-
-            // Thêm cột nút "Xóa"
-            DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
-            btnDelete.Name = "btnDelete";
-            btnDelete.HeaderText = "Xóa";
-            btnDelete.Text = "❌";
-            btnDelete.Width = 60;
-            btnDelete.UseColumnTextForButtonValue = true; // Hiển thị text thay vì giá trị của ô
-            btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridView_PN.Columns.Add(btnDelete);
-
             DataGridViewButtonColumn btnDelete1 = new DataGridViewButtonColumn();
             btnDelete1.Name = "btnDelete";
             btnDelete1.HeaderText = "Xóa";
@@ -479,40 +470,25 @@ namespace CSharp_laptop.GUI
             }
         }
 
-        private void dataGridView_PN_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_PN_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView_PN.Columns["btnEdit"].Index && e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridView_PN.Rows[e.RowIndex];
-                int id = int.Parse(row.Cells["ID"].Value.ToString());
-                if(phieuNhapBUS.CheckSPPN(id))
-                {
+            DataGridViewRow row = dataGridView_PN.Rows[e.RowIndex];
+            int id = int.Parse(row.Cells["ID"].Value.ToString());
 
-                }
-                else
-                {
-                    MessageBox.Show("Không thể sửa Phiếu nhập vì có sản phẩm đã bán");
-                }
-            }
-            //if (e.ColumnIndex == dataGridView_PN.Columns["btnDelete"].Index && e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow row = KM_dataGridView.Rows[e.RowIndex];
+            but_them_sp.Visible = false;
+            phieuNhap = phieuNhapBUS.GetPhieuNhapByID(id);
+            ctPNList = phieuNhapBUS.GetChiTietPhieuNhap1(id);
+            lltList = phieuNhapBUS.GetChiTietPhieuNhap2(id);
 
-            //    DialogResult result = MessageBox.Show("Bạn có muốn xóa không?", "Xác nhận",
-            //                          MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            text_IDPN.Texts = phieuNhap.ID.ToString();
+            //comboBox_nv.Items.Add(phieuNhap.IDNV);
+            //comboBox_ncc.Items.Add(phieuNhap.IDNCC);
+            dateTimePicker1.Value = phieuNhap.NgayTao;
 
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        //string id = row.Cells["ID"].Value.ToString();
-            //        //khuyenMaiBUS.DeleteKhuyenMai(id);
+            dataGridView_ctpn.DataSource = ctPNList;
+            dataGridView_sp.DataSource = lltList;
 
-            //        khuyenMaiList.Remove((KhuyenMaiDTO)row.DataBoundItem);
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
+            tabControl1.SelectedIndex = 1;
         }
     }
 }
