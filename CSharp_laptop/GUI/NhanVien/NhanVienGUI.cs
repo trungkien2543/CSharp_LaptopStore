@@ -3,6 +3,7 @@ using CSharp_laptop.DTO;
 using CSharp_laptop.GUI.NhanVien;
 using CSharp_laptop.Properties;
 using LaptopStore.DTO;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -459,6 +460,127 @@ namespace CSharp_laptop.GUI
         {
             LoadTable(bus.SearchNhanVien(searchTextBox.Texts));
         }
-        
+
+        private void ExportExcel_Click(object sender, EventArgs e)
+        {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Danh sách nhân viên");
+
+                worksheet.Cells[1, 1].Value = "ID";
+                worksheet.Cells[1, 2].Value = "Tên Nhân Viên";
+                worksheet.Cells[1, 3].Value = "Ngày Sinh";
+                worksheet.Cells[1, 4].Value = "SĐT";
+                worksheet.Cells[1, 5].Value = "Địa Chỉ";
+                worksheet.Cells[1, 6].Value = "Giới tính";
+                worksheet.Cells[1, 7].Value = "CCCD";
+                worksheet.Cells[1, 8].Value = "Email";
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++) // Lặp qua các hàng
+                {
+                    if (dataGridView1.Rows[i].IsNewRow) // Bỏ qua dòng mới (nếu có)
+                        continue;
+
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++) // Lặp qua các cột
+                    {
+                        worksheet.Cells[i + 2, j + 1].Value = dataGridView1.Rows[i].Cells[j].Value; // Gán giá trị vào Excel
+                    }
+                }
+
+                worksheet.Cells[1, 1, 1, dataGridView1.Columns.Count].Style.Font.Bold = true; // In đậm tiêu đề
+                worksheet.Cells[1, 1, dataGridView1.Rows.Count + 1, dataGridView1.Columns.Count].AutoFitColumns(); // Tự động chỉnh độ rộng cột
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                saveFileDialog.FileName = "DanhSachNhanVien.xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = saveFileDialog.FileName;
+                    File.WriteAllBytes(filePath, package.GetAsByteArray());
+
+                    MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
+                }
+            }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Excel Files|*.xlsx;*.xls"; // Lọc các file Excel
+                openFileDialog.Title = "Chọn file Excel";
+
+                // Kiểm tra xem người dùng có chọn file hay không
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn file được chọn
+                    string filePath = openFileDialog.FileName;
+
+                    // Gọi hàm nhập dữ liệu và lưu vào database
+                    SaveNhanVienToDatabase(ImportFromExcel(filePath));
+                    LoadTable(bus.getAllNhanVien());
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa chọn file.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        private void SaveNhanVienToDatabase(List<NhanVienDTO> nvs)     // lưu sản phẩm mới từ excel
+        {
+            foreach (var nv in nvs)
+            {
+                bool result = bus.AddNhanVien(nv); // Gọi hàm thêm dữ liệu vào DB
+                if (!result)
+                {
+                    MessageBox.Show($"Lỗi khi lưu nhân viên: {nv.TenNV} vì trùng ID", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+        private List<NhanVienDTO> ImportFromExcel(string filePath)        // import excel
+        {
+            List<NhanVienDTO> nvs = new List<NhanVienDTO>();
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            try
+            {
+                using (var package = new ExcelPackage(new FileInfo(filePath)))
+                {
+                    // Lấy sheet đầu tiên
+                    var worksheet = package.Workbook.Worksheets[0];
+                    int rowCount = worksheet.Dimension.Rows;
+
+                    for (int row = 2; row <= rowCount; row++) // Bắt đầu từ dòng 2 (bỏ qua header)
+                    {
+                        NhanVienDTO nv = new NhanVienDTO
+                        {
+                            ID_NhanVien = worksheet.Cells[row, 1].Value?.ToString(),
+                            TenNV = worksheet.Cells[row, 2].Value?.ToString(),
+                            NgaySinh = worksheet.Cells[row, 3].Value?.ToString(),
+                            SDT = worksheet.Cells[row, 4].Value?.ToString(),
+                            DiaChi = worksheet.Cells[row, 5].Value?.ToString(),
+                            GioiTinh = worksheet.Cells[row, 6].Value?.ToString() == "Nam" ? true : false,
+                            CCCD = worksheet.Cells[row, 7].Value?.ToString(),
+                            Email = worksheet.Cells[row, 8].Value?.ToString()
+                        };
+
+                        nvs.Add(nv);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error while reading Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nvs;
+        }
+
+
     }
 }

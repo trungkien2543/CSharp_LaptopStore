@@ -19,6 +19,8 @@ using iTextSharp.tool.xml;
 using Document = iTextSharp.text.Document;
 using PageSize = iTextSharp.text.PageSize;
 using OfficeOpenXml;
+using CSharp_laptop.GUI.Laptop;
+using LaptopStore.DTO;
 
 namespace CSharp_laptop.GUI
 {
@@ -32,6 +34,7 @@ namespace CSharp_laptop.GUI
 
         List<VBButton> btnEditList;
         List<VBButton> btnDelList;
+
         public KhachHangGUI(MainForm mainForm)
         {
             this.mainForm = mainForm;
@@ -408,7 +411,7 @@ namespace CSharp_laptop.GUI
             }
         }
 
-        private void vbButton3_Click(object sender, EventArgs e)
+        private void ExportExcel_Click(object sender, EventArgs e)
         {
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
@@ -450,5 +453,75 @@ namespace CSharp_laptop.GUI
             }
         }
 
+        private void ImportE_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Excel Files|*.xlsx;*.xls"; // Lọc các file Excel
+                openFileDialog.Title = "Chọn file Excel";
+
+                // Kiểm tra xem người dùng có chọn file hay không
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn file được chọn
+                    string filePath = openFileDialog.FileName;
+
+                    // Gọi hàm nhập dữ liệu và lưu vào database
+                    SaveKhachHangToDatabase(ImportFromExcel(filePath));
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa chọn file.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        private void SaveKhachHangToDatabase(List<KhachHangDTO> khs)     // lưu sản phẩm mới từ excel
+        {
+            foreach (var kh in khs)
+            {
+                bool result = bus.AddKhachHang(kh); // Gọi hàm thêm dữ liệu vào DB
+                if (!result)
+                {
+                    MessageBox.Show($"Lỗi khi lưu khách hàng: {kh.TenKH} vì trùng ID", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+        private List<KhachHangDTO> ImportFromExcel(string filePath)        // import excel
+        {
+            List<KhachHangDTO> khs = new List<KhachHangDTO>();
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            try
+            {
+                using (var package = new ExcelPackage(new FileInfo(filePath)))
+                {
+                    // Lấy sheet đầu tiên
+                    var worksheet = package.Workbook.Worksheets[0];
+                    int rowCount = worksheet.Dimension.Rows;
+
+                    for (int row = 2; row <= rowCount; row++) // Bắt đầu từ dòng 2 (bỏ qua header)
+                    {
+                        KhachHangDTO laptop = new KhachHangDTO
+                        {
+                            ID_KhachHang = worksheet.Cells[row, 1].Value?.ToString(),
+                            TenKH = worksheet.Cells[row, 2].Value?.ToString(),
+                            DiaChiKH = worksheet.Cells[row, 3].Value?.ToString(),
+                            SDT = worksheet.Cells[row, 4].Value?.ToString(),
+                            TichDiem = int.Parse(worksheet.Cells[row, 5].Value?.ToString() ?? "0"),
+                        };
+
+                        khs.Add(laptop);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error while reading Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return khs;
+        }
     }
 }

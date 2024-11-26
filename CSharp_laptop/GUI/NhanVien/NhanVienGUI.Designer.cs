@@ -87,6 +87,8 @@
             vbButton1 = new VBButton();
             editpanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             nameprocess = new Label();
+            btnImport = new VBButton();
+            btnExport = new VBButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             editpanel.SuspendLayout();
@@ -658,12 +660,58 @@
             nameprocess.TabIndex = 12;
             nameprocess.Text = "Thêm Nhân Viên";
             // 
+            // btnImport
+            // 
+            btnImport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnImport.BackColor = Color.FromArgb(192, 0, 0);
+            btnImport.BackgroundColor = Color.FromArgb(192, 0, 0);
+            btnImport.BorderColor = Color.PaleVioletRed;
+            btnImport.BorderRadius = 15;
+            btnImport.BorderSize = 0;
+            btnImport.FlatAppearance.BorderSize = 0;
+            btnImport.FlatStyle = FlatStyle.Flat;
+            btnImport.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnImport.ForeColor = Color.White;
+            btnImport.Location = new Point(742, 11);
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(209, 40);
+            btnImport.TabIndex = 54;
+            btnImport.Text = "Import Excel";
+            btnImport.TextColor = Color.White;
+            btnImport.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnImport.UseVisualStyleBackColor = false;
+            btnImport.Click += btnImport_Click;
+            // 
+            // btnExport
+            // 
+            btnExport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExport.BackColor = Color.Green;
+            btnExport.BackgroundColor = Color.Green;
+            btnExport.BorderColor = Color.PaleVioletRed;
+            btnExport.BorderRadius = 15;
+            btnExport.BorderSize = 0;
+            btnExport.FlatAppearance.BorderSize = 0;
+            btnExport.FlatStyle = FlatStyle.Flat;
+            btnExport.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExport.ForeColor = Color.White;
+            btnExport.Location = new Point(527, 11);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(209, 40);
+            btnExport.TabIndex = 53;
+            btnExport.Text = "Export Excel";
+            btnExport.TextColor = Color.White;
+            btnExport.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnExport.UseVisualStyleBackColor = false;
+            btnExport.Click += ExportExcel_Click;
+            // 
             // NhanVienGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(149, 147, 186);
             ClientSize = new Size(1169, 694);
+            Controls.Add(btnImport);
+            Controls.Add(btnExport);
             Controls.Add(editpanel);
             Controls.Add(searchTextBox);
             Controls.Add(vbButton1);
@@ -714,5 +762,7 @@
         private VBButton vbButton1;
         private Guna.UI2.WinForms.Guna2GradientPanel editpanel;
         private Label nameprocess;
+        private VBButton btnImport;
+        private VBButton btnExport;
     }
 }

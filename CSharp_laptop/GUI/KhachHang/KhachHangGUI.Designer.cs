@@ -68,11 +68,12 @@
             timer1 = new System.Windows.Forms.Timer(components);
             rjTextBox1 = new RJTextBox();
             vbButton1 = new VBButton();
-            vbButton2 = new VBButton();
+            btnAdd = new VBButton();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             editpanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             nameprocess = new Label();
-            vbButton3 = new VBButton();
+            btnImport = new VBButton();
+            btnExport = new VBButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             editpanel.SuspendLayout();
@@ -420,30 +421,30 @@
             vbButton1.TextColor = Color.White;
             vbButton1.UseVisualStyleBackColor = false;
             // 
-            // vbButton2
+            // btnAdd
             // 
-            vbButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton2.BackColor = Color.FromArgb(247, 176, 118);
-            vbButton2.BackgroundColor = Color.FromArgb(247, 176, 118);
-            vbButton2.BorderColor = Color.PaleVioletRed;
-            vbButton2.BorderRadius = 15;
-            vbButton2.BorderSize = 0;
-            vbButton2.FlatAppearance.BorderSize = 0;
-            vbButton2.FlatStyle = FlatStyle.Flat;
-            vbButton2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            vbButton2.ForeColor = Color.White;
-            vbButton2.Image = (Image)resources.GetObject("vbButton2.Image");
-            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton2.Location = new Point(1063, 9);
-            vbButton2.Name = "vbButton2";
-            vbButton2.Padding = new Padding(0, 0, 15, 0);
-            vbButton2.Size = new Size(100, 40);
-            vbButton2.TabIndex = 44;
-            vbButton2.Text = "Thêm";
-            vbButton2.TextAlign = ContentAlignment.MiddleRight;
-            vbButton2.TextColor = Color.White;
-            vbButton2.UseVisualStyleBackColor = false;
-            vbButton2.Click += vbButton2_Click_1;
+            btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAdd.BackColor = Color.FromArgb(247, 176, 118);
+            btnAdd.BackgroundColor = Color.FromArgb(247, 176, 118);
+            btnAdd.BorderColor = Color.PaleVioletRed;
+            btnAdd.BorderRadius = 15;
+            btnAdd.BorderSize = 0;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Image = (Image)resources.GetObject("btnAdd.Image");
+            btnAdd.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdd.Location = new Point(1063, 9);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Padding = new Padding(0, 0, 15, 0);
+            btnAdd.Size = new Size(100, 40);
+            btnAdd.TabIndex = 44;
+            btnAdd.Text = "Thêm";
+            btnAdd.TextAlign = ContentAlignment.MiddleRight;
+            btnAdd.TextColor = Color.White;
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += vbButton2_Click_1;
             // 
             // guna2GradientPanel1
             // 
@@ -495,24 +496,49 @@
             nameprocess.TabIndex = 13;
             nameprocess.Text = "Thêm Khách Hàng";
             // 
-            // vbButton3
+            // btnImport
             // 
-            vbButton3.BackColor = Color.MediumSlateBlue;
-            vbButton3.BackgroundColor = Color.MediumSlateBlue;
-            vbButton3.BorderColor = Color.PaleVioletRed;
-            vbButton3.BorderRadius = 20;
-            vbButton3.BorderSize = 0;
-            vbButton3.FlatAppearance.BorderSize = 0;
-            vbButton3.FlatStyle = FlatStyle.Flat;
-            vbButton3.ForeColor = Color.White;
-            vbButton3.Location = new Point(592, 9);
-            vbButton3.Name = "vbButton3";
-            vbButton3.Size = new Size(133, 41);
-            vbButton3.TabIndex = 49;
-            vbButton3.Text = "in PDF";
-            vbButton3.TextColor = Color.White;
-            vbButton3.UseVisualStyleBackColor = false;
-            vbButton3.Click += vbButton3_Click;
+            btnImport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnImport.BackColor = Color.FromArgb(192, 0, 0);
+            btnImport.BackgroundColor = Color.FromArgb(192, 0, 0);
+            btnImport.BorderColor = Color.PaleVioletRed;
+            btnImport.BorderRadius = 15;
+            btnImport.BorderSize = 0;
+            btnImport.FlatAppearance.BorderSize = 0;
+            btnImport.FlatStyle = FlatStyle.Flat;
+            btnImport.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnImport.ForeColor = Color.White;
+            btnImport.Location = new Point(781, 9);
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(209, 40);
+            btnImport.TabIndex = 52;
+            btnImport.Text = "Import Excel";
+            btnImport.TextColor = Color.White;
+            btnImport.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnImport.UseVisualStyleBackColor = false;
+            btnImport.Click += ImportE_Click;
+            // 
+            // btnExport
+            // 
+            btnExport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExport.BackColor = Color.Green;
+            btnExport.BackgroundColor = Color.Green;
+            btnExport.BorderColor = Color.PaleVioletRed;
+            btnExport.BorderRadius = 15;
+            btnExport.BorderSize = 0;
+            btnExport.FlatAppearance.BorderSize = 0;
+            btnExport.FlatStyle = FlatStyle.Flat;
+            btnExport.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExport.ForeColor = Color.White;
+            btnExport.Location = new Point(566, 9);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(209, 40);
+            btnExport.TabIndex = 51;
+            btnExport.Text = "Export Excel";
+            btnExport.TextColor = Color.White;
+            btnExport.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnExport.UseVisualStyleBackColor = false;
+            btnExport.Click += ExportExcel_Click;
             // 
             // KhachHangGUI
             // 
@@ -520,12 +546,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(149, 147, 186);
             ClientSize = new Size(1172, 737);
-            Controls.Add(vbButton3);
+            Controls.Add(btnImport);
+            Controls.Add(btnExport);
             Controls.Add(editpanel);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(rjTextBox1);
             Controls.Add(vbButton1);
-            Controls.Add(vbButton2);
+            Controls.Add(btnAdd);
             Controls.Add(button1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "KhachHangGUI";
@@ -558,10 +585,11 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxDiem;
         private RJTextBox rjTextBox1;
         private VBButton vbButton1;
-        private VBButton vbButton2;
+        private VBButton btnAdd;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientPanel editpanel;
         private Label nameprocess;
-        private VBButton vbButton3;
+        private VBButton btnImport;
+        private VBButton btnExport;
     }
 }
