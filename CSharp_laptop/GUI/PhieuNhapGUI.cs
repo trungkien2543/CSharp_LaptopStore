@@ -529,7 +529,9 @@ namespace CSharp_laptop.GUI
                     File.WriteAllBytes(filePath, package.GetAsByteArray());
 
                     MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
-
+                }
+            }
+        }
         private void combobox_ll_SelectedIndexChanged(object sender, EventArgs e)
         {
             text_gia.Texts = "";
@@ -545,4 +547,5 @@ namespace CSharp_laptop.GUI
             }
         }
     }
+
 }
