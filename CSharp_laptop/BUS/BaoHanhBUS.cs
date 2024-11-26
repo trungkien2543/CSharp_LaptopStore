@@ -15,10 +15,9 @@ namespace CSharp_laptop.BUS
 
         public List<BaoHanhDTO> GetAllBaoHanhsByIMEI(string imei)
         {
-            // You can add any business logic here, such as validation
             if (string.IsNullOrWhiteSpace(imei))
             {
-                throw new ArgumentException("IMEI must not be empty.");
+                MessageBox.Show("IMEI ko tồn tại");
             }
 
             return baoHanhDAO.GetAllBaoHanhsByIMEI(imei);

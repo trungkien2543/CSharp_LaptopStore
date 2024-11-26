@@ -204,7 +204,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.WhiteSmoke;
+            panel1.BackColor = Color.FromArgb(149, 147, 186);
             panel1.Controls.Add(artanPanel4);
             panel1.Controls.Add(artanPanel3);
             panel1.Controls.Add(artanPanel2);
@@ -454,9 +454,8 @@
             label18.Location = new Point(303, 279);
             label18.Margin = new Padding(4, 0, 4, 0);
             label18.Name = "label18";
-            label18.Size = new Size(103, 30);
+            label18.Size = new Size(0, 30);
             label18.TabIndex = 24;
-            label18.Text = "1/1/2002";
             label18.TextAlign = ContentAlignment.BottomLeft;
             // 
             // label6
@@ -483,9 +482,8 @@
             label11.Location = new Point(303, 230);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new Size(103, 30);
+            label11.Size = new Size(0, 30);
             label11.TabIndex = 22;
-            label11.Text = "1/1/2000";
             label11.TextAlign = ContentAlignment.BottomLeft;
             // 
             // label7

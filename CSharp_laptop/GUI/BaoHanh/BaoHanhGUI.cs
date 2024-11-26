@@ -40,7 +40,7 @@ namespace CSharp_laptop.GUI.Laptop
             List<BaoHanhDTO> baoHanhs = baoHanhBUS.GetAllBaoHanhsByIMEI(tb_timkiem.Text);
             if (baoHanhs.Count == 0)
             {
-                Console.WriteLine("No warranty records found for this IMEI.");
+
             }
             else
             {
@@ -54,7 +54,7 @@ namespace CSharp_laptop.GUI.Laptop
             laptop = laptopBUS.GetLaptopByIMEI(tb_timkiem.Text);
             if (laptop == null)
             {
-                Console.WriteLine("No laptop found with this IMEI.");
+                MessageBox.Show("IMEI chưa trùng khớp");
             }
             else
             {
@@ -73,41 +73,22 @@ namespace CSharp_laptop.GUI.Laptop
         {
             string imei = tb_timkiem.Text.Trim();
 
-            try
-            {
-                HoaDonDTO hoadon = hoaDonBUS.GetHoaDonByIMEI(imei);
+            HoaDonDTO hoadon = hoaDonBUS.GetHoaDonByIMEI(imei);
 
-                if (hoadon != null)
-                {
-                    label11.Text = hoadon.NgayLap.Value.ToString("yyyy-MM-dd");
-                }
-                else
-                {
-                    MessageBox.Show("No invoice found for the provided IMEI.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
+            if (hoadon != null)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label11.Text = hoadon.NgayLap.Value.ToString("yyyy-MM-dd");
             }
 
-            try
-            {
-                DateTime? warrantyEndDate = hoaDonBUS.GetWarrantyEndDate(imei);
 
-                if (warrantyEndDate.HasValue)
-                {
-                    label18.Text = warrantyEndDate.Value.ToString("yyyy-MM-dd");
-                }
-                else
-                {
-                    MessageBox.Show("No warranty information found for the provided IMEI.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
+            DateTime? warrantyEndDate = hoaDonBUS.GetWarrantyEndDate(imei);
+
+            if (warrantyEndDate.HasValue)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label18.Text = warrantyEndDate.Value.ToString("yyyy-MM-dd");
             }
+
+
         }
 
         private void vbButton2_Click(object sender, EventArgs e)
@@ -195,7 +176,7 @@ namespace CSharp_laptop.GUI.Laptop
             }
             else 
             {
-                MessageBox.Show("Update");
+                //MessageBox.Show("Update");
                 try
                 {
                     BaoHanhDTO baoHanh = new BaoHanhDTO
@@ -212,7 +193,6 @@ namespace CSharp_laptop.GUI.Laptop
                         MessageBox.Show("Cập nhật bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         check_bh();
                         load_inforlap() ;
-                        
                     }
                     else
                     {

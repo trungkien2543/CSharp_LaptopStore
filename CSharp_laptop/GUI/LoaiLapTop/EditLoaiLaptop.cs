@@ -45,6 +45,7 @@ namespace CSharp_laptop.GUI
             }
             else
             {
+                tb_id.ReadOnly = true;
                 LoaiLaptopDTO sanPhamDTO = loaiLaptopBUS.GetLaptopByID(idLaptop);
 
                 tb_id.Text = sanPhamDTO.IDLoaiLaptop;
@@ -61,10 +62,10 @@ namespace CSharp_laptop.GUI
 
                 label1.Text = chucnang;
 
-                if (!string.IsNullOrEmpty(tb_anh.Text))
-                {
-                    pictureBox1.Image = Image.FromFile(tb_anh.Text);
-                }
+                //if (!string.IsNullOrEmpty(tb_anh.Text))
+                //{
+                //    pictureBox1.Image = Image.FromFile(tb_anh.Text);
+                //}
             }
 
 

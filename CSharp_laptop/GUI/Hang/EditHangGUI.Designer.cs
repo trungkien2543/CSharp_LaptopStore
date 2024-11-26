@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label5 = new Label();
-            rjTextBox1 = new RJTextBox();
-            rjTextBox2 = new RJTextBox();
-            rjTextBox3 = new RJTextBox();
-            rjTextBox4 = new RJTextBox();
             artanPanel1 = new ArtanPanel();
+            tb_sdt = new Guna.UI2.WinForms.Guna2TextBox();
+            tb_diachi = new Guna.UI2.WinForms.Guna2TextBox();
+            tb_ten = new Guna.UI2.WinForms.Guna2TextBox();
+            tb_id = new Guna.UI2.WinForms.Guna2TextBox();
             vbButton2 = new VBButton();
             vbButton1 = new VBButton();
             artanPanel2 = new ArtanPanel();
@@ -107,107 +115,18 @@
             label5.TabIndex = 19;
             label5.Text = "SĐT";
             // 
-            // rjTextBox1
-            // 
-            rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.FromArgb(0, 192, 192);
-            rjTextBox1.BorderFocusColor = Color.FromArgb(0, 0, 192);
-            rjTextBox1.BorderRadius = 5;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Microsoft Sans Serif", 14.25F);
-            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(178, 111);
-            rjTextBox1.Margin = new Padding(4);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = Color.DarkGray;
-            rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(438, 39);
-            rjTextBox1.TabIndex = 25;
-            rjTextBox1.Texts = "";
-            rjTextBox1.UnderlinedStyle = false;
-            // 
-            // rjTextBox2
-            // 
-            rjTextBox2.BackColor = SystemColors.Window;
-            rjTextBox2.BorderColor = Color.FromArgb(0, 192, 192);
-            rjTextBox2.BorderFocusColor = Color.FromArgb(0, 0, 192);
-            rjTextBox2.BorderRadius = 5;
-            rjTextBox2.BorderSize = 2;
-            rjTextBox2.Font = new Font("Microsoft Sans Serif", 14.25F);
-            rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new Point(178, 176);
-            rjTextBox2.Margin = new Padding(4);
-            rjTextBox2.Multiline = false;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = Color.DarkGray;
-            rjTextBox2.PlaceholderText = "";
-            rjTextBox2.Size = new Size(438, 39);
-            rjTextBox2.TabIndex = 26;
-            rjTextBox2.Texts = "";
-            rjTextBox2.UnderlinedStyle = false;
-            // 
-            // rjTextBox3
-            // 
-            rjTextBox3.BackColor = SystemColors.Window;
-            rjTextBox3.BorderColor = Color.FromArgb(0, 192, 192);
-            rjTextBox3.BorderFocusColor = Color.FromArgb(0, 0, 192);
-            rjTextBox3.BorderRadius = 5;
-            rjTextBox3.BorderSize = 2;
-            rjTextBox3.Font = new Font("Microsoft Sans Serif", 14.25F);
-            rjTextBox3.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox3.Location = new Point(178, 238);
-            rjTextBox3.Margin = new Padding(4);
-            rjTextBox3.Multiline = false;
-            rjTextBox3.Name = "rjTextBox3";
-            rjTextBox3.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox3.PasswordChar = false;
-            rjTextBox3.PlaceholderColor = Color.DarkGray;
-            rjTextBox3.PlaceholderText = "";
-            rjTextBox3.Size = new Size(438, 39);
-            rjTextBox3.TabIndex = 27;
-            rjTextBox3.Texts = "";
-            rjTextBox3.UnderlinedStyle = false;
-            // 
-            // rjTextBox4
-            // 
-            rjTextBox4.BackColor = SystemColors.Window;
-            rjTextBox4.BorderColor = Color.FromArgb(0, 192, 192);
-            rjTextBox4.BorderFocusColor = Color.FromArgb(0, 0, 192);
-            rjTextBox4.BorderRadius = 5;
-            rjTextBox4.BorderSize = 2;
-            rjTextBox4.Font = new Font("Microsoft Sans Serif", 14.25F);
-            rjTextBox4.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox4.Location = new Point(178, 299);
-            rjTextBox4.Margin = new Padding(4);
-            rjTextBox4.Multiline = false;
-            rjTextBox4.Name = "rjTextBox4";
-            rjTextBox4.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox4.PasswordChar = false;
-            rjTextBox4.PlaceholderColor = Color.DarkGray;
-            rjTextBox4.PlaceholderText = "";
-            rjTextBox4.Size = new Size(438, 39);
-            rjTextBox4.TabIndex = 28;
-            rjTextBox4.Texts = "";
-            rjTextBox4.UnderlinedStyle = false;
-            rjTextBox4.KeyPress += rjTextBox4_KeyPress;
-            // 
             // artanPanel1
             // 
             artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel1.BackColor = Color.White;
             artanPanel1.BorderRadius = 30;
-            artanPanel1.Controls.Add(rjTextBox3);
-            artanPanel1.Controls.Add(rjTextBox4);
+            artanPanel1.Controls.Add(tb_sdt);
+            artanPanel1.Controls.Add(tb_diachi);
+            artanPanel1.Controls.Add(tb_ten);
+            artanPanel1.Controls.Add(tb_id);
             artanPanel1.Controls.Add(label2);
             artanPanel1.Controls.Add(label3);
-            artanPanel1.Controls.Add(rjTextBox2);
             artanPanel1.Controls.Add(label4);
-            artanPanel1.Controls.Add(rjTextBox1);
             artanPanel1.Controls.Add(label5);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
@@ -217,6 +136,103 @@
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1217, 492);
             artanPanel1.TabIndex = 29;
+            // 
+            // tb_sdt
+            // 
+            tb_sdt.BackColor = Color.Transparent;
+            tb_sdt.BorderColor = Color.FromArgb(247, 176, 118);
+            tb_sdt.BorderRadius = 5;
+            tb_sdt.BorderThickness = 2;
+            tb_sdt.CustomizableEdges = customizableEdges1;
+            tb_sdt.DefaultText = "";
+            tb_sdt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_sdt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_sdt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_sdt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_sdt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_sdt.Font = new Font("Segoe UI", 9F);
+            tb_sdt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_sdt.Location = new Point(227, 299);
+            tb_sdt.Name = "tb_sdt";
+            tb_sdt.PasswordChar = '\0';
+            tb_sdt.PlaceholderText = "";
+            tb_sdt.SelectedText = "";
+            tb_sdt.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            tb_sdt.Size = new Size(438, 36);
+            tb_sdt.TabIndex = 32;
+            tb_sdt.KeyPress += tb_sdt_KeyPress;
+            // 
+            // tb_diachi
+            // 
+            tb_diachi.BackColor = Color.Transparent;
+            tb_diachi.BorderColor = Color.FromArgb(247, 176, 118);
+            tb_diachi.BorderRadius = 5;
+            tb_diachi.BorderThickness = 2;
+            tb_diachi.CustomizableEdges = customizableEdges3;
+            tb_diachi.DefaultText = "";
+            tb_diachi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_diachi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_diachi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_diachi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_diachi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_diachi.Font = new Font("Segoe UI", 9F);
+            tb_diachi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_diachi.Location = new Point(227, 244);
+            tb_diachi.Name = "tb_diachi";
+            tb_diachi.PasswordChar = '\0';
+            tb_diachi.PlaceholderText = "";
+            tb_diachi.SelectedText = "";
+            tb_diachi.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            tb_diachi.Size = new Size(438, 36);
+            tb_diachi.TabIndex = 31;
+            // 
+            // tb_ten
+            // 
+            tb_ten.BackColor = Color.Transparent;
+            tb_ten.BorderColor = Color.FromArgb(247, 176, 118);
+            tb_ten.BorderRadius = 5;
+            tb_ten.BorderThickness = 2;
+            tb_ten.CustomizableEdges = customizableEdges5;
+            tb_ten.DefaultText = "";
+            tb_ten.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_ten.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_ten.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_ten.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_ten.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_ten.Font = new Font("Segoe UI", 9F);
+            tb_ten.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_ten.Location = new Point(227, 179);
+            tb_ten.Name = "tb_ten";
+            tb_ten.PasswordChar = '\0';
+            tb_ten.PlaceholderText = "";
+            tb_ten.SelectedText = "";
+            tb_ten.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            tb_ten.Size = new Size(438, 36);
+            tb_ten.TabIndex = 30;
+            // 
+            // tb_id
+            // 
+            tb_id.BackColor = Color.Transparent;
+            tb_id.BorderColor = Color.FromArgb(247, 176, 118);
+            tb_id.BorderRadius = 5;
+            tb_id.BorderThickness = 2;
+            tb_id.CustomizableEdges = customizableEdges7;
+            tb_id.DefaultText = "";
+            tb_id.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_id.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_id.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_id.Font = new Font("Segoe UI", 9F);
+            tb_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_id.Location = new Point(227, 111);
+            tb_id.Name = "tb_id";
+            tb_id.PasswordChar = '\0';
+            tb_id.PlaceholderText = "";
+            tb_id.SelectedText = "";
+            tb_id.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            tb_id.Size = new Size(438, 36);
+            tb_id.TabIndex = 29;
             // 
             // vbButton2
             // 
@@ -314,14 +330,14 @@
         private Label label3;
         private Label label2;
         private Label label5;
-        private RJTextBox rjTextBox1;
-        private RJTextBox rjTextBox2;
-        private RJTextBox rjTextBox3;
-        private RJTextBox rjTextBox4;
         private ArtanPanel artanPanel1;
         private VBButton vbButton2;
         private VBButton vbButton1;
         private ArtanPanel artanPanel2;
         private ArtanPanel artanPanel3;
+        private Guna.UI2.WinForms.Guna2TextBox tb_sdt;
+        private Guna.UI2.WinForms.Guna2TextBox tb_diachi;
+        private Guna.UI2.WinForms.Guna2TextBox tb_ten;
+        private Guna.UI2.WinForms.Guna2TextBox tb_id;
     }
 }

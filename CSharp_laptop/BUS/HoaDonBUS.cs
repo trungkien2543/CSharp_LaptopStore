@@ -120,19 +120,11 @@ namespace CSharp_laptop.BUS {
 
         public HoaDonDTO GetHoaDonByIMEI(string imei)
         {
-            if (string.IsNullOrEmpty(imei))
-            {
-                throw new ArgumentException("IMEI cannot be null or empty.");
-            }
             return dao.GetHoaDonByIMEI(imei);
         }
 
         public DateTime? GetWarrantyEndDate(string imei)
         {
-            if (string.IsNullOrEmpty(imei))
-            {
-                throw new ArgumentException("IMEI cannot be null or empty.");
-            }
             return dao.GetWarrantyEndDateByIMEI(imei);
         }
     }

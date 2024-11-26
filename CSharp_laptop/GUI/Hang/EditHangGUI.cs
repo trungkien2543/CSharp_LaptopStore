@@ -30,11 +30,13 @@ namespace CSharp_laptop.GUI
 
             if (function == "add")
             {
-                rjTextBox1.Texts = id;
+                tb_id.Text = id;
             }
             else
             if (function == "update")
             {
+
+                tb_id.ReadOnly = true;
                 loaddata_textbox(id);
             }
 
@@ -44,10 +46,10 @@ namespace CSharp_laptop.GUI
         {
             HangDTO hang = hangBUS.GetHangSanXuatById(id);
 
-            rjTextBox1.Texts = hang.ID_Hang;
-            rjTextBox2.Texts = hang.TenHang;
-            rjTextBox3.Texts = hang.DiaChi;
-            rjTextBox4.Texts = hang.SDT;
+            tb_id.Text = hang.ID_Hang;
+            tb_ten.Text = hang.TenHang;
+            tb_diachi.Text = hang.DiaChi;
+            tb_sdt.Text = hang.SDT;
 
         }
 
@@ -56,10 +58,10 @@ namespace CSharp_laptop.GUI
 
             HangDTO hang = new HangDTO
             {
-                ID_Hang = rjTextBox1.Texts,
-                TenHang = rjTextBox2.Texts,
-                DiaChi = rjTextBox3.Texts,
-                SDT = rjTextBox4.Texts
+                ID_Hang = tb_id.Text,
+                TenHang = tb_ten.Text,
+                DiaChi = tb_diachi.Text,
+                SDT = tb_sdt.Text
             };
 
             bool result = (function == "add") ? SaveHang(hang, true) : SaveHang(hang, false);
@@ -91,7 +93,8 @@ namespace CSharp_laptop.GUI
             mainForm.OpenChildForm(new HangGUI(mainForm));
         }
 
-        private void rjTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void tb_sdt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
