@@ -78,8 +78,6 @@
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
-            panel10 = new Panel();
-            km_box = new ArtanPanel();
             sp_box = new ArtanPanel();
             label11 = new Label();
             panel9 = new Panel();
@@ -97,6 +95,8 @@
             label1 = new Label();
             text_gia = new RJTextBox();
             But_sp = new VBButton();
+            panel10 = new Panel();
+            km_box = new ArtanPanel();
             label15 = new Label();
             panel2 = new Panel();
             comboBox_ncc = new ComboBox();
@@ -121,12 +121,12 @@
             them_but = new VBButton();
             artanPanel2 = new ArtanPanel();
             dataGridView_PN = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
+            tabControl1 = new TabControl();
+            ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            tabControl1 = new TabControl();
             tabPage3.SuspendLayout();
             artanPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -143,9 +143,9 @@
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_sp).BeginInit();
             panel6.SuspendLayout();
-            km_box.SuspendLayout();
             sp_box.SuspendLayout();
             panel9.SuspendLayout();
+            km_box.SuspendLayout();
             panel2.SuspendLayout();
             artanPanel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -723,33 +723,6 @@
             panel6.Size = new Size(520, 606);
             panel6.TabIndex = 26;
             // 
-            // panel10
-            // 
-            panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(10, 486);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(510, 10);
-            panel10.TabIndex = 25;
-            // 
-            // km_box
-            // 
-            km_box.BackColor = Color.White;
-            km_box.BorderRadius = 20;
-            km_box.Controls.Add(sp_box);
-            km_box.Controls.Add(label15);
-            km_box.Controls.Add(panel2);
-            km_box.Dock = DockStyle.Fill;
-            km_box.ForeColor = Color.Black;
-            km_box.GradientAngle = 70F;
-            km_box.GradientBottomColor = Color.FromArgb(210, 220, 230);
-            km_box.GradientTopColor = Color.FromArgb(85, 81, 132);
-            km_box.Location = new Point(10, 20);
-            km_box.Name = "km_box";
-            km_box.Padding = new Padding(4, 35, 4, 10);
-            km_box.RightToLeft = RightToLeft.Yes;
-            km_box.Size = new Size(510, 476);
-            km_box.TabIndex = 2;
-            // 
             // sp_box
             // 
             sp_box.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -1022,6 +995,33 @@
             But_sp.TextColor = Color.White;
             But_sp.UseVisualStyleBackColor = false;
             But_sp.Click += But_sp_Click;
+            // 
+            // panel10
+            // 
+            panel10.Dock = DockStyle.Bottom;
+            panel10.Location = new Point(10, 486);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(510, 10);
+            panel10.TabIndex = 25;
+            // 
+            // km_box
+            // 
+            km_box.BackColor = Color.White;
+            km_box.BorderRadius = 20;
+            km_box.Controls.Add(sp_box);
+            km_box.Controls.Add(label15);
+            km_box.Controls.Add(panel2);
+            km_box.Dock = DockStyle.Fill;
+            km_box.ForeColor = Color.Black;
+            km_box.GradientAngle = 70F;
+            km_box.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            km_box.GradientTopColor = Color.FromArgb(85, 81, 132);
+            km_box.Location = new Point(10, 20);
+            km_box.Name = "km_box";
+            km_box.Padding = new Padding(4, 35, 4, 10);
+            km_box.RightToLeft = RightToLeft.Yes;
+            km_box.Size = new Size(510, 476);
+            km_box.TabIndex = 2;
             // 
             // label15
             // 
@@ -1411,22 +1411,36 @@
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             dataGridView_PN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView_PN.ColumnHeadersHeight = 35;
-            dataGridView_PN.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column5, Column4 });
+            dataGridView_PN.Columns.AddRange(new DataGridViewColumn[] { ID, Column2, Column3, Column5, Column4 });
             dataGridView_PN.EnableHeadersVisualStyles = false;
             dataGridView_PN.Location = new Point(4, 0);
             dataGridView_PN.Name = "dataGridView_PN";
             dataGridView_PN.ReadOnly = true;
             dataGridView_PN.Size = new Size(1113, 602);
             dataGridView_PN.TabIndex = 0;
-            dataGridView_PN.CellClick += dataGridView_PN_CellClick;
+            dataGridView_PN.CellDoubleClick += dataGridView_PN_CellDoubleClick;
             // 
-            // Column1
+            // tabControl1
             // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.DataPropertyName = "ID";
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.CausesValidation = false;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.ItemSize = new Size(61, 20);
+            tabControl1.Location = new Point(-4, -5);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1149, 730);
+            tabControl1.TabIndex = 1;
+            // 
+            // ID
+            // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
             // 
             // Column2
             // 
@@ -1460,20 +1474,6 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // tabControl1
-            // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.CausesValidation = false;
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.ItemSize = new Size(61, 20);
-            tabControl1.Location = new Point(-4, -5);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1149, 730);
-            tabControl1.TabIndex = 1;
-            // 
             // PhieuNhapGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1500,12 +1500,12 @@
             artanPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView_sp).EndInit();
             panel6.ResumeLayout(false);
-            km_box.ResumeLayout(false);
-            km_box.PerformLayout();
             sp_box.ResumeLayout(false);
             sp_box.PerformLayout();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
+            km_box.ResumeLayout(false);
+            km_box.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             artanPanel6.ResumeLayout(false);

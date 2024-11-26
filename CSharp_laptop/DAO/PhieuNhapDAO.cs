@@ -21,26 +21,26 @@ namespace CSharp_laptop.DAO
             using(MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                //string query = "SELECT ID_PhieuNhap, MaNV, MaNcc, TongTien, NgayNhap FROM phieunhap ";
                 string query = "SELECT * FROM phieunhap ORDER BY NgayNhap DESC";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    while (reader.Read())
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        PhieuNhapDTO phieuNhap = new PhieuNhapDTO()
+                        while (reader.Read())
                         {
-                            ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
-                            IDNV = reader["MaNV"].ToString(),
-                            IDNCC = reader["MaNCC"].ToString(),
-                            TongTien = int.Parse(reader["TongTIen"].ToString()),
-                            NgayTao = reader.GetDateTime(3)
-                        }; 
-                        Console.WriteLine("data:" + phieuNhap.ID + phieuNhap.IDNV + phieuNhap.IDNCC + phieuNhap.TongTien + phieuNhap.NgayTao);
-                        phieuNhapList.Add(phieuNhap);
+                            PhieuNhapDTO phieuNhap = new PhieuNhapDTO()
+                            {
+                                ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
+                                IDNV = reader["MaNV"].ToString(),
+                                IDNCC = reader["MaNCC"].ToString(),
+                                TongTien = int.Parse(reader["TongTIen"].ToString()),
+                                NgayTao = reader.GetDateTime(3)
+                            };
+                            Console.WriteLine("data:" + phieuNhap.ID + phieuNhap.IDNV + phieuNhap.IDNCC + phieuNhap.TongTien + phieuNhap.NgayTao);
+                            phieuNhapList.Add(phieuNhap);
+                        }
                     }
-                }
+                }  
             }
             return phieuNhapList;
         }
@@ -206,7 +206,7 @@ namespace CSharp_laptop.DAO
 
         public PhieuNhapDTO Get1PhieuNhapByID(int id)
         {
-            PhieuNhapDTO phieuNhap = null;
+            PhieuNhapDTO phieuNhap = new PhieuNhapDTO();
 
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
@@ -214,54 +214,114 @@ namespace CSharp_laptop.DAO
                 string query = "SELECT * FROM phieunhap WHERE ID_PhieuNhap = @id";
                 using(MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        phieuNhap = new PhieuNhapDTO()
+                        while (reader.Read())
                         {
-                            ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
-                            IDNV = reader["MaNV"].ToString(),
-                            IDNCC = reader["MaNCC"].ToString(),
-                            TongTien = int.Parse(reader["TongTIen"].ToString()),
-                            NgayTao = reader.GetDateTime(3)
-                        };
+                            phieuNhap = new PhieuNhapDTO()
+                            {
+                                ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
+                                IDNV = reader["MaNV"].ToString(),
+                                IDNCC = reader["MaNCC"].ToString(),
+                                TongTien = int.Parse(reader["TongTIen"].ToString()),
+                                NgayTao = reader.GetDateTime("NgayNhap")
+                            };
+                        }    
                     }
                 }      
             }
             return phieuNhap;
         }
-        //public BindingList<ChiTietPhieuNhapDTO> GetChiTietPhieuNhap(int id)
-        //{
-        //    BindingList<ChiTietPhieuNhapDTO> ctpnList = new BindingList<ChiTietPhieuNhapDTO>();
+        public BindingList<ChiTietPhieuNhapDTO> GetChiTietPhieuNhap1(int id)
+        {
+            BindingList<ChiTietPhieuNhapDTO> ctpnList = new BindingList<ChiTietPhieuNhapDTO>();
 
-        //    using (MySqlConnection conn = connectionHelper.GetConnection())
-        //    {
-        //        conn.Open();
-        //        string query = "SELECT * FROM chitietphieunhap WHERE ID_PhieuNhap = @id";
-        //        using(MySqlCommand cmd = new MySqlCommand(query, conn))
-        //        {
-        //            using (MySqlDataReader reader = cmd.ExecuteReader())
-        //            {
-        //                while (reader.Read())
-        //                {
-        //                    ChiTietPhieuNhapDTO ctpn = new ChiTietPhieuNhapDTO()
-        //                    {
-        //                        IMEI = reader["IMEI"].ToString(),
-                                
-        //                        GiaNhap = int.Parse(reader["GiaNhap"].ToString())
-        //                        //ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
-        //                        //IDNV = reader["MaNV"].ToString(),
-        //                        //IDNCC = reader["MaNCC"].ToString(),
-        //                        //TongTien = int.Parse(reader["TongTIen"].ToString()),
-        //                        //NgayTao = reader.GetDateTime(3)
-        //                    };
-        //                    Console.WriteLine("data:" + phieuNhap.ID + phieuNhap.IDNV + phieuNhap.IDNCC + phieuNhap.TongTien + phieuNhap.NgayTao);
-        //                    //ctpnList.Add(phieuNhap);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return ctpnList;
-        //}
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT chitietphieunhap.IMEI, chitietphieunhap.GiaNhap, laptop.ThoiGianBaoHanh, laptop.LoaiLaptop FROM chitietphieunhap INNER JOIN laptop ON chitietphieunhap.IMEI = laptop.IMEI WHERE chitietphieunhap.ID_PhieuNhap = @ID_PhieuNhap";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_PhieuNhap", id);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ChiTietPhieuNhapDTO ctpn = new ChiTietPhieuNhapDTO()
+                            {
+                                IMEI = reader["IMEI"].ToString(),
+                                IDLoaiLaptop = reader["LoaiLaptop"].ToString(),
+                                ThoiGianBaoHanh = int.Parse(reader["ThoiGianBaoHanh"].ToString()),
+                                GiaNhap = int.Parse(reader["GiaNhap"].ToString())
+                            };
+                            ctpnList.Add(ctpn);
+                        }
+                    }
+                }
+            }
+            return ctpnList;
+        }
+
+        public BindingList<LoaiLapPnDTO> GetChiTietPhieuNhap2(int id)
+        {
+            BindingList<LoaiLapPnDTO> ctpn2List = new BindingList<LoaiLapPnDTO>();
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT loailaptop.IDLoaiLaptop, loailaptop.TenSP, laptop.ThoiGianBaoHanh, chitietphieunhap.GiaNhap FROM chitietphieunhap INNER JOIN laptop ON chitietphieunhap.IMEI = laptop.IMEI INNER JOIN loailaptop ON laptop.LoaiLaptop = loailaptop.IDLoaiLaptop WHERE chitietphieunhap.ID_PhieuNhap = @ID_PhieuNhap";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_PhieuNhap", id);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string idLoaiLaptop = reader["IDLoaiLaptop"].ToString();
+                            if (ctpn2List.Count == 0)
+                            {
+                                LoaiLapPnDTO ctpn2 = new LoaiLapPnDTO()
+                                {
+                                    IDLoaiLaptop = idLoaiLaptop,
+                                    TenSanPham = reader["TenSP"].ToString(),
+                                    ThoiGianBaoHanh = int.Parse(reader["ThoiGianBaoHanh"].ToString()),
+                                    GiaNhap = int.Parse(reader["GiaNhap"].ToString()),
+                                    SoLuong = 1,
+                                    ThanhTien = int.Parse(reader["GiaNhap"].ToString())
+                                };
+                                ctpn2List.Add(ctpn2);
+                            }
+                            else
+                            {
+                                for (int i = 0; i < ctpn2List.Count; i++)
+                                {
+                                    if (idLoaiLaptop == ctpn2List[i].IDLoaiLaptop)
+                                    {
+                                        ctpn2List[i].SoLuong++;
+                                        ctpn2List[i].ThanhTien += ctpn2List[i].GiaNhap;
+                                    }
+                                    if (i == ctpn2List.Count - 1)
+                                    {
+                                        LoaiLapPnDTO ctpn2 = new LoaiLapPnDTO()
+                                        {
+                                            IDLoaiLaptop = idLoaiLaptop,
+                                            TenSanPham = reader["TenSP"].ToString(),
+                                            ThoiGianBaoHanh = int.Parse(reader["ThoiGianBaoHanh"].ToString()),
+                                            GiaNhap = int.Parse(reader["GiaNhap"].ToString()),
+                                            SoLuong = 1,
+                                            ThanhTien = int.Parse(reader["GiaNhap"].ToString())
+                                        };
+                                        ctpn2List.Add(ctpn2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return ctpn2List;
+        }
 
         //public List<string> GetIMEIList()
         //{
