@@ -151,6 +151,7 @@ namespace CSharp_laptop.GUI
 
                     if (isDeleted)
                     {
+                        loadcombobox();
                         reset();
                         MessageBox.Show("Tài khoản đã được xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         // Cập nhật lại danh sách tài khoản hoặc làm mới DataGridView nếu cần
