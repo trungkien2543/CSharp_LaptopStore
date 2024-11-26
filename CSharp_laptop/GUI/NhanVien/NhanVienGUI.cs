@@ -322,7 +322,7 @@ namespace CSharp_laptop.GUI
                     if (dataGridView1.Rows[i].IsNewRow) // Bỏ qua dòng mới (nếu có)
                         continue;
 
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++) // Lặp qua các cột
+                    for (int j = 0; j < dataGridView1.Columns.Count - 2; j++) // Lặp qua các cột
                     {
                         worksheet.Cells[i + 2, j + 1].Value = dataGridView1.Rows[i].Cells[j].Value; // Gán giá trị vào Excel
                     }

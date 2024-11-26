@@ -36,26 +36,26 @@ namespace CSharp_laptop.GUI
         private Form currentChildForm;
 
         private LoaiLaptopGUI loaiLaptopGUI;
-        
+
         private HangGUI hangGUI;
-        
+
         private BanHangForm banHangForm;
-        
+
         private NhanVienGUI nhanVienGUI;
-        
+
         private KhachHangGUI khachHangGUI;
-        
+
         private KhuyenMaiGUI khuyenMaiGUI;
-        
+
         private ThongKeGUI thongKeGUI;
-        
+
         private QuanLyTaiKhoanGUI quanLyTaiKhoanGUI;
-        
+
         private BaoHanhGUI baoHanhGUI;
-        
+
         private PhieuNhapGUI phieuNhapGUI;
 
-        public String  NhanVienDangNhap;
+        public String NhanVienDangNhap;
 
         public MainForm(String nhanVienDangNhap)
         {
@@ -596,6 +596,50 @@ namespace CSharp_laptop.GUI
 
         }
 
+        public void moChucNang(int i)
+        {
+            switch(i)
+            {
+                case 1:
+                    ActivateButton(btnSanPham, RGBColors.color1);
+                    OpenChildForm(loaiLaptopGUI); break;
+                case 2:
+                    ActivateButton(btnNhaSanXuat, RGBColors.color2);
+                    OpenChildForm(hangGUI); break;
+                case 3:
+                    ActivateButton(btnHD_BH, RGBColors.color3);
+                    OpenChildForm(banHangForm); break;
+                case 4:
+                    ActivateButton(btnNhanVien, RGBColors.color4);
+                    OpenChildForm(nhanVienGUI); break;
+                case 5:
+                    ActivateButton(btnKhachHang, RGBColors.color5);
+                    OpenChildForm(khachHangGUI); break;
+                case 6:
+                    ActivateButton(btnKhuyenMai, RGBColors.color6);
+                    OpenChildForm(khuyenMaiGUI); break;
+                case 7:
+                    ActivateButton(btnThongKe, RGBColors.color7);
+                    OpenChildForm(thongKeGUI); break;
+                case 8:
+                    ActivateButton(btnTaiKhoan, RGBColors.color9);
+                    OpenChildForm(quanLyTaiKhoanGUI); break;
+                case 9:
+                    ActivateButton(iconButton1, RGBColors.color8);
+                    OpenChildForm(baoHanhGUI); break;
+                case 10:
+                    ActivateButton(btnNH_PN, RGBColors.color0);
+                    OpenChildForm(phieuNhapGUI); break;
+                default:
+                    break;
+            }
+        }
 
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            ChatGPT chatGPT = new ChatGPT(this);
+            chatGPT.Show();
+        }
     }
 }

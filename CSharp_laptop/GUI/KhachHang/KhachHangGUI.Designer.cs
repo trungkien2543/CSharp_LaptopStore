@@ -375,7 +375,7 @@
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
             rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
+            rjTextBox1.PasswordChar = true;
             rjTextBox1.PlaceholderColor = Color.DarkGray;
             rjTextBox1.PlaceholderText = "";
             rjTextBox1.Size = new Size(370, 40);
