@@ -367,6 +367,7 @@ namespace CSharp_laptop.GUI
 
                     // Gọi hàm nhập dữ liệu và lưu vào database
                     SaveKhachHangToDatabase(ImportFromExcel(filePath));
+                    LoadTable();
                 }
                 else
                 {
@@ -378,10 +379,30 @@ namespace CSharp_laptop.GUI
         {
             foreach (var kh in khs)
             {
-                bool result = bus.AddKhachHang(kh); // Gọi hàm thêm dữ liệu vào DB
-                if (!result)
+                if (bus.GetKhachHangById(kh.ID_KhachHang) != null)
                 {
-                    MessageBox.Show($"Lỗi khi lưu khách hàng: {kh.TenKH} vì trùng ID", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult result = MessageBox.Show(
+                        $"Khách hàng với ID {kh.ID_KhachHang} đã tồn tại. Bạn có muốn ghi đè không?",
+                        "Xác nhận",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        // Nếu người dùng chọn Yes, gọi hàm cập nhật
+                        bool updateResult = bus.UpdateKhachHang(kh);
+                        if (!updateResult)
+                        {
+                            MessageBox.Show($"Lỗi khi cập nhật khách hàng: {kh.TenKH}","Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        }
+                    } 
+                }
+                else
+                {
+                    bool addResult = bus.AddKhachHang(kh);
+                    if (!addResult)
+                    {
+                        MessageBox.Show($"Lỗi khi lưu khách hàng: {kh.TenKH} ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
 
@@ -470,6 +491,11 @@ namespace CSharp_laptop.GUI
                 }
                 LoadTable();
             }
+        }
+
+        private void rjTextBox1__TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

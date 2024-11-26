@@ -372,10 +372,30 @@ namespace CSharp_laptop.GUI
         {
             foreach (var nv in nvs)
             {
-                bool result = bus.AddNhanVien(nv); // Gọi hàm thêm dữ liệu vào DB
-                if (!result)
+                if (bus.FindNhanVienById(nv.ID_NhanVien) != null)
                 {
-                    MessageBox.Show($"Lỗi khi lưu nhân viên: {nv.TenNV} vì trùng ID", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult result = MessageBox.Show(
+                        $"Nhân Viên với ID {nv.ID_NhanVien} đã tồn tại. Bạn có muốn ghi đè không?",
+                        "Xác nhận",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        // Nếu người dùng chọn Yes, gọi hàm cập nhật
+                        bool updateResult = bus.UpdateNhanVien(nv);
+                        if (!updateResult)
+                        {
+                            MessageBox.Show($"Lỗi khi cập nhật Nhân Viên: {nv.TenNV}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    bool addResult = bus.AddNhanVien(nv);
+                    if (!addResult)
+                    {
+                        MessageBox.Show($"Lỗi khi lưu Nhân Viên: {nv.TenNV} ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
 
