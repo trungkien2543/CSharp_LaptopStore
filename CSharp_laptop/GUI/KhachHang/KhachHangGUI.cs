@@ -324,7 +324,7 @@ namespace CSharp_laptop.GUI
                 worksheet.Cells[1, 4].Value = "SĐT";
                 worksheet.Cells[1, 5].Value = "Tích Điểm";
 
-                for (int i = 0; i < dataGridView1.Rows.Count; i++) // Lặp qua các hàng
+                for (int i = 0; i < dataGridView1.Rows.Count - 2; i++) // Lặp qua các hàng
                 {
                     if (dataGridView1.Rows[i].IsNewRow) // Bỏ qua dòng mới (nếu có)
                         continue;

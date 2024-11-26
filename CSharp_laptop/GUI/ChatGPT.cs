@@ -63,7 +63,7 @@ namespace CSharp_laptop.GUI
                 "QL Khách Hàng(5), QL Khuyến mãi(6), QL Nhập Hàng(10), Xem Thống Kê(7), QL Tài Khoản(8), QL bảo hành(9). " +
                 "Bạn trả lời kèm /GoTo<number> để code tự đến chức năng đấy giúp nhân viên. "+
                 "bạn sẽ hỗ trợ cho người dùng(là nhân viên hoặc admin) quản lý các thông tin trong cửa hàng. " +
-                "Nếu được hỏi các thông tin về laptop thì dựa vào đây(ưu tiên thông tin số lượng): "  +   ". "  },
+                "Nếu được hỏi các thông tin về laptop thì dựa vào đây(ưu tiên thông tin số lượng): "  + laptopsJson +  ". "  },
                 new { role = "user", content = chatrequest }
             },
                 max_tokens = 2000,
