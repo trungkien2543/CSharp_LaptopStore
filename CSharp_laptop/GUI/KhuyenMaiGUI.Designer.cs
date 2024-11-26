@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btnNhapExcel = new Guna.UI2.WinForms.Guna2Button();
             btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
             rjTextBox1 = new RJTextBox();
             vbButton1 = new VBButton();
@@ -75,7 +76,6 @@
             textBox3 = new RJTextBox();
             textBox2 = new RJTextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            btnNhapExcel = new Guna.UI2.WinForms.Guna2Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel3.SuspendLayout();
@@ -115,9 +115,30 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             // 
+            // btnNhapExcel
+            // 
+            btnNhapExcel.CustomizableEdges = customizableEdges1;
+            btnNhapExcel.DisabledState.BorderColor = Color.DarkGray;
+            btnNhapExcel.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnNhapExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnNhapExcel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnNhapExcel.FillColor = Color.Green;
+            btnNhapExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNhapExcel.ForeColor = Color.White;
+            btnNhapExcel.Image = (Image)resources.GetObject("btnNhapExcel.Image");
+            btnNhapExcel.ImageAlign = HorizontalAlignment.Left;
+            btnNhapExcel.Location = new Point(685, 80);
+            btnNhapExcel.Name = "btnNhapExcel";
+            btnNhapExcel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnNhapExcel.Size = new Size(137, 40);
+            btnNhapExcel.TabIndex = 40;
+            btnNhapExcel.Text = "Nhập Excel";
+            btnNhapExcel.TextAlign = HorizontalAlignment.Right;
+            btnNhapExcel.Click += guna2Button1_Click;
+            // 
             // btnXuatExcel
             // 
-            btnXuatExcel.CustomizableEdges = customizableEdges5;
+            btnXuatExcel.CustomizableEdges = customizableEdges3;
             btnXuatExcel.DisabledState.BorderColor = Color.DarkGray;
             btnXuatExcel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnXuatExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -129,7 +150,7 @@
             btnXuatExcel.ImageAlign = HorizontalAlignment.Left;
             btnXuatExcel.Location = new Point(842, 80);
             btnXuatExcel.Name = "btnXuatExcel";
-            btnXuatExcel.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnXuatExcel.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnXuatExcel.Size = new Size(130, 40);
             btnXuatExcel.TabIndex = 39;
             btnXuatExcel.Text = "Xuất Excel";
@@ -232,24 +253,24 @@
             KM_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             KM_dataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             KM_dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            KM_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            KM_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             KM_dataGridView.ColumnHeadersHeight = 35;
             KM_dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Column2, Column3, Column4, Column5, Column7, Column8 });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(100, 100, 180);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            KM_dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            KM_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             KM_dataGridView.EnableHeadersVisualStyles = false;
             KM_dataGridView.GridColor = Color.LightGray;
             KM_dataGridView.Location = new Point(4, 0);
@@ -257,14 +278,14 @@
             KM_dataGridView.Name = "KM_dataGridView";
             KM_dataGridView.ReadOnly = true;
             KM_dataGridView.RightToLeft = RightToLeft.No;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            KM_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            KM_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             KM_dataGridView.RowHeadersVisible = false;
             KM_dataGridView.RowHeadersWidth = 25;
             KM_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -681,27 +702,6 @@
             textBox2.TabIndex = 1;
             textBox2.Texts = "";
             textBox2.UnderlinedStyle = false;
-            // 
-            // btnNhapExcel
-            // 
-            btnNhapExcel.CustomizableEdges = customizableEdges7;
-            btnNhapExcel.DisabledState.BorderColor = Color.DarkGray;
-            btnNhapExcel.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnNhapExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnNhapExcel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnNhapExcel.FillColor = Color.Green;
-            btnNhapExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNhapExcel.ForeColor = Color.White;
-            btnNhapExcel.Image = Properties.Resources.icons8_microsoft_excel_32;
-            btnNhapExcel.ImageAlign = HorizontalAlignment.Left;
-            btnNhapExcel.Location = new Point(685, 80);
-            btnNhapExcel.Name = "btnNhapExcel";
-            btnNhapExcel.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnNhapExcel.Size = new Size(137, 40);
-            btnNhapExcel.TabIndex = 40;
-            btnNhapExcel.Text = "Nhập Excel";
-            btnNhapExcel.TextAlign = HorizontalAlignment.Right;
-            btnNhapExcel.Click += guna2Button1_Click;
             // 
             // KhuyenMaiGUI
             // 

@@ -34,6 +34,8 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tabPage3 = new TabPage();
             artanPanel5 = new ArtanPanel();
             dataGridView3 = new DataGridView();
@@ -78,6 +80,8 @@
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
+            panel10 = new Panel();
+            km_box = new ArtanPanel();
             sp_box = new ArtanPanel();
             label11 = new Label();
             panel9 = new Panel();
@@ -95,8 +99,6 @@
             label1 = new Label();
             text_gia = new RJTextBox();
             But_sp = new VBButton();
-            panel10 = new Panel();
-            km_box = new ArtanPanel();
             label15 = new Label();
             panel2 = new Panel();
             comboBox_ncc = new ComboBox();
@@ -121,12 +123,13 @@
             them_but = new VBButton();
             artanPanel2 = new ArtanPanel();
             dataGridView_PN = new DataGridView();
-            tabControl1 = new TabControl();
             ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            tabControl1 = new TabControl();
+            btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
             tabPage3.SuspendLayout();
             artanPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -143,9 +146,9 @@
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_sp).BeginInit();
             panel6.SuspendLayout();
+            km_box.SuspendLayout();
             sp_box.SuspendLayout();
             panel9.SuspendLayout();
-            km_box.SuspendLayout();
             panel2.SuspendLayout();
             artanPanel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -723,6 +726,33 @@
             panel6.Size = new Size(520, 606);
             panel6.TabIndex = 26;
             // 
+            // panel10
+            // 
+            panel10.Dock = DockStyle.Bottom;
+            panel10.Location = new Point(10, 486);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(510, 10);
+            panel10.TabIndex = 25;
+            // 
+            // km_box
+            // 
+            km_box.BackColor = Color.White;
+            km_box.BorderRadius = 20;
+            km_box.Controls.Add(sp_box);
+            km_box.Controls.Add(label15);
+            km_box.Controls.Add(panel2);
+            km_box.Dock = DockStyle.Fill;
+            km_box.ForeColor = Color.Black;
+            km_box.GradientAngle = 70F;
+            km_box.GradientBottomColor = Color.FromArgb(210, 220, 230);
+            km_box.GradientTopColor = Color.FromArgb(85, 81, 132);
+            km_box.Location = new Point(10, 20);
+            km_box.Name = "km_box";
+            km_box.Padding = new Padding(4, 35, 4, 10);
+            km_box.RightToLeft = RightToLeft.Yes;
+            km_box.Size = new Size(510, 476);
+            km_box.TabIndex = 2;
+            // 
             // sp_box
             // 
             sp_box.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -995,33 +1025,6 @@
             But_sp.TextColor = Color.White;
             But_sp.UseVisualStyleBackColor = false;
             But_sp.Click += But_sp_Click;
-            // 
-            // panel10
-            // 
-            panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(10, 486);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(510, 10);
-            panel10.TabIndex = 25;
-            // 
-            // km_box
-            // 
-            km_box.BackColor = Color.White;
-            km_box.BorderRadius = 20;
-            km_box.Controls.Add(sp_box);
-            km_box.Controls.Add(label15);
-            km_box.Controls.Add(panel2);
-            km_box.Dock = DockStyle.Fill;
-            km_box.ForeColor = Color.Black;
-            km_box.GradientAngle = 70F;
-            km_box.GradientBottomColor = Color.FromArgb(210, 220, 230);
-            km_box.GradientTopColor = Color.FromArgb(85, 81, 132);
-            km_box.Location = new Point(10, 20);
-            km_box.Name = "km_box";
-            km_box.Padding = new Padding(4, 35, 4, 10);
-            km_box.RightToLeft = RightToLeft.Yes;
-            km_box.Size = new Size(510, 476);
-            km_box.TabIndex = 2;
             // 
             // label15
             // 
@@ -1298,6 +1301,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(149, 147, 186);
+            tabPage1.Controls.Add(btnXuatExcel);
             tabPage1.Controls.Add(rjTextBox1);
             tabPage1.Controls.Add(vbButton1);
             tabPage1.Controls.Add(them_but);
@@ -1420,20 +1424,6 @@
             dataGridView_PN.TabIndex = 0;
             dataGridView_PN.CellDoubleClick += dataGridView_PN_CellDoubleClick;
             // 
-            // tabControl1
-            // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.CausesValidation = false;
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.ItemSize = new Size(61, 20);
-            tabControl1.Location = new Point(-4, -5);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1149, 730);
-            tabControl1.TabIndex = 1;
-            // 
             // ID
             // 
             ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -1474,6 +1464,41 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
+            // tabControl1
+            // 
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.CausesValidation = false;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.ItemSize = new Size(61, 20);
+            tabControl1.Location = new Point(-4, -5);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1149, 730);
+            tabControl1.TabIndex = 1;
+            // 
+            // btnXuatExcel
+            // 
+            btnXuatExcel.CustomizableEdges = customizableEdges1;
+            btnXuatExcel.DisabledState.BorderColor = Color.DarkGray;
+            btnXuatExcel.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnXuatExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnXuatExcel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnXuatExcel.FillColor = Color.Green;
+            btnXuatExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnXuatExcel.ForeColor = Color.White;
+            btnXuatExcel.Image = Properties.Resources.icons8_microsoft_excel_32;
+            btnXuatExcel.ImageAlign = HorizontalAlignment.Left;
+            btnXuatExcel.Location = new Point(867, 20);
+            btnXuatExcel.Name = "btnXuatExcel";
+            btnXuatExcel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnXuatExcel.Size = new Size(130, 40);
+            btnXuatExcel.TabIndex = 40;
+            btnXuatExcel.Text = "Xuất Excel";
+            btnXuatExcel.TextAlign = HorizontalAlignment.Right;
+            btnXuatExcel.Click += btnXuatExcel_Click;
+            // 
             // PhieuNhapGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1500,12 +1525,12 @@
             artanPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView_sp).EndInit();
             panel6.ResumeLayout(false);
+            km_box.ResumeLayout(false);
+            km_box.PerformLayout();
             sp_box.ResumeLayout(false);
             sp_box.PerformLayout();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
-            km_box.ResumeLayout(false);
-            km_box.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             artanPanel6.ResumeLayout(false);
@@ -1616,5 +1641,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn IDllt2;
+        private Guna.UI2.WinForms.Guna2Button btnXuatExcel;
     }
 }

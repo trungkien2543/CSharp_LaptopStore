@@ -71,30 +71,38 @@ namespace CSharp_laptop.DAO
             return khuyenMaiArr;
         }
 
-        public KhuyenMaiDTO Get1KhuyenMai(string id)// Lấy 1 Khuyễn mãi bằng id
+        public KhuyenMaiDTO Get1KhuyenMai(string id) // Lấy 1 Khuyến mãi bằng id
         {
             KhuyenMaiDTO khuyenMai = null;
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT ID_KhuyenMai, TenKhuyenMai, MucGiamGia, MoTaKM, ThoiGianBatDau, ThoiGianKetThuc,ThoiGianTaoKM FROM khuyenmai WHERE ID_KhuyenMai = @id";
+                string query = "SELECT ID_KhuyenMai, TenKhuyenMai, MucGiamGia, MoTaKM, ThoiGianBatDau, ThoiGianKetThuc, ThoiGianTaoKM FROM khuyenmai WHERE ID_KhuyenMai = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                // Gán giá trị cho tham số @id
+                cmd.Parameters.AddWithValue("@id", id);
+
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    khuyenMai = new KhuyenMaiDTO
+                    if (reader.Read()) // Kiểm tra xem có dữ liệu hay không
                     {
-                        IDKM = reader["ID_KhuyenMai"].ToString(),
-                        TenKM = reader["TenKhuyenMai"].ToString(),
-                        MucGiamGia = int.Parse(reader["MucGiamGia"].ToString()),
-                        MoTa = reader["MoTaKM"].ToString(),
-                        ThoiGianBatDau = reader.GetDateTime(4),
-                        ThoiGianKetThuc = reader.GetDateTime(5),
-                        NgayTao = reader.GetDateTime(6)
-                    };
+                        khuyenMai = new KhuyenMaiDTO
+                        {
+                            IDKM = reader["ID_KhuyenMai"].ToString(),
+                            TenKM = reader["TenKhuyenMai"].ToString(),
+                            MucGiamGia = int.Parse(reader["MucGiamGia"].ToString()),
+                            MoTa = reader["MoTaKM"].ToString(),
+                            ThoiGianBatDau = reader.GetDateTime("ThoiGianBatDau"), // Có thể dùng tên cột hoặc chỉ số
+                            ThoiGianKetThuc = reader.GetDateTime("ThoiGianKetThuc"),
+                            NgayTao = reader.GetDateTime("ThoiGianTaoKM")
+                        };
+                    }
                 }
             }
             return khuyenMai;
         }
+
 
         public string GetMaxID()
         {

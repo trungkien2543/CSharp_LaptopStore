@@ -16,6 +16,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+
 namespace CSharp_laptop.GUI
 {
     public partial class KhuyenMaiGUI : Form
@@ -23,6 +24,7 @@ namespace CSharp_laptop.GUI
         private string funcion = "";
         private KhuyenMaiBUS khuyenMaiBUS = new KhuyenMaiBUS();
         private BindingList<KhuyenMaiDTO> khuyenMaiList;
+        private KhuyenMaiDAO KhuyenMaiDAO = new KhuyenMaiDAO();
 
         public KhuyenMaiGUI()
         {
@@ -293,7 +295,104 @@ namespace CSharp_laptop.GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Excel Files|*.xlsx;*.xls"; // Lọc các file Excel
+                openFileDialog.Title = "Chọn file Excel";
 
+                // Kiểm tra xem người dùng có chọn file hay không
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn file được chọn
+                    string filePath = openFileDialog.FileName;
+
+                    ImportFromExcel(filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa chọn file.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
+
+        public void ImportFromExcel(string filePath)
+        {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            try
+            {
+                
+                // Kiểm tra nếu file không tồn tại
+                if (!File.Exists(filePath))
+                {
+                    MessageBox.Show("File không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
+                // Load file Excel
+                using (var package = new ExcelPackage(new FileInfo(filePath)))
+                {
+                    
+                    var worksheet = package.Workbook.Worksheets[0]; // Lấy Sheet đầu tiên
+                    int rowCount = worksheet.Dimension.Rows; // Số hàng
+
+                    for (int row = 3; row <= rowCount; row++) // Bỏ qua dòng tiêu đề
+                    {
+                        string idKM = worksheet.Cells[row, 1].Value?.ToString();
+                        string tenKM = worksheet.Cells[row, 2].Value?.ToString(); 
+                        string mucGiamGiaString = worksheet.Cells[row, 3].Value?.ToString();                
+                        string moTa = worksheet.Cells[row, 4].Value?.ToString();
+                   
+                        DateTime thoiGianBatDau = DateTime.Parse(worksheet.Cells[row, 5].Value?.ToString());
+                        DateTime thoiGianKetThuc = DateTime.Parse(worksheet.Cells[row, 6].Value?.ToString());
+                        DateTime ngayTao = DateTime.Now;
+                        
+                        
+                        KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
+                        {
+                            IDKM = idKM,
+                            TenKM = tenKM,
+                            MucGiamGia = int.Parse(mucGiamGiaString),
+                            MoTa = moTa,
+                            ThoiGianBatDau = thoiGianBatDau,
+                            ThoiGianKetThuc = thoiGianKetThuc,
+                            NgayTao = ngayTao
+                        };
+                        // Kiểm tra nếu IDKM đã tồn tại
+                        var existingKhuyenMai = KhuyenMaiDAO.Get1KhuyenMai(idKM);
+                        
+                        if (existingKhuyenMai != null)
+                        {
+                            DialogResult dialogResult = MessageBox.Show(
+                                $"Khuyến mãi với ID {idKM} đã tồn tại. Bạn có muốn ghi đè dữ liệu không?",
+                                "Xác nhận",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question
+                            );
+
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                // Ghi đè dữ liệu
+                                KhuyenMaiDAO.AddorEditKhuyenMai(khuyenMai, "edit");
+                                MessageBox.Show($"Ghi đè khuyến mãi {idKM} thành công!", "Thông báo");
+                                LoadData();
+                            }
+                        }
+                        else
+                        {
+                            // Thêm mới khuyến mãi
+                            KhuyenMaiDAO.AddorEditKhuyenMai(khuyenMai, "add");
+                            MessageBox.Show($"Thêm mới khuyến mãi {idKM} thành công!", "Thông báo");
+                            LoadData();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi khi import: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        
     }
 }
