@@ -144,6 +144,7 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(1217, 267);
             dataGridView2.TabIndex = 0;
+            dataGridView2.CellFormatting += dataGridView2_CellFormatting_1;
             // 
             // artanPanel2
             // 

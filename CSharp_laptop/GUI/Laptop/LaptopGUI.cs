@@ -91,5 +91,14 @@ namespace CSharp_laptop.GUI.Laptop
             DataTable result = laptopBUS.SearchLaptop(searchTerm, laptopID); // Gọi BUS để tìm kiếm
             dataGridView2.DataSource = result;
         }
+
+        private void dataGridView2_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView2.Columns[e.ColumnIndex].Name == "TrangThai" && e.Value != null)
+            {
+                e.Value = (int)e.Value == 0 ? "Đã bán" : "Chưa bán";
+                e.FormattingApplied = true;
+            }
+        }
     }
 }

@@ -60,10 +60,11 @@ namespace CSharp_laptop.GUI.Laptop
             {
                 lb_imei.Text = laptop.IMEI;
                 lb_tgianbh.Text = laptop.ThoiGianBaoHanh.ToString();
-                lb_tt.Text = laptop.TrangThai.ToString();
 
-                LoaiLaptopDTO loaiLaptopDTO = loaiLaptopBUS.GetLaptopByID(laptop.LoaiLaptop);
+                LoaiLaptopDTO loaiLaptopDTO = loaiLaptopBUS.GetLaptopByID(laptop.LoaiLaptop); // tìm tên laptop từ loại laptop
                 lb_ten.Text = loaiLaptopDTO.TenSP;
+
+                lb_tt.Text = (laptop.TrangThai == 0) ? "Đã bán" : "Chưa bán";
             }
 
         }
