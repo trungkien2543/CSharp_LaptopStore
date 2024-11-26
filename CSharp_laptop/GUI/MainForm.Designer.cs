@@ -55,6 +55,7 @@ namespace CSharp_laptop.GUI
             btnSanPham = new IconButton();
             PictureBox1 = new PictureBox();
             panelTitleBar = new Guna.UI2.WinForms.Guna2GradientPanel();
+            iconButton2 = new IconButton();
             panelDesktop = new Panel();
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -213,7 +214,7 @@ namespace CSharp_laptop.GUI
             MenuChoice.Controls.Add(btnSanPham);
             MenuChoice.Location = new Point(0, 120);
             MenuChoice.Name = "MenuChoice";
-            MenuChoice.Size = new Size(175, 650);
+            MenuChoice.Size = new Size(175, 610);
             MenuChoice.TabIndex = 1;
             // 
             // iconButton1
@@ -484,6 +485,7 @@ namespace CSharp_laptop.GUI
             // 
             panelTitleBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelTitleBar.BorderRadius = 12;
+            panelTitleBar.Controls.Add(iconButton2);
             panelTitleBar.Controls.Add(btnExit);
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(btnZoom);
@@ -498,6 +500,28 @@ namespace CSharp_laptop.GUI
             panelTitleBar.Size = new Size(1150, 35);
             panelTitleBar.TabIndex = 7;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
+            // 
+            // iconButton2
+            // 
+            iconButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            iconButton2.BackColor = Color.Transparent;
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.ForeColor = Color.Gainsboro;
+            iconButton2.IconChar = IconChar.Subtract;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = IconFont.Auto;
+            iconButton2.IconSize = 20;
+            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton2.Location = new Point(969, 0);
+            iconButton2.Margin = new Padding(0);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Padding = new Padding(3, 10, 0, 10);
+            iconButton2.Size = new Size(34, 34);
+            iconButton2.TabIndex = 14;
+            iconButton2.TextImageRelation = TextImageRelation.TextBeforeImage;
+            iconButton2.UseVisualStyleBackColor = false;
+            iconButton2.Click += iconButton2_Click;
             // 
             // panelDesktop
             // 
@@ -578,5 +602,6 @@ namespace CSharp_laptop.GUI
         private Label label1;
         private Guna.UI2.WinForms.Guna2GradientPanel panelTitleBar;
         private Guna.UI2.WinForms.Guna2GradientPanel MenuPanel;
+        private IconButton iconButton2;
     }
 }
