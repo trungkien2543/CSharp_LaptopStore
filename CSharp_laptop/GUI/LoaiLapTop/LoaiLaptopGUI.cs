@@ -362,14 +362,55 @@ namespace CSharp_laptop.GUI
         {
             foreach (var laptop in laptops)
             {
-                bool result = laptopBUS.AddLaptop(laptop); // Gọi hàm thêm dữ liệu vào DB
-                if (!result)
+                // Kiểm tra xem ID đã tồn tại trong database hay chưa
+                var existingLaptop = laptopBUS.GetLaptopByID(laptop.IDLoaiLaptop);
+
+                if (existingLaptop != null)
                 {
-                    MessageBox.Show($"Lỗi khi lưu laptop: {laptop.TenSP} vì trùng ID" , "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Nếu tồn tại, hiển thị thông báo hỏi người dùng
+                    DialogResult result = MessageBox.Show(
+                        $"Sản phẩm với ID {laptop.IDLoaiLaptop} đã tồn tại. Bạn có muốn ghi đè thông tin không?",
+                        "Xác nhận",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // Nếu người dùng chọn Yes, gọi hàm cập nhật
+                        bool updateResult = laptopBUS.UpdateLaptop(laptop);
+                        if (!updateResult)
+                        {
+                            MessageBox.Show(
+                                $"Lỗi khi cập nhật laptop: {laptop.TenSP} \n" +
+                                $"Dữ liệu cập nhật không tương thích vui lòng kiểm tra lại tên hãng và khuyến mãi\n !" +
+                                $"Giá bán phải là số!",
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        // Người dùng chọn No, không thực hiện gì
+                        MessageBox.Show($"Sản phẩm {laptop.TenSP} không được ghi đè.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    // Nếu ID không tồn tại, gọi hàm thêm mới
+                    bool insertResult = laptopBUS.AddLaptop(laptop);
+                    if (!insertResult)
+                    {
+                        MessageBox.Show(
+                            $"Lỗi khi lưu laptop: {laptop.TenSP}",
+                            "Lỗi",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
                 }
             }
 
-            //MessageBox.Show("Hoàn thành việc nhập dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Hoàn thành việc nhập dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void vbButton3_Click(object sender, EventArgs e)        // Nút import excel
