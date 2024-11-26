@@ -38,6 +38,35 @@ namespace CSharp_laptop.DAO
             }
             return result;
         }
+        public List<ChiTietHoaDonDTO> GetChiTietHoaDonWithIdHoaDon(long idHD)
+        {
+            List<ChiTietHoaDonDTO> result = new();
+            using (MySqlConnection connection = connectionHelper.GetConnection())
+            {
+                string query = "SELECT * FROM chitiethoadon WHERE ID_HoaDon = @ID_HoaDon";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@Id_HoaDon",idHD);
+
+                connection.Open();
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ChiTietHoaDonDTO chiTiet = new ChiTietHoaDonDTO
+                        {
+                            IMEI = reader["IMEI"].ToString(),
+                            ID_HoaDon = Convert.ToInt64(reader["ID_HoaDon"]),
+                            GiaBan = Convert.ToInt64(reader["GiaBan"])
+                        };
+                        result.Add(chiTiet);
+                    }
+                }
+            }
+            return result;
+        }
+
 
         public List<ChiTietHoaDonDTO> GetChiTietHoaDonWithHoaDon(string find, DateTime From, DateTime To)
         {

@@ -1,107 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết hóa đơn</title>
+    <title>Title of the document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff; /* Nền trắng */
-            color: #000; /* Chữ đen */
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            border: 1px solid #ccc; /* Đường viền nhẹ */
-            border-radius: 10px;
-            padding: 20px;
-            background-color: #fff; /* Nền trắng */
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .info div {
-            width: 48%;
-        }
-        table {
-            width: 100%;
+        table.border {
             border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #fff; /* Nền trắng */
-            color: #000; /* Chữ đen */
         }
-        table th, table td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ccc;
-        }
-        table th {
-            background-color: #f0f0f0; /* Nền nhẹ cho tiêu đề */
-            color: #000; /* Chữ đen */
-        }
-        .actions {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .actions button {
-            padding: 10px 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            background-color: #f9f9f9; /* Nền nút */
-            color: #000; /* Chữ đen */
-        }
-        .actions button:hover {
-            background-color: #e0e0e0; /* Nền khi hover */
-        }
-        .total {
-            text-align: right;
-            font-size: 18px;
-            margin-top: 20px;
-        }
+
+            table.border th {
+                padding: 5px;
+                border: 1px solid black;
+            }
+
+            table.border td {
+                padding: 5px;
+                border: 1px solid black;
+            }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Chi tiết hóa đơn</h1>
-        <div class="info">
-            <div>
-                <p><strong>Mã hóa đơn:</strong> 1001</p>
-                <p><strong>Mã nhân viên:</strong> NV001</p>
-            </div>
-            <div>
-                <p><strong>Ngày lập:</strong> 10/1/2024 12:00:00 AM</p>
-                <p><strong>Mã khách hàng:</strong> KH001</p>
-            </div>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Mã sản phẩm</th>
-                    <th>Giá bán</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>123456789012345</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="total">
-            <p><strong>Tổng tiền:</strong> 30,000,000</p>
-        </div>
-    </div>
+    <table style="width:100%">
+        <tr>
+            <td style="width:20%">
+                <table class="border" style="width:100%">
+                    <tr><td align="center">Mã hóa đơn: @MaHD</td></tr>
+                </table>
+            </td>
+            <td style="width:60%" align="center" valign="top">
+                <table>
+                    <tr><td align="center"><h4 style="margin:0px">CHI TIẾT HÓA ĐƠN</h4></td></tr>
+                    <tr><td align="center">Địa chỉ: An Duong Vuong, District 5, Ho Chi Minh City</td></tr>
+                    <tr><td align="center">Điện thoại: 000-111-22</td></tr>
+                </table>
+            </td>
+           
+        </tr>
+
+        <tr><td colspan="3" height="30"></td></tr>
+
+        <tr>
+            <td colspan="2">
+                <table style="margin-bottom: 10px;width:100% ">
+                    <tr>
+                        <td colspan="1" style="text-align: center;  width:20% ">Ngày lập:</td>
+                        <td colspan="3" style="width:80%;">@CLIENTE</td>
+                    </tr>
+                </table>
+                <table style="width:100%">
+                    <tr>
+                        <td style="text-align: center; width:20%">Mã nhân viên:</td>
+                        <td style="width:60%;">@DOCUMENTO</td>
+                        <td style="text-align: center; width:20%">Mã khách hàng:</td>
+                        <td style="width:40%;">@FECHA</td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr><td colspan="3" height="30"></td></tr>
+
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width:100%;">
+                    <thead>
+                        <tr style="background-color:#D8D8D8">
+                            <th>IMEI</th>
+                            <th>Giá bán</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center">1</td>
+                            <td align="center">sdafsda</td>
+                        </tr>
+                        @FILAS
+                        <tr>
+                            <td align="center">Total:</td>
+                            <td align="center">@TOTAL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

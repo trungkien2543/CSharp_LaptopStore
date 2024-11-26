@@ -13,6 +13,7 @@ using CSharp_laptop.GUI.BanHang;
 using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
 using OfficeOpenXml;
+using CSharp_laptop.GUI.Laptop;
 
 namespace CSharp_laptop.GUI
 {
@@ -22,6 +23,9 @@ namespace CSharp_laptop.GUI
         MainForm mainForm;
 
         List<HoaDonDTO> hoaDonDTOs;
+
+
+        List<ChiTietHoaDonDTO> listCTHD;
 
         HoaDonBUS HoaDonBUS;
 
@@ -39,6 +43,8 @@ namespace CSharp_laptop.GUI
 
             hoaDonDTOs = new List<HoaDonDTO>();
 
+            listCTHD = new List<ChiTietHoaDonDTO>();
+
             LoadHoaDons();
 
             edittable();
@@ -55,6 +61,8 @@ namespace CSharp_laptop.GUI
         private void LoadHoaDons()
         {
             hoaDonDTOs = HoaDonBUS.GetAllHoaDon();
+
+            listCTHD = ChiTietHoaDonBUS.GetAllChiTietHoaDon();
 
 
             dataGridView2.DataSource = hoaDonDTOs;
@@ -135,6 +143,8 @@ namespace CSharp_laptop.GUI
         private void Finding()
         {
             hoaDonDTOs = HoaDonBUS.FindWithCondition(txtFind, DateTimeFrom, DateTimeTo);
+
+            listCTHD = ChiTietHoaDonBUS.GetChiTietHoaDonWithHoaDon(txtFind, DateTimeFrom, DateTimeTo);
 
             dataGridView2.DataSource = hoaDonDTOs;
 
@@ -224,7 +234,6 @@ namespace CSharp_laptop.GUI
                     worksheet.Cells[i + 2, 5].Value = hoaDon.TongTien;
                 }
 
-                List<ChiTietHoaDonDTO> listTemp = ChiTietHoaDonBUS.GetChiTietHoaDonWithHoaDon(txtFind,DateTimeFrom,DateTimeTo);
 
                 // Thêm chi tiết hóa đơn
                 // Tạo một worksheet
@@ -238,9 +247,9 @@ namespace CSharp_laptop.GUI
 
 
                 // Đổ dữ liệu từ danh sách vào Excel
-                for (int i = 0; i < listTemp.Count; i++)
+                for (int i = 0; i < listCTHD.Count; i++)
                 {
-                    var chiTietHoaDon = listTemp[i];
+                    var chiTietHoaDon = listCTHD[i];
                     worksheet1.Cells[i + 2, 1].Value = chiTietHoaDon.IMEI;
                     worksheet1.Cells[i + 2, 2].Value = chiTietHoaDon.ID_HoaDon;
                     worksheet1.Cells[i + 2, 3].Value = chiTietHoaDon.GiaBan;
@@ -260,6 +269,18 @@ namespace CSharp_laptop.GUI
 
                     MessageBox.Show("Xuất Excel thành công! File đã được lưu tại: " + Path.GetFullPath(filePath));
                 }
+            }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.ColumnIndex == dataGridView2.Columns["btnView"].Index && e.RowIndex >= 0)
+            {
+
+                mainForm.OpenChildForm(new ChiTietHoaDon(mainForm, hoaDonDTOs[e.RowIndex]));
+
+                
             }
         }
     }

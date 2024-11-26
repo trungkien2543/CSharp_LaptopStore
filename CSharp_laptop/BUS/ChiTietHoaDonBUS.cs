@@ -12,6 +12,16 @@ namespace CSharp_laptop.BUS
     {
         private readonly ChiTietHoaDonDAO dao = new ChiTietHoaDonDAO();
 
+        public List<ChiTietHoaDonDTO> GetAllChiTietHoaDon()
+        {
+            return dao.GetAllChiTietHoaDon();
+        }
+
+        public List<ChiTietHoaDonDTO> GetChiTietHoaDonWithIdHD(long idHD)
+        {
+            return dao.GetChiTietHoaDonWithIdHoaDon(idHD);
+        }
+
         public List<ChiTietHoaDonDTO> GetChiTietHoaDonWithHoaDon(RJTextBox rJTextBox, Guna2DateTimePicker DateTimeFrom, Guna2DateTimePicker DateTimeTo)
         {
 

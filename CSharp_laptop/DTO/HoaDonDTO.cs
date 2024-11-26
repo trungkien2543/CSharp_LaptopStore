@@ -9,8 +9,8 @@ namespace CSharp_laptop.DTO
     public class HoaDonDTO
     {
         public long ID_HoaDon { get; set; }
-        public string? MaNV { get; set; }
-        public string? MaKH { get; set; }
+        public string MaNV { get; set; }
+        public string MaKH { get; set; }
         public DateTime? NgayLap { get; set; }
         public long? TongTien { get; set; }
 

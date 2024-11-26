@@ -45,6 +45,10 @@ namespace CSharp_laptop.GUI.BanHang
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHangForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -70,10 +74,6 @@ namespace CSharp_laptop.GUI.BanHang
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHangForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -83,6 +83,8 @@ namespace CSharp_laptop.GUI.BanHang
             cbxCamera = new Guna.UI2.WinForms.Guna2ComboBox();
             dataGridView2 = new DataGridView();
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             txtTienThoi = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -101,8 +103,6 @@ namespace CSharp_laptop.GUI.BanHang
             txtID = new Guna.UI2.WinForms.Guna2TextBox();
             txtKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
             txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             guna2GradientPanel2.SuspendLayout();
@@ -305,6 +305,50 @@ namespace CSharp_laptop.GUI.BanHang
             guna2GradientPanel2.Size = new Size(294, 721);
             guna2GradientPanel2.TabIndex = 46;
             // 
+            // guna2Button4
+            // 
+            guna2Button4.BackColor = Color.Transparent;
+            guna2Button4.BorderRadius = 10;
+            guna2Button4.CustomizableEdges = customizableEdges11;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.FromArgb(85, 81, 132);
+            guna2Button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2Button4.ForeColor = Color.White;
+            guna2Button4.Location = new Point(33, 12);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button4.Size = new Size(223, 41);
+            guna2Button4.TabIndex = 61;
+            guna2Button4.Text = "Danh sách hóa đơn";
+            guna2Button4.Click += guna2Button4_Click;
+            // 
+            // guna2CircleButton1
+            // 
+            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2CircleButton1.BackColor = Color.Transparent;
+            guna2CircleButton1.BorderColor = Color.White;
+            guna2CircleButton1.BorderThickness = 1;
+            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton1.FillColor = Color.DeepSkyBlue;
+            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton1.ForeColor = Color.White;
+            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
+            guna2CircleButton1.ImageOffset = new Point(1, 0);
+            guna2CircleButton1.ImageSize = new Size(30, 30);
+            guna2CircleButton1.Location = new Point(192, 620);
+            guna2CircleButton1.Name = "guna2CircleButton1";
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CircleButton1.Size = new Size(75, 75);
+            guna2CircleButton1.TabIndex = 60;
+            guna2CircleButton1.Click += guna2CircleButton1_Click;
+            // 
             // guna2CircleButton2
             // 
             guna2CircleButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -321,7 +365,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2CircleButton2.Image = Properties.Resources.diskette;
             guna2CircleButton2.ImageOffset = new Point(1, 0);
             guna2CircleButton2.ImageSize = new Size(30, 30);
-            guna2CircleButton2.Location = new Point(45, 574);
+            guna2CircleButton2.Location = new Point(46, 620);
             guna2CircleButton2.Name = "guna2CircleButton2";
             guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -344,7 +388,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtTienThoi.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             txtTienThoi.ForeColor = Color.FromArgb(85, 81, 132);
             txtTienThoi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTienThoi.Location = new Point(6, 476);
+            txtTienThoi.Location = new Point(7, 522);
             txtTienThoi.Margin = new Padding(4);
             txtTienThoi.Name = "txtTienThoi";
             txtTienThoi.PasswordChar = '\0';
@@ -360,7 +404,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel7.BackColor = Color.Transparent;
             guna2HtmlLabel7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel7.ForeColor = Color.White;
-            guna2HtmlLabel7.Location = new Point(6, 448);
+            guna2HtmlLabel7.Location = new Point(7, 494);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             guna2HtmlLabel7.Size = new Size(75, 21);
             guna2HtmlLabel7.TabIndex = 58;
@@ -381,7 +425,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtKhachDua.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             txtKhachDua.ForeColor = Color.FromArgb(85, 81, 132);
             txtKhachDua.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtKhachDua.Location = new Point(6, 364);
+            txtKhachDua.Location = new Point(7, 410);
             txtKhachDua.Margin = new Padding(4);
             txtKhachDua.Name = "txtKhachDua";
             txtKhachDua.PasswordChar = '\0';
@@ -397,7 +441,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel6.ForeColor = Color.White;
-            guna2HtmlLabel6.Location = new Point(6, 336);
+            guna2HtmlLabel6.Location = new Point(7, 382);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             guna2HtmlLabel6.Size = new Size(128, 21);
             guna2HtmlLabel6.TabIndex = 56;
@@ -418,7 +462,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtTongTien.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             txtTongTien.ForeColor = Color.FromArgb(85, 81, 132);
             txtTongTien.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTongTien.Location = new Point(6, 253);
+            txtTongTien.Location = new Point(7, 299);
             txtTongTien.Margin = new Padding(4);
             txtTongTien.Name = "txtTongTien";
             txtTongTien.PasswordChar = '\0';
@@ -433,7 +477,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel5.ForeColor = Color.White;
-            guna2HtmlLabel5.Location = new Point(6, 225);
+            guna2HtmlLabel5.Location = new Point(7, 271);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(81, 21);
             guna2HtmlLabel5.TabIndex = 54;
@@ -454,7 +498,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtGiamGia.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             txtGiamGia.ForeColor = Color.FromArgb(85, 81, 132);
             txtGiamGia.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGiamGia.Location = new Point(6, 147);
+            txtGiamGia.Location = new Point(7, 193);
             txtGiamGia.Margin = new Padding(4);
             txtGiamGia.Name = "txtGiamGia";
             txtGiamGia.PasswordChar = '\0';
@@ -469,7 +513,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel4.ForeColor = Color.White;
-            guna2HtmlLabel4.Location = new Point(6, 119);
+            guna2HtmlLabel4.Location = new Point(7, 165);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(75, 21);
             guna2HtmlLabel4.TabIndex = 52;
@@ -490,7 +534,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtThanhTien.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             txtThanhTien.ForeColor = Color.FromArgb(85, 81, 132);
             txtThanhTien.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtThanhTien.Location = new Point(6, 49);
+            txtThanhTien.Location = new Point(7, 95);
             txtThanhTien.Margin = new Padding(4);
             txtThanhTien.Name = "txtThanhTien";
             txtThanhTien.PasswordChar = '\0';
@@ -505,7 +549,7 @@ namespace CSharp_laptop.GUI.BanHang
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel3.ForeColor = Color.White;
-            guna2HtmlLabel3.Location = new Point(6, 21);
+            guna2HtmlLabel3.Location = new Point(7, 67);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(90, 21);
             guna2HtmlLabel3.TabIndex = 50;
@@ -681,50 +725,6 @@ namespace CSharp_laptop.GUI.BanHang
             txtDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges36;
             txtDiaChi.Size = new Size(473, 92);
             txtDiaChi.TabIndex = 16;
-            // 
-            // guna2CircleButton1
-            // 
-            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2CircleButton1.BackColor = Color.Transparent;
-            guna2CircleButton1.BorderColor = Color.White;
-            guna2CircleButton1.BorderThickness = 1;
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.FillColor = Color.DeepSkyBlue;
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
-            guna2CircleButton1.ImageOffset = new Point(1, 0);
-            guna2CircleButton1.ImageSize = new Size(30, 30);
-            guna2CircleButton1.Location = new Point(191, 574);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(75, 75);
-            guna2CircleButton1.TabIndex = 60;
-            guna2CircleButton1.Click += guna2CircleButton1_Click;
-            // 
-            // guna2Button4
-            // 
-            guna2Button4.BackColor = Color.Transparent;
-            guna2Button4.BorderRadius = 10;
-            guna2Button4.CustomizableEdges = customizableEdges11;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.FromArgb(85, 81, 132);
-            guna2Button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.Location = new Point(45, 665);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Button4.Size = new Size(221, 41);
-            guna2Button4.TabIndex = 61;
-            guna2Button4.Text = "Danh sách hóa đơn";
-            guna2Button4.Click += guna2Button4_Click;
             // 
             // BanHangForm
             // 
