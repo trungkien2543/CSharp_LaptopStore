@@ -279,7 +279,7 @@ namespace CSharp_laptop.DAO
                         while (reader.Read())
                         {
                             string idLoaiLaptop = reader["IDLoaiLaptop"].ToString();
-                            if (ctpn2List.Count == 0)
+                            if (ctpn2List.Count < 1)
                             {
                                 LoaiLapPnDTO ctpn2 = new LoaiLapPnDTO()
                                 {
@@ -299,7 +299,8 @@ namespace CSharp_laptop.DAO
                                     if (idLoaiLaptop == ctpn2List[i].IDLoaiLaptop)
                                     {
                                         ctpn2List[i].SoLuong++;
-                                        ctpn2List[i].ThanhTien += ctpn2List[i].GiaNhap;
+                                        //ctpn2List[i].ThanhTien += ctpn2List[i].GiaNhap;
+                                        ctpn2List.ResetBindings();
                                     }
                                     if (i == ctpn2List.Count - 1)
                                     {

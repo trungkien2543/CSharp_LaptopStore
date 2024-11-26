@@ -67,6 +67,7 @@ namespace CSharp_laptop.GUI
 
         private void But_them_Click(object sender, EventArgs e)
         {
+            funcion = "add";
             sp_box.Visible = false;
             idPN = phieuNhapBUS.GetMaxID();
             text_IDPN.Texts = idPN.ToString();
@@ -134,14 +135,37 @@ namespace CSharp_laptop.GUI
 
         }
 
+        string funcion = "";
         private void huy_but_Click_1(object sender, EventArgs e)
         {
-            ChonHang = false;
-            text_tongtien.Texts = "";
-            ctPNList.Clear();
-            lltList.Clear();
-            but_them_sp.Visible = true;
-            tabControl1.SelectedIndex = 0;
+            if(funcion == "add")
+            {
+                DialogResult result = MessageBox.Show("Thoát sẽ xóa hết dữ liệu đã nhập", "Xác nhận",
+                                  MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    ChonHang = false;
+                    text_tongtien.Texts = "";
+                    ctPNList.Clear();
+                    lltList.Clear();
+                    but_them_sp.Visible = true;
+                    tabControl1.SelectedIndex = 0;
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                ChonHang = false;
+                text_tongtien.Texts = "";
+                ctPNList.Clear();
+                lltList.Clear();
+                but_them_sp.Visible = true;
+                tabControl1.SelectedIndex = 0;
+            }
         }
 
         // Thêm sp vào phiếu nè
@@ -209,9 +233,8 @@ namespace CSharp_laptop.GUI
                     IMEI = imei,
                     IDLoaiLaptop = idLoaiLap,
                     GiaNhap = int.Parse(text_gia.Texts),
-                    ThoiGianBaoHanh = int.Parse(comboBox_tgbh.Text)
+                    ThoiGianBaoHanh = int.Parse(comboBox_tgbh.Text.ToString())
                 };
-                //MessageBox.Show("kq: " + ctPN.IMEI + ctPN.IDLoaiLaptop + ctPN.GiaNhap + ctPN.ThoiGianBaoHanh);
                 ctPNList.Add(ctPN);
                 dataGridView_ctpn.DataSource = ctPNList;
 
@@ -222,6 +245,8 @@ namespace CSharp_laptop.GUI
                     {
                         if (idLoaiLap == lltList[i].IDLoaiLaptop)
                         {
+                            lltList[i].ThoiGianBaoHanh = int.Parse(comboBox_tgbh.Text.ToString());
+                            lltList[i].GiaNhap = int.Parse(text_gia.Texts.ToString());
                             lltList[i].SoLuong++;
                             lltList[i].ThanhTien = lltList[i].GiaNhap * lltList[i].SoLuong;
                             lltList.ResetBindings();
@@ -241,7 +266,7 @@ namespace CSharp_laptop.GUI
                         {
                             IDLoaiLaptop = idLoaiLap,
                             TenSanPham = result,
-                            ThoiGianBaoHanh = int.Parse(comboBox_tgbh.SelectedIndex.ToString()),
+                            ThoiGianBaoHanh = int.Parse(comboBox_tgbh.Text.ToString()),
                             GiaNhap = int.Parse(text_gia.Texts.ToString()),
                             SoLuong = 1,
                             ThanhTien = int.Parse(text_gia.Texts.ToString())
@@ -258,22 +283,35 @@ namespace CSharp_laptop.GUI
                     {
                         IDLoaiLaptop = idLoaiLap,
                         TenSanPham = result,
-                        ThoiGianBaoHanh = int.Parse(comboBox_tgbh.SelectedIndex.ToString()),
+                        ThoiGianBaoHanh = int.Parse(comboBox_tgbh.Text.ToString()),
                         GiaNhap = int.Parse(text_gia.Texts.ToString()),
                         SoLuong = 1,
                         ThanhTien = int.Parse(text_gia.Texts.ToString())
                     };
                     lltList.Add(llt);
                 }
+                UpdateGiaNhap();
+                text_IMEI.Texts = "";
+                dataGridView_ctpn.DataSource = ctPNList;
+                dataGridView_sp.DataSource = lltList;
+                TongTIen();
             }
-            dataGridView_ctpn.DataSource = ctPNList;
-            dataGridView_sp.DataSource = lltList;
-            TongTIen();
+        }
+        private void UpdateGiaNhap()
+        {
+            for (int i = 0; i < ctPNList.Count; i++)
+            {
+                if (combobox_ll.SelectedValue.ToString() == ctPNList[i].IDLoaiLaptop)
+                {
+                    ctPNList[i].ThoiGianBaoHanh = int.Parse(comboBox_tgbh.Text.ToString());
+                    ctPNList[i].GiaNhap = int.Parse(text_gia.Texts.ToString());
+                }
+            }
         }
 
         private void TongTIen()
         {
-            int tt = 0;
+            Int128 tt = 0;
             if (lltList.Count > 0)
             {
                 for (int i = 0; i < lltList.Count; i++)
@@ -313,7 +351,7 @@ namespace CSharp_laptop.GUI
         private bool KiemTraGiaNhap()
         {
             string input = text_gia.Texts;
-            if (int.TryParse(input, out int result))
+            if (Int32.TryParse(input, out int result))
             {
                 if (result > 0)
                 {
@@ -328,18 +366,25 @@ namespace CSharp_laptop.GUI
 
         private void vbButton3_Click(object sender, EventArgs e)
         {
-            PhieuNhapDTO phieuNhap1 = new PhieuNhapDTO()
+            if (lltList.Count > 0)
             {
-                ID = idPN,
-                IDNV = mainForm.NhanVienDangNhap,
-                IDNCC = comboBox_ncc.SelectedValue.ToString(),
-                TongTien = 0,
-                NgayTao = dateTimePicker1.Value.Date
-            };
-            phieuNhapBUS.AddPhieuNhap(phieuNhap1, ctPNList, lltList);
+                PhieuNhapDTO phieuNhap1 = new PhieuNhapDTO()
+                {
+                    ID = idPN,
+                    IDNV = mainForm.NhanVienDangNhap,
+                    IDNCC = comboBox_ncc.SelectedValue.ToString(),
+                    TongTien = 0,
+                    NgayTao = dateTimePicker1.Value.Date
+                };
+                phieuNhapBUS.AddPhieuNhap(phieuNhap1, ctPNList, lltList);
 
-            LoadPhieuNhapData();
-            tabControl1.SelectedIndex = 0;
+                LoadPhieuNhapData();
+                tabControl1.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa thêm sản phẩm!!!");
+            }
         }
 
         private void comboBox_ncc_Click(object sender, EventArgs e)
@@ -427,6 +472,7 @@ namespace CSharp_laptop.GUI
 
         private void dataGridView_PN_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            funcion = "view";
             DataGridViewRow row = dataGridView_PN.Rows[e.RowIndex];
             int id = int.Parse(row.Cells["ID"].Value.ToString());
 
@@ -437,8 +483,8 @@ namespace CSharp_laptop.GUI
             lltList = phieuNhapBUS.GetChiTietPhieuNhap2(id);
 
             text_IDPN.Texts = phieuNhap.ID.ToString();
-            //comboBox_nv.Items.Add(phieuNhap.IDNV);
-            //comboBox_ncc.Items.Add(phieuNhap.IDNCC);
+            text_nv.Texts = phieuNhap.IDNV.ToString();
+            comboBox_ncc.Text = phieuNhap.IDNCC.ToString();
             dateTimePicker1.Value = phieuNhap.NgayTao;
 
             TongTIen();
