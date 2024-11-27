@@ -51,7 +51,7 @@ namespace CSharp_laptop.GUI
 
         private void KhachHangGUI_Load(object sender, EventArgs e)
         {
-            LoadTable(bus.getAllKhachHang());
+            LoadTable(bus.SearchKhachHang(rjTextBox1.Texts));
             DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
             btnEdit.Name = "btnEdit";
             btnEdit.HeaderText = "Edit";
@@ -214,7 +214,7 @@ namespace CSharp_laptop.GUI
                 SuaKhachHang();
             }
 
-            LoadTable(bus.getAllKhachHang());
+            LoadTable(bus.SearchKhachHang(rjTextBox1.Texts));
 
         }
         private void SuaKhachHang()
@@ -370,7 +370,7 @@ namespace CSharp_laptop.GUI
 
                     // Gọi hàm nhập dữ liệu và lưu vào database
                     SaveKhachHangToDatabase(ImportFromExcel(filePath));
-                    LoadTable(bus.getAllKhachHang());
+                    LoadTable(bus.SearchKhachHang(rjTextBox1.Texts));
                 }
                 else
                 {
@@ -492,7 +492,7 @@ namespace CSharp_laptop.GUI
 
                     MessageBox.Show("Xóa Ko Thành Công!");
                 }
-                LoadTable(bus.getAllKhachHang());
+                LoadTable(bus.SearchKhachHang(rjTextBox1.Texts));
             }
         }
 

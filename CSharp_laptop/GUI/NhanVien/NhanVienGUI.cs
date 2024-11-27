@@ -40,7 +40,7 @@ namespace CSharp_laptop.GUI
 
         private void NhanVienGUI_Load(object sender, EventArgs e)
         {
-            LoadTable(bus.getAllNhanVien());
+            LoadTable(bus.SearchNhanVien(searchTextBox.Texts));
             DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
             btnEdit.Name = "btnEdit";
             btnEdit.HeaderText = "Edit";
@@ -140,7 +140,7 @@ namespace CSharp_laptop.GUI
             }
 
 
-            LoadTable(bus.getAllNhanVien());
+            LoadTable(bus.SearchNhanVien(searchTextBox.Texts));
         }
         private void SuaNhanVien()
         {
@@ -360,7 +360,7 @@ namespace CSharp_laptop.GUI
 
                     // Gọi hàm nhập dữ liệu và lưu vào database
                     SaveNhanVienToDatabase(ImportFromExcel(filePath));
-                    LoadTable(bus.getAllNhanVien());
+                    LoadTable(bus.SearchNhanVien(searchTextBox.Texts));
                 }
                 else
                 {
@@ -465,7 +465,7 @@ namespace CSharp_laptop.GUI
                 {
                     MessageBox.Show("Xóa Ko Thành Công!");
                 }
-                LoadTable(bus.getAllNhanVien());
+                LoadTable(bus.SearchNhanVien(searchTextBox.Texts));
             }
             else if (result == DialogResult.Cancel)
             {
