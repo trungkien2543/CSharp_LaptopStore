@@ -1,6 +1,9 @@
 ﻿using CSharp_laptop.BUS;
 using CSharp_laptop.DTO;
 using Google.Protobuf.Collections;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using iTextSharp.tool.xml;
 using LaptopStore.DTO;
 using Microsoft.VisualBasic;
 using OfficeOpenXml;
@@ -38,6 +41,8 @@ namespace CSharp_laptop.GUI
         {
             InitializeComponent();
             this.mainForm = mainForm;
+
+            btnPDF.Visible = false;
         }
 
         private void PhieuNhapGUI_Load(object sender, EventArgs e)
@@ -76,7 +81,10 @@ namespace CSharp_laptop.GUI
             AddNccCBB();
             dataGridView_ctpn.Columns["btnDelete"].Visible = true;
             dataGridView_sp.Columns["btnDelete"].Visible = true;
+
             tabControl1.SelectedIndex = 1;
+
+            btnPDF.Visible = false;
         }
 
         private void AddNccCBB()
@@ -161,7 +169,7 @@ namespace CSharp_laptop.GUI
                     {
 
                     }
-                }   
+                }
                 else
                 {
                     tabControl1.SelectedIndex = 0;
@@ -523,6 +531,8 @@ namespace CSharp_laptop.GUI
             dataGridView_sp.Columns["btnDelete"].Visible = false;
 
             tabControl1.SelectedIndex = 1;
+
+            btnPDF.Visible = true;
         }
 
 
@@ -636,6 +646,71 @@ namespace CSharp_laptop.GUI
         {
             rjTextBox1.Texts = "";
             LoadPhieuNhapData();
+        }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = string.Format("{0}.pdf", "CTHD_" + phieuNhap.ID);
+
+
+
+            //string PaginaHTML_Texto = "<table border=\"1\"><tr><td>HOLA MUNDO</td></tr></table>";
+            string PaginaHTML_Texto = Properties.Resources.Plantilla.ToString();
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@LOAIPHIEU", "IMPORT RECEIPT");
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@MAHD", phieuNhap.ID + "");
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE", phieuNhap.NgayTao + "");
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@LABEL", "Manufacturer: ");
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DOCUMENTO", phieuNhap.IDNV);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", phieuNhap.IDNCC);
+
+            string filas = string.Empty;
+            decimal total = 0;
+            foreach (ChiTietPhieuNhapDTO ctpn in ctPNList)
+            {
+                filas += "<tr>";
+                filas += "<td align=\"center\">" + ctpn.IMEI + "</td>";
+                filas += "<td align=\"center\">" + ctpn.GiaNhap + "</td>";
+                filas += "</tr>";
+            }
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", phieuNhap.TongTien + "");
+
+
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
+                {
+                    //Creamos un nuevo documento y lo definimos como PDF
+                    Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    pdfDoc.Add(new Phrase(""));
+
+                    //Agregamos la imagen del banner al documento
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logo_home, System.Drawing.Imaging.ImageFormat.Png);
+                    img.ScaleToFit(60, 60);
+                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                    //img.SetAbsolutePosition(10,100);
+                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
+                    pdfDoc.Add(img);
+
+
+                    //pdfDoc.Add(new Phrase("Hola Mundo"));
+                    using (StringReader sr = new StringReader(PaginaHTML_Texto))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+
+                        MessageBox.Show("Đã xuất file pdf thành công");
+                    }
+
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+            }
         }
     }
 }
