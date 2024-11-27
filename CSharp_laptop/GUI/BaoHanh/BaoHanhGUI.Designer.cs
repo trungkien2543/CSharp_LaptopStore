@@ -580,13 +580,13 @@
             // tb_chucnang
             // 
             tb_chucnang.BackColor = Color.Transparent;
-            tb_chucnang.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_chucnang.ForeColor = Color.White;
+            tb_chucnang.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tb_chucnang.ForeColor = Color.FromArgb(247, 176, 118);
             tb_chucnang.Location = new Point(240, 27);
             tb_chucnang.Name = "tb_chucnang";
-            tb_chucnang.Size = new Size(3, 2);
+            tb_chucnang.Size = new Size(109, 32);
             tb_chucnang.TabIndex = 56;
-            tb_chucnang.Text = null;
+            tb_chucnang.Text = "Chưa chọn";
             // 
             // guna2HtmlLabel2
             // 
