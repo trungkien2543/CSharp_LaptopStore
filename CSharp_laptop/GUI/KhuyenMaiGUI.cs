@@ -45,7 +45,12 @@ namespace CSharp_laptop.GUI
         //tabControl1
         private void tk_but_Click(object sender, EventArgs e)
         {
-
+            string searchTerm = rjTextBox1.Texts.Trim(); // Lấy từ khóa tìm kiếm từ TextBox
+            if (searchTerm != "")
+            {
+                khuyenMaiList = khuyenMaiBUS.TimKiem(searchTerm); // Gọi BUS để tìm kiếm
+                KM_dataGridView.DataSource = khuyenMaiList; // Hiển thị dữ liệu lên DataGridView
+            }
         }
 
         private void then_but_Click(object sender, EventArgs e)
@@ -320,33 +325,33 @@ namespace CSharp_laptop.GUI
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             try
             {
-                
+
                 // Kiểm tra nếu file không tồn tại
                 if (!File.Exists(filePath))
                 {
                     MessageBox.Show("File không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                
+
                 // Load file Excel
                 using (var package = new ExcelPackage(new FileInfo(filePath)))
                 {
-                    
+
                     var worksheet = package.Workbook.Worksheets[0]; // Lấy Sheet đầu tiên
                     int rowCount = worksheet.Dimension.Rows; // Số hàng
 
                     for (int row = 3; row <= rowCount; row++) // Bỏ qua dòng tiêu đề
                     {
                         string idKM = worksheet.Cells[row, 1].Value?.ToString();
-                        string tenKM = worksheet.Cells[row, 2].Value?.ToString(); 
-                        string mucGiamGiaString = worksheet.Cells[row, 3].Value?.ToString();                
+                        string tenKM = worksheet.Cells[row, 2].Value?.ToString();
+                        string mucGiamGiaString = worksheet.Cells[row, 3].Value?.ToString();
                         string moTa = worksheet.Cells[row, 4].Value?.ToString();
-                   
+
                         DateTime thoiGianBatDau = DateTime.Parse(worksheet.Cells[row, 5].Value?.ToString());
                         DateTime thoiGianKetThuc = DateTime.Parse(worksheet.Cells[row, 6].Value?.ToString());
                         DateTime ngayTao = DateTime.Now;
-                        
-                        
+
+
                         KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
                         {
                             IDKM = idKM,
@@ -359,7 +364,7 @@ namespace CSharp_laptop.GUI
                         };
                         // Kiểm tra nếu IDKM đã tồn tại
                         var existingKhuyenMai = KhuyenMaiDAO.Get1KhuyenMai(idKM);
-                        
+
                         if (existingKhuyenMai != null)
                         {
                             DialogResult dialogResult = MessageBox.Show(
@@ -393,6 +398,9 @@ namespace CSharp_laptop.GUI
             }
         }
 
-        
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

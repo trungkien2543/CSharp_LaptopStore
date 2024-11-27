@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             btnNhapExcel = new Guna.UI2.WinForms.Guna2Button();
@@ -76,6 +77,7 @@
             textBox3 = new RJTextBox();
             textBox2 = new RJTextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel3.SuspendLayout();
@@ -94,13 +96,14 @@
             tabControl1.Margin = new Padding(0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1125, 726);
+            tabControl1.Size = new Size(1149, 730);
             tabControl1.TabIndex = 14;
             // 
             // tabPage1
             // 
             tabPage1.AutoScroll = true;
             tabPage1.BackColor = Color.FromArgb(149, 147, 186);
+            tabPage1.Controls.Add(guna2CircleButton1);
             tabPage1.Controls.Add(btnNhapExcel);
             tabPage1.Controls.Add(btnXuatExcel);
             tabPage1.Controls.Add(rjTextBox1);
@@ -111,13 +114,13 @@
             tabPage1.Margin = new Padding(0);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1117, 698);
+            tabPage1.Size = new Size(1141, 702);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             // 
             // btnNhapExcel
             // 
-            btnNhapExcel.CustomizableEdges = customizableEdges1;
+            btnNhapExcel.CustomizableEdges = customizableEdges2;
             btnNhapExcel.DisabledState.BorderColor = Color.DarkGray;
             btnNhapExcel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNhapExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -127,9 +130,9 @@
             btnNhapExcel.ForeColor = Color.White;
             btnNhapExcel.Image = (Image)resources.GetObject("btnNhapExcel.Image");
             btnNhapExcel.ImageAlign = HorizontalAlignment.Left;
-            btnNhapExcel.Location = new Point(685, 80);
+            btnNhapExcel.Location = new Point(698, 20);
             btnNhapExcel.Name = "btnNhapExcel";
-            btnNhapExcel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnNhapExcel.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btnNhapExcel.Size = new Size(137, 40);
             btnNhapExcel.TabIndex = 40;
             btnNhapExcel.Text = "Nhập Excel";
@@ -138,7 +141,7 @@
             // 
             // btnXuatExcel
             // 
-            btnXuatExcel.CustomizableEdges = customizableEdges3;
+            btnXuatExcel.CustomizableEdges = customizableEdges4;
             btnXuatExcel.DisabledState.BorderColor = Color.DarkGray;
             btnXuatExcel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnXuatExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -148,9 +151,9 @@
             btnXuatExcel.ForeColor = Color.White;
             btnXuatExcel.Image = Properties.Resources.icons8_microsoft_excel_32;
             btnXuatExcel.ImageAlign = HorizontalAlignment.Left;
-            btnXuatExcel.Location = new Point(842, 80);
+            btnXuatExcel.Location = new Point(841, 20);
             btnXuatExcel.Name = "btnXuatExcel";
-            btnXuatExcel.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnXuatExcel.ShadowDecoration.CustomizableEdges = customizableEdges5;
             btnXuatExcel.Size = new Size(130, 40);
             btnXuatExcel.TabIndex = 39;
             btnXuatExcel.Text = "Xuất Excel";
@@ -166,7 +169,7 @@
             rjTextBox1.BorderSize = 2;
             rjTextBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(30, 80);
+            rjTextBox1.Location = new Point(10, 20);
             rjTextBox1.Margin = new Padding(4);
             rjTextBox1.Multiline = false;
             rjTextBox1.Name = "rjTextBox1";
@@ -191,7 +194,7 @@
             vbButton1.ForeColor = Color.White;
             vbButton1.Image = (Image)resources.GetObject("vbButton1.Image");
             vbButton1.ImageAlign = ContentAlignment.MiddleRight;
-            vbButton1.Location = new Point(364, 80);
+            vbButton1.Location = new Point(345, 20);
             vbButton1.Name = "vbButton1";
             vbButton1.Padding = new Padding(0, 0, 15, 0);
             vbButton1.Size = new Size(100, 40);
@@ -215,7 +218,7 @@
             then_but.ForeColor = Color.White;
             then_but.Image = (Image)resources.GetObject("then_but.Image");
             then_but.ImageAlign = ContentAlignment.MiddleLeft;
-            then_but.Location = new Point(987, 80);
+            then_but.Location = new Point(1027, 20);
             then_but.Name = "then_but";
             then_but.Padding = new Padding(0, 0, 15, 0);
             then_but.Size = new Size(100, 40);
@@ -236,10 +239,10 @@
             artanPanel3.GradientAngle = 70F;
             artanPanel3.GradientBottomColor = Color.FromArgb(210, 220, 230);
             artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel3.Location = new Point(30, 140);
+            artanPanel3.Location = new Point(10, 80);
             artanPanel3.Name = "artanPanel3";
             artanPanel3.Padding = new Padding(4, 0, 4, 10);
-            artanPanel3.Size = new Size(1057, 518);
+            artanPanel3.Size = new Size(1121, 612);
             artanPanel3.TabIndex = 15;
             // 
             // KM_dataGridView
@@ -289,7 +292,7 @@
             KM_dataGridView.RowHeadersVisible = false;
             KM_dataGridView.RowHeadersWidth = 25;
             KM_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            KM_dataGridView.Size = new Size(1049, 508);
+            KM_dataGridView.Size = new Size(1113, 602);
             KM_dataGridView.TabIndex = 0;
             KM_dataGridView.CellClick += KM_dataGridView_CellClick;
             // 
@@ -703,11 +706,35 @@
             textBox2.Texts = "";
             textBox2.UnderlinedStyle = false;
             // 
+            // guna2CircleButton1
+            // 
+            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2CircleButton1.BackColor = Color.Transparent;
+            guna2CircleButton1.BorderColor = Color.White;
+            guna2CircleButton1.CustomBorderColor = Color.FromArgb(247, 176, 118);
+            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton1.FillColor = Color.FromArgb(247, 176, 118);
+            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton1.ForeColor = Color.White;
+            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
+            guna2CircleButton1.ImageSize = new Size(25, 25);
+            guna2CircleButton1.Location = new Point(448, 20);
+            guna2CircleButton1.Margin = new Padding(0);
+            guna2CircleButton1.Name = "guna2CircleButton1";
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CircleButton1.Size = new Size(40, 40);
+            guna2CircleButton1.TabIndex = 63;
+            guna2CircleButton1.Click += guna2CircleButton1_Click;
+            // 
             // KhuyenMaiGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1117, 717);
+            ClientSize = new Size(1141, 721);
             Controls.Add(tabControl1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "KhuyenMaiGUI";
@@ -766,5 +793,6 @@
         private Label text_mess1;
         private Guna.UI2.WinForms.Guna2Button btnXuatExcel;
         private Guna.UI2.WinForms.Guna2Button btnNhapExcel;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
     }
 }

@@ -8,6 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -209,6 +210,44 @@ namespace CSharp_laptop.DAO
                     cmd.Parameters.AddWithValue("@ID_KhuyenMai", ID_KhuyenMai);
                 }
             }
+        }
+
+        public BindingList<KhuyenMaiDTO> TimKiem(string searchTerm)
+        {
+            BindingList<KhuyenMaiDTO> khuyenMaiList = new BindingList<KhuyenMaiDTO>();
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT * 
+                         FROM phieunhap 
+                         WHERE ID_KhuyenMai LIKE @SearchTerm 
+                            OR TenKhuyenMai LIKE @SearchTerm 
+                            OR MucGiamGia LIKE @SearchTerm 
+                            OR ThoiGianTaoKM LIKE @SearchTerm ORDER BY NgayNhap DESC";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
+                            {
+                                IDKM = reader["ID_KhuyenMai"].ToString(),
+                                TenKM = reader["TenKhuyenMai"].ToString(),
+                                MucGiamGia = int.Parse(reader["MucGiamGia"].ToString()),
+                                MoTa = reader["MoTaKM"].ToString(),
+                                ThoiGianBatDau = reader.GetDateTime(4),
+                                ThoiGianKetThuc = reader.GetDateTime(5),
+                                NgayTao = reader.GetDateTime(6)
+                            };
+                            khuyenMaiList.Add(khuyenMai);
+                        }
+                    }
+                }
+            }
+            return khuyenMaiList;
         }
     }
 }

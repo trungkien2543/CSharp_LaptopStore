@@ -74,6 +74,8 @@ namespace CSharp_laptop.GUI
             text_IDPN.Texts = idPN.ToString();
             text_nv.Texts = mainForm.NhanVienDangNhap;
             AddNccCBB();
+            dataGridView_ctpn.Columns["btnDelete"].Visible = true;
+            dataGridView_sp.Columns["btnDelete"].Visible = true;
             tabControl1.SelectedIndex = 1;
         }
 
@@ -139,24 +141,27 @@ namespace CSharp_laptop.GUI
         string funcion = "";
         private void huy_but_Click_1(object sender, EventArgs e)
         {
-            if(funcion == "add")
+            if (funcion == "add")
             {
-                DialogResult result = MessageBox.Show("Thoát sẽ xóa hết dữ liệu đã nhập", "Xác nhận",
-                                  MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
+                if (lltList.Count > 0)
                 {
-                    ChonHang = false;
-                    text_tongtien.Texts = "";
-                    ctPNList.Clear();
-                    lltList.Clear();
-                    but_them_sp.Visible = true;
-                    tabControl1.SelectedIndex = 0;
-                }
-                else
-                {
+                    DialogResult result = MessageBox.Show("Thoát sẽ xóa hết dữ liệu đã nhập", "Xác nhận",
+                                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                }
+                    if (result == DialogResult.Yes)
+                    {
+                        ChonHang = false;
+                        text_tongtien.Texts = "";
+                        ctPNList.Clear();
+                        lltList.Clear();
+                        but_them_sp.Visible = true;
+                        tabControl1.SelectedIndex = 0;
+                    }
+                    else
+                    {
+
+                    }
+                }   
             }
             else
             {
@@ -493,6 +498,9 @@ namespace CSharp_laptop.GUI
             dataGridView_ctpn.DataSource = ctPNList;
             dataGridView_sp.DataSource = lltList;
 
+            dataGridView_ctpn.Columns["btnDelete"].Visible = false;
+            dataGridView_sp.Columns["btnDelete"].Visible = false;
+
             tabControl1.SelectedIndex = 1;
         }
 
@@ -592,6 +600,21 @@ namespace CSharp_laptop.GUI
                 }
             }
         }
-    }
 
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+            string searchTerm = rjTextBox1.Texts.Trim(); // Lấy từ khóa tìm kiếm từ TextBox
+            if (searchTerm != "")
+            {
+                phieuNhapList = phieuNhapBUS.TimKiem(searchTerm); // Gọi BUS để tìm kiếm
+                dataGridView_PN.DataSource = phieuNhapList; // Hiển thị dữ liệu lên DataGridView
+            }
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            rjTextBox1.Texts = "";
+            LoadPhieuNhapData();
+        }
+    }
 }

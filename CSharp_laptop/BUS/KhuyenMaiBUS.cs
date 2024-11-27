@@ -63,5 +63,10 @@ namespace CSharp_laptop.BUS
                 }
             }
         }
+
+        public BindingList<KhuyenMaiDTO> TimKiem(string searchTerm)
+        {
+            return khuyenMaiDAO.TimKiem(searchTerm);
+        }
     }
 }

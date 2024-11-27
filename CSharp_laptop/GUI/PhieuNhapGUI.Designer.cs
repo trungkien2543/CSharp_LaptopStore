@@ -32,49 +32,12 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
-
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-
-
-            tabPage3 = new TabPage();
-            artanPanel5 = new ArtanPanel();
-            dataGridView3 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
-            artanPanel3 = new ArtanPanel();
-            dataGridView2 = new DataGridView();
-            Column10 = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
-            Column12 = new DataGridViewTextBoxColumn();
-            artanPanel4 = new ArtanPanel();
-            panel1 = new Panel();
-            vbButton2 = new VBButton();
-            panel4 = new Panel();
-            comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
-            panel3 = new Panel();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            label6 = new Label();
-            label5 = new Label();
-            rjTextBox8 = new RJTextBox();
-            label4 = new Label();
-            rjTextBox5 = new RJTextBox();
-            rjTextBox4 = new RJTextBox();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tabPage2 = new TabPage();
             panel7 = new Panel();
             artanPanel7 = new ArtanPanel();
@@ -130,6 +93,8 @@
             vbButton3 = new VBButton();
             huy_but = new VBButton();
             tabPage1 = new TabPage();
+            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
             rjTextBox1 = new RJTextBox();
             vbButton1 = new VBButton();
             them_but = new VBButton();
@@ -141,19 +106,6 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             tabControl1 = new TabControl();
-
-            btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
-
-            text_nv = new RJTextBox();
-            tabPage3.SuspendLayout();
-            artanPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            artanPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            artanPanel4.SuspendLayout();
-            panel1.SuspendLayout();
-            panel4.SuspendLayout();
-            panel3.SuspendLayout();
             tabPage2.SuspendLayout();
             panel7.SuspendLayout();
             artanPanel7.SuspendLayout();
@@ -173,371 +125,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView_PN).BeginInit();
             tabControl1.SuspendLayout();
             SuspendLayout();
-            // 
-            // tabPage3
-            // 
-            tabPage3.Controls.Add(artanPanel5);
-            tabPage3.Controls.Add(artanPanel3);
-            tabPage3.Controls.Add(artanPanel4);
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1141, 702);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "tabPage3";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // artanPanel5
-            // 
-            artanPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            artanPanel5.BackColor = Color.White;
-            artanPanel5.BorderRadius = 20;
-            artanPanel5.Controls.Add(dataGridView3);
-            artanPanel5.ForeColor = Color.Black;
-            artanPanel5.GradientAngle = 65F;
-            artanPanel5.GradientBottomColor = Color.FromArgb(178, 211, 154);
-            artanPanel5.GradientTopColor = Color.MediumSeaGreen;
-            artanPanel5.Location = new Point(598, 303);
-            artanPanel5.Name = "artanPanel5";
-            artanPanel5.Padding = new Padding(4, 0, 4, 15);
-            artanPanel5.Size = new Size(450, 217);
-            artanPanel5.TabIndex = 16;
-            // 
-            // dataGridView3
-            // 
-            dataGridView3.AllowUserToAddRows = false;
-            dataGridView3.AllowUserToDeleteRows = false;
-            dataGridView3.BackgroundColor = Color.White;
-            dataGridView3.BorderStyle = BorderStyle.None;
-            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(119, 195, 144);
-            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView3.ColumnHeadersHeight = 35;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn8 });
-            dataGridView3.Dock = DockStyle.Fill;
-            dataGridView3.EnableHeadersVisualStyles = false;
-            dataGridView3.Location = new Point(4, 0);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.ReadOnly = true;
-            dataGridView3.Size = new Size(442, 202);
-            dataGridView3.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn1.HeaderText = "IMEI";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.HeaderText = "ID loại laptop";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn3.HeaderText = "ID phiếu nhập";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            dataGridViewTextBoxColumn8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn8.HeaderText = "123";
-            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // artanPanel3
-            // 
-            artanPanel3.BackColor = Color.White;
-            artanPanel3.BorderRadius = 30;
-            artanPanel3.Controls.Add(dataGridView2);
-            artanPanel3.ForeColor = Color.Black;
-            artanPanel3.GradientAngle = 60F;
-            artanPanel3.GradientBottomColor = Color.FromArgb(178, 211, 154);
-            artanPanel3.GradientTopColor = Color.MediumSeaGreen;
-            artanPanel3.Location = new Point(598, 76);
-            artanPanel3.Name = "artanPanel3";
-            artanPanel3.Padding = new Padding(4, 0, 4, 15);
-            artanPanel3.Size = new Size(450, 200);
-            artanPanel3.TabIndex = 2;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.BorderStyle = BorderStyle.None;
-            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(119, 195, 144);
-            dataGridViewCellStyle2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView2.ColumnHeadersHeight = 35;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column10, Column11, Column12 });
-            dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.EnableHeadersVisualStyles = false;
-            dataGridView2.Location = new Point(4, 0);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.Size = new Size(442, 185);
-            dataGridView2.TabIndex = 0;
-            // 
-            // Column10
-            // 
-            Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column10.HeaderText = "ID loại laptop";
-            Column10.Name = "Column10";
-            Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            Column11.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column11.HeaderText = "Tên sản phẩm:";
-            Column11.Name = "Column11";
-            Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            Column12.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column12.HeaderText = "Số lượng";
-            Column12.Name = "Column12";
-            Column12.ReadOnly = true;
-            // 
-            // artanPanel4
-            // 
-            artanPanel4.BackColor = Color.White;
-            artanPanel4.BorderRadius = 30;
-            artanPanel4.Controls.Add(panel1);
-            artanPanel4.ForeColor = Color.Black;
-            artanPanel4.GradientAngle = 30F;
-            artanPanel4.GradientBottomColor = Color.FromArgb(178, 211, 154);
-            artanPanel4.GradientTopColor = Color.MediumSeaGreen;
-            artanPanel4.Location = new Point(59, 76);
-            artanPanel4.Name = "artanPanel4";
-            artanPanel4.Padding = new Padding(4, 40, 4, 15);
-            artanPanel4.Size = new Size(379, 343);
-            artanPanel4.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(vbButton2);
-            panel1.Controls.Add(panel4);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(rjTextBox8);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(rjTextBox5);
-            panel1.Controls.Add(rjTextBox4);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(4, 40);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(371, 288);
-            panel1.TabIndex = 0;
-            // 
-            // vbButton2
-            // 
-            vbButton2.Anchor = AnchorStyles.Top;
-            vbButton2.BackColor = Color.FromArgb(119, 195, 144);
-            vbButton2.BackgroundColor = Color.FromArgb(119, 195, 144);
-            vbButton2.BorderColor = Color.PaleVioletRed;
-            vbButton2.BorderRadius = 15;
-            vbButton2.BorderSize = 0;
-            vbButton2.FlatAppearance.BorderSize = 0;
-            vbButton2.FlatStyle = FlatStyle.Flat;
-            vbButton2.Font = new Font("Bahnschrift SemiBold Condensed", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            vbButton2.ForeColor = Color.White;
-            vbButton2.Location = new Point(112, 233);
-            vbButton2.Name = "vbButton2";
-            vbButton2.Size = new Size(150, 40);
-            vbButton2.TabIndex = 15;
-            vbButton2.Text = "Đồng ý";
-            vbButton2.TextColor = Color.White;
-            vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(comboBox3);
-            panel4.Controls.Add(comboBox4);
-            panel4.Location = new Point(80, 111);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(230, 30);
-            panel4.TabIndex = 11;
-            // 
-            // comboBox3
-            // 
-            comboBox3.Dock = DockStyle.Fill;
-            comboBox3.FlatStyle = FlatStyle.Popup;
-            comboBox3.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(0, 0);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(230, 27);
-            comboBox3.TabIndex = 1;
-            comboBox3.Text = "Chọn";
-            // 
-            // comboBox4
-            // 
-            comboBox4.Dock = DockStyle.Fill;
-            comboBox4.FlatStyle = FlatStyle.Popup;
-            comboBox4.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(0, 0);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(230, 27);
-            comboBox4.TabIndex = 0;
-            comboBox4.Text = "Chọn";
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(comboBox2);
-            panel3.Controls.Add(comboBox1);
-            panel3.Location = new Point(80, 34);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(230, 30);
-            panel3.TabIndex = 8;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Dock = DockStyle.Fill;
-            comboBox2.FlatStyle = FlatStyle.Popup;
-            comboBox2.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(0, 0);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(230, 27);
-            comboBox2.TabIndex = 1;
-            comboBox2.Text = "Chọn";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Dock = DockStyle.Fill;
-            comboBox1.FlatStyle = FlatStyle.Popup;
-            comboBox1.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(0, 0);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(230, 27);
-            comboBox1.TabIndex = 0;
-            comboBox1.Text = "Chọn";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.DimGray;
-            label6.Location = new Point(56, 91);
-            label6.Name = "label6";
-            label6.Size = new Size(70, 19);
-            label6.TabIndex = 9;
-            label6.Text = "Loại laptop:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.DimGray;
-            label5.Location = new Point(56, 14);
-            label5.Name = "label5";
-            label5.Size = new Size(75, 19);
-            label5.TabIndex = 4;
-            label5.Text = "Hãng laptop:";
-            // 
-            // rjTextBox8
-            // 
-            rjTextBox8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rjTextBox8.BackColor = SystemColors.Window;
-            rjTextBox8.BorderColor = Color.FromArgb(119, 195, 144);
-            rjTextBox8.BorderFocusColor = Color.YellowGreen;
-            rjTextBox8.BorderRadius = 7;
-            rjTextBox8.BorderSize = 1;
-            rjTextBox8.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjTextBox8.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox8.Location = new Point(48, 105);
-            rjTextBox8.Margin = new Padding(4);
-            rjTextBox8.Multiline = true;
-            rjTextBox8.Name = "rjTextBox8";
-            rjTextBox8.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox8.PasswordChar = false;
-            rjTextBox8.PlaceholderColor = Color.DarkGray;
-            rjTextBox8.PlaceholderText = "";
-            rjTextBox8.Size = new Size(203, 40);
-            rjTextBox8.TabIndex = 10;
-            rjTextBox8.Texts = "";
-            rjTextBox8.UnderlinedStyle = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.DimGray;
-            label4.Location = new Point(56, 159);
-            label4.Name = "label4";
-            label4.Size = new Size(33, 19);
-            label4.TabIndex = 2;
-            label4.Text = "IMEI:";
-            // 
-            // rjTextBox5
-            // 
-            rjTextBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rjTextBox5.BackColor = SystemColors.Window;
-            rjTextBox5.BorderColor = Color.FromArgb(119, 195, 144);
-            rjTextBox5.BorderFocusColor = Color.YellowGreen;
-            rjTextBox5.BorderRadius = 7;
-            rjTextBox5.BorderSize = 1;
-            rjTextBox5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjTextBox5.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox5.Location = new Point(48, 28);
-            rjTextBox5.Margin = new Padding(4);
-            rjTextBox5.Multiline = true;
-            rjTextBox5.Name = "rjTextBox5";
-            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox5.PasswordChar = false;
-            rjTextBox5.PlaceholderColor = Color.DarkGray;
-            rjTextBox5.PlaceholderText = "";
-            rjTextBox5.Size = new Size(203, 40);
-            rjTextBox5.TabIndex = 5;
-            rjTextBox5.Texts = "";
-            rjTextBox5.UnderlinedStyle = false;
-            // 
-            // rjTextBox4
-            // 
-            rjTextBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rjTextBox4.BackColor = SystemColors.Window;
-            rjTextBox4.BorderColor = Color.FromArgb(119, 195, 144);
-            rjTextBox4.BorderFocusColor = Color.YellowGreen;
-            rjTextBox4.BorderRadius = 7;
-            rjTextBox4.BorderSize = 1;
-            rjTextBox4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjTextBox4.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox4.Location = new Point(48, 173);
-            rjTextBox4.Margin = new Padding(4);
-            rjTextBox4.Multiline = false;
-            rjTextBox4.Name = "rjTextBox4";
-            rjTextBox4.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox4.PasswordChar = false;
-            rjTextBox4.PlaceholderColor = Color.DarkGray;
-            rjTextBox4.PlaceholderText = "";
-            rjTextBox4.Size = new Size(262, 34);
-            rjTextBox4.TabIndex = 3;
-            rjTextBox4.Texts = "";
-            rjTextBox4.UnderlinedStyle = false;
             // 
             // tabPage2
             // 
@@ -589,24 +176,24 @@
             dataGridView_ctpn.BorderStyle = BorderStyle.None;
             dataGridView_ctpn.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView_ctpn.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView_ctpn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView_ctpn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView_ctpn.ColumnHeadersHeight = 35;
             dataGridView_ctpn.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, IDllt, Column6, Column13 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dataGridView_ctpn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView_ctpn.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView_ctpn.Dock = DockStyle.Fill;
             dataGridView_ctpn.EnableHeadersVisualStyles = false;
             dataGridView_ctpn.Location = new Point(4, 0);
@@ -673,24 +260,24 @@
             dataGridView_sp.BorderStyle = BorderStyle.None;
             dataGridView_sp.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView_sp.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView_sp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView_sp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView_sp.ColumnHeadersHeight = 35;
             dataGridView_sp.Columns.AddRange(new DataGridViewColumn[] { IDllt2, dataGridViewTextBoxColumn5, Column8, Column7, dataGridViewTextBoxColumn6, Column9 });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView_sp.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dataGridView_sp.DefaultCellStyle = dataGridViewCellStyle4;
             dataGridView_sp.Dock = DockStyle.Fill;
             dataGridView_sp.EnableHeadersVisualStyles = false;
             dataGridView_sp.Location = new Point(4, 0);
@@ -1296,6 +883,7 @@
             text_tongtien.PasswordChar = false;
             text_tongtien.PlaceholderColor = Color.DarkGray;
             text_tongtien.PlaceholderText = "";
+            text_tongtien.RightToLeft = RightToLeft.Yes;
             text_tongtien.Size = new Size(370, 34);
             text_tongtien.TabIndex = 22;
             text_tongtien.Texts = "";
@@ -1356,6 +944,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(149, 147, 186);
+            tabPage1.Controls.Add(guna2CircleButton1);
             tabPage1.Controls.Add(btnXuatExcel);
             tabPage1.Controls.Add(rjTextBox1);
             tabPage1.Controls.Add(vbButton1);
@@ -1367,6 +956,51 @@
             tabPage1.Size = new Size(1141, 702);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
+            // 
+            // guna2CircleButton1
+            // 
+            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2CircleButton1.BackColor = Color.Transparent;
+            guna2CircleButton1.BorderColor = Color.White;
+            guna2CircleButton1.CustomBorderColor = Color.FromArgb(247, 176, 118);
+            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton1.FillColor = Color.FromArgb(247, 176, 118);
+            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton1.ForeColor = Color.White;
+            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
+            guna2CircleButton1.ImageSize = new Size(25, 25);
+            guna2CircleButton1.Location = new Point(448, 20);
+            guna2CircleButton1.Margin = new Padding(0);
+            guna2CircleButton1.Name = "guna2CircleButton1";
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CircleButton1.Size = new Size(40, 40);
+            guna2CircleButton1.TabIndex = 62;
+            guna2CircleButton1.Click += guna2CircleButton1_Click;
+            // 
+            // btnXuatExcel
+            // 
+            btnXuatExcel.CustomizableEdges = customizableEdges2;
+            btnXuatExcel.DisabledState.BorderColor = Color.DarkGray;
+            btnXuatExcel.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnXuatExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnXuatExcel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnXuatExcel.FillColor = Color.Green;
+            btnXuatExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnXuatExcel.ForeColor = Color.White;
+            btnXuatExcel.Image = Properties.Resources.icons8_microsoft_excel_32;
+            btnXuatExcel.ImageAlign = HorizontalAlignment.Left;
+            btnXuatExcel.Location = new Point(867, 20);
+            btnXuatExcel.Name = "btnXuatExcel";
+            btnXuatExcel.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            btnXuatExcel.Size = new Size(130, 40);
+            btnXuatExcel.TabIndex = 40;
+            btnXuatExcel.Text = "Xuất Excel";
+            btnXuatExcel.TextAlign = HorizontalAlignment.Right;
+            btnXuatExcel.Click += btnXuatExcel_Click;
             // 
             // rjTextBox1
             // 
@@ -1410,6 +1044,7 @@
             vbButton1.TextAlign = ContentAlignment.TopLeft;
             vbButton1.TextColor = Color.White;
             vbButton1.UseVisualStyleBackColor = false;
+            vbButton1.Click += vbButton1_Click;
             // 
             // them_but
             // 
@@ -1463,24 +1098,24 @@
             dataGridView_PN.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView_PN.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView_PN.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle7.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridView_PN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView_PN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView_PN.ColumnHeadersHeight = 35;
             dataGridView_PN.Columns.AddRange(new DataGridViewColumn[] { ID, Column2, Column3, Column5, Column4 });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dataGridView_PN.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView_PN.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView_PN.EnableHeadersVisualStyles = false;
             dataGridView_PN.Location = new Point(4, 0);
             dataGridView_PN.Name = "dataGridView_PN";
@@ -1495,6 +1130,7 @@
             // 
             ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ID.DataPropertyName = "ID";
+            ID.FillWeight = 50F;
             ID.HeaderText = "ID";
             ID.Name = "ID";
             ID.ReadOnly = true;
@@ -1537,60 +1173,12 @@
             tabControl1.CausesValidation = false;
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
             tabControl1.ItemSize = new Size(61, 20);
             tabControl1.Location = new Point(-4, -5);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1149, 730);
             tabControl1.TabIndex = 1;
-            // 
-            // btnXuatExcel
-            // 
-            btnXuatExcel.CustomizableEdges = customizableEdges1;
-            btnXuatExcel.DisabledState.BorderColor = Color.DarkGray;
-            btnXuatExcel.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnXuatExcel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnXuatExcel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnXuatExcel.FillColor = Color.Green;
-            btnXuatExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnXuatExcel.ForeColor = Color.White;
-            btnXuatExcel.Image = Properties.Resources.icons8_microsoft_excel_32;
-            btnXuatExcel.ImageAlign = HorizontalAlignment.Left;
-            btnXuatExcel.Location = new Point(867, 20);
-            btnXuatExcel.Name = "btnXuatExcel";
-            btnXuatExcel.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnXuatExcel.Size = new Size(130, 40);
-            btnXuatExcel.TabIndex = 40;
-            btnXuatExcel.Text = "Xuất Excel";
-            btnXuatExcel.TextAlign = HorizontalAlignment.Right;
-            btnXuatExcel.Click += btnXuatExcel_Click;
-
-            // text_nv
-            // 
-            text_nv.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            text_nv.BackColor = SystemColors.Window;
-            text_nv.BorderColor = Color.FromArgb(85, 81, 132);
-            text_nv.BorderFocusColor = Color.YellowGreen;
-            text_nv.BorderRadius = 7;
-            text_nv.BorderSize = 1;
-            text_nv.Enabled = false;
-            text_nv.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            text_nv.ForeColor = Color.FromArgb(64, 64, 64);
-            text_nv.Location = new Point(66, 136);
-            text_nv.Margin = new Padding(4);
-            text_nv.MaximumSize = new Size(420, 34);
-            text_nv.Multiline = false;
-            text_nv.Name = "text_nv";
-            text_nv.Padding = new Padding(10, 7, 10, 7);
-            text_nv.PasswordChar = false;
-            text_nv.PlaceholderColor = Color.DarkGray;
-            text_nv.PlaceholderText = "";
-            text_nv.RightToLeft = RightToLeft.No;
-            text_nv.Size = new Size(370, 34);
-            text_nv.TabIndex = 28;
-            text_nv.Texts = "";
-            text_nv.UnderlinedStyle = false;
             // 
             // PhieuNhapGUI
             // 
@@ -1601,16 +1189,6 @@
             Name = "PhieuNhapGUI";
             Text = "PhieuNhapGUI";
             Load += PhieuNhapGUI_Load;
-            tabPage3.ResumeLayout(false);
-            artanPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            artanPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            artanPanel4.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             panel7.ResumeLayout(false);
             artanPanel7.ResumeLayout(false);
@@ -1638,34 +1216,6 @@
         }
 
         #endregion
-
-        private TabPage tabPage3;
-        private ArtanPanel artanPanel5;
-        private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private ArtanPanel artanPanel3;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
-        private ArtanPanel artanPanel4;
-        private Panel panel1;
-        private VBButton vbButton2;
-        private Panel panel4;
-        private ComboBox comboBox3;
-        private ComboBox comboBox4;
-        private Panel panel3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
-        private Label label6;
-        private Label label5;
-        private RJTextBox rjTextBox8;
-        private Label label4;
-        private RJTextBox rjTextBox5;
-        private RJTextBox rjTextBox4;
         private TabPage tabPage2;
         private Panel panel7;
         private ArtanPanel artanPanel7;
@@ -1715,10 +1265,6 @@
         private ArtanPanel artanPanel2;
         private DataGridView dataGridView_PN;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column4;
         private TabControl tabControl1;
         private Label label2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -1726,7 +1272,6 @@
         private DataGridViewTextBoxColumn IDllt;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column13;
-        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column7;
@@ -1737,6 +1282,11 @@
         private Guna.UI2.WinForms.Guna2Button btnXuatExcel;
 
         private RJTextBox text_nv;
-
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column4;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
     }
 }

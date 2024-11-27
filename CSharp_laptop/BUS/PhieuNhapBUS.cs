@@ -1,8 +1,10 @@
 ﻿using CSharp_laptop.DAO;
 using CSharp_laptop.DTO;
+using LaptopStore.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +71,11 @@ namespace CSharp_laptop.BUS
         public BindingList<LoaiLapPnDTO> GetChiTietPhieuNhap2(int id)
         {
             return phieuNhapDAO.GetChiTietPhieuNhap2(id);
+        }
+
+        public BindingList<PhieuNhapDTO> TimKiem(string searchTerm)
+        {
+            return phieuNhapDAO.TimKiem(searchTerm);
         }
     }
 }
