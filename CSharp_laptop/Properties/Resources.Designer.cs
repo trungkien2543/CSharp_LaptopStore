@@ -109,6 +109,7 @@ namespace CSharp_laptop.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
@@ -260,7 +261,18 @@ namespace CSharp_laptop.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_home
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("logo_home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>

@@ -33,23 +33,37 @@ namespace CSharp_laptop.DAO
             }
             return accs;
         }
-        public bool CheckLogin(string tenDN, string matKhau)
+        public TaiKhoanDTO CheckLogin(string tenDN, string matKhau)
         {
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM taikhoan WHERE TenDN = @TenDN AND MatKhau = @MatKhau";
+                string query = "SELECT * FROM taikhoan WHERE TenDN = @TenDN AND MatKhau = @MatKhau";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 // Thêm các tham số để ngăn chặn SQL Injection
                 cmd.Parameters.AddWithValue("@TenDN", tenDN);
                 cmd.Parameters.AddWithValue("@MatKhau", matKhau);
 
-                // Thực hiện truy vấn và lấy kết quả
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                TaiKhoanDTO taikhoan = new TaiKhoanDTO();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        taikhoan.TenDN = reader["TenDN"].ToString();
+                        taikhoan.MatKhau = reader["MatKhau"].ToString();
+                        taikhoan.Quyen = reader["Quyen"].ToString();
+                    }
+                }
+
+                if (taikhoan.TenDN == tenDN)
+                {
+                    return taikhoan;
+                }
 
                 // Nếu count > 0, tài khoản và mật khẩu hợp lệ
-                return count > 0;
+                return null;
             }
         }
 

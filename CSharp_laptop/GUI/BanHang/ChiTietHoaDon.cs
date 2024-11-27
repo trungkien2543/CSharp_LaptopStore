@@ -145,7 +145,7 @@ namespace CSharp_laptop.GUI.BanHang
                     pdfDoc.Add(new Phrase(""));
 
                     //Agregamos la imagen del banner al documento
-                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.shop, System.Drawing.Imaging.ImageFormat.Png);
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logo_home, System.Drawing.Imaging.ImageFormat.Png);
                     img.ScaleToFit(60, 60);
                     img.Alignment = iTextSharp.text.Image.UNDERLYING;
 
@@ -158,6 +158,8 @@ namespace CSharp_laptop.GUI.BanHang
                     using (StringReader sr = new StringReader(PaginaHTML_Texto))
                     {
                         XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+
+                        MessageBox.Show("Đã xuất file pdf thành công");
                     }
 
                     pdfDoc.Close();

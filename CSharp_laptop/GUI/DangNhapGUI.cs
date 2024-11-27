@@ -1,4 +1,5 @@
 ﻿using CSharp_laptop.DAO;
+using CSharp_laptop.DTO;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -123,15 +124,17 @@ namespace CSharp_laptop.GUI
 
             TaiKhoanDAO taiKhoanDAO = new TaiKhoanDAO();
 
-            bool isLoginSuccessful = taiKhoanDAO.CheckLogin(tenDangNhap, matKhau);
+            TaiKhoanDTO isLoginSuccessful = taiKhoanDAO.CheckLogin(tenDangNhap, matKhau);
 
-            if (isLoginSuccessful)
+            if (isLoginSuccessful != null)
             {
                 //MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide(); // Ẩn form đăng nhập
 
-                GUI.MainForm mf = new GUI.MainForm(tenDangNhap);
+
+
+                GUI.MainForm mf = new GUI.MainForm(isLoginSuccessful);
                 mf.Show();
 
 

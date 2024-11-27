@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,6 @@ namespace CSharp_laptop.DAO
                                 TongTien = int.Parse(reader["TongTIen"].ToString()),
                                 NgayTao = reader.GetDateTime(3)
                             };
-                            Console.WriteLine("data:" + phieuNhap.ID + phieuNhap.IDNV + phieuNhap.IDNCC + phieuNhap.TongTien + phieuNhap.NgayTao);
                             phieuNhapList.Add(phieuNhap);
                         }
                     }
@@ -278,8 +278,38 @@ namespace CSharp_laptop.DAO
                     {
                         while (reader.Read())
                         {
+                            int dem = 0;
                             string idLoaiLaptop = reader["IDLoaiLaptop"].ToString();
-                            if (ctpn2List.Count < 1)
+                            if (ctpn2List.Count > 0)
+                            {
+                                for (int i = 0; i < ctpn2List.Count; i++)
+                                {
+                                    if (idLoaiLaptop == ctpn2List[i].IDLoaiLaptop)
+                                    {
+                                        ctpn2List[i].SoLuong++;
+                                        ctpn2List[i].ThanhTien += ctpn2List[i].GiaNhap;
+                                        //ctpn2List.ResetBindings();
+                                    }
+                                    else
+                                    {
+                                        dem++;
+                                    }  
+                                }
+                                if(dem == ctpn2List.Count)
+                                {
+                                    LoaiLapPnDTO ctpn2 = new LoaiLapPnDTO()
+                                    {
+                                        IDLoaiLaptop = idLoaiLaptop,
+                                        TenSanPham = reader["TenSP"].ToString(),
+                                        ThoiGianBaoHanh = int.Parse(reader["ThoiGianBaoHanh"].ToString()),
+                                        GiaNhap = int.Parse(reader["GiaNhap"].ToString()),
+                                        SoLuong = 1,
+                                        ThanhTien = int.Parse(reader["GiaNhap"].ToString())
+                                    };
+                                    ctpn2List.Add(ctpn2);
+                                }
+                            }
+                            else
                             {
                                 LoaiLapPnDTO ctpn2 = new LoaiLapPnDTO()
                                 {
@@ -292,36 +322,48 @@ namespace CSharp_laptop.DAO
                                 };
                                 ctpn2List.Add(ctpn2);
                             }
-                            else
-                            {
-                                for (int i = 0; i < ctpn2List.Count; i++)
-                                {
-                                    if (idLoaiLaptop == ctpn2List[i].IDLoaiLaptop)
-                                    {
-                                        ctpn2List[i].SoLuong++;
-                                        //ctpn2List[i].ThanhTien += ctpn2List[i].GiaNhap;
-                                        ctpn2List.ResetBindings();
-                                    }
-                                    if (i == ctpn2List.Count - 1)
-                                    {
-                                        LoaiLapPnDTO ctpn2 = new LoaiLapPnDTO()
-                                        {
-                                            IDLoaiLaptop = idLoaiLaptop,
-                                            TenSanPham = reader["TenSP"].ToString(),
-                                            ThoiGianBaoHanh = int.Parse(reader["ThoiGianBaoHanh"].ToString()),
-                                            GiaNhap = int.Parse(reader["GiaNhap"].ToString()),
-                                            SoLuong = 1,
-                                            ThanhTien = int.Parse(reader["GiaNhap"].ToString())
-                                        };
-                                        ctpn2List.Add(ctpn2);
-                                    }
-                                }
-                            }
+                            
                         }
                     }
                 }
             }
             return ctpn2List;
+        }
+        public BindingList<PhieuNhapDTO> TimKiem(string searchTerm)
+        {
+            BindingList<PhieuNhapDTO> phieuNhapList = new BindingList<PhieuNhapDTO>();
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT * 
+                         FROM phieunhap 
+                         WHERE ID_PhieuNhap LIKE @SearchTerm 
+                            OR MaNV LIKE @SearchTerm 
+                            OR MaNcc LIKE @SearchTerm 
+                            OR TongTien LIKE @SearchTerm 
+                            OR NgayNhap LIKE @SearchTerm ORDER BY NgayNhap DESC";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            PhieuNhapDTO phieuNhap = new PhieuNhapDTO()
+                            {
+                                ID = int.Parse(reader["ID_PhieuNhap"].ToString()),
+                                IDNV = reader["MaNV"].ToString(),
+                                IDNCC = reader["MaNCC"].ToString(),
+                                TongTien = int.Parse(reader["TongTIen"].ToString()),
+                                NgayTao = reader.GetDateTime(3)
+                            };
+                            phieuNhapList.Add(phieuNhap);
+                        }
+                    }
+                }
+            }
+            return phieuNhapList;
         }
     }
 }

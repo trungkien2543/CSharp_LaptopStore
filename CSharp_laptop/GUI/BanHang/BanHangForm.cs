@@ -112,6 +112,14 @@ namespace CSharp_laptop.GUI.BanHang
             cbxCamera.SelectedIndex = 0; // Chọn camera đầu tiên
         }
 
+        private void dataGridView2_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView2.Columns[e.ColumnIndex].Name == "TrangThai" && e.Value != null)
+            {
+                e.Value = (int)e.Value == 0 ? "Đã bán" : "Chưa bán";
+                e.FormattingApplied = true;
+            }
+        }
 
         private void edittable()
         {
@@ -130,6 +138,9 @@ namespace CSharp_laptop.GUI.BanHang
             AddButtonsToDataGridView();
 
         }
+
+
+
 
         private void LoadLaptops()
         {
@@ -383,6 +394,8 @@ namespace CSharp_laptop.GUI.BanHang
             }
         }
 
+
+
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
 
@@ -538,7 +551,7 @@ namespace CSharp_laptop.GUI.BanHang
             HoaDonDTO hoaDonDTO = new HoaDonDTO
             {
                 NgayLap = DateTime.Now,
-                MaNV = mainForm.NhanVienDangNhap,
+                MaNV = mainForm.NhanVienDangNhap.TenDN,
                 MaKH = txtID.Text,
                 TongTien = TongTien
             };

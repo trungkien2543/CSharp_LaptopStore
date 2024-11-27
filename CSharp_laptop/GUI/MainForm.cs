@@ -55,9 +55,9 @@ namespace CSharp_laptop.GUI
 
         private PhieuNhapGUI phieuNhapGUI;
 
-        public String NhanVienDangNhap;
+        public TaiKhoanDTO NhanVienDangNhap = new TaiKhoanDTO();
 
-        public MainForm(String nhanVienDangNhap)
+        public MainForm(TaiKhoanDTO nhanVienDangNhap)
         {
 
             InitializeComponent();
@@ -96,6 +96,14 @@ namespace CSharp_laptop.GUI
 
             this.phieuNhapGUI = new PhieuNhapGUI(this);
 
+            if (NhanVienDangNhap.Quyen == "Q2")
+            {
+                btnNhanVien.Visible = false;
+                btnNhaSanXuat.Visible = false;
+                btnTaiKhoan.Visible = false;
+                btnKhuyenMai.Visible = false;
+            }
+
 
             KhuyenMaiBUS khuyenMaiBUS = new KhuyenMaiBUS();
             khuyenMaiBUS.KiemTraKhuyenMaiHetHan();
@@ -103,6 +111,7 @@ namespace CSharp_laptop.GUI
         }
         public void OpenChildForm(Form childForm)
         {
+            
             //open only form
             if (currentChildForm != null)
             {
@@ -598,6 +607,12 @@ namespace CSharp_laptop.GUI
 
         public void moChucNang(int i)
         {
+            if (NhanVienDangNhap.Quyen == "Q2" && (i == 2 || i == 4|| i == 6|| i == 8))
+            {
+                MessageBox.Show("Bạn không đủ quyền để truy cập vào chức năng này!!!");
+
+                return;
+            }
             switch (i)
             {
                 case 1:

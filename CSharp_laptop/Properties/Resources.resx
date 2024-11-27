@@ -169,6 +169,9 @@
   <data name="logo_home_but_zoom1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_home_but_zoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_home.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GFF\shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

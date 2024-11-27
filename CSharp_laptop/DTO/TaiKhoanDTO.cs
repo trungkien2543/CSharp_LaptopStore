@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_laptop.DTO
 {
-    internal class TaiKhoanDTO
+    public class TaiKhoanDTO
     {
         public string TenDN { get; set; }
         public string MatKhau { get; set; }

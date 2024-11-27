@@ -276,6 +276,7 @@ namespace CSharp_laptop.GUI.BanHang
             dataGridView2.Size = new Size(827, 490);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellClick += dataGridView2_CellClick;
+            dataGridView2.CellFormatting += dataGridView2_CellFormatting_1;
             // 
             // guna2GradientPanel2
             // 
