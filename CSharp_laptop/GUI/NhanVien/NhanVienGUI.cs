@@ -413,6 +413,12 @@ namespace CSharp_laptop.GUI
                     var worksheet = package.Workbook.Worksheets[0];
                     int rowCount = worksheet.Dimension.Rows;
 
+                    if (worksheet.Cells[1, 2].Value?.ToString() != "Tên Nhân Viên")
+                    {
+                        MessageBox.Show($"Tên Cột 2 Không phải 'Tên NV', hãy kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return nvs;
+                    }
+
                     for (int row = 2; row <= rowCount; row++) // Bắt đầu từ dòng 2 (bỏ qua header)
                     {
                         NhanVienDTO nv = new NhanVienDTO

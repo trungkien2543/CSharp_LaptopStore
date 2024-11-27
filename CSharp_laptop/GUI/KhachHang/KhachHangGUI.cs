@@ -423,6 +423,12 @@ namespace CSharp_laptop.GUI
                     var worksheet = package.Workbook.Worksheets[0];
                     int rowCount = worksheet.Dimension.Rows;
 
+                    if (worksheet.Cells[1, 2].Value?.ToString() != "Tên Khách Hàng")
+                    {
+                        MessageBox.Show($"Tên Cột 2 Không phải 'Tên Khách Hàng', hãy kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return khs;
+                    }
+
                     for (int row = 2; row <= rowCount; row++) // Bắt đầu từ dòng 2 (bỏ qua header)
                     {
                         KhachHangDTO laptop = new KhachHangDTO
