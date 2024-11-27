@@ -91,7 +91,7 @@ namespace CSharp_laptop.DAO
             return isSuccess;
         }
 
-        public bool AddCTPhieuNhapi(int idPN, ChiTietPhieuNhapDTO ctpn)
+        public bool AddCTPhieuNhapi(int idPN, ChiTietPhieuNhap ctpn)
         {
             bool isSuccess = false;
             using (MySqlConnection conn = connectionHelper.GetConnection())
@@ -233,9 +233,9 @@ namespace CSharp_laptop.DAO
             }
             return phieuNhap;
         }
-        public BindingList<ChiTietPhieuNhapDTO> GetChiTietPhieuNhap1(int id)
+        public BindingList<ChiTietPhieuNhap> GetChiTietPhieuNhap1(int id)
         {
-            BindingList<ChiTietPhieuNhapDTO> ctpnList = new BindingList<ChiTietPhieuNhapDTO>();
+            BindingList<ChiTietPhieuNhap> ctpnList = new BindingList<ChiTietPhieuNhap>();
 
             using (MySqlConnection conn = connectionHelper.GetConnection())
             {
@@ -248,7 +248,7 @@ namespace CSharp_laptop.DAO
                     {
                         while (reader.Read())
                         {
-                            ChiTietPhieuNhapDTO ctpn = new ChiTietPhieuNhapDTO()
+                            ChiTietPhieuNhap ctpn = new ChiTietPhieuNhap()
                             {
                                 IMEI = reader["IMEI"].ToString(),
                                 IDLoaiLaptop = reader["LoaiLaptop"].ToString(),

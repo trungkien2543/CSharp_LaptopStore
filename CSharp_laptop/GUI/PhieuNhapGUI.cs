@@ -26,7 +26,11 @@ namespace CSharp_laptop.GUI
     {
         private PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
 
+        private ChiTietHoaDonBUS chiTietHoaDonBUS = new ChiTietHoaDonBUS();
+
         private BindingList<PhieuNhapDTO> phieuNhapList;
+
+        private BindingList<ChiTietPhieuNhap> chiTietPhieuNhapDTOs;
 
 
         private NhanVienBUS nhanVienBUS = new NhanVienBUS();
@@ -225,7 +229,7 @@ namespace CSharp_laptop.GUI
         private int idPN;
         int tgBaoHanh;
         private PhieuNhapDTO phieuNhap;
-        private BindingList<ChiTietPhieuNhapDTO> ctPNList = new BindingList<ChiTietPhieuNhapDTO>();
+        private BindingList<ChiTietPhieuNhap> ctPNList = new BindingList<ChiTietPhieuNhap>();
         private BindingList<LoaiLapPnDTO> lltList = new BindingList<LoaiLapPnDTO>();
 
         private void But_sp_Click(object sender, EventArgs e)
@@ -246,7 +250,7 @@ namespace CSharp_laptop.GUI
 
             if (kt == 2)
             {
-                ChiTietPhieuNhapDTO ctPN = new ChiTietPhieuNhapDTO()
+                ChiTietPhieuNhap ctPN = new ChiTietPhieuNhap()
                 {
                     IMEI = imei,
                     IDLoaiLaptop = idLoaiLap,
@@ -470,7 +474,7 @@ namespace CSharp_laptop.GUI
                 DataGridViewRow row = dataGridView_ctpn.Rows[e.RowIndex];
                 string idLoaiLaptop = row.Cells["IDllt"].Value.ToString();
 
-                ctPNList.Remove((ChiTietPhieuNhapDTO)row.DataBoundItem);
+                ctPNList.Remove((ChiTietPhieuNhap)row.DataBoundItem);
                 for (int i = 0; i < lltList.Count; i++)
                 {
                     if (lltList[i].IDLoaiLaptop == idLoaiLaptop)
@@ -542,7 +546,6 @@ namespace CSharp_laptop.GUI
         }
         private void ExportToExcel()  // export excel
         {
-            phieuNhapList = phieuNhapBUS.GetAllPhieuNhap();
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
             using (var package = new ExcelPackage())
@@ -601,6 +604,27 @@ namespace CSharp_laptop.GUI
 
                 // Tự động căn chỉnh kích thước cột
                 worksheet.Cells.AutoFitColumns();
+
+
+                // Thêm chi tiết hóa đơn
+                // Tạo một worksheet
+                var worksheet1 = package.Workbook.Worksheets.Add("Chi tiết phiếu nhập");
+
+                // Thêm header vào Excel
+                worksheet1.Cells[1, 1].Value = "Mã IMEI";
+                worksheet1.Cells[1, 2].Value = "Mã phiếu nhập";
+                worksheet1.Cells[1, 3].Value = "Giá bán";
+
+
+
+                //// Đổ dữ liệu từ danh sách vào Excel
+                //for (int i = 0; i < listCTHD.Count; i++)
+                //{
+                //    var chiTietHoaDon = listCTHD[i];
+                //    worksheet1.Cells[i + 2, 1].Value = chiTietHoaDon.IMEI;
+                //    worksheet1.Cells[i + 2, 2].Value = chiTietHoaDon.ID_HoaDon;
+                //    worksheet1.Cells[i + 2, 3].Value = chiTietHoaDon.GiaBan;
+                //}
 
                 // Hiển thị hộp thoại lưu file
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -666,7 +690,7 @@ namespace CSharp_laptop.GUI
 
             string filas = string.Empty;
             decimal total = 0;
-            foreach (ChiTietPhieuNhapDTO ctpn in ctPNList)
+            foreach (ChiTietPhieuNhap ctpn in ctPNList)
             {
                 filas += "<tr>";
                 filas += "<td align=\"center\">" + ctpn.IMEI + "</td>";

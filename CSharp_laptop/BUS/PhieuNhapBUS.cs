@@ -28,7 +28,7 @@ namespace CSharp_laptop.BUS
             return phieuNhapDAO.GetAllPhieuNhap();
         }
 
-        public bool AddPhieuNhap(PhieuNhapDTO phieuNhap, BindingList<ChiTietPhieuNhapDTO> ctpnArr, BindingList<LoaiLapPnDTO> llt)
+        public bool AddPhieuNhap(PhieuNhapDTO phieuNhap, BindingList<ChiTietPhieuNhap> ctpnArr, BindingList<LoaiLapPnDTO> llt)
         {
             bool isSuccess = false;
             if (phieuNhapDAO.AddPhieuNhap(phieuNhap)) isSuccess = true;
@@ -63,7 +63,7 @@ namespace CSharp_laptop.BUS
             return phieuNhapDAO.Get1PhieuNhapByID(id);
         }
 
-        public BindingList<ChiTietPhieuNhapDTO> GetChiTietPhieuNhap1(int id)
+        public BindingList<ChiTietPhieuNhap> GetChiTietPhieuNhap1(int id)
         {
             return phieuNhapDAO.GetChiTietPhieuNhap1(id);
         }

@@ -13,36 +13,43 @@ namespace CSharp_laptop.DAO
     {
         private MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
 
-        public BindingList<KhuyenMaiDTO> GetKhuyenMaiArr()
+        public List<ChiTietPhieuNhapDTO> GetChiTietPhieuNhapWithHoaDon(string find)
         {
-            BindingList<KhuyenMaiDTO> khuyenMaiArr = new BindingList<KhuyenMaiDTO>();
-
-            using (MySqlConnection conn = connectionHelper.GetConnection())
+            List<ChiTietPhieuNhapDTO> result = new();
+            using (MySqlConnection connection = connectionHelper.GetConnection())
             {
-                conn.Open();
-                string query = "SELECT * FROM khuyenmai";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
+                string query = @"SELECT * FROM chitietphieunnhap WHERE chitietphieunhap.ID_PhieuNhap IN (" + @"
+                                                                                               SELECT * 
+                                                                                                FROM phieunhap 
+                                                                                                WHERE ID_PhieuNhap LIKE @SearchTerm 
+                                                                                                OR MaNV LIKE @SearchTerm 
+                                                                                                OR MaNcc LIKE @SearchTerm 
+                                                                                                OR TongTien LIKE @SearchTerm 
+                                                                                                OR NgayNhap LIKE @SearchTerm ORDER BY NgayNhap DESC;";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Search", "%" + find + "%");
 
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+
+                connection.Open();
+                using (MySqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        KhuyenMaiDTO khuyenMai = new KhuyenMaiDTO
+                        ChiTietPhieuNhapDTO chiTiet = new ChiTietPhieuNhapDTO
                         {
-                            IDKM = reader["ID_KhuyenMai"].ToString(),
-                            TenKM = reader["TenKhuyenMai"].ToString(),
-                            MucGiamGia = int.Parse(reader["MucGiamGia"].ToString()),
-                            MoTa = reader["MoTaKM"].ToString(),
-                            ThoiGianBatDau = reader.GetDateTime(4),
-                            ThoiGianKetThuc = reader.GetDateTime(5),
-                            NgayTao = reader.GetDateTime(6)
+                            IMEI = reader["IMEI"].ToString(),
+                            ID_PhieuNhap = Convert.ToInt64(reader["ID_PhieuNhap"]),
+                            GiaNhap = Convert.ToInt64(reader["GiaNhap"])
                         };
-                        khuyenMaiArr.Add(khuyenMai);
+                        result.Add(chiTiet);
                     }
                 }
             }
-            return khuyenMaiArr;
+            return result;
         }
+
+
+
 
     }
 }
