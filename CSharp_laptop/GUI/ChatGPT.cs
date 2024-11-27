@@ -45,20 +45,18 @@ namespace CSharp_laptop.GUI
 
             string laptopsJson = JsonConvert.SerializeObject(laptops, Formatting.Indented);
 
-            // Thay thế API Key của bạn ở đây
-            string apiKey = "";
             string endpoint = "https://api.openai.com/v1/chat/completions";
 
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
 
             String systemLine = bus.ConcatAllLines();
-            
+
 
             // Nội dung body
             var requestBody = new
             {
-                model = "gpt-3.5-turbo", // Hoặc "gpt-4"
+                model = "gpt-3.5-turbo",
                 messages = new[]
                 {
                 new { role = "system", content = systemLine + laptopsJson +  ". "  },
@@ -102,7 +100,8 @@ namespace CSharp_laptop.GUI
                 if (GetNumberAfterGoTo(textBox1.Text) != null)
                 {
                     mf.moChucNang((int)GetNumberAfterGoTo(textBox1.Text));
-                } else 
+                }
+                else
                     ChatGPTAsync(textBox1.Text);
                 textBox1.Text = "";
             }
@@ -145,6 +144,11 @@ namespace CSharp_laptop.GUI
         {
             richTextBox1.SelectionStart = richTextBox1.TextLength;
             richTextBox1.ScrollToCaret();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -63,6 +63,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(320, 29);
             textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged;
             textBox1.KeyDown += textBox1_KeyDown;
             // 
             // ChatGPT

@@ -433,15 +433,16 @@ namespace CSharp_laptop.GUI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            int dv1 = 120; int dv2 = 50;
             if (hided)
             {
-                MenuPanel.Size = new Size(MenuPanel.Width + 5, MenuPanel.Height);
-                panelTitleBar.Size = new Size(panelTitleBar.Width - 5, panelTitleBar.Height);
-                panelTitleBar.Location = new Point(panelTitleBar.Location.X + 5, panelTitleBar.Location.Y);
-                panelDesktop.Size = new Size(panelDesktop.Width - 5, panelDesktop.Height);
-                panelDesktop.Location = new Point(panelDesktop.Location.X + 5, panelDesktop.Location.Y);
-                PictureBox1.Size = new Size(PictureBox1.Width, PictureBox1.Height + 2);
-                MenuChoice.Location = new Point(MenuChoice.Location.X, MenuChoice.Location.Y + 2);
+                MenuPanel.Size = new Size(MenuPanel.Width + dv1, MenuPanel.Height);
+                panelTitleBar.Size = new Size(panelTitleBar.Width - dv1, panelTitleBar.Height);
+                panelTitleBar.Location = new Point(panelTitleBar.Location.X + dv1, panelTitleBar.Location.Y);
+                panelDesktop.Size = new Size(panelDesktop.Width - dv1, panelDesktop.Height);
+                panelDesktop.Location = new Point(panelDesktop.Location.X + dv1, panelDesktop.Location.Y);
+                PictureBox1.Size = new Size(PictureBox1.Width, PictureBox1.Height + dv2);
+                MenuChoice.Location = new Point(MenuChoice.Location.X, MenuChoice.Location.Y + dv2);
                 if (MenuPanel.Width >= PW)
                 {
                     timer1.Stop();
@@ -455,29 +456,33 @@ namespace CSharp_laptop.GUI
                         currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                         currentBtn.ImageAlign = ContentAlignment.MiddleRight;
                     }
+
+                    PictureBox1.Enabled = true;
                 }
             }
             else
             {
-                MenuPanel.Size = new Size(MenuPanel.Width - 5, MenuPanel.Height);
-                panelTitleBar.Size = new Size(panelTitleBar.Width + 5, panelTitleBar.Height);
-                panelTitleBar.Location = new Point(panelTitleBar.Location.X - 5, panelTitleBar.Location.Y);
-                panelDesktop.Size = new Size(panelDesktop.Width + 5, panelDesktop.Height);
-                panelDesktop.Location = new Point(panelDesktop.Location.X - 5, panelDesktop.Location.Y);
-                PictureBox1.Size = new Size(PictureBox1.Width, PictureBox1.Height - 2);
-                MenuChoice.Location = new Point(MenuChoice.Location.X, MenuChoice.Location.Y - 2);
+                MenuPanel.Size = new Size(MenuPanel.Width - dv1, MenuPanel.Height);
+                panelTitleBar.Size = new Size(panelTitleBar.Width + dv1, panelTitleBar.Height);
+                panelTitleBar.Location = new Point(panelTitleBar.Location.X - dv1, panelTitleBar.Location.Y);
+                panelDesktop.Size = new Size(panelDesktop.Width + dv1, panelDesktop.Height);
+                panelDesktop.Location = new Point(panelDesktop.Location.X - dv1, panelDesktop.Location.Y);
+                PictureBox1.Size = new Size(PictureBox1.Width, PictureBox1.Height - dv2);
+                MenuChoice.Location = new Point(MenuChoice.Location.X, MenuChoice.Location.Y - dv2);
                 if (MenuPanel.Width <= 60)
                 {
                     timer1.Stop();
                     hided = true;
                     this.Refresh();
 
+                    PictureBox1.Enabled = true;
                 }
             }
         }
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            PictureBox1.Enabled = false;
             if (btnSanPham.ForeColor == Color.Gainsboro) btnSanPham.ForeColor = Color.FromArgb(144, 114, 170);
             else btnSanPham.ForeColor = Color.Gainsboro;
 

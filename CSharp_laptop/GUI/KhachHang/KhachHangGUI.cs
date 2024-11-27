@@ -257,7 +257,12 @@ namespace CSharp_laptop.GUI
             string ten = guna2TextBoxTen.Text;
             string DC = guna2TextBoxDC.Text;
             string sdt = guna2TextBoxSDT.Text;
-            int diem = int.Parse(guna2TextBoxDiem.Text);
+
+            int diem = 0;
+            if (!string.IsNullOrEmpty(guna2TextBoxDiem.Text)) 
+            {
+                diem = int.Parse(guna2TextBoxDiem.Text);
+            }
             KhachHangDTO kh = new KhachHangDTO(id, ten, DC, sdt, diem);
 
             if (bus.AddKhachHang(kh))
