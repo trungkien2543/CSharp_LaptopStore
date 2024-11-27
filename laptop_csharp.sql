@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2024 at 04:42 AM
+-- Generation Time: Nov 27, 2024 at 05:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -340,16 +340,16 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`ID_NhanVien`, `TenNV`, `NgaySinh`, `SDT`, `DiaChi`, `GioiTinh`, `CCCD`, `Email`) VALUES
-('NV001', 'Nguyen Van A', '1990-01-01', '0987654321', 'Hanoi', 1, '123456789', 'vana@example.com'),
-('NV002', 'Tran Thi B', '1992-05-05', '0987654322', 'HCM', 0, '123456788', 'tranb@example.com'),
-('NV003', 'Le Van C', '1993-03-03', '0987654323', 'Danang', 1, '123456787', 'levanc@example.com'),
-('NV004', 'Pham Thi D', '1994-04-04', '0987654324', 'Hue', 0, '123456786', 'phamd@example.com'),
-('NV005', 'Hoang Van E', '1995-06-06', '0987654325', 'Can Tho', 1, '123456785', 'hoange@example.com'),
-('NV006', 'Do Thi F', '1996-07-07', '0987654326', 'Nha Trang', 0, '123456784', 'dotf@example.com'),
-('NV007', 'Ngo Van G', '1997-08-08', '0987654327', 'Hai Phong', 1, '123456783', 'ngog@example.com'),
-('NV008', 'Duong Thi H', '1998-09-09', '0987654328', 'Ha Long', 0, '123456782', 'duongh@example.com'),
-('NV009', 'Phan Van I', '1999-10-10', '0987654329', 'Quang Ngai', 1, '123456781', 'phanvi@example.com'),
-('NV010', 'Vu Thi J', '2000-11-11', '0987654330', 'Vung Tau', 0, '123456780', 'vuthj@example.com');
+('NV001', 'Nguyen Van A', '01/01/1990', '0987654321', 'Hanoi', 1, '123456789', 'vana@example.com'),
+('NV002', 'Tran Thi B', '05/05/1992', '0987654322', 'HCM', 0, '123456788', 'tranb@example.com'),
+('NV003', 'Le Van C', '03/03/1993', '0987654323', 'Danang', 1, '123456787', 'levanc@example.com'),
+('NV004', 'Pham Thi D', '04/04/1994', '0987654324', 'Hue', 0, '123456786', 'phamd@example.com'),
+('NV005', 'Hoang Van E', '06/06/1995', '0987654325', 'Can Tho', 1, '123456785', 'hoange@example.com'),
+('NV006', 'Do Thi F', '07/07/1996', '0987654326', 'Nha Trang', 0, '123456784', 'dotf@example.com'),
+('NV007', 'Ngo Van G', '08/08/1997', '0987654327', 'Hai Phong', 1, '123456783', 'ngog@example.com'),
+('NV008', 'Duong Thi H', '09/09/1998', '0987654328', 'Ha Long', 0, '123456782', 'duongh@example.com'),
+('NV009', 'Phan Van I', '10/10/1999', '0987654329', 'Quang Ngai', 1, '123456781', 'phanvi@example.com'),
+('NV010', 'Vu Thi J', '11/11/2000', '0987654330', 'Vung Tau', 0, '123456780', 'vuthj@example.com');
 
 -- --------------------------------------------------------
 

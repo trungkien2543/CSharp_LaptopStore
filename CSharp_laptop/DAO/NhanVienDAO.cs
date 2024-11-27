@@ -198,10 +198,13 @@ namespace CSharp_laptop.DAO
                 SELECT `ID_NhanVien`, `TenNV`, `NgaySinh`, `SDT`, `DiaChi`, `GioiTinh`, `CCCD`, `Email` 
                 FROM `nhanvien`
                 WHERE 
+                    `ID_NhanVien` LIKE @SearchTerm OR
                     `TenNV` LIKE @SearchTerm OR
-                    `Email` LIKE @SearchTerm OR
+                    `NgaySinh` LIKE @SearchTerm OR
                     `SDT` LIKE @SearchTerm OR
-                    `DiaChi` LIKE @SearchTerm";
+                    `DiaChi` LIKE @SearchTerm OR
+                    `CCCD` LIKE @SearchTerm OR
+                    `Email` LIKE @SearchTerm ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
