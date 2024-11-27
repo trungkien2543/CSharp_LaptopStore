@@ -33,14 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
-
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
-
-            //DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -98,6 +90,7 @@
             panel5 = new Panel();
             text_tongtien = new RJTextBox();
             panel8 = new Panel();
+            btnPDF = new VBButton();
             vbButton3 = new VBButton();
             huy_but = new VBButton();
             tabPage1 = new TabPage();
@@ -899,6 +892,7 @@
             // 
             // panel8
             // 
+            panel8.Controls.Add(btnPDF);
             panel8.Controls.Add(vbButton3);
             panel8.Controls.Add(huy_but);
             panel8.Dock = DockStyle.Bottom;
@@ -906,6 +900,27 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(1135, 90);
             panel8.TabIndex = 25;
+            // 
+            // btnPDF
+            // 
+            btnPDF.Anchor = AnchorStyles.Top;
+            btnPDF.BackColor = Color.Firebrick;
+            btnPDF.BackgroundColor = Color.Firebrick;
+            btnPDF.BorderColor = Color.PaleVioletRed;
+            btnPDF.BorderRadius = 15;
+            btnPDF.BorderSize = 0;
+            btnPDF.FlatAppearance.BorderSize = 0;
+            btnPDF.FlatStyle = FlatStyle.Flat;
+            btnPDF.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPDF.ForeColor = Color.White;
+            btnPDF.Location = new Point(975, 6);
+            btnPDF.Name = "btnPDF";
+            btnPDF.Size = new Size(150, 40);
+            btnPDF.TabIndex = 27;
+            btnPDF.Text = "Xuất PDF";
+            btnPDF.TextColor = Color.White;
+            btnPDF.UseVisualStyleBackColor = false;
+            btnPDF.Click += btnPDF_Click;
             // 
             // vbButton3
             // 
@@ -1119,7 +1134,7 @@
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = SystemColors.Window;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(235, 230, 255);
             dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(85, 81, 132);
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
@@ -1296,5 +1311,6 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column4;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private VBButton btnPDF;
     }
 }

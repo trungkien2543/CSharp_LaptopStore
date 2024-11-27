@@ -116,6 +116,7 @@ namespace CSharp_laptop.GUI.BanHang
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@LOAIPHIEU", "RECEIPT");
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@MAHD", HoaDon.ID_HoaDon + "");
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE", HoaDon.NgayLap + "");
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@LABEL", "Customer: ");
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DOCUMENTO", HoaDon.MaNV);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", HoaDon.MaKH);
 
