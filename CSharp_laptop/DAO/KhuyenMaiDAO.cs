@@ -220,7 +220,7 @@ namespace CSharp_laptop.DAO
             {
                 conn.Open();
                 string query = @"SELECT * 
-                         FROM phieunhap 
+                         FROM khuyenmai
                          WHERE ID_KhuyenMai LIKE @SearchTerm 
                             OR TenKhuyenMai LIKE @SearchTerm 
                             OR MucGiamGia LIKE @SearchTerm 
