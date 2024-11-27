@@ -30,7 +30,6 @@ namespace CSharp_laptop.GUI
         bool hided;
         MainForm mainForm;
         KhachHangBUS bus;
-        List<KhachHangDTO> dtos;
 
         List<VBButton> btnEditList;
         List<VBButton> btnDelList;
@@ -39,7 +38,6 @@ namespace CSharp_laptop.GUI
         {
             this.mainForm = mainForm;
             bus = new KhachHangBUS();
-            dtos = bus.getAllKhachHang();
 
             btnEditList = new List<VBButton>();
             btnDelList = new List<VBButton>();
@@ -53,7 +51,7 @@ namespace CSharp_laptop.GUI
 
         private void KhachHangGUI_Load(object sender, EventArgs e)
         {
-            LoadTable();
+            LoadTable(bus.getAllKhachHang());
             DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
             btnEdit.Name = "btnEdit";
             btnEdit.HeaderText = "Edit";
@@ -72,7 +70,7 @@ namespace CSharp_laptop.GUI
             btnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dataGridView1.Columns.Add(btnDelete);
         }
-        private void LoadTable()
+        private void LoadTable(List<KhachHangDTO> dtos)
         {
             btnEditList = new List<VBButton>();
             btnDelList = new List<VBButton>();
@@ -80,7 +78,6 @@ namespace CSharp_laptop.GUI
             dataGridView1.Controls.Clear();
             dataGridView1.Refresh();
 
-            dtos = bus.getAllKhachHang();
             for (int i = 0; i < dtos.Count; i++)
             {
                 KhachHangDTO kh = dtos[i];
@@ -217,7 +214,8 @@ namespace CSharp_laptop.GUI
                 SuaKhachHang();
             }
 
-            LoadTable();
+            LoadTable(bus.getAllKhachHang());
+
         }
         private void SuaKhachHang()
         {
@@ -367,7 +365,7 @@ namespace CSharp_laptop.GUI
 
                     // Gọi hàm nhập dữ liệu và lưu vào database
                     SaveKhachHangToDatabase(ImportFromExcel(filePath));
-                    LoadTable();
+                    LoadTable(bus.getAllKhachHang());
                 }
                 else
                 {
@@ -489,13 +487,13 @@ namespace CSharp_laptop.GUI
 
                     MessageBox.Show("Xóa Ko Thành Công!");
                 }
-                LoadTable();
+                LoadTable(bus.getAllKhachHang());
             }
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
-
+            LoadTable(bus.SearchKhachHang(rjTextBox1.Texts));
         }
     }
 }

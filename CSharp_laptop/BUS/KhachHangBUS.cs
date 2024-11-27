@@ -43,5 +43,10 @@ namespace CSharp_laptop.BUS
         {
             return dao.UpdateKhachHang(khachHang);
         }
+
+        public List<KhachHangDTO> SearchKhachHang(string keyword)
+        {
+            return dao.SearchKhachHang(keyword);
+        }
     }
 }

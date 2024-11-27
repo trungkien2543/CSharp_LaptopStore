@@ -23,6 +23,7 @@ namespace CSharp_laptop.GUI
         LoaiLaptopBUS loaiLaptopBUS;
         List<LoaiLaptopDTO> laptops;
         MainForm mf;
+        ChatgptLineBUS bus;
 
 
         public ChatGPT(MainForm mf)
@@ -31,6 +32,7 @@ namespace CSharp_laptop.GUI
             this.mf = mf;
             loaiLaptopBUS = new LoaiLaptopBUS();
             laptops = loaiLaptopBUS.GetLaptops();
+            bus = new ChatgptLineBUS();
             this.TopMost = true;
         }
 
@@ -50,20 +52,16 @@ namespace CSharp_laptop.GUI
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
 
+            String systemLine = bus.ConcatAllLines();
+            
+
             // Nội dung body
             var requestBody = new
             {
                 model = "gpt-3.5-turbo", // Hoặc "gpt-4"
                 messages = new[]
                 {
-                new { role = "system", content = "Nhớ kỹ Bạn là Nhân Viên hoạt động trong kho hàng cho công cụ quản lý cửa hàng bán laptop " +
-                "(chỉ tương tác với quản lý và nhân viên của cửa hàng). " +
-                "Phần mềm được các thành viên Danh, Duy, Nam, Kiên(Trưởng nhóm), Tiến, Đức phát triển." +
-                "Phầm mềm gồm các chức năng: Quản lý Sản phẩm(1), QL nhà sản xuất(2), Bán Hàng(3), QL Nhân Viên(4)" +
-                "QL Khách Hàng(5), QL Khuyến mãi(6), QL Nhập Hàng(10), Xem Thống Kê(7), QL Tài Khoản(8), QL bảo hành(9). " +
-                "Bạn trả lời kèm /GoTo<number> để code tự đến chức năng đấy giúp nhân viên. "+
-                "bạn sẽ hỗ trợ cho người dùng(là nhân viên hoặc admin) quản lý các thông tin trong cửa hàng. " +
-                "Nếu được hỏi các thông tin về laptop thì dựa vào đây(ưu tiên thông tin số lượng): "  + laptopsJson +  ". "  },
+                new { role = "system", content = systemLine + laptopsJson +  ". "  },
                 new { role = "user", content = chatrequest }
             },
                 max_tokens = 2000,
