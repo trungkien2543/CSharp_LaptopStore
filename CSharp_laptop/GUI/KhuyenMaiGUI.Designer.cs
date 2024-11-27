@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -35,10 +37,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiGUI));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             btnNhapExcel = new Guna.UI2.WinForms.Guna2Button();
             btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
             rjTextBox1 = new RJTextBox();
@@ -77,7 +78,6 @@
             textBox3 = new RJTextBox();
             textBox2 = new RJTextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             artanPanel3.SuspendLayout();
@@ -117,6 +117,30 @@
             tabPage1.Size = new Size(1141, 702);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
+            // 
+            // guna2CircleButton1
+            // 
+            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2CircleButton1.BackColor = Color.Transparent;
+            guna2CircleButton1.BorderColor = Color.White;
+            guna2CircleButton1.CustomBorderColor = Color.FromArgb(247, 176, 118);
+            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton1.FillColor = Color.FromArgb(247, 176, 118);
+            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton1.ForeColor = Color.White;
+            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
+            guna2CircleButton1.ImageSize = new Size(25, 25);
+            guna2CircleButton1.Location = new Point(448, 20);
+            guna2CircleButton1.Margin = new Padding(0);
+            guna2CircleButton1.Name = "guna2CircleButton1";
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CircleButton1.Size = new Size(40, 40);
+            guna2CircleButton1.TabIndex = 63;
+            guna2CircleButton1.Click += guna2CircleButton1_Click;
             // 
             // btnNhapExcel
             // 
@@ -366,7 +390,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1117, 698);
+            tabPage2.Size = new Size(1141, 702);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
@@ -440,6 +464,7 @@
             // 
             // dateTimePicker5
             // 
+            dateTimePicker5.Enabled = false;
             dateTimePicker5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker5.Format = DateTimePickerFormat.Custom;
             dateTimePicker5.Location = new Point(71, 476);
@@ -705,30 +730,6 @@
             textBox2.TabIndex = 1;
             textBox2.Texts = "";
             textBox2.UnderlinedStyle = false;
-            // 
-            // guna2CircleButton1
-            // 
-            guna2CircleButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2CircleButton1.BackColor = Color.Transparent;
-            guna2CircleButton1.BorderColor = Color.White;
-            guna2CircleButton1.CustomBorderColor = Color.FromArgb(247, 176, 118);
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.FillColor = Color.FromArgb(247, 176, 118);
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Image = (Image)resources.GetObject("guna2CircleButton1.Image");
-            guna2CircleButton1.ImageSize = new Size(25, 25);
-            guna2CircleButton1.Location = new Point(448, 20);
-            guna2CircleButton1.Margin = new Padding(0);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(40, 40);
-            guna2CircleButton1.TabIndex = 63;
-            guna2CircleButton1.Click += guna2CircleButton1_Click;
             // 
             // KhuyenMaiGUI
             // 

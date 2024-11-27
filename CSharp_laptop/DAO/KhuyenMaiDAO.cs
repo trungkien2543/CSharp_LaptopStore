@@ -224,7 +224,7 @@ namespace CSharp_laptop.DAO
                          WHERE ID_KhuyenMai LIKE @SearchTerm 
                             OR TenKhuyenMai LIKE @SearchTerm 
                             OR MucGiamGia LIKE @SearchTerm 
-                            OR ThoiGianTaoKM LIKE @SearchTerm ORDER BY NgayNhap DESC";
+                            OR ThoiGianTaoKM LIKE @SearchTerm ORDER BY ThoiGianTaoKM DESC";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");

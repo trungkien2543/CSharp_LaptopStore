@@ -400,7 +400,7 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(40, 7);
+            label11.Location = new Point(40, 9);
             label11.Name = "label11";
             label11.Size = new Size(111, 23);
             label11.TabIndex = 3;
