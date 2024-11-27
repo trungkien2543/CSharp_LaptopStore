@@ -389,7 +389,7 @@ namespace CSharp_laptop.GUI
                     PhieuNhapDTO phieuNhap1 = new PhieuNhapDTO()
                     {
                         ID = idPN,
-                        IDNV = mainForm.NhanVienDangNhap,
+                        IDNV = mainForm.NhanVienDangNhap.TenDN,
                         IDNCC = comboBox_ncc.SelectedValue.ToString(),
                         TongTien = tt,
                         NgayTao = dateTimePicker1.Value.Date
