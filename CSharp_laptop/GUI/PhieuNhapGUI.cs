@@ -609,25 +609,57 @@ namespace CSharp_laptop.GUI
                 worksheet.Cells.AutoFitColumns();
 
 
+
                 // Thêm chi tiết hóa đơn
                 // Tạo một worksheet
                 var worksheet1 = package.Workbook.Worksheets.Add("Chi tiết phiếu nhập");
 
+                // Thêm tiêu đề ở dòng đầu tiên
+                worksheet1.Cells["A1:C1"].Merge = true; 
+                worksheet1.Cells["A1"].Value = "DANH SÁCH CHI TIẾT PHIẾU NHẬP"; // Nội dung tiêu đề
+                worksheet1.Cells["A1"].Style.Font.Size = 14; // Font chữ lớn
+                worksheet1.Cells["A1"].Style.Font.Bold = true; // In đậm
+                worksheet1.Cells["A1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                worksheet1.Cells["A1"].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa theo chiều dọc
+                worksheet1.Row(1).Height = 40; // Tăng chiều cao dòng tiêu đề
+
                 // Thêm header vào Excel
-                worksheet1.Cells[1, 1].Value = "Mã IMEI";
-                worksheet1.Cells[1, 2].Value = "Mã phiếu nhập";
-                worksheet1.Cells[1, 3].Value = "Giá bán";
+                worksheet1.Cells[2, 1].Value = "Mã IMEI";
+                worksheet1.Cells[2, 2].Value = "Mã phiếu nhập";
+                worksheet1.Cells[2, 3].Value = "Giá bán";
 
-
+                // Định dạng header
+                using (var range = worksheet1.Cells[2, 1, 2, 3]) // Phạm vi các ô header
+                {
+                    range.Style.Font.Bold = true; // In đậm
+                    range.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                    range.Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa dọc
+                    range.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid; // Nền solid
+                    range.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray); // Màu nền xám nhạt
+                    range.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin); // Viền
+                }
 
                 // Đổ dữ liệu từ danh sách vào Excel
                 for (int i = 0; i < chiTietPhieuNhapDTOs.Count; i++)
                 {
                     var chiTietHoaDon = chiTietPhieuNhapDTOs[i];
-                    worksheet1.Cells[i + 2, 1].Value = chiTietHoaDon.IMEI;
-                    worksheet1.Cells[i + 2, 2].Value = chiTietHoaDon.ID_PhieuNhap;
-                    worksheet1.Cells[i + 2, 3].Value = chiTietHoaDon.GiaNhap;
+                    worksheet1.Cells[i + 3, 1].Value = chiTietHoaDon.IMEI;
+                    worksheet1.Cells[i + 3, 2].Value = chiTietHoaDon.ID_PhieuNhap;
+                    worksheet1.Cells[i + 3, 3].Value = chiTietHoaDon.GiaNhap;
                 }
+
+                // Kẻ bảng và căn giữa dữ liệu
+                var dataRange1 = worksheet1.Cells[2, 1, chiTietPhieuNhapDTOs.Count + 2, 3]; // Phạm vi bảng (bao gồm header và dữ liệu)
+                dataRange1.Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange1.Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange1.Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                dataRange1.Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+                dataRange1.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Căn giữa
+                dataRange1.Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center; // Căn giữa dọc
+
+                // Tự động căn chỉnh kích thước cột
+                worksheet1.Cells.AutoFitColumns();
 
                 // Hiển thị hộp thoại lưu file
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
