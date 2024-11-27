@@ -397,19 +397,22 @@ namespace CSharp_laptop.GUI
         {
             if (ChonHang == true)
             {
-                DialogResult result = MessageBox.Show("Thay đổi nhà cung cấp sẽ mất dữ liệu?", "Xác nhận",
-                                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (lltList.Count > 0)
+                {
+                    DialogResult result = MessageBox.Show("Thay đổi nhà cung cấp sẽ mất dữ liệu?", "Xác nhận",
+                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                if (result == DialogResult.Yes)
-                {
-                    ChonHang = false;
-                    ctPNList.Clear();
-                    lltList.Clear();
-                }
-                else
-                {
-                    ChonHang = false;
-                    comboBox_ncc.SelectedIndex = sttHang;
+                    if (result == DialogResult.Yes)
+                    {
+                        ChonHang = false;
+                        ctPNList.Clear();
+                        lltList.Clear();
+                    }
+                    else
+                    {
+                        ChonHang = false;
+                        comboBox_ncc.SelectedIndex = sttHang;
+                    }
                 }
             }
         }
