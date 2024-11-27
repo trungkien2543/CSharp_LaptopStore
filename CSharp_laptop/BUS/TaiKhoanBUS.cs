@@ -54,5 +54,14 @@ namespace CSharp_laptop.BUS
                 return false;
             }
         }
+        public TaiKhoanDTO GetTaiKhoanByID(string id)
+        {
+            return dao.GetTaiKhoanByID(id);
+        }
+
+        public TaiKhoanDTO CheckLogin(string tenDN, string matKhau)
+        {
+            return dao.CheckLogin(tenDN, matKhau);
+        }
     }
 }

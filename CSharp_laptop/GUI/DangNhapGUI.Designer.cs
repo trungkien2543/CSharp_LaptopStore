@@ -47,6 +47,8 @@
             rjTextBox2 = new RJTextBox();
             pictureBox1 = new PictureBox();
             button1 = new Button();
+            xacnhanLabel = new Label();
+            xacnhanTextBox = new TextBox();
             panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -337,6 +339,29 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // xacnhanLabel
+            // 
+            xacnhanLabel.AutoSize = true;
+            xacnhanLabel.BackColor = Color.Transparent;
+            xacnhanLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            xacnhanLabel.ForeColor = Color.White;
+            xacnhanLabel.Location = new Point(592, 597);
+            xacnhanLabel.Name = "xacnhanLabel";
+            xacnhanLabel.Size = new Size(102, 21);
+            xacnhanLabel.TabIndex = 23;
+            xacnhanLabel.Text = "Mã Xác Nhận";
+            xacnhanLabel.Visible = false;
+            // 
+            // xacnhanTextBox
+            // 
+            xacnhanTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            xacnhanTextBox.Location = new Point(700, 595);
+            xacnhanTextBox.Name = "xacnhanTextBox";
+            xacnhanTextBox.Size = new Size(408, 29);
+            xacnhanTextBox.TabIndex = 24;
+            xacnhanTextBox.Visible = false;
+            xacnhanTextBox.TextChanged += xacnhanTextBox_TextChanged;
+            // 
             // DangNhapGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -345,6 +370,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1369, 825);
+            Controls.Add(xacnhanTextBox);
+            Controls.Add(xacnhanLabel);
             Controls.Add(button1);
             Controls.Add(rjTextBox2);
             Controls.Add(rjTextBox1);
@@ -384,5 +411,7 @@
         private RJTextBox rjTextBox2;
         private PictureBox pictureBox1;
         private Button button1;
+        private Label xacnhanLabel;
+        private TextBox xacnhanTextBox;
     }
 }

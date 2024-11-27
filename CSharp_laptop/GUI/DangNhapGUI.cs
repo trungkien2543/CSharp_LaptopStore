@@ -1,5 +1,5 @@
-﻿using CSharp_laptop.DAO;
-using CSharp_laptop.DTO;
+﻿using CSharp_laptop.DTO;
+using CSharp_laptop.BUS;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace CSharp_laptop.GUI
 {
     public partial class DangNhapGUI : Form
     {
-
+        string ma = "người theo hương hoa mây mù giăng lối";
         public DangNhapGUI()
         {
             InitializeComponent();
@@ -122,9 +122,9 @@ namespace CSharp_laptop.GUI
             string tenDangNhap = rjTextBox1.Texts;
             string matKhau = rjTextBox2.Texts;
 
-            TaiKhoanDAO taiKhoanDAO = new TaiKhoanDAO();
+            TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
 
-            TaiKhoanDTO isLoginSuccessful = taiKhoanDAO.CheckLogin(tenDangNhap, matKhau);
+            TaiKhoanDTO isLoginSuccessful = taiKhoanBUS.CheckLogin(tenDangNhap, matKhau);
 
             if (isLoginSuccessful != null)
             {
@@ -181,7 +181,26 @@ namespace CSharp_laptop.GUI
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Ráng nhớ lại xem", "Quên mật khẩu hả?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ma = new VerificationCode().sendVerification(rjTextBox1.Texts);
+            if (ma != "Errror")
+            {
+                xacnhanLabel.Visible = true;
+                xacnhanTextBox.Visible = true;
+            }
+        }
+
+        private void xacnhanTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (xacnhanTextBox.Text.Length == 6)
+            {
+                if (xacnhanTextBox.Text == ma)
+                {
+                    this.Hide(); // Ẩn form đăng nhập
+
+                    GUI.MainForm mf = new GUI.MainForm(new TaiKhoanBUS().GetTaiKhoanByID(rjTextBox1.Texts));
+                    mf.Show();
+                }
+            }
         }
     }
 }

@@ -187,6 +187,36 @@ namespace CSharp_laptop.DAO
             }
             return quyen;
         }
+        public TaiKhoanDTO GetTaiKhoanByID(string id)
+        {
+            TaiKhoanDTO taikhoan = null;
+
+            using (MySqlConnection conn = connectionHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM taikhoan WHERE TenDN = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                // Thêm tham số ID để tránh SQL Injection
+                cmd.Parameters.AddWithValue("@id", id);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read()) // Kiểm tra nếu có dữ liệu trả về
+                    {
+                        taikhoan = new TaiKhoanDTO()
+                        {
+                            TenDN = reader["TenDN"].ToString(),
+                            MatKhau = reader["MatKhau"].ToString(),
+                            Quyen = reader["Quyen"].ToString()
+                        };
+                    }
+                }
+            }
+
+            return taikhoan; // Trả về đối tượng TaiKhoanDTO hoặc null nếu không tìm thấy
+        }
+
 
     }
 }
