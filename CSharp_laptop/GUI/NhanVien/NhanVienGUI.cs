@@ -415,7 +415,7 @@ namespace CSharp_laptop.GUI
 
                     if (worksheet.Cells[1, 2].Value?.ToString() != "Tên Nhân Viên")
                     {
-                        MessageBox.Show($"Tên Cột 2 Không phải 'Tên NV', hãy kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Tên Cột 2 Không phải 'Tên Nhân Viên', hãy kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return nvs;
                     }
 
