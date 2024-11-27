@@ -48,7 +48,7 @@ namespace CSharp_laptop.GUI
             string endpoint = "https://api.openai.com/v1/chat/completions";
 
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+          // httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
 
             String systemLine = bus.ConcatAllLines();
 

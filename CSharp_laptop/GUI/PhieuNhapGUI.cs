@@ -26,11 +26,11 @@ namespace CSharp_laptop.GUI
     {
         private PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
 
-        private ChiTietHoaDonBUS chiTietHoaDonBUS = new ChiTietHoaDonBUS();
+        private ChiTietPhieuNhapBUS chiTietPhieuNhapBUS = new ChiTietPhieuNhapBUS();
 
         private BindingList<PhieuNhapDTO> phieuNhapList;
 
-        private BindingList<ChiTietPhieuNhap> chiTietPhieuNhapDTOs;
+        private BindingList<ChiTietPhieuNhapDTO> chiTietPhieuNhapDTOs = new BindingList<ChiTietPhieuNhapDTO>();
 
 
         private NhanVienBUS nhanVienBUS = new NhanVienBUS();
@@ -47,6 +47,7 @@ namespace CSharp_laptop.GUI
             this.mainForm = mainForm;
 
             btnPDF.Visible = false;
+
         }
 
         private void PhieuNhapGUI_Load(object sender, EventArgs e)
@@ -219,6 +220,8 @@ namespace CSharp_laptop.GUI
         private void LoadPhieuNhapData()
         {
             phieuNhapList = phieuNhapBUS.GetAllPhieuNhap();
+
+            chiTietPhieuNhapDTOs = chiTietPhieuNhapBUS.GetChiTietPhieuNhapWithPhieuNhap("");
             //MessageBox.Show("abc" + phieuNhapList[0].ID);
             dataGridView_PN.DataSource = phieuNhapList;
         }
@@ -617,14 +620,14 @@ namespace CSharp_laptop.GUI
 
 
 
-                //// Đổ dữ liệu từ danh sách vào Excel
-                //for (int i = 0; i < listCTHD.Count; i++)
-                //{
-                //    var chiTietHoaDon = listCTHD[i];
-                //    worksheet1.Cells[i + 2, 1].Value = chiTietHoaDon.IMEI;
-                //    worksheet1.Cells[i + 2, 2].Value = chiTietHoaDon.ID_HoaDon;
-                //    worksheet1.Cells[i + 2, 3].Value = chiTietHoaDon.GiaBan;
-                //}
+                // Đổ dữ liệu từ danh sách vào Excel
+                for (int i = 0; i < chiTietPhieuNhapDTOs.Count; i++)
+                {
+                    var chiTietHoaDon = chiTietPhieuNhapDTOs[i];
+                    worksheet1.Cells[i + 2, 1].Value = chiTietHoaDon.IMEI;
+                    worksheet1.Cells[i + 2, 2].Value = chiTietHoaDon.ID_PhieuNhap;
+                    worksheet1.Cells[i + 2, 3].Value = chiTietHoaDon.GiaNhap;
+                }
 
                 // Hiển thị hộp thoại lưu file
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -662,6 +665,7 @@ namespace CSharp_laptop.GUI
             if (searchTerm != "")
             {
                 phieuNhapList = phieuNhapBUS.TimKiem(searchTerm); // Gọi BUS để tìm kiếm
+                chiTietPhieuNhapDTOs = chiTietPhieuNhapBUS.GetChiTietPhieuNhapWithPhieuNhap(searchTerm);
                 dataGridView_PN.DataSource = phieuNhapList; // Hiển thị dữ liệu lên DataGridView
             }
         }

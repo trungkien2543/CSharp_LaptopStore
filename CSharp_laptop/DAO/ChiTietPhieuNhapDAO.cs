@@ -13,21 +13,21 @@ namespace CSharp_laptop.DAO
     {
         private MySqlConnectionHelper connectionHelper = new MySqlConnectionHelper();
 
-        public List<ChiTietPhieuNhapDTO> GetChiTietPhieuNhapWithHoaDon(string find)
+        public BindingList<ChiTietPhieuNhapDTO> GetChiTietPhieuNhapWithPhieuNhap(string find)
         {
-            List<ChiTietPhieuNhapDTO> result = new();
+            BindingList<ChiTietPhieuNhapDTO> result = new BindingList<ChiTietPhieuNhapDTO>();
             using (MySqlConnection connection = connectionHelper.GetConnection())
             {
-                string query = @"SELECT * FROM chitietphieunnhap WHERE chitietphieunhap.ID_PhieuNhap IN (" + @"
-                                                                                               SELECT * 
+                string query = @"SELECT * FROM chitietphieunhap WHERE chitietphieunhap.ID_PhieuNhap IN (" + @"
+                                                                                               SELECT ID_PhieuNhap
                                                                                                 FROM phieunhap 
                                                                                                 WHERE ID_PhieuNhap LIKE @SearchTerm 
                                                                                                 OR MaNV LIKE @SearchTerm 
                                                                                                 OR MaNcc LIKE @SearchTerm 
                                                                                                 OR TongTien LIKE @SearchTerm 
-                                                                                                OR NgayNhap LIKE @SearchTerm ORDER BY NgayNhap DESC;";
+                                                                                                OR NgayNhap LIKE @SearchTerm);";
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Search", "%" + find + "%");
+                command.Parameters.AddWithValue("@SearchTerm", "%" + find + "%");
 
 
                 connection.Open();
