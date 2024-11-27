@@ -340,8 +340,8 @@ namespace CSharp_laptop.GUI
                             CPU = worksheet.Cells[row, 5].Value?.ToString(),
                             RAM = int.Parse(worksheet.Cells[row, 6].Value?.ToString() ?? "0"),
                             GPU = worksheet.Cells[row, 7].Value?.ToString(),
-                            HinhAnh = worksheet.Cells[row, 8].Value?.ToString(),
-                            KichThuoc = worksheet.Cells[row, 9].Value?.ToString(),
+                            HinhAnh = "",
+                            KichThuoc = worksheet.Cells[row, 8].Value?.ToString(),
                             KhuyenMai = kmKey // Lưu mã khuyến mãi
                         };
 
