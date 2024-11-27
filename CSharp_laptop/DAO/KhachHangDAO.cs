@@ -216,11 +216,13 @@ namespace CSharp_laptop.DAO
             {
                 conn.Open();
                 string query = @"
-            SELECT `ID_KhachHang`, `TenKH`, `DiaChiKH`, `SDT`, `TichDiem` 
-            FROM `khachhang` 
-            WHERE `TenKH` LIKE @keyword 
-               OR `DiaChiKH` LIKE @keyword 
-               OR `SDT` LIKE @keyword";
+                SELECT `ID_KhachHang`, `TenKH`, `DiaChiKH`, `SDT`, `TichDiem` 
+                    FROM `khachhang` 
+                    WHERE `ID_KhachHang` LIKE @keyword 
+                       OR`TenKH` LIKE @keyword 
+                       OR `DiaChiKH` LIKE @keyword 
+                       OR `SDT` LIKE @keyword
+                       OR `TichDiem` LIKE @keyword";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
 
