@@ -165,6 +165,7 @@ namespace CSharp_laptop.GUI
             DateTime datetime2 = date2.Add(time2);
             if (datetime1 >= datetime2)
             {
+                check--;
                 MessageBox.Show("Thời gian Kết thúc phải lớn hơn thời gian bắt đầu.");
             }
 
