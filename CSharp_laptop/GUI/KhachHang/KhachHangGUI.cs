@@ -327,12 +327,12 @@ namespace CSharp_laptop.GUI
                 worksheet.Cells[1, 4].Value = "SĐT";
                 worksheet.Cells[1, 5].Value = "Tích Điểm";
 
-                for (int i = 0; i < dataGridView1.Rows.Count - 2; i++) // Lặp qua các hàng
+                for (int i = 0; i < dataGridView1.Rows.Count; i++) // Lặp qua các hàng
                 {
                     if (dataGridView1.Rows[i].IsNewRow) // Bỏ qua dòng mới (nếu có)
                         continue;
 
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++) // Lặp qua các cột
+                    for (int j = 0; j < dataGridView1.Columns.Count - 2; j++) // Lặp qua các cột
                     {
                         worksheet.Cells[i + 2, j + 1].Value = dataGridView1.Rows[i].Cells[j].Value; // Gán giá trị vào Excel
                     }
