@@ -37,15 +37,15 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void load_bh()
         {
-            List<BaoHanhDTO> baoHanhs = baoHanhBUS.GetAllBaoHanhsByIMEI(tb_timkiem.Text);
-            
+            List<BaoHanhDTO> baoHanhs = baoHanhBUS.GetAllBaoHanhsByIMEI(lb_imei.Text);
+
             dataGridView2.DataSource = baoHanhs;
 
         }
 
         private void load_inforlap()
         {
-            laptop = laptopBUS.GetLaptopByIMEI(tb_timkiem.Text);
+            laptop = laptopBUS.GetLaptopByIMEI(tb_IMEI.Text);
             if (laptop == null)
             {
                 lb_imei.Text = "";
@@ -54,7 +54,7 @@ namespace CSharp_laptop.GUI.Laptop
                 lb_nbd.Text = "";
                 lb_nkt.Text = "";
                 lb_tt.Text = "";
-                reset();
+                reset_textbox();
             }
             else
             {
@@ -65,6 +65,7 @@ namespace CSharp_laptop.GUI.Laptop
                 lb_ten.Text = loaiLaptopDTO.TenSP;
 
                 lb_tt.Text = (laptop.TrangThai == 0) ? "Đã bán" : "Chưa bán";
+                reset_textbox();
             }
 
         }
@@ -72,7 +73,7 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void load_date_baohanh()
         {
-            string imei = tb_timkiem.Text.Trim();
+            string imei = lb_imei.Text.Trim();
 
             HoaDonDTO hoadon = hoaDonBUS.GetHoaDonByIMEI(imei);
 
@@ -94,8 +95,8 @@ namespace CSharp_laptop.GUI.Laptop
 
         private void vbButton2_Click(object sender, EventArgs e)
         {
-            load_bh();
             load_inforlap();
+            load_bh();
             load_date_baohanh();
         }
 
@@ -110,10 +111,10 @@ namespace CSharp_laptop.GUI.Laptop
 
             //dataGridView2.Columns["IMEI"].Visible = false;
 
-            
+
         }
 
-        private void reset()
+        private void reset_textbox()
         {
             tb_mabh.Text = "";
             tb_ghichu.Text = "";
@@ -140,7 +141,8 @@ namespace CSharp_laptop.GUI.Laptop
         private void vbButton3_Click(object sender, EventArgs e)
         {
             chucnang = "add";
-            reset();
+            tb_chucnang.Text = "Thêm bảo hành mới";
+            reset_textbox();
             tb_ghichu.ReadOnly = false;
         }
 
@@ -151,7 +153,7 @@ namespace CSharp_laptop.GUI.Laptop
                 try
                 {
                     // Lấy thông tin ngày kết thúc bảo hành
-                    DateTime? warrantyEndDate = hoaDonBUS.GetWarrantyEndDate(tb_timkiem.Text);
+                    DateTime? warrantyEndDate = hoaDonBUS.GetWarrantyEndDate(lb_imei.Text);
 
                     // Kiểm tra nếu đã hết hạn bảo hành
                     if (warrantyEndDate.HasValue && DateTime.Now > warrantyEndDate.Value)
@@ -162,7 +164,7 @@ namespace CSharp_laptop.GUI.Laptop
 
                     BaoHanhDTO baoHanh = new BaoHanhDTO
                     {
-                        IMEI = tb_timkiem.Text,
+                        IMEI = lb_imei.Text,
                         NgayBaoHanh = guna2DateTimePicker1.Value,
                         NgayTra = guna2DateTimePicker2.Value,
                         GhiChu = tb_ghichu.Text
@@ -172,7 +174,7 @@ namespace CSharp_laptop.GUI.Laptop
                     {
                         MessageBox.Show("Thêm bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         load_inforlap();
-                        reset();
+                        reset_textbox();
                         load_bh();
                     }
                     else
@@ -185,7 +187,7 @@ namespace CSharp_laptop.GUI.Laptop
                     MessageBox.Show("Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else 
+            else
             {
                 //MessageBox.Show("Update");
                 try
@@ -193,7 +195,7 @@ namespace CSharp_laptop.GUI.Laptop
                     BaoHanhDTO baoHanh = new BaoHanhDTO
                     {
                         MaBaoHanh = long.Parse(tb_mabh.Text), // Ensure this is filled in correctly
-                        IMEI = tb_timkiem.Text,
+                        IMEI = lb_imei.Text,
                         NgayBaoHanh = guna2DateTimePicker1.Value,
                         NgayTra = guna2DateTimePicker2.Value,
                         GhiChu = tb_ghichu.Text
@@ -203,7 +205,7 @@ namespace CSharp_laptop.GUI.Laptop
                     {
                         MessageBox.Show("Cập nhật bảo hành thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         load_bh();
-                        load_inforlap() ;
+                        load_inforlap();
                     }
                     else
                     {
@@ -216,6 +218,11 @@ namespace CSharp_laptop.GUI.Laptop
                 }
             }
         }
-        
+
+        private void vbButton4_Click(object sender, EventArgs e)
+        {
+            chucnang = "update";
+            tb_chucnang.Text = "Chỉnh sửa thông tin bảo hành";
+        }
     }
 }
