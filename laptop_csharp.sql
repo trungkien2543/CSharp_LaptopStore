@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2024 at 05:01 AM
+-- Generation Time: Nov 27, 2024 at 11:08 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,22 +34,6 @@ CREATE TABLE `baohanh` (
   `NgayTra` date NOT NULL,
   `GhiChu` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `baohanh`
---
-
-INSERT INTO `baohanh` (`MaBaoHanh`, `IMEI`, `NgayBaoHanh`, `NgayTra`, `GhiChu`) VALUES
-(1, '123456789012345', '2024-10-01', '2024-10-05', 'Bảo hành bàn phím'),
-(2, '123456789012346', '2024-10-02', '2024-10-06', 'Bảo hành màn hình'),
-(3, '123456789012347', '2024-10-03', '2024-10-07', 'Bảo hành pin'),
-(4, '123456789012348', '2024-10-04', '2024-10-08', 'Bảo hành ổ cứng'),
-(5, '123456789012349', '2024-10-05', '2024-10-09', 'Bảo hành cổng USB'),
-(6, '123456789012350', '2024-10-06', '2024-10-10', 'Bảo hành card đồ họa'),
-(7, '123456789012351', '2024-10-07', '2024-10-11', 'Bảo hành RAM'),
-(8, '123456789012352', '2024-10-08', '2024-10-12', 'Bảo hành Wi-Fi'),
-(9, '123456789012353', '2024-10-09', '2024-10-13', 'Bảo hành âm thanh'),
-(10, '123456789012354', '2024-10-10', '2024-10-14', 'Bảo hành quạt tản nhiệt');
 
 -- --------------------------------------------------------
 
@@ -90,16 +74,7 @@ CREATE TABLE `chitiethoadon` (
 --
 
 INSERT INTO `chitiethoadon` (`IMEI`, `ID_HoaDon`, `GiaBan`) VALUES
-('123456789012345', 1001, 0),
-('123456789012346', 1002, 0),
-('123456789012347', 1003, 0),
-('123456789012348', 1004, 0),
-('123456789012349', 1005, 0),
-('123456789012350', 1006, 0),
-('123456789012351', 1007, 0),
-('123456789012352', 1008, 0),
-('123456789012353', 1009, 0),
-('123456789012354', 1010, 0);
+('123456789012345', 1011, 27000000);
 
 -- --------------------------------------------------------
 
@@ -118,16 +93,7 @@ CREATE TABLE `chitietphieunhap` (
 --
 
 INSERT INTO `chitietphieunhap` (`IMEI`, `ID_PhieuNhap`, `GiaNhap`) VALUES
-('123456789012345', 1, 0),
-('123456789012346', 1, 0),
-('123456789012347', 2, 0),
-('123456789012348', 2, 0),
-('123456789012349', 3, 0),
-('123456789012350', 4, 0),
-('123456789012351', 5, 0),
-('123456789012352', 6, 0),
-('123456789012353', 7, 0),
-('123456789012354', 8, 0);
+('H001L0091000', 1, 100000000);
 
 -- --------------------------------------------------------
 
@@ -177,16 +143,7 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`ID_HoaDon`, `MaNV`, `MaKH`, `NgayLap`, `TongTien`) VALUES
-(1001, 'NV001', 'KH001', '2024-10-01 00:00:00', 30000000),
-(1002, 'NV002', 'KH002', '2024-10-02 00:00:00', 28000000),
-(1003, 'NV003', 'KH003', '2024-10-03 00:00:00', 26000000),
-(1004, 'NV004', 'KH004', '2024-10-04 00:00:00', 22000000),
-(1005, 'NV005', 'KH005', '2024-10-05 00:00:00', 33000000),
-(1006, 'NV006', 'KH006', '2024-10-06 00:00:00', 31000000),
-(1007, 'NV007', 'KH007', '2024-10-07 00:00:00', 35000000),
-(1008, 'NV008', 'KH008', '2024-10-08 00:00:00', 29000000),
-(1009, 'NV009', 'KH009', '2024-10-09 00:00:00', 24000000),
-(1010, 'NV010', 'KH010', '2024-10-10 00:00:00', 38000000);
+(1011, 'NV001', 'KH002', '2024-11-27 16:51:26', 26800000);
 
 -- --------------------------------------------------------
 
@@ -208,7 +165,7 @@ CREATE TABLE `khachhang` (
 
 INSERT INTO `khachhang` (`ID_KhachHang`, `TenKH`, `DiaChiKH`, `SDT`, `TichDiem`) VALUES
 ('KH001', 'Nguyen Van A', 'Ha Noi', '0987654321', 100),
-('KH002', 'Tran Thi B', 'Ho Chi Minh', '0912345678', 200),
+('KH002', 'Tran Thi B', 'Ho Chi Minh', '0912345678', 53),
 ('KH003', 'Le Van C', 'Da Nang', '0909876543', 150),
 ('KH004', 'Pham Thi D', 'Hai Phong', '0961234567', 180),
 ('KH005', 'Hoang Van E', 'Can Tho', '0976543210', 220),
@@ -239,17 +196,18 @@ CREATE TABLE `khuyenmai` (
 --
 
 INSERT INTO `khuyenmai` (`ID_KhuyenMai`, `TenKhuyenMai`, `MucGiamGia`, `MoTaKM`, `ThoiGianBatDau`, `ThoiGianKetThuc`, `ThoiGianTaoKM`) VALUES
-('KM001', 'Black Friday', 10, 'Giảm giá cuối năm', '2024-11-14 13:23:15', '2024-11-14 13:23:15', '2024-11-14 13:23:15'),
-('KM002', 'Cyber Monday', 15, 'Giảm giá mua sắm online', '2024-12-01 00:00:00', '2024-12-05 00:00:00', '2024-10-18 00:00:00'),
-('KM003', 'Summer Sale', 5, 'Giảm giá mùa hè', '2024-06-01 00:00:00', '2024-06-15 00:00:00', '2024-05-01 00:00:00'),
-('KM004', 'New Year Sale', 20, 'Giảm giá Tết', '2024-12-25 00:00:00', '2025-01-05 00:00:00', '2024-12-01 00:00:00'),
-('KM005', 'Back to School', 7, 'Giảm giá cho sinh viên', '2024-08-01 00:00:00', '2024-09-01 00:00:00', '2024-07-15 00:00:00'),
-('KM006', 'End of Season Sale', 12, 'Giảm giá cuối mùa', '2024-09-01 00:00:00', '2024-09-15 00:00:00', '2024-08-01 00:00:00'),
-('KM007', 'Loyalty Discount', 5, 'Giảm giá cho khách hàng thân thiết', '2024-01-01 00:00:00', '2024-12-31 00:00:00', '2024-01-01 00:00:00'),
-('KM008', 'Valentine Sale', 8, 'Giảm giá Valentine', '2024-02-10 00:00:00', '2024-02-15 00:00:00', '2024-02-01 00:00:00'),
-('KM009', 'Mid-Year Sale', 10, 'Giảm giá giữa năm', '2024-06-15 00:00:00', '2024-06-30 00:00:00', '2024-05-25 00:00:00'),
-('KM010', 'Christmas Sale', 20, 'Giảm giá Giáng sinh', '2024-12-10 00:00:00', '2024-12-24 00:00:00', '2024-11-25 00:00:00'),
-('KM011', 'a', 1, 'ádd', '2024-11-19 01:12:00', '2024-11-22 00:00:00', '2024-11-19 00:00:00');
+('KM001', 'Black Friday', 10, 'Giảm giá cuối năm', '2024-11-14 13:23:15', '2024-11-14 13:23:15', '2024-11-27 17:00:56'),
+('KM002', 'Cyber Monday', 15, 'Giảm giá mua sắm online', '2024-12-01 00:00:00', '2024-12-05 00:00:00', '2024-11-27 17:00:57'),
+('KM003', 'Summer Sale', 5, 'Giảm giá mùa hè', '2024-06-01 00:00:00', '2024-06-15 00:00:00', '2024-11-27 17:00:59'),
+('KM004', 'New Year Sale', 20, 'Giảm giá Tết', '2024-12-25 00:00:00', '2025-01-05 00:00:00', '2024-11-27 17:00:50'),
+('KM005', 'Back to School', 7, 'Giảm giá cho sinh viên', '2024-08-01 00:00:00', '2024-09-01 00:00:00', '2024-11-27 17:00:58'),
+('KM006', 'End of Season Sale', 12, 'Giảm giá cuối mùa', '2024-09-01 00:00:00', '2024-09-15 00:00:00', '2024-11-27 17:00:57'),
+('KM007', 'Loyalty Discount', 5, 'Giảm giá cho khách hàng thân thiết', '2024-01-01 00:00:00', '2024-12-31 00:00:00', '2024-11-27 17:01:01'),
+('KM008', 'Valentine Sale', 8, 'Giảm giá Valentine', '2024-02-10 00:00:00', '2024-02-15 00:00:00', '2024-11-27 17:01:00'),
+('KM009', 'Mid-Year Sale', 10, 'Giảm giá giữa năm', '2024-06-15 00:00:00', '2024-06-30 00:00:00', '2024-11-27 17:00:58'),
+('KM010', 'Christmas Sale', 20, 'Giảm giá Giáng sinh', '2024-12-10 00:00:00', '2024-12-24 00:00:00', '2024-11-27 17:00:55'),
+('KM011', 'a', 1, 'ádd', '2024-11-19 01:12:00', '2024-11-22 00:00:00', '2024-11-27 17:00:56'),
+('KM012', 'a', 10, 'aaa', '2024-11-27 00:00:00', '2024-11-27 20:00:00', '2024-11-27 17:00:54');
 
 -- --------------------------------------------------------
 
@@ -270,17 +228,20 @@ CREATE TABLE `laptop` (
 
 INSERT INTO `laptop` (`IMEI`, `ThoiGianBaoHanh`, `TrangThai`, `LoaiLaptop`) VALUES
 ('123456789012345', 24, 0, 'L001'),
-('123456789012346', 24, 0, 'L002'),
-('123456789012347', 24, 0, 'L003'),
-('123456789012348', 24, 0, 'L004'),
-('123456789012349', 24, 0, 'L005'),
-('123456789012350', 24, 0, 'L006'),
-('123456789012351', 24, 0, 'L007'),
-('123456789012352', 24, 0, 'L008'),
-('123456789012353', 24, 0, 'L009'),
-('123456789012354', 24, 0, 'L010'),
-('H001L0010001', 12, 0, 'L001'),
-('H001L0010002', 12, 0, 'L002');
+('123456789012346', 24, 1, 'L002'),
+('123456789012347', 24, 1, 'L003'),
+('123456789012348', 24, 1, 'L004'),
+('123456789012349', 24, 1, 'L005'),
+('123456789012350', 24, 1, 'L006'),
+('123456789012351', 24, 1, 'L007'),
+('123456789012352', 24, 1, 'L008'),
+('123456789012353', 24, 1, 'L009'),
+('123456789012354', 24, 1, 'L010'),
+('H001L0010001', 12, 1, 'L001'),
+('H001L0010002', 12, 1, 'L002'),
+('H001L005123', 12, 1, 'L005'),
+('H001L0091000', 12, 1, 'L009'),
+('H003L001123234', 12, 1, 'L001');
 
 -- --------------------------------------------------------
 
@@ -307,16 +268,19 @@ CREATE TABLE `loailaptop` (
 --
 
 INSERT INTO `loailaptop` (`IDLoaiLaptop`, `TenSP`, `GiaBan`, `Hang`, `CPU`, `RAM`, `GPU`, `HinhAnh`, `KichThuoc`, `KhuyenMai`, `SLTonKho`) VALUES
-('L001', 'Dell XPS 1312', 30000000, 'H003', 'Intel i7', 16, '', 'Images\\xps13.jpg', '13 inch', 'KM001', 0),
-('L002', 'HP Spectre x36012', 28000000, 'H004', 'Intel i5', 8, 'Intel Iris', 'Images\\spectrex360.jpg', '13.3 inch', 'KM001', 0),
-('L003', 'Asus ZenBook', 26000000, 'H003', 'Intel i7', 16, 'NVIDIA MX250', 'Images\\zenbook.jpg', '14 inch', 'KM003', 0),
-('L004', 'Acer Swift 3', 22000000, 'H004', 'Intel i5', 8, 'Intel UHD', 'Images\\swift3.jpg', '14 inch', 'KM004', 0),
-('L005', 'Apple MacBook Air', 33000000, 'H001', 'Apple M1', 16, '', 'Images\\macbookair.jpg', '13.3 inch', 'KM001', 0),
-('L006', 'Lenovo ThinkPad X1', 31000000, 'H006', 'Intel i7', 16, 'Intel Iris', 'Images\\thinkpadx1.jpg', '14 inch', 'KM006', 0),
-('L007', 'MSI Prestige 14', 35000000, 'H007', 'Intel i7', 32, 'NVIDIA GTX 1650', 'Images\\prestige14.jpg', '14 inch', 'KM007', 0),
-('L008', 'Samsung Galaxy Book', 29000000, 'H008', 'Intel i5', 16, 'Intel Iris', 'Images\\galaxybook.jpg', '15.6 inch', 'KM008', 0),
-('L009', 'Toshiba Portege', 24000000, 'H001', 'Intel i5', 8, 'Intel UHD123', 'Images\\1.jpg', '13.3 inch', 'KM001', 0),
-('L010', 'Sony Vaio SX14', 38000000, 'H010', 'Intel i7', 16, 'Intel Iris', 'Images\\vaio.jpg', '14 inch', 'KM010', 0);
+('L001', 'Dell XPS 1312', 30000000, 'H003', 'Intel i7', 16, '', 'Images\\d58b47c37588c0727f089d978ff28684.jpg', '13 inch', 'KM001', 2),
+('L002', 'HP Spectre x36012', 28000000, 'H004', 'Intel i5', 8, 'Intel Iris', 'Images\\spectrex360.jpg', '13.3 inch', 'KM001', 2),
+('L003', 'Asus ZenBook', 26000000, 'H003', 'Intel i7', 16, 'NVIDIA MX250', 'Images\\zenbook.jpg', '14 inch', 'KM003', 1),
+('L004', 'Acer Swift 3', 22000000, 'H004', 'Intel i5', 8, 'Intel UHD', 'Images\\swift3.jpg', '14 inch', 'KM004', 1),
+('L005', 'Apple pro M3', 33000000, 'H005', 'Apple M1', 16, '', '', '13.3 inch', 'KM002', 1),
+('L006', 'Lenovo ThinkPad X1', 31000000, 'H006', 'Intel i7', 16, 'Intel Iris', 'Images\\thinkpadx1.jpg', '14 inch', 'KM006', 1),
+('L007', 'MSI Prestige 14', 35000000, 'H007', 'Intel i7', 32, 'NVIDIA GTX 1650', 'Images\\prestige14.jpg', '14 inch', 'KM007', 1),
+('L008', 'Samsung Galaxy Book', 29000000, 'H008', 'Intel i5', 16, 'Intel Iris', 'Images\\galaxybook.jpg', '15.6 inch', 'KM008', 1),
+('L009', 'Dell vip', 24000000, 'H001', 'Intel i5', 8, 'Intel UHD123', '', '13.3 inch', 'KM001', 1),
+('L010', 'Sony Vaio SX14', 38000000, 'H010', 'Intel i7', 16, 'Intel Iris', 'Images\\vaio.jpg', '14 inch', 'KM010', 1),
+('L013', 'Samsung  Book', 24000000, 'H008', 'Intel i5', 8, 'Intel UHD123', '', '13.3 inch', 'KM002', 0),
+('L014', 'Apple air m1', 39000000, 'H005', 'Intel i5', 8, 'Intel UHD123', '', '13.3 inch', 'KM002', 0),
+('L015', 'Mệt', 23000000, 'H001', 'Intel I9', 16, '', 'Images\\like.jpg', '13 Inch', 'KM001', 0);
 
 -- --------------------------------------------------------
 
@@ -370,16 +334,7 @@ CREATE TABLE `phieunhap` (
 --
 
 INSERT INTO `phieunhap` (`ID_PhieuNhap`, `MaNV`, `MaNcc`, `NgayNhap`, `TongTien`) VALUES
-(1, 'NV001', 'H001', '2024-01-01 08:00:00', 100000),
-(2, 'NV002', 'H002', '2024-01-02 09:30:00', 200000),
-(3, 'NV003', 'H003', '2024-01-03 10:15:00', 300000),
-(4, 'NV004', 'H004', '2024-01-04 11:45:00', 150000),
-(5, 'NV005', 'H005', '2024-01-05 13:00:00', 250000),
-(6, 'NV006', 'H006', '2024-01-06 14:30:00', 400000),
-(7, 'NV007', 'H007', '2024-01-07 15:15:00', 500000),
-(8, 'NV008', 'H008', '2024-01-08 16:00:00', 350000),
-(9, 'NV009', 'H009', '2024-01-09 17:30:00', 450000),
-(10, 'NV010', 'H010', '2024-01-10 18:45:00', 600000);
+(1, 'NV001', 'H001', '2024-11-27 00:00:00', 100000000);
 
 -- --------------------------------------------------------
 
@@ -547,13 +502,13 @@ ALTER TABLE `chatgpt_line`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `ID_HoaDon` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1011;
+  MODIFY `ID_HoaDon` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1012;
 
 --
 -- AUTO_INCREMENT for table `phieunhap`
 --
 ALTER TABLE `phieunhap`
-  MODIFY `ID_PhieuNhap` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_PhieuNhap` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
