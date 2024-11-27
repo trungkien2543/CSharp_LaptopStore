@@ -598,7 +598,7 @@ namespace CSharp_laptop.GUI
 
         public void moChucNang(int i)
         {
-            switch(i)
+            switch (i)
             {
                 case 1:
                     ActivateButton(btnSanPham, RGBColors.color1);
@@ -634,9 +634,14 @@ namespace CSharp_laptop.GUI
                     break;
             }
         }
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            DangNhapGUI dangNhapGUI = new DangNhapGUI();
+            dangNhapGUI.Show();
+            this.Close();
+        }
 
-
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
             ChatGPT chatGPT = new ChatGPT(this);
             chatGPT.Show();

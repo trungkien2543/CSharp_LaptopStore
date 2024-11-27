@@ -33,6 +33,8 @@ namespace CSharp_laptop.GUI
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnExit = new IconButton();
@@ -55,7 +57,8 @@ namespace CSharp_laptop.GUI
             btnSanPham = new IconButton();
             PictureBox1 = new PictureBox();
             panelTitleBar = new Guna.UI2.WinForms.Guna2GradientPanel();
-            iconButton2 = new IconButton();
+            guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             panelDesktop = new Panel();
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -485,43 +488,56 @@ namespace CSharp_laptop.GUI
             // 
             panelTitleBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelTitleBar.BorderRadius = 12;
-            panelTitleBar.Controls.Add(iconButton2);
+            panelTitleBar.Controls.Add(guna2ImageButton2);
+            panelTitleBar.Controls.Add(guna2ImageButton1);
             panelTitleBar.Controls.Add(btnExit);
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(btnZoom);
             panelTitleBar.Controls.Add(btnMini);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
-            panelTitleBar.CustomizableEdges = customizableEdges3;
+            panelTitleBar.CustomizableEdges = customizableEdges5;
             panelTitleBar.FillColor = Color.FromArgb(202, 209, 234);
             panelTitleBar.FillColor2 = Color.FromArgb(94, 94, 170);
             panelTitleBar.Location = new Point(193, 7);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            panelTitleBar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             panelTitleBar.Size = new Size(1150, 35);
             panelTitleBar.TabIndex = 7;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
-            // iconButton2
+            // guna2ImageButton2
             // 
-            iconButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButton2.BackColor = Color.Transparent;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.ForeColor = Color.Gainsboro;
-            iconButton2.IconChar = IconChar.Subtract;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = IconFont.Auto;
-            iconButton2.IconSize = 20;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(969, 0);
-            iconButton2.Margin = new Padding(0);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(3, 10, 0, 10);
-            iconButton2.Size = new Size(34, 34);
-            iconButton2.TabIndex = 14;
-            iconButton2.TextImageRelation = TextImageRelation.TextBeforeImage;
-            iconButton2.UseVisualStyleBackColor = false;
-            iconButton2.Click += iconButton2_Click;
+            guna2ImageButton2.BackColor = Color.Transparent;
+            guna2ImageButton2.CheckedState.ImageSize = new Size(64, 64);
+            guna2ImageButton2.HoverState.ImageSize = new Size(26, 26);
+            guna2ImageButton2.Image = Properties.Resources.bot;
+            guna2ImageButton2.ImageOffset = new Point(0, 0);
+            guna2ImageButton2.ImageRotate = 0F;
+            guna2ImageButton2.ImageSize = new Size(24, 24);
+            guna2ImageButton2.Location = new Point(869, 3);
+            guna2ImageButton2.Name = "guna2ImageButton2";
+            guna2ImageButton2.PressedState.ImageSize = new Size(26, 26);
+            guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            guna2ImageButton2.Size = new Size(30, 30);
+            guna2ImageButton2.TabIndex = 16;
+            guna2ImageButton2.Click += guna2ImageButton2_Click;
+            // 
+            // guna2ImageButton1
+            // 
+            guna2ImageButton1.BackColor = Color.Transparent;
+            guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.HoverState.ImageSize = new Size(26, 26);
+            guna2ImageButton1.Image = Properties.Resources.logout;
+            guna2ImageButton1.ImageOffset = new Point(0, 0);
+            guna2ImageButton1.ImageRotate = 0F;
+            guna2ImageButton1.ImageSize = new Size(24, 24);
+            guna2ImageButton1.Location = new Point(915, 3);
+            guna2ImageButton1.Name = "guna2ImageButton1";
+            guna2ImageButton1.PressedState.ImageSize = new Size(26, 26);
+            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2ImageButton1.Size = new Size(30, 30);
+            guna2ImageButton1.TabIndex = 15;
+            guna2ImageButton1.Click += guna2ImageButton1_Click;
             // 
             // panelDesktop
             // 
@@ -602,6 +618,7 @@ namespace CSharp_laptop.GUI
         private Label label1;
         private Guna.UI2.WinForms.Guna2GradientPanel panelTitleBar;
         private Guna.UI2.WinForms.Guna2GradientPanel MenuPanel;
-        private IconButton iconButton2;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
     }
 }

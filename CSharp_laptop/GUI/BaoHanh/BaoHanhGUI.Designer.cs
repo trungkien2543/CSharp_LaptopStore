@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoHanhGUI));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             button1 = new Button();
             label3 = new Label();
             label4 = new Label();
@@ -54,8 +54,10 @@
             artanPanel4 = new ArtanPanel();
             dataGridView2 = new DataGridView();
             artanPanel3 = new ArtanPanel();
-            tb_timkiem = new Guna.UI2.WinForms.Guna2TextBox();
+            vbButton4 = new VBButton();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             vbButton3 = new VBButton();
+            tb_IMEI = new Guna.UI2.WinForms.Guna2TextBox();
             vbButton2 = new VBButton();
             label2 = new Label();
             label1 = new Label();
@@ -67,6 +69,8 @@
             label7 = new Label();
             lb_imei = new Label();
             artanPanel1 = new ArtanPanel();
+            tb_chucnang = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             tb_ghichu = new Guna.UI2.WinForms.Guna2TextBox();
             label19 = new Label();
@@ -239,23 +243,23 @@
             dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView2.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(85, 81, 132);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(85, 81, 132);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView2.ColumnHeadersHeight = 35;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(100, 150, 200);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(235, 230, 255);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(100, 100, 180);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(100, 150, 200);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 230, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(100, 100, 180);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.GridColor = Color.LightGray;
@@ -263,14 +267,14 @@
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 25;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -283,7 +287,10 @@
             artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel3.BackColor = Color.White;
             artanPanel3.BorderRadius = 30;
-            artanPanel3.Controls.Add(tb_timkiem);
+            artanPanel3.Controls.Add(vbButton4);
+            artanPanel3.Controls.Add(guna2HtmlLabel1);
+            artanPanel3.Controls.Add(vbButton3);
+            artanPanel3.Controls.Add(tb_IMEI);
             artanPanel3.Controls.Add(vbButton2);
             artanPanel3.Controls.Add(label2);
             artanPanel3.Controls.Add(label1);
@@ -297,55 +304,90 @@
             artanPanel3.Size = new Size(623, 362);
             artanPanel3.TabIndex = 47;
             // 
-            // tb_timkiem
+            // vbButton4
             // 
-            tb_timkiem.BackColor = Color.Transparent;
-            tb_timkiem.BorderColor = Color.FromArgb(247, 176, 118);
-            tb_timkiem.BorderRadius = 5;
-            tb_timkiem.BorderThickness = 2;
-            tb_timkiem.CustomizableEdges = customizableEdges11;
-            tb_timkiem.DefaultText = "";
-            tb_timkiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tb_timkiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tb_timkiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tb_timkiem.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tb_timkiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_timkiem.Font = new Font("Segoe UI", 12F);
-            tb_timkiem.ForeColor = Color.Black;
-            tb_timkiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_timkiem.Location = new Point(20, 139);
-            tb_timkiem.Margin = new Padding(4);
-            tb_timkiem.Name = "tb_timkiem";
-            tb_timkiem.PasswordChar = '\0';
-            tb_timkiem.PlaceholderText = "";
-            tb_timkiem.SelectedText = "";
-            tb_timkiem.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            tb_timkiem.Size = new Size(303, 42);
-            tb_timkiem.TabIndex = 52;
+            vbButton4.BackColor = Color.MediumAquamarine;
+            vbButton4.BackgroundColor = Color.MediumAquamarine;
+            vbButton4.BorderColor = Color.PaleVioletRed;
+            vbButton4.BorderRadius = 20;
+            vbButton4.BorderSize = 0;
+            vbButton4.FlatAppearance.BorderSize = 0;
+            vbButton4.FlatStyle = FlatStyle.Flat;
+            vbButton4.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
+            vbButton4.ForeColor = Color.White;
+            vbButton4.ImageAlign = ContentAlignment.MiddleLeft;
+            vbButton4.Location = new Point(149, 280);
+            vbButton4.Margin = new Padding(4, 3, 4, 3);
+            vbButton4.Name = "vbButton4";
+            vbButton4.Padding = new Padding(7, 0, 0, 0);
+            vbButton4.Size = new Size(121, 44);
+            vbButton4.TabIndex = 54;
+            vbButton4.Text = "Chỉnh sửa";
+            vbButton4.TextColor = Color.White;
+            vbButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
+            vbButton4.UseVisualStyleBackColor = false;
+            vbButton4.Click += vbButton4_Click;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.White;
+            guna2HtmlLabel1.Location = new Point(21, 227);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(251, 32);
+            guna2HtmlLabel1.TabIndex = 53;
+            guna2HtmlLabel1.Text = "Vui lòng chọn chức năng";
             // 
             // vbButton3
             // 
-            vbButton3.BackColor = Color.Red;
-            vbButton3.BackgroundColor = Color.Red;
+            vbButton3.BackColor = Color.Orange;
+            vbButton3.BackgroundColor = Color.Orange;
             vbButton3.BorderColor = Color.PaleVioletRed;
             vbButton3.BorderRadius = 20;
             vbButton3.BorderSize = 0;
             vbButton3.FlatAppearance.BorderSize = 0;
             vbButton3.FlatStyle = FlatStyle.Flat;
-            vbButton3.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            vbButton3.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
             vbButton3.ForeColor = Color.White;
             vbButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton3.Location = new Point(28, 15);
+            vbButton3.Location = new Point(20, 280);
             vbButton3.Margin = new Padding(4, 3, 4, 3);
             vbButton3.Name = "vbButton3";
             vbButton3.Padding = new Padding(7, 0, 0, 0);
-            vbButton3.Size = new Size(499, 44);
+            vbButton3.Size = new Size(121, 44);
             vbButton3.TabIndex = 48;
-            vbButton3.Text = "Nhấn để cho phép nhập và tạo mới bảo hành";
+            vbButton3.Text = "Thêm";
             vbButton3.TextColor = Color.White;
             vbButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             vbButton3.UseVisualStyleBackColor = false;
             vbButton3.Click += vbButton3_Click;
+            // 
+            // tb_IMEI
+            // 
+            tb_IMEI.BackColor = Color.Transparent;
+            tb_IMEI.BorderColor = Color.FromArgb(247, 176, 118);
+            tb_IMEI.BorderRadius = 5;
+            tb_IMEI.BorderThickness = 2;
+            tb_IMEI.CustomizableEdges = customizableEdges1;
+            tb_IMEI.DefaultText = "";
+            tb_IMEI.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_IMEI.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_IMEI.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_IMEI.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_IMEI.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_IMEI.Font = new Font("Segoe UI", 12F);
+            tb_IMEI.ForeColor = Color.Black;
+            tb_IMEI.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_IMEI.Location = new Point(20, 139);
+            tb_IMEI.Margin = new Padding(4);
+            tb_IMEI.Name = "tb_IMEI";
+            tb_IMEI.PasswordChar = '\0';
+            tb_IMEI.PlaceholderText = "";
+            tb_IMEI.SelectedText = "";
+            tb_IMEI.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            tb_IMEI.Size = new Size(303, 42);
+            tb_IMEI.TabIndex = 52;
             // 
             // vbButton2
             // 
@@ -514,8 +556,9 @@
             artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             artanPanel1.BackColor = Color.White;
             artanPanel1.BorderRadius = 30;
+            artanPanel1.Controls.Add(tb_chucnang);
+            artanPanel1.Controls.Add(guna2HtmlLabel2);
             artanPanel1.Controls.Add(guna2DateTimePicker2);
-            artanPanel1.Controls.Add(vbButton3);
             artanPanel1.Controls.Add(tb_ghichu);
             artanPanel1.Controls.Add(label19);
             artanPanel1.Controls.Add(tb_mabh);
@@ -534,12 +577,34 @@
             artanPanel1.Size = new Size(569, 366);
             artanPanel1.TabIndex = 45;
             // 
+            // tb_chucnang
+            // 
+            tb_chucnang.BackColor = Color.Transparent;
+            tb_chucnang.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tb_chucnang.ForeColor = Color.FromArgb(247, 176, 118);
+            tb_chucnang.Location = new Point(240, 27);
+            tb_chucnang.Name = "tb_chucnang";
+            tb_chucnang.Size = new Size(109, 32);
+            tb_chucnang.TabIndex = 56;
+            tb_chucnang.Text = "Chưa chọn";
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.ForeColor = Color.White;
+            guna2HtmlLabel2.Location = new Point(31, 27);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(109, 32);
+            guna2HtmlLabel2.TabIndex = 55;
+            guna2HtmlLabel2.Text = "Chức năng";
+            // 
             // guna2DateTimePicker2
             // 
             guna2DateTimePicker2.BackColor = Color.Transparent;
             guna2DateTimePicker2.BorderRadius = 5;
             guna2DateTimePicker2.Checked = true;
-            guna2DateTimePicker2.CustomizableEdges = customizableEdges13;
+            guna2DateTimePicker2.CustomizableEdges = customizableEdges3;
             guna2DateTimePicker2.FillColor = Color.FromArgb(247, 176, 118);
             guna2DateTimePicker2.Font = new Font("Segoe UI", 12F);
             guna2DateTimePicker2.ForeColor = Color.White;
@@ -548,7 +613,7 @@
             guna2DateTimePicker2.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker2.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            guna2DateTimePicker2.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2DateTimePicker2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2DateTimePicker2.Size = new Size(287, 36);
             guna2DateTimePicker2.TabIndex = 54;
             guna2DateTimePicker2.Value = new DateTime(2024, 11, 24, 15, 38, 16, 112);
@@ -559,7 +624,7 @@
             tb_ghichu.BorderColor = Color.FromArgb(247, 176, 118);
             tb_ghichu.BorderRadius = 5;
             tb_ghichu.BorderThickness = 2;
-            tb_ghichu.CustomizableEdges = customizableEdges15;
+            tb_ghichu.CustomizableEdges = customizableEdges5;
             tb_ghichu.DefaultText = "";
             tb_ghichu.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_ghichu.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -575,7 +640,7 @@
             tb_ghichu.PasswordChar = '\0';
             tb_ghichu.PlaceholderText = "";
             tb_ghichu.SelectedText = "";
-            tb_ghichu.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            tb_ghichu.ShadowDecoration.CustomizableEdges = customizableEdges6;
             tb_ghichu.Size = new Size(287, 36);
             tb_ghichu.TabIndex = 51;
             // 
@@ -599,7 +664,7 @@
             tb_mabh.BorderColor = Color.FromArgb(247, 176, 118);
             tb_mabh.BorderRadius = 5;
             tb_mabh.BorderThickness = 2;
-            tb_mabh.CustomizableEdges = customizableEdges17;
+            tb_mabh.CustomizableEdges = customizableEdges7;
             tb_mabh.DefaultText = "";
             tb_mabh.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_mabh.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -617,7 +682,7 @@
             tb_mabh.PasswordChar = '\0';
             tb_mabh.PlaceholderText = "";
             tb_mabh.SelectedText = "";
-            tb_mabh.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            tb_mabh.ShadowDecoration.CustomizableEdges = customizableEdges8;
             tb_mabh.Size = new Size(287, 36);
             tb_mabh.TabIndex = 50;
             // 
@@ -626,7 +691,7 @@
             guna2DateTimePicker1.BackColor = Color.Transparent;
             guna2DateTimePicker1.BorderRadius = 5;
             guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges19;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges9;
             guna2DateTimePicker1.FillColor = Color.FromArgb(247, 176, 118);
             guna2DateTimePicker1.Font = new Font("Segoe UI", 12F);
             guna2DateTimePicker1.ForeColor = Color.White;
@@ -635,7 +700,7 @@
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2DateTimePicker1.Size = new Size(287, 36);
             guna2DateTimePicker1.TabIndex = 53;
             guna2DateTimePicker1.Value = new DateTime(2024, 11, 24, 15, 38, 16, 112);
@@ -760,8 +825,12 @@
         private Label label19;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2TextBox tb_timkiem;
+        private Guna.UI2.WinForms.Guna2TextBox tb_IMEI;
         private Guna.UI2.WinForms.Guna2TextBox tb_ghichu;
         private Guna.UI2.WinForms.Guna2TextBox tb_mabh;
+        private VBButton vbButton4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel tb_chucnang;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }

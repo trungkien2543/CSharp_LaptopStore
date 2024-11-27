@@ -62,10 +62,10 @@ namespace CSharp_laptop.GUI
 
                 label1.Text = chucnang;
 
-                //if (!string.IsNullOrEmpty(tb_anh.Text))
-                //{
-                //    pictureBox1.Image = Image.FromFile(tb_anh.Text);
-                //}
+                if (!string.IsNullOrEmpty(tb_anh.Text))
+                {
+                    pictureBox1.Image = Image.FromFile(tb_anh.Text);
+                }
             }
 
 
@@ -147,35 +147,52 @@ namespace CSharp_laptop.GUI
 
         private void vbButton3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp",
+                Title = "Chọn ảnh"
+            };
 
-            // Thiết lập bộ lọc cho hộp thoại chọn file (chỉ hiện các file ảnh)
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-
-            // Hiển thị hộp thoại và kiểm tra xem người dùng có chọn file không
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Lấy đường dẫn của file ảnh được chọn
-                string imagePath = openFileDialog.FileName;
+                string selectedImagePath = openFileDialog.FileName;
 
-                // Hiển thị đường dẫn ảnh trong TextBox
-                tb_anh.Text = imagePath;
+                // Thư mục lưu trữ ảnh trong dự án
+                string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string imagesFolder = Path.Combine(projectDirectory, "Images");
 
-                // Kiểm tra file có tồn tại không trước khi hiển thị
-                if (File.Exists(imagePath))
+                // Tạo thư mục nếu chưa tồn tại
+                if (!Directory.Exists(imagesFolder))
                 {
-                    // Hiển thị ảnh trong PictureBox
-                    pictureBox1.Image = new System.Drawing.Bitmap(imagePath);
+                    Directory.CreateDirectory(imagesFolder);
+                }
 
-                    // Tùy chọn: Đặt kích thước PictureBox để phù hợp với ảnh
+                MessageBox.Show($"Thư mục lưu ảnh: {imagesFolder}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                // Sao chép ảnh vào thư mục cố định
+                string fileName = Path.GetFileName(selectedImagePath); // Lấy tên file
+                string targetPath = Path.Combine(imagesFolder, fileName);
+
+                try
+                {
+                    File.Copy(selectedImagePath, targetPath, true); // Sao chép ảnh
+
+                    // Lưu đường dẫn tương đối
+                    string relativePath = Path.Combine("Images", fileName);
+                    tb_anh.Text = relativePath; // Lưu đường dẫn tương đối vào TextBox
+
+                    // Hiển thị ảnh
+                    pictureBox1.Image = new Bitmap(targetPath);
                     pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("File không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi khi sao chép ảnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         private void tb_gia_KeyPress(object sender, KeyPressEventArgs e)
         {
