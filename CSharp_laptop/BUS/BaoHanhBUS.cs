@@ -17,7 +17,7 @@ namespace CSharp_laptop.BUS
         {
             if (string.IsNullOrWhiteSpace(imei))
             {
-                MessageBox.Show("IMEI ko tồn tại");
+                MessageBox.Show("Nhập sai IMEI hoặc IMEI không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return baoHanhDAO.GetAllBaoHanhsByIMEI(imei);

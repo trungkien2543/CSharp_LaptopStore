@@ -54,11 +54,11 @@
             artanPanel4 = new ArtanPanel();
             dataGridView2 = new DataGridView();
             artanPanel3 = new ArtanPanel();
-            vbButton4 = new VBButton();
+            btn_edit = new VBButton();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            vbButton3 = new VBButton();
+            btn_them = new VBButton();
             tb_IMEI = new Guna.UI2.WinForms.Guna2TextBox();
-            vbButton2 = new VBButton();
+            btn_timkiem = new VBButton();
             label2 = new Label();
             label1 = new Label();
             artanPanel2 = new ArtanPanel();
@@ -79,7 +79,7 @@
             label14 = new Label();
             label15 = new Label();
             label16 = new Label();
-            vbButton1 = new VBButton();
+            btn_luu = new VBButton();
             panel1.SuspendLayout();
             artanPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -287,11 +287,11 @@
             artanPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel3.BackColor = Color.White;
             artanPanel3.BorderRadius = 30;
-            artanPanel3.Controls.Add(vbButton4);
+            artanPanel3.Controls.Add(btn_edit);
             artanPanel3.Controls.Add(guna2HtmlLabel1);
-            artanPanel3.Controls.Add(vbButton3);
+            artanPanel3.Controls.Add(btn_them);
             artanPanel3.Controls.Add(tb_IMEI);
-            artanPanel3.Controls.Add(vbButton2);
+            artanPanel3.Controls.Add(btn_timkiem);
             artanPanel3.Controls.Add(label2);
             artanPanel3.Controls.Add(label1);
             artanPanel3.ForeColor = Color.Black;
@@ -304,29 +304,30 @@
             artanPanel3.Size = new Size(623, 362);
             artanPanel3.TabIndex = 47;
             // 
-            // vbButton4
+            // btn_edit
             // 
-            vbButton4.BackColor = Color.MediumAquamarine;
-            vbButton4.BackgroundColor = Color.MediumAquamarine;
-            vbButton4.BorderColor = Color.PaleVioletRed;
-            vbButton4.BorderRadius = 20;
-            vbButton4.BorderSize = 0;
-            vbButton4.FlatAppearance.BorderSize = 0;
-            vbButton4.FlatStyle = FlatStyle.Flat;
-            vbButton4.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
-            vbButton4.ForeColor = Color.White;
-            vbButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton4.Location = new Point(149, 280);
-            vbButton4.Margin = new Padding(4, 3, 4, 3);
-            vbButton4.Name = "vbButton4";
-            vbButton4.Padding = new Padding(7, 0, 0, 0);
-            vbButton4.Size = new Size(121, 44);
-            vbButton4.TabIndex = 54;
-            vbButton4.Text = "Chỉnh sửa";
-            vbButton4.TextColor = Color.White;
-            vbButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            vbButton4.UseVisualStyleBackColor = false;
-            vbButton4.Click += vbButton4_Click;
+            btn_edit.BackColor = Color.MediumAquamarine;
+            btn_edit.BackgroundColor = Color.MediumAquamarine;
+            btn_edit.BorderColor = Color.PaleVioletRed;
+            btn_edit.BorderRadius = 20;
+            btn_edit.BorderSize = 0;
+            btn_edit.Enabled = false;
+            btn_edit.FlatAppearance.BorderSize = 0;
+            btn_edit.FlatStyle = FlatStyle.Flat;
+            btn_edit.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
+            btn_edit.ForeColor = Color.White;
+            btn_edit.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_edit.Location = new Point(149, 280);
+            btn_edit.Margin = new Padding(4, 3, 4, 3);
+            btn_edit.Name = "btn_edit";
+            btn_edit.Padding = new Padding(7, 0, 0, 0);
+            btn_edit.Size = new Size(121, 44);
+            btn_edit.TabIndex = 54;
+            btn_edit.Text = "Chỉnh sửa";
+            btn_edit.TextColor = Color.White;
+            btn_edit.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_edit.UseVisualStyleBackColor = false;
+            btn_edit.Click += vbButton4_Click;
             // 
             // guna2HtmlLabel1
             // 
@@ -339,29 +340,30 @@
             guna2HtmlLabel1.TabIndex = 53;
             guna2HtmlLabel1.Text = "Vui lòng chọn chức năng";
             // 
-            // vbButton3
+            // btn_them
             // 
-            vbButton3.BackColor = Color.Orange;
-            vbButton3.BackgroundColor = Color.Orange;
-            vbButton3.BorderColor = Color.PaleVioletRed;
-            vbButton3.BorderRadius = 20;
-            vbButton3.BorderSize = 0;
-            vbButton3.FlatAppearance.BorderSize = 0;
-            vbButton3.FlatStyle = FlatStyle.Flat;
-            vbButton3.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
-            vbButton3.ForeColor = Color.White;
-            vbButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton3.Location = new Point(20, 280);
-            vbButton3.Margin = new Padding(4, 3, 4, 3);
-            vbButton3.Name = "vbButton3";
-            vbButton3.Padding = new Padding(7, 0, 0, 0);
-            vbButton3.Size = new Size(121, 44);
-            vbButton3.TabIndex = 48;
-            vbButton3.Text = "Thêm";
-            vbButton3.TextColor = Color.White;
-            vbButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            vbButton3.UseVisualStyleBackColor = false;
-            vbButton3.Click += vbButton3_Click;
+            btn_them.BackColor = Color.Orange;
+            btn_them.BackgroundColor = Color.Orange;
+            btn_them.BorderColor = Color.PaleVioletRed;
+            btn_them.BorderRadius = 20;
+            btn_them.BorderSize = 0;
+            btn_them.Enabled = false;
+            btn_them.FlatAppearance.BorderSize = 0;
+            btn_them.FlatStyle = FlatStyle.Flat;
+            btn_them.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold);
+            btn_them.ForeColor = Color.White;
+            btn_them.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_them.Location = new Point(20, 280);
+            btn_them.Margin = new Padding(4, 3, 4, 3);
+            btn_them.Name = "btn_them";
+            btn_them.Padding = new Padding(7, 0, 0, 0);
+            btn_them.Size = new Size(121, 44);
+            btn_them.TabIndex = 48;
+            btn_them.Text = "Thêm";
+            btn_them.TextColor = Color.White;
+            btn_them.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_them.UseVisualStyleBackColor = false;
+            btn_them.Click += vbButton3_Click;
             // 
             // tb_IMEI
             // 
@@ -389,30 +391,30 @@
             tb_IMEI.Size = new Size(303, 42);
             tb_IMEI.TabIndex = 52;
             // 
-            // vbButton2
+            // btn_timkiem
             // 
-            vbButton2.BackColor = Color.FromArgb(247, 176, 118);
-            vbButton2.BackgroundColor = Color.FromArgb(247, 176, 118);
-            vbButton2.BorderColor = Color.PaleVioletRed;
-            vbButton2.BorderRadius = 20;
-            vbButton2.BorderSize = 0;
-            vbButton2.FlatAppearance.BorderSize = 0;
-            vbButton2.FlatStyle = FlatStyle.Flat;
-            vbButton2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            vbButton2.ForeColor = Color.White;
-            vbButton2.Image = Properties.Resources.icons8_find_29;
-            vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton2.Location = new Point(343, 137);
-            vbButton2.Margin = new Padding(4, 3, 4, 3);
-            vbButton2.Name = "vbButton2";
-            vbButton2.Padding = new Padding(7, 0, 0, 0);
-            vbButton2.Size = new Size(136, 44);
-            vbButton2.TabIndex = 47;
-            vbButton2.Text = "Tìm kiếm";
-            vbButton2.TextColor = Color.White;
-            vbButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            vbButton2.UseVisualStyleBackColor = false;
-            vbButton2.Click += vbButton2_Click;
+            btn_timkiem.BackColor = Color.FromArgb(247, 176, 118);
+            btn_timkiem.BackgroundColor = Color.FromArgb(247, 176, 118);
+            btn_timkiem.BorderColor = Color.PaleVioletRed;
+            btn_timkiem.BorderRadius = 20;
+            btn_timkiem.BorderSize = 0;
+            btn_timkiem.FlatAppearance.BorderSize = 0;
+            btn_timkiem.FlatStyle = FlatStyle.Flat;
+            btn_timkiem.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_timkiem.ForeColor = Color.White;
+            btn_timkiem.Image = Properties.Resources.icons8_find_29;
+            btn_timkiem.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_timkiem.Location = new Point(343, 137);
+            btn_timkiem.Margin = new Padding(4, 3, 4, 3);
+            btn_timkiem.Name = "btn_timkiem";
+            btn_timkiem.Padding = new Padding(7, 0, 0, 0);
+            btn_timkiem.Size = new Size(136, 44);
+            btn_timkiem.TabIndex = 47;
+            btn_timkiem.Text = "Tìm kiếm";
+            btn_timkiem.TextColor = Color.White;
+            btn_timkiem.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_timkiem.UseVisualStyleBackColor = false;
+            btn_timkiem.Click += vbButton2_Click;
             // 
             // label2
             // 
@@ -423,9 +425,9 @@
             label2.Location = new Point(20, 78);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(394, 30);
+            label2.Size = new Size(523, 30);
             label2.TabIndex = 46;
-            label2.Text = "Nhập IMEI để xem thông tin bảo hành";
+            label2.Text = "Nhập IMEI để xem và chỉnh sửa thông tin bảo hành";
             // 
             // label1
             // 
@@ -566,7 +568,7 @@
             artanPanel1.Controls.Add(label14);
             artanPanel1.Controls.Add(label15);
             artanPanel1.Controls.Add(label16);
-            artanPanel1.Controls.Add(vbButton1);
+            artanPanel1.Controls.Add(btn_luu);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.FromArgb(85, 81, 132);
@@ -747,30 +749,31 @@
             label16.TabIndex = 43;
             label16.Text = "Ghi chú";
             // 
-            // vbButton1
+            // btn_luu
             // 
-            vbButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vbButton1.BackColor = Color.FromArgb(247, 176, 118);
-            vbButton1.BackgroundColor = Color.FromArgb(247, 176, 118);
-            vbButton1.BorderColor = Color.PaleVioletRed;
-            vbButton1.BorderRadius = 20;
-            vbButton1.BorderSize = 0;
-            vbButton1.FlatAppearance.BorderSize = 0;
-            vbButton1.FlatStyle = FlatStyle.Flat;
-            vbButton1.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            vbButton1.ForeColor = Color.White;
-            vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(29, 301);
-            vbButton1.Margin = new Padding(4, 3, 4, 3);
-            vbButton1.Name = "vbButton1";
-            vbButton1.Padding = new Padding(7, 0, 0, 0);
-            vbButton1.Size = new Size(136, 44);
-            vbButton1.TabIndex = 44;
-            vbButton1.Text = "Lưu";
-            vbButton1.TextColor = Color.White;
-            vbButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            vbButton1.UseVisualStyleBackColor = false;
-            vbButton1.Click += vbButton1_Click_1;
+            btn_luu.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_luu.BackColor = Color.FromArgb(247, 176, 118);
+            btn_luu.BackgroundColor = Color.FromArgb(247, 176, 118);
+            btn_luu.BorderColor = Color.PaleVioletRed;
+            btn_luu.BorderRadius = 20;
+            btn_luu.BorderSize = 0;
+            btn_luu.Enabled = false;
+            btn_luu.FlatAppearance.BorderSize = 0;
+            btn_luu.FlatStyle = FlatStyle.Flat;
+            btn_luu.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_luu.ForeColor = Color.White;
+            btn_luu.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_luu.Location = new Point(29, 301);
+            btn_luu.Margin = new Padding(4, 3, 4, 3);
+            btn_luu.Name = "btn_luu";
+            btn_luu.Padding = new Padding(7, 0, 0, 0);
+            btn_luu.Size = new Size(136, 44);
+            btn_luu.TabIndex = 44;
+            btn_luu.Text = "Lưu";
+            btn_luu.TextColor = Color.White;
+            btn_luu.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_luu.UseVisualStyleBackColor = false;
+            btn_luu.Click += vbButton1_Click_1;
             // 
             // BaoHanhGUI
             // 
@@ -809,9 +812,9 @@
         private Label label14;
         private Label label15;
         private Label label16;
-        private VBButton vbButton1;
-        private VBButton vbButton3;
-        private VBButton vbButton2;
+        private VBButton btn_luu;
+        private VBButton btn_them;
+        private VBButton btn_timkiem;
         private Label label2;
         private Label label1;
         private ArtanPanel artanPanel4;
@@ -828,7 +831,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_IMEI;
         private Guna.UI2.WinForms.Guna2TextBox tb_ghichu;
         private Guna.UI2.WinForms.Guna2TextBox tb_mabh;
-        private VBButton vbButton4;
+        private VBButton btn_edit;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel tb_chucnang;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;

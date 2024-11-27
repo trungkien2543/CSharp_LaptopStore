@@ -77,6 +77,10 @@ namespace CSharp_laptop.GUI.Laptop
 
             dataGridView2.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
 
+            dataGridView2.Columns["IMEI"].HeaderText = "Mã IMEI";
+            dataGridView2.Columns["ThoiGianBaoHanh"].HeaderText = "Thời gian bảo hành";
+            dataGridView2.Columns["TrangThai"].HeaderText = "Trạng thái";
+            dataGridView2.Columns["LoaiLaptop"].HeaderText = "Loại Laptop";
         }
 
         private void LoadLaptops(string loaiLaptop)
