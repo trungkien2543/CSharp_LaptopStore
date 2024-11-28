@@ -71,12 +71,13 @@ namespace CustomTabControl
                 {
                     // Truy vấn thống kê theo tên hãng
                     query = @"SELECT hangsanxuat.TenHang, COUNT(*) AS SoLuongBan FROM chitiethoadon 
-                  INNER JOIN laptop ON chitiethoadon.IMEI = laptop.IMEI
+                  INNER JOIN laptop ON chitiethoadon.IMEI = laptop.IMEI 
                   INNER JOIN loailaptop ON loailaptop.IDLoaiLaptop = laptop.LoaiLaptop
                   INNER JOIN hoadon ON chitiethoadon.ID_HoaDon = hoadon.ID_HoaDon 
                   INNER JOIN hangsanxuat ON loailaptop.Hang = hangsanxuat.ID_Hang 
                   WHERE hoadon.NgayLap BETWEEN @fromDate AND @toDate
                   GROUP BY hangsanxuat.TenHang;";
+
                 }
                 else
                 {

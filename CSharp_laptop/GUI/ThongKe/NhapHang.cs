@@ -185,7 +185,7 @@ namespace CustomTabControl
                                     .Max();
 
             // Tạo model cho biểu đồ
-            var plotModel = new PlotModel { Title = "Biểu Đồ Số Lượng Tồn Kho Theo Hãng" };
+            var plotModel = new PlotModel { Title = "Biểu Đồ Số Lượng Tồn Kho" };
 
             // Tạo series Bar (biểu đồ cột)
             var barSeries = new BarSeries
@@ -206,14 +206,14 @@ namespace CustomTabControl
             // Thêm series vào model
             plotModel.Series.Add(barSeries);
 
-            // Thiết lập trục Y (Hãng sản xuất)
+            // Thiết lập trục Y (Tên hãng hoặc tên mẫu laptop)
             var categoryAxis = new CategoryAxis
             {
                 Position = AxisPosition.Left,
                 ItemsSource = data.AsEnumerable()
-                                  .Select(row => row["TenHang"].ToString())
+                                  .Select(row => selectedBrand == "Tất cả" ? row["TenHang"].ToString() : row["TenSP"].ToString())
                                   .ToArray(),
-                Title = "Hãng",
+                Title = selectedBrand == "Tất cả" ? "Hãng" : "Tên sản phẩm",
                 AxisTitleDistance = 10
             };
             plotModel.Axes.Add(categoryAxis);
@@ -238,22 +238,29 @@ namespace CustomTabControl
 
             using (var connection = connectionHelper.GetConnection())
             {
-                // Điều kiện lọc hãng nếu hãng không phải là "Tất cả"
-                string query = @"
-                SELECT 
-                    HangSanXuat.TenHang,
-                    COUNT(Laptop.IMEI) AS SoLuongTon
-                FROM Laptop
-                JOIN LoaiLaptop ON Laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop
-                JOIN HangSanXuat ON LoaiLaptop.Hang = HangSanXuat.ID_Hang
-                WHERE Laptop.TrangThai = 1";
+                // Câu truy vấn mặc định
+                string query = "";
 
-                if (brand != "Tất cả")
+                if (brand == "Tất cả")
                 {
-                    query += " AND HangSanXuat.TenHang = @Brand";
+                    // Lấy tổng số lượng tồn theo từng hãng
+                    query = @"SELECT HangSanXuat.TenHang, COUNT(Laptop.IMEI) AS SoLuongTon
+                            FROM Laptop
+                            JOIN LoaiLaptop ON Laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop
+                            JOIN HangSanXuat ON LoaiLaptop.Hang = HangSanXuat.ID_Hang
+                            WHERE Laptop.TrangThai = 1
+                            GROUP BY HangSanXuat.TenHang";
                 }
-
-                query += " GROUP BY HangSanXuat.TenHang";
+                else
+                {
+                    // Lấy số lượng tồn theo từng mẫu laptop của hãng được chọn
+                    query = @"SELECT LoaiLaptop.TenSP, COUNT(Laptop.IMEI) AS SoLuongTon
+                            FROM Laptop
+                            JOIN LoaiLaptop ON Laptop.LoaiLaptop = LoaiLaptop.IDLoaiLaptop
+                            JOIN HangSanXuat ON LoaiLaptop.Hang = HangSanXuat.ID_Hang
+                            WHERE Laptop.TrangThai = 1 AND HangSanXuat.TenHang = @Brand
+                            GROUP BY LoaiLaptop.TenSP";
+                }
 
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, connection);
                 if (brand != "Tất cả")

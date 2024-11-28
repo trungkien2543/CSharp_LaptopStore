@@ -144,6 +144,7 @@
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(984, 665);
             panelContainer.TabIndex = 4;
+            panelContainer.Paint += panelContainer_Paint_1;
             // 
             // ThongKeGUI
             // 

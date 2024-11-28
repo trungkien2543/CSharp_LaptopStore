@@ -57,5 +57,10 @@ namespace CustomTabControl
         {
 
         }
+
+        private void panelContainer_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

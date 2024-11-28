@@ -103,6 +103,7 @@ namespace CustomTabControl
                 connection.Open();
 
                 // Truy vấn để lấy danh sách các năm có trong bảng hoadon
+                // "DISTINCT": loại bỏ các năm bị lặp lại từ giá trị của cột YEAR(NgayLap)
                 var command = new MySqlCommand("SELECT DISTINCT YEAR(NgayLap) AS Nam FROM hoadon ORDER BY Nam;", connection);
 
                 using (var reader = command.ExecuteReader())
