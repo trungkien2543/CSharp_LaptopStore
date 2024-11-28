@@ -199,6 +199,12 @@ namespace CSharp_laptop.GUI
 
                     GUI.MainForm mf = new GUI.MainForm(new TaiKhoanBUS().GetTaiKhoanByID(rjTextBox1.Texts));
                     mf.Show();
+                } else
+                {
+                    ma = "Errror";
+                    xacnhanLabel.Visible = false;
+                    xacnhanTextBox.Visible = false;
+                    MessageBox.Show("Mã không chính xác!");
                 }
             }
         }
