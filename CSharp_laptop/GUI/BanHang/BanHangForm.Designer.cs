@@ -436,6 +436,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtKhachDua.Size = new Size(284, 63);
             txtKhachDua.TabIndex = 57;
             txtKhachDua.KeyDown += txtKhachDua_KeyDown;
+            txtKhachDua.KeyPress += txtKhachDua_KeyPress;
             // 
             // guna2HtmlLabel6
             // 
@@ -643,6 +644,7 @@ namespace CSharp_laptop.GUI.BanHang
             txtSDT.TabIndex = 15;
             txtSDT.TextChanged += txtSDT_TextChanged;
             txtSDT.KeyDown += txtSDT_KeyDown;
+            txtSDT.KeyPress += txtSDT_KeyPress;
             // 
             // txtID
             // 

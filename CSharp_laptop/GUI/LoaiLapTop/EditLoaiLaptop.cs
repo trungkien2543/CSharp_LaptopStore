@@ -201,5 +201,13 @@ namespace CSharp_laptop.GUI
                 e.Handled = true; // Chặn ký tự không hợp lệ
             }
         }
+
+        private void tb_ram_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
     }
 }
