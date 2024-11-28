@@ -90,9 +90,9 @@
             label1.BackColor = Color.FromArgb(0, 0, 0, 0);
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(34, 36);
+            label1.Location = new Point(39, 48);
             label1.Name = "label1";
-            label1.Size = new Size(205, 37);
+            label1.Size = new Size(257, 46);
             label1.TabIndex = 0;
             label1.Text = "Thêm sản phẩm";
             // 
@@ -102,9 +102,9 @@
             label2.BackColor = Color.FromArgb(0, 0, 0, 0);
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(48, 12);
+            label2.Location = new Point(55, 16);
             label2.Name = "label2";
-            label2.Size = new Size(30, 25);
+            label2.Size = new Size(37, 32);
             label2.TabIndex = 1;
             label2.Text = "ID";
             // 
@@ -114,9 +114,9 @@
             label3.BackColor = Color.FromArgb(0, 0, 0, 0);
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(48, 100);
+            label3.Location = new Point(55, 133);
             label3.Name = "label3";
-            label3.Size = new Size(128, 25);
+            label3.Size = new Size(163, 32);
             label3.TabIndex = 2;
             label3.Text = "Tên sản phẩm";
             // 
@@ -126,9 +126,9 @@
             label4.BackColor = Color.FromArgb(0, 0, 0, 0);
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 189);
+            label4.Location = new Point(55, 252);
             label4.Name = "label4";
-            label4.Size = new Size(40, 25);
+            label4.Size = new Size(48, 32);
             label4.TabIndex = 3;
             label4.Text = "Giá";
             // 
@@ -138,9 +138,9 @@
             label5.BackColor = Color.FromArgb(0, 0, 0, 0);
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(50, 275);
+            label5.Location = new Point(57, 367);
             label5.Name = "label5";
-            label5.Size = new Size(57, 25);
+            label5.Size = new Size(71, 32);
             label5.TabIndex = 4;
             label5.Text = "Hãng";
             // 
@@ -150,9 +150,9 @@
             label6.BackColor = Color.FromArgb(0, 0, 0, 0);
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(48, 364);
+            label6.Location = new Point(55, 485);
             label6.Name = "label6";
-            label6.Size = new Size(48, 25);
+            label6.Size = new Size(58, 32);
             label6.TabIndex = 5;
             label6.Text = "CPU";
             // 
@@ -162,9 +162,9 @@
             label7.BackColor = Color.FromArgb(0, 0, 0, 0);
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(424, 12);
+            label7.Location = new Point(485, 16);
             label7.Name = "label7";
-            label7.Size = new Size(52, 25);
+            label7.Size = new Size(65, 32);
             label7.TabIndex = 6;
             label7.Text = "RAM";
             // 
@@ -174,9 +174,9 @@
             label8.BackColor = Color.FromArgb(0, 0, 0, 0);
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(424, 100);
+            label8.Location = new Point(485, 133);
             label8.Name = "label8";
-            label8.Size = new Size(101, 25);
+            label8.Size = new Size(127, 32);
             label8.TabIndex = 7;
             label8.Text = "Kích thước";
             // 
@@ -186,9 +186,9 @@
             label9.BackColor = Color.FromArgb(0, 0, 0, 0);
             label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(424, 275);
+            label9.Location = new Point(485, 367);
             label9.Name = "label9";
-            label9.Size = new Size(111, 25);
+            label9.Size = new Size(141, 32);
             label9.TabIndex = 8;
             label9.Text = "Khuyến mãi";
             // 
@@ -198,18 +198,19 @@
             label10.BackColor = Color.FromArgb(0, 0, 0, 0);
             label10.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(119, 53);
+            label10.Location = new Point(136, 71);
             label10.Name = "label10";
-            label10.Size = new Size(104, 30);
+            label10.Size = new Size(132, 37);
             label10.TabIndex = 9;
             label10.Text = "Hình ảnh";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.win12;
-            pictureBox1.Location = new Point(71, 95);
+            pictureBox1.Location = new Point(81, 127);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(193, 109);
+            pictureBox1.Size = new Size(221, 145);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
@@ -226,10 +227,11 @@
             vbButton2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton2.ForeColor = Color.White;
             vbButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton2.Location = new Point(207, 39);
+            vbButton2.Location = new Point(237, 52);
+            vbButton2.Margin = new Padding(3, 4, 3, 4);
             vbButton2.Name = "vbButton2";
-            vbButton2.Padding = new Padding(7, 0, 0, 0);
-            vbButton2.Size = new Size(123, 41);
+            vbButton2.Padding = new Padding(8, 0, 0, 0);
+            vbButton2.Size = new Size(141, 55);
             vbButton2.TabIndex = 24;
             vbButton2.Text = "Đóng";
             vbButton2.TextColor = Color.White;
@@ -249,10 +251,11 @@
             vbButton1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton1.ForeColor = Color.White;
             vbButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton1.Location = new Point(50, 39);
+            vbButton1.Location = new Point(57, 52);
+            vbButton1.Margin = new Padding(3, 4, 3, 4);
             vbButton1.Name = "vbButton1";
-            vbButton1.Padding = new Padding(7, 0, 0, 0);
-            vbButton1.Size = new Size(123, 41);
+            vbButton1.Padding = new Padding(8, 0, 0, 0);
+            vbButton1.Size = new Size(141, 55);
             vbButton1.TabIndex = 23;
             vbButton1.Text = "Lưu";
             vbButton1.TextColor = Color.White;
@@ -266,9 +269,9 @@
             label11.BackColor = Color.FromArgb(0, 0, 0, 0);
             label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(424, 189);
+            label11.Location = new Point(485, 252);
             label11.Name = "label11";
-            label11.Size = new Size(49, 25);
+            label11.Size = new Size(59, 32);
             label11.TabIndex = 26;
             label11.Text = "GPU";
             // 
@@ -284,10 +287,11 @@
             vbButton3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vbButton3.ForeColor = Color.White;
             vbButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            vbButton3.Location = new Point(108, 286);
+            vbButton3.Location = new Point(123, 381);
+            vbButton3.Margin = new Padding(3, 4, 3, 4);
             vbButton3.Name = "vbButton3";
-            vbButton3.Padding = new Padding(7, 0, 0, 0);
-            vbButton3.Size = new Size(123, 41);
+            vbButton3.Padding = new Padding(8, 0, 0, 0);
+            vbButton3.Size = new Size(141, 55);
             vbButton3.TabIndex = 28;
             vbButton3.Text = "Chọn ảnh";
             vbButton3.TextColor = Color.White;
@@ -305,9 +309,10 @@
             artanPanel1.GradientAngle = 30F;
             artanPanel1.GradientBottomColor = Color.FromArgb(149, 147, 186);
             artanPanel1.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel1.Location = new Point(4, 4);
+            artanPanel1.Location = new Point(5, 5);
+            artanPanel1.Margin = new Padding(3, 4, 3, 4);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(1245, 121);
+            artanPanel1.Size = new Size(1423, 161);
             artanPanel1.TabIndex = 37;
             // 
             // artanPanel2
@@ -337,9 +342,10 @@
             artanPanel2.GradientAngle = 30F;
             artanPanel2.GradientBottomColor = Color.FromArgb(149, 147, 186);
             artanPanel2.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel2.Location = new Point(4, 131);
+            artanPanel2.Location = new Point(5, 175);
+            artanPanel2.Margin = new Padding(3, 4, 3, 4);
             artanPanel2.Name = "artanPanel2";
-            artanPanel2.Size = new Size(892, 454);
+            artanPanel2.Size = new Size(1019, 605);
             artanPanel2.TabIndex = 38;
             // 
             // tb_gia
@@ -357,13 +363,14 @@
             tb_gia.Font = new Font("Segoe UI", 9F);
             tb_gia.ForeColor = Color.Black;
             tb_gia.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_gia.Location = new Point(50, 217);
+            tb_gia.Location = new Point(57, 289);
+            tb_gia.Margin = new Padding(3, 5, 3, 5);
             tb_gia.Name = "tb_gia";
             tb_gia.PasswordChar = '\0';
             tb_gia.PlaceholderText = "";
             tb_gia.SelectedText = "";
             tb_gia.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            tb_gia.Size = new Size(280, 36);
+            tb_gia.Size = new Size(320, 48);
             tb_gia.TabIndex = 46;
             tb_gia.KeyPress += tb_gia_KeyPress;
             // 
@@ -382,13 +389,14 @@
             tb_gpu.Font = new Font("Segoe UI", 9F);
             tb_gpu.ForeColor = Color.Black;
             tb_gpu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_gpu.Location = new Point(424, 217);
+            tb_gpu.Location = new Point(485, 289);
+            tb_gpu.Margin = new Padding(3, 5, 3, 5);
             tb_gpu.Name = "tb_gpu";
             tb_gpu.PasswordChar = '\0';
             tb_gpu.PlaceholderText = "";
             tb_gpu.SelectedText = "";
             tb_gpu.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            tb_gpu.Size = new Size(285, 36);
+            tb_gpu.Size = new Size(326, 48);
             tb_gpu.TabIndex = 45;
             // 
             // tb_kichthuoc
@@ -406,13 +414,14 @@
             tb_kichthuoc.Font = new Font("Segoe UI", 9F);
             tb_kichthuoc.ForeColor = Color.Black;
             tb_kichthuoc.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_kichthuoc.Location = new Point(425, 128);
+            tb_kichthuoc.Location = new Point(486, 171);
+            tb_kichthuoc.Margin = new Padding(3, 5, 3, 5);
             tb_kichthuoc.Name = "tb_kichthuoc";
             tb_kichthuoc.PasswordChar = '\0';
             tb_kichthuoc.PlaceholderText = "";
             tb_kichthuoc.SelectedText = "";
             tb_kichthuoc.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            tb_kichthuoc.Size = new Size(285, 36);
+            tb_kichthuoc.Size = new Size(326, 48);
             tb_kichthuoc.TabIndex = 44;
             // 
             // tb_ram
@@ -430,14 +439,16 @@
             tb_ram.Font = new Font("Segoe UI", 9F);
             tb_ram.ForeColor = Color.Black;
             tb_ram.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_ram.Location = new Point(425, 40);
+            tb_ram.Location = new Point(486, 53);
+            tb_ram.Margin = new Padding(3, 5, 3, 5);
             tb_ram.Name = "tb_ram";
             tb_ram.PasswordChar = '\0';
             tb_ram.PlaceholderText = "";
             tb_ram.SelectedText = "";
             tb_ram.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            tb_ram.Size = new Size(285, 36);
+            tb_ram.Size = new Size(326, 48);
             tb_ram.TabIndex = 43;
+            tb_ram.KeyPress += tb_ram_KeyPress;
             // 
             // tb_cpu
             // 
@@ -454,13 +465,14 @@
             tb_cpu.Font = new Font("Segoe UI", 9F);
             tb_cpu.ForeColor = Color.Black;
             tb_cpu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_cpu.Location = new Point(50, 392);
+            tb_cpu.Location = new Point(57, 523);
+            tb_cpu.Margin = new Padding(3, 5, 3, 5);
             tb_cpu.Name = "tb_cpu";
             tb_cpu.PasswordChar = '\0';
             tb_cpu.PlaceholderText = "";
             tb_cpu.SelectedText = "";
             tb_cpu.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            tb_cpu.Size = new Size(280, 36);
+            tb_cpu.Size = new Size(320, 48);
             tb_cpu.TabIndex = 42;
             // 
             // tb_ten
@@ -478,13 +490,14 @@
             tb_ten.Font = new Font("Segoe UI", 9F);
             tb_ten.ForeColor = Color.Black;
             tb_ten.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_ten.Location = new Point(50, 128);
+            tb_ten.Location = new Point(57, 171);
+            tb_ten.Margin = new Padding(3, 5, 3, 5);
             tb_ten.Name = "tb_ten";
             tb_ten.PasswordChar = '\0';
             tb_ten.PlaceholderText = "";
             tb_ten.SelectedText = "";
             tb_ten.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            tb_ten.Size = new Size(280, 36);
+            tb_ten.Size = new Size(320, 48);
             tb_ten.TabIndex = 41;
             // 
             // tb_id
@@ -502,13 +515,14 @@
             tb_id.Font = new Font("Segoe UI", 9F);
             tb_id.ForeColor = Color.Black;
             tb_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_id.Location = new Point(50, 40);
+            tb_id.Location = new Point(57, 53);
+            tb_id.Margin = new Padding(3, 5, 3, 5);
             tb_id.Name = "tb_id";
             tb_id.PasswordChar = '\0';
             tb_id.PlaceholderText = "";
             tb_id.SelectedText = "";
             tb_id.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            tb_id.Size = new Size(280, 36);
+            tb_id.Size = new Size(320, 48);
             tb_id.TabIndex = 40;
             // 
             // cbbkm
@@ -523,11 +537,11 @@
             cbbkm.Font = new Font("Segoe UI", 10F);
             cbbkm.ForeColor = Color.Black;
             cbbkm.ItemHeight = 30;
-            cbbkm.Location = new Point(425, 301);
+            cbbkm.Location = new Point(486, 401);
             cbbkm.Margin = new Padding(2, 1, 2, 1);
             cbbkm.Name = "cbbkm";
             cbbkm.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cbbkm.Size = new Size(285, 36);
+            cbbkm.Size = new Size(325, 36);
             cbbkm.TabIndex = 39;
             // 
             // cbbhang
@@ -542,11 +556,11 @@
             cbbhang.Font = new Font("Segoe UI", 10F);
             cbbhang.ForeColor = Color.Black;
             cbbhang.ItemHeight = 30;
-            cbbhang.Location = new Point(50, 301);
+            cbbhang.Location = new Point(57, 401);
             cbbhang.Margin = new Padding(2, 1, 2, 1);
             cbbhang.Name = "cbbhang";
             cbbhang.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            cbbhang.Size = new Size(280, 36);
+            cbbhang.Size = new Size(319, 36);
             cbbhang.TabIndex = 38;
             // 
             // artanPanel3
@@ -560,9 +574,10 @@
             artanPanel3.GradientAngle = 30F;
             artanPanel3.GradientBottomColor = Color.FromArgb(149, 147, 186);
             artanPanel3.GradientTopColor = Color.FromArgb(85, 81, 132);
-            artanPanel3.Location = new Point(4, 591);
+            artanPanel3.Location = new Point(5, 788);
+            artanPanel3.Margin = new Padding(3, 4, 3, 4);
             artanPanel3.Name = "artanPanel3";
-            artanPanel3.Size = new Size(1245, 115);
+            artanPanel3.Size = new Size(1423, 153);
             artanPanel3.TabIndex = 39;
             // 
             // artanPanel4
@@ -578,9 +593,10 @@
             artanPanel4.GradientAngle = 0F;
             artanPanel4.GradientBottomColor = Color.FromArgb(85, 81, 132);
             artanPanel4.GradientTopColor = Color.FromArgb(149, 147, 186);
-            artanPanel4.Location = new Point(902, 131);
+            artanPanel4.Location = new Point(1031, 175);
+            artanPanel4.Margin = new Padding(3, 4, 3, 4);
             artanPanel4.Name = "artanPanel4";
-            artanPanel4.Size = new Size(347, 454);
+            artanPanel4.Size = new Size(397, 605);
             artanPanel4.TabIndex = 40;
             // 
             // tb_anh
@@ -598,25 +614,27 @@
             tb_anh.Font = new Font("Segoe UI", 9F);
             tb_anh.ForeColor = Color.Black;
             tb_anh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_anh.Location = new Point(71, 228);
+            tb_anh.Location = new Point(81, 304);
+            tb_anh.Margin = new Padding(3, 5, 3, 5);
             tb_anh.Name = "tb_anh";
             tb_anh.PasswordChar = '\0';
             tb_anh.PlaceholderText = "";
             tb_anh.SelectedText = "";
             tb_anh.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            tb_anh.Size = new Size(200, 36);
+            tb_anh.Size = new Size(229, 48);
             tb_anh.TabIndex = 46;
             // 
             // EditLoaiLaptop
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(149, 147, 186);
-            ClientSize = new Size(1253, 711);
+            ClientSize = new Size(1432, 948);
             Controls.Add(artanPanel2);
             Controls.Add(artanPanel4);
             Controls.Add(artanPanel3);
             Controls.Add(artanPanel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "EditLoaiLaptop";
             Text = "ChiTietSanPham";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

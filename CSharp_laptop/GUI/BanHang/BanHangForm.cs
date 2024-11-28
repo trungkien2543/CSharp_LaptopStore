@@ -503,6 +503,12 @@ namespace CSharp_laptop.GUI.BanHang
             txtTongTien.Text = "";
             txtKhachDua.Text = "";
             txtTienThoi.Text = "";
+
+            TongTien = 0;
+
+            GiamGia = 0;
+
+            ThanhTien = 0;
         }
 
         private void guna2CircleButton3_Click(object sender, EventArgs e)
@@ -600,7 +606,21 @@ namespace CSharp_laptop.GUI.BanHang
             mainForm.OpenChildForm(new HoaDon(mainForm));
         }
 
+        private void txtKhachDua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
 
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
     }
 
 
